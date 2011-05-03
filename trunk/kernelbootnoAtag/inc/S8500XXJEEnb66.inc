@@ -43,7 +43,7 @@ OEMInitDebugSerial			  equ 0x4248195C
 OEMWriteDebugByte			  equ 0x42481A84
 OEMReadDebugByte			  equ 0x42481ACC
 EdbgOutputDebugStringA			  equ 0x42481D6C
-EdbgOutputDebugString			  equ 0x424820A0
+EdbgOutputDebugString			  equ 0x428020A0
 VIC_InterruptEnable			  equ 0x424823A8
 VIC_InterruptDisable			  equ 0x42482408
 InitializeInterrupt			  equ 0x42482518
