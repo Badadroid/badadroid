@@ -1,5 +1,6 @@
 include 'inc/S8500XXJEEnb66.inc'
-
+; file to load Galaxy sbl loader from folder on moviNAND. Is cabable of being detected by Odin multiloader.
+; still wants cleanup, rename variables perhaps.
 START
 
     mov r1, #1
@@ -27,11 +28,6 @@ START
 	ldr	r0, [s_done_a]
 	bl	disp_FOTA_Printf
 
-	;b       dloadmode
-
-	;MOV     R0, #0xA9
-	;BL      GPIO_Drv_UnsetExtInterrupt
-	;BL      disp_Normal_Init
 	BL	DRV_Modem_BootingStart
 	;BL      UsbBoot_set_debug_level ;lets not use it for now
 	BL	get_usb_sw_nv
@@ -40,14 +36,8 @@ START
 	BL	get_uart_sw_nv
 	MOV	R7, R0
 	BL	UARTSwitch
-	;MOV     R0, #0xA9
-	;BL      GPIO_Drv_UnsetExtInterrupt
 	;BL     LoadCompSegments ;lets not use it too
 	MOV	R1, #0
-	;LDR     R0, [pagetable]
-	;BL      MemMMUCacheEnable
-	;LDR     R0, [bootreg]
-	;LDR     R1, [bootmach]
 	LDR	R5, [kernel_start]
 	BLX	R5
 
@@ -148,16 +138,12 @@ align 4
 
     kernel_start	dw 0x40244000
 
-    ;kernel_start        dw 0x25000000
     kernel_size 	dw 0x140000   ;6710472
 
     ;dump_start          dw 0x40200000
     ;dump_end            dw 0x40340000
 
     fota_x dw x_pos@disp_FOTA_Printf_1
-
-    bootreg		dw 0
-    bootmach		dw 2471
 
     ; strings at the end
 
