@@ -1,4 +1,4 @@
-=~=~=~=~=~=~=~=~=~=~=~= PuTTY log 2011.05.04 22:17:16 =~=~=~=~=~=~=~=~=~=~=~=
+=~=~=~=~=~=~=~=~=~=~=~= PuTTY log 2011.05.04 23:40:10 =~=~=~=~=~=~=~=~=~=~=~=
 [PAM:   ] ++FSR_PAM_Init
 [PAM:   ]   OneNAND physical base address       : 0xb0000000
 [PAM:   ]   OneNAND virtual  base address       : 0xb0000000
@@ -38,3 +38,61 @@ Display_LSI_Boot : disp_Main_Dload_Update
 Display_LSI_Boot : disp_dimming_backlight 
 Display_LSI_Boot : disp_Main_Dload_Update 
 Display_LSI_Boot : disp_Main_Dload_Message 
+ debug: 1337+SDHC_Open(Ch0)
+univ_SD_MEM_PowerOnDevice() : Power On
+univ_SD_MEM_PowerOnDevice(ch0) : MASSMEMORY_EN Power On
+[SDHC] MPLL source clock from SYSCON : 667000000Hz
+[SDHC] SDHC(ch0) source clock from SYSCON : 47642000Hz
+[SDHC] SDHC(ch0) Operating Clock : 372203Hz
+[SDHC][MMC]byte mode
+SD_MEM_Phy_CMD2(ch0) : CID(127~0) : 0x150100, 0x4d324731, 0x44441694, 0x8647125d
+SD_MEM_Phy_MMC_CID(ch0) : PRV - 0x16
+MMC_Spec = 4
+----------------CSD Version 1.0--------in low level-------------
+channel: [0]
+One Block Size: [512]Byte
+Total card Block Count = [4014080]
+Total card Capacity Size  = [1960]MB
+---------------------------------------------------
+SD_HostCtrl_IssueCommand[ch0] not SDclk off, cmd13, SD_CLK_CTRL:0x400f
+SD_MEM_Phy_TransferState(ch0) :High: Tx : SD_FeedBackClock_BasicDelay
+SD_MEM_Phy_TransferState(ch0) :High: Rx : SD_FeedBackClock_InverterDelay
+[SDHC] MPLL source clock from SYSCON : 667000000Hz
+[SDHC] SDHC(ch0) source clock from SYSCON : 47642000Hz
+[SDHC] SDHC(ch0) Operating Clock : 47642000Hz
+SD_HostCtrl_IssueCommand[ch0] not SDclk off, cmd13, SD_CLK_CTRL:0xf
+SD_HostCtrl_IssueCommand[ch0] not SDclk off, cmd13, SD_CLK_CTRL:0xf
+-SDHC_Open(Ch0)
+Display_LSI_Boot : disp_Main_Dload_Update 
+Display_LSI_Boot : disp_Main_Dload_Message 
+Display_LSI_Boot : disp_Main_Dload_Update 
+Display_LSI_Boot : disp_Main_Dload_Message 
+Display_LSI_Boot : disp_Main_Dload_Update 
+Display_LSI_Boot : disp_Main_Dload_Message 
+Display_LSI_Boot : disp_Main_Dload_Update 
+Display_LSI_Boot : disp_Main_Dload_Message 
+Display_LSI_Boot : disp_Main_Dload_Update 
+Display_LSI_Boot : disp_Main_Dload_Message 
+Display_LSI_Boot : disp_Main_Dload_Update 
+Display_LSI_Boot : disp_Main_Dload_Message 
+Display_LSI_Boot : disp_Main_Dload_Update 
+Display_LSI_Boot : disp_Main_Dload_Message 
+Display_LSI_Boot : disp_Main_Dload_Update 
+Display_LSI_Boot : disp_Main_Dload_Message 
+Display_LSI_Boot : disp_Main_Dload_Update 
+Display_LSI_Boot : disp_Main_Dload_Message 
+charging disable
+
+
+AST_DOWNLOAD
+
+
+
+-----------------------------------------------------
+       USB BOOT Downloader for s5pc100         
+      Copyright (c) 2005 by SAMSUNG Electronic, Inc.    
+                   V1.0 (May 28 2010, 21:22:24) 
+-----------------------------------------------------
+
+
+
