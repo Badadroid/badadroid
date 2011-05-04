@@ -13,11 +13,9 @@ START	;don't touch this macro, it contains correct FOTA magic numbers and does a
 	MOV	r1, #1
 	LDR	r0, [pagetable]
 	BL	MemMMUCacheEnable
-	BL	disp_FOTA_Init	    ;initialize screen for printing, basically fill it white and refresh
+	bl	enable_fota_output  ;try enable_uart_output aswell
 	MOV	R0, 1234
-	BL	fota_int_debugprint ;prints "debug:1234" to the FOTA screen
-	MOV	R0, 1337
-	BL	uart_int_debugprint ;prints "debug:1337" to the UART debug interface (if connected)
+	BL	int_debugprint	    ;prints "debug:1234" to the FOTA or UART
 	BL	__PfsNandInit	    ;oneNAND FS
 	BL	__PfsMassInit	    ;SDHC on interface MMC0 init (internal 2gb sd card)
 	LDR	R0, [s_dir_path_a]  ;load the address of directory we want to list

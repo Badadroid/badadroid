@@ -8,6 +8,7 @@ fota_dloadmode:
 	ldr	r0, [s_downloadmode_a]
 	bl	disp_FOTA_Printf
 	bl	dloadmode
+	NORETURN
 
 
 ;void dloadmode()
@@ -17,6 +18,54 @@ dloadmode:
 	bl	maxim_charging_control
 	bl	DloadMain
 
+;void print_output(char* fmt, ...)
+debug_print:
+	STMFD	SP!, {LR\}
+	LDR	R10, [output_switch]
+	CMP	R10, 1
+	BEQ	debug_print_fota
+	CMP	R10, 2
+	BEQ	debug_print_uart
+	B	debug_print_ret
+debug_print_fota:
+	BL	disp_FOTA_Printf
+	B	debug_print_ret
+debug_print_uart:
+	BL	EdbgOutputDebugString
+	LDR	r0, [s_uart_newline_a]
+	BL	EdbgOutputDebugString
+	B	debug_print_ret
+debug_print_ret:
+	LDMFD	SP!, {PC\}
+
+;void enable_fota_output()
+enable_fota_output:
+	STMFD	SP!, {R0-R1,LR\}
+	ADR	r1, output_switch
+	MOV	r0, 1
+	STR	R0, [r1]
+	BL	disp_FOTA_Init
+	ldr	r0, [s_fotaoutput_a]
+	bl	debug_print
+	LDMFD	SP!, {R0-R1,PC\}
+
+;void enable_uart_output()
+enable_uart_output:
+	STMFD	SP!, {R0-R1,LR\}
+	ADR	r1, output_switch
+	MOV	r0, 2
+	STR	R0, [r1]
+	ldr	r0, [s_uartoutput_a]
+	bl	debug_print
+	LDMFD	SP!, {R0-R1,PC\}
+
+;void int_debugprint(int num)
+int_debugprint:
+	STMFD	SP!, {R1,LR\}
+	mov	r1, r0
+	ldr	r0, [s_debug_fmt_a]
+	bl	debug_print
+	LDMFD	SP!, {R1,PC\}
 
 ;int loadfile(wchar* filepath, ulong startaddr, ulong size)
 ;loads file to RAM under specific address
@@ -55,22 +104,6 @@ loadfile_ret:
 loadfile_notfound:
 	mov	r0, 0
 	b	loadfile_ret
-
-;void fota_int_debugprint(int num)
-fota_int_debugprint:
-	STMFD	SP!, {R1,LR\}
-	mov	r1, r0
-	ldr	r0, [s_debug_fmt_a]
-	bl	disp_FOTA_Printf
-	LDMFD	SP!, {R1,PC\}
-
-;void uart_int_debugprint(int num)
-uart_int_debugprint:
-	STMFD	SP!, {R1,LR\}
-	mov	r1, r0
-	ldr	r0, [s_debug_fmt_a]
-	bl	EdbgOutputDebugString
-	LDMFD	SP!, {R1,PC\}
 
 
 ;int fota_listdir(wchar* path)
