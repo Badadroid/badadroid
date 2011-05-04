@@ -10,8 +10,6 @@ START
 
     bl disp_FOTA_Init
 
-   ; bl CoDisableMmu
-
 
     ldr r0, [wykrz_a]
     bl disp_FOTA_Printf
@@ -23,9 +21,6 @@ START
 
 	bl	__PfsNandInit
 	bl	__PfsMassInit
-
-
-       ; b       dloadmode
 
 
 	;MOV     R0, #0xA9
@@ -52,7 +47,6 @@ START
 	ldr	r0, [s_done_a]
 	bl	disp_FOTA_Printf
 
-	;BL      CoDisableMmu
 
 	;BL      CoDisableMmu
 	;BL      CoCleanDCacheVA
