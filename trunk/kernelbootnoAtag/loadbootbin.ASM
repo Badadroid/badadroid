@@ -1,5 +1,6 @@
 include 'inc/S8500XXJEEnb66.inc'
-; file to load Galaxy sbl loader from folder on moviNAND. Is cabable of being detected by Odin multiloader.
+; CORRECT THE LOAD LOCATION!!
+; file to load Galaxy boot.bin from folder on moviNAND.
 ; still wants cleanup, rename variables perhaps.
 START
 
@@ -21,40 +22,45 @@ START
 	bl	__PfsNandInit
 	bl	__PfsMassInit
 
-	bl	loadAndroidKernel
+	bl	loadboot
 	cmp	r0, 0
 	beq	dloadmode
 
 	ldr	r0, [s_done_a]
 	bl	disp_FOTA_Printf
 
-	BL	DRV_Modem_BootingStart
+	;BL      DRV_Modem_BootingStart
 	;BL      UsbBoot_set_debug_level ;lets not use it for now
-	BL	get_usb_sw_nv
-	MOV	R7, R0
-	BL	USBSwitch
-	BL	get_uart_sw_nv
-	MOV	R7, R0
-	BL	UARTSwitch
+	;BL      get_usb_sw_nv
+	;MOV     R7, R0
+	;BL      USBSwitch
+	;BL      get_uart_sw_nv
+	;MOV     R7, R0
+	;BL      UARTSwitch
 	;BL     LoadCompSegments ;lets not use it too
+	BL	CoDisableMmu
+	BL	CoCleanDCacheVA
+	BL	CoDisableDCache
+	BL	CoDisableIrq
+	BL	CoDisableFiq
 	MOV	R1, #0
-	LDR	R5, [kernel_start]
+	LDR	R5, [boot_start]
 	BLX	R5
 
 
-loadAndroidKernel:
+loadboot:
 	STMFD	SP!, {R1-R6,LR}
-	ldr	r1, [kernel_start]
-	ldr	r2, [kernel_size]
-	ldr	r0, [s_kernel_path_a]
+	ldr	r1, [boot_start]
+	ldr	r2, [boot_size]
+	ldr	r0, [s_boot_path_a]
 	bl	loadfile
-	ldr	r1, [kernel_size]
+	ldr	r1, [boot_size]
 	cmp	r0, r1
-	beq	loadAndroidKernel_ret
+	beq	loadboot_ret
 	ldr	r0, [s_error_a]
 	bl	disp_FOTA_Printf
 	mov	r0, 0
-loadAndroidKernel_ret:
+loadboot_ret:
 	LDMFD	SP!, {R1-R6,PC}
 
 
@@ -136,9 +142,9 @@ align 4
     v_delay		dw 4000000
 
 
-    kernel_start	dw 0x40244000
+    boot_start	      dw 0x40000000
 
-    kernel_size 	dw 0x40000   ;262144
+    boot_size	      dw 0x40000   ;262144
 
     ;dump_start          dw 0x40200000
     ;dump_end            dw 0x40340000
@@ -157,12 +163,12 @@ align 4
     s_written_a 	dw s_written
     s_fileload_a	dw s_fileload
     s_read_a		dw s_read
-    s_kernel_path_a	dw s_kernel_path
+    s_boot_path_a	dw s_boot_path
     s_error_a		dw s_error
     s_path_a		dw s_path
 
     s_path			    du '/g/',0
-    s_kernel_path		    du '/g/galaxyboot/boot.bin',0
+    s_boot_path 		  du '/g/galaxyboot/boot.bin',0
 
     s_downloadmode		    db ' ENTERING DOWNLOAD MODE',0
     s_notfound			    db ' not found!',0
