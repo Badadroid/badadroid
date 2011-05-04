@@ -21,7 +21,7 @@ START
 	bl	__PfsNandInit
 	bl	__PfsMassInit
 
-	bl	loadAndroidKernel
+	bl	loadsbl
 	cmp	r0, 0
 	beq	dloadmode
 
@@ -38,23 +38,23 @@ START
 	BL	UARTSwitch
 	;BL     LoadCompSegments ;lets not use it too
 	MOV	R1, #0
-	LDR	R5, [kernel_start]
+	LDR	R5, [sbl_start]
 	BLX	R5
 
 
-loadAndroidKernel:
+loadsbl:
 	STMFD	SP!, {R1-R6,LR}
-	ldr	r1, [kernel_start]
-	ldr	r2, [kernel_size]
-	ldr	r0, [s_kernel_path_a]
+	ldr	r1, [sbl_start]
+	ldr	r2, [sbl_size]
+	ldr	r0, [s_sbl_path_a]
 	bl	loadfile
-	ldr	r1, [kernel_size]
+	ldr	r1, [sbl_size]
 	cmp	r0, r1
-	beq	loadAndroidKernel_ret
+	beq	loadsbl_ret
 	ldr	r0, [s_error_a]
 	bl	disp_FOTA_Printf
 	mov	r0, 0
-loadAndroidKernel_ret:
+loadsbl_ret:
 	LDMFD	SP!, {R1-R6,PC}
 
 
@@ -136,9 +136,9 @@ align 4
     v_delay		dw 4000000
 
 
-    kernel_start	dw 0x40244000
+    sbl_start	     dw 0x40244000
 
-    kernel_size 	dw 0x140000   ;6710472
+    sbl_size	     dw 0x140000   ;6710472
 
     ;dump_start          dw 0x40200000
     ;dump_end            dw 0x40340000
@@ -157,12 +157,12 @@ align 4
     s_written_a 	dw s_written
     s_fileload_a	dw s_fileload
     s_read_a		dw s_read
-    s_kernel_path_a	dw s_kernel_path
+    s_sbl_path_a	dw s_sbl_path
     s_error_a		dw s_error
     s_path_a		dw s_path
 
     s_path			    du '/g/',0
-    s_kernel_path		    du '/g/galaxyboot/Sbl_mijoma.bin',0
+    s_sbl_path			 du '/g/galaxyboot/Sbl_mijoma.bin',0
 
     s_downloadmode		    db ' ENTERING DOWNLOAD MODE',0
     s_notfound			    db ' not found!',0
