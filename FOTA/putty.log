@@ -1,4 +1,4 @@
-=~=~=~=~=~=~=~=~=~=~=~= PuTTY log 2011.05.05 00:27:36 =~=~=~=~=~=~=~=~=~=~=~=
+=~=~=~=~=~=~=~=~=~=~=~= PuTTY log 2011.05.05 00:34:38 =~=~=~=~=~=~=~=~=~=~=~=
 [PAM:   ] ++FSR_PAM_Init
 [PAM:   ]   OneNAND physical base address       : 0xb0000000
 [PAM:   ]   OneNAND virtual  base address       : 0xb0000000
@@ -32,15 +32,7 @@ FSA9480 0x0A Register = 0
 FSA9480 0x0B Register = 8
 FSA9480 0x07 Register = 1c
 SelectBootingMode: Boot Mode = 1...
-Display_LSI_Boot : disp_Main_Clean 
-Display_LSI_Boot : disp_Main_Clean_All 
-Display_LSI_Boot : disp_Main_Dload_Update 
-Display_LSI_Boot : disp_dimming_backlight 
-Display_LSI_Boot : disp_Main_Dload_Update 
-Display_LSI_Boot : disp_Main_Dload_Message 
-Display_LSI_Boot : disp_Main_Dload_Update 
-Display_LSI_Boot : disp_Main_Dload_Message 
-+SDHC_Open(Ch0)
+ UART OUTPUT ENABLED\r\n debug: 1234\r\n+SDHC_Open(Ch0)
 univ_SD_MEM_PowerOnDevice() : Power On
 univ_SD_MEM_PowerOnDevice(ch0) : MASSMEMORY_EN Power On
 [SDHC] MPLL source clock from SYSCON : 667000000Hz
