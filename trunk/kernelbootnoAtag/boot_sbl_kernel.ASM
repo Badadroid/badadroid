@@ -64,10 +64,6 @@ START
 	;MOV     R2, 0 ;ATAGS, TODO
 
 	LDR	R3, [sbl_start]
-	STMFD	SP!, {R0-R3}
-	LDR R0, [s_done_a]
-	BL EdbgOutputDebugString
-	LDMFD	SP!, {R0-R3}
 	BLX	R3
 
 loadsbl:
