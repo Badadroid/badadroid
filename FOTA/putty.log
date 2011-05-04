@@ -1,4 +1,4 @@
-=~=~=~=~=~=~=~=~=~=~=~= PuTTY log 2011.05.04 23:40:10 =~=~=~=~=~=~=~=~=~=~=~=
+=~=~=~=~=~=~=~=~=~=~=~= PuTTY log 2011.05.05 00:27:36 =~=~=~=~=~=~=~=~=~=~=~=
 [PAM:   ] ++FSR_PAM_Init
 [PAM:   ]   OneNAND physical base address       : 0xb0000000
 [PAM:   ]   OneNAND virtual  base address       : 0xb0000000
@@ -38,7 +38,9 @@ Display_LSI_Boot : disp_Main_Dload_Update
 Display_LSI_Boot : disp_dimming_backlight 
 Display_LSI_Boot : disp_Main_Dload_Update 
 Display_LSI_Boot : disp_Main_Dload_Message 
- debug: 1337+SDHC_Open(Ch0)
+Display_LSI_Boot : disp_Main_Dload_Update 
+Display_LSI_Boot : disp_Main_Dload_Message 
++SDHC_Open(Ch0)
 univ_SD_MEM_PowerOnDevice() : Power On
 univ_SD_MEM_PowerOnDevice(ch0) : MASSMEMORY_EN Power On
 [SDHC] MPLL source clock from SYSCON : 667000000Hz
