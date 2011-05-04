@@ -1,0 +1,12 @@
+For uploading binaries please use one of following
+- https://code.google.com/p/badadroid/downloads/entry
+- attach them to the forum posts on XDA
+- use some free FTP
+- use some file hosting service
+
+It's really annyoing to download binary files from SOURCECODE repository with slow internet speed.
+
+I've moved all binaries to code.google download repository.
+
+Thank you
+~~Rebellos
