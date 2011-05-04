@@ -45,7 +45,7 @@ BootDebugBuffGet                          equ 0x4248171C
 BootDebugBuffNandWrite                    equ 0x42481724
 OEMInitDebugSerial                        equ 0x424819AC
 EdbgOutputDebugStringA                    equ 0x42481DBC
-EdbgOutputDebugString                     equ 0x424820F0
+EdbgOutputDebugString                     equ 0x424820A0
 InitializeInterrupt                       equ 0x42482568
 DloadMain                                 equ 0x42483BD4
 Get_Onedram_Semaphore                     equ 0x42483FFC
