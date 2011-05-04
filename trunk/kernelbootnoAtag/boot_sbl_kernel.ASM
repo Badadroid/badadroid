@@ -27,12 +27,12 @@ START
 	;BL      disp_Normal_Init
 	;BL      DRV_Modem_BootingStart
 	;BL      UsbBoot_set_debug_level ;lets not use it for now
-	;BL      get_usb_sw_nv
-	;MOV     R7, R0
-	;BL      USBSwitch
-	;BL      get_uart_sw_nv
-	;MOV     R7, R0
-	;BL      UARTSwitch
+	BL	get_usb_sw_nv
+	MOV	R7, R0
+	BL	USBSwitch
+	BL	get_uart_sw_nv
+	MOV	R7, R0
+	BL	UARTSwitch
 	;MOV     R0, #0xA9
 	;BL      GPIO_Drv_UnsetExtInterrupt
 
@@ -55,8 +55,9 @@ START
 	;BL      CoDisableFiq
 	;ldr     r0, [wykrz_a]
 	;bl      disp_FOTA_Printf
-	;BL      DRV_Modem_BootingStart
-	;BL      GPIO_Drv_UnsetExtInterrupt
+	BL	DRV_Modem_BootingStart
+	MOV	R0, #0xA9
+	BL	GPIO_Drv_UnsetExtInterrupt
 	;BL      InitializeDisplay
 	;MOV     R0, 0
 	;LDR     R1, [machine_id]  ;*should be correct now0
