@@ -1,6 +1,5 @@
 include 'inc/S8500XXJEEnb66.inc'
 ; VERY rough code for loading sbl to 0x40244000 and Kernel to 0x32000000, then executes sbl, allowing sbl to execute kernel.
-; currently DOES NOT WORK!!!
 START
 
     mov r1, #1
@@ -236,7 +235,7 @@ align 4
 
     s_path			    du '/g/',0
     s_kernel_path		    du '/g/galaxyboot/zImage',0
-    s_sbl_path			    du '/g/galaxyboot/Sbl_mijoma.bin'
+    s_sbl_path			    du '/g/galaxyboot/Sbl_mijoma.bin',0
 
     s_downloadmode		    db ' ENTERING DOWNLOAD MODE',0
     s_notfound			    db ' not found!',0
