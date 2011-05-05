@@ -17,7 +17,7 @@ dloadmode:
 ;void rebell_memcpy(int source(r0), int target(r1), int size(r2))
 ;returns num of bytes copied (always equal to size or just hangs on mem access violation)
 rebell_memcpy:
-	LDMFD	SP!, {R3-R10,LR\}
+	STMFD	SP!, {R3-R6,LR\}
 
 	MOV	R3, R2
 	MOV	R2, R1
@@ -37,12 +37,12 @@ rebell_memcpy_copyloop:
 	cmp	r3, r2
 	BLE	rebell_memcpy_copyloop
 
-	LDR	R0, [s_done_a]
-	BL	debug_print
+	MOV	R0, R2
+	BL	int_debugprint
 
-	MOV	R0, R2 ;num of bytes copied
+	MOV	R0, R2
 
-	LDMFD	SP!, {R3-R10,PC\}
+	LDMFD	SP!, {R3-R6,PC\}
 
 ;void debug_print(char* fmt, ...)
 debug_print:
