@@ -10,7 +10,7 @@ include 'inc/functions.inc'	  ;this one provides default functions
 
 
 START	;don't touch this macro, it contains correct FOTA magic numbers and does auto CALL-KEY check and jumps here if its pressed
-	;MMUCache is required for TFS4 system mounting, enabling cache enables the whole MMU too
+	;MMUCache is required for TFS4 system operations, enabling cache enables the whole MMU too
 	MOV	r1, #1
 	LDR	r0, [pagetable]
 	BL	MemMMUCacheEnable
@@ -36,7 +36,7 @@ DEFAULT_STRINGS_ADDR	;macro from vars.inc
 
 DEFAULT_STRINGS 	;macro from vars.inc
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;; ;add custom strings below
-    s_dir_path	     du '/g/',0 ;tfs4 path must be wchar string
+    s_dir_path	     du '/g/galaxyboot/',0 ;tfs4 path must be wchar string
     ;/g/ is the User Media storage space in internal SDHC
 
     
