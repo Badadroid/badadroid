@@ -1,4 +1,4 @@
-=~=~=~=~=~=~=~=~=~=~=~= PuTTY log 2011.05.05 00:34:38 =~=~=~=~=~=~=~=~=~=~=~=
+=~=~=~=~=~=~=~=~=~=~=~= PuTTY log 2011.05.05 21:50:32 =~=~=~=~=~=~=~=~=~=~=~=
 [PAM:   ] ++FSR_PAM_Init
 [PAM:   ]   OneNAND physical base address       : 0xb0000000
 [PAM:   ]   OneNAND virtual  base address       : 0xb0000000
@@ -26,13 +26,13 @@ S6E63M0 : LDI_Pentile_Set_Change Pentile_Value =6c
 ---FIMD_Drv_SetWinOnOff(WIN4:1)
 LCD initialize Finished
 Flash_Unlock failed
-Poweron status - 20
+Poweron status - 7c
 FSA9480 0x03 Register = 1
 FSA9480 0x0A Register = 0
 FSA9480 0x0B Register = 8
 FSA9480 0x07 Register = 1c
 SelectBootingMode: Boot Mode = 1...
- UART OUTPUT ENABLED\r\n debug: 1234\r\n+SDHC_Open(Ch0)
+ UART OUTPUT ENABLED \n debug: 1234 \n+SDHC_Open(Ch0)
 univ_SD_MEM_PowerOnDevice() : Power On
 univ_SD_MEM_PowerOnDevice(ch0) : MASSMEMORY_EN Power On
 [SDHC] MPLL source clock from SYSCON : 667000000Hz
@@ -57,25 +57,7 @@ SD_MEM_Phy_TransferState(ch0) :High: Rx : SD_FeedBackClock_InverterDelay
 SD_HostCtrl_IssueCommand[ch0] not SDclk off, cmd13, SD_CLK_CTRL:0xf
 SD_HostCtrl_IssueCommand[ch0] not SDclk off, cmd13, SD_CLK_CTRL:0xf
 -SDHC_Open(Ch0)
-Display_LSI_Boot : disp_Main_Dload_Update 
-Display_LSI_Boot : disp_Main_Dload_Message 
-Display_LSI_Boot : disp_Main_Dload_Update 
-Display_LSI_Boot : disp_Main_Dload_Message 
-Display_LSI_Boot : disp_Main_Dload_Update 
-Display_LSI_Boot : disp_Main_Dload_Message 
-Display_LSI_Boot : disp_Main_Dload_Update 
-Display_LSI_Boot : disp_Main_Dload_Message 
-Display_LSI_Boot : disp_Main_Dload_Update 
-Display_LSI_Boot : disp_Main_Dload_Message 
-Display_LSI_Boot : disp_Main_Dload_Update 
-Display_LSI_Boot : disp_Main_Dload_Message 
-Display_LSI_Boot : disp_Main_Dload_Update 
-Display_LSI_Boot : disp_Main_Dload_Message 
-Display_LSI_Boot : disp_Main_Dload_Update 
-Display_LSI_Boot : disp_Main_Dload_Message 
-Display_LSI_Boot : disp_Main_Dload_Update 
-Display_LSI_Boot : disp_Main_Dload_Message 
-charging disable
+ Images \n Others \n Sounds \n Themes \n Videos \n galaxyboot \n ENTERING DOWNLOAD MODE \ncharging disable
 
 
 AST_DOWNLOAD
