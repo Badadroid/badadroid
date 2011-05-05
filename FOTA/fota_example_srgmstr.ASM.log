@@ -1,19 +1,4 @@
-=~=~=~=~=~=~=~=~=~=~=~= PuTTY log 2011.05.05 14:53:37 =~=~=~=~=~=~=~=~=~=~=~=
-[PAM:   ] ++FSR_PAM_Init
-[PAM:   ]   OneNAND physical base address       : 0xb0000000
-[PAM:   ]   OneNAND virtual  base address       : 0xb0000000
-[PAM:   ]   FSR_PAM_InitNANDController Success!! 
-[PAM:   ] --FSR_PAM_Init
-[BM :   ]   FSR_BML_GetFullPartI() is completed
-[BM :   ]   stPartI.nNumOfPartEntry : 7
-[BM :   ]   1th PartEntrt(nAttr:0x1002)(nID:0x0)
-[BM :   ]   [1th] pPEntry->n1stVun     : 1
-[BM :   ]   [1th] pPEntry->nNumOfUnits : 7
-[BM :   ]   [1th] pPEntry->nLoadAddr   : 0xffffffff
-+-------------------------------+
-| Bootloader Shadowing FINISHED |
-+-------------------------------+
-Launch Image at 0x42480000
+=~=~=~=~=~=~=~=~=~=~=~= PuTTY log 2011.05.05 22:04:41 =~=~=~=~=~=~=~=~=~=~=~=
 
 [BOOT_V1.0  (May 28 2010, 21:22:23)] 
 SelectBootingMode: H/W...0xe.
@@ -26,18 +11,14 @@ S6E63M0 : LDI_Pentile_Set_Change Pentile_Value =6c
 ---FIMD_Drv_SetWinOnOff(WIN4:1)
 LCD initialize Finished
 Flash_Unlock failed
-Poweron status - 20
+Poweron status - 28
 FSA9480 0x03 Register = 1
 FSA9480 0x0A Register = 0
 FSA9480 0x0B Register = 8
 FSA9480 0x07 Register = 1c
 SelectBootingMode: Boot Mode = 1...
-Display_LSI_Boot : disp_Main_Clean 
-Display_LSI_Boot : disp_Main_Clean_All 
-Display_LSI_Boot : disp_Main_Dload_Update 
-Display_LSI_Boot : disp_dimming_backlight 
-Display_LSI_Boot : disp_Main_Dload_Update 
-Display_LSI_Boot : disp_Main_Dload_Message 
+ UART OUTPUT ENABLED
+ debug: 1234
 +SDHC_Open(Ch0)
 univ_SD_MEM_PowerOnDevice() : Power On
 univ_SD_MEM_PowerOnDevice(ch0) : MASSMEMORY_EN Power On
@@ -63,8 +44,13 @@ SD_MEM_Phy_TransferState(ch0) :High: Rx : SD_FeedBackClock_InverterDelay
 SD_HostCtrl_IssueCommand[ch0] not SDclk off, cmd13, SD_CLK_CTRL:0xf
 SD_HostCtrl_IssueCommand[ch0] not SDclk off, cmd13, SD_CLK_CTRL:0xf
 -SDHC_Open(Ch0)
-Display_LSI_Boot : disp_Main_Dload_Update 
-Display_LSI_Boot : disp_Main_Dload_Message 
+ Images
+ Others
+ Sounds
+ Themes
+ Videos
+ galaxyboot
+ debug: 1310720
 
 Set cpu clk. from 800MHz to 800MHz.
 OM=0x9, device=OnenandMux(Audi)
@@ -150,7 +136,7 @@ Display_LSI_Boot : disp_Main_Dload_Message
 PMIC_IRQ3    = 0x0 
 PMIC_IRQ4    = 0x0 
 PMIC_STATUS1 = 0x40 
-PMIC_STATUS2 = 0x0 
+PMIC_STATUS2 = 0x2c 
 get_debug_level current debug level is 0x0.
 get_debug_level current debug level is 0x0.
 get_debug_level current debug level is 0x0.
