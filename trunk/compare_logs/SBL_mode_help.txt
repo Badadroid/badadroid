@@ -220,3 +220,19 @@ video interrupt is off
 [fb0] turn on
 MDNIE setting Init end!!
 -------------------------------------------------------------------------------
+SBL> mmctest
+Enable Movinand
+[hsmmc_init] MMC card is detected
+Product Name : M2G1DD
+<display_card_info:952>normal csd
+ read_bl_len: 10
+ read_bl_partial: 0
+ One Block Size: 1024 Byte
+ c_size: 3919
+ c_size_multi: 7
+ Total Card Size: 1961 MByte
+
+MoviNand Initialization Complete!
+.SBL> 
+SBL>
+-------------------------------------------------------------------------------
