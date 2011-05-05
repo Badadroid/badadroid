@@ -14,9 +14,39 @@ dloadmode:
 	bl	maxim_charging_control
 	bl	DloadMain
 
+;void rebell_memcpy(int source(r0), int target(r1), int size(r2))
+;returns num of bytes copied (always equal to size or just hangs on mem access violation)
+rebell_memcpy:
+	LDMFD	SP!, {R3-R10,LR\}
+
+	MOV	R3, R2
+	MOV	R2, R1
+	MOV	R1, R0
+	LDR	R0, [s_memcpy_a]
+	BL	debug_print
+	MOV	R0, R1
+	MOV	R1, R2
+	MOV	R2, R3
+
+	MOV	R5, R2
+	MOV	R3, 0
+rebell_memcpy_copyloop:
+	ldrb	r4, [r0,r3] ;src
+	strb	r4, [r1,r3] ;dst
+	add	r3, r3, 1
+	cmp	r3, r2
+	BLE	rebell_memcpy_copyloop
+
+	LDR	R0, [s_done_a]
+	BL	debug_print
+
+	MOV	R0, R2 ;num of bytes copied
+
+	LDMFD	SP!, {R3-R10,PC\}
+
 ;void debug_print(char* fmt, ...)
 debug_print:
-	STMFD	SP!, {LR\}
+	STMFD	SP!, {R0-R4,LR\}
 	LDR	R10, [output_switch]
 	CMP	R10, 1
 	BEQ	debug_print_fota
@@ -25,7 +55,7 @@ debug_print:
 	B	debug_print_ret
 debug_print_fota:
 	BL	disp_FOTA_Printf
-	mov	r4, 0
+
 	ldr	r3, [fota_x]
 	ldr	r3, [r3]
 	cmp	r3, 20
@@ -33,6 +63,8 @@ debug_print_fota:
 
 	ldr	r0, [v_delay_800ms]  ;wait 0.8s so we we can read the text
 	bl	PWM_Drv_Delay
+	BL	disp_FOTA_Init
+	mov	r4, 0
 	ldr	r3, [fota_x]
 	str	r4, [r3]	    ;reset fota_printf_x position counter
 
@@ -43,7 +75,7 @@ debug_print_uart:
 	BL	EdbgOutputDebugString
 	B	debug_print_ret
 debug_print_ret:
-	LDMFD	SP!, {PC\}
+	LDMFD	SP!, {R0-R4,PC\}
 
 ;void enable_fota_output()
 enable_fota_output:
@@ -74,16 +106,23 @@ int_debugprint:
 	bl	debug_print
 	LDMFD	SP!, {R1,PC\}
 
-;int loadfile(wchar* filepath, ulong startaddr, ulong size)
+;int loadfile(wchar* filepath, ulong target_addr, ulong size)
 ;loads file to RAM under specific address
 ;returns bytes read or 0 if error
 loadfile:
 	STMFD	SP!,{R3-R6,LR\}
 	mov	r4, r1
 	mov	r5, r2
+	mov	r6, r0
+
+	mov	r1, r4
+	ldr	r0, [s_fileload_a]
+	bl	debug_print
+
+	mov	r0, r6
 
 	mov	r1, 4 ;flag, probably READ or READWRITE
-	mov	r0, r0	;path
+	mov	r6, r0	;path
 	bl	tfs4_open
 	mov	r6, r0
 	cmp	r0, 0	;is it FILE index or -1?
@@ -109,6 +148,8 @@ loadfile:
 loadfile_ret:
 	LDMFD	SP!, {R3-R6,PC\}
 loadfile_notfound:
+	ldr	r0, [s_loadfile_error_a]
+	bl	debug_print
 	mov	r0, 0
 	b	loadfile_ret
 

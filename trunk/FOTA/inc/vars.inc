@@ -27,6 +27,8 @@ macro DEFAULT_STRINGS_ADDR
     s_fotaoutput_a	dw s_fotaoutput
     s_uartoutput_a	dw s_uartoutput
     s_uart_newline_a	dw s_uart_newline
+    s_loadfile_error_a	dw s_loadfile_error
+    s_memcpy_a		dw s_memcpy
 }
 macro DEFAULT_STRINGS
 {
@@ -39,10 +41,12 @@ macro DEFAULT_STRINGS
     s_written			    db ' written: 0x%X',0
     s_error			    db ' ERROR!',0
     s_shutdown			    db ' SHUTDOWN',0
-    s_fileload			    db ' load 0x%X - 0x%X',0
+    s_fileload			    db ' loadfile to 0x%X',0
     s_read			    db ' read: 0x%X', 0
     s_done			    db ' done!',0
     s_fmt			    db ' %s',0
     s_dir			    db ' Dir: %s',0
+    s_loadfile_error		    db ' loadfile error (notfound?)',0
     s_uart_newline		    db 0xA,0
+    s_memcpy			    db 'memcpy 0x%X=>0x%X,s=0x%X',0
 }
