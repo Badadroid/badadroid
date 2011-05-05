@@ -1,0 +1,284 @@
+Set cpu clk. from 400MHz to 800MHz.
+OM=0x9, device=OnenandMux(Audi)
+IROM e-fused version.
+s5p_get_average_adc
+s5p_get_average_adc: adc_arr = 2397
+s5p_get_average_adc: adc_arr = 2351
+s5p_get_average_adc: adc_arr = 2396
+s5p_get_average_adc: adc_arr = 2413
+s5p_get_average_adc: adc_arr = 2353
+s5p_get_average_adc: adc_arr = 2405
+s5p_get_average_adc: adc_arr = 2339
+s5p_get_average_adc: adc_arr = 2350
+s5p_get_average_adc: adc_arr = 2481
+s5p_get_average_adc: adc_arr = 2445
+s5p_get_average_adc: adc_max = 2481, adc_min = 2339
+check_revision: REVISION_ADC_VALUE = 2318
+
+-----------------------------------------------------------
+   Samsung Secondary Bootloader (SBL) v3.0
+   Copyright (C) Samsung Electronics Co., Ltd. 2006-2010
+
+   Board Name: ARIES REV 02
+   Build On: Oct 14 2010 07:13:43
+-----------------------------------------------------------
+
+Re_partition: magic code(0x0)
+[PAM:   ] ++FSR_PAM_Init
+[PAM:   ]   OneNAND physical base address       : 0xb0000000
+[PAM:   ]   OneNAND virtual  base address       : 0xb0000000
+[PAM:   ]   OneNAND nMID=0xec : nDID=0x60
+[PAM:   ] --FSR_PAM_Init
+fsr_bml_load_partition: pi->nNumOfPartEntry = 12
+partitions loading success
+board partition information update.. source: 0x0
+.Done.
+ read 1 units.
+==== PARTITION INFORMATION ====
+ ID         : IBL+PBL (0x0)
+ ATTR       : RO SLC (0x1002)
+ FIRST_UNIT : 0
+ NO_UNITS   : 1
+===============================
+ ID         : PIT (0x1)
+ ATTR       : RO SLC (0x1002)
+ FIRST_UNIT : 1
+ NO_UNITS   : 1
+===============================
+ ID         : EFS (0x14)
+ ATTR       : RW STL SLC (0x1101)
+ FIRST_UNIT : 2
+ NO_UNITS   : 40
+===============================
+ ID         : SBL (0x3)
+ ATTR       : RO SLC (0x1002)
+ FIRST_UNIT : 42
+ NO_UNITS   : 5
+===============================
+ ID         : SBL2 (0x4)
+ ATTR       : RO SLC (0x1002)
+ FIRST_UNIT : 47
+ NO_UNITS   : 5
+===============================
+ ID         : PARAM (0x15)
+ ATTR       : RW STL SLC (0x1101)
+ FIRST_UNIT : 52
+ NO_UNITS   : 20
+===============================
+ ID         : KERNEL (0x6)
+ ATTR       : RO SLC (0x1002)
+ FIRST_UNIT : 72
+ NO_UNITS   : 30
+===============================
+ ID         : RECOVERY (0x7)
+ ATTR       : RO SLC (0x1002)
+ FIRST_UNIT : 102
+ NO_UNITS   : 30
+===============================
+ ID         : FACTORYFS (0x16)
+ ATTR       : RW STL SLC (0x1101)
+ FIRST_UNIT : 132
+ NO_UNITS   : 1074
+===============================
+ ID         : DATAFS (0x17)
+ ATTR       : RW STL SLC (0x1101)
+ FIRST_UNIT : 1206
+ NO_UNITS   : 2056
+===============================
+ ID         : CACHE (0x18)
+ ATTR       : RW STL SLC (0x1101)
+ FIRST_UNIT : 3262
+ NO_UNITS   : 700
+===============================
+ ID         : MODEM (0xb)
+ ATTR       : RO SLC (0x1002)
+ FIRST_UNIT : 3962
+ NO_UNITS   : 50
+===============================
+loke_init: j4fs_open success..
+load_lfs_parameters valid magic code and version.
+load_debug_level reading debug level from file successfully(0x574f4c44).
+init_fuel_gauge: vcell = 4052mV, soc = 91
+reading nps status file is successfully!.
+nps status=0x504d4f43
+PMIC_IRQ1    = 0x20 
+PMIC_IRQ2    = 0x0 
+PMIC_IRQ3    = 0x0 
+PMIC_IRQ4    = 0x0 
+PMIC_STATUS1 = 0x40 
+PMIC_STATUS2 = 0x0 
+get_debug_level current debug level is 0x574f4c44.
+aries_process_platform: Debug Level Low
+keypad_scan: key value ----------------->= 0x0
+CONFIG_ARIES_REV:32 , CONFIG_ARIES_REV03:48 
+aries_process_platform: final s1 booting mode = 0
+AST_POWERON..
+DISPLAY_PATH_SEL[MDNIE 0x1]is on
+MDNIE setting Init start!!
+vsync interrupt is off
+video interrupt is off
+[fb0] turn on
+MDNIE setting Init end!!
+
+Autoboot (0 seconds) in progress, press any key to stop Autoboot aborted..
+SBL> help setenv
+* Help : setenv
+* Usage : setenv [name] [value] . .
+	Modify current environment info on ram
+
+SBL> help saveenv
+* Help : saveenv
+* Usage : saveenv
+	Save cuurent environment info to flash
+
+SBL> help printenv
+* Help : printenv
+* Usage : printenv
+	Print current environment info on ram
+
+SBL> help reset
+* Help : reset
+* Usage : reboot
+Reboot system
+
+SBL> help boot
+* Help : boot
+* Usage : boot [kernel options]
+Boot Linux with optional kernel options
+
+SBL> help kernel
+* Help : kernel
+* Usage : kernel hex_adr
+Change the Linux kernel base
+
+SBL> help format
+* Help : format
+* Usage : format
+	format device
+SBL> help open
+* Help : open
+* Usage : open
+	open device
+SBL> help close
+* Help : close
+* Usage : close
+	close device
+SBL> help erasepart
+* Help : erasepart
+* Usage : erasepart partition_id
+	erase part of units
+       - ex) erase 0x9(temp partition)
+SBL> help eraseall
+* Help : eraseall
+* Usage : eraseall
+	erase all units
+SBL> help loadkernel
+* Help : loadkernel
+* Usage : loadkernel
+	load kernel image
+       - loadkernel 0x80A00000 from kernel partition
+SBL> help showpart
+* Help : showpart
+* Usage : showpart
+	show partition information
+SBL> help delpart
+* Help : delpart
+* Usage : delpart
+	delete last partition information
+SBL> help savepart
+* Help : savepart
+* Usage : savepart
+	save partition information
+SBL> help nkernel
+* Help : nkernel
+* Usage : nkernel command
+* Usage : nkernel
+	read kernel from flash to DDR
+
+SBL> help nramdisk
+* Help : nramdisk
+* Usage : nramdisk command
+* Usage : nramdisk
+	read ramdisk from flash to DDR
+
+SBL> help nandread
+* Help : nandread
+* Usage : * Usage : nandread <PARTID> <SIZE>
+	read partition from flash to SDRAM(0x80000000)
+
+SBL> help nandwrite
+* Help : nandwrite
+* Usage : * Usage: nandwrite <PARTID> <SIZE>
+	write partition from SDRAM(0x80000000) to flash
+
+SBL> help usb
+* Help : usb
+* Usage : usb download command
+SBL> help mmctest
+* Help : mmctest
+* Usage : *Usage : mmctest 
+
+SBL> help keyread
+* Help : keyread
+* Usage : *Usage : keyread 
+
+SBL> help readadc
+* Help : readadc
+* Usage : *Usage : readadc <channel> 
+
+SBL> help usb_read
+* Help : usb_read
+* Usage : usb_read reg
+Read the usb ic register
+
+SBL> help usb_write
+* Help : usb_write
+* Usage : usb_write reg, val
+Read the usb ic register
+
+SBL> help fuelgauge
+* Help : fuelgauge
+* Usage : *usage : fuelgauge
+
+SBL> help pmic_read
+* Help : pmic_read
+* Usage : pmic_read reg
+Read the pmic register
+
+SBL> help pmic_write
+* Help : pmic_write
+* Usage : pmic_write reg, val
+Read the pmic register
+
+SBL> help reset_cp
+* Help : reset_cp
+* Usage : *Usage : reset_cp 
+
+SBL> printenv
+PARAM Rev 1.3
+SERIAL_SPEED : 7
+LOAD_RAMDISK : 0
+BOOT_DELAY : 0
+LCD_LEVEL : 97
+SWITCH_SEL : 5
+PHONE_DEBUG_ON : 0
+LCD_DIM_LEVEL : 0
+LCD_DIM_TIME : 6
+MELODY_MODE : 1
+REBOOT_MODE : 0
+NATION_SEL : 0
+LANGUAGE_SEL : 0
+SET_DEFAULT_PARAM : 0
+PARAM_INT_13 : 0
+PARAM_INT_14 : 0
+VERSION : I9000XXIL
+CMDLINE : console=ttySAC2,115200 loglevel=4
+DELTA_LOCATION : /mnt/rsv
+PARAM_STR_3 : 
+PARAM_STR_4 : 
+SBL> boot
+setting param.serialnr=0x35302c2b 0xbb7d00ec
+setting param.board_rev=0xb
+setting param.cmdline=console=ttySAC2,115200 loglevel=4
+
+Starting kernel at 0x32000000...
