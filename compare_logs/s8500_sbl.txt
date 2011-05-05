@@ -1,4 +1,4 @@
-=~=~=~=~=~=~=~=~=~=~=~= PuTTY log 2011.05.05 22:07:51 =~=~=~=~=~=~=~=~=~=~=~=
+=~=~=~=~=~=~=~=~=~=~=~= PuTTY log 2011.05.06 00:10:33 =~=~=~=~=~=~=~=~=~=~=~=
 [PAM:   ] ++FSR_PAM_Init
 [PAM:   ]   OneNAND physical base address       : 0xb0000000
 [PAM:   ]   OneNAND virtual  base address       : 0xb0000000
@@ -26,7 +26,7 @@ S6E63M0 : LDI_Pentile_Set_Change Pentile_Value =6c
 ---FIMD_Drv_SetWinOnOff(WIN4:1)
 LCD initialize Finished
 Flash_Unlock failed
-Poweron status - 1428
+Poweron status - 28
 FSA9480 0x03 Register = 1
 FSA9480 0x0A Register = 0
 FSA9480 0x0B Register = 8
@@ -65,6 +65,7 @@ SD_HostCtrl_IssueCommand[ch0] not SDclk off, cmd13, SD_CLK_CTRL:0xf
  Themes
  Videos
  galaxyboot
+ loadfile to 0x40244000
  debug: 1310720
 
 Set cpu clk. from 800MHz to 800MHz.
@@ -172,8 +173,6 @@ SD_HostCtrl_IssueCommand[ch0] not SDclk off, cmd13, SD_CLK_CTRL:0xf
 MDNIE setting Init end!!
 
 Autoboot (0 seconds) in progress, press any key to stop Autoboot aborted..
-SBL> 
-SBL> 
 SBL> 
 SBL> 
 SBL> 
