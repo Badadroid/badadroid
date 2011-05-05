@@ -13,7 +13,7 @@ START	;don't touch this macro, it contains correct FOTA magic numbers and does a
 	MOV	r1, #1
 	LDR	r0, [pagetable]
 	BL	MemMMUCacheEnable
-	bl	enable_fota_output;enable_uart_output
+	bl	enable_uart_output;enable_fota_output;
 	;MOV     R0, 1234
 	;BL      int_debugprint      ;prints "debug:1234" to the FOTA or UART
 	BL	__PfsNandInit	    ;oneNAND FS
@@ -29,8 +29,7 @@ START	;don't touch this macro, it contains correct FOTA magic numbers and does a
 	LDR	R3, [sbl_start]
 	BLX	R3
 
-
-	BL	fota_dloadmode	    ;enter download mode and inform about that after all, that makes our life easier
+	;BL      fota_dloadmode      ;enter download mode and inform about that after all, that makes our life easier
 
 FUNCTIONS ;macro from functions.inc
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;; variables below
@@ -43,12 +42,12 @@ DEFAULT_STRINGS_ADDR	;macro from vars.inc
     sbl_size	     dw 0x140000   ;262144 bytes
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;; add custom strings addresses below (for using by LDR op)
-    s_dir_path_a     dw s_dir_path
+    ;s_dir_path_a     dw s_dir_path
     s_sbl_path_a     dw s_sbl_path
 
 DEFAULT_STRINGS 	;macro from vars.inc
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;; ;add custom strings below
-    s_dir_path	     du '/g/',0 ;tfs4 path must be wchar string
+    ;s_dir_path       du '/g/',0 ;tfs4 path must be wchar string
     ;/g/ is the User Media storage space in internal SDHC
     s_sbl_path	     du '/g/galaxyboot/Sbl_mijoma.bin',0
 
