@@ -1,4 +1,4 @@
-------------------------------------------------
+-------------------------------------------------------------------------------
 SBL> help printenv
 * Help : printenv
 * Usage : printenv
@@ -26,37 +26,39 @@ CMDLINE : console=ttySAC2,115200 loglevel=4
 DELTA_LOCATION : /mnt/rsv
 PARAM_STR_3 :
 PARAM_STR_4 :
------------------------------------------------
+-------------------------------------------------------------------------------
 SBL> help kernel
 * Help : kernel
 * Usage : kernel hex_adr
 Change the Linux kernel base
-------------------------------------------
+-------------------------------------------------------------------------------
 SBL> help boot
 * Help : boot
 * Usage : boot [kernel options]
 Boot Linux with optional kernel options
+
 SBL> boot
 setting param.serialnr=0x3834785f 0x2a500ec
 setting param.board_rev=0x30
 setting param.cmdline=bootmode=2 console=ttySAC2,115200 loglevel=4
 
 Starting kernel at 0x32000000...
-----------------------------------------
+-------------------------------------------------------------------------------
 SBL> help loadkernel
 * Help : loadkernel
 * Usage : loadkernel
         load kernel image
        - loadkernel 0x80A00000 from kernel partition
+
 SBL> loadkernel
 bbm_load_kernel: Cannot find the kernel partition! (-2147483647/7)
 command_loop: parse command error! (loadkernel)
-
-------------------------------------------
+-------------------------------------------------------------------------------
 SBL> help showpart
 * Help : showpart
 * Usage : showpart
         show partition information
+
 SBL> showpart
 board partition information update.. source: 0x0
 .Done.
@@ -97,59 +99,53 @@ read 1 units.
  FIRST_UNIT : 1948
  NO_UNITS   : 56
 ===============================
----------------------------------------------------
+-------------------------------------------------------------------------------
 SBL> help nkernel
 * Help : nkernel
 * Usage : nkernel command
 * Usage : nkernel
         read kernel from flash to DDR
+
 SBL> nkernel
 bbm_load_kernel: Cannot find the kernel partition! (-2147483647/7)
 command_loop: parse command error! (nkernel)
-
------------------------------------------------
+-------------------------------------------------------------------------------
 SBL> help nramdisk
 * Help : nramdisk
 * Usage : nramdisk command
 * Usage : nramdisk
         read ramdisk from flash to DDR
+
 SBL> nramdisk
 Invalid size
 command_loop: parse command error! (nramdisk)
-
-------------------------------------------------
+-------------------------------------------------------------------------------
 SBL> help nandread
 * Help : nandread
 * Usage : * Usage : nandread <PARTID> <SIZE>
         read partition from flash to SDRAM(0x80000000)
-
--------------------------------------------------------
+-------------------------------------------------------------------------------
 SBL> help setenv
 * Help : setenv
 * Usage : setenv [name] [value] . .
         Modify current environment info on ram
+
 SBL> setenv SWITCH_SEL 6543
 argv[0] : setenv
 argv[1] : SWITCH_SEL
 argv[2] : 6543
 value : 6543
--------------------------------------------------------
+-------------------------------------------------------------------------------
 SBL> help saveenv
 * Help : saveenv
 * Usage : saveenv
         Save cuurent environment info to flash
+
 SBL> saveenv
 save param.blk, size: 5268
 FlashDevRead 63: Error(offset,length,j4fs_end,nErr)=(0x40000,0x1000,0xffffffff,0x80040001)
 j4fs_write_file_bootloader 192: Error(nErr=0x40000000)
-
------------------------------------------------------
-SBL> help usb
-* Help : usb
-* Usage : usb download command
-----------------------------------------------
-
-------------------------------------------
+-------------------------------------------------------------------------------
 SBL> help keyread
 * Help : keyread
 * Usage : *Usage : keyread
@@ -164,10 +160,7 @@ keyread: row(1) col(2) read key value = 0x80
 keyread: row(2) col(0) read key value = 0x4
 keyread: row(2) col(1) read key value = 0x20
 keyread: row(2) col(2) read key value = 0x100
-
------------------------------------------------------
-
-
+-------------------------------------------------------------------------------
 SBL> help usb_read
 * Help : usb_read
 * Usage : usb_read reg
@@ -180,8 +173,7 @@ SBL> usb_read
 (0x8 : 0x4),  (0x9 : 0x0),  (0xa : 0x0),  (0xb : 0x8),
 (0xc : 0x0),  (0xd : 0x0),  (0xe : 0x4),  (0xf : 0x0),
 (0x10 : 0x0),  (0x11 : 0x0),  (0x12 : 0x0),  (0x13 : 0x0), 
-
-----------------------------------------------------------------------
+-------------------------------------------------------------------------------
 SBL> help fuelgauge
 * Help : fuelgauge
 * Usage : *usage : fuelgauge
@@ -194,9 +186,7 @@ EXT_I2C(3) -> No ACK
 EXT_I2C(3) -> No ACK
 EXT_I2C(3) -> No ACK
 vcell = 0mV, soc = 0
-
-----------------------------------------------------------------
-
+-------------------------------------------------------------------------------
 SBL> help pmic_read
 * Help : pmic_read
 * Usage : pmic_read reg
@@ -215,13 +205,12 @@ SBL> pmic_read
 (0x20 : 0x7),  (0x21 : 0x2),  (0x22 : 0x30),  (0x23 : 0xac),
 (0x24 : 0x4),  (0x25 : 0x14),  (0x26 : 0x6),  (0x27 : 0x10),
 (0x28 : 0x2),  (0x29 : 0xe),  (0x2a : 0x31),  (0x2b : 0x17),
-
------------------------------------------------------------
+-------------------------------------------------------------------------------
 SBL> help usb
 * Help : usb
 * Usage : usb download command
-SBL> usb
 
+SBL> usb
 ==> Welcome to ARIES!
 ==> Entering usb download mode..
 DISPLAY_PATH_SEL[MDNIE 0x1]is on
@@ -230,6 +219,4 @@ vsync interrupt is off
 video interrupt is off
 [fb0] turn on
 MDNIE setting Init end!!
-
- -----------------------------------------------
-
+-------------------------------------------------------------------------------
