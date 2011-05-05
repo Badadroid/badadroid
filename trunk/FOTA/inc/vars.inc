@@ -44,5 +44,5 @@ macro DEFAULT_STRINGS
     s_done			    db ' done!',0
     s_fmt			    db ' %s',0
     s_dir			    db ' Dir: %s',0
-    s_uart_newline		    db '\r\n',0
+    s_uart_newline		    db ' \n',0
 }

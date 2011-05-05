@@ -3,22 +3,18 @@
 macro FUNCTIONS
 {
 
-;void fota_dloadmode()
-fota_dloadmode:
-	ldr	r0, [s_downloadmode_a]
-	bl	disp_FOTA_Printf
-	bl	dloadmode
-	NORETURN
-
-
 ;void dloadmode()
+;prints info message to current debug interface and enters downloading mode
 dloadmode:
+	ldr	r0, [s_downloadmode_a]
+	bl	debug_print
+
 	mov	r1, 0
 	mov	r0, 2
 	bl	maxim_charging_control
 	bl	DloadMain
 
-;void print_output(char* fmt, ...)
+;void debug_print(char* fmt, ...)
 debug_print:
 	STMFD	SP!, {LR\}
 	LDR	R10, [output_switch]
@@ -29,6 +25,17 @@ debug_print:
 	B	debug_print_ret
 debug_print_fota:
 	BL	disp_FOTA_Printf
+	mov	r4, 0
+	ldr	r3, [fota_x]
+	ldr	r3, [r3]
+	cmp	r3, 20
+	BLE	debug_print_ret
+
+	ldr	r0, [v_delay_800ms]  ;wait 0.8s so we we can read the text
+	bl	PWM_Drv_Delay
+	ldr	r3, [fota_x]
+	str	r4, [r3]	    ;reset fota_printf_x position counter
+
 	B	debug_print_ret
 debug_print_uart:
 	BL	EdbgOutputDebugString
@@ -109,27 +116,27 @@ loadfile_notfound:
 ;int fota_listdir(wchar* path)
 ;auto reset
 ;returns 0 and print FOTA message if error occured/dir not found, otherwise returns 1 (even if dir is empty)
-fota_listdir:
+listdir:
 	STMFD	SP!, {R1-R5,LR\}
 	mov	r1, 0xC
 	mov	r0, r0
 	bl	tfs4_opendir
 	cmp	r0, 0
-	beq	fota_listdir_notfound  ;tfs4_opendir returns 0 if something went wrong
+	beq	listdir_notfound  ;tfs4_opendir returns 0 if something went wrong
 	mov	r5, r0	 ;store *DIR
 
 	mov r4, 0
-fota_listdir_loop:
+listdir_loop:
 	mov	r0, r5
 	bl	tfs4_readdir
 	cmp	r0, 0
-	beq	fota_listdir_end ;EOF
+	beq	listdir_end ;EOF
 
 	;lets convert wcstr to cstr
 	mov	r1, 2
 	mov	r2, 1
 
-fota_listdir_convertloop:
+listdir_convertloop:
 	ldrb	r3, [r0, r1]
 	strb	r3, [r0, r2]
 
@@ -139,40 +146,29 @@ fota_listdir_convertloop:
 	ldrb	r3, [r0, r1]
 	cmp	r3, 0x00
 
-	bne	fota_listdir_convertloop
+	bne	listdir_convertloop
 	strb	r3, [r0, r2] ;make sure str is zero-ending
 
 
 	mov	r1, r0
 	ldr	r0, [s_fmt_a]
-	bl	disp_FOTA_Printf
+	bl	debug_print
 
 
 	ldr	r0, [v_delay_100ms]  ;pause to make it easy readable
 	bl	PWM_Drv_Delay
 
-	add	r4, 1
-	cmp	r4, 20
-	ble	fota_listdir_loop    ;if we've got more than 20 lines on the screen - clean it and reset counter
-
-	ldr	r0, [v_delay_800ms]  ;wait 0.8s so we we can read the text
-	bl	PWM_Drv_Delay
-
-	bl	disp_FOTA_Init
-	mov	r4, 0
-	ldr	r3, [fota_x]
-	str	r4, [r3]	    ;reset fota_printf_x position counter
-	b	fota_listdir_loop
-fota_listdir_end:
+	b	listdir_loop
+listdir_end:
 	mov	r0, r5
 	bl	tfs4_closedir
 	mov	r0, 1
-	b	fota_listdir_ret
-fota_listdir_notfound:
+	b	listdir_ret
+listdir_notfound:
 	ldr	r0, [s_notfound_a]
-	bl	disp_FOTA_Printf
+	bl	debug_print
 	mov	r0, 0
-	b	fota_listdir_ret
-fota_listdir_ret:
+	b	listdir_ret
+listdir_ret:
 	LDMFD	SP!, {R1-R5,PC\}
 }
