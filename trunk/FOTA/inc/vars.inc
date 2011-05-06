@@ -15,7 +15,8 @@ macro DEFAULT_STRINGS_ADDR
 {
     s_fmt_a		dw s_fmt
     s_dir_a		dw s_dir
-    s_debug_fmt_a	dw s_debug_fmt
+    s_debug_fmt_hex_a	dw s_debug_fmt_hex
+    s_debug_fmt_int_a	    dw s_debug_fmt_int
     s_notfound_a	dw s_notfound
     s_downloadmode_a	dw s_downloadmode
     s_memdump_a 	dw s_memdump
@@ -36,8 +37,10 @@ macro DEFAULT_STRINGS
     s_uartoutput		    db ' UART OUTPUT ENABLED',0
     s_downloadmode		    db ' ENTERING DOWNLOAD MODE',0
     s_notfound			    db ' not found!',0
-    s_debug_fmt 		    db ' debug: %d',0
-    s_memdump			    db ' dump 0x%X - 0x%X',0
+    s_debug_fmt_int		    db ' debug: %d',0
+    s_debug_fmt_hex		    db ' debug: 0x%X',0
+
+    s_memdump			    db ' dump 0x%X,s=0x%X',0
     s_written			    db ' written: 0x%X',0
     s_error			    db ' ERROR!',0
     s_shutdown			    db ' SHUTDOWN',0

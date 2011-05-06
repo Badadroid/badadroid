@@ -8,48 +8,31 @@ include 'inc/functions.inc'
 ; VERY rough code for loading sbl to 0x40244000 and Kernel to 0x32000000, then executes KERNEL.
 ; Sbl is unused in this code
 START
-	MOV	r1, #1
+	MOV	r1, #0
 	LDR	r0, [pagetable]
 	BL	MemMMUCacheEnable
+
+	BL	CoDisableDCache
+	BL	CoDisableMmu
+
 	bl	enable_fota_output
 	MOV	R0, 1234
 	BL	int_debugprint
-	BL	__PfsNandInit
-	BL	__PfsMassInit
 
+	LDR	R0, [opcode]
+	LDR	R1, [kernel_start]
+	STR	R0, [R1]
 
-	ldr	r0, [s_loadsbl_a]
-	bl	debug_print
-	LDR	R2, [sbl_size]
-	LDR	R1, [sbl_start]
-	LDR	R0, [s_sbl_path_a]
-	BL	loadfile
-	BL	int_debugprint
-	ldr	r0, [s_done_a]
-	bl	debug_print
+	MOV	R0, 0
+	LDR	R0, [R1]
+	BL	hex_debugprint
 
-	ldr	r0, [s_loadkernel_a]
-	bl	debug_print
-	LDR	R2, [kernel_size]
-	LDR	R1, [kernel_buf]
-	LDR	R0, [s_kernel_path_a]
-	BL	loadfile
-	BL	int_debugprint
-	ldr	r0, [s_done_a]
-	bl	debug_print
-
-	ldr	r0, [s_mmuoff_a]
-	bl	debug_print
-	bl	CoDisableMmu
-	ldr	r0, [s_done_a]
-	bl	debug_print
-
-	LDR	R1, [sbl_start]
+	LDR	R1, [kernel_start]
 	LDR	R0, [s_jumpingout_a]
 	BL	debug_print
 
-	LDR	R5, [sbl_start]
-	BLX	R5
+	;LDR     R5, [kernel_start]
+	;BLX     R5
 
 	ldr	r0, [s_kernelreturn_a]
 	bl	debug_print
@@ -60,14 +43,8 @@ FUNCTIONS
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;; variables below
 DEFAULT_VARIABLES
     pagetable		dw gMMUL1PageTable
-
-    sbl_start		dw 0x40244000
-    sbl_size		dw 0x140000
-
-    kernel_buf		dw 0x41000000
+    opcode		dw 0xE1A0F00E
     kernel_start	dw 0x32000000
-    kernel_size 	dw 0x6664C8  ;6710472
-
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;; strings at the end
 DEFAULT_STRINGS_ADDR
@@ -93,14 +70,6 @@ DEFAULT_STRINGS
     s_mmuoff	     db ' Turning off MMU',0
     s_kernelreloc    db ' Reloc kernel to 0x%X',0
     s_kernelreturn   db ' WTF KERNEL RETURNED',0
-
-copykernel:
-	code_len = copykernel - c_start
-	db	0x4000 - code_len dup 0xFF
-	MOV	R0, 9999
-	BL	int_debugprint
-	BL	dloadmode
-
 
 
     
