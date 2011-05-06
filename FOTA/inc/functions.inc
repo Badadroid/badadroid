@@ -102,10 +102,58 @@ enable_uart_output:
 int_debugprint:
 	STMFD	SP!, {R1,LR\}
 	mov	r1, r0
-	ldr	r0, [s_debug_fmt_a]
+	ldr	r0, [s_debug_fmt_int_a]
 	bl	debug_print
 	LDMFD	SP!, {R1,PC\}
 
+;void hex_debugprint(int num)
+hex_debugprint:
+	STMFD	SP!, {R1,LR\}
+	mov	r1, r0
+	ldr	r0, [s_debug_fmt_hex_a]
+	bl	debug_print
+	LDMFD	SP!, {R1,PC\}
+;void memdump(wchar* filepath, ulong source_addr, ulong size)
+memdump:
+	STMFD	SP!, {R1-R6,LR\}
+	MOV	r4, R0
+	MOV	r5, R1
+	MOV	r6, R2
+
+
+	mov	r2, r6
+	mov	r1, r5
+	ldr	r0, [s_memdump_a]
+	bl	disp_FOTA_Printf
+
+	mov	r1, 0xC
+	mov	r0, R4
+	bl	tfs4_open
+	cmp	r0, 0
+	blt	memdump_notfound
+	mov	r11, r0
+
+	sub	r2, r6, r5 ;len = end-start
+	mov	r1, r5
+	mov	r0, r11
+	bl	tfs4_write
+
+	mov	r1, r0
+	ldr	r0, [s_written_a]
+	bl	disp_FOTA_Printf
+
+	mov	r0, r11
+	bl	tfs4_close
+
+	ldr	r0, [s_done_a]
+	bl	disp_FOTA_Printf
+	b	memdump_ret
+memdump_notfound:
+	ldr	r0, [s_loadfile_error_a]
+	bl	debug_print
+	mov	r0, 0
+memdump_ret:
+	LDMFD	SP!, {R1,PC\}
 ;int loadfile(wchar* filepath, ulong target_addr, ulong size)
 ;loads file to RAM under specific address
 ;returns bytes read or 0 if error
