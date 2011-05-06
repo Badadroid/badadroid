@@ -1,4 +1,4 @@
-=~=~=~=~=~=~=~=~=~=~=~= PuTTY log 2011.05.05 23:33:55 =~=~=~=~=~=~=~=~=~=~=~=
+=~=~=~=~=~=~=~=~=~=~=~= PuTTY log 2011.05.06 23:17:03 =~=~=~=~=~=~=~=~=~=~=~=
 [PAM:   ] ++FSR_PAM_Init
 [PAM:   ]   OneNAND physical base address       : 0xb0000000
 [PAM:   ]   OneNAND virtual  base address       : 0xb0000000
@@ -64,13 +64,9 @@ SD_HostCtrl_IssueCommand[ch0] not SDclk off, cmd13, SD_CLK_CTRL:0xf
  debug: 1310720
  done!
  Loading kernel image to buf
- loadfile to 0x41000000
+ loadfile to 0x40000000
  debug: 6710472
  done!
  Turning off MMU
  done!
- Reloc kernel to 0x32000000
-memcpy 0x41000000=>0x32000000,s=0x6664C8
- debug: 6710472
- done!
- Jumpout to 0x32000000
+ Jumpout to 0x40000000
