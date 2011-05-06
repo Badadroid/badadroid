@@ -44,11 +44,11 @@ START
 	ldr	r0, [s_done_a]
 	bl	debug_print
 
-	LDR	R1, [sbl_start]
+	LDR	R1, [kernel_buf]
 	LDR	R0, [s_jumpingout_a]
 	BL	debug_print
 
-	LDR	R5, [sbl_start]
+	LDR	R5, [kernel_buf]
 	BLX	R5
 
 	ldr	r0, [s_kernelreturn_a]
@@ -64,7 +64,7 @@ DEFAULT_VARIABLES
     sbl_start		dw 0x40244000
     sbl_size		dw 0x140000
 
-    kernel_buf		dw 0x41000000
+    kernel_buf		dw 0x40000000
     kernel_start	dw 0x32000000
     kernel_size 	dw 0x6664C8  ;6710472
 
@@ -84,7 +84,7 @@ DEFAULT_STRINGS_ADDR
 
 DEFAULT_STRINGS
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;; ;add custom strings below
-    s_kernel_path    du '/g/galaxyboot/zImage_return',0
+    s_kernel_path    du '/g/galaxyboot/zImage',0
     s_sbl_path	     du '/g/galaxyboot/Sbl_mijoma.bin',0
 
     s_loadsbl	     db ' Loading SBL',0
