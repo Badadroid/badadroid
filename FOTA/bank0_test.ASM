@@ -14,39 +14,52 @@ START
 	MOV	R0, 1234
 	BL	int_debugprint
 
-semafor:
-	BL	Get_Onedram_Semaphore
-	CMP	R0, #0
-	BEQ	semafor
+	BL	testmembank
+	BL	testmembank
+	BL	testmembank
+	BL	testmembank
+	BL	testmembank
+	BL	testmembank
+	BL	testmembank
+	BL	testmembank
+	BL	testmembank
+	BL	testmembank
+	BL	testmembank
+	BL	testmembank
+	BL	testmembank
+	BL	testmembank
+	BL	testmembank
+	BL	testmembank
 
-	LDR	R0, [opcode]
-	LDR	R1, [kernel_start]
-	;STR     R0, [R1]
-	;BL      Onedram_Release_Semaphore
-
-	LDR	R1, [kernel_start]
-	MOV	R0, 0
-	LDR	R0, [R1]
-	BL	hex_debugprint
-
-	LDR	R1, [kernel_start]
-	LDR	R0, [s_jumpingout_a]
-	BL	debug_print
-
-	;LDR     R5, [kernel_start]
-	;BLX     R5
-
-	ldr	r0, [s_kernelreturn_a]
-	bl	debug_print
 
 	BL	dloadmode
 
+testmembank:
+	STMFD	SP!, {R0-R1,LR}
+
+semafor:
+	;BL      Get_Onedram_Semaphore
+	;CMP     R0, #0
+       ; BEQ     semafor
+
+	LDR	R0, [opcode]
+	LDR	R1, [write_addr]
+	STR	R0, [R1]
+
+	LDR	R0, [semaphore]
+	LDR	R0, [R0]
+	LDR	R0, [R0]
+	BL	hex_debugprint
+	BL	Onedram_Release_Semaphore
+	LDMFD	SP!, {R0-R1,PC}
 FUNCTIONS
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;; variables below
 DEFAULT_VARIABLES
     pagetable		dw gMMUL1PageTable
     opcode		dw 0xE1A0F00E
-    kernel_start	dw 0x32000000
+    write_addr		dw 0x32000000
+    read_addr		dw 0x32000000
+    semaphore		dw 0x25FFF800
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;; strings at the end
 DEFAULT_STRINGS_ADDR

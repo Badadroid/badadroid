@@ -41,7 +41,7 @@ macro DEFAULT_STRINGS
     s_debug_fmt_hex		    db ' debug: 0x%X',0
 
     s_memdump			    db ' dump 0x%X,s=0x%X',0
-    s_written			    db ' written: 0x%X',0
+    s_written			    db ' dump_return: 0x%X',0
     s_error			    db ' ERROR!',0
     s_shutdown			    db ' SHUTDOWN',0
     s_fileload			    db ' loadfile to 0x%X',0
