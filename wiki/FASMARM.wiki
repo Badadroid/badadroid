@@ -3,4 +3,4 @@
 = Introduction =
 
 in notepad++ press F5 and paste:
-D:\worksapce\android\FASMARM\FASMARM.EXE "$(FULL_CURRENT_PATH)"
+D:\worksapce\FASMARM\FASMARM.EXE "$(FULL_CURRENT_PATH)"
