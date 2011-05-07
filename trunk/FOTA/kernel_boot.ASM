@@ -36,8 +36,13 @@ START
 	str	r0, [r1]
 	ldr	r1, [sbl_atag_addr2]
 	str	r0, [r1]
+
 	ldr	r0, [kernel_ptr]
 	ldr	r1, [sbl_kernel_addr]
+	str	r0, [r1]
+
+	ldr	r0, [jmp_by_14_ops]
+	ldr	r1, [sbl_jmp_patch]
 	str	r0, [r1]
 	ldr	r0, [s_done_a]
 	bl	debug_print
@@ -149,6 +154,8 @@ DEFAULT_VARIABLES
     kernel_ptr		dw copykernel;0x44000000
 
     opcode		dw 0xE1A0F00E
+    jmp_by_14_ops	dw 0xEA00000C
+    sbl_jmp_patch	dw 0x40246D88
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;; strings at the end
 DEFAULT_STRINGS_ADDR
