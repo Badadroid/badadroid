@@ -103,5 +103,5 @@ copykernel:
 	;bl      enable_fota_output
 	MOV	R0, 9999
 	BL	int_debugprint
-	BL	dloadmode
+	BX	LR
 END
