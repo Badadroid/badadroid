@@ -135,6 +135,23 @@ copykernel:
 	BL	int_debugprint
 
 	BL	testmembank
+	BL	testmembank
+	BL	testmembank
+	BL	testmembank
+	BL	testmembank
+	BL	testmembank
+	BL	testmembank
+	BL	testmembank
+	BL	testmembank
+	BL	testmembank
+	BL	testmembank
+	BL	testmembank
+	BL	testmembank
+	BL	testmembank
+	BL	testmembank
+	BL	testmembank
+	BL	testmembank
+	BL	testmembank
 
 	LDMFD	SP!, {R1-R2,PC}
 
