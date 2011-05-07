@@ -46,7 +46,7 @@ rebell_memcpy_copyloop:
 
 ;void debug_print(char* fmt, ...)
 debug_print:
-	STMFD	SP!, {R0-R4,LR\}
+	STMFD	SP!, {R0-R11,LR\} ;make sure no registers change
 	LDR	R10, [output_switch]
 	CMP	R10, 1
 	BEQ	debug_print_fota
@@ -75,7 +75,7 @@ debug_print_uart:
 	BL	EdbgOutputDebugString
 	B	debug_print_ret
 debug_print_ret:
-	LDMFD	SP!, {R0-R4,PC\}
+	LDMFD	SP!, {R0-R11,PC\}
 
 ;void enable_fota_output()
 enable_fota_output:
@@ -84,6 +84,8 @@ enable_fota_output:
 	MOV	r0, 1
 	STR	R0, [r1]
 	BL	disp_FOTA_Init
+	MOV	R0, 0x1
+	bl	disp_dimming_backlight
 	ldr	r0, [s_fotaoutput_a]
 	bl	debug_print
 	LDMFD	SP!, {R0-R1,PC\}
@@ -115,7 +117,7 @@ hex_debugprint:
 	LDMFD	SP!, {R1,PC\}
 ;void memdump(wchar* filepath, ulong buf, ulong size)
 memdump:
-	STMFD	SP!, {R1-R7,LR\}
+	STMFD	SP!, {R1-R10,LR\}
 	MOV	r4, R0
 	MOV	r5, R1
 	MOV	r6, R2
@@ -124,36 +126,39 @@ memdump:
 	mov	r2, r6
 	mov	r1, r5
 	ldr	r0, [s_memdump_a]
-	bl	disp_FOTA_Printf
-
+	bl	debug_print
 	mov	r1, 0xC
 	mov	r0, R4
 	bl	tfs4_open
-	cmp	r0, 0
-	blt	memdump_notfound
-	mov	r7, r0
+	mov	r9, r0
+	cmp	r9, 0
+	blt	memdump_error
 
-	mov	r2, r6 ;len
+	mov	r2, r6;r6 ;len
 	mov	r1, r5
-	mov	r0, r7
+	mov	r0, r9
 	bl	tfs4_write
 
 	mov	r1, r0
 	ldr	r0, [s_written_a]
-	bl	disp_FOTA_Printf
+	bl	debug_print
+	cmp	r1, -1
+	beq	memdump_error
 
-	mov	r0, r7
+	mov	r0, r9
 	bl	tfs4_close
 
 	ldr	r0, [s_done_a]
-	bl	disp_FOTA_Printf
+	bl	debug_print
 	b	memdump_ret
-memdump_notfound:
-	ldr	r0, [s_loadfile_error_a]
+memdump_error:
+	BL	tfs4_get_errno
+	mov	r1, r0
+	ldr	r0, [s_dumpmem_error_a]
 	bl	debug_print
 	mov	r0, 0
 memdump_ret:
-	LDMFD	SP!, {R1-R7,PC\}
+	LDMFD	SP!, {R1-R10,PC\}
 ;int loadfile(wchar* filepath, ulong target_addr, ulong size)
 ;loads file to RAM under specific address
 ;returns bytes read or 0 if error
