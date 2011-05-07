@@ -29,6 +29,18 @@ START
 	ldr	r0, [s_done_a]
 	bl	debug_print
 
+	ldr	r0, [s_patchsbl_a]
+	bl	debug_print
+	ldr	r0, [atag_ptr]
+	ldr	r1, [sbl_atag_addr]
+	str	r0, [r1]
+	ldr	r1, [sbl_atag_addr2]
+	str	r0, [r1]
+	ldr	r0, [kernel_ptr]
+	ldr	r1, [sbl_kernel_addr]
+	str	r0, [r1]
+	ldr	r0, [s_done_a]
+	bl	debug_print
 
 	MOV	R1, SP
 	LDR	R0, [s_kernel_path_a]
@@ -62,7 +74,7 @@ START
 
 	ldr	r0, [s_kernelreturn_a]
 	bl	debug_print
-	mov	r1, 0x32000000
+       ; mov     r1, 0x32000000
 	BL	dloadmode
 testmembank:
 	STMFD	SP!, {R0-R1,LR}
@@ -109,6 +121,13 @@ DEFAULT_VARIABLES
     kernel_size 	dw 0x6664C8  ;6710472
     kernel_buf_end	dw 0x416664C8
 
+    sbl_kernel_addr	dw 0x402D4BC0
+    sbl_atag_addr	dw 0x40244FC0
+    sbl_atag_addr2	dw 0x40246DF8
+
+    atag_ptr		dw 0x40000100
+    kernel_ptr		dw 0x41000000
+
     opcode		dw 0xE1A0F00E
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;; strings at the end
@@ -122,6 +141,7 @@ DEFAULT_STRINGS_ADDR
     s_jumpingout_a   dw s_jumpingout
     s_kernelreloc_a  dw s_kernelreloc
     s_mmuoff_a	     dw s_mmuoff
+    s_patchsbl_a     dw s_patchsbl
     s_kernelreturn_a dw s_kernelreturn
 
 DEFAULT_STRINGS
@@ -135,6 +155,7 @@ DEFAULT_STRINGS
     s_mmuoff	     db ' Turning off MMU',0
     s_kernelreloc    db ' Reloc kernel to 0x%X',0
     s_kernelreturn   db ' WTF KERNEL RETURNED',0
+    s_patchsbl	     db ' Patching SBL',0
 
 copykernel:
 	code_len = copykernel - c_start
@@ -143,7 +164,7 @@ copykernel:
 	MOV	R0, 9999
 	BL	int_debugprint
 
-	BL	testmembank
+	;BL      testmembank
 
 	LDMFD	SP!, {R1-R2,PC}
 
