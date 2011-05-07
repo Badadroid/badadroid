@@ -136,9 +136,9 @@ DEFAULT_VARIABLES
     sbl_start		dw 0x40244000
     sbl_size		dw 0x140000
 
-    kernel_start	dw 0x41000000
+    kernel_start	dw 0x44000000
 
-    kernel_buf		dw 0x41000000
+    kernel_buf		dw 0x44000000
     kernel_size 	dw 0 ;overwritten during runtime ;0x6664C8  ;6710472
 
     sbl_kernel_addr	dw 0x402D4BC0
@@ -146,7 +146,7 @@ DEFAULT_VARIABLES
     sbl_atag_addr2	dw 0x40246DF8
 
     atag_ptr		dw 0x40000100
-    kernel_ptr		dw 0x41000000
+    kernel_ptr		dw 0x44000000
 
     opcode		dw 0xE1A0F00E
 
