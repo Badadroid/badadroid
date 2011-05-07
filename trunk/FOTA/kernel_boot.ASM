@@ -57,7 +57,11 @@ START
 	BL	dloadmode
 testmembank:
 	STMFD	SP!, {R0-R1,LR}
+
+semafor:
 	BL	Get_Onedram_Semaphore
+	CMP	R0, #0
+	BEQ	semafor
 
 	LDR	R0, [opcode]
 	LDR	R1, [kernel_start]
