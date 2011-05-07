@@ -109,8 +109,6 @@ relockernel:
 	LDR	R1, [kernel_start]
 	LDR	R2, [kernel_size]
 	BL	rebell_memcpy
-	ldr	r0, [s_done_a]
-	bl	debug_print
 
 	LDMFD	SP!, {R1-R2,PC}
 FUNCTIONS
