@@ -14,17 +14,11 @@ START
 	MOV	R0, 1234
 	BL	int_debugprint
 
-	BL	testmembank
-	BL	testmembank
-	BL	testmembank
-	BL	testmembank
-	BL	testmembank
-	BL	testmembank
-	BL	testmembank
-	BL	testmembank
-	BL	testmembank
-	BL	testmembank
-	BL	testmembank
+	MRC	p15, 0, R7,c1,c0
+	MOV	R8, #0x1805
+	BIC	R7, R7, R8
+	MCR	p15, 0, R7,c1,c0
+
 	BL	testmembank
 	BL	testmembank
 	BL	testmembank
@@ -46,11 +40,10 @@ semafor:
 	LDR	R1, [write_addr]
 	STR	R0, [R1]
 
-	LDR	R0, [semaphore]
-	LDR	R0, [R0]
+	LDR	R0, [read_addr]
 	LDR	R0, [R0]
 	BL	hex_debugprint
-	BL	Onedram_Release_Semaphore
+	;BL      Onedram_Release_Semaphore
 	LDMFD	SP!, {R0-R1,PC}
 FUNCTIONS
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;; variables below

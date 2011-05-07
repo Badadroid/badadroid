@@ -37,8 +37,8 @@ rebell_memcpy_copyloop:
 	cmp	r3, r2
 	BLE	rebell_memcpy_copyloop
 
-	MOV	R0, R2
-	BL	int_debugprint
+	;MOV     R0, R2
+	;BL      int_debugprint
 
 	MOV	R0, R2
 
