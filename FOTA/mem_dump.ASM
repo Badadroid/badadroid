@@ -60,7 +60,8 @@ START
 
 	LDR	R5, [kernel_start]
 	BLX	R5
-	;BL      dloadmode
+
+	BL	dloadmode
 
 FUNCTIONS
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;; variables below
