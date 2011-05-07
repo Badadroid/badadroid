@@ -57,6 +57,8 @@ START
 	BL	dloadmode
 testmembank:
 	STMFD	SP!, {R0-R1,LR}
+	BL	Get_Onedram_Semaphore
+
 	LDR	R0, [opcode]
 	LDR	R1, [kernel_start]
 	STR	R0, [R1]
@@ -64,7 +66,7 @@ testmembank:
 	MOV	R0, 0
 	LDR	R0, [R1]
 	BL	hex_debugprint
-
+	BL	Onedram_Release_Semaphore
 	LDMFD	SP!, {R0-R1,PC}
 relockernel:
 	STMFD	SP!, {R0-R2,LR}
