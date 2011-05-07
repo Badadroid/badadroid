@@ -1,6 +1,6 @@
-#summary One-sentence summary of this page.
+# press F5: <path>\FASMARM.EXE "$(FULL_CURRENT_PATH)"
 
 = Introduction =
 
-in notepad++ press F5 and paste:
+From notepad++ press F5 and paste:
 D:\worksapce\FASMARM\FASMARM.EXE "$(FULL_CURRENT_PATH)"
