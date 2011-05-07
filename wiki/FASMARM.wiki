@@ -1,0 +1,6 @@
+#summary One-sentence summary of this page.
+
+= Introduction =
+
+in notepad++ press F5 and paste:
+D:\worksapce\android\FASMARM\FASMARM.EXE "$(FULL_CURRENT_PATH)"
