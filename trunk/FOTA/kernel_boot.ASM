@@ -122,8 +122,7 @@ DEFAULT_VARIABLES
     kernel_start	dw 0x42000000
 
     kernel_buf		dw 0x41000000
-    kernel_size 	dw 0 ;loading during runtime ;0x6664C8  ;6710472
-    kernel_buf_end	dw 0x416664C8
+    kernel_size 	dw 0 ;overwritten during runtime ;0x6664C8  ;6710472
 
     sbl_kernel_addr	dw 0x402D4BC0
     sbl_atag_addr	dw 0x40244FC0
@@ -168,8 +167,13 @@ copykernel:
 	MOV	R0, 9999
 	BL	int_debugprint
 
+	LDR	R0, [ptest]
+	LDR	R1, [opcodetest]
+	STR	R1, [R0]
 	;BL      relockernel
 
 	LDMFD	SP!, {R1-R2,PC}
+    ptest	   dw 0x41000000
 
+    opcodetest		    dw 0xE1A0F00E
 END
