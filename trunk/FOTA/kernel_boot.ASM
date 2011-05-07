@@ -8,6 +8,7 @@ include 'inc/functions.inc'
 ; VERY rough code for loading sbl to 0x40244000 and Kernel to 0x32000000, then executes KERNEL.
 ; Sbl is unused in this code
 START
+	SUB	SP, SP, 128
 	MOV	r1, #1
 	LDR	r0, [pagetable]
 	BL	MemMMUCacheEnable
@@ -28,9 +29,16 @@ START
 	ldr	r0, [s_done_a]
 	bl	debug_print
 
+
+	MOV	R1, SP
+	LDR	R0, [s_kernel_path_a]
+	BL	tfs4_stat
+
+	LDR	R2, [SP,0xC] ;get kernel size
+
 	ldr	r0, [s_loadkernel_a]
 	bl	debug_print
-	LDR	R2, [kernel_size]
+	MOV	R2, R2
 	LDR	R1, [kernel_buf]
 	LDR	R0, [s_kernel_path_a]
 	BL	loadfile
@@ -47,6 +55,7 @@ START
 	LDR	R1, [sbl_start]
 	LDR	R0, [s_jumpingout_a]
 	BL	debug_print
+
 
 	LDR	R5, [sbl_start]
 	BLX	R5
@@ -134,23 +143,6 @@ copykernel:
 	MOV	R0, 9999
 	BL	int_debugprint
 
-	BL	testmembank
-	BL	testmembank
-	BL	testmembank
-	BL	testmembank
-	BL	testmembank
-	BL	testmembank
-	BL	testmembank
-	BL	testmembank
-	BL	testmembank
-	BL	testmembank
-	BL	testmembank
-	BL	testmembank
-	BL	testmembank
-	BL	testmembank
-	BL	testmembank
-	BL	testmembank
-	BL	testmembank
 	BL	testmembank
 
 	LDMFD	SP!, {R1-R2,PC}
