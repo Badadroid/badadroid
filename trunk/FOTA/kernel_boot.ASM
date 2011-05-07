@@ -119,7 +119,7 @@ DEFAULT_VARIABLES
     sbl_start		dw 0x40244000
     sbl_size		dw 0x140000
 
-    kernel_start	dw 0x42000000
+    kernel_start	dw 0x41000000
 
     kernel_buf		dw 0x41000000
     kernel_size 	dw 0 ;overwritten during runtime ;0x6664C8  ;6710472
@@ -167,13 +167,8 @@ copykernel:
 	MOV	R0, 9999
 	BL	int_debugprint
 
-	LDR	R0, [ptest]
-	LDR	R1, [opcodetest]
-	STR	R1, [R0]
-	;BL      relockernel
+	BL	testmembank
 
 	LDMFD	SP!, {R1-R2,PC}
-    ptest	   dw 0x41000000
 
-    opcodetest		    dw 0xE1A0F00E
 END
