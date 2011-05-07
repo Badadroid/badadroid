@@ -146,7 +146,7 @@ DEFAULT_VARIABLES
     sbl_atag_addr2	dw 0x40246DF8
 
     atag_ptr		dw 0x40000100
-    kernel_ptr		dw 0x44000000
+    kernel_ptr		dw copykernel;0x44000000
 
     opcode		dw 0xE1A0F00E
 
@@ -177,9 +177,10 @@ DEFAULT_STRINGS
     s_kernelreturn   db ' WTF KERNEL RETURNED',0
     s_patchsbl	     db ' Patching SBL',0
 
-copykernel:
-	code_len = copykernel - c_start
+copykernel_helper:
+	code_len = copykernel_helper - c_start
 	db	0x4000 - code_len dup 0xFF
+copykernel:
 	STMFD	SP!, {R1-R2,LR}
 	MOV	R0, 9999
 	BL	int_debugprint
