@@ -55,7 +55,16 @@ START
 	bl	debug_print
 	mov	r1, 0x32000000
 	BL	dloadmode
+testmembank:
+	STMFD	SP!, {R0-R1,LR}
+	LDR	R0, [opcode]
+	LDR	R1, [kernel_start]
 
+	MOV	R0, 0
+	LDR	R0, [R1]
+	BL	hex_debugprint
+
+	LDMFD	SP!, {R0-R1,PC}
 relockernel:
 	STMFD	SP!, {R0-R2,LR}
 
@@ -84,7 +93,7 @@ DEFAULT_VARIABLES
     kernel_size 	dw 0x6664C8  ;6710472
     kernel_buf_end	dw 0x416664C8
 
-
+    opcode		dw 0xE1A0F00E
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;; strings at the end
 DEFAULT_STRINGS_ADDR
@@ -118,7 +127,7 @@ copykernel:
 	MOV	R0, 9999
 	BL	int_debugprint
 
-	BL	relockernel
+	BL	testmembank
 
 	LDMFD	SP!, {R1-R2,PC}
 
