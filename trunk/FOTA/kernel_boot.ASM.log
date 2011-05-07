@@ -1,4 +1,4 @@
-=~=~=~=~=~=~=~=~=~=~=~= PuTTY log 2011.05.07 12:38:15 =~=~=~=~=~=~=~=~=~=~=~=
+=~=~=~=~=~=~=~=~=~=~=~= PuTTY log 2011.05.07 12:44:24 =~=~=~=~=~=~=~=~=~=~=~=
 [PAM:   ] ++FSR_PAM_Init
 [PAM:   ]   OneNAND physical base address       : 0xb0000000
 [PAM:   ]   OneNAND virtual  base address       : 0xb0000000
@@ -26,8 +26,8 @@ S6E63M0 : LDI_Pentile_Set_Change Pentile_Value =6c
 ---FIMD_Drv_SetWinOnOff(WIN4:1)
 LCD initialize Finished
 Flash_Unlock failed
-Poweron status - 0
-FSA9480 0x03 Register = 0
+Poweron status - 1428
+FSA9480 0x03 Register = 1
 FSA9480 0x0A Register = 0
 FSA9480 0x0B Register = 8
 FSA9480 0x07 Register = 1c
@@ -146,7 +146,7 @@ SD_HostCtrl_IssueCommand[ch0] not SDclk off, cmd13, SD_CLK_CTRL:0xf
 EXT_I2C(3) -> No ACK
 EXT_I2C(3) -> No ACK
 init_fuel_gauge: vcell = 0mV, soc = 0
-FlashDevRead 63: Error(offset,length,j4fs_end,nErr)=(0x40000,0x1000,0xe2433c3f,0x80040001)
+FlashDevRead 63: Error(offset,length,j4fs_end,nErr)=(0x40000,0x1000,0x0,0x80040001)
 nps status file does not exist..
 nps status is incorrect!! set default status.(completed)
 nps status=0x504d4f43
@@ -167,7 +167,7 @@ SD_HostCtrl_IssueCommand[ch0] not SDclk off, cmd13, SD_CLK_CTRL:0xf
 EXT_I2C(3) -> No ACK
 EXT_I2C(3) -> No ACK
 aries_check_boot_low_battery: low battery detect. voltage=0, limit voltage=3430
-FlashDevRead 63: Error(offset,length,j4fs_end,nErr)=(0x40000,0x1000,0xe2433c3f,0x80040001)
+FlashDevRead 63: Error(offset,length,j4fs_end,nErr)=(0x40000,0x1000,0x0,0x80040001)
 DISPLAY_PATH_SEL[MDNIE 0x1]is on
 MDNIE setting Init start!!
 vsync interrupt is off
@@ -180,7 +180,7 @@ SD_HostCtrl_IssueCommand[ch0] not SDclk off, cmd13, SD_CLK_CTRL:0xf
 get_debug_level current debug level is 0x0.
 boot_kernel: Debug Level Low
  debug: 9999
- debug: 0x0
+ debug: 0x900092
 setting param.serialnr=0x3834785f 0x2a500ec
 setting param.board_rev=0x30
 setting param.cmdline=bootmode=2 console=ttySAC2,115200 loglevel=4
