@@ -8,21 +8,23 @@ include 'inc/functions.inc'
 ; VERY rough code for loading sbl to 0x40244000 and Kernel to 0x32000000, then executes KERNEL.
 ; Sbl is unused in this code
 START
-	MOV	r1, #0
-	LDR	r0, [pagetable]
-	BL	MemMMUCacheEnable
-
-	BL	CoDisableDCache
-	BL	CoDisableMmu
+	;BL      CoDisableMmu
 
 	bl	enable_fota_output
 	MOV	R0, 1234
 	BL	int_debugprint
 
+semafor:
+	BL	Get_Onedram_Semaphore
+	CMP	R0, #0
+	BEQ	semafor
+
 	LDR	R0, [opcode]
 	LDR	R1, [kernel_start]
-	STR	R0, [R1]
+	;STR     R0, [R1]
+	;BL      Onedram_Release_Semaphore
 
+	LDR	R1, [kernel_start]
 	MOV	R0, 0
 	LDR	R0, [R1]
 	BL	hex_debugprint
