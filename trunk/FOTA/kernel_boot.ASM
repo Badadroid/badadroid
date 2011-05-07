@@ -142,7 +142,7 @@ DEFAULT_VARIABLES
     kernel_ptr		dw copykernel;0x44000000
 
     opcode		dw 0xE1A0F00E
-    jmp_by_14_ops	dw 0xEA00000C
+    jmp_by_14_ops	dw 0xEA00000A
     sbl_jmp_patch	dw 0x40246D88
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;; strings at the end
