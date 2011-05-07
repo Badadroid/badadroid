@@ -59,6 +59,7 @@ testmembank:
 	STMFD	SP!, {R0-R1,LR}
 	LDR	R0, [opcode]
 	LDR	R1, [kernel_start]
+	STR	R0, [R1]
 
 	MOV	R0, 0
 	LDR	R0, [R1]
