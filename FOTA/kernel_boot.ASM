@@ -130,7 +130,7 @@ DEFAULT_VARIABLES
     sbl_atag_addr2	dw 0x40246DF8
 
     atag_ptr		dw 0x40000100
-    kernel_ptr		dw 0x42000000
+    kernel_ptr		dw 0x41000000
 
     opcode		dw 0xE1A0F00E
 
@@ -168,7 +168,7 @@ copykernel:
 	MOV	R0, 9999
 	BL	int_debugprint
 
-	BL	relockernel
+	;BL      relockernel
 
 	LDMFD	SP!, {R1-R2,PC}
 
