@@ -47,6 +47,8 @@ START
 	BL	tfs4_stat
 
 	LDR	R2, [SP,0xC] ;get kernel size
+	ADR	R0, kernel_size
+	STR	R2, [R0]	;store for later use
 
 	ldr	r0, [s_loadkernel_a]
 	bl	debug_print
@@ -119,10 +121,10 @@ DEFAULT_VARIABLES
     sbl_start		dw 0x40244000
     sbl_size		dw 0x140000
 
-    kernel_start	dw 0x32000000
+    kernel_start	dw 0x42000000
 
     kernel_buf		dw 0x41000000
-    kernel_size 	dw 0x6664C8  ;6710472
+    kernel_size 	dw 0 ;loading during runtime ;0x6664C8  ;6710472
     kernel_buf_end	dw 0x416664C8
 
     sbl_kernel_addr	dw 0x402D4BC0
@@ -130,7 +132,7 @@ DEFAULT_VARIABLES
     sbl_atag_addr2	dw 0x40246DF8
 
     atag_ptr		dw 0x40000100
-    kernel_ptr		dw 0x41000000
+    kernel_ptr		dw 0x42000000
 
     opcode		dw 0xE1A0F00E
 
@@ -168,7 +170,7 @@ copykernel:
 	MOV	R0, 9999
 	BL	int_debugprint
 
-	BL	testmembank
+	BL	relockernel
 
 	LDMFD	SP!, {R1-R2,PC}
 
