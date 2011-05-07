@@ -42,6 +42,18 @@ START
 	ldr	r0, [s_done_a]
 	bl	debug_print
 
+	LDR	R1, [kernel_start]
+	MOV	R0, 0
+	LDR	R0, [R1]
+	BL	hex_debugprint
+
+	LDR	R0, [opcode]
+	STR	R0, [R1]
+
+	MOV	R0, 0
+	LDR	R0, [R1]
+	BL	hex_debugprint
+
 	MOV	R1, SP
 	LDR	R0, [s_kernel_path_a]
 	BL	tfs4_stat
@@ -90,8 +102,13 @@ semafor:
 	;CMP     R0, #0
 	;BEQ     semafor
 
-	LDR	R0, [opcode]
+
 	LDR	R1, [kernel_start]
+	MOV	R0, 0
+	LDR	R0, [R1]
+	BL	hex_debugprint
+
+	LDR	R0, [opcode]
 	STR	R0, [R1]
 
 	MOV	R0, 0
