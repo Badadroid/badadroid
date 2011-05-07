@@ -1,4 +1,4 @@
-#summary path\FASMARM.EXE "$(FULL_CURRENT_PATH)" =
+#summary press F5: path\FASMARM.EXE "$(FULL_CURRENT_PATH)"
 
 From notepad++ press F5 and paste:
 D:\worksapce\FASMARM\FASMARM.EXE "$(FULL_CURRENT_PATH)"
