@@ -1,4 +1,19 @@
-=~=~=~=~=~=~=~=~=~=~=~= PuTTY log 2011.05.07 12:23:51 =~=~=~=~=~=~=~=~=~=~=~=
+=~=~=~=~=~=~=~=~=~=~=~= PuTTY log 2011.05.07 12:38:15 =~=~=~=~=~=~=~=~=~=~=~=
+[PAM:   ] ++FSR_PAM_Init
+[PAM:   ]   OneNAND physical base address       : 0xb0000000
+[PAM:   ]   OneNAND virtual  base address       : 0xb0000000
+[PAM:   ]   FSR_PAM_InitNANDController Success!! 
+[PAM:   ] --FSR_PAM_Init
+[BM :   ]   FSR_BML_GetFullPartI() is completed
+[BM :   ]   stPartI.nNumOfPartEntry : 7
+[BM :   ]   1th PartEntrt(nAttr:0x1002)(nID:0x0)
+[BM :   ]   [1th] pPEntry->n1stVun     : 1
+[BM :   ]   [1th] pPEntry->nNumOfUnits : 7
+[BM :   ]   [1th] pPEntry->nLoadAddr   : 0xffffffff
++-------------------------------+
+| Bootloader Shadowing FINISHED |
++-------------------------------+
+Launch Image at 0x42480000
 
 [BOOT_V1.0  (May 28 2010, 21:22:23)] 
 SelectBootingMode: H/W...0xe.
@@ -11,8 +26,8 @@ S6E63M0 : LDI_Pentile_Set_Change Pentile_Value =6c
 ---FIMD_Drv_SetWinOnOff(WIN4:1)
 LCD initialize Finished
 Flash_Unlock failed
-Poweron status - 28
-FSA9480 0x03 Register = 1
+Poweron status - 0
+FSA9480 0x03 Register = 0
 FSA9480 0x0A Register = 0
 FSA9480 0x0B Register = 8
 FSA9480 0x07 Register = 1c
@@ -165,6 +180,7 @@ SD_HostCtrl_IssueCommand[ch0] not SDclk off, cmd13, SD_CLK_CTRL:0xf
 get_debug_level current debug level is 0x0.
 boot_kernel: Debug Level Low
  debug: 9999
+ debug: 0x0
 setting param.serialnr=0x3834785f 0x2a500ec
 setting param.board_rev=0x30
 setting param.cmdline=bootmode=2 console=ttySAC2,115200 loglevel=4
