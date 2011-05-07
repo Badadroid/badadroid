@@ -139,7 +139,7 @@ DEFAULT_VARIABLES
     sbl_atag_addr2	dw 0x40246DF8
 
     atag_ptr		dw 0x40000100
-    kernel_ptr		dw copykernel;0x44000000
+    kernel_ptr		dw 0x44000000;0x44000000
 
     opcode		dw 0xE1A0F00E
     jmp_by_14_ops	dw 0xEA00000A
@@ -180,7 +180,7 @@ copykernel:
 	MOV	R0, 9999
 	BL	int_debugprint
 
-	BL	testmembank
+	;BL      testmembank
 
 	LDMFD	SP!, {R1-R2,PC}
 
