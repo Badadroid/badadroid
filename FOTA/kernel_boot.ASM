@@ -1,6 +1,6 @@
 
-include 'inc/S8500XXJEE.inc'	  ;here include the right BL function pointers, depends on model and BL you've got
-include 'inc/macros_S8500.inc'	  ;model dependend FOTA header and footer
+include 'inc/S8530JPKA1.inc'	  ;here include the right BL function pointers, depends on model and BL you've got
+include 'inc/macros_S8530.inc'	  ;model dependend FOTA header and footer
 
 include 'inc/vars.inc'
 include 'inc/functions.inc'
@@ -11,7 +11,7 @@ START
 	MOV	r1, #1
 	LDR	r0, [pagetable]
 	BL	MemMMUCacheEnable
-	bl	enable_uart_output ;enable_fota_output
+	bl	enable_fota_output ;enable_fota_output
 	MOV	R0, 1234
 	BL	int_debugprint
 	BL	__PfsNandInit
@@ -54,9 +54,22 @@ START
 	ldr	r0, [s_kernelreturn_a]
 	bl	debug_print
 	mov	r1, 0x32000000
-	;BL      dloadmode
-	MOV PC,LR
+	BL	dloadmode
 
+relockernel:
+	STMFD	SP!, {R0-R2,LR}
+
+	LDR	R1, [kernel_start]
+	ldr	r0, [s_kernelreloc_a]
+	bl	debug_print
+	LDR	R0, [kernel_buf]
+	LDR	R1, [kernel_start]
+	LDR	R2, [kernel_size]
+	BL	rebell_memcpy
+	ldr	r0, [s_done_a]
+	bl	debug_print
+
+	LDMFD	SP!, {R1-R2,PC}
 FUNCTIONS
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;; variables below
 DEFAULT_VARIABLES
@@ -70,6 +83,7 @@ DEFAULT_VARIABLES
     kernel_buf		dw 0x41000000
     kernel_size 	dw 0x6664C8  ;6710472
     kernel_buf_end	dw 0x416664C8
+
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;; strings at the end
@@ -88,7 +102,7 @@ DEFAULT_STRINGS_ADDR
 DEFAULT_STRINGS
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;; ;add custom strings below
     s_kernel_path    du '/g/galaxyboot/zImage',0
-    s_sbl_path	     du '/g/galaxyboot/Sbl2FOTA_mijoma2.bin',0
+    s_sbl_path	     du '/g/galaxyboot/Sbl_mijoma_FOTA.bin',0
 
     s_loadsbl	     db ' Loading SBL',0
     s_loadkernel     db ' Loading kernel image to buf',0
@@ -98,11 +112,14 @@ DEFAULT_STRINGS
     s_kernelreturn   db ' WTF KERNEL RETURNED',0
 
 copykernel:
-    code_len = copykernel - c_start
-    db 0x4000 - code_len dup 0xFF
-    STMFD SP!, {LR}
-    ;bl enable_fota_output
-    MOV R0, 9999
-    BL int_debugprint
-    LDMFD SP!, {PC}
+	code_len = copykernel - c_start
+	db	0x4000 - code_len dup 0xFF
+	STMFD	SP!, {R1-R2,LR}
+	MOV	R0, 9999
+	BL	int_debugprint
+
+	BL	relockernel
+
+	LDMFD	SP!, {R1-R2,PC}
+
 END
