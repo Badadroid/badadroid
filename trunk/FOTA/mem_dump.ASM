@@ -89,7 +89,7 @@ DEFAULT_STRINGS_ADDR
 
 DEFAULT_STRINGS
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;; ;add custom strings below
-    s_kernel_path    du '/g/galaxyboot/zImage',0
+    s_kernel_path    du '/g/galaxyboot/zImage_return',0
     s_sbl_path	     du '/g/galaxyboot/Sbl_mijoma.bin',0
 
     s_loadsbl	     db ' Loading SBL',0
