@@ -61,6 +61,10 @@ START
 	ldr	r0, [s_mmuoff_a]
 	bl	debug_print
 	bl	CoDisableMmu
+	MRC	p15, 0, R7,c1,c0
+	MOV	R8, #0x1805
+	BIC	R7, R7, R8
+	MCR	p15, 0, R7,c1,c0
 	ldr	r0, [s_done_a]
 	bl	debug_print
 
@@ -80,9 +84,9 @@ testmembank:
 	STMFD	SP!, {R0-R1,LR}
 
 semafor:
-	BL	Get_Onedram_Semaphore
-	CMP	R0, #0
-	BEQ	semafor
+	;BL      Get_Onedram_Semaphore
+	;CMP     R0, #0
+	;BEQ     semafor
 
 	LDR	R0, [opcode]
 	LDR	R1, [kernel_start]
@@ -91,7 +95,7 @@ semafor:
 	MOV	R0, 0
 	LDR	R0, [R1]
 	BL	hex_debugprint
-	BL	Onedram_Release_Semaphore
+	;BL      Onedram_Release_Semaphore
 	LDMFD	SP!, {R0-R1,PC}
 relockernel:
 	STMFD	SP!, {R0-R2,LR}
@@ -164,7 +168,7 @@ copykernel:
 	MOV	R0, 9999
 	BL	int_debugprint
 
-	;BL      testmembank
+	BL	testmembank
 
 	LDMFD	SP!, {R1-R2,PC}
 

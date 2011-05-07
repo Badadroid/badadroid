@@ -5,9 +5,22 @@ include 'inc/macros_S8530.inc'	  ;model dependend FOTA header and footer
 include 'inc/vars.inc'
 include 'inc/functions.inc'
 
-; VERY rough code for loading sbl to 0x40244000 and Kernel to 0x32000000, then executes KERNEL.
-; Sbl is unused in this code
 START
+	LDR	R3, [pagetable]
+	MOV	R2, #4
+	MOV	R1, #35
+	MUL	R2, R2, R1
+	ADD	R3, R3, R2
+	LDR	R0, [cache_start]
+	STR	R0, [R3]
+	STR	R0, [R3,#4]
+	LDR	R0, [cache_size]
+	STR	R0, [R3,#8]
+	MOV	R0, 0x103 ;some flags
+	STR	R0, [R3,#12]
+	MOV	R0, 0x3   ;access flags
+	STR	R0, [R3,#16]
+
 	MOV	r1, #1
 	LDR	r0, [pagetable]
 	BL	MemMMUCacheEnable
@@ -17,10 +30,34 @@ START
 	BL	__PfsNandInit
 	BL	__PfsMassInit
 
+	MOV	R0, 12345
+	BL	int_debugprint
+	;MRC     p15, 0, R7,c1,c0
+	;MOV     R8, #0x1805
+	;BIC     R7, R7, R8
+	;MCR     p15, 0, R7,c1,c0
+
+	;LDR     R0, [reloc_origin]
+	;LDR     R1, [dump_start]
+	;LDR     R2, [dump_size]
+	;BL      rebell_memcpy
+	;ldr     r0, [s_done_a]
+	;bl      debug_print
+
+	mov	r0, 11
+	bl	int_debugprint
+
+	;MOV     r1, #1
+	;LDR     r0, [pagetable]
+	;BL      MemMMUCacheEnable
+
+	mov	r0, 55
+	bl	int_debugprint
 	LDR	R2, [dump_size]
 	LDR	R1, [dump_start]
 	LDR	R0, [s_dumppath_a]
 	BL	memdump
+
 	LDR	R0, [s_dirpath_a]  ;load the address of directory we want to list
 	BL	listdir 	    ;jump into list function
 
@@ -31,10 +68,18 @@ FUNCTIONS
 DEFAULT_VARIABLES
     pagetable		dw gMMUL1PageTable
 
-    dump_start		dw 0x41000000
-    dump_size		dw 0x10000 ;128MB
-			;0x10000  ;64KB
-			;1400000 ;16MB
+    cache_start 	dw 0x32000000
+    cache_size		dw 0x01000000
+
+    reloc_origin	dw 0x32000000
+
+    dump_start		dw 0x42668000
+    dump_size		dw 0x4000
+			;0x10000   ;64KB
+			;0x1400000 ;16MB
+			;0xA000000 ;128MB
+
+    s_kernel_path_a  dw s_kernel_path
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;; strings at the end
 DEFAULT_STRINGS_ADDR
@@ -45,8 +90,9 @@ DEFAULT_STRINGS_ADDR
 
 DEFAULT_STRINGS
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;; ;add custom strings below
-    s_dumppath	     du '/g/0x41000000_test.bin',0
-    s_dirpath	     du '/g/',0
+    s_dumppath	     du '/g/dumps/fileinfo.bin',0
+    s_kernel_path    du '/g/galaxyboot/zImage',0
+    s_dirpath	     du '/g/dumps/',0
 
 
     

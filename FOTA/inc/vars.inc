@@ -16,7 +16,7 @@ macro DEFAULT_STRINGS_ADDR
     s_fmt_a		dw s_fmt
     s_dir_a		dw s_dir
     s_debug_fmt_hex_a	dw s_debug_fmt_hex
-    s_debug_fmt_int_a	    dw s_debug_fmt_int
+    s_debug_fmt_int_a	dw s_debug_fmt_int
     s_notfound_a	dw s_notfound
     s_downloadmode_a	dw s_downloadmode
     s_memdump_a 	dw s_memdump
@@ -30,6 +30,7 @@ macro DEFAULT_STRINGS_ADDR
     s_uart_newline_a	dw s_uart_newline
     s_loadfile_error_a	dw s_loadfile_error
     s_memcpy_a		dw s_memcpy
+    s_dumpmem_error_a	dw s_dumpmem_error
 }
 macro DEFAULT_STRINGS
 {
@@ -50,6 +51,7 @@ macro DEFAULT_STRINGS
     s_fmt			    db ' %s',0
     s_dir			    db ' Dir: %s',0
     s_loadfile_error		    db ' loadfile error (notfound?)',0
+    s_dumpmem_error		    db ' dumpmem error: 0x%X',0
     s_uart_newline		    db 0xA,0
     s_memcpy			    db 'memcpy 0x%X=>0x%X,s=0x%X',0
 }
