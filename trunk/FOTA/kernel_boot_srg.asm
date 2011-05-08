@@ -12,7 +12,7 @@ START
 	MOV	r1, #1
 	LDR	r0, [pagetable]
 	BL	MemMMUCacheEnable
-	bl	enable_fota_output ;enable_fota_output
+	bl	enable_uart_output ;enable_fota_output
 	MOV	R0, 1234
 	BL	int_debugprint
 	BL	__PfsNandInit
