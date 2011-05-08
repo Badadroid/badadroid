@@ -12,7 +12,7 @@ START
 	MOV	r1, #1
 	LDR	r0, [pagetable]
 	BL	MemMMUCacheEnable
-	bl	enable_uart_output ;enable_fota_output
+	bl	enable_fota_output ;enable_fota_output
 	MOV	R0, 1234
 	BL	int_debugprint
 	BL	__PfsNandInit
@@ -161,7 +161,7 @@ DEFAULT_STRINGS_ADDR
 DEFAULT_STRINGS
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;; ;add custom strings below
     s_kernel_path    du '/g/galaxyboot/zImage',0
-    s_sbl_path	     du '/g/galaxyboot/Sbl2FOTA_mijoma2.bin',0
+    s_sbl_path	     du '/g/galaxyboot/sbl.bin',0
 
     s_loadsbl	     db ' Loading SBL',0
     s_loadkernel     db ' Loading kernel image to buf',0
