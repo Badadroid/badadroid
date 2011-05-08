@@ -8,6 +8,13 @@ include 'inc/functions.inc'
 ; VERY rough code for loading sbl to 0x40244000 and Kernel to 0x32000000, then executes KERNEL.
 ; Sbl is unused in this code
 START
+
+	MOV     R0, #0xA9
+	BL      GPIO_Drv_UnsetExtInterrupt
+	BL      disp_Normal_Init
+	BL      DRV_Modem_BootingStart
+	;BL      LaunchNucleus
+
 	SUB	SP, SP, 128
 	MOV	r1, #1
 	LDR	r0, [pagetable]
@@ -18,31 +25,46 @@ START
 	BL	__PfsNandInit
 	BL	__PfsMassInit
 
-LDR	R1, [modem_start]
+
+LDR	R1, [modem_DBL]          ; modem_DBL
 LDR	R0, [s_dumpfrom_a]
 BL	debug_print
 
-MOV R1, 128
-LDR	R0, [modem_start]
+MOV R1, 1024
+LDR	R0, [modem_DBL]
 BL mem_dump
 
-MOV R0, #0xA9
-BL GPIO_Drv_UnsetExtInterrupt
-BL DRV_Modem_BootingStart
-
-LDR	R1, [modem_start]
+LDR	R1, [modem_FSBL]          ; modem_FSBL
 LDR	R0, [s_dumpfrom_a]
 BL	debug_print
 
-MOV R1, 128
-LDR	R0, [modem_start]
+MOV R1, 1024
+LDR	R0, [modem_FSBL]
 BL mem_dump
+
+LDR	R1, [modem_OSBL]          ; modem_OSBL
+LDR	R0, [s_dumpfrom_a]
+BL	debug_print
+
+MOV R1, 1024
+LDR	R0, [modem_OSBL]
+BL mem_dump
+
+LDR	R1, [modem_AMSS]           ; modem_AMSS
+LDR	R0, [s_dumpfrom_a]
+BL	debug_print
+
+MOV R1, 1024
+LDR	R0, [modem_AMSS]
+BL mem_dump
+
+LDR	R0, [modem_HW_rew]          ; modem_HW_rew
+BL	int_debugprint
+
+LDR	R0, [modem_mgc_val]         ; modem_mgc_val
+BL	int_debugprint
 
 BL	dloadmode					; ENTERING DOWNLOAD MODE
-
-MOV R1, 128
-LDR	R0, [sbl_start]
-BL mem_dump	; R0 = start_offset R1 = byte_nums
 
 	ldr	r0, [s_loadsbl_a]
 	bl	debug_print					; Loading SBL
@@ -52,10 +74,6 @@ BL mem_dump	; R0 = start_offset R1 = byte_nums
 	BL	loadfile					; addr + size
 	ldr	r0, [s_done_a]
 	bl	debug_print					; done!
-
-MOV R1, 128
-LDR	R0, [sbl_start]
-BL mem_dump	; R0 = start_offset R1 = byte_nums
 
 	ldr	r0, [s_patchsbl_a]
 	bl	debug_print					; Patching SBL
@@ -74,12 +92,6 @@ BL mem_dump	; R0 = start_offset R1 = byte_nums
 	str	r0, [r1]
 	ldr	r0, [s_done_a]
 	bl	debug_print					; done!
-
-MOV R1, 128
-LDR	R0, [sbl_start]
-BL mem_dump	; R0 = start_offset R1 = byte_nums
-
-BL	dloadmode					; ENTERING DOWNLOAD MODE
 
 	MOV	R1, SP
 	LDR	R0, [s_kernel_path_a]
@@ -158,7 +170,12 @@ FUNCTIONS
 DEFAULT_VARIABLES
     pagetable		dw gMMUL1PageTable
 
-    modem_start	    dw 0x45000000
+    modem_DBL	    dw 0x25000000
+    modem_FSBL	    dw 0x25008000
+    modem_OSBL	    dw 0x25038000
+    modem_AMSS	    dw 0x25088000
+    modem_HW_rew    dw 0x25FFF7F8
+    modem_mgc_val   dw 0x25FFF820
 
     sbl_start		dw 0x40244000
     sbl_size		dw 0x140000
@@ -194,6 +211,8 @@ DEFAULT_STRINGS_ADDR
     s_kernelreturn_a dw s_kernelreturn
     s_dumpfrom_a     dw s_dumpfrom
 
+    s_aAst_poweron_a dw s_aAst_poweron
+
 DEFAULT_STRINGS
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;; ;add custom strings below
     s_kernel_path    du '/g/galaxyboot/zImage',0
@@ -207,6 +226,8 @@ DEFAULT_STRINGS
     s_kernelreturn   db ' WTF KERNEL RETURNED',0
     s_patchsbl	     db ' Patching SBL',0
     s_dumpfrom       db 'dump from 0x%X',0
+
+    s_aAst_poweron   db 'AST_POWERON',0xA,0
 
 copykernel_helper:
 	code_len = copykernel_helper - c_start
