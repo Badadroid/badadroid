@@ -23,6 +23,7 @@ macro DEFAULT_STRINGS_ADDR
     s_done_a		dw s_done
     s_written_a 	dw s_written
     s_fileload_a	dw s_fileload
+    s_filesize_a	dw s_filesize
     s_read_a		dw s_read
     s_error_a		dw s_error
     s_fotaoutput_a	dw s_fotaoutput
@@ -46,6 +47,7 @@ macro DEFAULT_STRINGS
     s_error			    db ' ERROR!',0
     s_shutdown			    db ' SHUTDOWN',0
     s_fileload			    db ' loadfile to 0x%X',0
+    s_filesize			    db ' loadsize is %d bytes',0
     s_read			    db ' read: 0x%X', 0
     s_done			    db ' done!',0
     s_fmt			    db ' %s',0

@@ -190,11 +190,11 @@ loadfile:
 	mov	r0, r6	 ;FILE index
 	bl	tfs4_read
 	mov	r4, r0
-
-	mov	r0, 2
-
-	mov	r0, r4
-
+	
+	mov	r1, r0
+	ldr	r0, [s_filesize_a]
+	bl	debug_print
+	
 	mov	r0, r6
 	bl	tfs4_close
 	mov	r0, r4
