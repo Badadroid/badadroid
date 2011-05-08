@@ -18,7 +18,6 @@ START
 	BL	__PfsNandInit
 	BL	__PfsMassInit
 
-
 	ldr	r0, [s_loadsbl_a]
 	bl	debug_print
 	LDR	R2, [sbl_size]
