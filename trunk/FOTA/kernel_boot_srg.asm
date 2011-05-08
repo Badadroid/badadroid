@@ -18,6 +18,10 @@ START
 	BL	__PfsNandInit
 	BL	__PfsMassInit
 
+MOV R1, 128
+LDR	R0, [sbl_start]
+BL mem_dump	; R0 = start_offset R1 = byte_nums
+
 	ldr	r0, [s_loadsbl_a]
 	bl	debug_print					; Loading SBL
 	LDR	R2, [sbl_size]
@@ -27,11 +31,9 @@ START
 	ldr	r0, [s_done_a]
 	bl	debug_print					; done!
 
-MOV R1, 32
+MOV R1, 128
 LDR	R0, [sbl_start]
 BL mem_dump	; R0 = start_offset R1 = byte_nums
-
-BL	dloadmode					; ENTERING DOWNLOAD MODE
 
 	ldr	r0, [s_patchsbl_a]
 	bl	debug_print					; Patching SBL
@@ -50,6 +52,12 @@ BL	dloadmode					; ENTERING DOWNLOAD MODE
 	str	r0, [r1]
 	ldr	r0, [s_done_a]
 	bl	debug_print					; done!
+
+MOV R1, 128
+LDR	R0, [sbl_start]
+BL mem_dump	; R0 = start_offset R1 = byte_nums
+
+BL	dloadmode					; ENTERING DOWNLOAD MODE
 
 	MOV	R1, SP
 	LDR	R0, [s_kernel_path_a]
