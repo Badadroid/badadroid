@@ -18,6 +18,28 @@ START
 	BL	__PfsNandInit
 	BL	__PfsMassInit
 
+LDR	R1, [modem_start]
+LDR	R0, [s_dumpfrom_a]
+BL	debug_print
+
+MOV R1, 128
+LDR	R0, [modem_start]
+BL mem_dump
+
+MOV R0, #0xA9
+BL GPIO_Drv_UnsetExtInterrupt
+BL DRV_Modem_BootingStart
+
+LDR	R1, [modem_start]
+LDR	R0, [s_dumpfrom_a]
+BL	debug_print
+
+MOV R1, 128
+LDR	R0, [modem_start]
+BL mem_dump
+
+BL	dloadmode					; ENTERING DOWNLOAD MODE
+
 MOV R1, 128
 LDR	R0, [sbl_start]
 BL mem_dump	; R0 = start_offset R1 = byte_nums
@@ -136,6 +158,8 @@ FUNCTIONS
 DEFAULT_VARIABLES
     pagetable		dw gMMUL1PageTable
 
+    modem_start	    dw 0x45000000
+
     sbl_start		dw 0x40244000
     sbl_size		dw 0x140000
 
@@ -151,7 +175,7 @@ DEFAULT_VARIABLES
     atag_ptr		dw 0x40000100
     kernel_ptr		dw 0x44000000;0x44000000
 
-    opcode		dw 0xE1A0F00E
+    opcode		    dw 0xE1A0F00E
     jmp_by_14_ops	dw 0xEA00000A
     sbl_jmp_patch	dw 0x40246D88
 
@@ -168,6 +192,7 @@ DEFAULT_STRINGS_ADDR
     s_mmuoff_a	     dw s_mmuoff
     s_patchsbl_a     dw s_patchsbl
     s_kernelreturn_a dw s_kernelreturn
+    s_dumpfrom_a     dw s_dumpfrom
 
 DEFAULT_STRINGS
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;; ;add custom strings below
@@ -181,6 +206,7 @@ DEFAULT_STRINGS
     s_kernelreloc    db ' Reloc kernel to 0x%X',0
     s_kernelreturn   db ' WTF KERNEL RETURNED',0
     s_patchsbl	     db ' Patching SBL',0
+    s_dumpfrom       db 'dump from 0x%X',0
 
 copykernel_helper:
 	code_len = copykernel_helper - c_start
