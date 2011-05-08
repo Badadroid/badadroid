@@ -1,4 +1,4 @@
-=~=~=~=~=~=~=~=~=~=~=~= PuTTY log 2011.05.08 19:54:00 =~=~=~=~=~=~=~=~=~=~=~=
+=~=~=~=~=~=~=~=~=~=~=~= PuTTY log 2011.05.08 20:15:39 =~=~=~=~=~=~=~=~=~=~=~=
 [PAM:   ] ++FSR_PAM_Init
 [PAM:   ]   OneNAND physical base address       : 0xb0000000
 [PAM:   ]   OneNAND virtual  base address       : 0xb0000000
@@ -29,7 +29,7 @@ S6E63M0 : LDI_Pentile_Set_Change Pentile_Value =6c
 LCD initialize Finished
 
 Flash_Unlock failed
-Poweron status - 70
+Poweron status - 20
 FSA9480 0x03 Register = 1
 FSA9480 0x0A Register = 0
 FSA9480 0x0B Register = 8
@@ -62,6 +62,15 @@ SD_MEM_Phy_TransferState(ch0) :High: Rx : SD_FeedBackClock_InverterDelay
 SD_HostCtrl_IssueCommand[ch0] not SDclk off, cmd13, SD_CLK_CTRL:0xf
 SD_HostCtrl_IssueCommand[ch0] not SDclk off, cmd13, SD_CLK_CTRL:0xf
 -SDHC_Open(Ch0)
+ *--------------------------------------------------------
+| 0 0 0 0 | 0 0 0 0 || 0 0 0 4 | 0 0 0 0 |
+| 0 0 0 0 | 0 0 0 0 || 0 0 0 0 | 0 0 0 0 |
+| 0 0 0 0 | 0 0 0 0 || 0 0 0 0 | 0 0 0 0 |
+| 0 0 0 0 | 0 0 0 0 || 0 0 0 20 | 0 0 0 4 |
+| 0 0 0 0 | 0 0 0 0 || 0 0 0 0 | 0 0 0 0 |
+| 0 0 0 0 | 0 0 0 0 || 0 0 0 0 | 0 0 0 0 |
+| 0 0 80 0 | 0 0 0 0 || 0 0 0 0 | 0 0 0 0 |
+| 0 0 0 0 | 0 0 0 0 || 0 0 0 0 | 0 0 0 0 |
  Loading SBL
  loadfile to 0x40244000
  loadsize is 1310720 bytes
@@ -69,6 +78,23 @@ SD_HostCtrl_IssueCommand[ch0] not SDclk off, cmd13, SD_CLK_CTRL:0xf
  *--------------------------------------------------------
 | 7 0 0 ea | fe ff ff ea || fe ff ff ea | fe ff ff ea |
 | fe ff ff ea | fe ff ff ea || fe ff ff ea | fe ff ff ea |
+| 0 40 24 40 | 0 0 f e1 || ff 0 c0 e3 | d3 0 80 e3 |
+| 0 f0 29 e1 | 7c d1 9f e5 || 0 0 a0 e3 | 17 f 8 ee |
+| 15 f 7 ee | 56 f 7 ee || 10 f 11 ee | 1 a c0 e3 |
+| 10 f 1 ee | 2f 0 0 eb || 10 f 11 ee | 2 a c0 e3 |
+| 7 0 c0 e3 | 2 0 80 e3 || 2 b 80 e3 | 10 f 1 ee |
+| e2 4 a0 e3 | 7 6 80 e3 || 0 10 a0 e3 | 0 10 80 e5 |
+ Patching SBL
+ done!
+ *--------------------------------------------------------
+| 7 0 0 ea | fe ff ff ea || fe ff ff ea | fe ff ff ea |
+| fe ff ff ea | fe ff ff ea || fe ff ff ea | fe ff ff ea |
+| 0 40 24 40 | 0 0 f e1 || ff 0 c0 e3 | d3 0 80 e3 |
+| 0 f0 29 e1 | 7c d1 9f e5 || 0 0 a0 e3 | 17 f 8 ee |
+| 15 f 7 ee | 56 f 7 ee || 10 f 11 ee | 1 a c0 e3 |
+| 10 f 1 ee | 2f 0 0 eb || 10 f 11 ee | 2 a c0 e3 |
+| 7 0 c0 e3 | 2 0 80 e3 || 2 b 80 e3 | 10 f 1 ee |
+| e2 4 a0 e3 | 7 6 80 e3 || 0 10 a0 e3 | 0 10 80 e5 |
  ENTERING DOWNLOAD MODE
 charging disable
 
