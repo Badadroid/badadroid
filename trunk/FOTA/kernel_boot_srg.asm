@@ -12,24 +12,29 @@ START
 	MOV	r1, #1
 	LDR	r0, [pagetable]
 	BL	MemMMUCacheEnable
-	bl	enable_uart_output ;enable_fota_output
+	bl	enable_uart_output			; FOTA OUTPUT ENABLED
 	MOV	R0, 1234
-	BL	int_debugprint
+	BL	int_debugprint				; debug: 1234
 	BL	__PfsNandInit
 	BL	__PfsMassInit
 
 	ldr	r0, [s_loadsbl_a]
-	bl	debug_print
+	bl	debug_print					; Loading SBL
 	LDR	R2, [sbl_size]
 	LDR	R1, [sbl_start]
 	LDR	R0, [s_sbl_path_a]
-	BL	loadfile
-	BL	int_debugprint
+	BL	loadfile					; addr + size
 	ldr	r0, [s_done_a]
-	bl	debug_print
+	bl	debug_print					; done!
+
+MOV R1, 32
+LDR	R0, [sbl_start]
+BL mem_dump	; R0 = start_offset R1 = byte_nums
+
+BL	dloadmode					; ENTERING DOWNLOAD MODE
 
 	ldr	r0, [s_patchsbl_a]
-	bl	debug_print
+	bl	debug_print					; Patching SBL
 	ldr	r0, [atag_ptr]
 	ldr	r1, [sbl_atag_addr]
 	str	r0, [r1]
@@ -44,7 +49,7 @@ START
 	ldr	r1, [sbl_jmp_patch]
 	str	r0, [r1]
 	ldr	r0, [s_done_a]
-	bl	debug_print
+	bl	debug_print					; done!
 
 	MOV	R1, SP
 	LDR	R0, [s_kernel_path_a]
@@ -55,29 +60,27 @@ START
 	STR	R2, [R0]	;store for later use
 
 	ldr	r0, [s_loadkernel_a]
-	bl	debug_print
+	bl	debug_print					; Loading kernel image to buf
 	MOV	R2, R2
 	LDR	R1, [kernel_buf]
 	LDR	R0, [s_kernel_path_a]
-	BL	loadfile
-	BL	int_debugprint
+	BL	loadfile					; addr + size
 	ldr	r0, [s_done_a]
-	bl	debug_print
+	bl	debug_print					; done!
 
 	ldr	r0, [s_mmuoff_a]
-	bl	debug_print
+	bl	debug_print					; Turning off MMU
 	bl	CoDisableMmu
 	MRC	p15, 0, R7,c1,c0
 	MOV	R8, #0x1805
 	BIC	R7, R7, R8
 	MCR	p15, 0, R7,c1,c0
 	ldr	r0, [s_done_a]
-	bl	debug_print
+	bl	debug_print					; done!
 
 	LDR	R1, [sbl_start]
 	LDR	R0, [s_jumpingout_a]
-	BL	debug_print
-
+	BL	debug_print					; Jumpout to addr
 
 	LDR	R5, [sbl_start]
 	BLX	R5

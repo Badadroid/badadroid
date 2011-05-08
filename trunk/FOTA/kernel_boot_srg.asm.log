@@ -1,4 +1,4 @@
-=~=~=~=~=~=~=~=~=~=~=~= PuTTY log 2011.05.08 15:36:33 =~=~=~=~=~=~=~=~=~=~=~=
+=~=~=~=~=~=~=~=~=~=~=~= PuTTY log 2011.05.08 19:54:00 =~=~=~=~=~=~=~=~=~=~=~=
 [PAM:   ] ++FSR_PAM_Init
 [PAM:   ]   OneNAND physical base address       : 0xb0000000
 [PAM:   ]   OneNAND virtual  base address       : 0xb0000000
@@ -15,18 +15,21 @@
 +-------------------------------+
 Launch Image at 0x42480000
 
-[BOOT_V1.0  (May 28 2010, 21:22:23)] 
+
+[BOOT_V1.0  (May 28 2010, 21:22:23)] 
 SelectBootingMode: H/W...0xe.
 [BOOT] ARMCLK: 400000 KHz, MSYSHCLK 200000 KHz,MSYSPCLK: 100000 KHz,                            [BOOT] DSYSHCLK 166750 KHz,DSYSPCLK: 83375 KHz,PSYSHCLK: 133400 KHz, PSYSPCLK: 66700 KHz,SYSCON_A2M: 200000 KHz  
-+++FIMD_Drv_INITIALIZE
+
++++FIMD_Drv_INITIALIZE
 FIMD_Drv_ChangeMode: MDNIE_MODE
 Frame Rate:62SCLK_FIMD:133400 kHz ClkDiv:4
 S6E63M0 : LDI_Pentile_Set_Change Pentile_Value =6c 
 ---FIMD_Drv_INITIALIZE
 ---FIMD_Drv_SetWinOnOff(WIN4:1)
 LCD initialize Finished
-Flash_Unlock failed
-Poweron status - 20
+
+Flash_Unlock failed
+Poweron status - 70
 FSA9480 0x03 Register = 1
 FSA9480 0x0A Register = 0
 FSA9480 0x0B Register = 8
@@ -62,135 +65,23 @@ SD_HostCtrl_IssueCommand[ch0] not SDclk off, cmd13, SD_CLK_CTRL:0xf
  Loading SBL
  loadfile to 0x40244000
  loadsize is 1310720 bytes
- debug: 1310720
  done!
- Patching SBL
- done!
- Loading kernel image to buf
- loadfile to 0x44000000
- loadsize is 6710472 bytes
- debug: 6710472
- done!
- Turning off MMU
- done!
- Jumpout to 0x40244000
+ *--------------------------------------------------------
+| 7 0 0 ea | fe ff ff ea || fe ff ff ea | fe ff ff ea |
+| fe ff ff ea | fe ff ff ea || fe ff ff ea | fe ff ff ea |
+ ENTERING DOWNLOAD MODE
+charging disable
 
-Set cpu clk. from 800MHz to 800MHz.
-OM=0x9, device=OnenandMux(Audi)
-IROM e-fused - Non Secure Boot Version.
 
------------------------------------------------------------
-   Samsung SBL2FOTAv02 by mijoma-SBL S8500
-   Copyright (C) Samsung Electronics Co., Ltd. 2006-2010
+AST_DOWNLOAD
 
-   Board Name: ARIES REV 03
-   Build On: Mar 20 2011 14:57:11
------------------------------------------------------------
 
-Re_partition: magic code(0x0)
-[PAM:   ] ++FSR_PAM_Init
-[PAM:   ]   OneNAND physical base address       : 0xb0000000
-[PAM:   ]   OneNAND virtual  base address       : 0xb0000000
-[PAM:   ]   OneNAND nMID=0xec : nDID=0x50
-[PAM:   ] --FSR_PAM_Init
-fsr_bml_load_partition: pi->nNumOfPartEntry = 7
-partitions loading success
-board partition information update.. source: 0x0
-.Done.
- read 1 units.
-==== PARTITION INFORMATION ====
- ID         : *unknown id* (0x9)
- ATTR       : RO SLC (0x1002)
- FIRST_UNIT : 0
- NO_UNITS   : 1
-===============================
- ID         : *unknown id* (0x0)
- ATTR       : RO SLC (0x1002)
- FIRST_UNIT : 1
- NO_UNITS   : 7
-===============================
- ID         : *unknown id* (0x1)
- ATTR       : RW SLC (0x1001)
- FIRST_UNIT : 8
- NO_UNITS   : 796
-===============================
- ID         : *unknown id* (0x14)
- ATTR       : RW STL SLC (0x1101)
- FIRST_UNIT : 804
- NO_UNITS   : 716
-===============================
- ID         : *unknown id* (0x15)
- ATTR       : RW STL SLC (0x1101)
- FIRST_UNIT : 1520
- NO_UNITS   : 372
-===============================
- ID         : *unknown id* (0x17)
- ATTR       : RW STL SLC (0x1101)
- FIRST_UNIT : 1892
- NO_UNITS   : 56
-===============================
- ID         : *unknown id* (0x18)
- ATTR       : RW SLC (0x1001)
- FIRST_UNIT : 1948
- NO_UNITS   : 56
-===============================
-FlashDevOpen 232: Error(nErr=0x80000002)
-j4fs_open 136: Error(nErr=0x40000000)
-loke_init: j4fs_open failed..
-EXT_I2C(3) -> No ACK
-EXT_I2C(3) -> No ACK
-EXT_I2C(3) -> No ACK
-EXT_I2C(3) -> No ACK
-EXT_I2C(3) -> No ACK
-EXT_I2C(3) -> No ACK
-EXT_I2C(3) -> No ACK
-EXT_I2C(3) -> No ACK
-EXT_I2C(3) -> No ACK
-EXT_I2C(3) -> No ACK
-EXT_I2C(3) -> No ACK
-EXT_I2C(3) -> No ACK
-init_fuel_gauge: vcell = 0mV, soc = 0
-FlashDevRead 63: Error(offset,length,j4fs_end,nErr)=(0x40000,0x1000,0x0,0x80040001)
-nps status file does not exist..
-nps status is incorrect!! set default status.(completed)
-nps status=0x504d4f43
-PMIC_IRQ1    = 0x0 
-PMIC_IRQ2    = 0x0 
-PMIC_IRQ3    = 0x0 
-PMIC_IRQ4    = 0x0 
-PMIC_STATUS1 = 0x40 
-PMIC_STATUS2 = 0x0 
-get_debug_level current debug level is 0x0.
-get_debug_level current debug level is 0x0.
-get_debug_level current debug level is 0x0.
-aries_process_platform: Debug Level Invalid
-keypad_scan: key value ----------------->= 0x0
-CONFIG_ARIES_REV:48 , CONFIG_ARIES_REV03:48 
-aries_process_platform: final s1 booting mode = 0
-EXT_I2C(3) -> No ACK
-EXT_I2C(3) -> No ACK
-EXT_I2C(3) -> No ACK
-aries_check_boot_low_battery: low battery detect. voltage=0, limit voltage=3430
-FlashDevRead 63: Error(offset,length,j4fs_end,nErr)=(0x40000,0x1000,0x0,0x80040001)
-DISPLAY_PATH_SEL[MDNIE 0x1]is on
-MDNIE setting Init start!!
-vsync interrupt is off
-video interrupt is off
-[fb0] turn on
-MDNIE setting Init end!!
 
-Autoboot (0 seconds) in progress, press any key to stop 
-get_debug_level current debug level is 0x0.
-get_debug_level current debug level is 0x0.
-boot_kernel: Debug Level Low
- debug: 9999
-setting param.serialnr=0x3834785f 0x2a500ec
-setting param.board_rev=0x30
-setting param.cmdline=bootmode=2 console=ttySAC2,115200 loglevel=4
+-----------------------------------------------------
+       USB BOOT Downloader for s5pc100         
+      Copyright (c) 2005 by SAMSUNG Electronic, Inc.    
+                   V1.0 (May 28 2010, 21:22:24) 
+-----------------------------------------------------
 
-Starting kernel at 0x44000000...
 
-Hey, the kernel returned! This should not happen.
-FlashDevClose 262: Error(nErr=0x80040001)
-loke_exit: bye~ bye!
-
+ 
