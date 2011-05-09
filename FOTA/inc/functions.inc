@@ -1,4 +1,4 @@
-;some functions built by Rebellos and b.kubica
+;some functions written by Rebellos and b.kubica
 ;if adding new please make them model-independent
 macro FUNCTIONS
 {
@@ -35,7 +35,7 @@ rebell_memcpy_copyloop:
 	strb	r4, [r1,r3] ;dst
 	add	r3, r3, 1
 	cmp	r3, r2
-	BLE	rebell_memcpy_copyloop
+	BLT	rebell_memcpy_copyloop
 
 	;MOV     R0, R2
 	;BL      int_debugprint
@@ -58,7 +58,7 @@ debug_print_fota:
 
 	ldr	r3, [fota_x]
 	ldr	r3, [r3]
-	cmp	r3, 20
+	cmp	r3, 21
 	BLE	debug_print_ret
 
 	ldr	r0, [v_delay_800ms]  ;wait 0.8s so we we can read the text
@@ -102,19 +102,19 @@ enable_uart_output:
 
 ;void int_debugprint(int num)
 int_debugprint:
-	STMFD	SP!, {R1,LR\}
+	STMFD	SP!, {R0-R1,LR\}
 	mov	r1, r0
 	ldr	r0, [s_debug_fmt_int_a]
 	bl	debug_print
-	LDMFD	SP!, {R1,PC\}
+	LDMFD	SP!, {R0-R1,PC\}
 
 ;void hex_debugprint(int num)
 hex_debugprint:
-	STMFD	SP!, {R1,LR\}
+	STMFD	SP!, {R0-R1,LR\}
 	mov	r1, r0
 	ldr	r0, [s_debug_fmt_hex_a]
 	bl	debug_print
-	LDMFD	SP!, {R1,PC\}
+	LDMFD	SP!, {R0-R1,PC\}
 ;void memdump(wchar* filepath, ulong buf, ulong size)
 memdump:
 	STMFD	SP!, {R1-R10,LR\}

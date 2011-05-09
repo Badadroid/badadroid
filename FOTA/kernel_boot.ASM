@@ -5,13 +5,14 @@ include 'inc/macros_S8500.inc'	  ;model dependend FOTA header and footer
 include 'inc/vars.inc'
 include 'inc/functions.inc'
 
-; VERY rough code for loading sbl to 0x40244000 and Kernel to 0x32000000, then executes KERNEL.
-; Sbl is unused in this code
+
 START
 	SUB	SP, SP, 128
 	MOV	r1, #1
 	LDR	r0, [pagetable]
 	BL	MemMMUCacheEnable
+	MOV	R8, R0 ;lets store previous MMU control register to turn it off later
+
 	bl	enable_uart_output ;enable_fota_output
 	MOV	R0, 1234
 	BL	int_debugprint
@@ -67,11 +68,8 @@ START
 
 	ldr	r0, [s_mmuoff_a]
 	bl	debug_print
-	bl	CoDisableMmu
-	MRC	p15, 0, R7,c1,c0
-	MOV	R8, #0x1805
-	BIC	R7, R7, R8
-	MCR	p15, 0, R7,c1,c0
+
+	MCR	p15, 0, R8,c1,c0 ;turn off MMUCache with previous gained MMU control reg
 	ldr	r0, [s_done_a]
 	bl	debug_print
 

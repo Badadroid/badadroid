@@ -10,21 +10,92 @@ include 'inc/functions.inc'
 START
 	;BL      CoDisableMmu
 
+	;MOV     r1, #1
+       ; LDR     r0, [pagetable]
+       ; BL      MemMMUCacheEnable
+	;MOV     R8, R0 ;lets store previous MMU control register to turn it off later
+
+	BL	System_EnableVIC
+	BL	System_DisableIRQ
+	;BL      CoDisableL2Cache
+
 	bl	enable_fota_output
+
+
+	MOV	R0, 2222
+	BL	int_debugprint
+
+	BL	testmembank
+	BL	testmembank
+
+	MOV	R0, 333
+	BL	int_debugprint
+
+	MRC	p15, 0, R0, c2, c0, 0
+	BL	hex_debugprint
+
+	MRC	p15, 0, R0, c2, c0, 1
+	BL	hex_debugprint
+
+	MRC	p15, 0, R0, c2, c0, 2
+	BL	hex_debugprint
+
+	MOV	R0, 4444
+	BL	int_debugprint
+	MRC	p15, 0, R0, c10, c2, 0 ; Read Primary Region Remap Register
+	BL	hex_debugprint
+	MRC	p15, 0, R0, c10, c2, 1 ; Read Normal Region Remap Register
+	BL	hex_debugprint
+
+	MOV	R0, 0
+	MCR	p15, 0, R0, c10, c2, 0
+	MCR	p15, 0, R0, c10, c2, 1
+
+
+	MOV	R0, 5555
+	BL	int_debugprint
+	MRC	p15, 0, R0, c10, c2, 0
+	BL	hex_debugprint
+
+	MRC	p15, 0, R0, c10, c2, 1
+	BL	hex_debugprint
+
+
+	LDR	R0, [read_addr]
+	BL	hex_debugprint
+
+	MCR	p15, 0, R0, c8, c7, 1 ; Invalidate Inst-TLB and Data-TLB entry (MVA
+
+	MCR	p15,0,R0,c7,c8,3 ; Write VA to Other State Privileged Write VA to PA Translation Register
+				 ; Performs VA to PA translation for Non-secure security state
+	MRC	p15,0,R0,c7,c4,0 ; Read PA from Physical Address Register
+	BL	hex_debugprint
+
+	;ADR     R1, read_addr
+	;STR     R0, [R1]
+
+	MOV	R0, 1111
+	BL	int_debugprint
+
+	LDR	R0, [read_addr]
+	MCR p15, 0, R0, c8, c7, 1 ; Invalidate Inst-TLB and Data-TLB entry (MVA)
+
+	BL	testmembank
+
+
+	;BL      testmembank
+
 	MOV	R0, 1234
 	BL	int_debugprint
 
-	MRC	p15, 0, R7,c1,c0
-	MOV	R8, #0x1805
-	BIC	R7, R7, R8
-	MCR	p15, 0, R7,c1,c0
+	;BL      testmembank
 
-	BL	testmembank
-	BL	testmembank
-	BL	testmembank
-	BL	testmembank
-	BL	testmembank
+	MOV	R0, 1234
+	BL	int_debugprint
 
+
+	BL	System_DisableVIC
+	BL	System_EnableIRQ
 
 	BL	dloadmode
 
@@ -50,8 +121,9 @@ FUNCTIONS
 DEFAULT_VARIABLES
     pagetable		dw gMMUL1PageTable
     opcode		dw 0xE1A0F00E
-    write_addr		dw 0x32000000
-    read_addr		dw 0x32000000
+    translate_test	dw 0x123
+    write_addr		dw 0x32000004
+    read_addr		dw 0x32000004
     semaphore		dw 0x25FFF800
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;; strings at the end
