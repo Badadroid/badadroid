@@ -6,6 +6,8 @@ include 'inc/vars.inc'
 include 'inc/functions.inc'
 
 START
+
+B skip
 	LDR	R3, [pagetable]
 	MOV	R2, #4
 	MOV	R1, #35
@@ -20,11 +22,18 @@ START
 	STR	R0, [R3,#12]
 	MOV	R0, 0x3   ;access flags
 	STR	R0, [R3,#16]
+skip:
+
+	bl	enable_fota_output
+
+	MOV	R0, 0
+	LDR	R1, [dump_start]
+	LDR	R2, [dump_size]
+	BL	rebell_memcpy
 
 	MOV	r1, #1
 	LDR	r0, [pagetable]
 	BL	MemMMUCacheEnable
-	bl	enable_fota_output
 	MOV	R0, 1234
 	BL	int_debugprint
 	BL	__PfsNandInit
@@ -68,13 +77,13 @@ FUNCTIONS
 DEFAULT_VARIABLES
     pagetable		dw gMMUL1PageTable
 
-    cache_start 	dw 0x32000000
-    cache_size		dw 0x01000000
+    cache_start 	dw 0x30000000
+    cache_size		dw 0x10000000
 
     reloc_origin	dw 0x32000000
 
-    dump_start		dw 0x42668000
-    dump_size		dw 0x4000
+    dump_start		dw 0x43000000
+    dump_size		dw 0xFFFF
 			;0x10000   ;64KB
 			;0x1400000 ;16MB
 			;0xA000000 ;128MB
@@ -90,7 +99,7 @@ DEFAULT_STRINGS_ADDR
 
 DEFAULT_STRINGS
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;; ;add custom strings below
-    s_dumppath	     du '/g/dumps/fileinfo.bin',0
+    s_dumppath	     du '/g/dumps/0x0.0xFFFF.bin',0
     s_kernel_path    du '/g/galaxyboot/zImage',0
     s_dirpath	     du '/g/dumps/',0
 
