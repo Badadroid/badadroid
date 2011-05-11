@@ -15,11 +15,26 @@ START
        ; BL      MemMMUCacheEnable
 	;MOV     R8, R0 ;lets store previous MMU control register to turn it off later
 
-	BL	System_EnableVIC
-	BL	System_DisableIRQ
+	;BL      System_EnableVIC
+	;BL      System_DisableIRQ
 	;BL      CoDisableL2Cache
 
 	bl	enable_fota_output
+
+	MRS	R0, CPSR
+BIC	R0, R0, #0x1F
+ORR	R0, R0, #0xD3
+MSR	CPSR_cf, R0
+MOV	R0, #0
+MCR	p15, 0, R0,c8,c7
+MCR	p15, 0, R0,c7,c5
+MRC	p15, 0, R0,c1,c0
+BIC	R0, R0, #0x2000
+BIC	R0, R0, #7
+ORR	R0, R0, #2
+ORR	R0, R0, #0x800
+MCR	p15, 0, R0,c1,c0
+
 
 
 	MOV	R0, 2222
@@ -106,6 +121,9 @@ semafor:
 	;BL      Get_Onedram_Semaphore
 	;CMP     R0, #0
        ; BEQ     semafor
+	LDR	R0, [read_addr]
+	LDR	R0, [R0]
+	BL	hex_debugprint
 
 	LDR	R0, [opcode]
 	LDR	R1, [write_addr]
@@ -122,8 +140,8 @@ DEFAULT_VARIABLES
     pagetable		dw gMMUL1PageTable
     opcode		dw 0xE1A0F00E
     translate_test	dw 0x123
-    write_addr		dw 0x32000004
-    read_addr		dw 0x32000004
+    write_addr		dw 0x32000000
+    read_addr		dw 0x32000000
     semaphore		dw 0x25FFF800
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;; strings at the end
