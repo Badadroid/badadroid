@@ -42,8 +42,9 @@ START
 	ldr	r1, [sbl_kernel_addr]
 	str	r0, [r1]
 
-	ldr	r0, [jmp_by_14_ops]
-	ldr	r1, [sbl_jmp_patch]
+	ldr	r0, [jmp_op]
+	ADD	R0, R0, 0xA ;14 ops
+	ldr	r1, [sbl_jmp_patch] ;where to place our jump patch?
 	str	r0, [r1]
 	ldr	r0, [s_done_a]
 	bl	debug_print
@@ -140,7 +141,8 @@ DEFAULT_VARIABLES
     kernel_ptr		dw 0x44000000;0x44000000
 
     opcode		dw 0xE1A0F00E
-    jmp_by_14_ops	dw 0xEA00000A
+    jmp_op		dw 0xEA000000
+
     sbl_jmp_patch	dw 0x40246D88
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;; strings at the end
@@ -160,6 +162,7 @@ DEFAULT_STRINGS_ADDR
 DEFAULT_STRINGS
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;; ;add custom strings below
     s_kernel_path    du '/g/galaxyboot/zImage',0
+    s_sbl_path	     du '/g/galaxyboot/pbl_rebellos.bin',0
     s_sbl_path	     du '/g/galaxyboot/Sbl2FOTA_mijoma2.bin',0
 
     s_loadsbl	     db ' Loading SBL',0
