@@ -1,6 +1,6 @@
 
-include 'inc/S8500XXJEE.inc'	  ;here include the right BL function pointers, depends on model and BL you've got
-include 'inc/macros_S8500.inc'	  ;model dependend FOTA header and footer
+include 'inc/S8530JPKA1.inc'	  ;here include the right BL function pointers, depends on model and BL you've got
+include 'inc/macros_S8530.inc'	  ;model dependend FOTA header and footer
 
 include 'inc/vars.inc'
 include 'inc/functions.inc'
@@ -13,7 +13,7 @@ START
 	BL	MemMMUCacheEnable
 	MOV	R8, R0 ;lets store previous MMU control register to turn it off later
 
-	bl	enable_uart_output ;enable_fota_output
+	bl	enable_fota_output ;enable_fota_output
 	MOV	R0, 1234
 	BL	int_debugprint
 	BL	__PfsNandInit
@@ -60,7 +60,7 @@ START
 	ldr	r0, [s_loadkernel_a]
 	bl	debug_print
 	MOV	R2, R2
-	LDR	R1, [kernel_buf]
+	LDR	R1, [kernel_start]
 	LDR	R0, [s_kernel_path_a]
 	BL	loadfile
 	BL	int_debugprint
@@ -78,10 +78,10 @@ START
 	bl	debug_print
 
        ; BL      CoDisableL2Cache
-       ; BL      CoDisableDCache
+	BL	CoDisableDCache
        ; BL      CoInvalidateBothCaches
        ; BL      System_DisableVIC
-       ; BL      System_DisableIRQ
+	BL	System_DisableIRQ
        ; BL      System_DisableFIQ
 	BL	configure_ram ;reconfigure DMC1 to map bank0 onto 0x30 instead of 0x20, code from PBL, it isn't trustable
 
@@ -176,7 +176,7 @@ copykernel:
 	MOV	R0, 9999
 	BL	int_debugprint
 
-	BL	relockernel
+	;BL      relockernel
 
 	LDMFD	SP!, {R1-R2,PC}
 
