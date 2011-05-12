@@ -11,7 +11,7 @@ START
 	BL		GPIO_Drv_UnsetExtInterrupt
 	BL		disp_Normal_Init
 	BL		DRV_Modem_BootingStart
-	;BL		LaunchNucleus
+	;BL             LaunchNucleus
 
 	SUB	SP, SP, 128
 
@@ -23,6 +23,7 @@ START
 	bl	enable_uart_output ;enable_fota_output
 	BL	__PfsNandInit
 	BL	__PfsMassInit
+
 
 	ldr	r0, [s_loadsbl_a]
 	bl	debug_print
@@ -36,6 +37,15 @@ START
 
 	ldr	r0, [s_patchsbl_a]
 	bl	debug_print
+	;ldr     r0, [atag_ptr]
+	;ldr     r1, [sbl_atag_addr]
+	;str     r0, [r1]
+	;ldr     r1, [sbl_atag_addr2]
+	;str     r0, [r1]
+
+	;ldr     r0, [kernel_ptr]
+	;ldr     r1, [sbl_kernel_addr]
+	;str     r0, [r1]
 
 	ldr	r0, [jmp_op]
 	ADD	R0, R0, 0xA ;14 ops
@@ -64,37 +74,42 @@ START
 	ldr	r0, [s_done_a]
 	bl	debug_print
 
-;	ldr	r0, [s_mmuoff_a]
-;	bl	debug_print
-;
-;	MCR	p15, 0, R8,c1,c0 ;turn off MMUCache with previous gained MMU control reg
-;	ldr	r0, [s_done_a]
-;	bl	debug_print
-;
-;	ldr	r0, [s_configramirq_a]
-;	bl	debug_print
+	ldr	r0, [s_mmuoff_a]
+	bl	debug_print
+
+	MCR	p15, 0, R8,c1,c0 ;turn off MMUCache with previous gained MMU control reg
+	ldr	r0, [s_done_a]
+	bl	debug_print
+
+	ldr	r0, [s_configramirq_a]
+	bl	debug_print
 
 	;BL      CoDisableL2Cache
-	;BL	CoDisableDCache
+	BL	CoDisableDCache
 	;BL      CoInvalidateBothCaches
 	;BL      System_DisableVIC
 	;BL      System_DisableIRQ
-    ; BL      System_DisableFIQ
+       ; BL      System_DisableFIQ
 	BL	configure_ram ;reconfigure DMC1 to map bank0 onto 0x30 instead of 0x20, code from PBL, it isn't trustable
+
+	; BL      relockernel
 
 	ldr	r0, [s_done_a]
 	bl	debug_print
 
-	LDR	R1, [sbl_start]
+	BL	copykernel
+
+	LDR	R1, [kernel_start]
 	LDR	R0, [s_jumpingout_a]
 	BL	debug_print
 
-	LDR	R5, [sbl_start]
+
+	LDR	R5, [kernel_start]
 	BLX	R5
 
 	ldr	r0, [s_kernelreturn_a]
 	bl	debug_print
-
+       ; mov     r1, 0x32000000
 	BL	dloadmode
 
 relockernel:
