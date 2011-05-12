@@ -5,13 +5,11 @@ include 'inc/macros_S8500.inc'	  ;model dependend FOTA header and footer
 include 'inc/vars.inc'
 include 'inc/functions.inc'
 
-
 START
 	MOV		R0, #0xA9
 	BL		GPIO_Drv_UnsetExtInterrupt
 	BL		disp_Normal_Init
 	BL		DRV_Modem_BootingStart
-	;BL             LaunchNucleus
 
 	SUB	SP, SP, 128
 
@@ -85,11 +83,12 @@ START
 	bl	debug_print
 
 	;BL      CoDisableL2Cache
-	BL	CoDisableDCache
+	;BL	CoDisableDCache
 	;BL      CoInvalidateBothCaches
 	;BL      System_DisableVIC
 	;BL      System_DisableIRQ
-       ; BL      System_DisableFIQ
+    ; BL      System_DisableFIQ
+
 	BL	configure_ram ;reconfigure DMC1 to map bank0 onto 0x30 instead of 0x20, code from PBL, it isn't trustable
 
 	; BL      relockernel
@@ -109,7 +108,7 @@ START
 
 	ldr	r0, [s_kernelreturn_a]
 	bl	debug_print
-       ; mov     r1, 0x32000000
+
 	BL	dloadmode
 
 relockernel:
@@ -187,11 +186,11 @@ copykernel:
 	MOV	R0, 9999
 	BL	int_debugprint
 
-	MOV	R0, #0xA9
-	BL	GPIO_Drv_UnsetExtInterrupt
-	BL	disp_Normal_Init
+;	MOV	R0, #0xA9
+;	BL	GPIO_Drv_UnsetExtInterrupt
+;	BL	disp_Normal_Init
 
-	BL	DRV_Modem_BootingStart
+;	BL	DRV_Modem_BootingStart
 	BL	relockernel
 	MOV	R0, #0xA9
 	BL	GPIO_Drv_UnsetExtInterrupt
