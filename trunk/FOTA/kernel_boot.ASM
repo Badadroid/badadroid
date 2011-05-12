@@ -78,6 +78,7 @@ START
 	bl	debug_print
 
 	BL	CoDisableL2Cache
+	BL	CoDisableDCache
 	BL	CoInvalidateBothCaches
 	BL	System_DisableVIC
 	BL	System_DisableIRQ
