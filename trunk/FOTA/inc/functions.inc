@@ -110,7 +110,7 @@ STR	R1, [R0,#0x10]
 MOV	R1, #0x5100000
 STR	R1, [R0,#0x10]
 	MOV	R5, R0
-	MOV	R0, 1233421
+	MOV	R0, 12334
 	BL	int_debugprint
 	MOV	R0, R5
 LDR	R1, [conf_0x100032]
