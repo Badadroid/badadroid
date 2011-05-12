@@ -2923,3 +2923,14 @@ gstFFatMain				  equ 0x428B6C4C
 SvcStackEnd				  equ 0x428B75A0
 debugLevel				  equ 0x4FF0005C
 BuildInfoAddr				  equ 0x4FF00060
+
+System_EnableVIC_end				equ 0x42481630
+System_DisableVIC					equ 0x42481630
+System_EnableIRQ_end				equ 0x42481650
+System_DisableIRQ					equ 0x42481650
+System_EnableFIQ_end				equ 0x42481670
+System_DisableFIQ					equ 0x42481670
+
+
+
+
