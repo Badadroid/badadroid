@@ -60,8 +60,8 @@ LDR	R1, [conf_0x212100]
 STR	R1, [R0,#4]
 LDR	R1, [conf_0x30F82222]
 STR	R1, [R0,#8]
-;LDR     R1, [conf_0x40F02222]
-;STR     R1, [R0,#0xC]
+LDR	R1, [conf_0x40F02222]
+STR	R1, [R0,#0xC]
 MOV	R1, #0xFF000000
 STR	R1, [R0,#0x14]
 MOV	R1, 0x50E
@@ -175,6 +175,7 @@ rebell_memcpy:
 	MOV	R1, R0
 	LDR	R0, [s_memcpy_a]
 	BL	debug_print
+
 	MOV	R0, R1
 	MOV	R1, R2
 	MOV	R2, R3

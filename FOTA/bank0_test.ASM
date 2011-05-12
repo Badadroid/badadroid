@@ -88,34 +88,6 @@ B	the_morning_after
 FUNCTIONS
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;; variables below
 DEFAULT_VARIABLES
-	conf_0x20F00312  dw 0x20F00312
-	conf_0x20F02222  dw 0x20F02222
-	conf_0x20F82222  dw 0x20F82222
-	conf_0xE2700000  dw 0xE2700000
-	conf_0xE2900C00  dw 0xE2900C00
-	conf_0x120020	 dw 0x120020
-	conf_0xFFF10B0	 dw 0xFFF10B0
-	conf_0x212113	 dw 0x212113
-	conf_0x50101003  dw 0x50101003
-	conf_0x50101001  dw 0x50101001
-	conf_0xFFF1010	 dw 0xFFF1010
-	APLL_LOCK	 dw 0xE0100000
-	RST_STAT	 dw 0xE010A000
-	ASYNC_MSYS_DMC0  dw 0xF1E00000
-	DMC0_REG	 dw 0xF0000000
-	conf_0x60101003  dw 0x60101003
-	conf_0x60101001  dw 0x60101001
-	conf_0x101000	 dw 0x101000
-	DMC1_REG	 dw 0xF1400000
-	conf_0x40F02222  dw 0x40F02222
-	conf_0x212100	 dw 0x212100
-	conf_0x30F82222  dw 0x30F82222
-	conf_0x14233287  dw 0x14233287
-	conf_0x12130005  dw 0x12130005
-	conf_0xE140222	 dw 0xE140222
-	conf_0x20020	 dw 0x20020
-	conf_0x100032	 dw 0x100032
-
     pagetable		dw gMMUL1PageTable
     opcode		dw 0xE1A0F00E
     write_addr		dw 0x32000004
@@ -136,15 +108,6 @@ DEFAULT_STRINGS_ADDR
 
 DEFAULT_STRINGS
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;; ;add custom strings below
-    s_kernel_path    du '/g/galaxyboot/zImage_return',0
-    s_sbl_path	     du '/g/galaxyboot/Sbl_mijoma.bin',0
-
-    s_loadsbl	     db ' Loading SBL',0
-    s_loadkernel     db ' Loading kernel image to buf',0
-    s_jumpingout     db ' Jumpout to 0x%X',0
-    s_mmuoff	     db ' Turning off MMU',0
-    s_kernelreloc    db ' Reloc kernel to 0x%X',0
-    s_kernelreturn   db ' WTF KERNEL RETURNED',0
 
 raminit_callback_helper:  ;
 	code_len = raminit_callback_helper - c_start
