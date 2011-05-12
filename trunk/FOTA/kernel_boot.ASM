@@ -77,12 +77,12 @@ START
 	ldr	r0, [s_configramirq_a]
 	bl	debug_print
 
-	BL	CoDisableL2Cache
-	BL	CoDisableDCache
-	BL	CoInvalidateBothCaches
-	BL	System_DisableVIC
-	BL	System_DisableIRQ
-	BL	System_DisableFIQ
+       ; BL      CoDisableL2Cache
+       ; BL      CoDisableDCache
+       ; BL      CoInvalidateBothCaches
+       ; BL      System_DisableVIC
+       ; BL      System_DisableIRQ
+       ; BL      System_DisableFIQ
 	BL	configure_ram ;reconfigure DMC1 to map bank0 onto 0x30 instead of 0x20, code from PBL, it isn't trustable
 
 	ldr	r0, [s_done_a]
