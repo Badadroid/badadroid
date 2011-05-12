@@ -32,15 +32,15 @@ START
 
 	ldr	r0, [s_patchsbl_a]
 	bl	debug_print
-	ldr	r0, [atag_ptr]
-	ldr	r1, [sbl_atag_addr]
-	str	r0, [r1]
-	ldr	r1, [sbl_atag_addr2]
-	str	r0, [r1]
+	;ldr     r0, [atag_ptr]
+	;ldr     r1, [sbl_atag_addr]
+	;str     r0, [r1]
+	;ldr     r1, [sbl_atag_addr2]
+	;str     r0, [r1]
 
-	ldr	r0, [kernel_ptr]
-	ldr	r1, [sbl_kernel_addr]
-	str	r0, [r1]
+	;ldr     r0, [kernel_ptr]
+	;ldr     r1, [sbl_kernel_addr]
+	;str     r0, [r1]
 
 	ldr	r0, [jmp_op]
 	ADD	R0, R0, 0xA ;14 ops
@@ -54,7 +54,7 @@ START
 	BL	tfs4_stat
 
 	LDR	R2, [SP,0xC] ;get kernel size
-	ADR	R0, kernel_size
+	LDR	R0, [kernel_size_a]
 	STR	R2, [R0]	;store for later use
 
 	ldr	r0, [s_loadkernel_a]
@@ -74,6 +74,19 @@ START
 	ldr	r0, [s_done_a]
 	bl	debug_print
 
+	ldr	r0, [s_configramirq_a]
+	bl	debug_print
+
+	BL	CoDisableL2Cache
+	BL	CoInvalidateBothCaches
+	BL	System_DisableVIC
+	BL	System_DisableIRQ
+	BL	System_DisableFIQ
+	BL	configure_ram ;reconfigure DMC1 to map bank0 onto 0x30 instead of 0x20, code from PBL, it isn't trustable
+
+	ldr	r0, [s_done_a]
+	bl	debug_print
+
 	LDR	R1, [sbl_start]
 	LDR	R0, [s_jumpingout_a]
 	BL	debug_print
@@ -86,28 +99,7 @@ START
 	bl	debug_print
        ; mov     r1, 0x32000000
 	BL	dloadmode
-testmembank:
-	STMFD	SP!, {R0-R1,LR}
 
-semafor:
-	;BL      Get_Onedram_Semaphore
-	;CMP     R0, #0
-	;BEQ     semafor
-
-
-	LDR	R1, [kernel_start]
-	MOV	R0, 0
-	LDR	R0, [R1]
-	BL	hex_debugprint
-
-	LDR	R0, [opcode]
-	STR	R0, [R1]
-
-	MOV	R0, 0
-	LDR	R0, [R1]
-	BL	hex_debugprint
-	;BL      Onedram_Release_Semaphore
-	LDMFD	SP!, {R0-R1,PC}
 relockernel:
 	STMFD	SP!, {R0-R2,LR}
 
@@ -128,9 +120,10 @@ DEFAULT_VARIABLES
     sbl_start		dw 0x40244000
     sbl_size		dw 0x140000
 
-    kernel_start	dw 0x44000000
+    kernel_start	dw 0x32000000
 
     kernel_buf		dw 0x44000000
+    kernel_size_a	dw kernel_size
     kernel_size 	dw 0 ;overwritten during runtime ;0x6664C8  ;6710472
 
     sbl_kernel_addr	dw 0x402D4BC0
@@ -140,7 +133,7 @@ DEFAULT_VARIABLES
     atag_ptr		dw 0x40000100
     kernel_ptr		dw 0x44000000;0x44000000
 
-    opcode		dw 0xE1A0F00E
+    ;opcode              dw 0xE1A0F00E
     jmp_op		dw 0xEA000000
 
     sbl_jmp_patch	dw 0x40246D88
@@ -158,11 +151,11 @@ DEFAULT_STRINGS_ADDR
     s_mmuoff_a	     dw s_mmuoff
     s_patchsbl_a     dw s_patchsbl
     s_kernelreturn_a dw s_kernelreturn
+    s_configramirq_a dw s_configram_irq
 
 DEFAULT_STRINGS
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;; ;add custom strings below
     s_kernel_path    du '/g/galaxyboot/zImage',0
-    s_sbl_path	     du '/g/galaxyboot/pbl_rebellos.bin',0
     s_sbl_path	     du '/g/galaxyboot/Sbl2FOTA_mijoma2.bin',0
 
     s_loadsbl	     db ' Loading SBL',0
@@ -172,6 +165,7 @@ DEFAULT_STRINGS
     s_kernelreloc    db ' Reloc kernel to 0x%X',0
     s_kernelreturn   db ' WTF KERNEL RETURNED',0
     s_patchsbl	     db ' Patching SBL',0
+    s_configram_irq  db ' DMC1 config, IRQ off, FIQ off',0
 
 copykernel_helper:
 	code_len = copykernel_helper - c_start
@@ -181,7 +175,7 @@ copykernel:
 	MOV	R0, 9999
 	BL	int_debugprint
 
-	;BL      testmembank
+	BL	relockernel
 
 	LDMFD	SP!, {R1-R2,PC}
 
