@@ -8,6 +8,7 @@ include 'inc/functions.inc'
 
 START
 	SUB	SP, SP, 128
+
 	MOV	r1, #1
 	LDR	r0, [pagetable]
 	BL	MemMMUCacheEnable
@@ -60,7 +61,7 @@ START
 	ldr	r0, [s_loadkernel_a]
 	bl	debug_print
 	MOV	R2, R2
-	LDR	R1, [kernel_start]
+	LDR	R1, [kernel_buf]
 	LDR	R0, [s_kernel_path_a]
 	BL	loadfile
 	BL	int_debugprint
@@ -85,8 +86,11 @@ START
        ; BL      System_DisableFIQ
 	BL	configure_ram ;reconfigure DMC1 to map bank0 onto 0x30 instead of 0x20, code from PBL, it isn't trustable
 
+
 	ldr	r0, [s_done_a]
 	bl	debug_print
+
+	BL	relockernel
 
 	LDR	R1, [sbl_start]
 	LDR	R0, [s_jumpingout_a]
