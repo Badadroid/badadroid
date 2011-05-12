@@ -1,4 +1,4 @@
-=~=~=~=~=~=~=~=~=~=~=~= PuTTY log 2011.05.12 21:11:28 =~=~=~=~=~=~=~=~=~=~=~=
+=~=~=~=~=~=~=~=~=~=~=~= PuTTY log 2011.05.12 21:16:29 =~=~=~=~=~=~=~=~=~=~=~=
 [PAM:   ] ++FSR_PAM_Init
 [PAM:   ]   OneNAND physical base address       : 0xb0000000
 [PAM:   ]   OneNAND virtual  base address       : 0xb0000000
@@ -86,7 +86,7 @@ SD_HostCtrl_IssueCommand[ch0] not SDclk off, cmd13, SD_CLK_CTRL:0xf
  Turning off MMU
  done!
  DMC1 config
- debug: 1807
+ debug: 9999
  debug: 9999
  done!
  Jumpout to 0x40244000
@@ -200,6 +200,51 @@ SD_HostCtrl_IssueCommand[ch0] not SDclk off, cmd13, SD_CLK_CTRL:0xf
 get_debug_level current debug level is 0x0.
 boot_kernel: Debug Level Low
  debug: 9999
+Display_LSI_Boot : disp_Main_Clean 
+Display_LSI_Boot : disp_Main_Clean_All 
+Display_LSI_Boot : disp_dimming_backlight 
+Display_LSI_Boot : disp_Normal_Init 
+ DRV_modem_reset!!!!!!!!!!!!!!!!!  
+ DRV_Send_DBL!!!!!!!!!!!!!!!!!  
+
+[DLOAD_T] DLOAD_ACK_STATE: Retry(2) failed
+ DRV_modem_reset!!!!!!!!!!!!!!!!!  
+ DRV_Send_DBL!!!!!!!!!!!!!!!!!  
+
+[DLOAD_T] DLOAD_ACK_STATE: Retry(3) failed
+ DRV_modem_reset!!!!!!!!!!!!!!!!!  
+ DRV_Send_DBL!!!!!!!!!!!!!!!!!  
+
+[DLOAD_T] DLOAD_ACK_STATE: Retry(4) failed
+ DRV_modem_reset!!!!!!!!!!!!!!!!!  
+ DRV_Send_DBL!!!!!!!!!!!!!!!!!  
+
+[DLOAD_T] DLOAD_ACK_STATE: Retry(5) failed
+ DRV_modem_reset!!!!!!!!!!!!!!!!!  
+ DRV_Send_DBL!!!!!!!!!!!!!!!!!  
+
+[DLOAD_T] DLOAD_ACK_STATE: Retry(6) failed
+ DRV_modem_reset!!!!!!!!!!!!!!!!!  
+ DRV_Send_DBL!!!!!!!!!!!!!!!!!  
+
+[DLOAD_T] DLOAD_ACK_STATE: Retry(7) failed
+ DRV_modem_reset!!!!!!!!!!!!!!!!!  
+ DRV_Send_DBL!!!!!!!!!!!!!!!!!  
+
+[DLOAD_T] DLOAD_ACK_STATE: Retry(8) failed
+ DRV_modem_reset!!!!!!!!!!!!!!!!!  
+ DRV_Send_DBL!!!!!!!!!!!!!!!!!  
+
+[DLOAD_T] DLOAD_ACK_STATE: Retry(9) failed
+ DRV_modem_reset!!!!!!!!!!!!!!!!!  
+ DRV_Send_DBL!!!!!!!!!!!!!!!!!  
+
+[DLOAD_T] DLOAD_ACK_STATE: Retry(10) failed
+ DRV_modem_reset!!!!!!!!!!!!!!!!!  
+ DRV_Send_DBL!!!!!!!!!!!!!!!!!  
+
+[DLOAD_T] DLOAD_ACK_STATE: Retry(11) failed
+DRV_Modem_BootingStart retry count = 10.
  Reloc kernel to 0x32000000
 memcpy 0x44000000=>0x32000000,s=0x6664C8
 setting param.serialnr=0x3834785f 0x2a500ec
@@ -281,11 +326,11 @@ Uncompressing Linux.............................................................
 <6>Initializing cgroup subsys freezer
 <6>CPU: Testing write buffer coherency: ok
 <0>KERNEL:kernel_sec_get_debug_level_from_boot=0x574f4c44
-[    0.121618] KERNEL:kernel_sec_get_debug_level_from_b<ot=0x574f4c44
+[    0.121639] KERNEL:kernel_sec_get_debug_level_from_b<ot=0x574f4c44
 0>KERNEL:magic_number=0x0 DEBUG LEVEL low!!
-[    0.131677] KERNEL:magic_number=0x0 DEB<G LEVEL low!!
+[    0.131698] KERNEL:magic_number=0x0 DEB<G LEVEL low!!
 0>(kernel_sec_set_upload_cause) : upload_cause set 0
-[    0.141391] (kernel_sec_set_upload_cause) : upload_cause set 0
+[    0.141412] (kernel_sec_set_upload_cause) : upload_cause set 0
 <6>regulator: core version 0.5
 <6>NET: Registered protocol family 16
 S5PC110 Hardware version : EVT1 
@@ -415,8 +460,8 @@ Uncompressing Linux.............................................................
 [ADB_UMS_ACM_RNDIS_MTP] string_dev = 1000785f02a5 
 <4>android_adb_ums_acm_rndis_mtp gadget: using random self ethernet address
 <4>android_adb_ums_acm_rndis_mtp gadget: using random host ethernet address
-<6>usb0: MAC f2:d6:05:08:03:27
-<6>usb0: HOST MAC 0e:1c:72:24:76:fb
+<6>usb0: MAC 7a:d7:26:b7:43:17
+<6>usb0: HOST MAC 32:b2:bf:37:a2:20
 <6>acm_function_add
 <6>DUN is registerd
 <6>fsg_function_bind cdrom patch after fsg->nluns 2
@@ -428,15 +473,15 @@ Uncompressing Linux.............................................................
 ***** [mtpg_function_bind:975] calling mtp_function_enable with 0 
 [mtp_function_enable] mtp_function => (disabled)
 ****** mtp_function_enable and line 1267 null_desc 
-  interface 0 = acm/c4bf7840
-  interface 1 = acm/c4bf7840
-  interface 2 = usb_mass_storage/c4940800
-  interface 3 = adb/c4ac6d00
-  interface 4 = Gadget_MTP/c4ac6f00
-  interface 5 = rndis/c4bf7300
-  interface 6 = rndis/c4bf7300
+  interface 0 = acm/c4c72b40
+  interface 1 = acm/c4c72b40
+  interface 2 = usb_mass_storage/c4ab6800
+  interface 3 = adb/c4ab2d00
+  interface 4 = Gadget_MTP/c4ab2f00
+  interface 5 = rndis/c4c72a80
+  interface 6 = rndis/c4c72a80
 <6>mass_storage_function_config_changed
-  interface 0 = usb_mass_storage/c4940800
+  interface 0 = usb_mass_storage/c4ab6800
 <6>android_adb_ums_acm_rndis_mtp gadget: Android Composite USB, version: Apr 22 2011
 <6>android_adb_ums_acm_rndis_mtp gadget: android_adb_ums_acm_rndis_mtp ready
 <6>Registered gadget driver 'android_adb_ums_acm_rndis_mtp'
@@ -455,28 +500,27 @@ Uncompressing Linux.............................................................
 <6>regulator: LDO17: 3000 <--> 3200 mV 
 <6>i2c-gpio i2c-gpio.6: using pins 206 (SDA) and 209 (SCL)
 [FSA9480] fsa9480_codec_probe
-H[[,:interrupt: 0x00018001
+x00018001
 fsa9480_interrupt
 <7>mmc0: req failed (CMD5): -110, retrying...
 [FSA9480] FSA9480_ReadIntRegister
 <7>sdhci [sdhci_irq()]: *** mmc0 got interrupt: 0x00018001
 <7>mmc0: req failed (CMD5): -110, retrying...
-GP2A opt i2c attach success!!!
 <7>sdhci [sdhci_irq()]: *** mmc0 got interrupt: 0x00018001
 <7>mmc0: req done (CMD5): -110: 00000000 00000000 00000000 00000000
 <7>*** DEBUG : ...then normal SD...(0) ***
 <7>mmc0: starting CMD55 arg 00000000 flags 000000f5
-opt_i2c_client : (0xc4ac2300)
-<7>sdhci [sdhci_irq()]: *** mmc0 got interrupt: 0x00018001
-<7>mmc0: req done (CMD55): -110: 00000000 00000000 00000000 00000000
-<7>mmc0: starting CMD55 arg 00000000 flags 000000f5
-[gp2a_opt_probe] CONFIG_GP2A_MODE_A INIT 
 <7>sdhci [sdhci_irq()]: *** mmc0 got interrupt: 0x00018001
 <7>mmc0: req done (CMD55): -110: 00000000 00000000 00000000 00000000
 <7>mmc0: starting CMD55 arg 00000000 flags 000000f5
 <7>sdhci [sdhci_irq()]: *** mmc0 got interrupt: 0x00018001
 <7>mmc0: req done (CMD55): -110: 00000000 00000000 00000000 00000000
 <7>mmc0: starting CMD55 arg 00000000 flags 000000f5
+<7>sdhci [sdhci_irq()]: *** mmc0 got interrupt: 0x00018001
+<7>mmc0: req done (CMD55): -110: 00000000 00000000 00000000 00000000
+GP2A opt i2c attach success!!!
+<7>mmc0: starting CMD55 arg 00000000 flags 000000f5
+opt_i2c_client : (0xc49e5300)
 <7>sdhci [sdhci_irq()]: *** mmc0 got interrupt: 0x00018001
 <7>mmc0: req done (CMD55): -110: 00000000 00000000 00000000 00000000
 <7>*** DEBUG : ...and finally MMC. (0)***
@@ -485,15 +529,16 @@ Uncompressing Linux.............................................................
 <7>mmc0: req done (CMD1): 0: 00ff8080 00000000 00000000 00000000
 <7>mmc0: clock 400000Hz busmode 1 powermode 2 cs 0 Vdd 7 width 0 timing 0
 <7>mmc0: clock 400000Hz busmode 1 powermode 2 cs 1 Vdd 7 width 0 timing 0
+[gp2a_opt_probe] CONFIG_GP2A_MODE_A INIT 
 <6>ldo38_control : turn ON LDO3 and LDO8 (cur_stat=0, req=1)
 [otg_clock_enable] clk_enable(otg_clock) OK.
 [udc_enable]AP_USB_Power off by Bootup : 1<7>mmc0: starting CMD0 arg 00000000 flags 000000c0
 <7>sdhci [sdhci_irq()]: *** mmc0 got interrupt: 0x00000001
 <7>mmc0: req done (CMD0): 0: 00000000 00000000 00000000 00000000
+<7>mmc0: clock 400000Hz busmode 1 powermode 2 cs 0 Vdd 7 width 0 timing 0
 [FSA9480] FSA9480_ProcessDevice (dev1 : 0x0, dev2 : 0x8)
 FSA9480_DEV_TY2_JIG_UART_OFF --- ATTACH
 JIT UART OFF
-<7>mmc0: clock 400000Hz busmode 1 powermode 2 cs 0 Vdd 7 width 0 timing 0
 <7>mmc0: starting CMD1 arg 40000080 flags 000000e1
 <7>sdhci [sdhci_irq()]: *** mmc0 got interrupt: 0x00000001
 <7>mmc0: req done (CMD1): 0: 00ff8080 00000000 00000000 00000000
@@ -740,8 +785,8 @@ Uncompressing Linux.............................................................
 <6>asoc: WM8994 PAIFRX <-> s3c64xx-i2s mapping ok
 +++++++smdkc110_audio_init
 <6>WM8994 Audio Codec 0.1
-s3c_preallocate_dma_buffer: VA-ff041000, PA-4F880000, 131072bytes
-s3c_preallocate_dma_buffer: VA-ff061000, PA-4F8A0000, 131072bytes
+s3c_preallocate_dma_buffer: VA-ff041000, PA-4F860000, 131072bytes
+s3c_preallocate_dma_buffer: VA-ff061000, PA-4F880000, 131072bytes
 <6>asoc: WM8994 PCM <-> s3c-pcmdev mapping ok
 <4>ASoC: Failed to create codec register debugfs file
 <4>Failed to create pop time debugfs file
@@ -808,7 +853,7 @@ Uncompressing Linux.............................................................
 <7>[TSP] msg id =  1 90 21 8d 4 0 0 0 0
 [QT] qt602240_init/6318
 [QT] qt602240_init/6349, platform_driver_register!!
-<6>s3c2410-rtc s3c2410-rtc: setting system clock to 2011-05-12 18:11:46 UTC (1305223906)
+<6>s3c2410-rtc s3c2410-rtc: setting system clock to 2011-05-12 18:16:54 UTC (1305224214)
 <6>FIMC0 registered successfully
 <6>FIMC1 registered successfully
 <6>FIMC2 registered successfully
@@ -821,42 +866,42 @@ Uncompressing Linux.............................................................
 <6>Freeing init memory: 7124K
 <4>Warning: unable to open an initial console.
 <3>init: /recovery.rc: 212: invalid option 'enabled'
-[    6.331932] init: /recovery.rc: 212: invalid option 'enabled'
+[    6.023249] init: /recovery.rc: 212: invalid option 'enabled'
 !@Init process: device_init #3
 <3>init: ro.secure:1
-[    6.808598] init: ro.secure:1
+[    6.500020] init: ro.secure:1
 <3>init: ro.allow.mock.location:0
-[    6.814581] init: ro.allow.mock.location:0
+[    6.506002] init: ro.allow.mock.location:0
 <3>init: ro.debuggable:1
-[    6.821762] init: r<.debuggable:1
+[    6.513184] init: r<.debuggable:1
 3>init: persist.service.adb.enable:1
-[    6.828354] init: persist.service.adb.enable:1
+[    6.519775] init: persist.service.adb.enable:1
 <3>init: cannot open '/initlogo.rle'
-[    6.839282] init: cannot open '/initlogo.rle'
+[    6.530695] init: cannot open '/initlogo.rle'
 <3>init: ro.factorytest:0
-[    6.845961] init: ro<factorytest:0
+[    6.537373] init: ro<factorytest:0
 3>init: ro.serialno:
-[    6.851251] init< ro.serialno:
+[    6.542664] init< ro.serialno:
 3>init: ro.bootmode:unknown
-[    6.856802] init: ro.bo<tmode:unknown
+[    6.548215] init: ro.bo<tmode:unknown
 3>init: ro.baseband:unknown
-[    6.862960] init: ro.ba<eband:unknown
+[    6.554373] init: ro.ba<eband:unknown
 3>init: ro.carrier:unknown
-[    6.869031] init: ro.c<rrier:unknown
+[    6.560444] init: ro.c<rrier:unknown
 3>init: ro.bootloader:unknown
-[    6.875276] init: ro.boot<oader:unknown
+[    6.566689] init: ro.boot<oader:unknown
 3>init: ro.hardware:SMDKC110
-[    6.881694] init: ro.har<ware:SMDKC110
+[    6.573107] init: ro.har<ware:SMDKC110
 3>init: ro.revision:48
-[    6.887505] init: <o.revision:48
+[    6.578918] init: <o.revision:48
 3>init: dpm.allowcamera:0
-[    6.893056] init: dpm<allowcamera:0
+[    6.584469] init: dpm<allowcamera:0
 3>init: ro.secure:0
-[    6.898346] ini<: ro.secure:0
+[    6.589759] ini<: ro.secure:0
 3>init: ro.debugable:1
-[    6.903377] init: <o.debugable:1
+[    6.594789] init: <o.debugable:1
 3>init: persist.service.adb.enable:1
-[    6.909882] init: persist.servic<.adb.enable:1
+[    6.601295] init: persist.servic<.adb.enable:1
 6>init: command 'loglevel' r=0
 <6>init: command 'export' r=0
 <6>init: command 'export' r=0
@@ -949,9 +994,9 @@ Uncompressing Linux.............................................................
 <6>init: command 'mount' r=-1
 <6>param_init
 <3>lfs_param_op: filp_open failed. (-2)
-[    7.658497] lfs_param_op: filp_ope< failed. (-2)
+[    7.350126] lfs_param_op: filp_ope< failed. (-2)
 3>param_init(304): Loading parameters failed. Parameters have been initialized as default.
-[    7.671073] param_init(304): Loading parameters failed. Parameters have been initialized as default.
+[    7.362702] param_init(304): Loading parameters failed. Parameters have been initialized as default.
 <6>init: command 'insmod' r=0
 <6>init: command 'symlink' r=0
 <6>init: command 'mkdir' r=-17
@@ -992,16 +1037,16 @@ Uncompressing Linux.............................................................
 [FSA9480]connectivity_switching_init = switch_sel : 0x1
 <6>inside set_param_value1 idx = 4, value = -1055869004
 <3>lfs_param_op: filp_open failed. (-2)
-[    7.790736] lfs_param_op: filp_ope[ failed. (-2)
+[    7.482357] lfs_param_op: filp_ope[ failed. (-2)
 FSA9480_Enable_AP_USB] Enable AP USB
 [ap_usb_power_on]AP USB Power ON, askon: 0, mtp : 0
 !!!!!!!!!!! [ap_usb_power_on]AP samsung_kies_mtp_mode_flag0, mtp:0
 <6>inside set_param_value1 idx = 4, value = -1055869004
 <3>lfs_param_op: filp_open failed. (-2)
-[    7.828447] lfs_param_op: filp_ophUIQSwitch] Path : PDA
+[    7.520103] lfs_param_op: filp_ophUIQSwitch] Path : PDA
 <6>inside set_param_value1 idx = 4, value = -1055869004
 <3>lfs_param_op: filp_open failed. (-2)
-[    8.013663] lfs_param_op: filp_ope< failed. (-2)
+[    7.705327] lfs_param_op: filp_ope< failed. (-2)
 6>init: command 'write' r=0
 [FSA9480]connectivity_switching_init = switch_sel : 0x7
 [FSA9480]usb_sel_store
@@ -1011,65 +1056,65 @@ FSA9480_Enable_AP_USB] Enable AP USB
 !!!!!!!!!!! [ap_usb_power_on]AP samsung_kies_mtp_mode_flag0, mtp:0
 <6>inside set_param_value1 idx = 4, value = -1055869004
 <3>lfs_param_op: filp_open failed. (-2)
-[    8.064903] lfs_param_op: filp_ope< failed. (-2)
+[    7.756568] lfs_param_op: filp_ope< failed. (-2)
 6>init: command 'write' r=0
 <6>init: command 'ifup' r=0
 <6>init: command 'hostname' r=0
 <6>init: command 'domainname' r=0
 <6>init: command 'setrlimit' r=0
 <3>init: ro.FOREGROUND_APP_ADJ:0
-[    8.086691] init: ro.FOREGR<UND_APP_ADJ:0
+[    7.778355] init: ro.FOREGR<UND_APP_ADJ:0
 6>init: command 'setprop' r=0
 <3>init: ro.VISIBLE_APP_ADJ:1
-[    8.096057] init: ro.VIS<BLE_APP_ADJ:1
+[    7.787722] init: ro.VIS<BLE_APP_ADJ:1
 6>init: command 'setprop' r=0
 <3>init: ro.SECONDARY_SERVER_ADJ:2
-[    8.105598] init: ro.SECONDAR<_SERVER_ADJ:2
+[    7.797262] init: ro.SECONDAR<_SERVER_ADJ:2
 6>init: command 'setprop' r=0
 <3>init: ro.BACKUP_APP_ADJ:2
-[    8.115052] init: ro.BA<KUP_APP_ADJ:2
+[    7.806716] init: ro.BA<KUP_APP_ADJ:2
 6>init: command 'setprop' r=0
 <3>init: ro.HOME_APP_ADJ:4
-[    8.123811] init: ro.<OME_APP_ADJ:4
+[    7.815476] init: ro.<OME_APP_ADJ:4
 6>init: command 'setprop' r=0
 <3>init: ro.HIDDEN_APP_MIN_ADJ:7
-[    8.132918] init: ro.HIDDEN<APP_MIN_ADJ:7
+[    7.824583] init: ro.HIDDEN<APP_MIN_ADJ:7
 6>init: command 'setprop' r=0
 <3>init: ro.CONTENT_PROVIDER_ADJ:14
-[    8.142806] init: ro.CONTENT_P<OVIDER_ADJ:14
+[    7.834470] init: ro.CONTENT_P<OVIDER_ADJ:14
 6>init: command 'setprop' r=0
 <3>init: ro.EMPTY_APP_ADJ:15
-[    8.152346] init: ro.EM<TY_APP_ADJ:15
+[    7.844010] init: ro.EM<TY_APP_ADJ:15
 6>init: command 'setprop' r=0
 <3>init: ro.FOREGROUND_APP_MEM:1536
-[    8.161887] init: ro.FOREGROUN<_APP_MEM:1536
+[    7.853551] init: ro.FOREGROUN<_APP_MEM:1536
 6>init: command 'setprop' r=0
 <3>init: ro.VISIBLE_APP_MEM:2048
-[    8.171774] init: ro.VISIBL<_APP_MEM:2048
+[    7.863438] init: ro.VISIBL<_APP_MEM:2048
 6>init: command 'setprop' r=0
 <3>init: ro.SECONDARY_SERVER_MEM:4096
-[    8.181835] init: ro.SECONDARY_S<RVER_MEM:4096
+[    7.873499] init: ro.SECONDARY_S<RVER_MEM:4096
 6>init: command 'setprop' r=0
 <3>init: ro.BACKUP_APP_MEM:4096
-[    8.191809] init: ro.BACKU<_APP_MEM:4096
+[    7.883473] init: ro.BACKU<_APP_MEM:4096
 6>init: command 'setprop' r=0
 <3>init: ro.HOME_APP_MEM:4096
-[    8.201089] init: ro.HOM<_APP_MEM:4096
+[    7.892753] init: ro.HOM<_APP_MEM:4096
 6>init: command 'setprop' r=0
 <3>init: ro.HIDDEN_APP_MEM:5120
-[    8.210370] init: ro.HIDDE<_APP_MEM:5120
+[    7.902034] init: ro.HIDDE<_APP_MEM:5120
 6>init: command 'setprop' r=0
 <3>init: ro.CONTENT_PROVIDER_MEM:5632
-[    8.220344] init: ro.CONTENT_PRO<IDER_MEM:5632
+[    7.912008] init: ro.CONTENT_PRO<IDER_MEM:5632
 6>init: command 'setprop' r=0
 <3>init: ro.EMPTY_APP_MEM:6144
-[    8.230231] init: ro.EMPT<_APP_MEM:6144
+[    7.921895] init: ro.EMPT<_APP_MEM:6144
 6>init: command 'setprop' r=0
 <3>init: wifi.interface:eth0
-[    8.239338] init: wifi.<nterface:eth0
+[    7.931002] init: wifi.<nterface:eth0
 6>init: command 'setprop' r=0
 <3>init: ro.bt.bdaddr_path:/data/misc/bluetooth/bt_addr
-[    8.250613] init: ro.bt.bdaddr_path:/data/misc/blu<tooth/bt_addr
+[    7.942277] init: ro.bt.bdaddr_path:/data/misc/blu<tooth/bt_addr
 6>init: command 'setprop' r=0
 <6>init: command 'write' r=0
 <6>init: command 'write' r=0
@@ -1124,29 +1169,29 @@ FSA9480_Enable_AP_USB] Enable AP USB
 <6>init: command 'chown' r=0
 <6>init: command 'chmod' r=0
 <3>init: net.tcp.buffersize.default:4096,87380,110208,4096,16384,110208
-[    8.402654] init: net.tcp.buffersize.default:4096,87380,110208,409<,16384,110208
+[    8.094318] init: net.tcp.buffersize.default:4096,87380,110208,409<,16384,110208
 3>init: net.change:net.tcp.buffersize.default
-[    8.414102] init: net.change:net.tcp.buff<rsize.default
+[    8.105767] init: net.change:net.tcp.buff<rsize.default
 6>init: command 'setprop' r=0
 <3>init: net.tcp.buffersize.wifi:4095,87380,110208,4096,16384,110208
-[    8.428066] init: net.tcp.buffersize.wifi:4095,87380,110208,409<,16384,110208
+[    8.119730] init: net.tcp.buffersize.wifi:4095,87380,110208,409<,16384,110208
 3>init: net.change:net.tcp.buffersize.wifi
-[    8.438994] init: net.change:net.tcp.b<ffersize.wifi
+[    8.130659] init: net.change:net.tcp.b<ffersize.wifi
 6>init: command 'setprop' r=0
 <3>init: net.tcp.buffersize.umts:4094,87380,110208,4096,16384,110208
-[    8.452698] init: net.tcp.buffersize.umts:4094,87380,110208,409<,16384,110208
+[    8.144362] init: net.tcp.buffersize.umts:4094,87380,110208,409<,16384,110208
 3>init: net.change:net.tcp.buffersize.umts
-[    8.463626] init: net.change:net.tcp.b<ffersize.umts
+[    8.155290] init: net.change:net.tcp.b<ffersize.umts
 6>init: command 'setprop' r=0
 <3>init: net.tcp.buffersize.edge:4093,26280,35040,4096,16384,35040
-[    8.477156] init: net.tcp.buffersize.edge:4093,26280,35040,40<6,16384,35040
+[    8.168820] init: net.tcp.buffersize.edge:4093,26280,35040,40<6,16384,35040
 3>init: net.change:net.tcp.buffersize.edge
-[    8.487911] init: net.change:net.tcp.b<ffersize.edge
+[    8.179575] init: net.change:net.tcp.b<ffersize.edge
 6>init: command 'setprop' r=0
 <3>init: net.tcp.buffersize.gprs:4092,8760,11680,4096,8760,11680
-[    8.501267] init: net.tcp.buffersize.gprs:4092,8760,11680,4<96,8760,11680
+[    8.192932] init: net.tcp.buffersize.gprs:4092,8760,11680,4<96,8760,11680
 3>init: net.change:net.tcp.buffersize.gprs
-[    8.511849] init: net.change:net.tcp.b<ffersize.gprs
+[    8.203513] init: net.change:net.tcp.b<ffersize.gprs
 6>init: command 'setprop' r=0
 <6>init: command 'chmod' r=-2
 <6>init: command 'chmod' r=-2
@@ -1172,12 +1217,12 @@ FSA9480_Enable_AP_USB] Enable AP USB
 <6>init: command 'chown' r=-2
 <6>init: command 'chmod' r=-2
 <3>init: cannot find '/system/bin/sh', disabling 'console'
-[    8.585744] init: cannot find '/system/bin/sh', disab<ing 'console'
+[    8.277408] init: cannot find '/system/bin/sh', disab<ing 'console'
 3>init: cannot find '/system/bin/recovery', disabling 'recovery'
-[    8.597713] init: cannot find '/system/bin/recovery', disabl<ng 'recovery'
+[    8.289377] init: cannot find '/system/bin/recovery', disabl<ng 'recovery'
 5>init: starting 'adbd'
 <3>init: init.svc.adbd:running
-[    8.609596] init: init.svc.adbd:running
+[    8.301260] init: init.svc.adbd:running
 <6>warning: `adbd' uses 32-bit capabilities (legacy support in use)
 <6>init: command 'class_start' r=0
 <6>init: processing action 0x310c8 (property:persist.service.adb.enable=1)
@@ -1188,10 +1233,10 @@ FSA9480_Enable_AP_USB] Enable AP USB
 <6>acm_function_config_changed
 <6>mass_storage_function_config_changed
 <6>adb_function_config_changed
-  interface 0 = acm/c4bf7840
-  interface 1 = acm/c4bf7840
-  interface 2 = usb_mass_storage/c4940800
-  interface 3 = adb/c4ac6d00
+  interface 0 = acm/c4c72b40
+  interface 1 = acm/c4c72b40
+  interface 2 = usb_mass_storage/c4ab6800
+  interface 3 = adb/c4ab2d00
 [ap_usb_power_on]AP USB Power ON, askon: 0, mtp : 0
 !!!!!!!!!!! [ap_usb_power_on]AP samsung_kies_mtp_mode_flag0, mtp:0
 <6>init: command 'start' r=0
@@ -1214,47 +1259,88 @@ FSA9480_Enable_AP_USB] Enable AP USB
 <6>init: make_device '/dev/block/stl6' block 1, major 138, minor 6 r=0
 <6>init: make_device '/dev/block/stl7' block 1, major 138, minor 7 r=0
 <6>fg_read_vcell: VCELL=3878
-<6>fg_read_vcell: VCELL=3878
-<6>fg_read_vcell: VCELL=3878
-<3>s3c_keygpio_isr:245 input_report_key(c4889000, 26, 1)
-[   22.233071] s3c_keygpio_isr:245 input_report_key(c4<89000, 26, 1)
+<7>[TSP]### Finger[0] Down (241,190) - touch num is (1)   status=0xc0
+<7>[TSP]### Finger[0] Up (241,190) - touch num is (0)  status=0x20
+<7>[TSP]### Finger[0] Down (160,430) - touch num is (1)   status=0xc0
+<7>[TSP]### Finger[0] Up (160,430) - touch num is (0)  status=0x20
+<7>[TSP]### Finger[0] Down (70,330) - touch num is (1)   status=0xc0
+<7>[TSP]### Finger[0] Up (70,330) - touch num is (0)  status=0x20
+<3>s3c_keygpio_isr:245 input_report_key(c4951000, 26, 1)
+[   13.387497] s3c_keygpio_isr:245 input_report_key(c4<51000, 26, 1)
 7>s3c_keygpio_isr pwr key_status =0
-<3>s3c_keygpio_isr:245 input_report_key(c4889000, 26, 0)
-[   22.461591] s3c_keygpio_isr:245 input_report_key(c4<89000, 26, 0)
+<3>s3c_keygpio_isr:245 input_report_key(c4951000, 26, 0)
+[   13.512495] s3c_keygpio_isr:245 input_report_key(c4<51000, 26, 0)
 7>s3c_keygpio_isr pwr key_status =64
-<3>s3c_keygpio_vol_down_isr:295 input_report_key(c4889000, 58, 0)
-[   23.464062] s3c_keygpio_vol_down_isr:295 input_report_key(c4<89000, 58, 0)
-7>s3c_keygpio_vol_down_isr key_status =2,
-<3>s3c_keygpio_vol_down_isr:295 input_report_key(c4889000, 58, 0)
-[   24.157212] s3c_keygpio_vol_down_isr:295 input_report_key(c4<89000, 58, 0)
-7>s3c_keygpio_vol_down_isr key_status =2,
-<3>s3c_keygpio_vol_down_isr:295 input_report_key(c4889000, 58, 0)
-[   24.173604] s3c_keygpio_vol_down_isr:295 input_report_key(c4<89000, 58, 0)
+<3>s3c_keygpio_vol_down_isr:295 input_report_key(c4951000, 58, 0)
+[   13.959952] s3c_keygpio_vol_down_isr:295 input_report_key(c4<51000, 58, 0)
 7>s3c_keygpio_vol_down_isr key_status =2,
 <6>fg_read_vcell: VCELL=3878
+<3>s3c_keygpio_isr:245 input_report_key(c4951000, 26, 1)
+[   16.583879] s3c_keygpio_isr:245 input_report_key(c4<51000, 26, 1)
+7>s3c_keygpio_isr pwr key_status =0
+<3>s3c_keygpio_isr:245 input_report_key(c4951000, 26, 0)
+[   16.696179] s3c_keygpio_isr:245 input_report_key(c4<51000, 26, 0)
+7>s3c_keygpio_isr pwr key_status =64
+<3>s3c_keygpio_isr:245 input_report_key(c4951000, 26, 1)
+[   17.551674] s3c_keygpio_isr:245 input_report_key(c4<51000, 26, 1)
+7>s3c_keygpio_isr pwr key_status =0
 <6>fg_read_vcell: VCELL=3878
-<6>fg_read_vcell: VCELL=3878
-<7>[TSP]### Finger[0] Down (400,719) - touch num is (1)   status=0xc0
-<7>[TSP]### Finger[0] Up (400,719) - touch num is (0)  status=0x20
-<7>[TSP]### Finger[0] Down (308,717) - touch num is (1)   status=0xc0
-<7>[TSP]### Finger[0] Up (308,717) - touch num is (0)  status=0x20
-<7>[TSP]### Finger[0] Down (166,689) - touch num is (1)   status=0xc0
-<7>[TSP]### Finger[0] Up (166,689) - touch num is (0)  status=0x20
-<6>fg_read_vcell: VCELL=3878
-<7>[TSP]### Finger[0] Down (10,45) - touch num is (1)   status=0xc0
-<7>[TSP]### Finger[0] Up (10,45) - touch num is (0)  status=0x20
-<7>[TSP]### Finger[0] Down (401,724) - touch num is (1)   status=0xc0
-<7>[TSP]### Finger[0] Up (401,724) - touch num is (0)  status=0x20
-<7>[TSP]### Finger[0] Down (4,62) - touch num is (1)   status=0xc0
-<7>[TSP]### Finger[0] Up (4,62) - touch num is (0)  status=0x20
-<6>fg_read_vcell: VCELL=3878
-<7>[TSP]### Finger[0] Down (387,730) - touch num is (1)   status=0xc0
-<7>[TSP]### Finger[0] Up (387,730) - touch num is (0)  status=0x20
-<7>[TSP]### Finger[0] Down (11,717) - touch num is (1)   status=0xc0
-<7>[TSP]### Finger[0] Up (11,717) - touch num is (0)  status=0x20
-<7>[TSP]### Finger[0] Down (404,8) - touch num is (1)   status=0xc0
-<7>[TSP]### Finger[0] Up (404,8) - touch num is (0)  status=0x20
-<7>[TSP]### Finger[0] Down (19,8) - touch num is (1)   status=0xc0
-<7>[TSP]### Finger[0] Up (19,8) - touch num is (0)  status=0x20
-<6>fg_read_vcell: VCELL=3878
-
+[PAM:   ] ++FSR_PAM_Init
+[PAM:   ]   OneNAND physical base address       : 0xb0000000
+[PAM:   ]   OneNAND virtual  base address       : 0xb0000000
+[PAM:   ]   FSR_PAM_InitNANDController Success!! 
+[PAM:   ] --FSR_PAM_Init
+[BM :   ]   FSR_BML_GetFullPartI() is completed
+[BM :   ]   stPartI.nNumOfPartEntry : 7
+[BM :   ]   1th PartEntrt(nAttr:0x1002)(nID:0x0)
+[BM :   ]   [1th] pPEntry->n1stVun     : 1
+[BM :   ]   [1th] pPEntry->nNumOfUnits : 7
+[BM :   ]   [1th] pPEntry->nLoadAddr   : 0xffffffff
++-------------------------------+
+| Bootloader Shadowing FINISHED |
++-------------------------------+
+Launch Image at 0x42480000
+
+[BOOT_V1.0  (May 28 2010, 21:22:23)] 
+SelectBootingMode: H/W...0xe.
+[BOOT] ARMCLK: 400000 KHz, MSYSHCLK 200000 KHz,MSYSPCLK: 100000 KHz,                            [BOOT] DSYSHCLK 166750 KHz,DSYSPCLK: 83375 KHz,PSYSHCLK: 133400 KHz, PSYSPCLK: 66700 KHz,SYSCON_A2M: 200000 KHz  
++++FIMD_Drv_INITIALIZE
+FIMD_Drv_ChangeMode: MDNIE_MODE
+Frame Rate:62SCLK_FIMD:133400 kHz ClkDiv:4
+S6E63M0 : LDI_Pentile_Set_Change Pentile_Value =6c 
+---FIMD_Drv_INITIALIZE
+---FIMD_Drv_SetWinOnOff(WIN4:1)
+LCD initialize Finished
+Flash_Unlock failed
+Poweron status - 70
+FSA9480 0x03 Register = 1
+FSA9480 0x0A Register = 0
+FSA9480 0x0B Register = 8
+FSA9480 0x07 Register = 1c
+BootDownLoadKeyCheck: Enter Download mode
+SelectBootingMode: Boot Mode = 10...
+charging disable
+Display_LSI_Boot : disp_Main_Clean 
+Display_LSI_Boot : disp_Main_Clean_All 
+Display_LSI_Boot : disp_Main_Dload_Update 
+Display_LSI_Boot : disp_Main_Dload_Message 
+Display_LSI_Boot : disp_Main_Dload_Update 
+Display_LSI_Boot : disp_Main_Dload_Message 
+Display_LSI_Boot : disp_Main_Dload_Update 
+Display_LSI_Boot : disp_Main_Dload_Message 
+Display_LSI_Boot : disp_dimming_backlight 
+Display_LSI_Boot : disp_Dload_Init 
+
+
+AST_DOWNLOAD
+
+
+
+-----------------------------------------------------
+       USB BOOT Downloader for s5pc100         
+      Copyright (c) 2005 by SAMSUNG Electronic, Inc.    
+                   V1.0 (May 28 2010, 21:22:24) 
+-----------------------------------------------------
+
+
+
