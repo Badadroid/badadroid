@@ -5,8 +5,6 @@ include 'inc/macros_S8530.inc'	  ;model dependend FOTA header and footer
 include 'inc/vars.inc'
 include 'inc/functions.inc'
 
-; VERY rough code for loading sbl to 0x40244000 and Kernel to 0x32000000, then executes KERNEL.
-; Sbl is unused in this code
 START
 	bl	enable_fota_output
 
@@ -17,15 +15,29 @@ START
 	BL	testmembank
 	BL	testmembank
 
-	MOV	R0, 333
-	BL	int_debugprint
-
-
 
 	MOV	R0, 333
 	BL	int_debugprint
 
-	B	raminit
+	;B       configure_ram
+
+	LDR	R1, [DMC0_REG]
+	LDR	R0, [R1,#8]
+	BL	hex_debugprint
+	LDR	R0, [R1,#0xC]
+	BL	hex_debugprint
+
+	LDR	R1, [DMC1_REG]
+	LDR	R0, [R1,#8]
+	BL	hex_debugprint
+	LDR	R0, [R1,#0xC]
+	BL	hex_debugprint
+
+
+	MOV	R0, 333
+	BL	int_debugprint
+
+       ; B       raminit
 
 the_morning_after:
 	MOV	R0, 3334
@@ -36,18 +48,6 @@ the_morning_after:
 
 	BL	testmembank
 	BL	testmembank
-
-	MOV	R0, 1111
-	BL	int_debugprint
-
-
-	BL	testmembank
-
-
-	MOV	R0, 1234
-	BL	int_debugprint
-
-	;BL      testmembank
 
 	MOV	R0, 1234
 	BL	int_debugprint
@@ -78,7 +78,7 @@ STR	R1, [R0,#8]
 	MOV	R0, 9999
 	BL	int_debugprint
 
-LDR	R1, [conf_0x20F02222]
+LDR	R1, [conf_0x20F00312]
 STR	R1, [R0,#0xC]
 
 
@@ -88,6 +88,7 @@ B	the_morning_after
 FUNCTIONS
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;; variables below
 DEFAULT_VARIABLES
+	conf_0x20F00312  dw 0x20F00312
 	conf_0x20F02222  dw 0x20F02222
 	conf_0x20F82222  dw 0x20F82222
 	conf_0xE2700000  dw 0xE2700000

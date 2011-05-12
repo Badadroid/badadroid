@@ -13,6 +13,160 @@ dloadmode:
 	mov	r0, 2
 	bl	maxim_charging_control
 	bl	DloadMain
+;be aware of code below, need someone to check and fix it
+;it is 100% copy->paste from PBL with commented out 0x40 mapping
+configure_ram:
+STMFD	SP!, {R0-R1,LR\}
+LDR	R0, [APLL_LOCK]
+ORR	R0, R0, #0x6200
+ORR	R0, R0, #8
+MOV	R1, #0
+STR	R1, [R0]
+LDR	R0, [RST_STAT]
+LDR	R3, [R0]
+AND	R3, R3, #0x10000
+LDR	R0, [ASYNC_MSYS_DMC0]
+MOV	R1, #0
+STR	R1, [R0]
+MOV	R1, #0
+STR	R1, [R0,#0xC]
+LDR	R0, [DMC0_REG]
+LDR	R1, [conf_0x101000]
+STR	R1, [R0,#0x18]
+MOV	R1, #0x84
+STR	R1, [R0,#0x1C]
+LDR	R1, [conf_0x101000]
+ADD	R1, R1, 2
+STR	R1, [R0,#0x18]
+LDR	R1, [conf_0x101000]
+ADD	R1, R1, 3
+STR	R1, [R0,#0x18]
+MOV	R2, #0x4000
+loopconfram:
+SUBS	R2, R2, #1
+CMP	R2, #0
+BNE	loopconfram
+LDR	R1, [conf_0x60101003]
+STR	R1, [R0,#0x18]
+CMP	R3, #0x10000
+BNE	configram2
+LDR	R1, [conf_0x60101001]
+STR	R1, [R0,#0x18]
+configram2:
+LDR	R1, [conf_0xFFF1010]
+STR	R1, [R0]
+LDR	R1, [conf_0x212100]
+STR	R1, [R0,#4]
+LDR	R1, [conf_0x30F82222]
+STR	R1, [R0,#8]
+;LDR     R1, [conf_0x40F02222]
+;STR     R1, [R0,#0xC]
+MOV	R1, #0xFF000000
+STR	R1, [R0,#0x14]
+MOV	R1, 0x50E
+STR	R1, [R0,#0x30]
+LDR	R1, [conf_0x14233287]
+STR	R1, [R0,#0x34]
+LDR	R1, [conf_0x12130005]
+STR	R1, [R0,#0x38]
+LDR	R1, [conf_0xE140222]
+STR	R1, [R0,#0x3C]
+MOV	R1, #0x7000000
+STR	R1, [R0,#0x10]
+MOV	R1, #0x1000000
+STR	R1, [R0,#0x10]
+MOV	R1, #0x5000000
+STR	R1, [R0,#0x10]
+MOV	R1, #0x5000000
+STR	R1, [R0,#0x10]
+MOV	R1, #0x32
+STR	R1, [R0,#0x10]
+LDR	R1, [conf_0x20020]
+STR	R1, [R0,#0x10]
+MOV	R1, #0x7100000
+STR	R1, [R0,#0x10]
+MOV	R1, #0x1100000
+STR	R1, [R0,#0x10]
+MOV	R1, #0x5100000
+STR	R1, [R0,#0x10]
+MOV	R1, #0x5100000
+STR	R1, [R0,#0x10]
+LDR	R1, [conf_0x100032]
+STR	R1, [R0,#0x10]
+LDR	R1, [conf_0x120020]
+STR	R1, [R0,#0x10]
+LDR	R1, [conf_0xFFF10B0]
+STR	R1, [R0]
+MOV	R1, 0xFFFF00FF
+STR	R1, [R0,#0x28]
+LDR	R1, [conf_0x212113]
+STR	R1, [R0,#4]
+LDR	R0, [DMC1_REG] ; DMC1_config
+LDR	R1, [conf_0x101000]
+STR	R1, [R0,#0x18]
+MOV	R1, #0x84
+STR	R1, [R0,#0x1C]
+LDR	R1, [conf_0x101000]
+ADD	R1, R1, 2
+STR	R1, [R0,#0x18]
+LDR	R1, [conf_0x101000]
+ADD	R1, R1, 3
+STR	R1, [R0,#0x18]
+MOV	R2, #0x4000
+loopconfram2:
+SUBS	R2, R2, #1
+CMP	R2, #0
+BNE	loopconfram2
+LDR	R1, [conf_0x50101003]
+STR	R1, [R0,#0x18]
+CMP	R3, #0x10000
+BNE	configram3
+LDR	R1, [conf_0x50101001]
+STR	R1, [R0,#0x18]
+configram3:
+
+;LDR     R0, [DMC1_REG]
+;LDR     R1, [conf_0xFFF1010]
+
+	MOV	R0, 9999
+	BL	int_debugprint
+
+;STR     R1, [R0]
+;LDR     R1, [conf_0x212100]
+	MOV	R5, R0
+	MOV	R0, 9999
+	BL	int_debugprint
+	MOV	R0, R5
+;STR     R1, [R0,#4]
+
+	MOV	R0, 9999
+	BL	int_debugprint
+LDMFD	SP!, {R0-R1,PC\}
+
+	conf_0xE2700000  dw 0xE2700000
+	conf_0xE2900C00  dw 0xE2900C00
+	conf_0x120020	 dw 0x120020
+	conf_0xFFF10B0	 dw 0xFFF10B0
+	conf_0x212113	 dw 0x212113
+	conf_0x50101003  dw 0x50101003
+	conf_0x50101001  dw 0x50101001
+	conf_0xFFF1010	 dw 0xFFF1010
+	APLL_LOCK	 dw 0xE0100000
+	RST_STAT	 dw 0xE010A000
+	ASYNC_MSYS_DMC0  dw 0xF1E00000
+	DMC0_REG	 dw 0xF0000000
+	conf_0x60101003  dw 0x60101003
+	conf_0x60101001  dw 0x60101001
+	conf_0x101000	 dw 0x101000
+	DMC1_REG	 dw 0xF1400000
+	conf_0x40F02222  dw 0x40F02222
+	conf_0x212100	 dw 0x212100
+	conf_0x30F82222  dw 0x30F82222
+	conf_0x14233287  dw 0x14233287
+	conf_0x12130005  dw 0x12130005
+	conf_0xE140222	 dw 0xE140222
+	conf_0x20020	 dw 0x20020
+	conf_0x100032	 dw 0x100032
 
 ;void rebell_memcpy(int source(r0), int target(r1), int size(r2))
 ;returns num of bytes copied (always equal to size or just hangs on mem access violation)
