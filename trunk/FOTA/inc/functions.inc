@@ -21,11 +21,6 @@ LDR	R0, [APLL_LOCK]
 ORR	R0, R0, #0x6200
 ORR	R0, R0, #8
 MOV	R1, #0
-	MOV	R5, R0
-	MOV	R0, 9999
-	BL	int_debugprint
-	MOV	R0, R5
-
 STR	R1, [R0]
 LDR	R0, [RST_STAT]
 LDR	R3, [R0]
@@ -43,10 +38,6 @@ STR	R1, [R0,#0x1C]
 LDR	R1, [conf_0x101000]
 ADD	R1, R1, 2
 STR	R1, [R0,#0x18]
-	MOV	R5, R0
-	MOV	R0, 9999
-	BL	int_debugprint
-	MOV	R0, R5
 LDR	R1, [conf_0x101000]
 ADD	R1, R1, 3
 STR	R1, [R0,#0x18]
@@ -58,10 +49,6 @@ CMP	R2, #0
 BNE	loopconfram
 LDR	R1, [conf_0x60101003]
 STR	R1, [R0,#0x18]
-	MOV	R5, R0
-	MOV	R0, 9999
-	BL	int_debugprint
-	MOV	R0, R5
 CMP	R3, #0x10000
 BNE	configram2
 LDR	R1, [conf_0x60101001]
@@ -73,10 +60,6 @@ LDR	R1, [conf_0x212100]
 STR	R1, [R0,#4]
 LDR	R1, [conf_0x30F82222]
 STR	R1, [R0,#8]
-	MOV	R5, R0
-	MOV	R0, 1234
-	BL	int_debugprint
-	MOV	R0, R5
 ;LDR     R1, [conf_0x40F02222]
 ;STR     R1, [R0,#0xC]
 MOV	R1, #0xFF000000
@@ -109,10 +92,6 @@ MOV	R1, #0x5100000
 STR	R1, [R0,#0x10]
 MOV	R1, #0x5100000
 STR	R1, [R0,#0x10]
-	MOV	R5, R0
-	MOV	R0, 12334
-	BL	int_debugprint
-	MOV	R0, R5
 LDR	R1, [conf_0x100032]
 STR	R1, [R0,#0x10]
 LDR	R1, [conf_0x120020]
@@ -131,10 +110,6 @@ STR	R1, [R0,#0x1C]
 LDR	R1, [conf_0x101000]
 ADD	R1, R1, 2
 STR	R1, [R0,#0x18]
-	MOV	R5, R0
-	MOV	R0, 23414
-	BL	int_debugprint
-	MOV	R0, R5
 LDR	R1, [conf_0x101000]
 ADD	R1, R1, 3
 STR	R1, [R0,#0x18]
@@ -151,13 +126,8 @@ BNE	configram3
 LDR	R1, [conf_0x50101001]
 STR	R1, [R0,#0x18]
 configram3:
-
 ;LDR     R0, [DMC1_REG]
 ;LDR     R1, [conf_0xFFF1010]
-
-	MOV	R0, 9999
-	BL	int_debugprint
-
 ;STR     R1, [R0]
 ;LDR     R1, [conf_0x212100]
 	MOV	R5, R0
