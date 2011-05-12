@@ -30,9 +30,13 @@ Boot_CPSide_Upload_Setting		  equ 0x424815A4
 Boot_CPSide_HW_Version_Setting		  equ 0x424815EC
 ASM_IsrHandler				  equ 0x42481608
 System_EnableVIC			  equ 0x42481620
+System_DisableVIC       equ 0x42481630
 System_EnableIRQ			  equ 0x42481640
+System_DisableIRQ       equ 0x42481650
 System_EnableFIQ			  equ 0x42481660
+System_DisableFIQ       equ 0x42481670
 System_EnableBP 			  equ 0x42481680
+System_DisableBP        equ 0x42481690
 System_EnableICache			  equ 0x424816A0
 System_WaitForInterrupt 		  equ 0x424816B0
 BootDebugBuffGet			  equ 0x424816CC
