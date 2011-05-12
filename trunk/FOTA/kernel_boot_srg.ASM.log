@@ -1,0 +1,106 @@
+[PAM:   ] ++FSR_PAM_Init
+[PAM:   ]   OneNAND physical base address       : 0xb0000000
+[PAM:   ]   OneNAND virtual  base address       : 0xb0000000
+[PAM:   ]   FSR_PAM_InitNANDController Success!! 
+[PAM:   ] --FSR_PAM_Init
+[BM :   ]   FSR_BML_GetFullPartI() is completed
+[BM :   ]   stPartI.nNumOfPartEntry : 7
+[BM :   ]   1th PartEntrt(nAttr:0x1002)(nID:0x0)
+[BM :   ]   [1th] pPEntry->n1stVun     : 1
+[BM :   ]   [1th] pPEntry->nNumOfUnits : 7
+[BM :   ]   [1th] pPEntry->nLoadAddr   : 0xffffffff
++-------------------------------+
+| Bootloader Shadowing FINISHED |
++-------------------------------+
+Launch Image at 0x42480000
+
+[BOOT_V1.0  (May 28 2010, 21:22:23)] 
+SelectBootingMode: H/W...0xe.
+[BOOT] ARMCLK: 400000 KHz, MSYSHCLK 200000 KHz,MSYSPCLK: 100000 KHz,                            [BOOT] DSYSHCLK 166750 KHz,DSYSPCLK: 83375 KHz,PSYSHCLK: 133400 KHz, PSYSPCLK: 66700 KHz,SYSCON_A2M: 200000 KHz  
++++FIMD_Drv_INITIALIZE
+FIMD_Drv_ChangeMode: MDNIE_MODE
+Frame Rate:62SCLK_FIMD:133400 kHz ClkDiv:4
+S6E63M0 : LDI_Pentile_Set_Change Pentile_Value =6c 
+---FIMD_Drv_INITIALIZE
+---FIMD_Drv_SetWinOnOff(WIN4:1)
+LCD initialize Finished
+Flash_Unlock failed
+Poweron status - 20
+FSA9480 0x03 Register = 1
+FSA9480 0x0A Register = 0
+FSA9480 0x0B Register = 8
+FSA9480 0x07 Register = 1c
+SelectBootingMode: Boot Mode = 1...
+Display_LSI_Boot : disp_Main_Clean 
+Display_LSI_Boot : disp_Main_Clean_All 
+Display_LSI_Boot : disp_dimming_backlight 
+Display_LSI_Boot : disp_Normal_Init 
+ UART OUTPUT ENABLED
++SDHC_Open(Ch0)
+univ_SD_MEM_PowerOnDevice() : Power On
+univ_SD_MEM_PowerOnDevice(ch0) : MASSMEMORY_EN Power On
+[SDHC] MPLL source clock from SYSCON : 667000000Hz
+[SDHC] SDHC(ch0) source clock from SYSCON : 47642000Hz
+[SDHC] SDHC(ch0) Operating Clock : 372203Hz
+[SDHC][MMC]byte mode
+SD_MEM_Phy_CMD2(ch0) : CID(127~0) : 0x150100, 0x4d324731, 0x44441694, 0x8647125d
+SD_MEM_Phy_MMC_CID(ch0) : PRV - 0x16
+MMC_Spec = 4
+----------------CSD Version 1.0--------in low level-------------
+channel: [0]
+One Block Size: [512]Byte
+Total card Block Count = [4014080]
+Total card Capacity Size  = [1960]MB
+---------------------------------------------------
+SD_HostCtrl_IssueCommand[ch0] not SDclk off, cmd13, SD_CLK_CTRL:0x400f
+SD_MEM_Phy_TransferState(ch0) :High: Tx : SD_FeedBackClock_BasicDelay
+SD_MEM_Phy_TransferState(ch0) :High: Rx : SD_FeedBackClock_InverterDelay
+[SDHC] MPLL source clock from SYSCON : 667000000Hz
+[SDHC] SDHC(ch0) source clock from SYSCON : 47642000Hz
+[SDHC] SDHC(ch0) Operating Clock : 47642000Hz
+SD_HostCtrl_IssueCommand[ch0] not SDclk off, cmd13, SD_CLK_CTRL:0xf
+SD_HostCtrl_IssueCommand[ch0] not SDclk off, cmd13, SD_CLK_CTRL:0xf
+-SDHC_Open(Ch0)
+ debug: 0x6664C8
+ Loading kernel image to buf
+ loadfile to 0x44000000
+ loadsize is 6710472 bytes
+ debug: 9999
+ debug: 9999
+ Turning off MMU
+ done!
+ debug: 3
+ Reloc kernel to 0x32000000
+memcpy 0x44000000=>0x32000000,s=0x6664C8
+ Jumpout to 0x32000000
+*
+Uncompressing Linux....................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................... done, booting the kernel.
+<6>Initializing cgroup subsys cpu
+<5>Linux version 2.6.32.9 (oleg@VM) (gcc version 4.5.1 (Sourcery G++ Lite 2010.09-50) ) #4 Fri Apr 22 01:22:45 MSD 2011
+CPU: ARMv7 Processor [412fc082] revision 2 (ARMv7), cr=10c53c7f
+CPU: VIPT nonaliasing data cache, VIPT nonaliasing instruction cache
+Machine: SMDKC110
+<4>Warning: bad configuration page, trying to continue
+<4>Ignoring unrecognised tag 0x00000000
+Memory policy: ECC disabled, Data cache writeback
+<7>On node 0 totalpages: 20480
+<7>free_area_init_node: node 0, pgdat c104f860, node_mem_map c1226000
+<7>  Normal zone: 160 pages used for memmap
+<7>  Normal zone: 0 pages reserved
+<7>  Normal zone: 20320 pages, LIFO batch:3
+<7>On node 1 totalpages: 65536
+<7>free_area_init_node: node 1, pgdat c104ff18, node_mem_map d0002000
+<7>  Normal zone: 512 pages used for memmap
+<7>  Normal zone: 0 pages reserved
+<7>  Normal zone: 65024 pages, LIFO batch:15
+<7>On node 2 totalpages: 0
+<7>free_area_init_node: node 2, pgdat c10505d0, node_mem_map c12cec20
+<4>  Normal zone: 1 pages exceeds realsize 0
+<7>On node 3 totalpages: 0
+<7>free_area_init_node: node 3, pgdat c1050c88, node_mem_map c12d6ce0
+<4>  Normal zone: 1 pages exceeds realsize 0
+CPU S5PV210/S5PC110 (id 0x43110222)
+<7>s5pv210_init_clocks: initializing clocks
+<6>S3C24XX Clocks, Copyright 2004 Simtec Electronics
+<3>copy: bad source 0
+
