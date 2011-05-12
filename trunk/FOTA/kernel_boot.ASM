@@ -7,6 +7,12 @@ include 'inc/functions.inc'
 
 
 START
+	MOV		R0, #0xA9
+	BL		GPIO_Drv_UnsetExtInterrupt
+	BL		disp_Normal_Init
+	BL		DRV_Modem_BootingStart
+	;BL		LaunchNucleus
+
 	SUB	SP, SP, 128
 
 	MOV	r1, #1
