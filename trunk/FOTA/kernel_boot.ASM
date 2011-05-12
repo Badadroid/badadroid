@@ -1,6 +1,6 @@
 
-include 'inc/S8500XXJEE.inc'	  ;here include the right BL function pointers, depends on model and BL you've got
-include 'inc/macros_S8500.inc'	  ;model dependend FOTA header and footer
+include 'inc/S8530JPKA1.inc'	  ;here include the right BL function pointers, depends on model and BL you've got
+include 'inc/macros_S8530.inc'	  ;model dependend FOTA header and footer
 
 include 'inc/vars.inc'
 include 'inc/functions.inc'
@@ -14,7 +14,7 @@ START
 	BL	MemMMUCacheEnable
 	MOV	R8, R0 ;lets store previous MMU control register to turn it off later
 
-	bl	enable_uart_output ;enable_fota_output
+	bl	enable_fota_output ;enable_fota_output
 	BL	__PfsNandInit
 	BL	__PfsMassInit
 
@@ -55,10 +55,12 @@ START
 	LDR	R2, [SP,0xC] ;get kernel size
 	LDR	R0, [kernel_size_a]
 	STR	R2, [R0]	;store for later use
+	LDR	R0, [R0]
+	BL	hex_debugprint
 
 	ldr	r0, [s_loadkernel_a]
 	bl	debug_print
-	MOV	R2, R2
+	LDR	R2, [kernel_size_a]
 	LDR	R1, [kernel_buf]
 	LDR	R0, [s_kernel_path_a]
 	BL	loadfile
@@ -76,15 +78,15 @@ START
 	ldr	r0, [s_configramirq_a]
 	bl	debug_print
 
-       ; BL      CoDisableL2Cache
-       ; BL      CoDisableDCache
-       ; BL      CoInvalidateBothCaches
-       ; BL      System_DisableVIC
+	;BL      CoDisableL2Cache
+	BL	CoDisableDCache
+	;BL      CoInvalidateBothCaches
+	;BL      System_DisableVIC
 	;BL      System_DisableIRQ
        ; BL      System_DisableFIQ
 	BL	configure_ram ;reconfigure DMC1 to map bank0 onto 0x30 instead of 0x20, code from PBL, it isn't trustable
 
-	 BL	 relockernel
+	; BL      relockernel
 
 	ldr	r0, [s_done_a]
 	bl	debug_print
@@ -115,7 +117,7 @@ relockernel:
 	LDR	R2, [kernel_size]
 	BL	rebell_memcpy
 
-	LDMFD	SP!, {R1-R2,PC}
+	LDMFD	SP!, {R0-R2,PC}
 FUNCTIONS
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;; variables below
 DEFAULT_VARIABLES
@@ -134,8 +136,8 @@ DEFAULT_VARIABLES
     sbl_atag_addr	dw 0x40244FC0
     sbl_atag_addr2	dw 0x40246DF8
 
-    atag_ptr		dw 0x40000100
-    kernel_ptr		dw 0x44000000;0x44000000
+   ; atag_ptr            dw 0x40000100
+    ;kernel_ptr          dw 0x44000000
 
     ;opcode              dw 0xE1A0F00E
     jmp_op		dw 0xEA000000
@@ -160,7 +162,7 @@ DEFAULT_STRINGS_ADDR
 DEFAULT_STRINGS
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;; ;add custom strings below
     s_kernel_path    du '/g/galaxyboot/zImage',0
-    s_sbl_path	     du '/g/galaxyboot/sbl.bin',0
+    s_sbl_path	     du '/g/galaxyboot/Sbl2FOTA_mijoma2.bin',0
 
     s_loadsbl	     db ' Loading SBL',0
     s_loadkernel     db ' Loading kernel image to buf',0
@@ -169,7 +171,7 @@ DEFAULT_STRINGS
     s_kernelreloc    db ' Reloc kernel to 0x%X',0
     s_kernelreturn   db ' WTF KERNEL RETURNED',0
     s_patchsbl	     db ' Patching SBL',0
-    s_configram_irq  db ' DMC1 config, IRQ off, FIQ off',0
+    s_configram_irq  db ' DMC1 config',0
 
 copykernel_helper:
 	code_len = copykernel_helper - c_start
@@ -179,7 +181,7 @@ copykernel:
 	MOV	R0, 9999
 	BL	int_debugprint
 
-	;BL      relockernel
+	BL	relockernel
 
 	LDMFD	SP!, {R1-R2,PC}
 

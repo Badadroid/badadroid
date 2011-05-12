@@ -180,7 +180,6 @@ rebell_memcpy:
 	MOV	R1, R2
 	MOV	R2, R3
 
-	MOV	R5, R2
 	MOV	R3, 0
 rebell_memcpy_copyloop:
 	ldrb	r4, [r0,r3] ;src
@@ -188,10 +187,6 @@ rebell_memcpy_copyloop:
 	add	r3, r3, 1
 	cmp	r3, r2
 	BLT	rebell_memcpy_copyloop
-
-	;MOV     R0, R2
-	;BL      int_debugprint
-
 	MOV	R0, R2
 
 	LDMFD	SP!, {R3-R6,PC\}
