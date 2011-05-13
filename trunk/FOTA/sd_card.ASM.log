@@ -1,4 +1,4 @@
-=~=~=~=~=~=~=~=~=~=~=~= PuTTY log 2011.05.14 01:05:31 =~=~=~=~=~=~=~=~=~=~=~=
+=~=~=~=~=~=~=~=~=~=~=~= PuTTY log 2011.05.14 01:10:23 =~=~=~=~=~=~=~=~=~=~=~=
 [PAM:   ] ++FSR_PAM_Init
 [PAM:   ]   OneNAND physical base address       : 0xb0000000
 [PAM:   ]   OneNAND virtual  base address       : 0xb0000000
@@ -43,26 +43,59 @@ univ_SD_MEM_PowerOnDevice() : Power On
 [SDHC] SDHC(ch2) source clock from SYSCON : 47642000Hz
 [SDHC] SDHC(ch2) Operating Clock : 372203Hz
 IsValidSDSPEC20Card() : u32VHS = 0x1
-Host Controller's Voltage Window Mask = 0x40300000
+[t:0] [SDHC][ERR] [ch2] Command = 8, Error Status = [t:0] SD_CMD_TIMEOUT_ERROR
+[SDHC] Error or Timeout error, Issuecommand Retry : 4 times, [CH2]
+[t:0] [SDHC][ERR] [ch2] Command = 8, Error Status = [t:0] SD_CMD_TIMEOUT_ERROR
+[SDHC] Error or Timeout error, Issuecommand Retry : 3 times, [CH2]
+[t:0] [SDHC][ERR] [ch2] Command = 8, Error Status = [t:0] SD_CMD_TIMEOUT_ERROR
+[SDHC] Error or Timeout error, Issuecommand Retry : 2 times, [CH2]
+[t:0] [SDHC][ERR] [ch2] Command = 8, Error Status = [t:0] SD_CMD_TIMEOUT_ERROR
+[SDHC] Error or Timeout error, Issuecommand Retry : 1 times, [CH2]
+[SDHC] No Response to CMD8
+Host Controller's Voltage Window Mask = 0x0
 Response of CMD41 : 0xFF8000
 GetSDCardOperationVoltageRange() : Voltage Windows = 0x100000
 Operating Voltage = 0x100000
 IsValidSDSPEC20Card() : u32VHS = 0x1
-[SDHC] Ver2.00 or later High Capacity SD Memory Card
-SD_MEM_Phy_CMD2(ch2) : CID(127~0) : 0x35344, 0x53553136, 0x4780b01b, 0xfcda00ac
-[SDHC] =>  RCA=0xe624
-----------------CSD Version 2.0-----in low level ----------------
+[t:0] [SDHC][ERR] [ch2] Command = 8, Error Status = [t:0] SD_CMD_TIMEOUT_ERROR
+[SDHC] Error or Timeout error, Issuecommand Retry : 4 times, [CH2]
+[t:0] [SDHC][ERR] [ch2] Command = 8, Error Status = [t:0] SD_CMD_TIMEOUT_ERROR
+[SDHC] Error or Timeout error, Issuecommand Retry : 3 times, [CH2]
+[t:0] [SDHC][ERR] [ch2] Command = 8, Error Status = [t:0] SD_CMD_TIMEOUT_ERROR
+[SDHC] Error or Timeout error, Issuecommand Retry : 2 times, [CH2]
+[t:0] [SDHC][ERR] [ch2] Command = 8, Error Status = [t:0] SD_CMD_TIMEOUT_ERROR
+[SDHC] Error or Timeout error, Issuecommand Retry : 1 times, [CH2]
+[SDHC] No Response to CMD8
+[SDHC] Ver2.00 or later Standard Capacity SD Memory Card
+SD_MEM_Phy_CMD2(ch2) : CID(127~0) : 0x2544d, 0x53443031, 0x47289342, 0xf8a0073
+[SDHC] =>  RCA=0xcf9b
+----------------CSD Version 1.0--------in low level-------------
 channel: [2]
 One Block Size: [512]Byte
-Total card Block Count = [31116288]
-Total card Capacity Size  = [15193]MB
+Total card Block Count = [2012160]
+Total card Capacity Size  = [982]MB
 ---------------------------------------------------
-This Media support high speed mode.
-SDHC controller will be setting high speed mode.
-SD_MEM_Phy_TransferState(ch2) :High: Tx : SD_FeedBackClock_BasicDelay
-SD_MEM_Phy_TransferState(ch2) :High: Rx : SD_FeedBackClock_InverterDelay
+SD_MEM_Phy_TransferState(ch2) :Normal: Tx : SD_FeedBackClock_BasicDelay
+SD_MEM_Phy_TransferState(ch2) :Normal: Rx : SD_FeedBackClock_InverterDelay
 [SDHC] MPLL source clock from SYSCON : 667000000Hz
 [SDHC] SDHC(ch2) source clock from SYSCON : 47642000Hz
-[SDHC] SDHC(ch2) Operating Clock : 47642000Hz
-SD_HostCtrl_IssueCommand[ch2] not SDclk off, cmd13, SD_CLK_CTRL:0xf
+[SDHC] SDHC(ch2) Operating Clock : 23821000Hz
+SD_HostCtrl_IssueCommand[ch2] not SDclk off, cmd13, SD_CLK_CTRL:0x10f
 -SDHC_Open(Ch2)
+ debug: 678
+ ENTERING DOWNLOAD MODE
+charging disable
+
+
+AST_DOWNLOAD
+
+
+
+-----------------------------------------------------
+       USB BOOT Downloader for s5pc100         
+      Copyright (c) 2005 by SAMSUNG Electronic, Inc.    
+                   V1.0 (May 28 2010, 21:22:24) 
+-----------------------------------------------------
+
+
+
