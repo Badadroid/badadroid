@@ -39,6 +39,8 @@ patch_done:
 
 	MOV	r0, 678
 	bl	int_debugprint
+	LDR	R0, [s_dir_path_a]
+	BL	listdir
 	BL	dloadmode
 
 
