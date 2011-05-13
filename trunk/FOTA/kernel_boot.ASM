@@ -1,6 +1,6 @@
 
-include 'inc/S8530JPKA1.inc'	  ;here include the right BL function pointers, depends on model and BL you've got
-include 'inc/macros_S8530.inc'	  ;model dependend FOTA header and footer
+include 'inc/S8500XXJEE.inc'	  ;here include the right BL function pointers, depends on model and BL you've got
+include 'inc/macros_S8500.inc'	  ;model dependend FOTA header and footer
 
 include 'inc/vars.inc'
 include 'inc/functions.inc'
@@ -15,7 +15,7 @@ START
 	BL	MemMMUCacheEnable
 	MOV	R8, R0 ;lets store previous MMU control register to turn it off later
 
-	bl	enable_fota_output
+	bl	enable_uart_output
 	BL	__PfsNandInit
 	BL	__PfsMassInit
 

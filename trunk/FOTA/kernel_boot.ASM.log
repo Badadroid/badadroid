@@ -1,3 +1,4 @@
+=~=~=~=~=~=~=~=~=~=~=~= PuTTY log 2011.05.13 22:15:01 =~=~=~=~=~=~=~=~=~=~=~=
 [PAM:   ] ++FSR_PAM_Init
 [PAM:   ]   OneNAND physical base address       : 0xb0000000
 [PAM:   ]   OneNAND virtual  base address       : 0xb0000000
@@ -14,38 +15,23 @@
 +-------------------------------+
 Launch Image at 0x42480000
 
-
-[BOOT_V1.0  (May 28 2010, 21:22:23)] 
+[BOOT_V1.0  (May 28 2010, 21:22:23)] 
 SelectBootingMode: H/W...0xe.
 [BOOT] ARMCLK: 400000 KHz, MSYSHCLK 200000 KHz,MSYSPCLK: 100000 KHz,                            [BOOT] DSYSHCLK 166750 KHz,DSYSPCLK: 83375 KHz,PSYSHCLK: 133400 KHz, PSYSPCLK: 66700 KHz,SYSCON_A2M: 200000 KHz  
-
-+++FIMD_Drv_INITIALIZE
++++FIMD_Drv_INITIALIZE
 FIMD_Drv_ChangeMode: MDNIE_MODE
 Frame Rate:62SCLK_FIMD:133400 kHz ClkDiv:4
 S6E63M0 : LDI_Pentile_Set_Change Pentile_Value =6c 
 ---FIMD_Drv_INITIALIZE
 ---FIMD_Drv_SetWinOnOff(WIN4:1)
 LCD initialize Finished
-
-Flash_Unlock failed
+Flash_Unlock failed
 Poweron status - 20
 FSA9480 0x03 Register = 1
 FSA9480 0x0A Register = 0
 FSA9480 0x0B Register = 8
 FSA9480 0x07 Register = 1c
 SelectBootingMode: Boot Mode = 1...
-Display_LSI_Boot : disp_Main_Clean 
-Display_LSI_Boot : disp_Main_Clean_All 
-Display_LSI_Boot : disp_dimming_backlight 
-Display_LSI_Boot : disp_Normal_Init 
- DRV_modem_reset!!!!!!!!!!!!!!!!!  
- DRV_Send_DBL!!!!!!!!!!!!!!!!!  
-
-[DLOAD] Download Completed !!!
-DRV_Wait_ModemInit!!!!!!!!!!!!!!!!!  
-DRV_CopyQSCBootBinary!!!!!!!!!!!!!!!!!  
-DRV_Send_BootBinaryCopyComplete!!!!!!!!!!!!!!!!!  
-DRV_Modem_BootingStart retry count = 0.
  UART OUTPUT ENABLED
 +SDHC_Open(Ch0)
 univ_SD_MEM_PowerOnDevice() : Power On
@@ -72,42 +58,27 @@ SD_MEM_Phy_TransferState(ch0) :High: Rx : SD_FeedBackClock_InverterDelay
 SD_HostCtrl_IssueCommand[ch0] not SDclk off, cmd13, SD_CLK_CTRL:0xf
 SD_HostCtrl_IssueCommand[ch0] not SDclk off, cmd13, SD_CLK_CTRL:0xf
 -SDHC_Open(Ch0)
- Loading SBL
- loadfile to 0x40244000
- loadsize is 1310720 bytes
- debug: 1310720
- done!
- Patching SBL
- done!
- debug: 0x6664C8
+ debug: 0x66711C
  Loading kernel image to buf
  loadfile to 0x44000000
- loadsize is 6710472 bytes
- debug: 6710472
+ loadsize is 6713628 bytes
+ debug: 6713628
  done!
  Turning off MMU
  done!
  DMC1 config
  debug: 9999
  debug: 9999
- done!
+ 0x43800A8D=>0x3000012C,s=0xE
  debug: 9999
+Display_LSI_Boot : disp_Main_Clean 
+Display_LSI_Boot : disp_Main_Clean_All 
+Display_LSI_Boot : disp_dimming_backlight 
+Display_LSI_Boot : disp_Normal_Init 
  Reloc kernel to 0x32000000
-memcpy 0x44000000=>0x32000000,s=0x6664C8
+ 0x44000000=>0x32000000,s=0x66711C
+ done!
  Jumpout to 0x32000000
-Uncompressing Linux....................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................... done, booting the kernel.
-
-
-Error: unrecognized/unsupported machine ID (r1 = 0x32000000).
-
-
-Available machine support:
-
-
-ID (hex)NAME
-
-00000891SMDKC110
-
-
-Please check your kernel config and/or bootloader.
- 
+ WTF KERNEL RETURNED
+ ENTERING DOWNLOAD MODE
+charging disable
