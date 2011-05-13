@@ -55,5 +55,5 @@ macro DEFAULT_STRINGS
     s_loadfile_error		    db ' loadfile error (notfound?)',0
     s_dumpmem_error		    db ' dumpmem error: 0x%X',0
     s_uart_newline		    db 0xA,0
-    s_memcpy			    db 'memcpy 0x%X=>0x%X,s=0x%X',0
+    s_memcpy			    db ' 0x%X=>0x%X,s=0x%X',0
 }
