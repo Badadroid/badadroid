@@ -147,7 +147,7 @@ START
        ; BL      System_DisableFIQ
 
 	LDR	R5, [kernel_start]
-	;BLX     R5
+	BLX	R5
 
 	ldr	r0, [s_kernelreturn_a]
 	bl	debug_print
