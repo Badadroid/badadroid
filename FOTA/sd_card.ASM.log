@@ -1,4 +1,4 @@
-=~=~=~=~=~=~=~=~=~=~=~= PuTTY log 2011.05.14 01:10:23 =~=~=~=~=~=~=~=~=~=~=~=
+=~=~=~=~=~=~=~=~=~=~=~= PuTTY log 2011.05.14 01:19:55 =~=~=~=~=~=~=~=~=~=~=~=
 [PAM:   ] ++FSR_PAM_Init
 [PAM:   ]   OneNAND physical base address       : 0xb0000000
 [PAM:   ]   OneNAND virtual  base address       : 0xb0000000
@@ -83,6 +83,7 @@ SD_MEM_Phy_TransferState(ch2) :Normal: Rx : SD_FeedBackClock_InverterDelay
 SD_HostCtrl_IssueCommand[ch2] not SDclk off, cmd13, SD_CLK_CTRL:0x10f
 -SDHC_Open(Ch2)
  debug: 678
+ not found!
  ENTERING DOWNLOAD MODE
 charging disable
 
