@@ -9,7 +9,7 @@ START
 	MOV		R0, #0xA9
 	BL		GPIO_Drv_UnsetExtInterrupt
 	BL		disp_Normal_Init
-	;BL		DRV_Modem_BootingStart
+	BL		DRV_Modem_BootingStart
 
 	SUB	SP, SP, 128
 	MOV	r1, #1
@@ -28,11 +28,10 @@ START
 	LDR	R2, [SP,0xC] ;get kernel size
 	LDR	R0, [kernel_size_a]
 	STR	R2, [R0]	;store for later use
-	LDR	R0, [R0]
-	BL	hex_debugprint
 
-	ldr	r0, [s_loadkernel_a]
-	bl	debug_print
+	MOV		R0, 10
+	BL		int_debugprint
+
 	LDR	R2, [kernel_size_a]
 	LDR	R1, [kernel_buf]
 	LDR	R0, [s_kernel_path_a]
@@ -40,11 +39,13 @@ START
 
 	BL	configure_ram
 
-	ldr	r0, [s_mmuoff_a]
-	bl	debug_print
+	MOV		R0, 30
+	BL		int_debugprint
+
 	MCR	p15, 0, R8,c1,c0 ;turn off MMUCache with previous gained MMU control reg
-	ldr	r0, [s_done_a]
-	bl	debug_print
+
+	MOV		R0, 40
+	BL		int_debugprint
 
 	BL	copykernel
 
@@ -55,8 +56,6 @@ START
 	LDR		R2, [s_atag_a]
 	MOV		R1, 0x891
 	MOV		R0, 0
-
-	BL	debug_print
 
 	LDR	R5, [kernel_start]
 	BLX	R5
@@ -146,7 +145,7 @@ copykernel_helper:
 	db	0x4000 - code_len dup 0xFF
 copykernel:
 	STMFD	SP!, {R1-R2,LR}
-	MOV	R0, 3
+	MOV	R0, 100
 	BL	int_debugprint
 
 	BL	relockernel
