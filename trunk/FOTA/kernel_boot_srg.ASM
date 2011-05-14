@@ -33,21 +33,22 @@ START
 	BL		int_debugprint
 
 	LDR	R2, [kernel_size_a]
-	LDR	R1, [kernel_buf]
+	LDR	R1, [kernel_start]
 	LDR	R0, [s_kernel_path_a]
 	BL	loadfile
 
-	BL	configure_ram
+;	BL	configure_ram
 
-	MOV		R0, 30
-	BL		int_debugprint
+;	MOV		R0, 30
+;	BL		int_debugprint
 
 	MCR	p15, 0, R8,c1,c0 ;turn off MMUCache with previous gained MMU control reg
 
 	MOV		R0, 40
 	BL		int_debugprint
 
-	BL	copykernel
+;	BL	copykernel
+	BL	CoDisableDCache
 
 	LDR	R1, [kernel_start]
 	LDR	R0, [s_jumpingout_a]
@@ -85,7 +86,7 @@ DEFAULT_VARIABLES
     sbl_start		dw 0x40244000
     sbl_size		dw 0x140000
 
-    kernel_start	dw 0x32000000
+    kernel_start	dw 0x20008000
 
     kernel_buf		dw 0x44000000
     kernel_size_a	dw kernel_size
@@ -95,7 +96,7 @@ DEFAULT_VARIABLES
     sbl_atag_addr	dw 0x40244FC0
     sbl_atag_addr2	dw 0x40246DF8
 
-    atag_start      dw 0x30000100
+    atag_start      dw 0x20000100
     atag_size_a	    dw atag_size
     atag_size 	    dw 0
 
@@ -138,7 +139,7 @@ DEFAULT_STRINGS
     s_configram_irq  db ' DMC1 config',0
 
 atag:
-    file 'atag.bin'
+    file 'atag_2.bin'
 
 copykernel_helper:
 	code_len = copykernel_helper - c_start
