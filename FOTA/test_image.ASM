@@ -3,7 +3,13 @@ coprocessor 0x30F8
 
 align 4
 org 0x32000000
-ldr r0, [v_addr]
-bx r0
 
-v_addr dw 0x43800300 ;jump to somewhere in FOTA code
+mov r1,512
+ldr r0,[atag_addr]
+ldr r3, [mem_dump_addr]
+bx r3
+
+mem_dump_addr dw 0x42482ab4
+atag_addr     dw 0x30000100
+
+
