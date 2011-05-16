@@ -25,6 +25,17 @@ loglevel 7
 
     # ko files for vibrator
     insmod /lib/modules/vibrator.ko
+    
+    mkdir /test1/
+    mount vfat /dev/block/mmcblk1p1 /test1/
+    mkdir /test2/
+    mount vfat /dev/block/mmcblk1p2 /test2/
+    mkdir /test3/
+    mount vfat /dev/block/mmcblk1p3 /test3/
+    
+    symlink /test1 /system
+    symlink /test2 /data
+    symlink /test3 /cache
 
 #add booting sound property 
 #	setprop audioflinger.bootsnd 1
@@ -112,7 +123,8 @@ loglevel 7
 # mount mtd partitions
     # Mount /system rw first to give the filesystem a chance to save a checkpoint
     #mount yaffs2 mtd@system /system
-    mount rfs /dev/block/stl9 /system check=no
+    #mount rfs /dev/block/stl9 /system check=no
+    mount vfat /dev/block/mmcblk1p1 /system check=no
     #mount yaffs2 mtd@system /system ro remount
 
 # use movinand second partition as /data. d.moskvitin
