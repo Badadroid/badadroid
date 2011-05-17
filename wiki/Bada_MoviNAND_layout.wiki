@@ -7,6 +7,7 @@
 /dev/block/mmcblk0p2: contains the 400MB allocated user storage space that appears on a computer in mass storage mode
 
 /dev/block/mmcblk0p3: appears to be where applications are installed?
+
 android kernel seems capable of mounting any of them using vfat
 
 
