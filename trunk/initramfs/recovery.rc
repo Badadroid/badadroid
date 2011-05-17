@@ -5,7 +5,7 @@ sysclktz 0
 loglevel 7
 
 # setup the global environment
-    export PATH /sbin:/system/sbin:/system/bin:/system/xbin
+    export PATH /sbin:/system/sbin:/system/bin:/system/xbin:/data/busybox
     export LD_LIBRARY_PATH /system/lib
     export ANDROID_BOOTLOGO 1
     export ANDROID_ROOT /system
@@ -26,16 +26,23 @@ loglevel 7
     # ko files for vibrator
     insmod /lib/modules/vibrator.ko
     
-    mkdir /test1/
-    mount vfat /dev/block/mmcblk1p1 /test1/
-    mkdir /test2/
-    mount vfat /dev/block/mmcblk1p2 /test2/
-    mkdir /test3/
-    mount vfat /dev/block/mmcblk1p3 /test3/
+####################### S8500(8530) port #######################
     
-    symlink /test1 /system
-    symlink /test2 /data
-    symlink /test3 /cache
+    mkdir /mnt_ext
+    mount vfat /dev/block/mmcblk1 /mnt_ext
+    
+    symlink /mnt_ext/android/system /system
+    symlink /mnt_ext/android/data   /data
+    symlink /mnt_ext/android/cache  /cache
+    
+    mkdir /mnt_int1
+    mount vfat /dev/block/mmcblk0p1 /mnt_int1
+    mkdir /mnt_int2
+    mount vfat /dev/block/mmcblk0p2 /mnt_int2
+    mkdir /mnt_int3
+    mount vfat /dev/block/mmcblk0p3 /mnt_int3
+    
+####################### S8500(8530) end  #######################
 
 #add booting sound property 
 #	setprop audioflinger.bootsnd 1
