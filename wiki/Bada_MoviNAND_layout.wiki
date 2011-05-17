@@ -11,38 +11,27 @@ android kernel seems capable of mounting any of them using vfat
 
 
 = Details =
-contents of /dev/block/mmcblk0p1:
+*contents of /dev/block/mmcblk0p1:*
 
 SystemFSISO
-
 SystemFSMedia
-
 SystemFSMediaSet
-
 CSC
-
 SystemFSPowerOnOff
-
 Mass
 
-contents of /dev/block/mmcblk0p2:
+*contents of /dev/block/mmcblk0p2:*
 
 Images
-
 Others
-
 Sounds
-
 Themes
-
 Videos
-
 SamsungNavigator
 
 Galaxyboot  << our galaxyboot folder
 
-contents of /dev/block/mmcblk0p3:
+*contents of /dev/block/mmcblk0p3:*
 
 appex
-
 bada
