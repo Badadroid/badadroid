@@ -1,0 +1,47 @@
+E:\adbworkfolder>adb devices
+* daemon not running. starting it now on port 5037 *
+* daemon started successfully *
+List of devices attached
+10003c49574a    recovery
+
+
+E:\adbworkfolder>adb shell
+$ exit
+exit
+
+E:\adbworkfolder>adb root
+restarting adbd as root
+
+E:\adbworkfolder>adb shell
+# cd /
+cd /
+# toolbox ls
+toolbox ls
+dbdata
+recovery.log
+config
+cache
+efs
+data
+sdcard
+tmp
+acct
+mnt
+d
+etc
+system
+sys
+proc
+dev
+recovery.rc
+sbin
+res
+init
+lpm.rc
+default.prop
+init.rc
+init.smdkc110.rc
+fota.rc
+lib
+init.goldfish.rc
+modules
