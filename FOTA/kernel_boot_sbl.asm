@@ -37,15 +37,15 @@ START
 
 	ldr	r0, [s_patchsbl_a]
 	bl	debug_print
-	;ldr     r0, [atag_ptr]
-	;ldr     r1, [sbl_atag_addr]
-	;str     r0, [r1]
-	;ldr     r1, [sbl_atag_addr2]
-	;str     r0, [r1]
+	ldr	r0, [atag_ptr]
+	ldr	r1, [sbl_atag_addr]
+	str	r0, [r1]
+	ldr	r1, [sbl_atag_addr2]
+	str	r0, [r1]
 
-	;ldr     r0, [kernel_ptr]
-	;ldr     r1, [sbl_kernel_addr]
-	;str     r0, [r1]
+	ldr	r0, [kernel_ptr]
+	ldr	r1, [sbl_kernel_addr]
+	str	r0, [r1]
 
 	ldr	r0, [jmp_op]
 	ADD	R0, R0, 0xA ;14 ops
@@ -81,8 +81,8 @@ START
 	ldr	r0, [s_done_a]
 	bl	debug_print
 
-	ldr	r0, [s_configramirq_a]
-	bl	debug_print
+	;ldr     r0, [s_configramirq_a]
+	;bl      debug_print
 
 	;BL      CoDisableL2Cache
 	;BL     CoDisableDCache
@@ -90,12 +90,12 @@ START
 	;BL      System_DisableVIC
 	;BL      System_DisableIRQ
     ;BL      System_DisableFIQ
-	BL	configure_ram ;reconfigure DMC1 to map bank0 onto 0x30 instead of 0x20, code from PBL, it isn't trustable
+	;BL      configure_ram ;reconfigure DMC1 to map bank0 onto 0x30 instead of 0x20, code from PBL, it isn't trustable
 
 	;BL      relockernel
 
-	ldr	r0, [s_done_a]
-	bl	debug_print
+       ; ldr     r0, [s_done_a]
+       ; bl      debug_print
 
 	LDR	R1, [sbl_start]
 	LDR	R0, [s_jumpingout_a]
@@ -129,7 +129,7 @@ DEFAULT_VARIABLES
     sbl_start		dw 0x40244000
     sbl_size		dw 0x140000
 
-    kernel_start	dw 0x32000000
+    kernel_start	dw 0x22000000
 
     kernel_buf		dw 0x44000000
     kernel_size_a	dw kernel_size
@@ -139,8 +139,8 @@ DEFAULT_VARIABLES
     sbl_atag_addr	dw 0x40244FC0
     sbl_atag_addr2	dw 0x40246DF8
 
-   ; atag_ptr            dw 0x40000100
-    ;kernel_ptr          dw 0x44000000
+    atag_ptr		dw 0x20000100
+    kernel_ptr		dw 0x22000000
 
     ;opcode              dw 0xE1A0F00E
     jmp_op		dw 0xEA000000
