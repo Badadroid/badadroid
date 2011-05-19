@@ -184,11 +184,11 @@ copykernel:
 	MOV	R0, 9999
 	BL	int_debugprint
 
-	;MOV    R0, #0xA9
-	;BL     GPIO_Drv_UnsetExtInterrupt
-	;BL     disp_Normal_Init
+	MOV    R0, #0xA9
+	BL     GPIO_Drv_UnsetExtInterrupt
+	BL     disp_Normal_Init
 
-	;BL     DRV_Modem_BootingStart
+	BL     DRV_Modem_BootingStart
 	BL	relockernel
 	MOV    R0, #0xA9
 	BL     GPIO_Drv_UnsetExtInterrupt
