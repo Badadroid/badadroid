@@ -5,6 +5,8 @@ include 'inc/macros_S8530.inc'	  ;model dependend FOTA header and footer
 include 'inc/vars.inc'
 include 'inc/functions.inc'
 
+;example dumping whole iROM area
+
 START
 
 
@@ -33,7 +35,7 @@ START
 	BL	memdump
 
 	LDR	R0, [s_dirpath_a]  ;load the address of directory we want to list
-	BL	listdir 	    ;jump into list function
+	BL	listdir 	    ;jump into dir function, just to make sure our dump has been stored
 
 	BL	dloadmode
 
@@ -43,9 +45,10 @@ DEFAULT_VARIABLES
     pagetable		dw gMMUL1PageTable
 
 
-    dump_what		dw 0x30000000
-    dump_buf		dw 0x44000000
-    dump_size		dw 0x02000000
+    dump_what		dw 0xD0000000
+    dump_size		dw 0x00010000
+	
+	dump_buf		dw 0x44000000
 			;0x00010000 ;64KB
 			;0x01000000 ;16MB
 			;0x01400000 ;20MB
@@ -64,9 +67,9 @@ DEFAULT_STRINGS_ADDR
 
 DEFAULT_STRINGS
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;; ;add custom strings below
-    s_dumppath	     du '/g/dumps/0x30000000.0x02000000.bin',0
-    ;s_kernel_path    du '/g/galaxyboot/zImage',0
-    s_dirpath	     du '/g/dumps/',0
+    s_dumppath	     du '/g/dumps/0xD0000000.0x10000.bin',0 ;where to save?
+	
+    s_dirpath	     du '/g/dumps/',0 ;dir command
 
 
     
