@@ -35,7 +35,7 @@ START
 	BL	memdump
 
 	LDR	R0, [s_dirpath_a]  ;load the address of directory we want to list
-	BL	listdir 	    ;jump into dir function, just to make sure our dump has been stored
+	BL	listdir 	    ;jump into dir function, only to make sure our dump has been stored
 
 	BL	dloadmode
 
@@ -54,9 +54,6 @@ DEFAULT_VARIABLES
 			;0x01400000 ;20MB
 			;0x02000000 ;32MB
 			;0x08000000 ;128MB
-
-
-   ; s_kernel_path_a  dw s_kernel_path
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;; strings at the end
 DEFAULT_STRINGS_ADDR
