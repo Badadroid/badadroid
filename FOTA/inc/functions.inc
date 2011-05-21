@@ -13,6 +13,21 @@ dloadmode:
 	mov	r0, 2
 	bl	maxim_charging_control
 	bl	DloadMain
+
+;int strlen(char* str)
+rebell_strlen:
+STMFD	SP!, {R1-R4,LR\}
+MOV	R1, 0
+rebell_strlen_loop:
+LDRB	R2, [R0], 1
+CMP	R2, 0x0
+BEQ	rebell_strlen_ret
+ADD	R1, R1, 1
+B	rebell_strlen_loop
+rebell_strlen_ret:
+MOV	R0, R1
+LDMFD	SP!, {R1-R4,PC\}
+
 ;be aware of code below, need someone to check and fix it
 ;it is 100% copy->paste from PBL with commented out 0x40 mapping
 configure_ram:
