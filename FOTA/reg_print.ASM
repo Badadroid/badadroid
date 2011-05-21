@@ -17,6 +17,7 @@ START
 
 	LDR	R0, [dump_what]
 	LDR	R0, [R0]
+	BL	hex_debugprint
 
 
 	BL	dloadmode
