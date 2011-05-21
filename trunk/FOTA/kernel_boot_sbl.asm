@@ -46,6 +46,8 @@ START
 	ldr	r0, [kernel_ptr]
 	ldr	r1, [sbl_kernel_addr]
 	str	r0, [r1]
+	ldr	r1, [sbl_kernel_addr2]
+	str	r0, [r1]
 
 	ldr	r0, [jmp_op]
 	ADD	R0, R0, 0xA ;14 ops
@@ -96,6 +98,15 @@ START
 
        ; ldr     r0, [s_done_a]
        ; bl      debug_print
+	BL	CoDisableMmu
+
+
+      ; MOV    R0, #0xA9
+      ; BL     GPIO_Drv_UnsetExtInterrupt
+      ;  BL     DRV_Modem_BootingStart
+
+      ; MOV    R0, #0xA9
+      ; BL     GPIO_Drv_UnsetExtInterrupt
 
 	LDR	R1, [sbl_start]
 	LDR	R0, [s_jumpingout_a]
@@ -136,10 +147,11 @@ DEFAULT_VARIABLES
     kernel_size 	dw 0 ;overwritten during runtime ;0x6664C8  ;6710472
 
     sbl_kernel_addr	dw 0x402D4BC0
+    sbl_kernel_addr2	dw 0x402D4BBC
     sbl_atag_addr	dw 0x40244FC0
     sbl_atag_addr2	dw 0x40246DF8
 
-    atag_ptr		dw 0x20000100
+    atag_ptr		dw 0x40000100
     kernel_ptr		dw 0x22000000
 
     ;opcode              dw 0xE1A0F00E
@@ -188,10 +200,7 @@ copykernel:
 	BL     GPIO_Drv_UnsetExtInterrupt
 	BL     disp_Normal_Init
 
-	BL     DRV_Modem_BootingStart
-	BL	relockernel
-	MOV    R0, #0xA9
-	BL     GPIO_Drv_UnsetExtInterrupt
+
 
 
 	LDMFD	SP!, {R1-R2,PC}
