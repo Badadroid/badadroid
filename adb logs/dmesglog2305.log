@@ -1,0 +1,1830 @@
+<6>[    0.000000] Initializing cgroup subsys cpu
+<5>[    0.000000] Linux version 2.6.32.9 (nbates66@archlaptop) (gcc version 4.5.1 (Sourcery G++ Lite 2010.09-50) ) #1 Thu May 19 15:26:32 EST 2011
+<4>[    0.000000] CPU: ARMv7 Processor [412fc082] revision 2 (ARMv7), cr=10c53c7f
+<4>[    0.000000] CPU: VIPT nonaliasing data cache, VIPT nonaliasing instruction cache
+<4>[    0.000000] Machine: SMDKC110
+<4>[    0.000000] Ignoring unrecognised tag 0x54410009
+<4>[    0.000000] Memory policy: ECC disabled, Data cache writeback
+<7>[    0.000000] On node 0 totalpages: 20480
+<7>[    0.000000] free_area_init_node: node 0, pgdat c146b860, node_mem_map c1642000
+<7>[    0.000000]   Normal zone: 160 pages used for memmap
+<7>[    0.000000]   Normal zone: 0 pages reserved
+<7>[    0.000000]   Normal zone: 20320 pages, LIFO batch:3
+<7>[    0.000000] On node 1 totalpages: 65536
+<7>[    0.000000] free_area_init_node: node 1, pgdat c146bf18, node_mem_map d0002000
+<7>[    0.000000]   Normal zone: 512 pages used for memmap
+<7>[    0.000000]   Normal zone: 0 pages reserved
+<7>[    0.000000]   Normal zone: 65024 pages, LIFO batch:15
+<7>[    0.000000] On node 2 totalpages: 0
+<7>[    0.000000] free_area_init_node: node 2, pgdat c146c5d0, node_mem_map c16eac20
+<4>[    0.000000]   Normal zone: 1 pages exceeds realsize 0
+<7>[    0.000000] On node 3 totalpages: 0
+<7>[    0.000000] free_area_init_node: node 3, pgdat c146cc88, node_mem_map c16f2ce0
+<4>[    0.000000]   Normal zone: 1 pages exceeds realsize 0
+<4>[    0.000000] CPU S5PV210/S5PC110 (id 0x43110222)
+<7>[    0.000000] s5pv210_init_clocks: initializing clocks
+<6>[    0.000000] S3C24XX Clocks, Copyright 2004 Simtec Electronics
+<3>[    0.000000] copy: bad source 0
+<3>[    0.000000] mout_audss: bad source 0
+<7>[    0.000000] s5pv210_setup_clocks: registering clocks
+<7>[    0.000000] s5pv210_setup_clocks: clkdiv0 = 14131330, clkdiv1 = 00300400
+<7>[    0.000000] s5pv210_setup_clocks: xtal is 24000000
+<6>[    0.000000] S5PV210: PLL settings, A=800000000, M=667000000, E=80000000
+<6>[    0.000000] s5pv210: 33554432 bytes system memory reserved for mfc at 0x316fd000
+<6>[    0.000000] s5pv210: 33554432 bytes system memory reserved for mfc at 0x40204000
+<6>[    0.000000] s5pv210: 12582912 bytes system memory reserved for fimc0 at 0x42204000
+<6>[    0.000000] s5pv210: 1048576 bytes system memory reserved for fimc1 at 0x42e04000
+<6>[    0.000000] s5pv210: 12582912 bytes system memory reserved for fimc2 at 0x42f04000
+<6>[    0.000000] s5pv210: 2097152 bytes system memory reserved for pmem at 0x336fd000
+<6>[    0.000000] s5pv210: 4194304 bytes system memory reserved for pmem_gpu1 at 0x338fd000
+<6>[    0.000000] s5pv210: 1536000 bytes system memory reserved for pmem_adsp at 0x33cfd000
+<6>[    0.000000] s5pv210: 10485760 bytes system memory reserved for texstream at 0x33e74000
+<6>[    0.000000] s5pv210: 3145728 bytes system memory reserved for fimd at 0x43b04000
+<6>[    0.000000] s5pv210: 262144 bytes system memory reserved for wifi at 0x34874000
+<4>[    0.000000] Built 2 zonelists in Zone order, mobility grouping on.  Total pages: 85344
+<5>[    0.000000] Kernel command line: console=ttySAC2,115200 loglevel=4
+<6>[    0.000000] PID hash table entries: 2048 (order: 1, 8192 bytes)
+<6>[    0.000000] Dentry cache hash table entries: 65536 (order: 6, 262144 bytes)
+<6>[    0.000000] Inode-cache hash table entries: 32768 (order: 5, 131072 bytes)
+<6>[    0.000000] Memory: 80MB 256MB = 336MB total
+<5>[    0.000000] Memory: 205432KB available (9152K code, 1897K data, 11348K init, 0K highmem)
+<6>[    0.000000] SLUB: Genslabs=9, HWalign=64, Order=0-3, MinObjects=0, CPUs=1, Nodes=4
+<6>[    0.000000] Hierarchical RCU implementation.
+<6>[    0.000000] NR_IRQS:339
+<6>[    0.000000] VIC @fd000000: id 0x00041192, vendor 0x41
+<6>[    0.000000] VIC @fd010000: id 0x00041192, vendor 0x41
+<6>[    0.000000] VIC @fd020000: id 0x00041192, vendor 0x41
+<6>[    0.000000] VIC @fd030000: id 0x00041192, vendor 0x41
+<6>[    0.000000] mult[140737]
+<6>[    0.000000] max_delta_ns[2147483647]
+<6>[    0.000000] min_delta_ns[30517]
+<6>[    0.000000] rate[32768]
+<6>[    0.000000] HZ[256]
+<4>[    0.000000] Console: colour dummy device 80x30
+<6>[    0.000000] console [ttySAC2] enabled
+<6>[    0.014747] Calibrating delay loop... 796.20 BogoMIPS (lpj=1556480)
+<4>[    0.099076] Mount-cache hash table entries: 512
+<6>[    0.102580] Initializing cgroup subsys debug
+<6>[    0.105962] Initializing cgroup subsys cpuacct
+<6>[    0.109345] Initializing cgroup subsys freezer
+<6>[    0.112814] CPU: Testing write buffer coherency: ok
+<0>[    0.121628] KERNEL:kernel_sec_get_debug_level_from_boot=0x574f4c44
+<0>[    0.131687] KERNEL:magic_number=0x0 DEBUG LEVEL low!!
+<0>[    0.141401] (kernel_sec_set_upload_cause) : upload_cause set 0
+<6>[    0.153519] regulator: core version 0.5
+<6>[    0.157143] NET: Registered protocol family 16
+<4>[    0.175766] S5PC110 Hardware version : EVT1 
+<4>[    0.177717] HWREV is 0xf
+<4>[    0.182823] S3C Power Management, Copyright 2004 Simtec Electronics
+<6>[    0.197126] S5PV210 Power Domain API Enable
+<6>[    0.201263] S5PV210: Initializing architecture
+<6>[    0.207429] S3C PL330-DMA Controller Driver, (c) 2008-2009 Samsung Electronics
+<6>[    0.211506] Total 24 DMA channels will be initialized.
+<4>[    0.216668] DMA: got clock for controller 0 and disabled 
+<4>[    0.221386] DMA: got clock for controller 1 and disabled 
+<4>[    0.226069] DMA: got clock for controller 2 and disabled 
+<6>[    0.234681] s3c24xx-pwm s3c24xx-pwm.0: tin at 66700000, tdiv at 66700000, tin=divclk, base 0
+<6>[    0.242053] s3c24xx-pwm s3c24xx-pwm.1: tin at 66700000, tdiv at 66700000, tin=divclk, base 8
+<6>[    0.249338] s3c24xx-pwm s3c24xx-pwm.2: tin at 4168750, tdiv at 4168750, tin=divclk, base 12
+<6>[    0.256623] s3c24xx-pwm s3c24xx-pwm.3: tin at 4168750, tdiv at 4168750, tin=divclk, base 16
+<4>[    0.278575] bio: create slab <bio-0> at 0
+<6>[    0.281229] vgaarb: loaded
+<5>[    0.284819] SCSI subsystem initialized
+<6>[    0.291265] s3c-i2c s3c2410-i2c.0: i2c-0: S3C I2C adapter
+<6>[    0.296877] s3c-i2c s3c2410-i2c.1: i2c-1: S3C I2C adapter
+<6>[    0.302601] s3c-i2c s3c2410-i2c.2: i2c-2: S3C I2C adapter
+<6>[    0.306867] Bluetooth: Core ver 2.15
+<6>[    0.310318] NET: Registered protocol family 31
+<6>[    0.315609] Bluetooth: HCI device and connection manager initialized
+<6>[    0.319425] Bluetooth: HCI socket layer initialized
+<6>[    0.324143] Switching to clocksource clock_source_systimer
+<6>[    0.337007] NET: Registered protocol family 2
+<6>[    0.343216] IP route cache hash table entries: 4096 (order: 2, 16384 bytes)
+<6>[    0.350580] TCP established hash table entries: 16384 (order: 5, 131072 bytes)
+<6>[    0.356329] TCP bind hash table entries: 16384 (order: 6, 327680 bytes)
+<6>[    0.362175] TCP: Hash tables configured (established 16384 bind 16384)
+<6>[    0.364257] TCP reno registered
+<6>[    0.367631] NET: Registered protocol family 1
+<7>[    0.421146] [BT] rfkill_register(bt_rfk) 
+<7>[    0.423798] [BT] Device Powering ON 
+<7>[    0.426053] [BT] GPIO_BT_nRST = 0
+<4>[    0.428308] [BT] GPIO_WLAN_BT_EN = 1
+<7>[    0.431777] [BT] bt_host_wake_irq_handler start
+<4>[    0.537095] [BT] GPIO_BT_nRST = 1
+<7>[    0.539706] [BT] Device Powering OFF 
+<7>[    0.543175] [BT] bt_host_wake_irq_handler start
+<4>[    0.545170] [BT] GPIO_BT_nRST = 0
+<4>[    0.547425] [BT] GPIO_WLAN_BT_EN = 0
+<7>[    0.551068] [BT] bt_host_wake_irq_handler start
+<4>[    0.554928] [BT] In the unblocked state of the sleep
+<7>[    0.557182] [BT] GPIO_BT_WAKE = 0
+<4>[    0.559958] [BT] wake_unlock(bt_wake_lock)
+<4>[    0.563600] [BT] In the unblocked state of the sleep
+<7>[    0.565856] [BT] GPIO_BT_WAKE = 0
+<4>[    0.568631] [BT] wake_unlock(bt_wake_lock)
+<4>[    0.572664] S5PC11X_FREQ_TAB=0 , S5PC11X_MAXFREQLEVEL=4
+<6>[    0.577469] S5PV210 ADC driver, (c) 2010 Samsung Electronics
+<4>[    0.582266] [ JACK_DRIVER (sec_jack_init,800) ] 
+<6>[    0.585562] SEC JACK: Registering jack driver
+<6>[    0.590366] input: sec_jack as /devices/virtual/input/input0
+<4>[    0.597330] [ JACK_DRIVER (sec_jack_probe,676) ] sended isr send=0Xbe, ret =0
+<4>[    0.602794] [ JACK_DRIVER (sec_jack_probe,695) ] det isr det=0X26, ret =0
+<4>[    0.608692] NetWinder Floating Point Emulator V0.97 (extended precision)
+<6>[    0.612223] ashmem: initialized
+<6>[    0.633499] ROMFS MTD (C) 2007 Red Hat, Inc.
+<6>[    0.636489] msgmni has been set to 401
+<6>[    0.641589] alg: No test for cipher_null (cipher_null-generic)
+<6>[    0.646446] alg: No test for ecb(cipher_null) (ecb-cipher_null)
+<6>[    0.651217] alg: No test for digest_null (digest_null-generic)
+<6>[    0.656334] alg: No test for compress_null (compress_null-generic)
+<6>[    0.661095] alg: No test for stdrng (krng)
+<6>[    0.715962] alg: No test for ghash (ghash-generic)
+<6>[    0.718824] io scheduler noop registered
+<6>[    0.722380] io scheduler anticipatory registered
+<6>[    0.725589] io scheduler deadline registered
+<6>[    0.729743] io scheduler cfq registered (default)
+<4>[    0.733605] MDNIE  INIT ..........
+<6>[    0.738026] S3C MDNIE Driver, (c) 2010 Samsung Electronics
+<4>[    0.742078] MDNIE  INIT SUCCESS Addr : 0xe083c000
+<4>[    0.744158] IELCD  INIT ..........
+<6>[    0.748582] S3C IELCD Driver, (c) 2010 Samsung Electronics
+<4>[    0.752478] IELCD  INIT SUCCESS Addr : 0xe0840000
+<6>[    0.759642] s3cfb s3cfb: [fb0] dma: 0x43b04000, cpu: 0xe0c00000, size: 0x002ee000
+<6>[    0.769199] FIMD src sclk = 166750000
+<6>[    0.775268] s3cfb s3cfb: parent clock: 166750000, vclk: 25628040, vclk div: 7
+<6>[    0.778825] s3cfb s3cfb: registered successfully
+<6>[    0.974118] s5pv210-uart.0: s3c2410_serial0 at MMIO 0xe2900000 (irq = 16) is a S3C6400/10
+<6>[    0.981740] s5pv210-uart.1: s3c2410_serial1 at MMIO 0xe2900400 (irq = 20) is a S3C6400/10
+<6>[    0.989268] s5pv210-uart.2: s3c2410_serial2 at MMIO 0xe2900800 (irq = 24) is a S3C6400/10
+<6>[    0.996736] s5pv210-uart.3: s3c2410_serial3 at MMIO 0xe2900c00 (irq = 28) is a S3C6400/10
+<6>[    1.009512] brd: module loaded
+<6>[    1.017005] loop: module loaded
+<6>[    1.018479] pmem: 1 init
+<6>[    1.022046] pmem_gpu1: 1 init
+<6>[    1.025567] pmem_adsp: 1 init
+<4>[    1.031377] [BIF:IN ] ++FSR_BML_Init(nFlag: 0x0)
+<4>[    1.033718] [PAM:   ] ++FSR_PAM_Init
+<4>[    1.039756] [PAM:   ]   OneNAND physical base address       : 0xb0000000
+<4>[    1.045218] [PAM:   ]   OneNAND virtual  base address       : 0xe0880000
+<4>[    1.050075] [PAM:   ]   OneNAND nMID=0xec : nDID=0x50 Page size=4
+<4>[    1.052417] [PAM:   ] --FSR_PAM_Init
+<4>[    1.056580] [BIF:   ]   FSR VERSION: FSR_1.2.1p1_b139_RTM
+<4>[    1.064126] [OND:INF]   FSR_OND_4K_Open(nDev:0, pParam:0xc4c1de50, nFlag:0x00000000) / 1033 line
+<4>[    1.068375]             pstOND4kCxt->nBaseAddr: 0xe0880000
+<4>[    1.073579]             nDev=0, nMID=0x00ec, nDID=0x0050, nVID=0x013e
+<4>[    1.078436] [OND:INF]   pstOND4kCxt->nSysConf1:0xf0c6 / 1116 line
+<4>[    1.083900] [OND:INF]   pstOND4kCxt->nBlksForSLCArea[0]:2048 / 1133 line
+<4>[    1.088757] [OND:INF]   pstOND4kCxt->nIntID   :0x0000 / 1236 line
+<4>[    1.092140] [OND:INF]   1X_CACHEPGM CMD : 0x007f
+<4>[    1.095522] [OND:INF]   1X_PLOAD    CMD : 0x0003
+<4>[    1.101741] [BBM:INF]   Scan from 2004 to 2047 to find BML meta blocks (die: 0)
+<4>[    1.102869] [BBM:INF]   ffff ffff ffff ffff ffff ffff ffff ffff ffff ffff 
+<4>[    1.108896] [BBM:INF]   ffff ffff ffff ffff ffff ffff ffff ffff ffff ffff 
+<4>[    1.114985] [BBM:INF]   ffff ffff ffff ffff ffff ffff ffff ffff ffff ffff 
+<4>[    1.121004] [BBM:INF]   ffff ffff ffff ffff ffff ffff ffff ffff ffff ffff 
+<4>[    1.127058] [BBM:INF]   a5a5 a5a5 ffff 
+<4>[    1.169496] FSR: Registered TinyFSR Driver.
+<6>[    1.176574] tl2796_probe::1124->s6e63m0 probed successfuly
+<6>[    1.180051] PPP generic driver version 2.4.2
+<6>[    1.184596] PPP Deflate Compression module registered
+<6>[    1.188239] PPP BSD Compression module registered
+<6>[    1.192706] PPP MPPE Compression module registered
+<6>[    1.196088] NET: Registered protocol family 24
+<6>[    1.198950] PPPoL2TP kernel driver, V1.0
+<6>[    1.207536] SLIP: version 0.8.4-NET3.019-NEWTTY (dynamic channels, max=256) (6 bit encapsulation enabled).
+<6>[    1.213781] CSLIP: code copyright 1989 Regents of the University of California.
+<4>[    1.217970] [otg_clock_enable] clk_enable(otg_clock) OK.
+<4>[    1.222046] [otg_clock_enable] clk_disable(otg_clock) OK.
+<6>[    1.232784] s3c-udc : S3C HS USB OTG Device Driver, (c) 2008-2009 Samsung Electronics
+<6>[    1.232797] s3c-udc : version 15 March 2009 (DMA Mode) 
+<4>[    1.237806] [ADB_UMS_ACM_RNDIS_MTP] string_dev = 10003c49574a 
+<4>[    1.244484] android_adb_ums_acm_rndis_mtp gadget: using random self ethernet address
+<4>[    1.251162] android_adb_ums_acm_rndis_mtp gadget: using random host ethernet address
+<6>[    1.255135] usb0: MAC 0e:a6:9d:56:f0:fa
+<6>[    1.258344] usb0: HOST MAC ca:24:73:44:45:4a
+<6>[    1.260165] acm_function_add
+<6>[    1.262776] DUN is registerd
+<6>[    1.267373] fsg_function_bind cdrom patch after fsg->nluns 2
+<6>[    1.272525] android_adb_ums_acm_rndis_mtp gadget: Number of LUNs=2
+<6>[    1.276514] shaman: mass_storage_function_add success
+<6>[    1.278335] adb_function_add
+<4>[    1.282039] [mtpg_function_bind] 	line = [891] 
+<4>[    1.286202] [mtpg_function_bind] 	dual speed line = [958] 
+<4>[    1.292100] ***** [mtpg_function_bind:975] calling mtp_function_enable with 0 
+<4>[    1.296436] [mtp_function_enable] mtp_function => (disabled)
+<4>[    1.301033] ****** mtp_function_enable and line 1267 null_desc 
+<4>[    1.303635]   interface 0 = acm/df122780
+<4>[    1.306237]   interface 1 = acm/df122780
+<4>[    1.309966]   interface 2 = usb_mass_storage/df360800
+<4>[    1.312568]   interface 3 = adb/df33dd00
+<4>[    1.315777]   interface 4 = Gadget_MTP/df33df00
+<4>[    1.318553]   interface 5 = rndis/df122b40
+<4>[    1.321328]   interface 6 = rndis/df122b40
+<6>[    1.324884] mass_storage_function_config_changed
+<4>[    1.328614]   interface 0 = usb_mass_storage/df360800
+<6>[    1.336072] android_adb_ums_acm_rndis_mtp gadget: Android Composite USB, version: May 19 2011
+<6>[    1.342838] android_adb_ums_acm_rndis_mtp gadget: android_adb_ums_acm_rndis_mtp ready
+<6>[    1.348128] Registered gadget driver 'android_adb_ums_acm_rndis_mtp'
+<4>[    1.352673] [udc_enable]AP_USB_Power off by Bootup : 1
+<4>[    1.357530] mice: could not register psaux device, error: -16
+<6>[    1.361693] mice: PS/2 mouse device common for all mice
+<6>[    1.368503] input: s3c-keypad as /devices/virtual/input/input1
+<4>[    1.371129] s3c-keypad Initialized
+<6>[    1.373150] S3C Keypad Driver
+<6>[    1.376646] i2c /dev entries driver
+<6>[    1.383836] i2c-gpio i2c-gpio.4: using pins 247 (SDA) and 246 (SCL)
+<6>[    1.389760] i2c-gpio i2c-gpio.5: using pins 203 (SDA) and 204 (SCL)
+<6>[    1.394218] regulator: DCDC1: 750 <--> 1500 mV 
+<6>[    1.398103] regulator: DCDC2: 750 <--> 1500 mV 
+<6>[    1.401304] regulator: LDO4: 3300 mV 
+<6>[    1.404209] regulator: LDO7: 1800 mV 
+<6>[    1.408121] regulator: LDO17: 3000 <--> 3200 mV 
+<6>[    1.414070] i2c-gpio i2c-gpio.6: using pins 206 (SDA) and 209 (SCL)
+<4>[    1.417132] [FSA9480] fsa9480_codec_probe
+<4>[    1.419890] fsa9480_interrupt
+<4>[    1.464288] [FSA9480] FSA9480_ReadIntRegister
+<6>[    1.469744] i2c-gpio i2c-gpio.7: using pins 201 (SDA) and 202 (SCL)
+<6>[    1.475442] i2c-gpio i2c-gpio.8: using pins 42 (SDA) and 43 (SCL)
+<6>[    1.481730] i2c-gpio i2c-gpio.11: using pins 114 (SDA) and 98 (SCL)
+<6>[    1.487645] i2c-gpio i2c-gpio.12: using pins 173 (SDA) and 172 (SCL)
+<6>[    1.491608] Linux video capture interface: v2.00
+<6>[    1.495054] IPC probe success
+<6>[    1.501192] mfc_init: <6>S5PC110 MFC Driver, (c) 2009 Samsung Electronics
+<6>[    1.501203] 
+<6>[    1.514351] S3C2410 Watchdog Timer, (c) 2004 Simtec Electronics
+<6>[    1.522512] s3c2410-wdt s3c2410-wdt: watchdog inactive, reset disabled, irq enabled
+<4>[    1.528061] [FSA9480] FSA9480_ProcessDevice (dev1 : 0x0, dev2 : 0x0)
+<6>[    1.536925] device-mapper: ioctl: 4.15.0-ioctl (2009-04-01) initialised: dm-devel@redhat.com
+<6>[    1.541436] device-mapper: multipath: version 1.1.0 loaded
+<6>[    1.546900] device-mapper: multipath round-robin: version 1.0.0 loaded
+<6>[    1.552450] device-mapper: multipath queue-length: version 0.1.0 loaded
+<6>[    1.558001] device-mapper: multipath service-time: version 0.2.0 loaded
+<6>[    1.561774] Bluetooth: HCI UART driver ver 2.2
+<6>[    1.565503] Bluetooth: HCI H4 protocol initialized
+<6>[    1.568730] cpuidle: using governor ladder
+<6>[    1.571826] cpuidle: using governor menu
+<6>[    1.576987] sdhci: Secure Digital Host Controller Interface driver
+<6>[    1.580283] sdhci: Copyright(c) Pierre Ossman
+<6>[    1.586007] s3c-sdhci s3c-sdhci.0: clock source 2: sclk_mmc (51307692 Hz)
+<6>[    1.593207] mmc0: SDHCI controller on samsung-hsmmc [s3c-sdhci.0] using ADMA
+<6>[    1.598939] s3c-sdhci s3c-sdhci.1: clock source 2: sclk_mmc (47642857 Hz)
+<6>[    1.606035] mmc1: SDHCI controller on samsung-hsmmc [s3c-sdhci.1] using ADMA
+<6>[    1.611775] s3c-sdhci s3c-sdhci.2: clock source 2: sclk_mmc (47642857 Hz)
+<4>[    1.615654]  Universal :SD Detect configuration 
+<7>[    1.618427]  Universal : Card status  0
+<6>[    1.625782] mmc2: SDHCI controller on samsung-hsmmc [s3c-sdhci.2] using ADMA
+<6>[    1.630509] logger: created 512K log 'log_main'
+<6>[    1.634308] logger: created 256K log 'log_events'
+<6>[    1.639069] logger: created 256K log 'log_radio'
+<6>[    1.644872] logger: created 64K log 'log_system'
+<7>[    1.649208] *** DEBUG : First we search for SDIO...(0)***
+<4>[    1.653146] GP2A opt i2c attach success!!!
+<4>[    1.655904] opt_i2c_client : (0xdf328300)
+<7>[    1.659763] *** DEBUG : ...then normal SD...(0) ***
+<4>[    1.663545] [gp2a_opt_probe] CONFIG_GP2A_MODE_A INIT 
+<7>[    1.668992] *** DEBUG : ...and finally MMC. (0)***
+<4>[    1.755524] mmc0: switch to bus width 4 
+<6>[    1.759860] mmc0: new high speed MMC card at address 0001
+<6>[    1.772983] mmcblk0: mmc0:0001 M2G1DD 1.91 GiB 
+<6>[    1.774102]  mmcblk0: p1 p2 p3
+<7>[    1.789158] Another host want the wakelock : 2
+<7>[    1.832368] *** DEBUG : First we search for SDIO...(1)***
+<7>[    1.837363] *** DEBUG : ...then normal SD...(1) ***
+<7>[    1.848378] *** DEBUG : ...and finally MMC. (1)***
+<7>[    1.854823] Another host want the wakelock : 1
+<7>[    1.857598]  Universal : Card status  0
+<4>[    1.874398] gp2a_opt_probe is OK!!
+<4>[    1.875369] smb_init 
+<4>[    1.880217] smb_acc_start ....
+<4>[    1.881345] yamaha_init
+<4>[    1.883392] level device init
+<6>[    1.889142] Advanced Linux Sound Architecture Driver Version 1.0.21.
+<4>[    1.890790] fsa9480_interrupt
+<4>[    1.893938] [FSA9480] FSA9480_ReadIntRegister
+<4>[    1.900747] No device for DAI WM8994 PAIFRX
+<4>[    1.903609] No device for DAI WM8994 PCM
+<7>[    1.909040] *** DEBUG : First we search for SDIO...(2)***
+<4>[    1.912430] No device for DAI s3c-pcmdev
+<6>[    1.914988] WM8994 Audio Codec 0.1
+<7>[    1.918805] *** DEBUG : ...then normal SD...(2) ***
+<4>[    1.952361] s3c_preallocate_dma_buffer: VA-ff001000, PA-4F3C0000, 131072bytes
+<4>[    1.958311] s3c_preallocate_dma_buffer: VA-ff021000, PA-4F3E0000, 131072bytes
+<6>[    1.962734] asoc: WM8994 PAIFRX <-> s3c64xx-i2s mapping ok
+<6>[    1.968189] ldo38_control : turn ON LDO3 and LDO8 (cur_stat=0, req=1)
+<4>[    1.972179] [otg_clock_enable] clk_enable(otg_clock) OK.
+<4>[    1.976758] [udc_enable]AP_USB_Power off by Bootup : 1+++++++smdkc110_audio_init
+<6>[    1.984003] WM8994 Audio Codec 0.1
+<4>[    1.991641] s3c_preallocate_dma_buffer: VA-ff041000, PA-4EC00000, 131072bytes
+<4>[    1.997600] s3c_preallocate_dma_buffer: VA-ff061000, PA-4EC20000, 131072bytes
+<6>[    2.001676] asoc: WM8994 PCM <-> s3c-pcmdev mapping ok
+<4>[    2.007262] [FSA9480] FSA9480_ProcessDevice (dev1 : 0x4, dev2 : 0x0)
+<4>[    2.009430] USB attach or detach: 1
+<4>[    2.012206] FSA9480_DEV_TY1_USB --- ATTACH
+<4>[    2.018433] ASoC: Failed to create codec register debugfs file
+<4>[    2.022162] Failed to create pop time debugfs file
+<4>[    2.025979] Failed to create DAPM debugfs directory
+<4>[    2.028667] ----------smdkc110_audio_init
+<6>[    2.030575] ALSA device list:
+<6>[    2.033004]   #0: smdkc110 (WM8994)
+<6>[    2.035779]   #1: smdkc110-pcm (WM8994)
+<4>[    2.039465] Netfilter messages via NETLINK v0.30.
+<4>[    2.044158] nf_conntrack version 0.5.0 (3214 buckets, 12856 max)
+<4>[    2.050932] CONFIG_NF_CT_ACCT is deprecated and will be removed soon. Please use
+<4>[    2.057783] nf_conntrack.acct=1 kernel parameter, acct=1 nf_conntrack module option or
+<4>[    2.062900] sysctl net.netfilter.nf_conntrack_acct=1 to enable it.
+<6>[    2.066439] xt_time: kernel timezone is -0000
+<6>[    2.071062] IPv4 over IPv4 tunneling driver
+<6>[    2.075546] GRE over IPv4 tunneling driver
+<6>[    2.082667] ip_tables: (C) 2000-2006 Netfilter Core Team
+<6>[    2.084869] TCP cubic registered
+<6>[    2.089501] NET: Registered protocol family 10
+<6>[    2.101427] IPv6 over IPv4 tunneling driver
+<6>[    2.108721] NET: Registered protocol family 17
+<6>[    2.112103] NET: Registered protocol family 15
+<6>[    2.114705] Bluetooth: L2CAP ver 2.14
+<6>[    2.118695] Bluetooth: L2CAP socket layer initialized
+<6>[    2.122164] Bluetooth: SCO (Voice Link) ver 0.6
+<6>[    2.125980] Bluetooth: SCO socket layer initialized
+<6>[    2.129796] Bluetooth: RFCOMM TTY layer initialized
+<6>[    2.133873] Bluetooth: RFCOMM socket layer initialized
+<6>[    2.136561] Bluetooth: RFCOMM ver 1.11
+<6>[    2.140005] NET: Registered protocol family 33
+<6>[    2.143387] NET: Registered protocol family 35
+<4>[    2.147923] S3C24XX RTC, (c) 2004,2006 Simtec 					Electronics
+<6>[    2.154109] using rtc device, s3c, for alarms
+<6>[    2.159485] s3c2410-rtc s3c2410-rtc: rtc core: registered s3c as rtc0
+<6>[    2.164029] VFP support v0.3: implementor 41 architecture 3 part 30 variant c rev 2
+<7>[    2.172295] qt602240 GPIO Status
+<7>[    2.174116] TOUCH_EN  : High
+<7>[    2.175851] TOUCH_INT : Low
+<6>[    2.184238] mmc2: new high speed SDHC card at address 0007
+<6>[    2.187880] mmcblk1: mmc2:0007 SD04G 3.67 GiB 
+<6>[    2.189034]  mmcblk1: p1 p2 < p5 p6 p7 >
+<7>[    2.203675] mmc2: wake_lock_timeout 1sec 0
+<4>[    2.284579] qt602240_i2c is attached..
+<7>[    2.288741] |  Quantum Touch Driver Probe!            |
+<6>[    2.294586] input: qt602240_ts_input as /devices/virtual/input/input2
+<4>[    2.296963] QT_reprogram check
+<4>[    2.299565] [QT] init_touch_driver start
+<4>[    2.301386] [QT] init_I2C start
+<4>[    2.328723] 
+<4>[    2.328728] [TSP] Touch device found
+<4>[    2.330458] Version: 	   0x16
+<4>[    2.330463] Family:		   0x80
+<4>[    2.332107] Variant: 	   0x1
+<4>[    2.333755] Build number:   0xab
+<4>[    2.335750] Matrix X size : 17
+<4>[    2.337571] Matrix Y size : 13
+<4>[    2.339393] Calculated CRC:	0x95 0x94 0x1e 0x00 
+<4>[    2.346850] 
+<4>[    2.347110] Stored CRC:	0x95 0x94 0x1e 0x00 
+<4>[    2.350146] 
+<4>[    2.350406] Info block CRC value OK.
+<4>[    2.352924] 
+<4>[    2.352927] 
+<4>[    2.356477] [TSP]qt_Power_Config_Init real board 
+<4>[    2.366824] 
+<4>[    2.366829] [TSP][reset_chip] 
+<4>[    2.431084] Chip reset OK!
+<4>[    2.431090] read_mem : i2c read failed
+<4>[    2.438568] 
+<4>[    2.438573]  [TSP] read_mem is failed -- check your TSP chip!!
+<4>[    2.438582] 
+<4>[    2.442992] [QT] ret : 0, qt602240->client name : qt602240_ts
+<4>[    2.445256] [QT] qt602240_init/6318
+<4>[    2.449852] [QT] qt602240_init/6349, platform_driver_register!!
+<7>[    2.453695] [TSP] msg id =  1 90 c1 f4 4 0 0 0 0
+<6>[    2.462151] s3c2410-rtc s3c2410-rtc: setting system clock to 2011-05-22 17:02:22 UTC (1306083742)
+<6>[    2.467912] FIMC0 registered successfully
+<6>[    2.473376] FIMC1 registered successfully
+<6>[    2.478848] FIMC2 registered successfully
+<6>[    2.483782] S5PC1XX TVOUT Driver, (c) 2009 Samsung Electronics
+<6>[    2.493290] s5p-tvout s5p-tvout: hpd status is cable removed
+<7>[    2.497624] [TSP] msg id =  1 0 c1 f4 4 0 0 0 0
+<6>[    2.526272] fg_read_vcell: VCELL=3878
+<4>[    2.527746] [SOC] C:0, P:75
+<4>[    2.547713] pmic interrupt registered 
+<6>[    2.553861] Freeing init memory: 11348K
+<4>[    2.558024] Warning: unable to open an initial console.
+<3>[    2.564633] init: /init.rc: 232: chmod requires 2 arguments
+<3>[    2.574867] init: /init.rc: 237: setprop requires 2 arguments
+<3>[    2.584842] init: /init.rc: 330: invalid command 'dmesg'
+<3>[    2.594382] init: /init.rc: 341: invalid option 'enabled'
+<3>[    2.603923] init: /init.rc: 465: invalid option 'dmesg'
+<4>[    2.611902] !@Init process: device_init #3
+<4>[    3.052141] maxim_vac_disconnect: connect status skip
+<3>[    3.086938] init: ro.secure:1
+<3>[    3.092921] init: ro.allow.mock.location:0
+<3>[    3.099165] init: ro.debuggable:1
+<3>[    3.105757] init: persist.service.adb.enable:1
+<3>[    3.116703] init: cannot open '/initlogo.rle'
+<3>[    3.123381] init: ro.factorytest:0
+<3>[    3.128672] init: ro.serialno:
+<3>[    3.134222] init: ro.bootmode:unknown
+<3>[    3.140380] init: ro.baseband:unknown
+<3>[    3.146452] init: ro.carrier:unknown
+<3>[    3.152696] init: ro.bootloader:unknown
+<3>[    3.159114] init: ro.hardware:SMDKC110
+<3>[    3.164925] init: ro.revision:48
+<3>[    3.170476] init: dpm.allowcamera:0
+<6>[    3.176721] init: command 'loglevel' r=0
+<6>[    3.179410] init: command 'export' r=0
+<6>[    3.182098] init: command 'export' r=0
+<6>[    3.184787] init: command 'export' r=0
+<6>[    3.187476] init: command 'export' r=0
+<6>[    3.190164] init: command 'export' r=0
+<6>[    3.192853] init: command 'export' r=0
+<6>[    3.195542] init: command 'export' r=0
+<6>[    3.198230] init: command 'export' r=0
+<6>[    3.200919] init: command 'export' r=0
+<6>[    3.203608] init: command 'export' r=0
+<6>[    3.206296] init: command 'export' r=0
+<6>[    3.242449] init: command 'insmod' r=0
+<4>[    3.251278] PA FB = 0x43B04000, bits per pixel = 32
+<4>[    3.256219] screen width=480 height=800 va=0xd3b04000 pa=0x43b04000
+<4>[    3.262379] Back frameBuffer[0].VAddr=d3c7b000 PAddr=43c7b000 size=1536000
+<6>[    3.266317] init: command 'insmod' r=0
+<6>[    3.277393] init: command 'insmod' r=0
+<4>[    3.295007] [VIBETONZ:WJYOO] MISC_REGISTER nRet = 0
+<6>[    3.300142] init: command 'insmod' r=0
+<6>[    3.302915] init: command 'symlink' r=0
+<6>[    3.305691] init: command 'symlink' r=0
+<6>[    3.308293] init: command 'mkdir' r=0
+<6>[    3.310894] init: command 'mkdir' r=0
+<6>[    3.313496] init: command 'mkdir' r=0
+<6>[    3.316212] init: command 'mount' r=0
+<6>[    3.318813] init: command 'mkdir' r=0
+<4>[    3.332545] fsr: module license 'Samsung Proprietary' taints kernel.
+<4>[    3.336792] Disabling lock debugging due to kernel taint
+<4>[    3.372338] [BIF:IN ] ++FSR_BML_Init(nFlag: 0x0)
+<4>[    3.374677] [PAM:   ] ++FSR_PAM_Init
+<4>[    3.380706] [PAM:   ]   OneNAND physical base address       : 0xb0000000
+<4>[    3.386169] [PAM:   ]   OneNAND virtual  base address       : 0xe0980000
+<4>[    3.393508] [PAM:   ]   OneNAND Controller DMA physical base address       : 0xb0600000
+<4>[    3.400271] [PAM:   ]   OneNAND Controller DMA virtual  base address       : 0xe09c0000
+<4>[    3.405128] [PAM:   ]   OneNAND nMID=0xec : nDID=0x50 Page size=4
+<4>[    3.407470] [PAM:   ] --FSR_PAM_Init
+<4>[    3.411633] [BIF:   ]   FSR VERSION: FSR_1.2.1p1_b139_RTM
+<4>[    3.419179] [OND:INF]   FSR_OND_4K_Open(nDev:0, pParam:0xc4c1de00, nFlag:0x00000000) / 1033 line
+<4>[    3.423429]             pstOND4kCxt->nBaseAddr: 0xe0980000
+<4>[    3.428633]             nDev=0, nMID=0x00ec, nDID=0x0050, nVID=0x013e
+<4>[    3.433490] [OND:INF]   pstOND4kCxt->nSysConf1:0xf0c6 / 1116 line
+<4>[    3.438954] [OND:INF]   pstOND4kCxt->nBlksForSLCArea[0]:2048 / 1133 line
+<4>[    3.443811] [OND:INF]   pstOND4kCxt->nIntID   :0x0000 / 1236 line
+<4>[    3.447193] [OND:INF]   1X_CACHEPGM CMD : 0x007f
+<4>[    3.450576] [OND:INF]   1X_PLOAD    CMD : 0x0003
+<4>[    3.456716] [BBM:INF]   Scan from 2004 to 2047 to find BML meta blocks (die: 0)
+<4>[    3.457774] [BBM:INF]   ffff ffff ffff ffff ffff ffff ffff ffff ffff ffff 
+<4>[    3.463412] [BBM:INF]   ffff ffff ffff ffff ffff ffff ffff ffff ffff ffff 
+<4>[    3.469049] [BBM:INF]   ffff ffff ffff ffff ffff ffff ffff ffff ffff ffff 
+<4>[    3.474687] [BBM:INF]   ffff ffff ffff ffff ffff ffff ffff ffff ffff ffff 
+<4>[    3.480325] [BBM:INF]   a5a5 a5a5 ffff 
+<4>[    3.514974] [BBM:   ]  << DevNO:0, DieNO: 0 MAPPING INFORMATION >>
+<4>[    3.518009] [BBM:   ]   Bad Mark Information
+<4>[    3.522520] [BBM:   ]      - Bad Mark (0x2222) by erase error
+<4>[    3.527030] [BBM:   ]      - Bad Mark (0x4444) by write error
+<4>[    3.531713] [BBM:   ]   << Total : 0 BAD-MAPPING INFORMATION >>
+<4>[    3.535876] [BIF:   ]   nPartition Information (nVol : 0)
+<4>[    3.538652]             nVer : 0xffffffff
+<4>[    3.545243]             00 / nID:0x09 / nAttr:0x00001002 / 1stVun:    0 / Units:    1
+<4>[    3.551835]             01 / nID:0x00 / nAttr:0x00001002 / 1stVun:    1 / Units:    7
+<4>[    3.558426]             02 / nID:0x01 / nAttr:0x00001001 / 1stVun:    8 / Units:  796
+<4>[    3.565018]             03 / nID:0x20 / nAttr:0x00001101 / 1stVun:  804 / Units:  716
+<4>[    3.571610]             04 / nID:0x21 / nAttr:0x00001101 / 1stVun: 1520 / Units:  372
+<4>[    3.578201]             05 / nID:0x23 / nAttr:0x00001101 / 1stVun: 1892 / Units:   56
+<4>[    3.584793]             06 / nID:0x24 / nAttr:0x00001001 / 1stVun: 1948 / Units:   56
+<4>[    3.589563] [BBM:INF]   The registered blocks in ERL are handled
+<4>[    3.592685] [BBM:INF]   (number of blocks: 0)
+<4>[    3.601350] BML: Registered BML Driver.
+<6>[    3.605264] init: command 'insmod' r=0
+<4>[    3.642359] [BIF:IN ] ++FSR_BML_Init(nFlag: 0x0)
+<4>[    3.649555] [BIF:   ]   FSR_BML_Init(nFlag:0x0, nRe:FSR_BML_ALREADY_INITIALIZED) / 1027 line
+<4>[    3.657647] FSR: Registered STL Driver.
+<6>[    3.661380] init: command 'insmod' r=0
+<6>[    3.747044] init: command 'insmod' r=0
+<6>[    3.808597] init: command 'insmod' r=0
+<6>[    3.811249] init: command 'mkdir' r=0
+<6>[    3.825571] init: command 'insmod' r=0
+<4>[    3.830382] [SIF:ERR]   The partition (PartID 21) is not opened
+<4>[    3.833938] j4fs_fill_super 1258: Error(0x80040001)
+<6>[    3.850304] init: command 'mount' r=-1
+<6>[    3.857610] param_init
+<3>[    3.861163] lfs_param_op: filp_open failed. (-2)
+<3>[    3.873826] param_init(304): Loading parameters failed. Parameters have been initialized as default.
+<6>[    3.885623] init: command 'insmod' r=0
+<6>[    3.888397] init: command 'symlink' r=0
+<6>[    3.890999] init: command 'mkdir' r=0
+<6>[    3.893601] init: command 'mkdir' r=0
+<6>[    3.896203] init: command 'mkdir' r=0
+<6>[    3.898805] init: command 'chown' r=0
+<6>[    3.901407] init: command 'chmod' r=0
+<6>[    3.904009] init: command 'mkdir' r=0
+<6>[    3.906610] init: command 'mkdir' r=0
+<6>[    3.909212] init: command 'mkdir' r=0
+<6>[    3.911814] init: command 'mkdir' r=0
+<6>[    3.914416] init: command 'mkdir' r=0
+<6>[    3.917018] init: command 'mkdir' r=0
+<6>[    3.919620] init: command 'mount' r=0
+<6>[    3.922222] init: command 'write' r=0
+<6>[    3.924824] init: command 'write' r=0
+<6>[    3.927426] init: command 'write' r=0
+<6>[    3.930028] init: command 'write' r=0
+<6>[    3.932630] init: command 'write' r=0
+<6>[    3.935232] init: command 'write' r=0
+<6>[    3.937834] init: command 'write' r=0
+<6>[    3.940436] init: command 'mkdir' r=0
+<6>[    3.943073] init: command 'mount' r=0
+<6>[    3.945674] init: command 'chown' r=0
+<6>[    3.948276] init: command 'chown' r=0
+<6>[    3.950878] init: command 'chmod' r=0
+<6>[    3.953654] init: command 'write' r=-22
+<6>[    3.956256] init: command 'mkdir' r=0
+<6>[    3.958858] init: command 'chown' r=0
+<6>[    3.961460] init: command 'chmod' r=0
+<6>[    3.964061] init: command 'write' r=0
+<6>[    3.966663] init: command 'mkdir' r=0
+<6>[    3.969265] init: command 'chown' r=0
+<6>[    3.971867] init: command 'chmod' r=0
+<6>[    3.974469] init: command 'write' r=0
+<4>[    4.008806] [FSA9480]connectivity_switching_init = switch_sel : 0x1
+<6>[    4.013750] inside set_param_value1 idx = 4, value = -1051560012
+<3>[    4.017306] lfs_param_op: filp_open failed. (-2)
+<4>[    4.025198] [FSA9480_Enable_AP_USB] Enable AP USB
+<4>[    4.030506] [ap_usb_power_on]AP USB Power ON, askon: 0, mtp : 0
+<4>[    4.036404] !!!!!!!!!!! [ap_usb_power_on]AP samsung_kies_mtp_mode_flag0, mtp:0
+<6>[    4.051469] inside set_param_value1 idx = 4, value = -1051560012
+<3>[    4.055025] lfs_param_op: filp_open failed. (-2)
+<4>[    4.064046] [USB] enable_adb - enable(0x01), prev_status(0x00)
+<4>[    4.066127] Here is enable_adb@@@@
+<4>[    4.069249] [enable_adb]USBSTATUS_SAMSUNG_KIES
+<6>[    4.072025] acm_function_config_changed
+<6>[    4.074800] mtp_function_config_changed
+<4>[    4.077402]   interface 0 = acm/df122780
+<4>[    4.080004]   interface 1 = acm/df122780
+<4>[    4.083213]   interface 2 = Gadget_MTP/df33df00
+<4>[    4.088200] [ap_usb_power_on]AP USB Power ON, askon: 0, mtp : 0
+<4>[    4.094098] !!!!!!!!!!! [ap_usb_power_on]AP samsung_kies_mtp_mode_flag0, mtp:0
+<6>[    4.099042] inside set_param_value1 idx = 4, value = -1051560012
+<3>[    4.102598] lfs_param_op: filp_open failed. (-2)
+<4>[    4.112051] [FSA9480]connectivity_switching_init = switch_sel : 0x5
+<4>[    4.294708] PKD:: OTG core got reset!!! 
+<6>[    4.491476] init: command 'mount' r=0
+<6>[    4.494191] init: command 'chmod' r=-2
+<6>[    4.619709] init: command 'mount' r=0
+<6>[    4.622483] init: command 'mkdir' r=-17
+<4>[    4.683421] acm_disconnected
+<6>[    7.499653] fg_read_vcell: VCELL=3878
+<6>[   12.499626] fg_read_vcell: VCELL=3878
+<7>[   16.942905] [TSP]### Finger[0] Down (40,345) - touch num is (1)   status=0xc0
+<7>[   17.111631] [TSP]### Finger[0] Up (137,227) - touch num is (0)  status=0x20
+<6>[   17.499599] fg_read_vcell: VCELL=3878
+<6>[   20.342431] init: command 'mount' r=0
+<6>[   20.345032] init: command 'chown' r=0
+<6>[   20.347634] init: command 'chmod' r=0
+<6>[   20.350410] init: command 'mkdir' r=-17
+<6>[   20.353012] init: command 'chown' r=0
+<6>[   20.355614] init: command 'chmod' r=0
+<6>[   20.358216] init: command 'copy' r=-1
+<6>[   20.364383] init: command 'chown' r=-14
+<6>[   20.367071] init: command 'chmod' r=-2
+<6>[   20.369673] init: command 'copy' r=-1
+<6>[   20.372448] init: command 'chown' r=-14
+<6>[   20.375137] init: command 'chmod' r=-2
+<6>[   20.377826] init: command 'write' r=-2
+<6>[   22.499609] fg_read_vcell: VCELL=3878
+<6>[   27.499581] fg_read_vcell: VCELL=3878
+<6>[   32.499572] fg_read_vcell: VCELL=3878
+<6>[   36.992253] init: command 'mount' r=0
+<6>[   36.994854] init: command 'chown' r=0
+<6>[   36.997456] init: command 'chmod' r=0
+<6>[   37.000231] init: command 'mkdir' r=-17
+<6>[   37.002834] init: command 'chown' r=0
+<6>[   37.005435] init: command 'chmod' r=0
+<6>[   37.008211] init: command 'mkdir' r=-17
+<6>[   37.011073] init: command 'symlink' r=-1
+<6>[   37.013675] init: command 'chown' r=0
+<6>[   37.016277] init: command 'chmod' r=0
+<6>[   37.018879] init: command 'chown' r=0
+<6>[   37.021481] init: command 'chmod' r=0
+<6>[   37.024256] init: command 'mkdir' r=-17
+<6>[   37.026858] init: command 'chown' r=0
+<6>[   37.029460] init: command 'chmod' r=0
+<6>[   37.032235] init: command 'mkdir' r=-17
+<6>[   37.037752] init: command 'mkdir' r=-14
+<6>[   37.040527] init: command 'mkdir' r=-14
+<6>[   37.043302] init: command 'mkdir' r=-14
+<6>[   37.046078] init: command 'mkdir' r=-14
+<6>[   37.048853] init: command 'mkdir' r=-14
+<6>[   37.051542] init: command 'mkdir' r=-2
+<6>[   37.054317] init: command 'mkdir' r=-14
+<6>[   37.057093] init: command 'mkdir' r=-14
+<6>[   37.059781] init: command 'chmod' r=-2
+<6>[   37.062470] init: command 'mkdir' r=-2
+<6>[   37.065245] init: command 'mkdir' r=-14
+<6>[   37.068021] init: command 'mkdir' r=-17
+<6>[   37.070709] init: command 'chmod' r=-2
+<6>[   37.073485] init: command 'mkdir' r=-17
+<6>[   37.078498] init: command 'mkdir' r=-14
+<6>[   37.081273] init: command 'mkdir' r=-17
+<6>[   37.084049] init: command 'mkdir' r=-17
+<6>[   37.086824] init: command 'mkdir' r=-17
+<6>[   37.089600] init: command 'mkdir' r=-17
+<6>[   37.092375] init: command 'mkdir' r=-17
+<6>[   37.094977] init: command 'chmod' r=0
+<6>[   37.097579] init: command 'chmod' r=0
+<6>[   37.100181] init: command 'chmod' r=0
+<6>[   37.102783] init: command 'chmod' r=0
+<6>[   37.105385] init: command 'chmod' r=0
+<6>[   37.107987] init: command 'chmod' r=0
+<6>[   37.110762] init: command 'mkdir' r=-17
+<6>[   37.113364] init: command 'chown' r=0
+<6>[   37.115966] init: command 'chmod' r=0
+<6>[   37.118741] init: command 'mkdir' r=-17
+<6>[   37.121517] init: command 'mkdir' r=-17
+<6>[   37.124119] init: command 'chown' r=0
+<6>[   37.126721] init: command 'chmod' r=0
+<6>[   37.129323] init: command 'chown' r=0
+<6>[   37.131925] init: command 'chmod' r=0
+<4>[   37.140453] Storage device init
+<6>[   37.144529] init: command 'insmod' r=0
+<4>[   37.155431] ######## bthid_init: ########
+<4>[   37.159410] ######## bthid_init: done ########
+<6>[   37.162803] init: command 'insmod' r=0
+<6>[   37.170217] init: command 'mkdir' r=-17
+<6>[   37.172992] init: command 'chown' r=-30
+<6>[   37.175767] init: command 'chmod' r=-30
+<6>[   37.180737] init: command 'chmod' r=-2
+<6>[   37.185195] init: command 'mkdir' r=-22
+<6>[   37.187884] init: command 'mkdir' r=-2
+<6>[   37.190486] init: command 'mkdir' r=0
+<6>[   37.193174] init: command 'chmod' r=-2
+<6>[   37.195950] init: command 'mkdir' r=-22
+<6>[   37.198552] init: command 'mount' r=0
+<6>[   37.201327] init: command 'mkdir' r=-30
+<6>[   37.204016] init: command 'chown' r=-2
+<3>[   37.209142] init: ro.build.id:FROYO
+<3>[   37.216167] init: ro.build.display.id:FROYO.XXJPX
+<3>[   37.224667] init: ro.build.version.incremental:XXJPX
+<3>[   37.232386] init: ro.build.version.sdk:8
+<3>[   37.239671] init: ro.build.version.codename:REL
+<3>[   37.247651] init: ro.build.version.release:2.2.1
+<3>[   37.257104] init: ro.build.date:2010. 12. 17. (금) 17:06:56 KST
+<3>[   37.266385] init: ro.build.date.utc:1292573216
+<3>[   37.273236] init: ro.build.type:user
+<3>[   37.279221] init: ro.build.user:root
+<3>[   37.285379] init: ro.build.host:sep-60
+<3>[   37.292231] init: ro.build.tags:release-keys
+<3>[   37.299516] init: ro.product.model:GT-I9000
+<3>[   37.306628] init: ro.product.brand:samsung
+<3>[   37.313653] init: ro.product.name:GT-I9000
+<3>[   37.320852] init: ro.product.device:GT-I9000
+<3>[   37.328138] init: ro.product.board:GT-I9000
+<3>[   37.335770] init: ro.product.cpu.abi:armeabi-v7a
+<3>[   37.343576] init: ro.product.cpu.abi2:armeabi
+<3>[   37.351468] init: ro.product.manufacturer:samsung
+<3>[   37.359534] init: ro.product.locale.language:en
+<3>[   37.367253] init: ro.product.locale.region:GB
+<3>[   37.373932] init: ro.wifi.channels:
+<3>[   37.380437] init: ro.board.platform:s5pc110
+<3>[   37.387635] init: ro.build.product:GT-I9000
+<3>[   37.398303] init: ro.build.description:GT-I9000-user 2.2.1 FROYO XXJPX release-keys
+<3>[   37.414696] init: ro.build.fingerprint:samsung/GT-I9000/GT-I9000/GT-I9000:2.2.1/FROYO/XXJPX:user/release-keys
+<3>[   37.427445] init: ro.build.PDA:I9000XXJPX
+<3>[   37.434904] init: ro.build.hidden_ver:I9000XXJPX
+<3>[   37.442623] init: ro.build.changelist:787513
+<3>[   37.449649] init: ro.tether.denied:false
+<3>[   37.457715] init: rild.libpath:/system/lib/libsec-ril.so
+<3>[   37.466128] init: rild.libargs:-d /dev/ttyS0
+<3>[   37.473066] init: ro.sf.lcd_density:240
+<3>[   37.479658] init: dalvik.vm.heapsize:48m
+<3>[   37.487203] init: dalvik.vm.execution-mode:int:jit
+<3>[   37.495096] init: ro.opengles.version:131072
+<6>[   37.501948] fg_read_vcell: VCELL=3878
+<3>[   37.505677] init: windowsmgr.max_events_per_sec:55
+<3>[   37.514090] init: keyinputqueue.use_finger_id:true
+<3>[   37.522850] init: media.stagefright.enable-player:true
+<3>[   37.531783] init: media.stagefright.enable-meta:true
+<3>[   37.540543] init: media.stagefright.enable-scan:true
+<3>[   37.549303] init: media.stagefright.enable-http:true
+<3>[   37.557543] init: keyguard.no_require_sim:true
+<3>[   37.566129] init: ro.config.ringtone:01_Samsung_tune.ogg
+<3>[   37.576017] init: ro.config.notification_sound:01_Sherbet.ogg
+<3>[   37.585904] init: ro.config.alarm_alert:Good_Morning.ogg
+<3>[   37.594317] init: ro.opengles.version:131072
+<3>[   37.601082] init: net.bt.name:Android
+<3>[   37.607500] init: net.change:net.bt.name
+<3>[   37.616347] init: dalvik.vm.stack-trace-file:/data/anr/traces.txt
+<3>[   37.632895] init: ro.url.legal:http://www.google.com/intl/%s/mobile/android/basic/phone-legal.html
+<3>[   37.650675] init: ro.url.legal.android_privacy:http://www.google.com/intl/%s/mobile/android/basic/privacy.html
+<3>[   37.664292] init: ro.com.google.locationfeatures:1
+<3>[   37.672358] init: ro.setupwizard.mode:DISABLED
+<3>[   37.681291] init: ro.com.google.clientidbase:android-samsung
+<3>[   37.691699] init: ro.com.google.clientidbase.yt:android-samsung
+<3>[   37.702367] init: ro.com.google.clientidbase.am:android-samsung
+<3>[   37.713035] init: ro.com.google.clientidbase.vs:android-samsung
+<3>[   37.723790] init: ro.com.google.clientidbase.gmm:android-samsung
+<3>[   37.733330] init: ro.com.google.gmsversion:2.2_r8
+<6>[   37.747676] init: Created socket '/dev/socket/property_service' with mode '666', user '0', group '0'
+<6>[   37.878234] init: processing action 0x32fc0 (boot)
+<4>[   37.880531] [UART Switch] Path : PDA
+<6>[   37.885475] inside set_param_value1 idx = 4, value = -1051560012
+<3>[   37.889031] lfs_param_op: filp_open failed. (-2)
+<6>[   37.896143] init: command 'write' r=0
+<4>[   37.898311] [FSA9480]usb_sel_store
+<4>[   37.898318]  [FSA9480] usb_switch_mode: Path = PDA
+<4>[   37.905076] [FSA9480_Enable_AP_USB] Enable AP USB
+<4>[   37.910384] [ap_usb_power_on]AP USB Power ON, askon: 0, mtp : 0
+<4>[   37.916282] !!!!!!!!!!! [ap_usb_power_on]AP samsung_kies_mtp_mode_flag0, mtp:0
+<6>[   37.931364] inside set_param_value1 idx = 4, value = -1051560012
+<3>[   37.934920] lfs_param_op: filp_open failed. (-2)
+<6>[   37.942032] init: command 'write' r=0
+<3>[   37.945154] init: ro.build.product:smdkc110
+<6>[   37.952006] init: command 'setprop' r=0
+<3>[   37.955216] init: ro.product.device:smdkc110
+<6>[   37.962154] init: command 'setprop' r=0
+<3>[   37.964669] init: ro.radio.noril:yes
+<6>[   37.970914] init: command 'setprop' r=0
+<3>[   37.974036] init: status.battery.state:Slow
+<6>[   37.980888] init: command 'setprop' r=0
+<3>[   37.983750] init: status.battery.level:5
+<6>[   37.990342] init: command 'setprop' r=0
+<3>[   37.993638] init: status.battery.level_raw:50
+<6>[   38.000663] init: command 'setprop' r=0
+<3>[   38.004045] init: status.battery.level_scale:9
+<6>[   38.011157] init: command 'setprop' r=0
+<6>[   38.014080] init: command 'ifup' r=0
+<6>[   38.016943] init: command 'hostname' r=0
+<6>[   38.019979] init: command 'domainname' r=0
+<6>[   38.022927] init: command 'setrlimit' r=0
+<3>[   38.025876] init: ro.FOREGROUND_APP_ADJ:0
+<6>[   38.032554] init: command 'setprop' r=0
+<3>[   38.035243] init: ro.VISIBLE_APP_ADJ:1
+<6>[   38.041661] init: command 'setprop' r=0
+<3>[   38.044783] init: ro.SECONDARY_SERVER_ADJ:2
+<6>[   38.051635] init: command 'setprop' r=0
+<3>[   38.054237] init: ro.BACKUP_APP_ADJ:2
+<6>[   38.060569] init: command 'setprop' r=0
+<3>[   38.062997] init: ro.HOME_APP_ADJ:4
+<6>[   38.069155] init: command 'setprop' r=0
+<3>[   38.072104] init: ro.HIDDEN_APP_MIN_ADJ:7
+<6>[   38.078782] init: command 'setprop' r=0
+<3>[   38.081991] init: ro.CONTENT_PROVIDER_ADJ:14
+<6>[   38.088930] init: command 'setprop' r=0
+<3>[   38.091532] init: ro.EMPTY_APP_ADJ:15
+<6>[   38.097863] init: command 'setprop' r=0
+<3>[   38.101072] init: ro.FOREGROUND_APP_MEM:2560
+<6>[   38.108011] init: command 'setprop' r=0
+<3>[   38.110959] init: ro.VISIBLE_APP_MEM:4096
+<6>[   38.117638] init: command 'setprop' r=0
+<3>[   38.121020] init: ro.SECONDARY_SERVER_MEM:5120
+<6>[   38.128132] init: command 'setprop' r=0
+<3>[   38.130994] init: ro.BACKUP_APP_MEM:5120
+<6>[   38.137586] init: command 'setprop' r=0
+<3>[   38.140275] init: ro.HOME_APP_MEM:5120
+<6>[   38.146693] init: command 'setprop' r=0
+<3>[   38.149555] init: ro.HIDDEN_APP_MEM:6144
+<6>[   38.156147] init: command 'setprop' r=0
+<3>[   38.159529] init: ro.CONTENT_PROVIDER_MEM:7168
+<6>[   38.166641] init: command 'setprop' r=0
+<3>[   38.169417] init: ro.EMPTY_APP_MEM:8192
+<6>[   38.175922] init: command 'setprop' r=0
+<3>[   38.178523] init: wifi.interface:eth0
+<6>[   38.184855] init: command 'setprop' r=0
+<3>[   38.189798] init: ro.bt.bdaddr_path:/data/misc/bluetooth/bt_addr
+<6>[   38.198472] init: command 'setprop' r=0
+<6>[   38.201083] init: command 'write' r=0
+<6>[   38.203684] init: command 'write' r=0
+<6>[   38.206286] init: command 'write' r=0
+<6>[   38.208888] init: command 'write' r=0
+<6>[   38.211490] init: command 'write' r=0
+<6>[   38.214092] init: command 'write' r=0
+<6>[   38.216694] init: command 'write' r=0
+<6>[   38.219296] init: command 'write' r=0
+<6>[   38.221985] init: command 'chown' r=-2
+<6>[   38.224673] init: command 'chown' r=-2
+<6>[   38.227362] init: command 'chown' r=-2
+<6>[   38.230051] init: command 'chown' r=-2
+<6>[   38.232739] init: command 'chown' r=-2
+<6>[   38.235341] init: command 'chown' r=0
+<6>[   38.237943] init: command 'chown' r=0
+<6>[   38.240545] init: command 'chown' r=0
+<6>[   38.243147] init: command 'chown' r=0
+<6>[   38.245749] init: command 'chmod' r=0
+<6>[   38.248351] init: command 'chmod' r=0
+<6>[   38.250953] init: command 'chmod' r=0
+<6>[   38.253555] init: command 'chmod' r=0
+<6>[   38.256157] init: command 'chown' r=0
+<6>[   38.258846] init: command 'chown' r=-2
+<6>[   38.261448] init: command 'chown' r=0
+<6>[   38.264136] init: command 'chown' r=-2
+<6>[   38.266825] init: command 'chown' r=-2
+<6>[   38.269514] init: command 'chown' r=-2
+<6>[   38.272202] init: command 'chown' r=-2
+<6>[   38.274891] init: command 'chown' r=-2
+<6>[   38.277580] init: command 'chown' r=-2
+<6>[   38.280268] init: command 'chown' r=-2
+<6>[   38.282957] init: command 'chown' r=-2
+<6>[   38.285646] init: command 'chown' r=-2
+<6>[   38.288334] init: command 'chown' r=-2
+<6>[   38.291023] init: command 'chown' r=-2
+<6>[   38.293712] init: command 'chown' r=-2
+<6>[   38.296400] init: command 'chown' r=-2
+<6>[   38.299089] init: command 'chown' r=-2
+<6>[   38.301691] init: command 'chown' r=0
+<6>[   38.304293] init: command 'chown' r=0
+<6>[   38.306895] init: command 'chown' r=0
+<6>[   38.309497] init: command 'chown' r=0
+<6>[   38.312099] init: command 'chown' r=0
+<6>[   38.314701] init: command 'chown' r=0
+<6>[   38.317303] init: command 'chown' r=0
+<6>[   38.319905] init: command 'chown' r=0
+<6>[   38.322507] init: command 'chown' r=0
+<3>[   38.328838] init: net.tcp.buffersize.default:4096,87380,196608,4096,16384,110208
+<3>[   38.340287] init: net.change:net.tcp.buffersize.default
+<6>[   38.348179] init: command 'setprop' r=0
+<3>[   38.354250] init: net.tcp.buffersize.wifi:4095,87380,196608,4096,16384,110208
+<3>[   38.365179] init: net.change:net.tcp.buffersize.wifi
+<6>[   38.372811] init: command 'setprop' r=0
+<3>[   38.378882] init: net.tcp.buffersize.umts:4094,87380,196608,4096,16384,110208
+<3>[   38.389810] init: net.change:net.tcp.buffersize.umts
+<6>[   38.397443] init: command 'setprop' r=0
+<3>[   38.403340] init: net.tcp.buffersize.edge:4093,26280,35040,4096,16384,35040
+<3>[   38.414095] init: net.change:net.tcp.buffersize.edge
+<6>[   38.421728] init: command 'setprop' r=0
+<3>[   38.427452] init: net.tcp.buffersize.gprs:4092,8760,11680,4096,8760,11680
+<3>[   38.438033] init: net.change:net.tcp.buffersize.gprs
+<6>[   38.445666] init: command 'setprop' r=0
+<6>[   38.451096] init: command 'chmod' r=-30
+<6>[   38.453870] init: command 'chmod' r=-30
+<6>[   38.456646] init: command 'chmod' r=-30
+<6>[   38.459421] init: command 'chmod' r=-30
+<6>[   38.462197] init: command 'chmod' r=-30
+<6>[   38.464972] init: command 'chmod' r=-30
+<6>[   38.467748] init: command 'chmod' r=-30
+<6>[   38.470436] init: command 'chmod' r=-2
+<6>[   38.473064] init: command 'write' r=0
+<6>[   38.475666] init: command 'write' r=0
+<6>[   38.478355] init: command 'write' r=-2
+<6>[   38.481043] init: command 'write' r=-2
+<6>[   38.483732] init: command 'chown' r=-2
+<6>[   38.486421] init: command 'chown' r=-2
+<6>[   38.489022] init: command 'chown' r=0
+<6>[   38.491711] init: command 'chmod' r=-2
+<6>[   38.494400] init: command 'chmod' r=-2
+<6>[   38.497002] init: command 'chown' r=0
+<6>[   38.499604] init: command 'chmod' r=0
+<6>[   38.502206] init: command 'chown' r=0
+<6>[   38.504808] init: command 'chmod' r=0
+<6>[   38.507410] init: command 'chmod' r=0
+<6>[   38.510012] init: command 'chmod' r=0
+<6>[   38.512614] init: command 'chown' r=0
+<6>[   38.515216] init: command 'chown' r=0
+<6>[   38.517913] init: command 'chmod' r=-2
+<6>[   38.520515] init: command 'chown' r=0
+<6>[   38.523117] init: command 'chown' r=0
+<5>[   38.525632] init: starting 'console'
+<3>[   38.528790] init: init.svc.console:running
+<5>[   38.538539] init: starting 'playlogos1'
+<3>[   38.543135] init: init.svc.playlogos1:running
+<5>[   38.549727] init: starting 'adbd'
+<3>[   38.553803] init: init.svc.adbd:running
+<6>[   38.564012] warning: `adbd' uses 32-bit capabilities (legacy support in use)
+<5>[   38.568973] init: starting 'pvrsrvinit'
+<3>[   38.572606] init: init.svc.pvrsrvinit:running
+<6>[   38.578418] enabling adb
+<4>[   38.582927] [USB] enable_adb - enable(0x10), prev_status(0x01)
+<4>[   38.585008] Here is enable_adb@@@@
+<4>[   38.587350] [enable_adb]USBSTATUS_ADB
+<6>[   38.590126] acm_function_config_changed
+<6>[   38.593682] mass_storage_function_config_changed
+<6>[   38.596457] adb_function_config_changed
+<4>[   38.599059]   interface 0 = acm/df122780
+<4>[   38.601661]   interface 1 = acm/df122780
+<4>[   38.605390]   interface 2 = usb_mass_storage/df360800
+<4>[   38.607992]   interface 3 = adb/df33dd00
+<4>[   38.612979] [ap_usb_power_on]AP USB Power ON, askon: 0, mtp : 0
+<4>[   38.618877] !!!!!!!!!!! [ap_usb_power_on]AP samsung_kies_mtp_mode_flag0, mtp:0
+<5>[   38.623006] init: starting 'servicemanager'
+<3>[   38.626761] init: init.svc.servicemanager:running
+<5>[   38.633701] init: starting 'vold'
+<3>[   38.638939] init: init.svc.vold:running
+<6>[   38.652513] init: Created socket '/dev/socket/vold' with mode '660', user '0', group '1009'
+<5>[   38.655903] init: starting 'notified_event'
+<3>[   38.661177] init: init.svc.notified_event:running
+<6>[   38.674013] init: Created socket '/dev/socket/notified_event' with mode '660', user '0', group '1000'
+<5>[   38.676780] init: starting 'netd'
+<3>[   38.679641] init: init.svc.netd:running
+<6>[   38.690743] init: Created socket '/dev/socket/netd' with mode '660', user '0', group '1000'
+<5>[   38.693562] init: starting 'debuggerd'
+<3>[   38.697369] init: init.svc.debuggerd:running
+<5>[   38.720598] init: starting 'DR-daemon'
+<3>[   38.724369] init: init.svc.DR-daemon:running
+<5>[   38.737249] init: starting 'mobex-daemon'
+<3>[   38.741317] init: init.svc.mobex-daemon:running
+<5>[   38.748255] init: starting 'zygote'
+<3>[   38.751299] init: init.svc.zygote:running
+<6>[   38.762488] init: Created socket '/dev/socket/zygote' with mode '666', user '0', group '0'
+<5>[   38.785541] init: starting 'media'
+<3>[   38.791864] init: init.svc.media:running
+<3>[   38.817719] init: cannot find '/system/bin/vtserver', disabling 'vt'
+<5>[   38.853991] init: starting 'dbus'
+<3>[   38.856886] init: init.svc.dbus:running
+<6>[   38.870288] init: Created socket '/dev/socket/dbus' with mode '660', user '1002', group '1002'
+<6>[   38.880243] PVR_K:(Warning): SysFinalise: Version string: SGX540 S5PC110 [475, services4/system/s5pc110/sysconfig.c]
+<5>[   38.883816] init: starting 'installd'
+<3>[   38.887051] init: init.svc.installd:running
+<4>[   38.893729] PKD:: OTG core got reset!!! 
+<6>[   38.906184] init: Created socket '/dev/socket/installd' with mode '600', user '1000', group '1000'
+<3>[   38.916124] init: cannot find '/system/etc/install-recovery.sh', disabling 'flash_recovery'
+<5>[   38.927486] init: starting 'sensor-daemon'
+<3>[   38.931215] init: init.svc.sensor-daemon:running
+<5>[   38.938414] init: starting 'keystore'
+<3>[   38.941640] init: init.svc.keystore:running
+<6>[   38.953175] init: Created socket '/dev/socket/keystore' with mode '666', user '0', group '0'
+<5>[   38.957382] init: starting 'immvibed'
+<3>[   38.962942] init: init.svc.immvibed:running
+<3>[   38.973237] init: cannot find '/system/bin/immvbsd', disabling 'immvbsd'
+<5>[   38.982256] init: starting 'tvout'
+<3>[   38.985361] init: init.svc.tvout:running
+<5>[   38.993358] init: starting 'dfta'
+<3>[   38.996229] init: init.svc.dfta:running
+<6>[   39.007236] init: command 'class_start' r=0
+<6>[   39.015241] init: processing action 0x343c8 (property:persist.service.adb.enable=1)
+<6>[   39.023334] init: command 'start' r=0
+<6>[   39.028120] init: waitpid returned pid 2279, status = 00000000
+<5>[   39.057896] init: process 'pvrsrvinit', pid 2279 exited
+<3>[   39.062396] init: init.svc.pvrsrvinit:stopped
+<6>[   39.071503] init: waitpid returned pid 2305, status = 00000200
+<5>[   39.076135] init: process 'dfta', pid 2305 exited
+<3>[   39.078910] init: init.svc.dfta:stopped
+<6>[   39.090377] init: make_device '/dev/pvrsrvkm' block 0, major 240, minor 0 r=0
+<6>[   39.097575] init: make_device '/dev/s3c_bc' block 0, major 253, minor 0 r=0
+<6>[   39.106231] init: make_device '/dev/tspdrv' block 0, major 10, minor 43 r=0
+<6>[   39.114340] init: make_device '/dev/block/bml0!c' block 1, major 137, minor 0 r=0
+<6>[   39.122207] init: make_device '/dev/block/bml1' block 1, major 137, minor 1 r=0
+<6>[   39.129431] init: make_device '/dev/block/bml2' block 1, major 137, minor 2 r=0
+<6>[   39.150161] init: make_device '/dev/block/bml3' block 1, major 137, minor 3 r=0
+<6>[   39.157498] init: make_device '/dev/block/bml4' block 1, major 137, minor 4 r=0
+<6>[   39.165798] init: make_device '/dev/block/bml5' block 1, major 137, minor 5 r=0
+<6>[   39.174679] init: make_device '/dev/block/bml6' block 1, major 137, minor 6 r=0
+<6>[   39.182390] init: make_device '/dev/block/bml7' block 1, major 137, minor 7 r=0
+<6>[   39.190308] init: make_device '/dev/block/stl1' block 1, major 138, minor 1 r=0
+<6>[   39.198582] init: make_device '/dev/block/stl2' block 1, major 138, minor 2 r=0
+<6>[   39.206821] init: make_device '/dev/block/stl3' block 1, major 138, minor 3 r=0
+<6>[   39.214853] init: make_device '/dev/block/stl4' block 1, major 138, minor 4 r=0
+<6>[   39.222607] init: make_device '/dev/block/stl5' block 1, major 138, minor 5 r=0
+<6>[   39.230898] init: make_device '/dev/block/stl6' block 1, major 138, minor 6 r=0
+<6>[   39.238869] init: make_device '/dev/block/stl7' block 1, major 138, minor 7 r=0
+<6>[   39.255610] init: make_device '/dev/storage' block 0, major 10, minor 234 r=0
+<6>[   39.262720] init: make_device '/dev/bthid' block 0, major 10, minor 224 r=0
+<6>[   39.270664] init: make_device '/dev/block/ram0' block 1, major 1, minor 0 r=0
+<4>[   39.272806] acm_disconnected
+<6>[   39.279798] init: make_device '/dev/block/ram1' block 1, major 1, minor 1 r=0
+<6>[   39.286562] init: make_device '/dev/block/ram2' block 1, major 1, minor 2 r=0
+<6>[   39.294560] init: make_device '/dev/block/ram3' block 1, major 1, minor 3 r=0
+<6>[   39.300787] init: make_device '/dev/block/ram4' block 1, major 1, minor 4 r=0
+<6>[   39.307048] init: make_device '/dev/block/ram5' block 1, major 1, minor 5 r=0
+<6>[   39.313215] init: make_device '/dev/block/ram6' block 1, major 1, minor 6 r=0
+<6>[   39.319572] init: make_device '/dev/block/ram7' block 1, major 1, minor 7 r=0
+<6>[   39.326355] init: make_device '/dev/block/ram8' block 1, major 1, minor 8 r=0
+<6>[   39.332721] init: make_device '/dev/block/ram9' block 1, major 1, minor 9 r=0
+<6>[   39.339217] init: make_device '/dev/block/ram10' block 1, major 1, minor 10 r=0
+<6>[   39.345548] init: make_device '/dev/block/ram11' block 1, major 1, minor 11 r=0
+<6>[   39.352149] init: make_device '/dev/block/ram12' block 1, major 1, minor 12 r=0
+<6>[   39.359096] init: make_device '/dev/block/ram13' block 1, major 1, minor 13 r=0
+<6>[   39.365601] init: make_device '/dev/block/ram14' block 1, major 1, minor 14 r=0
+<6>[   39.379513] init: make_device '/dev/block/ram15' block 1, major 1, minor 15 r=0
+<6>[   39.388646] init: make_device '/dev/block/loop0' block 1, major 7, minor 0 r=0
+<6>[   39.395471] init: make_device '/dev/block/loop1' block 1, major 7, minor 1 r=0
+<6>[   39.401698] init: make_device '/dev/block/loop2' block 1, major 7, minor 2 r=0
+<6>[   39.407856] init: make_device '/dev/block/loop3' block 1, major 7, minor 3 r=0
+<6>[   39.414014] init: make_device '/dev/block/loop4' block 1, major 7, minor 4 r=0
+<6>[   39.420172] init: make_device '/dev/block/loop5' block 1, major 7, minor 5 r=0
+<6>[   39.426330] init: make_device '/dev/block/loop6' block 1, major 7, minor 6 r=0
+<6>[   39.432488] init: make_device '/dev/block/loop7' block 1, major 7, minor 7 r=0
+<6>[   39.438993] init: make_device '/dev/block/tfsr0!c' block 1, major 139, minor 0 r=0
+<6>[   39.445324] init: make_device '/dev/block/tfsr1' block 1, major 139, minor 1 r=0
+<6>[   39.451655] init: make_device '/dev/block/tfsr2' block 1, major 139, minor 2 r=0
+<6>[   39.457987] init: make_device '/dev/block/tfsr3' block 1, major 139, minor 3 r=0
+<6>[   39.464319] init: make_device '/dev/block/tfsr4' block 1, major 139, minor 4 r=0
+<6>[   39.470650] init: make_device '/dev/block/tfsr5' block 1, major 139, minor 5 r=0
+<6>[   39.476981] init: make_device '/dev/block/tfsr6' block 1, major 139, minor 6 r=0
+<6>[   39.483313] init: make_device '/dev/block/tfsr7' block 1, major 139, minor 7 r=0
+<6>[   39.489817] init: make_device '/dev/block/mmcblk0' block 1, major 179, minor 0 r=0
+<6>[   39.496496] init: make_device '/dev/block/mmcblk0p1' block 1, major 179, minor 1 r=0
+<6>[   39.503191] init: make_device '/dev/block/mmcblk0p2' block 1, major 179, minor 2 r=0
+<6>[   39.509870] init: make_device '/dev/block/mmcblk0p3' block 1, major 179, minor 3 r=0
+<6>[   39.516375] init: make_device '/dev/block/mmcblk1' block 1, major 179, minor 8 r=0
+<6>[   39.523053] init: make_device '/dev/block/mmcblk1p1' block 1, major 179, minor 9 r=0
+<6>[   39.529818] init: make_device '/dev/block/mmcblk1p2' block 1, major 179, minor 10 r=0
+<6>[   39.536583] init: make_device '/dev/block/mmcblk1p5' block 1, major 179, minor 13 r=0
+<6>[   39.543348] init: make_device '/dev/block/mmcblk1p6' block 1, major 179, minor 14 r=0
+<6>[   39.550113] init: make_device '/dev/block/mmcblk1p7' block 1, major 179, minor 15 r=0
+<6>[   39.556531] init: make_device '/dev/block/bml0!c' block 1, major 137, minor 0 r=0
+<6>[   39.562776] init: make_device '/dev/block/bml1' block 1, major 137, minor 1 r=0
+<6>[   39.569021] init: make_device '/dev/block/bml2' block 1, major 137, minor 2 r=0
+<6>[   39.575266] init: make_device '/dev/block/bml3' block 1, major 137, minor 3 r=0
+<6>[   39.581510] init: make_device '/dev/block/bml4' block 1, major 137, minor 4 r=0
+<6>[   39.587755] init: make_device '/dev/block/bml5' block 1, major 137, minor 5 r=0
+<6>[   39.593999] init: make_device '/dev/block/bml6' block 1, major 137, minor 6 r=0
+<6>[   39.600244] init: make_device '/dev/block/bml7' block 1, major 137, minor 7 r=0
+<6>[   39.606489] init: make_device '/dev/block/stl1' block 1, major 138, minor 1 r=0
+<6>[   39.612734] init: make_device '/dev/block/stl2' block 1, major 138, minor 2 r=0
+<4>[   39.617677] [USB:UMS] fsg_function_setup, return to PC fsg->nluns=2
+<6>[   39.624885] init: make_device '/dev/block/stl3' block 1, major 138, minor 3 r=0
+<4>[   39.628787] printk:do_inquiry fsg->cdrom 0 curlun->id 0
+<6>[   39.635032] init: make_device '/dev/block/stl4' block 1, major 138, minor 4 r=0
+<4>[   39.638935] printk:do_inquiry fsg->cdrom 0 curlun->id 0
+<6>[   39.645180] init: make_device '/dev/block/stl5' block 1, major 138, minor 5 r=0
+<6>[   39.651433] init: make_device '/dev/block/stl6' block 1, major 138, minor 6 r=0
+<6>[   39.657678] init: make_device '/dev/block/stl7' block 1, major 138, minor 7 r=0
+<6>[   39.662613] init: waitpid returned pid 2297, status = 00000100
+<5>[   39.666602] init: process 'keystore', pid 2297 exited
+<5>[   39.672414] init: process 'keystore' killing any children in process group
+<3>[   39.675796] init: init.svc.keystore:restarting
+<4>[   39.688355] printk:do_inquiry fsg->cdrom 0 curlun->id 1
+<4>[   39.692613] printk:do_inquiry fsg->cdrom 0 curlun->id 1
+<3>[   40.017267] init: sys_prop: permission denied uid:2000  name:adb.connected
+<6>[   41.562459] init: waitpid returned pid 2298, status = 00000000
+<5>[   41.566447] init: process 'immvibed', pid 2298 exited
+<3>[   41.569570] init: init.svc.immvibed:stopped
+<4>[   41.810562] printk:do_inquiry fsg->cdrom 0 curlun->id 0
+<4>[   41.814656] printk:do_inquiry fsg->cdrom 0 curlun->id 0
+<4>[   41.831482] printk:do_inquiry fsg->cdrom 0 curlun->id 1
+<4>[   41.835558] printk:do_inquiry fsg->cdrom 0 curlun->id 1
+<6>[   42.213084] init: waitpid returned pid 2365, status = 00000100
+<3>[   42.216205] init: untracked pid 2365 exited
+<6>[   42.499619] fg_read_vcell: VCELL=3878
+<5>[   43.222787] init: starting 'keystore'
+<3>[   43.226038] init: init.svc.keystore:running
+<6>[   43.237574] init: Created socket '/dev/socket/keystore' with mode '666', user '0', group '0'
+<6>[   43.246915] init: waitpid returned pid 2368, status = 00000100
+<5>[   43.251372] init: process 'keystore', pid 2368 exited
+<5>[   43.257182] init: process 'keystore' killing any children in process group
+<3>[   43.260973] init: init.svc.keystore:restarting
+<4>[   43.733947] DmaAddr=@4f3c0000 Total=32768bytes PrdSz=2048 #Prds=4, dmaEnd 0x4f3c8000
+<4>[   43.796653] DmaAddr=@4f3c0000 Total=32768bytes PrdSz=2048 #Prds=4, dmaEnd 0x4f3c8000
+<6>[   47.499503] fg_read_vcell: VCELL=3878
+<5>[   48.268179] init: starting 'keystore'
+<3>[   48.271422] init: init.svc.keystore:running
+<6>[   48.289037] init: Created socket '/dev/socket/keystore' with mode '666', user '0', group '0'
+<6>[   48.305578] init: waitpid returned pid 2374, status = 00000100
+<5>[   48.309888] init: process 'keystore', pid 2374 exited
+<5>[   48.315698] init: process 'keystore' killing any children in process group
+<3>[   48.320277] init: init.svc.keystore:restarting
+<4>[   50.127088] !@beginofsystem_init1()
+<6>[   50.134200] init: make_device '/dev/vcs7' block 0, major 7, minor 7 r=0
+<6>[   50.141069] init: make_device '/dev/vcsa7' block 0, major 7, minor 135 r=0
+<4>[   50.384108] !@endofsystem_init1()
+<3>[   50.388383] init: no such service 'bootanim'
+<6>[   52.499569] fg_read_vcell: VCELL=3878
+<5>[   53.396979] init: starting 'keystore'
+<3>[   53.400206] init: init.svc.keystore:running
+<6>[   53.411741] init: Created socket '/dev/socket/keystore' with mode '666', user '0', group '0'
+<6>[   54.916890] init: waitpid returned pid 2390, status = 00000100
+<5>[   54.920878] init: process 'keystore', pid 2390 exited
+<5>[   54.926689] init: process 'keystore' killing any children in process group
+<3>[   54.930072] init: init.svc.keystore:restarting
+<4>[   55.033387] !@beginofPackageManager
+<6>[   57.499598] fg_read_vcell: VCELL=3878
+<5>[   58.947868] init: starting 'keystore'
+<3>[   58.951101] init: init.svc.keystore:running
+<6>[   58.984408] init: Created socket '/dev/socket/keystore' with mode '666', user '0', group '0'
+<6>[   59.008797] init: waitpid returned pid 2396, status = 00000100
+<5>[   59.012784] init: process 'keystore', pid 2396 exited
+<5>[   59.029135] init: process 'keystore' killing any children in process group
+<3>[   59.058034] init: init.svc.keystore:restarting
+<6>[   62.499642] fg_read_vcell: VCELL=3878
+<5>[   63.080638] init: starting 'keystore'
+<3>[   63.083854] init: init.svc.keystore:running
+<6>[   63.101435] init: Created socket '/dev/socket/keystore' with mode '666', user '0', group '0'
+<6>[   63.121315] init: waitpid returned pid 2397, status = 00000100
+<5>[   63.125303] init: process 'keystore', pid 2397 exited
+<5>[   63.154048] init: process 'keystore' killing any children in process group
+<3>[   63.164802] init: init.svc.keystore:restarting
+<7>[   67.149834] [TSP]### Finger[0] Down (7,314) - touch num is (1)   status=0xc0
+<6>[   67.499492] fg_read_vcell: VCELL=3878
+<7>[   67.729973] [TSP]### Finger[1] Down (61,389) - touch num is (1)   status=0xc0
+<5>[   68.189997] init: starting 'keystore'
+<3>[   68.193205] init: init.svc.keystore:running
+<6>[   68.204741] init: Created socket '/dev/socket/keystore' with mode '666', user '0', group '0'
+<6>[   68.228940] init: waitpid returned pid 2398, status = 00000100
+<5>[   68.234073] init: process 'keystore', pid 2398 exited
+<5>[   68.239884] init: process 'keystore' killing any children in process group
+<3>[   68.243266] init: init.svc.keystore:restarting
+<7>[   68.459056] [TSP]### Finger[1] Up (47,383) - touch num is (0)  status=0x20
+<7>[   68.478319] [TSP]### Finger[0] Up (250,394) - touch num is (0)  status=0x20
+<6>[   72.499562] fg_read_vcell: VCELL=3878
+<5>[   73.268091] init: starting 'keystore'
+<3>[   73.271316] init: init.svc.keystore:running
+<6>[   73.292862] init: Created socket '/dev/socket/keystore' with mode '666', user '0', group '0'
+<6>[   73.306860] init: waitpid returned pid 2399, status = 00000100
+<5>[   73.320277] init: process 'keystore', pid 2399 exited
+<5>[   73.326087] init: process 'keystore' killing any children in process group
+<3>[   73.341171] init: init.svc.keystore:restarting
+<6>[   77.499530] fg_read_vcell: VCELL=3878
+<5>[   78.350861] init: starting 'keystore'
+<3>[   78.354095] init: init.svc.keystore:running
+<6>[   78.365631] init: Created socket '/dev/socket/keystore' with mode '666', user '0', group '0'
+<6>[   78.374920] init: waitpid returned pid 2400, status = 00000100
+<5>[   78.379395] init: process 'keystore', pid 2400 exited
+<5>[   78.385206] init: process 'keystore' killing any children in process group
+<3>[   78.389985] init: init.svc.keystore:restarting
+<4>[   80.243621] !@2nfofPackageManager
+<6>[   82.499595] fg_read_vcell: VCELL=3878
+<5>[   83.401115] init: starting 'keystore'
+<3>[   83.404895] init: init.svc.keystore:running
+<6>[   83.423084] init: Created socket '/dev/socket/keystore' with mode '666', user '0', group '0'
+<6>[   87.499605] fg_read_vcell: VCELL=3878
+<6>[   88.004265] init: waitpid returned pid 2403, status = 00000100
+<5>[   88.015912] init: process 'keystore', pid 2403 exited
+<5>[   88.037057] init: process 'keystore' killing any children in process group
+<3>[   88.050387] init: init.svc.keystore:restarting
+<5>[   88.073181] init: starting 'keystore'
+<3>[   88.076926] init: init.svc.keystore:running
+<6>[   88.091914] init: Created socket '/dev/socket/keystore' with mode '666', user '0', group '0'
+<6>[   88.110640] init: waitpid returned pid 2404, status = 00000100
+<5>[   88.114679] init: process 'keystore', pid 2404 exited
+<5>[   88.120543] init: process 'keystore' killing any children in process group
+<3>[   88.124055] init: init.svc.keystore:restarting
+<4>[   90.366280] acm_connected
+<6>[   92.499755] fg_read_vcell: VCELL=3878
+<5>[   93.135413] init: starting 'keystore'
+<3>[   93.139192] init: init.svc.keystore:running
+<6>[   93.151519] init: Created socket '/dev/socket/keystore' with mode '666', user '0', group '0'
+<6>[   97.499816] fg_read_vcell: VCELL=3878
+<6>[   97.558924] init: waitpid returned pid 2408, status = 00000100
+<5>[   97.574274] init: process 'keystore', pid 2408 exited
+<5>[   97.580127] init: process 'keystore' killing any children in process group
+<3>[   97.597163] init: init.svc.keystore:restarting
+<5>[   98.604379] init: starting 'keystore'
+<3>[   98.608168] init: init.svc.keystore:running
+<6>[   98.620371] init: Created socket '/dev/socket/keystore' with mode '666', user '0', group '0'
+<6>[  102.499704] fg_read_vcell: VCELL=3878
+<6>[  103.141775] init: waitpid returned pid 2410, status = 00000100
+<5>[  103.145763] init: process 'keystore', pid 2410 exited
+<5>[  103.154689] init: process 'keystore' killing any children in process group
+<3>[  103.190796] init: init.svc.keystore:restarting
+<5>[  103.207118] init: starting 'keystore'
+<3>[  103.211931] init: init.svc.keystore:running
+<6>[  103.230310] init: Created socket '/dev/socket/keystore' with mode '666', user '0', group '0'
+<6>[  103.251290] init: waitpid returned pid 2417, status = 00000100
+<5>[  103.269392] init: process 'keystore', pid 2417 exited
+<5>[  103.277362] init: process 'keystore' killing any children in process group
+<3>[  103.282461] init: init.svc.keystore:restarting
+<6>[  107.499721] fg_read_vcell: VCELL=3878
+<5>[  108.291843] init: starting 'keystore'
+<3>[  108.295613] init: init.svc.keystore:running
+<6>[  108.313177] init: Created socket '/dev/socket/keystore' with mode '666', user '0', group '0'
+<6>[  108.337808] init: waitpid returned pid 2425, status = 00000100
+<5>[  108.341796] init: process 'keystore', pid 2425 exited
+<5>[  108.347607] init: process 'keystore' killing any children in process group
+<3>[  108.350990] init: init.svc.keystore:restarting
+<6>[  112.499678] fg_read_vcell: VCELL=3878
+<5>[  113.386517] init: starting 'keystore'
+<3>[  113.405527] init: init.svc.keystore:running
+<6>[  113.427757] init: Created socket '/dev/socket/keystore' with mode '666', user '0', group '0'
+<6>[  113.434625] init: waitpid returned pid 2290, status = 00000009
+<5>[  113.438440] init: process 'zygote', pid 2290 exited
+<5>[  113.447982] init: process 'zygote' killing any children in process group
+<6>[  113.456090] request_suspend_state: wakeup (3->0) at 113420981985 (2011-05-22 17:04:13.493797450 UTC)
+<5>[  113.459733] init: service 'media' is being killed
+<3>[  113.466048] init: init.svc.media:stopping
+<5>[  113.472378] init: starting 'media'
+<3>[  113.475883] init: init.svc.media:running
+<3>[  113.496795] init: init.svc.zygote:restarting
+<6>[  113.512458] init: waitpid returned pid 2277, status = 00000009
+<5>[  113.516620] init: process 'playlogos1', pid 2277 exited
+<3>[  113.526483] init: init.svc.playlogos1:stopped
+<6>[  113.539805] init: waitpid returned pid 2291, status = 0000000f
+<3>[  113.542926] init: untracked pid 2291 exited
+<6>[  113.559353] init: waitpid returned pid 2426, status = 00000100
+<5>[  113.563343] init: process 'keystore', pid 2426 exited
+<5>[  113.583760] init: process 'keystore' killing any children in process group
+<3>[  113.587142] init: init.svc.keystore:restarting
+<5>[  113.599936] init: starting 'zygote'
+<3>[  113.602962] init: init.svc.zygote:running
+<6>[  113.616813] init: Created socket '/dev/socket/zygote' with mode '666', user '0', group '0'
+<4>[  113.885473] DmaAddr=@4f3c0000 Total=32768bytes PrdSz=2048 #Prds=4, dmaEnd 0x4f3c8000
+<4>[  113.947807] DmaAddr=@4f3c0000 Total=32768bytes PrdSz=2048 #Prds=4, dmaEnd 0x4f3c8000
+<4>[  115.872234] !@beginofsystem_init1()
+<4>[  115.971342] !@endofsystem_init1()
+<3>[  115.975392] init: no such service 'bootanim'
+<6>[  117.499860] fg_read_vcell: VCELL=3878
+<5>[  118.984494] init: starting 'keystore'
+<3>[  118.989307] init: init.svc.keystore:running
+<6>[  119.002995] init: Created socket '/dev/socket/keystore' with mode '666', user '0', group '0'
+<6>[  119.720165] init: waitpid returned pid 2445, status = 00000100
+<5>[  119.724213] init: process 'keystore', pid 2445 exited
+<5>[  119.740042] init: process 'keystore' killing any children in process group
+<3>[  119.753373] init: init.svc.keystore:restarting
+<4>[  119.882878] !@beginofPackageManager
+<7>[  122.248716] [TSP]### Finger[0] Down (413,150) - touch num is (1)   status=0xc0
+<6>[  122.499535] fg_read_vcell: VCELL=3878
+<7>[  123.188470] [TSP]### Finger[0] Up (27,175) - touch num is (0)  status=0x20
+<5>[  123.772069] init: starting 'keystore'
+<3>[  123.775277] init: init.svc.keystore:running
+<6>[  123.792832] init: Created socket '/dev/socket/keystore' with mode '666', user '0', group '0'
+<6>[  123.812694] init: waitpid returned pid 2449, status = 00000100
+<5>[  123.816682] init: process 'keystore', pid 2449 exited
+<5>[  123.822493] init: process 'keystore' killing any children in process group
+<3>[  123.843101] init: init.svc.keystore:restarting
+<6>[  127.499462] fg_read_vcell: VCELL=3878
+<5>[  128.861877] init: starting 'keystore'
+<3>[  128.865084] init: init.svc.keystore:running
+<6>[  128.880541] init: Created socket '/dev/socket/keystore' with mode '666', user '0', group '0'
+<6>[  128.902614] init: waitpid returned pid 2450, status = 00000100
+<5>[  128.906603] init: process 'keystore', pid 2450 exited
+<5>[  128.918451] init: process 'keystore' killing any children in process group
+<3>[  128.936882] init: init.svc.keystore:restarting
+<6>[  132.499520] fg_read_vcell: VCELL=3878
+<4>[  133.129121] !@2nfofPackageManager
+<5>[  133.953854] init: starting 'keystore'
+<3>[  133.957793] init: init.svc.keystore:running
+<6>[  133.970058] init: Created socket '/dev/socket/keystore' with mode '666', user '0', group '0'
+<6>[  134.813854] init: waitpid returned pid 2453, status = 00000100
+<5>[  134.817867] init: process 'keystore', pid 2453 exited
+<5>[  134.823678] init: process 'keystore' killing any children in process group
+<3>[  134.827190] init: init.svc.keystore:restarting
+<6>[  137.499954] fg_read_vcell: VCELL=3878
+<5>[  138.835120] init: starting 'keystore'
+<3>[  138.839844] init: init.svc.keystore:running
+<6>[  138.854502] init: Created socket '/dev/socket/keystore' with mode '666', user '0', group '0'
+<6>[  142.499946] fg_read_vcell: VCELL=3878
+<6>[  144.021179] init: waitpid returned pid 2454, status = 00000100
+<5>[  144.025379] init: process 'keystore', pid 2454 exited
+<5>[  144.031329] init: process 'keystore' killing any children in process group
+<3>[  144.035744] init: init.svc.keystore:restarting
+<5>[  144.042770] init: starting 'keystore'
+<3>[  144.047375] init: init.svc.keystore:running
+<6>[  144.061169] init: Created socket '/dev/socket/keystore' with mode '666', user '0', group '0'
+<6>[  147.499913] fg_read_vcell: VCELL=3878
+<6>[  152.499984] fg_read_vcell: VCELL=3878
+<6>[  155.447274] init: waitpid returned pid 2455, status = 00000100
+<5>[  155.457168] init: process 'keystore', pid 2455 exited
+<5>[  155.472467] init: process 'keystore' killing any children in process group
+<3>[  155.483901] init: init.svc.keystore:restarting
+<5>[  155.502739] init: starting 'keystore'
+<3>[  155.506408] init: init.svc.keystore:running
+<6>[  155.518265] init: Created socket '/dev/socket/keystore' with mode '666', user '0', group '0'
+<6>[  157.499794] fg_read_vcell: VCELL=3878
+<6>[  159.657681] init: waitpid returned pid 2458, status = 00000100
+<5>[  159.661934] init: process 'keystore', pid 2458 exited
+<5>[  159.667746] init: process 'keystore' killing any children in process group
+<3>[  159.686446] init: init.svc.keystore:restarting
+<5>[  160.698180] init: starting 'keystore'
+<3>[  160.701509] init: init.svc.keystore:running
+<6>[  160.713863] init: Created socket '/dev/socket/keystore' with mode '666', user '0', group '0'
+<6>[  160.730020] init: waitpid returned pid 2471, status = 00000100
+<5>[  160.734008] init: process 'keystore', pid 2471 exited
+<5>[  160.739818] init: process 'keystore' killing any children in process group
+<3>[  160.743201] init: init.svc.keystore:restarting
+<6>[  162.499829] fg_read_vcell: VCELL=3878
+<5>[  165.754424] init: starting 'keystore'
+<3>[  165.759168] init: init.svc.keystore:running
+<6>[  165.772950] init: Created socket '/dev/socket/keystore' with mode '666', user '0', group '0'
+<6>[  165.805130] init: waitpid returned pid 2472, status = 00000100
+<5>[  165.809402] init: process 'keystore', pid 2472 exited
+<5>[  165.815877] init: process 'keystore' killing any children in process group
+<3>[  165.819407] init: init.svc.keystore:restarting
+<5>[  166.229399] init: starting 'dumpstate'
+<3>[  166.233160] init: init.svc.dumpstate:running
+<6>[  166.246309] init: Created socket '/dev/socket/dumpstate' with mode '660', user '2000', group '1007'
+<6>[  167.499843] fg_read_vcell: VCELL=3878
+<5>[  170.253656] init: starting 'keystore'
+<3>[  170.258338] init: init.svc.keystore:running
+<6>[  170.272207] init: Created socket '/dev/socket/keystore' with mode '666', user '0', group '0'
+<4>[  172.246120] [VIBETONZ] enable_vibetonz_from_user : time = 150 msec 
+<4>[  172.247809] [VIBETONZ] ENABLE
+<4>[  172.400448] [VIBETONZ] DISABLE
+<6>[  172.502731] fg_read_vcell: VCELL=3878
+<6>[  172.709213] init: waitpid returned pid 2476, status = 00000100
+<5>[  172.713201] init: process 'keystore', pid 2476 exited
+<5>[  172.719012] init: process 'keystore' killing any children in process group
+<3>[  172.722395] init: init.svc.keystore:restarting
+<6>[  172.741252] init: waitpid returned pid 2428, status = 00000009
+<5>[  172.745066] init: process 'zygote', pid 2428 exited
+<5>[  172.750704] init: process 'zygote' killing any children in process group
+<6>[  172.758796] request_suspend_state: wakeup (0->0) at 172723705644 (2011-05-22 17:05:12.796520942 UTC)
+<5>[  172.762439] init: service 'media' is being killed
+<3>[  172.771157] init: init.svc.media:stopping
+<5>[  172.777487] init: starting 'media'
+<3>[  172.780470] init: init.svc.media:running
+<3>[  172.792041] init: init.svc.zygote:restarting
+<6>[  172.805450] init: waitpid returned pid 2427, status = 0000000f
+<3>[  172.815381] init: untracked pid 2427 exited
+<5>[  172.821971] init: starting 'zygote'
+<3>[  172.824999] init: init.svc.zygote:running
+<6>[  172.839414] init: Created socket '/dev/socket/zygote' with mode '666', user '0', group '0'
+<4>[  173.190165] DmaAddr=@4f3c0000 Total=32768bytes PrdSz=2048 #Prds=4, dmaEnd 0x4f3c8000
+<4>[  173.252569] DmaAddr=@4f3c0000 Total=32768bytes PrdSz=2048 #Prds=4, dmaEnd 0x4f3c8000
+<5>[  175.853197] init: starting 'keystore'
+<3>[  175.856404] init: init.svc.keystore:running
+<6>[  175.870906] init: Created socket '/dev/socket/keystore' with mode '666', user '0', group '0'
+<6>[  175.886796] init: waitpid returned pid 2490, status = 00000100
+<5>[  175.890784] init: process 'keystore', pid 2490 exited
+<5>[  175.904081] init: process 'keystore' killing any children in process group
+<3>[  175.913388] init: init.svc.keystore:restarting
+<4>[  176.560977] !@beginofsystem_init1()
+<4>[  176.666156] !@endofsystem_init1()
+<3>[  176.670197] init: no such service 'bootanim'
+<4>[  176.852395] [RFS:CRT:2475:FileGetBlock@/linux_file.c#1648]can't access beyond the end of file i_ino 98574
+<4>[  176.852411] :	dwBlock 1 i_size 5248
+<4>[  176.862889] [RFS:CRT:2475:FileGetBlock@/linux_file.c#1648]can't access beyond the end of file i_ino 98574
+<4>[  176.862903] :	dwBlock 1 i_size 5248
+<4>[  177.077341] [RFS:CRT:2475:FileGetBlock@/linux_file.c#1648]can't access beyond the end of file i_ino 98574
+<4>[  177.077450] :	dwBlock 1 i_size 5248
+<4>[  177.091124] [RFS:CRT:2475:FileGetBlock@/linux_file.c#1648]can't access beyond the end of file i_ino 98574
+<4>[  177.091233] :	dwBlock 1 i_size 5248
+<6>[  177.499788] fg_read_vcell: VCELL=3878
+<4>[  180.175754] !@beginofPackageManager
+<5>[  180.678243] init: starting 'keystore'
+<3>[  180.681460] init: init.svc.keystore:running
+<6>[  180.699024] init: Created socket '/dev/socket/keystore' with mode '666', user '0', group '0'
+<6>[  180.722771] init: waitpid returned pid 2536, status = 00000100
+<5>[  180.726759] init: process 'keystore', pid 2536 exited
+<5>[  180.743898] init: process 'keystore' killing any children in process group
+<3>[  180.757107] init: init.svc.keystore:restarting
+<6>[  182.499503] fg_read_vcell: VCELL=3878
+<5>[  185.775910] init: starting 'keystore'
+<3>[  185.779109] init: init.svc.keystore:running
+<6>[  185.796700] init: Created socket '/dev/socket/keystore' with mode '666', user '0', group '0'
+<6>[  185.820439] init: waitpid returned pid 2537, status = 00000100
+<5>[  185.824427] init: process 'keystore', pid 2537 exited
+<5>[  185.837654] init: process 'keystore' killing any children in process group
+<3>[  185.854827] init: init.svc.keystore:restarting
+<6>[  187.499518] fg_read_vcell: VCELL=3878
+<5>[  190.873688] init: starting 'keystore'
+<3>[  190.876904] init: init.svc.keystore:running
+<6>[  190.893705] init: Created socket '/dev/socket/keystore' with mode '666', user '0', group '0'
+<6>[  190.918120] init: waitpid returned pid 2538, status = 00000100
+<5>[  190.922108] init: process 'keystore', pid 2538 exited
+<5>[  190.935266] init: process 'keystore' killing any children in process group
+<3>[  190.946575] init: init.svc.keystore:restarting
+<6>[  192.499488] fg_read_vcell: VCELL=3878
+<4>[  194.155080] !@2nfofPackageManager
+<4>[  195.245141] [RFS:CRT:2508:FileGetBlock@/linux_file.c#1648]can't access beyond the end of file i_ino 98574
+<4>[  195.245155] :	dwBlock 1 i_size 5248
+<5>[  195.972386] init: starting 'keystore'
+<3>[  195.975663] init: init.svc.keystore:running
+<6>[  195.987199] init: Created socket '/dev/socket/keystore' with mode '666', user '0', group '0'
+<6>[  196.603711] init: waitpid returned pid 2541, status = 00000100
+<5>[  196.617135] init: process 'keystore', pid 2541 exited
+<5>[  196.622996] init: process 'keystore' killing any children in process group
+<3>[  196.636199] init: init.svc.keystore:restarting
+<6>[  197.499828] fg_read_vcell: VCELL=3878
+<5>[  200.655607] init: starting 'keystore'
+<3>[  200.660560] init: init.svc.keystore:running
+<6>[  200.674742] init: Created socket '/dev/socket/keystore' with mode '666', user '0', group '0'
+<6>[  202.499934] fg_read_vcell: VCELL=3878
+<6>[  207.499793] fg_read_vcell: VCELL=3878
+<6>[  210.515636] init: waitpid returned pid 2542, status = 00000100
+<5>[  210.523443] init: process 'keystore', pid 2542 exited
+<5>[  210.531951] init: process 'keystore' killing any children in process group
+<3>[  210.551562] init: init.svc.keystore:restarting
+<5>[  210.558585] init: starting 'keystore'
+<3>[  210.562384] init: init.svc.keystore:running
+<6>[  210.574371] init: Created socket '/dev/socket/keystore' with mode '666', user '0', group '0'
+<6>[  210.592680] init: waitpid returned pid 2543, status = 00000100
+<5>[  210.596703] init: process 'keystore', pid 2543 exited
+<4>[  210.601994] [VIBETONZ] enable_vibetonz_from_user : time = 75 msec 
+<4>[  210.603763] [VIBETONZ] ENABLE
+<5>[  210.610744] init: process 'keystore' killing any children in process group
+<3>[  210.614144] init: init.svc.keystore:restarting
+<4>[  210.681456] [VIBETONZ] DISABLE
+<4>[  210.734640] [VIBETONZ] enable_vibetonz_from_user : time = 75 msec 
+<4>[  210.736288] [VIBETONZ] ENABLE
+<4>[  210.813992] [VIBETONZ] DISABLE
+<4>[  210.867341] [VIBETONZ] enable_vibetonz_from_user : time = 75 msec 
+<4>[  210.869006] [VIBETONZ] ENABLE
+<4>[  210.946671] [VIBETONZ] DISABLE
+<6>[  211.967123] init: waitpid returned pid 2475, status = 00000000
+<5>[  211.979941] init: process 'dumpstate', pid 2475 exited
+<3>[  211.985431] init: init.svc.dumpstate:stopped
+<6>[  212.499570] fg_read_vcell: VCELL=3878
+<5>[  215.996145] init: starting 'keystore'
+<3>[  216.000958] init: init.svc.keystore:running
+<6>[  216.014610] init: Created socket '/dev/socket/keystore' with mode '666', user '0', group '0'
+<6>[  216.715596] init: waitpid returned pid 2544, status = 00000100
+<5>[  216.719911] init: process 'keystore', pid 2544 exited
+<5>[  216.725868] init: process 'keystore' killing any children in process group
+<3>[  216.729815] init: init.svc.keystore:restarting
+<6>[  217.499906] fg_read_vcell: VCELL=3878
+<5>[  220.740428] init: starting 'keystore'
+<3>[  220.745475] init: init.svc.keystore:running
+<6>[  220.759724] init: Created socket '/dev/socket/keystore' with mode '666', user '0', group '0'
+<6>[  222.161796] init: waitpid returned pid 2545, status = 00000100
+<5>[  222.168081] init: process 'keystore', pid 2545 exited
+<5>[  222.173892] init: process 'keystore' killing any children in process group
+<3>[  222.194666] init: init.svc.keystore:restarting
+<6>[  222.499442] fg_read_vcell: VCELL=3878
+<5>[  225.213100] init: starting 'keystore'
+<3>[  225.218061] init: init.svc.keystore:running
+<6>[  225.232390] init: Created socket '/dev/socket/keystore' with mode '666', user '0', group '0'
+<6>[  225.279885] init: waitpid returned pid 2558, status = 00000100
+<5>[  225.284105] init: process 'keystore', pid 2558 exited
+<5>[  225.290441] init: process 'keystore' killing any children in process group
+<3>[  225.294058] init: init.svc.keystore:restarting
+<6>[  227.499840] fg_read_vcell: VCELL=3878
+<5>[  230.305383] init: starting 'keystore'
+<3>[  230.310101] init: init.svc.keystore:running
+<6>[  230.323840] init: Created socket '/dev/socket/keystore' with mode '666', user '0', group '0'
+<6>[  230.356234] init: waitpid returned pid 2559, status = 00000100
+<5>[  230.360395] init: process 'keystore', pid 2559 exited
+<5>[  230.366336] init: process 'keystore' killing any children in process group
+<3>[  230.370126] init: init.svc.keystore:restarting
+<6>[  232.407155] init: waitpid returned pid 2479, status = 00000009
+<5>[  232.410969] init: process 'zygote', pid 2479 exited
+<5>[  232.416650] init: process 'zygote' killing any children in process group
+<6>[  232.424890] request_suspend_state: wakeup (0->0) at 232389815711 (2011-05-22 17:06:12.462629051 UTC)
+<5>[  232.428644] init: service 'media' is being killed
+<3>[  232.434881] init: init.svc.media:stopping
+<5>[  232.441212] init: starting 'media'
+<3>[  232.444317] init: init.svc.media:running
+<3>[  232.456183] init: init.svc.zygote:restarting
+<6>[  232.469573] init: waitpid returned pid 2478, status = 0000000f
+<3>[  232.479505] init: untracked pid 2478 exited
+<5>[  232.490537] init: starting 'zygote'
+<3>[  232.493589] init: init.svc.zygote:running
+<6>[  232.500181] fg_read_vcell: VCELL=3878
+<6>[  232.508169] init: Created socket '/dev/socket/zygote' with mode '666', user '0', group '0'
+<4>[  232.862017] DmaAddr=@4f3c0000 Total=32768bytes PrdSz=2048 #Prds=4, dmaEnd 0x4f3c8000
+<4>[  232.924516] DmaAddr=@4f3c0000 Total=32768bytes PrdSz=2048 #Prds=4, dmaEnd 0x4f3c8000
+<4>[  234.820339] !@beginofsystem_init1()
+<4>[  234.919646] !@endofsystem_init1()
+<3>[  234.923782] init: no such service 'bootanim'
+<5>[  235.930410] init: starting 'keystore'
+<3>[  235.934419] init: init.svc.keystore:running
+<6>[  235.946544] init: Created socket '/dev/socket/keystore' with mode '666', user '0', group '0'
+<6>[  237.499791] fg_read_vcell: VCELL=3878
+<6>[  238.543921] init: waitpid returned pid 2578, status = 00000100
+<5>[  238.554837] init: process 'keystore', pid 2578 exited
+<5>[  238.568408] init: process 'keystore' killing any children in process group
+<3>[  238.581441] init: init.svc.keystore:restarting
+<4>[  238.739707] !@beginofPackageManager
+<5>[  240.598496] init: starting 'keystore'
+<3>[  240.601764] init: init.svc.keystore:running
+<6>[  240.620855] init: Created socket '/dev/socket/keystore' with mode '666', user '0', group '0'
+<6>[  240.644680] init: waitpid returned pid 2582, status = 00000100
+<5>[  240.648669] init: process 'keystore', pid 2582 exited
+<5>[  240.665686] init: process 'keystore' killing any children in process group
+<3>[  240.678982] init: init.svc.keystore:restarting
+<6>[  242.499429] fg_read_vcell: VCELL=3878
+<5>[  245.697768] init: starting 'keystore'
+<3>[  245.700985] init: init.svc.keystore:running
+<6>[  245.718540] init: Created socket '/dev/socket/keystore' with mode '666', user '0', group '0'
+<6>[  245.736615] init: waitpid returned pid 2583, status = 00000100
+<5>[  245.740603] init: process 'keystore', pid 2583 exited
+<5>[  245.755522] init: process 'keystore' killing any children in process group
+<3>[  245.768757] init: init.svc.keystore:restarting
+<6>[  247.499486] fg_read_vcell: VCELL=3878
+<5>[  250.787609] init: starting 'keystore'
+<3>[  250.790809] init: init.svc.keystore:running
+<6>[  250.808372] init: Created socket '/dev/socket/keystore' with mode '666', user '0', group '0'
+<6>[  250.832069] init: waitpid returned pid 2584, status = 00000100
+<5>[  250.836056] init: process 'keystore', pid 2584 exited
+<5>[  250.849371] init: process 'keystore' killing any children in process group
+<3>[  250.862606] init: init.svc.keystore:restarting
+<3>[  250.979312] s3c_keygpio_isr:245 input_report_key(df389000, 26, 1)
+<7>[  250.988591] s3c_keygpio_isr pwr key_status =0
+<3>[  251.198067] s3c_keygpio_isr:245 input_report_key(df389000, 26, 0)
+<7>[  251.207432] s3c_keygpio_isr pwr key_status =64
+<6>[  252.499491] fg_read_vcell: VCELL=3878
+<4>[  252.914891] !@2nfofPackageManager
+<5>[  255.880595] init: starting 'keystore'
+<3>[  255.885449] init: init.svc.keystore:running
+<6>[  255.899881] init: Created socket '/dev/socket/keystore' with mode '666', user '0', group '0'
+<6>[  257.499865] fg_read_vcell: VCELL=3878
+<6>[  262.155118] init: waitpid returned pid 2587, status = 00000100
+<5>[  262.159344] init: process 'keystore', pid 2587 exited
+<5>[  262.165303] init: process 'keystore' killing any children in process group
+<3>[  262.169128] init: init.svc.keystore:restarting
+<5>[  262.176154] init: starting 'keystore'
+<3>[  262.180872] init: init.svc.keystore:running
+<6>[  262.194490] init: Created socket '/dev/socket/keystore' with mode '666', user '0', group '0'
+<6>[  262.213714] init: waitpid returned pid 2588, status = 00000100
+<5>[  262.217737] init: process 'keystore', pid 2588 exited
+<5>[  262.223548] init: process 'keystore' killing any children in process group
+<3>[  262.227060] init: init.svc.keystore:restarting
+<6>[  262.499975] fg_read_vcell: VCELL=3878
+<5>[  267.238577] init: starting 'keystore'
+<3>[  267.243328] init: init.svc.keystore:running
+<6>[  267.256931] init: Created socket '/dev/socket/keystore' with mode '666', user '0', group '0'
+<6>[  267.499767] fg_read_vcell: VCELL=3878
+<6>[  272.499798] fg_read_vcell: VCELL=3878
+<6>[  272.826924] init: waitpid returned pid 2589, status = 00000100
+<5>[  272.831533] init: process 'keystore', pid 2589 exited
+<5>[  272.837770] init: process 'keystore' killing any children in process group
+<3>[  272.841595] init: init.svc.keystore:restarting
+<5>[  272.851292] init: starting 'keystore'
+<3>[  272.855907] init: init.svc.keystore:running
+<6>[  272.868470] init: Created socket '/dev/socket/keystore' with mode '666', user '0', group '0'
+<6>[  277.499532] fg_read_vcell: VCELL=3878
+<6>[  279.534197] init: waitpid returned pid 2590, status = 00000100
+<5>[  279.547037] init: process 'keystore', pid 2590 exited
+<5>[  279.553124] init: process 'keystore' killing any children in process group
+<3>[  279.566188] init: init.svc.keystore:restarting
+<5>[  279.584168] init: starting 'keystore'
+<6>[  279.602716] init: Created socket '/dev/socket/keystore' with mode '666', user '0', group '0'
+<3>[  279.607172] init: init.svc.keystore:running
+<6>[  279.662631] init: waitpid returned pid 2592, status = 00000100
+<5>[  279.666678] init: process 'keystore', pid 2592 exited
+<5>[  279.672559] init: process 'keystore' killing any children in process group
+<3>[  279.682541] init: init.svc.keystore:restarting
+<6>[  282.499755] fg_read_vcell: VCELL=3878
+<5>[  284.694998] init: starting 'keystore'
+<3>[  284.699774] init: init.svc.keystore:running
+<6>[  284.713625] init: Created socket '/dev/socket/keystore' with mode '666', user '0', group '0'
+<6>[  284.746299] init: waitpid returned pid 2606, status = 00000100
+<5>[  284.750526] init: process 'keystore', pid 2606 exited
+<5>[  284.756477] init: process 'keystore' killing any children in process group
+<3>[  284.760532] init: init.svc.keystore:restarting
+<6>[  287.499782] fg_read_vcell: VCELL=3878
+<5>[  289.769781] init: starting 'keystore'
+<3>[  289.773631] init: init.svc.keystore:running
+<6>[  289.788687] init: Created socket '/dev/socket/keystore' with mode '666', user '0', group '0'
+<6>[  289.917111] init: waitpid returned pid 2607, status = 00000100
+<5>[  289.921159] init: process 'keystore', pid 2607 exited
+<5>[  289.927785] init: process 'keystore' killing any children in process group
+<3>[  289.931167] init: init.svc.keystore:restarting
+<6>[  289.940361] init: waitpid returned pid 2561, status = 00000009
+<5>[  289.944177] init: process 'zygote', pid 2561 exited
+<5>[  289.949814] init: process 'zygote' killing any children in process group
+<6>[  289.957881] request_suspend_state: wakeup (0->0) at 289922845942 (2011-05-22 17:07:09.995661282 UTC)
+<5>[  289.961523] init: service 'media' is being killed
+<3>[  289.967370] init: init.svc.media:stopping
+<5>[  289.973701] init: starting 'media'
+<3>[  289.976762] init: init.svc.media:running
+<3>[  289.987413] init: init.svc.zygote:restarting
+<6>[  290.000770] init: waitpid returned pid 2560, status = 0000000f
+<3>[  290.007266] init: untracked pid 2560 exited
+<5>[  290.021812] init: starting 'zygote'
+<3>[  290.024855] init: init.svc.zygote:running
+<6>[  290.038620] init: Created socket '/dev/socket/zygote' with mode '666', user '0', group '0'
+<4>[  290.393266] DmaAddr=@4f3c0000 Total=32768bytes PrdSz=2048 #Prds=4, dmaEnd 0x4f3c8000
+<4>[  290.455652] DmaAddr=@4f3c0000 Total=32768bytes PrdSz=2048 #Prds=4, dmaEnd 0x4f3c8000
+<4>[  292.337268] !@beginofsystem_init1()
+<4>[  292.436427] !@endofsystem_init1()
+<3>[  292.440564] init: no such service 'bootanim'
+<6>[  292.499481] fg_read_vcell: VCELL=3878
+<5>[  294.448665] init: starting 'keystore'
+<3>[  294.453518] init: init.svc.keystore:running
+<6>[  294.467492] init: Created socket '/dev/socket/keystore' with mode '666', user '0', group '0'
+<6>[  296.822503] init: waitpid returned pid 2626, status = 00000100
+<5>[  296.835963] init: process 'keystore', pid 2626 exited
+<5>[  296.841833] init: process 'keystore' killing any children in process group
+<3>[  296.854887] init: init.svc.keystore:restarting
+<4>[  296.991045] !@beginofPackageManager
+<6>[  297.499457] fg_read_vcell: VCELL=3878
+<5>[  299.872901] init: starting 'keystore'
+<3>[  299.876144] init: init.svc.keystore:running
+<6>[  299.894210] init: Created socket '/dev/socket/keystore' with mode '666', user '0', group '0'
+<6>[  299.918080] init: waitpid returned pid 2630, status = 00000100
+<5>[  299.922068] init: process 'keystore', pid 2630 exited
+<5>[  299.935191] init: process 'keystore' killing any children in process group
+<3>[  299.948460] init: init.svc.keystore:restarting
+<6>[  302.499462] fg_read_vcell: VCELL=3878
+<5>[  304.967262] init: starting 'keystore'
+<3>[  304.970478] init: init.svc.keystore:running
+<6>[  304.987895] init: Created socket '/dev/socket/keystore' with mode '666', user '0', group '0'
+<6>[  305.007904] init: waitpid returned pid 2631, status = 00000100
+<5>[  305.011892] init: process 'keystore', pid 2631 exited
+<5>[  305.025024] init: process 'keystore' killing any children in process group
+<3>[  305.038302] init: init.svc.keystore:restarting
+<6>[  307.499441] fg_read_vcell: VCELL=3878
+<5>[  309.057105] init: starting 'keystore'
+<3>[  309.060322] init: init.svc.keystore:running
+<6>[  309.077956] init: Created socket '/dev/socket/keystore' with mode '666', user '0', group '0'
+<6>[  309.097730] init: waitpid returned pid 2632, status = 00000100
+<5>[  309.101718] init: process 'keystore', pid 2632 exited
+<5>[  309.114937] init: process 'keystore' killing any children in process group
+<3>[  309.128181] init: init.svc.keystore:restarting
+<4>[  310.351764] !@2nfofPackageManager
+<6>[  312.499762] fg_read_vcell: VCELL=3878
+<5>[  314.148632] init: starting 'keystore'
+<3>[  314.153455] init: init.svc.keystore:running
+<6>[  314.167912] init: Created socket '/dev/socket/keystore' with mode '666', user '0', group '0'
+<6>[  317.499859] fg_read_vcell: VCELL=3878
+<6>[  318.088518] init: waitpid returned pid 2635, status = 00000100
+<5>[  318.092557] init: process 'keystore', pid 2635 exited
+<5>[  318.098446] init: process 'keystore' killing any children in process group
+<3>[  318.101993] init: init.svc.keystore:restarting
+<5>[  319.109509] init: starting 'keystore'
+<3>[  319.114313] init: init.svc.keystore:running
+<6>[  319.127956] init: Created socket '/dev/socket/keystore' with mode '666', user '0', group '0'
+<6>[  322.499876] fg_read_vcell: VCELL=3878
+<6>[  327.367258] init: waitpid returned pid 2636, status = 00000100
+<5>[  327.371544] init: process 'keystore', pid 2636 exited
+<5>[  327.377998] init: process 'keystore' killing any children in process group
+<3>[  327.381866] init: init.svc.keystore:restarting
+<5>[  327.388891] init: starting 'keystore'
+<3>[  327.393680] init: init.svc.keystore:running
+<6>[  327.407905] init: Created socket '/dev/socket/keystore' with mode '666', user '0', group '0'
+<6>[  327.435742] init: waitpid returned pid 2637, status = 00000100
+<5>[  327.440172] init: process 'keystore', pid 2637 exited
+<5>[  327.446069] init: process 'keystore' killing any children in process group
+<3>[  327.449600] init: init.svc.keystore:restarting
+<6>[  327.499609] fg_read_vcell: VCELL=3878
+<5>[  332.460906] init: starting 'keystore'
+<3>[  332.464746] init: init.svc.keystore:running
+<6>[  332.476933] init: Created socket '/dev/socket/keystore' with mode '666', user '0', group '0'
+<6>[  332.494956] init: waitpid returned pid 2650, status = 00000100
+<5>[  332.498995] init: process 'keystore', pid 2650 exited
+<6>[  332.502804] fg_read_vcell: VCELL=3878
+<5>[  332.508614] init: process 'keystore' killing any children in process group
+<3>[  332.512170] init: init.svc.keystore:restarting
+<6>[  337.499731] fg_read_vcell: VCELL=3878
+<5>[  337.523737] init: starting 'keystore'
+<3>[  337.528430] init: init.svc.keystore:running
+<6>[  337.542024] init: Created socket '/dev/socket/keystore' with mode '666', user '0', group '0'
+<6>[  337.574566] init: waitpid returned pid 2651, status = 00000100
+<5>[  337.578828] init: process 'keystore', pid 2651 exited
+<5>[  337.584961] init: process 'keystore' killing any children in process group
+<3>[  337.588794] init: init.svc.keystore:restarting
+<6>[  342.564406] fg_read_vcell: VCELL=3878
+<5>[  342.584975] init: starting 'keystore'
+<3>[  342.588366] init: init.svc.keystore:running
+<6>[  342.599902] init: Created socket '/dev/socket/keystore' with mode '666', user '0', group '0'
+<6>[  342.605036] init: waitpid returned pid 2609, status = 00000009
+<5>[  342.608947] init: process 'zygote', pid 2609 exited
+<5>[  342.618306] init: process 'zygote' killing any children in process group
+<6>[  342.626423] request_suspend_state: wakeup (0->0) at 342591400717 (2011-05-22 17:08:02.664215932 UTC)
+<5>[  342.630065] init: service 'media' is being killed
+<3>[  342.636007] init: init.svc.media:stopping
+<5>[  342.642338] init: starting 'media'
+<3>[  342.645357] init: init.svc.media:running
+<3>[  342.655357] init: init.svc.zygote:restarting
+<6>[  342.668714] init: waitpid returned pid 2608, status = 0000000f
+<3>[  342.678671] init: untracked pid 2608 exited
+<6>[  342.692036] init: waitpid returned pid 2652, status = 00000100
+<5>[  342.699009] init: process 'keystore', pid 2652 exited
+<5>[  342.708697] init: process 'keystore' killing any children in process group
+<3>[  342.721959] init: init.svc.keystore:restarting
+<5>[  342.732695] init: starting 'zygote'
+<3>[  342.735713] init: init.svc.zygote:running
+<6>[  342.749530] init: Created socket '/dev/socket/zygote' with mode '666', user '0', group '0'
+<4>[  343.061183] DmaAddr=@4f3c0000 Total=32768bytes PrdSz=2048 #Prds=4, dmaEnd 0x4f3c8000
+<4>[  343.123621] DmaAddr=@4f3c0000 Total=32768bytes PrdSz=2048 #Prds=4, dmaEnd 0x4f3c8000
+<4>[  345.029687] !@beginofsystem_init1()
+<4>[  345.129254] !@endofsystem_init1()
+<3>[  345.133365] init: no such service 'bootanim'
+<5>[  347.141492] init: starting 'keystore'
+<3>[  347.146188] init: init.svc.keystore:running
+<6>[  347.160682] init: Created socket '/dev/socket/keystore' with mode '666', user '0', group '0'
+<6>[  347.499766] fg_read_vcell: VCELL=3878
+<6>[  349.586700] init: waitpid returned pid 2671, status = 00000100
+<5>[  349.593647] init: process 'keystore', pid 2671 exited
+<5>[  349.607159] init: process 'keystore' killing any children in process group
+<3>[  349.616570] init: init.svc.keystore:restarting
+<4>[  349.751748] !@beginofPackageManager
+<6>[  352.499465] fg_read_vcell: VCELL=3878
+<5>[  352.638461] init: starting 'keystore'
+<3>[  352.641721] init: init.svc.keystore:running
+<6>[  352.659944] init: Created socket '/dev/socket/keystore' with mode '666', user '0', group '0'
+<6>[  352.679684] init: waitpid returned pid 2675, status = 00000100
+<5>[  352.683673] init: process 'keystore', pid 2675 exited
+<5>[  352.696960] init: process 'keystore' killing any children in process group
+<3>[  352.710231] init: init.svc.keystore:restarting
+<6>[  357.499419] fg_read_vcell: VCELL=3878
+<5>[  357.728980] init: starting 'keystore'
+<3>[  357.732196] init: init.svc.keystore:running
+<6>[  357.749804] init: Created socket '/dev/socket/keystore' with mode '666', user '0', group '0'
+<6>[  357.769622] init: waitpid returned pid 2676, status = 00000100
+<5>[  357.773610] init: process 'keystore', pid 2676 exited
+<5>[  357.786786] init: process 'keystore' killing any children in process group
+<3>[  357.800038] init: init.svc.keystore:restarting
+<6>[  362.499363] fg_read_vcell: VCELL=3878
+<5>[  362.818786] init: starting 'keystore'
+<3>[  362.822002] init: init.svc.keystore:running
+<6>[  362.839566] init: Created socket '/dev/socket/keystore' with mode '666', user '0', group '0'
+<6>[  362.859394] init: waitpid returned pid 2677, status = 00000100
+<5>[  362.863382] init: process 'keystore', pid 2677 exited
+<5>[  362.876601] init: process 'keystore' killing any children in process group
+<3>[  362.889889] init: init.svc.keystore:restarting
+<4>[  363.114454] !@2nfofPackageManager
+<5>[  364.810712] init: starting 'dumpstate'
+<3>[  364.816486] init: init.svc.dumpstate:running
+<6>[  364.831081] init: Created socket '/dev/socket/dumpstate' with mode '660', user '2000', group '1007'
+<6>[  367.499886] fg_read_vcell: VCELL=3878
+<5>[  367.838622] init: starting 'keystore'
+<3>[  367.843270] init: init.svc.keystore:running
+<6>[  367.857505] init: Created socket '/dev/socket/keystore' with mode '666', user '0', group '0'
+<6>[  372.499748] fg_read_vcell: VCELL=3878
+<7>[  376.876669] [TSP]### Finger[0] Down (6,606) - touch num is (1)   status=0xc0
+<7>[  376.956459] [TSP]### Finger[0] Up (6,606) - touch num is (0)  status=0x20
+<6>[  377.499489] fg_read_vcell: VCELL=3878
+<6>[  382.499758] fg_read_vcell: VCELL=3878
+<6>[  387.499715] fg_read_vcell: VCELL=3878
+<6>[  387.885201] init: waitpid returned pid 2683, status = 00000100
+<5>[  387.889982] init: process 'keystore', pid 2683 exited
+<5>[  387.895845] init: process 'keystore' killing any children in process group
+<3>[  387.899392] init: init.svc.keystore:restarting
+<5>[  387.906418] init: starting 'keystore'
+<3>[  387.910200] init: init.svc.keystore:running
+<6>[  387.922186] init: Created socket '/dev/socket/keystore' with mode '666', user '0', group '0'
+<6>[  392.499697] fg_read_vcell: VCELL=3878
+<6>[  393.829806] init: waitpid returned pid 2684, status = 00000100
+<5>[  393.834051] init: process 'keystore', pid 2684 exited
+<5>[  393.840166] init: process 'keystore' killing any children in process group
+<3>[  393.844027] init: init.svc.keystore:restarting
+<5>[  393.851052] init: starting 'keystore'
+<3>[  393.855640] init: init.svc.keystore:running
+<6>[  393.869484] init: Created socket '/dev/socket/keystore' with mode '666', user '0', group '0'
+<6>[  393.889159] init: waitpid returned pid 2685, status = 00000100
+<5>[  393.893190] init: process 'keystore', pid 2685 exited
+<5>[  393.899071] init: process 'keystore' killing any children in process group
+<3>[  393.902601] init: init.svc.keystore:restarting
+<6>[  397.499492] fg_read_vcell: VCELL=3878
+<5>[  398.913880] init: starting 'keystore'
+<3>[  398.918627] init: init.svc.keystore:running
+<6>[  398.934570] init: Created socket '/dev/socket/keystore' with mode '666', user '0', group '0'
+<6>[  398.964523] init: waitpid returned pid 2698, status = 00000100
+<5>[  398.968571] init: process 'keystore', pid 2698 exited
+<5>[  398.974451] init: process 'keystore' killing any children in process group
+<3>[  398.977981] init: init.svc.keystore:restarting
+<6>[  402.499709] fg_read_vcell: VCELL=3878
+<5>[  403.989357] init: starting 'keystore'
+<3>[  403.994102] init: init.svc.keystore:running
+<6>[  404.008474] init: Created socket '/dev/socket/keystore' with mode '666', user '0', group '0'
+<6>[  404.040855] init: waitpid returned pid 2699, status = 00000100
+<5>[  404.045090] init: process 'keystore', pid 2699 exited
+<5>[  404.051583] init: process 'keystore' killing any children in process group
+<3>[  404.055130] init: init.svc.keystore:restarting
+<6>[  407.499717] fg_read_vcell: VCELL=3878
+<6>[  407.800906] init: waitpid returned pid 2654, status = 00000009
+<5>[  407.804720] init: process 'zygote', pid 2654 exited
+<5>[  407.810436] init: process 'zygote' killing any children in process group
+<6>[  407.818684] request_suspend_state: wakeup (0->0) at 407783668610 (2011-05-22 17:09:07.856482075 UTC)
+<5>[  407.822421] init: service 'media' is being killed
+<3>[  407.828310] init: init.svc.media:stopping
+<5>[  407.834641] init: starting 'media'
+<3>[  407.837703] init: init.svc.media:running
+<3>[  407.846724] init: init.svc.zygote:restarting
+<6>[  407.860090] init: waitpid returned pid 2653, status = 0000000f
+<3>[  407.869977] init: untracked pid 2653 exited
+<5>[  407.881053] init: starting 'zygote'
+<3>[  407.884114] init: init.svc.zygote:running
+<6>[  407.898078] init: Created socket '/dev/socket/zygote' with mode '666', user '0', group '0'
+<4>[  408.252585] DmaAddr=@4f3c0000 Total=32768bytes PrdSz=2048 #Prds=4, dmaEnd 0x4f3c8000
+<4>[  408.318934] DmaAddr=@4f3c0000 Total=32768bytes PrdSz=2048 #Prds=4, dmaEnd 0x4f3c8000
+<5>[  408.905856] init: starting 'keystore'
+<3>[  408.909107] init: init.svc.keystore:running
+<6>[  408.925535] init: Created socket '/dev/socket/keystore' with mode '666', user '0', group '0'
+<6>[  408.941398] init: waitpid returned pid 2706, status = 00000100
+<5>[  408.945387] init: process 'keystore', pid 2706 exited
+<5>[  408.958649] init: process 'keystore' killing any children in process group
+<3>[  408.964034] init: init.svc.keystore:restarting
+<4>[  410.244410] !@beginofsystem_init1()
+<4>[  410.344273] !@endofsystem_init1()
+<3>[  410.348383] init: no such service 'bootanim'
+<6>[  412.499860] fg_read_vcell: VCELL=3878
+<5>[  413.358291] init: starting 'keystore'
+<3>[  413.371018] init: init.svc.keystore:running
+<6>[  413.387814] init: Created socket '/dev/socket/keystore' with mode '666', user '0', group '0'
+<6>[  413.895878] init: waitpid returned pid 2719, status = 00000100
+<5>[  413.902242] init: process 'keystore', pid 2719 exited
+<5>[  413.915712] init: process 'keystore' killing any children in process group
+<3>[  413.928911] init: init.svc.keystore:restarting
+<4>[  414.060638] !@beginofPackageManager
+<6>[  417.499443] fg_read_vcell: VCELL=3878
+<5>[  418.947686] init: starting 'keystore'
+<3>[  418.950911] init: init.svc.keystore:running
+<6>[  418.968466] init: Created socket '/dev/socket/keystore' with mode '666', user '0', group '0'
+<6>[  418.988337] init: waitpid returned pid 2723, status = 00000100
+<5>[  418.992325] init: process 'keystore', pid 2723 exited
+<5>[  419.005500] init: process 'keystore' killing any children in process group
+<3>[  419.018780] init: init.svc.keystore:restarting
+<6>[  422.499421] fg_read_vcell: VCELL=3878
+<5>[  423.037565] init: starting 'keystore'
+<3>[  423.040781] init: init.svc.keystore:running
+<6>[  423.058389] init: Created socket '/dev/socket/keystore' with mode '666', user '0', group '0'
+<6>[  423.078251] init: waitpid returned pid 2724, status = 00000100
+<5>[  423.082238] init: process 'keystore', pid 2724 exited
+<5>[  423.095353] init: process 'keystore' killing any children in process group
+<3>[  423.108596] init: init.svc.keystore:restarting
+<6>[  427.499409] fg_read_vcell: VCELL=3878
+<4>[  427.661345] !@2nfofPackageManager
+<5>[  428.128552] init: starting 'keystore'
+<3>[  428.132056] init: init.svc.keystore:running
+<6>[  428.143591] init: Created socket '/dev/socket/keystore' with mode '666', user '0', group '0'
+<6>[  429.019175] init: waitpid returned pid 2727, status = 00000100
+<5>[  429.023438] init: process 'keystore', pid 2727 exited
+<5>[  429.029569] init: process 'keystore' killing any children in process group
+<3>[  429.033429] init: init.svc.keystore:restarting
+<6>[  432.499670] fg_read_vcell: VCELL=3878
+<5>[  433.043942] init: starting 'keystore'
+<3>[  433.049055] init: init.svc.keystore:running
+<6>[  433.067408] init: Created socket '/dev/socket/keystore' with mode '666', user '0', group '0'
+<6>[  435.069846] init: waitpid returned pid 2728, status = 00000100
+<5>[  435.073902] init: process 'keystore', pid 2728 exited
+<5>[  435.079817] init: process 'keystore' killing any children in process group
+<3>[  435.083347] init: init.svc.keystore:restarting
+<6>[  437.499733] fg_read_vcell: VCELL=3878
+<5>[  438.092748] init: starting 'keystore'
+<3>[  438.097579] init: init.svc.keystore:running
+<6>[  438.111842] init: Created socket '/dev/socket/keystore' with mode '666', user '0', group '0'
+<6>[  442.499699] fg_read_vcell: VCELL=3878
+<6>[  444.974275] init: waitpid returned pid 2729, status = 00000100
+<5>[  444.980919] init: process 'keystore', pid 2729 exited
+<5>[  444.990051] init: process 'keystore' killing any children in process group
+<3>[  444.999462] init: init.svc.keystore:restarting
