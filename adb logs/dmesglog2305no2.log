@@ -1,0 +1,2084 @@
+<6>[    0.000000] Initializing cgroup subsys cpu
+<5>[    0.000000] Linux version 2.6.32.9 (nbates66@archlaptop) (gcc version 4.5.1 (Sourcery G++ Lite 2010.09-50) ) #1 Thu May 19 15:26:32 EST 2011
+<4>[    0.000000] CPU: ARMv7 Processor [412fc082] revision 2 (ARMv7), cr=10c53c7f
+<4>[    0.000000] CPU: VIPT nonaliasing data cache, VIPT nonaliasing instruction cache
+<4>[    0.000000] Machine: SMDKC110
+<4>[    0.000000] Ignoring unrecognised tag 0x54410009
+<4>[    0.000000] Memory policy: ECC disabled, Data cache writeback
+<7>[    0.000000] On node 0 totalpages: 20480
+<7>[    0.000000] free_area_init_node: node 0, pgdat c146b860, node_mem_map c1642000
+<7>[    0.000000]   Normal zone: 160 pages used for memmap
+<7>[    0.000000]   Normal zone: 0 pages reserved
+<7>[    0.000000]   Normal zone: 20320 pages, LIFO batch:3
+<7>[    0.000000] On node 1 totalpages: 65536
+<7>[    0.000000] free_area_init_node: node 1, pgdat c146bf18, node_mem_map d0002000
+<7>[    0.000000]   Normal zone: 512 pages used for memmap
+<7>[    0.000000]   Normal zone: 0 pages reserved
+<7>[    0.000000]   Normal zone: 65024 pages, LIFO batch:15
+<7>[    0.000000] On node 2 totalpages: 0
+<7>[    0.000000] free_area_init_node: node 2, pgdat c146c5d0, node_mem_map c16eac20
+<4>[    0.000000]   Normal zone: 1 pages exceeds realsize 0
+<7>[    0.000000] On node 3 totalpages: 0
+<7>[    0.000000] free_area_init_node: node 3, pgdat c146cc88, node_mem_map c16f2ce0
+<4>[    0.000000]   Normal zone: 1 pages exceeds realsize 0
+<4>[    0.000000] CPU S5PV210/S5PC110 (id 0x43110222)
+<7>[    0.000000] s5pv210_init_clocks: initializing clocks
+<6>[    0.000000] S3C24XX Clocks, Copyright 2004 Simtec Electronics
+<3>[    0.000000] copy: bad source 0
+<3>[    0.000000] mout_audss: bad source 0
+<7>[    0.000000] s5pv210_setup_clocks: registering clocks
+<7>[    0.000000] s5pv210_setup_clocks: clkdiv0 = 14131330, clkdiv1 = 00300400
+<7>[    0.000000] s5pv210_setup_clocks: xtal is 24000000
+<6>[    0.000000] S5PV210: PLL settings, A=800000000, M=667000000, E=80000000
+<6>[    0.000000] s5pv210: 33554432 bytes system memory reserved for mfc at 0x316fd000
+<6>[    0.000000] s5pv210: 33554432 bytes system memory reserved for mfc at 0x40204000
+<6>[    0.000000] s5pv210: 12582912 bytes system memory reserved for fimc0 at 0x42204000
+<6>[    0.000000] s5pv210: 1048576 bytes system memory reserved for fimc1 at 0x42e04000
+<6>[    0.000000] s5pv210: 12582912 bytes system memory reserved for fimc2 at 0x42f04000
+<6>[    0.000000] s5pv210: 2097152 bytes system memory reserved for pmem at 0x336fd000
+<6>[    0.000000] s5pv210: 4194304 bytes system memory reserved for pmem_gpu1 at 0x338fd000
+<6>[    0.000000] s5pv210: 1536000 bytes system memory reserved for pmem_adsp at 0x33cfd000
+<6>[    0.000000] s5pv210: 10485760 bytes system memory reserved for texstream at 0x33e74000
+<6>[    0.000000] s5pv210: 3145728 bytes system memory reserved for fimd at 0x43b04000
+<6>[    0.000000] s5pv210: 262144 bytes system memory reserved for wifi at 0x34874000
+<4>[    0.000000] Built 2 zonelists in Zone order, mobility grouping on.  Total pages: 85344
+<5>[    0.000000] Kernel command line: console=ttySAC2,115200 loglevel=4
+<6>[    0.000000] PID hash table entries: 2048 (order: 1, 8192 bytes)
+<6>[    0.000000] Dentry cache hash table entries: 65536 (order: 6, 262144 bytes)
+<6>[    0.000000] Inode-cache hash table entries: 32768 (order: 5, 131072 bytes)
+<6>[    0.000000] Memory: 80MB 256MB = 336MB total
+<5>[    0.000000] Memory: 205432KB available (9152K code, 1897K data, 11348K init, 0K highmem)
+<6>[    0.000000] SLUB: Genslabs=9, HWalign=64, Order=0-3, MinObjects=0, CPUs=1, Nodes=4
+<6>[    0.000000] Hierarchical RCU implementation.
+<6>[    0.000000] NR_IRQS:339
+<6>[    0.000000] VIC @fd000000: id 0x00041192, vendor 0x41
+<6>[    0.000000] VIC @fd010000: id 0x00041192, vendor 0x41
+<6>[    0.000000] VIC @fd020000: id 0x00041192, vendor 0x41
+<6>[    0.000000] VIC @fd030000: id 0x00041192, vendor 0x41
+<6>[    0.000000] mult[140737]
+<6>[    0.000000] max_delta_ns[2147483647]
+<6>[    0.000000] min_delta_ns[30517]
+<6>[    0.000000] rate[32768]
+<6>[    0.000000] HZ[256]
+<4>[    0.000000] Console: colour dummy device 80x30
+<6>[    0.000000] console [ttySAC2] enabled
+<6>[    0.014751] Calibrating delay loop... 796.20 BogoMIPS (lpj=1556480)
+<4>[    0.099097] Mount-cache hash table entries: 512
+<6>[    0.102593] Initializing cgroup subsys debug
+<6>[    0.105975] Initializing cgroup subsys cpuacct
+<6>[    0.109358] Initializing cgroup subsys freezer
+<6>[    0.112827] CPU: Testing write buffer coherency: ok
+<0>[    0.121649] KERNEL:kernel_sec_get_debug_level_from_boot=0x574f4c44
+<0>[    0.131708] KERNEL:magic_number=0x0 DEBUG LEVEL low!!
+<0>[    0.141422] (kernel_sec_set_upload_cause) : upload_cause set 0
+<6>[    0.153540] regulator: core version 0.5
+<6>[    0.157164] NET: Registered protocol family 16
+<4>[    0.175778] S5PC110 Hardware version : EVT1 
+<4>[    0.177730] HWREV is 0xf
+<4>[    0.182836] S3C Power Management, Copyright 2004 Simtec Electronics
+<6>[    0.197130] S5PV210 Power Domain API Enable
+<6>[    0.201276] S5PV210: Initializing architecture
+<6>[    0.207442] S3C PL330-DMA Controller Driver, (c) 2008-2009 Samsung Electronics
+<6>[    0.211518] Total 24 DMA channels will be initialized.
+<4>[    0.216681] DMA: got clock for controller 0 and disabled 
+<4>[    0.221399] DMA: got clock for controller 1 and disabled 
+<4>[    0.226082] DMA: got clock for controller 2 and disabled 
+<6>[    0.234694] s3c24xx-pwm s3c24xx-pwm.0: tin at 66700000, tdiv at 66700000, tin=divclk, base 0
+<6>[    0.242065] s3c24xx-pwm s3c24xx-pwm.1: tin at 66700000, tdiv at 66700000, tin=divclk, base 8
+<6>[    0.249351] s3c24xx-pwm s3c24xx-pwm.2: tin at 4168750, tdiv at 4168750, tin=divclk, base 12
+<6>[    0.256636] s3c24xx-pwm s3c24xx-pwm.3: tin at 4168750, tdiv at 4168750, tin=divclk, base 16
+<4>[    0.278579] bio: create slab <bio-0> at 0
+<6>[    0.281242] vgaarb: loaded
+<5>[    0.284833] SCSI subsystem initialized
+<6>[    0.291269] s3c-i2c s3c2410-i2c.0: i2c-0: S3C I2C adapter
+<6>[    0.296881] s3c-i2c s3c2410-i2c.1: i2c-1: S3C I2C adapter
+<6>[    0.302605] s3c-i2c s3c2410-i2c.2: i2c-2: S3C I2C adapter
+<6>[    0.306880] Bluetooth: Core ver 2.15
+<6>[    0.310331] NET: Registered protocol family 31
+<6>[    0.315622] Bluetooth: HCI device and connection manager initialized
+<6>[    0.319438] Bluetooth: HCI socket layer initialized
+<6>[    0.324156] Switching to clocksource clock_source_systimer
+<6>[    0.337002] NET: Registered protocol family 2
+<6>[    0.343212] IP route cache hash table entries: 4096 (order: 2, 16384 bytes)
+<6>[    0.350575] TCP established hash table entries: 16384 (order: 5, 131072 bytes)
+<6>[    0.356325] TCP bind hash table entries: 16384 (order: 6, 327680 bytes)
+<6>[    0.362171] TCP: Hash tables configured (established 16384 bind 16384)
+<6>[    0.364252] TCP reno registered
+<6>[    0.367626] NET: Registered protocol family 1
+<7>[    0.421063] [BT] rfkill_register(bt_rfk) 
+<7>[    0.423715] [BT] Device Powering ON 
+<7>[    0.425970] [BT] GPIO_BT_nRST = 0
+<4>[    0.428225] [BT] GPIO_WLAN_BT_EN = 1
+<7>[    0.431695] [BT] bt_host_wake_irq_handler start
+<4>[    0.537108] [BT] GPIO_BT_nRST = 1
+<7>[    0.539719] [BT] Device Powering OFF 
+<7>[    0.543188] [BT] bt_host_wake_irq_handler start
+<4>[    0.545183] [BT] GPIO_BT_nRST = 0
+<4>[    0.547438] [BT] GPIO_WLAN_BT_EN = 0
+<7>[    0.551081] [BT] bt_host_wake_irq_handler start
+<4>[    0.554940] [BT] In the unblocked state of the sleep
+<7>[    0.557195] [BT] GPIO_BT_WAKE = 0
+<4>[    0.559971] [BT] wake_unlock(bt_wake_lock)
+<4>[    0.563613] [BT] In the unblocked state of the sleep
+<7>[    0.565869] [BT] GPIO_BT_WAKE = 0
+<4>[    0.568644] [BT] wake_unlock(bt_wake_lock)
+<4>[    0.572677] S5PC11X_FREQ_TAB=0 , S5PC11X_MAXFREQLEVEL=4
+<6>[    0.577482] S5PV210 ADC driver, (c) 2010 Samsung Electronics
+<4>[    0.582271] [ JACK_DRIVER (sec_jack_init,800) ] 
+<6>[    0.585566] SEC JACK: Registering jack driver
+<6>[    0.590370] input: sec_jack as /devices/virtual/input/input0
+<4>[    0.597326] [ JACK_DRIVER (sec_jack_probe,676) ] sended isr send=0Xbe, ret =0
+<4>[    0.602790] [ JACK_DRIVER (sec_jack_probe,695) ] det isr det=0X26, ret =0
+<4>[    0.608688] NetWinder Floating Point Emulator V0.97 (extended precision)
+<6>[    0.612218] ashmem: initialized
+<6>[    0.633521] ROMFS MTD (C) 2007 Red Hat, Inc.
+<6>[    0.636511] msgmni has been set to 401
+<6>[    0.641611] alg: No test for cipher_null (cipher_null-generic)
+<6>[    0.646468] alg: No test for ecb(cipher_null) (ecb-cipher_null)
+<6>[    0.651238] alg: No test for digest_null (digest_null-generic)
+<6>[    0.656355] alg: No test for compress_null (compress_null-generic)
+<6>[    0.661117] alg: No test for stdrng (krng)
+<6>[    0.716026] alg: No test for ghash (ghash-generic)
+<6>[    0.718889] io scheduler noop registered
+<6>[    0.722445] io scheduler anticipatory registered
+<6>[    0.725654] io scheduler deadline registered
+<6>[    0.729808] io scheduler cfq registered (default)
+<4>[    0.733661] MDNIE  INIT ..........
+<6>[    0.738083] S3C MDNIE Driver, (c) 2010 Samsung Electronics
+<4>[    0.742135] MDNIE  INIT SUCCESS Addr : 0xe083c000
+<4>[    0.744214] IELCD  INIT ..........
+<6>[    0.748638] S3C IELCD Driver, (c) 2010 Samsung Electronics
+<4>[    0.752534] IELCD  INIT SUCCESS Addr : 0xe0840000
+<6>[    0.759698] s3cfb s3cfb: [fb0] dma: 0x43b04000, cpu: 0xe0c00000, size: 0x002ee000
+<6>[    0.769255] FIMD src sclk = 166750000
+<6>[    0.775325] s3cfb s3cfb: parent clock: 166750000, vclk: 25628040, vclk div: 7
+<6>[    0.778881] s3cfb s3cfb: registered successfully
+<6>[    0.976273] s5pv210-uart.0: s3c2410_serial0 at MMIO 0xe2900000 (irq = 16) is a S3C6400/10
+<6>[    0.983912] s5pv210-uart.1: s3c2410_serial1 at MMIO 0xe2900400 (irq = 20) is a S3C6400/10
+<6>[    0.991484] s5pv210-uart.2: s3c2410_serial2 at MMIO 0xe2900800 (irq = 24) is a S3C6400/10
+<6>[    0.998899] s5pv210-uart.3: s3c2410_serial3 at MMIO 0xe2900c00 (irq = 28) is a S3C6400/10
+<6>[    1.011788] brd: module loaded
+<6>[    1.019099] loop: module loaded
+<6>[    1.020574] pmem: 1 init
+<6>[    1.024219] pmem_gpu1: 1 init
+<6>[    1.027697] pmem_adsp: 1 init
+<4>[    1.033558] [BIF:IN ] ++FSR_BML_Init(nFlag: 0x0)
+<4>[    1.035899] [PAM:   ] ++FSR_PAM_Init
+<4>[    1.041955] [PAM:   ]   OneNAND physical base address       : 0xb0000000
+<4>[    1.047417] [PAM:   ]   OneNAND virtual  base address       : 0xe0880000
+<4>[    1.052274] [PAM:   ]   OneNAND nMID=0xec : nDID=0x50 Page size=4
+<4>[    1.054615] [PAM:   ] --FSR_PAM_Init
+<4>[    1.058779] [BIF:   ]   FSR VERSION: FSR_1.2.1p1_b139_RTM
+<4>[    1.066324] [OND:INF]   FSR_OND_4K_Open(nDev:0, pParam:0xc4c1de50, nFlag:0x00000000) / 1033 line
+<4>[    1.070574]             pstOND4kCxt->nBaseAddr: 0xe0880000
+<4>[    1.075778]             nDev=0, nMID=0x00ec, nDID=0x0050, nVID=0x013e
+<4>[    1.080635] [OND:INF]   pstOND4kCxt->nSysConf1:0xf0c6 / 1116 line
+<4>[    1.086099] [OND:INF]   pstOND4kCxt->nBlksForSLCArea[0]:2048 / 1133 line
+<4>[    1.090956] [OND:INF]   pstOND4kCxt->nIntID   :0x0000 / 1236 line
+<4>[    1.094339] [OND:INF]   1X_CACHEPGM CMD : 0x007f
+<4>[    1.097721] [OND:INF]   1X_PLOAD    CMD : 0x0003
+<4>[    1.103948] [BBM:INF]   Scan from 2004 to 2047 to find BML meta blocks (die: 0)
+<4>[    1.105076] [BBM:INF]   ffff ffff ffff ffff ffff ffff ffff ffff ffff ffff 
+<4>[    1.111139] [BBM:INF]   ffff ffff ffff ffff ffff ffff ffff ffff ffff ffff 
+<4>[    1.117157] [BBM:INF]   ffff ffff ffff ffff ffff ffff ffff ffff ffff ffff 
+<4>[    1.123220] [BBM:INF]   ffff ffff ffff ffff ffff ffff ffff ffff ffff ffff 
+<4>[    1.129265] [BBM:INF]   a5a5 a5a5 ffff 
+<4>[    1.171773] FSR: Registered TinyFSR Driver.
+<6>[    1.178729] tl2796_probe::1124->s6e63m0 probed successfuly
+<6>[    1.182068] PPP generic driver version 2.4.2
+<6>[    1.186769] PPP Deflate Compression module registered
+<6>[    1.190411] PPP BSD Compression module registered
+<6>[    1.194878] PPP MPPE Compression module registered
+<6>[    1.198260] NET: Registered protocol family 24
+<6>[    1.201123] PPPoL2TP kernel driver, V1.0
+<6>[    1.209709] SLIP: version 0.8.4-NET3.019-NEWTTY (dynamic channels, max=256) (6 bit encapsulation enabled).
+<6>[    1.215954] CSLIP: code copyright 1989 Regents of the University of California.
+<4>[    1.220134] [otg_clock_enable] clk_enable(otg_clock) OK.
+<4>[    1.224210] [otg_clock_enable] clk_disable(otg_clock) OK.
+<6>[    1.234948] s3c-udc : S3C HS USB OTG Device Driver, (c) 2008-2009 Samsung Electronics
+<6>[    1.234960] s3c-udc : version 15 March 2009 (DMA Mode) 
+<4>[    1.239979] [ADB_UMS_ACM_RNDIS_MTP] string_dev = 10003c49574a 
+<4>[    1.246657] android_adb_ums_acm_rndis_mtp gadget: using random self ethernet address
+<4>[    1.253335] android_adb_ums_acm_rndis_mtp gadget: using random host ethernet address
+<6>[    1.257377] usb0: MAC 16:ef:dd:67:0c:83
+<6>[    1.260586] usb0: HOST MAC 32:38:9c:83:6c:d8
+<6>[    1.262407] acm_function_add
+<6>[    1.265053] DUN is registerd
+<6>[    1.269649] fsg_function_bind cdrom patch after fsg->nluns 2
+<6>[    1.274844] android_adb_ums_acm_rndis_mtp gadget: Number of LUNs=2
+<6>[    1.278834] shaman: mass_storage_function_add success
+<6>[    1.280655] adb_function_add
+<4>[    1.284402] [mtpg_function_bind] 	line = [891] 
+<4>[    1.288565] [mtpg_function_bind] 	dual speed line = [958] 
+<4>[    1.294463] ***** [mtpg_function_bind:975] calling mtp_function_enable with 0 
+<4>[    1.298799] [mtp_function_enable] mtp_function => (disabled)
+<4>[    1.303396] ****** mtp_function_enable and line 1267 null_desc 
+<4>[    1.305998]   interface 0 = acm/c4fb1000
+<4>[    1.308600]   interface 1 = acm/c4fb1000
+<4>[    1.312329]   interface 2 = usb_mass_storage/df33a800
+<4>[    1.314931]   interface 3 = adb/df336d00
+<4>[    1.318141]   interface 4 = Gadget_MTP/df336f00
+<4>[    1.320916]   interface 5 = rndis/c4fb1480
+<4>[    1.323691]   interface 6 = rndis/c4fb1480
+<6>[    1.327248] mass_storage_function_config_changed
+<4>[    1.330977]   interface 0 = usb_mass_storage/df33a800
+<6>[    1.338436] android_adb_ums_acm_rndis_mtp gadget: Android Composite USB, version: May 19 2011
+<6>[    1.345201] android_adb_ums_acm_rndis_mtp gadget: android_adb_ums_acm_rndis_mtp ready
+<6>[    1.350491] Registered gadget driver 'android_adb_ums_acm_rndis_mtp'
+<4>[    1.355045] [udc_enable]AP_USB_Power off by Bootup : 1
+<4>[    1.359911] mice: could not register psaux device, error: -16
+<6>[    1.364074] mice: PS/2 mouse device common for all mice
+<6>[    1.370806] input: s3c-keypad as /devices/virtual/input/input1
+<4>[    1.373510] s3c-keypad Initialized
+<6>[    1.375505] S3C Keypad Driver
+<6>[    1.379061] i2c /dev entries driver
+<6>[    1.386251] i2c-gpio i2c-gpio.4: using pins 247 (SDA) and 246 (SCL)
+<6>[    1.392279] i2c-gpio i2c-gpio.5: using pins 203 (SDA) and 204 (SCL)
+<6>[    1.396598] regulator: DCDC1: 750 <--> 1500 mV 
+<6>[    1.400449] regulator: DCDC2: 750 <--> 1500 mV 
+<6>[    1.403641] regulator: LDO4: 3300 mV 
+<6>[    1.406590] regulator: LDO7: 1800 mV 
+<6>[    1.410493] regulator: LDO17: 3000 <--> 3200 mV 
+<6>[    1.416442] i2c-gpio i2c-gpio.6: using pins 206 (SDA) and 209 (SCL)
+<4>[    1.419495] [FSA9480] fsa9480_codec_probe
+<4>[    1.422210] fsa9480_interrupt
+<4>[    1.466625] [FSA9480] FSA9480_ReadIntRegister
+<6>[    1.472124] i2c-gpio i2c-gpio.7: using pins 201 (SDA) and 202 (SCL)
+<6>[    1.477857] i2c-gpio i2c-gpio.8: using pins 42 (SDA) and 43 (SCL)
+<6>[    1.484067] i2c-gpio i2c-gpio.11: using pins 114 (SDA) and 98 (SCL)
+<6>[    1.490086] i2c-gpio i2c-gpio.12: using pins 173 (SDA) and 172 (SCL)
+<6>[    1.494024] Linux video capture interface: v2.00
+<6>[    1.497392] IPC probe success
+<6>[    1.503616] mfc_init: <6>S5PC110 MFC Driver, (c) 2009 Samsung Electronics
+<6>[    1.503627] 
+<6>[    1.516818] S3C2410 Watchdog Timer, (c) 2004 Simtec Electronics
+<6>[    1.524919] s3c2410-wdt s3c2410-wdt: watchdog inactive, reset disabled, irq enabled
+<4>[    1.530486] [FSA9480] FSA9480_ProcessDevice (dev1 : 0x0, dev2 : 0x0)
+<6>[    1.539410] device-mapper: ioctl: 4.15.0-ioctl (2009-04-01) initialised: dm-devel@redhat.com
+<6>[    1.543911] device-mapper: multipath: version 1.1.0 loaded
+<6>[    1.549376] device-mapper: multipath round-robin: version 1.0.0 loaded
+<6>[    1.554926] device-mapper: multipath queue-length: version 0.1.0 loaded
+<6>[    1.560477] device-mapper: multipath service-time: version 0.2.0 loaded
+<6>[    1.564233] Bluetooth: HCI UART driver ver 2.2
+<6>[    1.567962] Bluetooth: HCI H4 protocol initialized
+<6>[    1.571180] cpuidle: using governor ladder
+<6>[    1.574276] cpuidle: using governor menu
+<6>[    1.579445] sdhci: Secure Digital Host Controller Interface driver
+<6>[    1.582741] sdhci: Copyright(c) Pierre Ossman
+<6>[    1.588466] s3c-sdhci s3c-sdhci.0: clock source 2: sclk_mmc (51307692 Hz)
+<6>[    1.595675] mmc0: SDHCI controller on samsung-hsmmc [s3c-sdhci.0] using ADMA
+<6>[    1.601406] s3c-sdhci s3c-sdhci.1: clock source 2: sclk_mmc (47642857 Hz)
+<6>[    1.608528] mmc1: SDHCI controller on samsung-hsmmc [s3c-sdhci.1] using ADMA
+<6>[    1.614260] s3c-sdhci s3c-sdhci.2: clock source 2: sclk_mmc (47642857 Hz)
+<4>[    1.618147]  Universal :SD Detect configuration 
+<7>[    1.620921]  Universal : Card status  0
+<6>[    1.628319] mmc2: SDHCI controller on samsung-hsmmc [s3c-sdhci.2] using ADMA
+<6>[    1.633098] logger: created 512K log 'log_main'
+<6>[    1.636914] logger: created 256K log 'log_events'
+<6>[    1.641667] logger: created 256K log 'log_radio'
+<6>[    1.647417] logger: created 64K log 'log_system'
+<7>[    1.651754] *** DEBUG : First we search for SDIO...(0)***
+<4>[    1.655752] GP2A opt i2c attach success!!!
+<4>[    1.658501] opt_i2c_client : (0xdf367300)
+<7>[    1.662404] *** DEBUG : ...then normal SD...(0) ***
+<4>[    1.666168] [gp2a_opt_probe] CONFIG_GP2A_MODE_A INIT 
+<7>[    1.671641] *** DEBUG : ...and finally MMC. (0)***
+<4>[    1.759448] mmc0: switch to bus width 4 
+<6>[    1.763785] mmc0: new high speed MMC card at address 0001
+<6>[    1.776908] mmcblk0: mmc0:0001 M2G1DD 1.91 GiB 
+<6>[    1.778026]  mmcblk0: p1 p2 p3
+<7>[    1.793075] Another host want the wakelock : 2
+<7>[    1.836292] *** DEBUG : First we search for SDIO...(1)***
+<7>[    1.841288] *** DEBUG : ...then normal SD...(1) ***
+<7>[    1.852303] *** DEBUG : ...and finally MMC. (1)***
+<7>[    1.858747] Another host want the wakelock : 1
+<7>[    1.861522]  Universal : Card status  0
+<4>[    1.890031] fsa9480_interrupt
+<4>[    1.893067] [FSA9480] FSA9480_ReadIntRegister
+<7>[    1.902703] *** DEBUG : First we search for SDIO...(2)***
+<7>[    1.909988] *** DEBUG : ...then normal SD...(2) ***
+<4>[    1.915643] gp2a_opt_probe is OK!!
+<4>[    1.916961] smb_init 
+<4>[    1.925019] smb_acc_start ....
+<4>[    1.926146] yamaha_init
+<4>[    1.929086] level device init
+<6>[    1.934777] Advanced Linux Sound Architecture Driver Version 1.0.21.
+<4>[    1.939009] No device for DAI WM8994 PAIFRX
+<4>[    1.941871] No device for DAI WM8994 PCM
+<6>[    1.948368] ldo38_control : turn ON LDO3 and LDO8 (cur_stat=0, req=1)
+<4>[    1.952356] [otg_clock_enable] clk_enable(otg_clock) OK.
+<4>[    1.956936] [udc_enable]AP_USB_Power off by Bootup : 1
+<4>[    1.959920] No device for DAI s3c-pcmdev
+<6>[    1.962452] WM8994 Audio Codec 0.1
+<4>[    1.970310] [FSA9480] FSA9480_ProcessDevice (dev1 : 0x4, dev2 : 0x0)
+<4>[    1.972478] USB attach or detach: 1
+<4>[    1.975253] FSA9480_DEV_TY1_USB --- ATTACH
+<4>[    1.999252] s3c_preallocate_dma_buffer: VA-ff001000, PA-4F3E0000, 131072bytes
+<4>[    2.005211] s3c_preallocate_dma_buffer: VA-ff021000, PA-4EC00000, 131072bytes
+<6>[    2.009634] asoc: WM8994 PAIFRX <-> s3c64xx-i2s mapping ok
+<4>[    2.013710] +++++++smdkc110_audio_init
+<6>[    2.017104] WM8994 Audio Codec 0.1
+<4>[    2.024725] s3c_preallocate_dma_buffer: VA-ff041000, PA-4EC20000, 131072bytes
+<4>[    2.030692] s3c_preallocate_dma_buffer: VA-ff061000, PA-4EC40000, 131072bytes
+<6>[    2.034769] asoc: WM8994 PCM <-> s3c-pcmdev mapping ok
+<4>[    2.041126] ASoC: Failed to create codec register debugfs file
+<4>[    2.044856] Failed to create pop time debugfs file
+<4>[    2.048672] Failed to create DAPM debugfs directory
+<4>[    2.051360] ----------smdkc110_audio_init
+<6>[    2.053268] ALSA device list:
+<6>[    2.055697]   #0: smdkc110 (WM8994)
+<6>[    2.058472]   #1: smdkc110-pcm (WM8994)
+<4>[    2.062176] Netfilter messages via NETLINK v0.30.
+<4>[    2.066859] nf_conntrack version 0.5.0 (3214 buckets, 12856 max)
+<4>[    2.073677] CONFIG_NF_CT_ACCT is deprecated and will be removed soon. Please use
+<4>[    2.080528] nf_conntrack.acct=1 kernel parameter, acct=1 nf_conntrack module option or
+<4>[    2.085645] sysctl net.netfilter.nf_conntrack_acct=1 to enable it.
+<6>[    2.089219] xt_time: kernel timezone is -0000
+<6>[    2.093859] IPv4 over IPv4 tunneling driver
+<6>[    2.098360] GRE over IPv4 tunneling driver
+<6>[    2.105464] ip_tables: (C) 2000-2006 Netfilter Core Team
+<6>[    2.107693] TCP cubic registered
+<6>[    2.112272] NET: Registered protocol family 10
+<6>[    2.124216] IPv6 over IPv4 tunneling driver
+<6>[    2.131561] NET: Registered protocol family 17
+<6>[    2.134944] NET: Registered protocol family 15
+<6>[    2.137546] Bluetooth: L2CAP ver 2.14
+<6>[    2.141535] Bluetooth: L2CAP socket layer initialized
+<6>[    2.145004] Bluetooth: SCO (Voice Link) ver 0.6
+<6>[    2.148821] Bluetooth: SCO socket layer initialized
+<6>[    2.152637] Bluetooth: RFCOMM TTY layer initialized
+<6>[    2.156713] Bluetooth: RFCOMM socket layer initialized
+<6>[    2.159402] Bluetooth: RFCOMM ver 1.11
+<6>[    2.163895] mmc2: new high speed SDHC card at address 0007
+<6>[    2.167607] mmcblk1: mmc2:0007 SD04G 3.67 GiB 
+<6>[    2.168735]  mmcblk1:
+<6>[    2.172195] NET: Registered protocol family 33
+<6>[    2.175577] NET: Registered protocol family 35
+<4>[    2.180096] S3C24XX RTC, (c) 2004,2006 Simtec 					Electronics
+<4>[    2.182951]  p1 p2 <
+<6>[    2.186992] using rtc device, s3c, for alarms
+<6>[    2.192369] s3c2410-rtc s3c2410-rtc: rtc core: registered s3c as rtc0
+<4>[    2.192707]  p5 p6
+<6>[    2.197182] VFP support v0.3: implementor 41 architecture 3 part 30 variant c rev 2
+<4>[    2.202264]  p7 >
+<7>[    2.207539] qt602240 GPIO Status
+<7>[    2.209359] TOUCH_EN  : High
+<7>[    2.211094] TOUCH_INT : Low
+<7>[    2.214555] mmc2: wake_lock_timeout 1sec 0
+<4>[    2.319745] qt602240_i2c is attached..
+<7>[    2.323906] |  Quantum Touch Driver Probe!            |
+<6>[    2.329751] input: qt602240_ts_input as /devices/virtual/input/input2
+<4>[    2.332119] QT_reprogram check
+<4>[    2.334721] [QT] init_touch_driver start
+<4>[    2.336542] [QT] init_I2C start
+<4>[    2.363923] 
+<4>[    2.363928] [TSP] Touch device found
+<4>[    2.365658] Version: 	   0x16
+<4>[    2.365663] Family:		   0x80
+<4>[    2.367307] Variant: 	   0x1
+<4>[    2.368955] Build number:   0xab
+<4>[    2.370950] Matrix X size : 18
+<4>[    2.372771] Matrix Y size : 12
+<4>[    2.374593] Calculated CRC:	0x5c 0xe4 0x8e 0x00 
+<4>[    2.382041] 
+<4>[    2.382301] Stored CRC:	0x5c 0xe4 0x8e 0x00 
+<4>[    2.385337] 
+<4>[    2.385597] Info block CRC value OK.
+<4>[    2.388115] 
+<4>[    2.388119] 
+<4>[    2.391669] [TSP]qt_Power_Config_Init real board 
+<4>[    2.402397] 
+<4>[    2.402402] [TSP][reset_chip] 
+<4>[    2.474046] Chip reset OK!
+<4>[    2.474052] read_mem : i2c read failed
+<4>[    2.481531] 
+<4>[    2.481536]  [TSP] read_mem is failed -- check your TSP chip!!
+<4>[    2.481545] 
+<4>[    2.485954] [QT] ret : 0, qt602240->client name : qt602240_ts
+<4>[    2.488218] [QT] qt602240_init/6318
+<4>[    2.492815] [QT] qt602240_init/6349, platform_driver_register!!
+<7>[    2.496683] [TSP] msg id =  1 90 c1 f4 4 0 0 0 0
+<6>[    2.505149] s3c2410-rtc s3c2410-rtc: setting system clock to 2011-05-22 18:18:49 UTC (1306088329)
+<6>[    2.510943] FIMC0 registered successfully
+<6>[    2.516408] FIMC1 registered successfully
+<6>[    2.521872] FIMC2 registered successfully
+<6>[    2.526857] S5PC1XX TVOUT Driver, (c) 2009 Samsung Electronics
+<6>[    2.536365] s5p-tvout s5p-tvout: hpd status is cable removed
+<7>[    2.540248] [TSP] msg id =  1 0 c1 f4 4 0 0 0 0
+<6>[    2.569234] fg_read_vcell: VCELL=3878
+<4>[    2.570708] [SOC] C:0, P:75
+<4>[    2.590675] pmic interrupt registered 
+<6>[    2.596824] Freeing init memory: 11348K
+<4>[    2.600986] Warning: unable to open an initial console.
+<3>[    2.607622] init: /init.rc: 232: chmod requires 2 arguments
+<3>[    2.617856] init: /init.rc: 237: setprop requires 2 arguments
+<3>[    2.627830] init: /init.rc: 330: invalid command 'dmesg'
+<3>[    2.637370] init: /init.rc: 341: invalid option 'enabled'
+<3>[    2.646911] init: /init.rc: 465: invalid option 'dmesg'
+<4>[    2.654890] !@Init process: device_init #3
+<4>[    3.095389] maxim_vac_disconnect: connect status skip
+<3>[    3.132189] init: ro.secure:1
+<3>[    3.138173] init: ro.allow.mock.location:0
+<3>[    3.144417] init: ro.debuggable:1
+<3>[    3.151009] init: persist.service.adb.enable:1
+<3>[    3.163603] init: cannot open '/initlogo.rle'
+<3>[    3.170281] init: ro.factorytest:0
+<3>[    3.175572] init: ro.serialno:
+<3>[    3.181122] init: ro.bootmode:unknown
+<3>[    3.187280] init: ro.baseband:unknown
+<3>[    3.193351] init: ro.carrier:unknown
+<3>[    3.199596] init: ro.bootloader:unknown
+<3>[    3.206014] init: ro.hardware:SMDKC110
+<3>[    3.211825] init: ro.revision:48
+<3>[    3.217376] init: dpm.allowcamera:0
+<6>[    3.223621] init: command 'loglevel' r=0
+<6>[    3.226309] init: command 'export' r=0
+<6>[    3.228998] init: command 'export' r=0
+<6>[    3.231687] init: command 'export' r=0
+<6>[    3.234376] init: command 'export' r=0
+<6>[    3.237064] init: command 'export' r=0
+<6>[    3.239753] init: command 'export' r=0
+<6>[    3.242441] init: command 'export' r=0
+<6>[    3.245130] init: command 'export' r=0
+<6>[    3.247819] init: command 'export' r=0
+<6>[    3.250507] init: command 'export' r=0
+<6>[    3.253196] init: command 'export' r=0
+<6>[    3.289331] init: command 'insmod' r=0
+<4>[    3.298151] PA FB = 0x43B04000, bits per pixel = 32
+<4>[    3.303093] screen width=480 height=800 va=0xd3b04000 pa=0x43b04000
+<4>[    3.309244] Back frameBuffer[0].VAddr=d3c7b000 PAddr=43c7b000 size=1536000
+<6>[    3.313182] init: command 'insmod' r=0
+<6>[    3.324284] init: command 'insmod' r=0
+<4>[    3.341854] [VIBETONZ:WJYOO] MISC_REGISTER nRet = 0
+<6>[    3.346981] init: command 'insmod' r=0
+<6>[    3.349754] init: command 'symlink' r=0
+<6>[    3.352530] init: command 'symlink' r=0
+<6>[    3.355132] init: command 'mkdir' r=0
+<6>[    3.357734] init: command 'mkdir' r=0
+<6>[    3.360336] init: command 'mkdir' r=0
+<6>[    3.363051] init: command 'mount' r=0
+<6>[    3.365652] init: command 'mkdir' r=0
+<4>[    3.379393] fsr: module license 'Samsung Proprietary' taints kernel.
+<4>[    3.383641] Disabling lock debugging due to kernel taint
+<4>[    3.419194] [BIF:IN ] ++FSR_BML_Init(nFlag: 0x0)
+<4>[    3.421533] [PAM:   ] ++FSR_PAM_Init
+<4>[    3.427563] [PAM:   ]   OneNAND physical base address       : 0xb0000000
+<4>[    3.433025] [PAM:   ]   OneNAND virtual  base address       : 0xe0980000
+<4>[    3.440356] [PAM:   ]   OneNAND Controller DMA physical base address       : 0xb0600000
+<4>[    3.447119] [PAM:   ]   OneNAND Controller DMA virtual  base address       : 0xe09c0000
+<4>[    3.451976] [PAM:   ]   OneNAND nMID=0xec : nDID=0x50 Page size=4
+<4>[    3.454318] [PAM:   ] --FSR_PAM_Init
+<4>[    3.458481] [BIF:   ]   FSR VERSION: FSR_1.2.1p1_b139_RTM
+<4>[    3.466027] [OND:INF]   FSR_OND_4K_Open(nDev:0, pParam:0xc4c1de00, nFlag:0x00000000) / 1033 line
+<4>[    3.470277]             pstOND4kCxt->nBaseAddr: 0xe0980000
+<4>[    3.475480]             nDev=0, nMID=0x00ec, nDID=0x0050, nVID=0x013e
+<4>[    3.480337] [OND:INF]   pstOND4kCxt->nSysConf1:0xf0c6 / 1116 line
+<4>[    3.485801] [OND:INF]   pstOND4kCxt->nBlksForSLCArea[0]:2048 / 1133 line
+<4>[    3.490658] [OND:INF]   pstOND4kCxt->nIntID   :0x0000 / 1236 line
+<4>[    3.494041] [OND:INF]   1X_CACHEPGM CMD : 0x007f
+<4>[    3.497424] [OND:INF]   1X_PLOAD    CMD : 0x0003
+<4>[    3.503564] [BBM:INF]   Scan from 2004 to 2047 to find BML meta blocks (die: 0)
+<4>[    3.504622] [BBM:INF]   ffff ffff ffff ffff ffff ffff ffff ffff ffff ffff 
+<4>[    3.510260] [BBM:INF]   ffff ffff ffff ffff ffff ffff ffff ffff ffff ffff 
+<4>[    3.515897] [BBM:INF]   ffff ffff ffff ffff ffff ffff ffff ffff ffff ffff 
+<4>[    3.521544] [BBM:INF]   ffff ffff ffff ffff ffff ffff ffff ffff ffff ffff 
+<4>[    3.527181] [BBM:INF]   a5a5 a5a5 ffff 
+<4>[    3.561770] [BBM:   ]  << DevNO:0, DieNO: 0 MAPPING INFORMATION >>
+<4>[    3.564805] [BBM:   ]   Bad Mark Information
+<4>[    3.569315] [BBM:   ]      - Bad Mark (0x2222) by erase error
+<4>[    3.573825] [BBM:   ]      - Bad Mark (0x4444) by write error
+<4>[    3.578509] [BBM:   ]   << Total : 0 BAD-MAPPING INFORMATION >>
+<4>[    3.582672] [BIF:   ]   nPartition Information (nVol : 0)
+<4>[    3.585447]             nVer : 0xffffffff
+<4>[    3.592039]             00 / nID:0x09 / nAttr:0x00001002 / 1stVun:    0 / Units:    1
+<4>[    3.598631]             01 / nID:0x00 / nAttr:0x00001002 / 1stVun:    1 / Units:    7
+<4>[    3.605222]             02 / nID:0x01 / nAttr:0x00001001 / 1stVun:    8 / Units:  796
+<4>[    3.611814]             03 / nID:0x20 / nAttr:0x00001101 / 1stVun:  804 / Units:  716
+<4>[    3.618405]             04 / nID:0x21 / nAttr:0x00001101 / 1stVun: 1520 / Units:  372
+<4>[    3.624997]             05 / nID:0x23 / nAttr:0x00001101 / 1stVun: 1892 / Units:   56
+<4>[    3.631589]             06 / nID:0x24 / nAttr:0x00001001 / 1stVun: 1948 / Units:   56
+<4>[    3.636359] [BBM:INF]   The registered blocks in ERL are handled
+<4>[    3.639481] [BBM:INF]   (number of blocks: 0)
+<4>[    3.648155] BML: Registered BML Driver.
+<6>[    3.652085] init: command 'insmod' r=0
+<4>[    3.689190] [BIF:IN ] ++FSR_BML_Init(nFlag: 0x0)
+<4>[    3.696386] [BIF:   ]   FSR_BML_Init(nFlag:0x0, nRe:FSR_BML_ALREADY_INITIALIZED) / 1027 line
+<4>[    3.704495] FSR: Registered STL Driver.
+<6>[    3.708227] init: command 'insmod' r=0
+<6>[    3.793866] init: command 'insmod' r=0
+<6>[    3.855419] init: command 'insmod' r=0
+<6>[    3.858088] init: command 'mkdir' r=0
+<6>[    3.872410] init: command 'insmod' r=0
+<4>[    3.877221] [SIF:ERR]   The partition (PartID 21) is not opened
+<4>[    3.880777] j4fs_fill_super 1258: Error(0x80040001)
+<6>[    3.897204] init: command 'mount' r=-1
+<6>[    3.904501] param_init
+<3>[    3.908054] lfs_param_op: filp_open failed. (-2)
+<3>[    3.920717] param_init(304): Loading parameters failed. Parameters have been initialized as default.
+<6>[    3.932514] init: command 'insmod' r=0
+<6>[    3.935288] init: command 'symlink' r=0
+<6>[    3.937890] init: command 'mkdir' r=0
+<6>[    3.940492] init: command 'mkdir' r=0
+<6>[    3.943094] init: command 'mkdir' r=0
+<6>[    3.945696] init: command 'chown' r=0
+<6>[    3.948298] init: command 'chmod' r=0
+<6>[    3.950900] init: command 'mkdir' r=0
+<6>[    3.953502] init: command 'mkdir' r=0
+<6>[    3.956104] init: command 'mkdir' r=0
+<6>[    3.958706] init: command 'mkdir' r=0
+<6>[    3.961308] init: command 'mkdir' r=0
+<6>[    3.963909] init: command 'mkdir' r=0
+<6>[    3.966511] init: command 'mount' r=0
+<6>[    3.969114] init: command 'write' r=0
+<6>[    3.971715] init: command 'write' r=0
+<6>[    3.974317] init: command 'write' r=0
+<6>[    3.976919] init: command 'write' r=0
+<6>[    3.979521] init: command 'write' r=0
+<6>[    3.982123] init: command 'write' r=0
+<6>[    3.984725] init: command 'write' r=0
+<6>[    3.987327] init: command 'mkdir' r=0
+<6>[    3.989964] init: command 'mount' r=0
+<6>[    3.992566] init: command 'chown' r=0
+<6>[    3.995167] init: command 'chown' r=0
+<6>[    3.997769] init: command 'chmod' r=0
+<6>[    4.000545] init: command 'write' r=-22
+<6>[    4.003147] init: command 'mkdir' r=0
+<6>[    4.005749] init: command 'chown' r=0
+<6>[    4.008351] init: command 'chmod' r=0
+<6>[    4.010953] init: command 'write' r=0
+<6>[    4.013555] init: command 'mkdir' r=0
+<6>[    4.016157] init: command 'chown' r=0
+<6>[    4.018758] init: command 'chmod' r=0
+<6>[    4.021360] init: command 'write' r=0
+<4>[    4.055672] [FSA9480]connectivity_switching_init = switch_sel : 0x1
+<6>[    4.060615] inside set_param_value1 idx = 4, value = -1051560012
+<3>[    4.064171] lfs_param_op: filp_open failed. (-2)
+<4>[    4.072064] [FSA9480_Enable_AP_USB] Enable AP USB
+<4>[    4.077372] [ap_usb_power_on]AP USB Power ON, askon: 0, mtp : 0
+<4>[    4.083269] !!!!!!!!!!! [ap_usb_power_on]AP samsung_kies_mtp_mode_flag0, mtp:0
+<6>[    4.098335] inside set_param_value1 idx = 4, value = -1051560012
+<3>[    4.101891] lfs_param_op: filp_open failed. (-2)
+<4>[    4.110911] [USB] enable_adb - enable(0x01), prev_status(0x00)
+<4>[    4.112992] Here is enable_adb@@@@
+<4>[    4.116114] [enable_adb]USBSTATUS_SAMSUNG_KIES
+<6>[    4.118890] acm_function_config_changed
+<6>[    4.121665] mtp_function_config_changed
+<4>[    4.124267]   interface 0 = acm/c4fb1000
+<4>[    4.126869]   interface 1 = acm/c4fb1000
+<4>[    4.130078]   interface 2 = Gadget_MTP/df336f00
+<4>[    4.135065] [ap_usb_power_on]AP USB Power ON, askon: 0, mtp : 0
+<4>[    4.140963] !!!!!!!!!!! [ap_usb_power_on]AP samsung_kies_mtp_mode_flag0, mtp:0
+<6>[    4.145907] inside set_param_value1 idx = 4, value = -1051560012
+<3>[    4.149463] lfs_param_op: filp_open failed. (-2)
+<4>[    4.158917] [FSA9480]connectivity_switching_init = switch_sel : 0x5
+<4>[    4.341252] PKD:: OTG core got reset!!! 
+<4>[    4.716478] acm_disconnected
+<6>[    7.542598] fg_read_vcell: VCELL=3878
+<6>[   12.542520] fg_read_vcell: VCELL=3878
+<7>[   13.670869] [TSP]### Finger[0] Down (20,315) - touch num is (1)   status=0xc0
+<7>[   14.601480] [TSP]### Finger[0] Up (3,371) - touch num is (0)  status=0x20
+<7>[   15.571189] [TSP]### Finger[0] Down (417,231) - touch num is (1)   status=0xc0
+<7>[   15.623740] [TSP]### Finger[0] Up (417,231) - touch num is (0)  status=0x20
+<6>[   17.542570] fg_read_vcell: VCELL=3878
+<6>[   19.911250] init: command 'mount' r=0
+<6>[   19.914034] init: command 'chmod' r=-2
+<6>[   20.041650] init: command 'mount' r=0
+<6>[   20.044425] init: command 'mkdir' r=-17
+<6>[   20.052258] init: command 'mount' r=-1
+<6>[   20.054859] init: command 'chown' r=0
+<6>[   20.057461] init: command 'chmod' r=0
+<6>[   20.060063] init: command 'mkdir' r=0
+<6>[   20.062665] init: command 'chown' r=0
+<6>[   20.065267] init: command 'chmod' r=0
+<6>[   20.067869] init: command 'copy' r=-1
+<6>[   20.070557] init: command 'chown' r=-2
+<6>[   20.073246] init: command 'chmod' r=-2
+<6>[   20.075848] init: command 'copy' r=-1
+<6>[   20.078537] init: command 'chown' r=-2
+<6>[   20.081225] init: command 'chmod' r=-2
+<6>[   20.083914] init: command 'write' r=-2
+<6>[   22.542587] fg_read_vcell: VCELL=3878
+<6>[   27.542553] fg_read_vcell: VCELL=3878
+<6>[   32.542542] fg_read_vcell: VCELL=3878
+<6>[   37.412949] init: command 'mount' r=0
+<6>[   37.415550] init: command 'chown' r=0
+<6>[   37.418152] init: command 'chmod' r=0
+<6>[   37.542534] fg_read_vcell: VCELL=3878
+<6>[   38.140878] init: command 'mkdir' r=0
+<6>[   38.829241] init: command 'chown' r=0
+<6>[   38.834600] init: command 'chmod' r=0
+<6>[   38.837202] init: command 'mkdir' r=0
+<6>[   38.840064] init: command 'symlink' r=-1
+<6>[   38.842666] init: command 'chown' r=0
+<6>[   38.845268] init: command 'chmod' r=0
+<6>[   38.847870] init: command 'chown' r=0
+<6>[   38.850472] init: command 'chmod' r=0
+<6>[   38.853074] init: command 'mkdir' r=0
+<6>[   38.855676] init: command 'chown' r=0
+<6>[   38.858278] init: command 'chmod' r=0
+<6>[   38.860880] init: command 'mkdir' r=0
+<6>[   38.863482] init: command 'mkdir' r=0
+<6>[   38.866084] init: command 'mkdir' r=0
+<6>[   38.868685] init: command 'mkdir' r=0
+<6>[   38.871288] init: command 'mkdir' r=0
+<6>[   38.873890] init: command 'mkdir' r=0
+<6>[   38.876491] init: command 'mkdir' r=0
+<6>[   38.879093] init: command 'mkdir' r=0
+<6>[   38.881695] init: command 'mkdir' r=0
+<6>[   38.884297] init: command 'chmod' r=0
+<6>[   38.886899] init: command 'mkdir' r=0
+<6>[   38.889501] init: command 'mkdir' r=0
+<6>[   38.892103] init: command 'mkdir' r=0
+<6>[   38.894792] init: command 'chmod' r=-2
+<6>[   38.897394] init: command 'mkdir' r=0
+<6>[   38.899996] init: command 'mkdir' r=0
+<6>[   38.902598] init: command 'mkdir' r=0
+<6>[   38.905199] init: command 'mkdir' r=0
+<6>[   38.907801] init: command 'mkdir' r=0
+<6>[   38.910403] init: command 'mkdir' r=0
+<6>[   38.913005] init: command 'mkdir' r=0
+<6>[   38.915607] init: command 'chmod' r=0
+<6>[   38.918296] init: command 'chmod' r=-2
+<6>[   38.920898] init: command 'chmod' r=0
+<6>[   38.923500] init: command 'chmod' r=0
+<6>[   38.926102] init: command 'chmod' r=0
+<6>[   38.928704] init: command 'chmod' r=0
+<6>[   38.931306] init: command 'mkdir' r=0
+<6>[   38.933908] init: command 'chown' r=0
+<6>[   38.936510] init: command 'chmod' r=0
+<6>[   38.939112] init: command 'mkdir' r=0
+<6>[   39.657310] init: command 'mkdir' r=0
+<6>[   39.659912] init: command 'chown' r=0
+<6>[   39.662514] init: command 'chmod' r=0
+<6>[   39.665116] init: command 'chown' r=0
+<6>[   39.667718] init: command 'chmod' r=0
+<4>[   39.676202] Storage device init
+<6>[   39.680253] init: command 'insmod' r=0
+<4>[   39.691163] ######## bthid_init: ########
+<4>[   39.695134] ######## bthid_init: done ########
+<6>[   39.698501] init: command 'insmod' r=0
+<6>[   39.706209] init: command 'mkdir' r=-17
+<6>[   39.708984] init: command 'chown' r=-30
+<6>[   39.711760] init: command 'chmod' r=-30
+<6>[   39.716738] init: command 'chmod' r=-2
+<6>[   39.719340] init: command 'mkdir' r=0
+<6>[   39.721942] init: command 'mkdir' r=0
+<6>[   39.724544] init: command 'mkdir' r=0
+<6>[   39.727233] init: command 'chmod' r=-2
+<6>[   39.729835] init: command 'mkdir' r=0
+<6>[   39.732437] init: command 'mount' r=0
+<6>[   39.735212] init: command 'mkdir' r=-30
+<6>[   39.737901] init: command 'chown' r=-2
+<3>[   39.743001] init: ro.build.id:FROYO
+<3>[   39.750026] init: ro.build.display.id:FROYO.XXJPX
+<3>[   39.758526] init: ro.build.version.incremental:XXJPX
+<3>[   39.766245] init: ro.build.version.sdk:8
+<3>[   39.773530] init: ro.build.version.codename:REL
+<3>[   39.781510] init: ro.build.version.release:2.2.1
+<3>[   39.790963] init: ro.build.date:2010. 12. 17. (금) 17:06:56 KST
+<3>[   39.800244] init: ro.build.date.utc:1292573216
+<3>[   39.807095] init: ro.build.type:user
+<3>[   39.813080] init: ro.build.user:root
+<3>[   39.819238] init: ro.build.host:sep-60
+<3>[   39.826090] init: ro.build.tags:release-keys
+<3>[   39.833375] init: ro.product.model:GT-I9000
+<3>[   39.840487] init: ro.product.brand:samsung
+<3>[   39.847512] init: ro.product.name:GT-I9000
+<3>[   39.854711] init: ro.product.device:GT-I9000
+<3>[   39.861996] init: ro.product.board:GT-I9000
+<3>[   39.869629] init: ro.product.cpu.abi:armeabi-v7a
+<3>[   39.877435] init: ro.product.cpu.abi2:armeabi
+<3>[   39.885327] init: ro.product.manufacturer:samsung
+<3>[   39.893393] init: ro.product.locale.language:en
+<3>[   39.901112] init: ro.product.locale.region:GB
+<3>[   39.907791] init: ro.wifi.channels:
+<3>[   39.914296] init: ro.board.platform:s5pc110
+<3>[   39.921495] init: ro.build.product:GT-I9000
+<3>[   39.932162] init: ro.build.description:GT-I9000-user 2.2.1 FROYO XXJPX release-keys
+<3>[   39.948555] init: ro.build.fingerprint:samsung/GT-I9000/GT-I9000/GT-I9000:2.2.1/FROYO/XXJPX:user/release-keys
+<3>[   39.961304] init: ro.build.PDA:I9000XXJPX
+<3>[   39.968763] init: ro.build.hidden_ver:I9000XXJPX
+<3>[   39.976482] init: ro.build.changelist:787513
+<3>[   39.983507] init: ro.tether.denied:false
+<3>[   39.991574] init: rild.libpath:/system/lib/libsec-ril.so
+<3>[   39.999987] init: rild.libargs:-d /dev/ttyS0
+<3>[   40.006925] init: ro.sf.lcd_density:240
+<3>[   40.013517] init: dalvik.vm.heapsize:48m
+<3>[   40.021062] init: dalvik.vm.execution-mode:int:jit
+<3>[   40.028955] init: ro.opengles.version:131072
+<3>[   40.036847] init: windowsmgr.max_events_per_sec:55
+<3>[   40.045260] init: keyinputqueue.use_finger_id:true
+<3>[   40.054020] init: media.stagefright.enable-player:true
+<3>[   40.062954] init: media.stagefright.enable-meta:true
+<3>[   40.071713] init: media.stagefright.enable-scan:true
+<3>[   40.080474] init: media.stagefright.enable-http:true
+<3>[   40.088713] init: keyguard.no_require_sim:true
+<3>[   40.097299] init: ro.config.ringtone:01_Samsung_tune.ogg
+<3>[   40.107187] init: ro.config.notification_sound:01_Sherbet.ogg
+<3>[   40.117074] init: ro.config.alarm_alert:Good_Morning.ogg
+<3>[   40.125487] init: ro.opengles.version:131072
+<3>[   40.132252] init: net.bt.name:Android
+<3>[   40.138670] init: net.change:net.bt.name
+<3>[   40.147517] init: dalvik.vm.stack-trace-file:/data/anr/traces.txt
+<3>[   40.164065] init: ro.url.legal:http://www.google.com/intl/%s/mobile/android/basic/phone-legal.html
+<3>[   40.181845] init: ro.url.legal.android_privacy:http://www.google.com/intl/%s/mobile/android/basic/privacy.html
+<3>[   40.195462] init: ro.com.google.locationfeatures:1
+<3>[   40.203528] init: ro.setupwizard.mode:DISABLED
+<3>[   40.212462] init: ro.com.google.clientidbase:android-samsung
+<3>[   40.222869] init: ro.com.google.clientidbase.yt:android-samsung
+<3>[   40.233537] init: ro.com.google.clientidbase.am:android-samsung
+<3>[   40.244205] init: ro.com.google.clientidbase.vs:android-samsung
+<3>[   40.254960] init: ro.com.google.clientidbase.gmm:android-samsung
+<3>[   40.264501] init: ro.com.google.gmsversion:2.2_r8
+<6>[   40.277250] init: Created socket '/dev/socket/property_service' with mode '666', user '0', group '0'
+<6>[   40.408720] init: processing action 0x32fc0 (boot)
+<4>[   40.411007] [UART Switch] Path : PDA
+<6>[   40.415951] inside set_param_value1 idx = 4, value = -1051560012
+<3>[   40.419507] lfs_param_op: filp_open failed. (-2)
+<6>[   40.426619] init: command 'write' r=0
+<4>[   40.428787] [FSA9480]usb_sel_store
+<4>[   40.428795]  [FSA9480] usb_switch_mode: Path = PDA
+<4>[   40.435552] [FSA9480_Enable_AP_USB] Enable AP USB
+<4>[   40.440860] [ap_usb_power_on]AP USB Power ON, askon: 0, mtp : 0
+<4>[   40.446758] !!!!!!!!!!! [ap_usb_power_on]AP samsung_kies_mtp_mode_flag0, mtp:0
+<6>[   40.461849] inside set_param_value1 idx = 4, value = -1051560012
+<3>[   40.465406] lfs_param_op: filp_open failed. (-2)
+<6>[   40.472517] init: command 'write' r=0
+<3>[   40.475640] init: ro.build.product:smdkc110
+<6>[   40.482492] init: command 'setprop' r=0
+<3>[   40.485701] init: ro.product.device:smdkc110
+<6>[   40.492639] init: command 'setprop' r=0
+<3>[   40.495154] init: ro.radio.noril:yes
+<6>[   40.501399] init: command 'setprop' r=0
+<3>[   40.504521] init: status.battery.state:Slow
+<6>[   40.511373] init: command 'setprop' r=0
+<3>[   40.514235] init: status.battery.level:5
+<6>[   40.520827] init: command 'setprop' r=0
+<3>[   40.524123] init: status.battery.level_raw:50
+<6>[   40.531148] init: command 'setprop' r=0
+<3>[   40.534531] init: status.battery.level_scale:9
+<6>[   40.541643] init: command 'setprop' r=0
+<6>[   40.544522] init: command 'ifup' r=0
+<6>[   40.547384] init: command 'hostname' r=0
+<6>[   40.550420] init: command 'domainname' r=0
+<6>[   40.553369] init: command 'setrlimit' r=0
+<3>[   40.556317] init: ro.FOREGROUND_APP_ADJ:0
+<6>[   40.562996] init: command 'setprop' r=0
+<3>[   40.565684] init: ro.VISIBLE_APP_ADJ:1
+<6>[   40.572103] init: command 'setprop' r=0
+<3>[   40.575225] init: ro.SECONDARY_SERVER_ADJ:2
+<6>[   40.582077] init: command 'setprop' r=0
+<3>[   40.584679] init: ro.BACKUP_APP_ADJ:2
+<6>[   40.591010] init: command 'setprop' r=0
+<3>[   40.593439] init: ro.HOME_APP_ADJ:4
+<6>[   40.599597] init: command 'setprop' r=0
+<3>[   40.602545] init: ro.HIDDEN_APP_MIN_ADJ:7
+<6>[   40.609224] init: command 'setprop' r=0
+<3>[   40.612433] init: ro.CONTENT_PROVIDER_ADJ:14
+<6>[   40.619371] init: command 'setprop' r=0
+<3>[   40.621973] init: ro.EMPTY_APP_ADJ:15
+<6>[   40.628305] init: command 'setprop' r=0
+<3>[   40.631514] init: ro.FOREGROUND_APP_MEM:2560
+<6>[   40.638452] init: command 'setprop' r=0
+<3>[   40.641401] init: ro.VISIBLE_APP_MEM:4096
+<6>[   40.648079] init: command 'setprop' r=0
+<3>[   40.651462] init: ro.SECONDARY_SERVER_MEM:5120
+<6>[   40.658574] init: command 'setprop' r=0
+<3>[   40.661436] init: ro.BACKUP_APP_MEM:5120
+<6>[   40.668028] init: command 'setprop' r=0
+<3>[   40.670716] init: ro.HOME_APP_MEM:5120
+<6>[   40.677135] init: command 'setprop' r=0
+<3>[   40.679997] init: ro.HIDDEN_APP_MEM:6144
+<6>[   40.686588] init: command 'setprop' r=0
+<3>[   40.689971] init: ro.CONTENT_PROVIDER_MEM:7168
+<6>[   40.697083] init: command 'setprop' r=0
+<3>[   40.699858] init: ro.EMPTY_APP_MEM:8192
+<6>[   40.706363] init: command 'setprop' r=0
+<3>[   40.708965] init: wifi.interface:eth0
+<6>[   40.715297] init: command 'setprop' r=0
+<3>[   40.720240] init: ro.bt.bdaddr_path:/data/misc/bluetooth/bt_addr
+<6>[   40.728913] init: command 'setprop' r=0
+<6>[   40.731524] init: command 'write' r=0
+<6>[   40.734126] init: command 'write' r=0
+<6>[   40.736728] init: command 'write' r=0
+<6>[   40.739330] init: command 'write' r=0
+<6>[   40.741932] init: command 'write' r=0
+<6>[   40.744534] init: command 'write' r=0
+<6>[   40.747136] init: command 'write' r=0
+<6>[   40.749738] init: command 'write' r=0
+<6>[   40.752426] init: command 'chown' r=-2
+<6>[   40.755115] init: command 'chown' r=-2
+<6>[   40.757804] init: command 'chown' r=-2
+<6>[   40.760492] init: command 'chown' r=-2
+<6>[   40.763181] init: command 'chown' r=-2
+<6>[   40.765783] init: command 'chown' r=0
+<6>[   40.768385] init: command 'chown' r=0
+<6>[   40.770987] init: command 'chown' r=0
+<6>[   40.773589] init: command 'chown' r=0
+<6>[   40.776191] init: command 'chmod' r=0
+<6>[   40.778793] init: command 'chmod' r=0
+<6>[   40.781395] init: command 'chmod' r=0
+<6>[   40.783997] init: command 'chmod' r=0
+<6>[   40.786599] init: command 'chown' r=0
+<6>[   40.789287] init: command 'chown' r=-2
+<6>[   40.791890] init: command 'chown' r=0
+<6>[   40.794578] init: command 'chown' r=-2
+<6>[   40.797267] init: command 'chown' r=-2
+<6>[   40.799955] init: command 'chown' r=-2
+<6>[   40.802644] init: command 'chown' r=-2
+<6>[   40.805333] init: command 'chown' r=-2
+<6>[   40.808021] init: command 'chown' r=-2
+<6>[   40.810710] init: command 'chown' r=-2
+<6>[   40.813399] init: command 'chown' r=-2
+<6>[   40.816087] init: command 'chown' r=-2
+<6>[   40.818776] init: command 'chown' r=-2
+<6>[   40.821465] init: command 'chown' r=-2
+<6>[   40.824153] init: command 'chown' r=-2
+<6>[   40.826842] init: command 'chown' r=-2
+<6>[   40.829531] init: command 'chown' r=-2
+<6>[   40.832133] init: command 'chown' r=0
+<6>[   40.834735] init: command 'chown' r=0
+<6>[   40.837337] init: command 'chown' r=0
+<6>[   40.839939] init: command 'chown' r=0
+<6>[   40.842541] init: command 'chown' r=0
+<6>[   40.845142] init: command 'chown' r=0
+<6>[   40.847744] init: command 'chown' r=0
+<6>[   40.850346] init: command 'chown' r=0
+<6>[   40.852948] init: command 'chown' r=0
+<3>[   40.859280] init: net.tcp.buffersize.default:4096,87380,196608,4096,16384,110208
+<3>[   40.870728] init: net.change:net.tcp.buffersize.default
+<6>[   40.878621] init: command 'setprop' r=0
+<3>[   40.884692] init: net.tcp.buffersize.wifi:4095,87380,196608,4096,16384,110208
+<3>[   40.895620] init: net.change:net.tcp.buffersize.wifi
+<6>[   40.903253] init: command 'setprop' r=0
+<3>[   40.909324] init: net.tcp.buffersize.umts:4094,87380,196608,4096,16384,110208
+<3>[   40.920252] init: net.change:net.tcp.buffersize.umts
+<6>[   40.927884] init: command 'setprop' r=0
+<3>[   40.933782] init: net.tcp.buffersize.edge:4093,26280,35040,4096,16384,35040
+<3>[   40.944537] init: net.change:net.tcp.buffersize.edge
+<6>[   40.952169] init: command 'setprop' r=0
+<3>[   40.957893] init: net.tcp.buffersize.gprs:4092,8760,11680,4096,8760,11680
+<3>[   40.968475] init: net.change:net.tcp.buffersize.gprs
+<6>[   40.976107] init: command 'setprop' r=0
+<6>[   40.981537] init: command 'chmod' r=-30
+<6>[   40.984312] init: command 'chmod' r=-30
+<6>[   40.987088] init: command 'chmod' r=-30
+<6>[   40.989863] init: command 'chmod' r=-30
+<6>[   40.992638] init: command 'chmod' r=-30
+<6>[   40.995414] init: command 'chmod' r=-30
+<6>[   40.998189] init: command 'chmod' r=-30
+<6>[   41.000878] init: command 'chmod' r=-2
+<6>[   41.003506] init: command 'write' r=0
+<6>[   41.006108] init: command 'write' r=0
+<6>[   41.008796] init: command 'write' r=-2
+<6>[   41.011485] init: command 'write' r=-2
+<6>[   41.014174] init: command 'chown' r=-2
+<6>[   41.016862] init: command 'chown' r=-2
+<6>[   41.019464] init: command 'chown' r=0
+<6>[   41.022153] init: command 'chmod' r=-2
+<6>[   41.024841] init: command 'chmod' r=-2
+<6>[   41.027444] init: command 'chown' r=0
+<6>[   41.030046] init: command 'chmod' r=0
+<6>[   41.032647] init: command 'chown' r=0
+<6>[   41.035249] init: command 'chmod' r=0
+<6>[   41.037851] init: command 'chmod' r=0
+<6>[   41.040454] init: command 'chmod' r=0
+<6>[   41.043055] init: command 'chown' r=0
+<6>[   41.045657] init: command 'chown' r=0
+<6>[   41.048355] init: command 'chmod' r=-2
+<6>[   41.050957] init: command 'chown' r=0
+<6>[   41.053558] init: command 'chown' r=0
+<5>[   41.056074] init: starting 'console'
+<3>[   41.059222] init: init.svc.console:running
+<5>[   41.069033] init: starting 'playlogos1'
+<3>[   41.073629] init: init.svc.playlogos1:running
+<5>[   41.080220] init: starting 'adbd'
+<3>[   41.084297] init: init.svc.adbd:running
+<6>[   41.096224] warning: `adbd' uses 32-bit capabilities (legacy support in use)
+<5>[   41.099293] init: starting 'pvrsrvinit'
+<3>[   41.103118] init: init.svc.pvrsrvinit:running
+<6>[   41.108929] enabling adb
+<4>[   41.113438] [USB] enable_adb - enable(0x10), prev_status(0x01)
+<4>[   41.115520] Here is enable_adb@@@@
+<4>[   41.117861] [enable_adb]USBSTATUS_ADB
+<6>[   41.120637] acm_function_config_changed
+<6>[   41.124193] mass_storage_function_config_changed
+<6>[   41.126968] adb_function_config_changed
+<4>[   41.129570]   interface 0 = acm/c4fb1000
+<4>[   41.132172]   interface 1 = acm/c4fb1000
+<4>[   41.135901]   interface 2 = usb_mass_storage/df33a800
+<4>[   41.138503]   interface 3 = adb/df336d00
+<4>[   41.143508] [ap_usb_power_on]AP USB Power ON, askon: 0, mtp : 0
+<4>[   41.149406] !!!!!!!!!!! [ap_usb_power_on]AP samsung_kies_mtp_mode_flag0, mtp:0
+<5>[   41.153492] init: starting 'servicemanager'
+<3>[   41.157246] init: init.svc.servicemanager:running
+<5>[   41.164186] init: starting 'vold'
+<3>[   41.169381] init: init.svc.vold:running
+<6>[   41.184300] init: Created socket '/dev/socket/vold' with mode '660', user '0', group '1009'
+<5>[   41.187672] init: starting 'notified_event'
+<3>[   41.191644] init: init.svc.notified_event:running
+<6>[   41.204481] init: Created socket '/dev/socket/notified_event' with mode '660', user '0', group '1000'
+<5>[   41.206857] init: starting 'netd'
+<3>[   41.210101] init: init.svc.netd:running
+<6>[   41.221203] init: Created socket '/dev/socket/netd' with mode '660', user '0', group '1000'
+<5>[   41.241247] init: starting 'debuggerd'
+<3>[   41.244542] init: init.svc.debuggerd:running
+<5>[   41.251767] init: starting 'DR-daemon'
+<3>[   41.255288] init: init.svc.DR-daemon:running
+<5>[   41.262487] init: starting 'mobex-daemon'
+<3>[   41.266485] init: init.svc.mobex-daemon:running
+<5>[   41.273424] init: starting 'zygote'
+<3>[   41.276988] init: init.svc.zygote:running
+<6>[   41.288176] init: Created socket '/dev/socket/zygote' with mode '666', user '0', group '0'
+<5>[   41.290778] init: starting 'media'
+<3>[   41.293987] init: init.svc.media:running
+<3>[   41.303372] init: cannot find '/system/bin/vtserver', disabling 'vt'
+<5>[   41.311958] init: starting 'dbus'
+<3>[   41.315748] init: init.svc.dbus:running
+<6>[   41.330060] init: Created socket '/dev/socket/dbus' with mode '660', user '1002', group '1002'
+<5>[   41.333398] init: starting 'installd'
+<3>[   41.337145] init: init.svc.installd:running
+<6>[   41.350103] init: Created socket '/dev/socket/installd' with mode '600', user '1000', group '1000'
+<3>[   41.360849] init: cannot find '/system/etc/install-recovery.sh', disabling 'flash_recovery'
+<5>[   41.374015] init: starting 'sensor-daemon'
+<3>[   41.377674] init: init.svc.sensor-daemon:running
+<4>[   41.433409] PKD:: OTG core got reset!!! 
+<5>[   41.518571] init: starting 'keystore'
+<3>[   41.521961] init: init.svc.keystore:running
+<6>[   41.533497] init: Created socket '/dev/socket/keystore' with mode '666', user '0', group '0'
+<4>[   41.804359] acm_disconnected
+<4>[   42.052481] [USB:UMS] fsg_function_setup, return to PC fsg->nluns=2
+<4>[   42.057502] printk:do_inquiry fsg->cdrom 0 curlun->id 0
+<4>[   42.061726] printk:do_inquiry fsg->cdrom 0 curlun->id 0
+<4>[   42.075751] printk:do_inquiry fsg->cdrom 0 curlun->id 1
+<4>[   42.079974] printk:do_inquiry fsg->cdrom 0 curlun->id 1
+<6>[   42.542567] fg_read_vcell: VCELL=3878
+<5>[   42.826785] init: starting 'immvibed'
+<3>[   42.830003] init: init.svc.immvibed:running
+<3>[   42.841574] init: cannot find '/system/bin/immvbsd', disabling 'immvbsd'
+<5>[   42.850593] init: starting 'tvout'
+<3>[   42.853654] init: init.svc.tvout:running
+<5>[   42.859812] init: starting 'dfta'
+<3>[   42.862787] init: init.svc.dfta:running
+<6>[   42.879284] init: command 'class_start' r=0
+<6>[   42.887263] init: processing action 0x343c8 (property:persist.service.adb.enable=1)
+<6>[   42.895564] init: command 'start' r=0
+<6>[   42.900446] init: waitpid returned pid 2299, status = 00000200
+<5>[   42.904088] init: process 'dfta', pid 2299 exited
+<3>[   42.906864] init: init.svc.dfta:stopped
+<6>[   42.916751] init: make_device '/dev/pvrsrvkm' block 0, major 240, minor 0 r=0
+<6>[   42.923248] init: make_device '/dev/s3c_bc' block 0, major 253, minor 0 r=0
+<6>[   42.929197] init: make_device '/dev/tspdrv' block 0, major 10, minor 43 r=0
+<6>[   42.935719] init: make_device '/dev/block/bml0!c' block 1, major 137, minor 0 r=0
+<6>[   42.942042] init: make_device '/dev/block/bml1' block 1, major 137, minor 1 r=0
+<6>[   42.948633] init: make_device '/dev/block/bml2' block 1, major 137, minor 2 r=0
+<6>[   42.955026] init: make_device '/dev/block/bml3' block 1, major 137, minor 3 r=0
+<6>[   42.985418] init: make_device '/dev/block/bml4' block 1, major 137, minor 4 r=0
+<6>[   42.991896] init: make_device '/dev/block/bml5' block 1, major 137, minor 5 r=0
+<6>[   42.998331] init: make_device '/dev/block/bml6' block 1, major 137, minor 6 r=0
+<6>[   43.004905] init: make_device '/dev/block/bml7' block 1, major 137, minor 7 r=0
+<6>[   43.011384] init: make_device '/dev/block/stl1' block 1, major 138, minor 1 r=0
+<6>[   43.018115] init: make_device '/dev/block/stl2' block 1, major 138, minor 2 r=0
+<6>[   43.024706] init: make_device '/dev/block/stl3' block 1, major 138, minor 3 r=0
+<6>[   43.031307] init: make_device '/dev/block/stl4' block 1, major 138, minor 4 r=0
+<6>[   43.038635] init: make_device '/dev/block/stl5' block 1, major 138, minor 5 r=0
+<6>[   43.045157] init: make_device '/dev/block/stl6' block 1, major 138, minor 6 r=0
+<6>[   43.051584] init: make_device '/dev/block/stl7' block 1, major 138, minor 7 r=0
+<6>[   43.057672] init: make_device '/dev/storage' block 0, major 10, minor 234 r=0
+<6>[   43.064004] init: make_device '/dev/bthid' block 0, major 10, minor 224 r=0
+<3>[   43.070570] init: sys_prop: permission denied uid:2000  name:adb.connected
+<6>[   43.135680] PVR_K:(Warning): SysFinalise: Version string: SGX540 S5PC110 [475, services4/system/s5pc110/sysconfig.c]
+<6>[   43.154258] init: waitpid returned pid 2279, status = 00000000
+<5>[   43.158420] init: process 'pvrsrvinit', pid 2279 exited
+<3>[   43.161906] init: init.svc.pvrsrvinit:stopped
+<6>[   43.181873] init: make_device '/dev/block/ram0' block 1, major 1, minor 0 r=0
+<6>[   43.189878] init: make_device '/dev/block/ram1' block 1, major 1, minor 1 r=0
+<6>[   43.200398] init: make_device '/dev/block/ram2' block 1, major 1, minor 2 r=0
+<6>[   43.217546] init: make_device '/dev/block/ram3' block 1, major 1, minor 3 r=0
+<6>[   43.225447] init: make_device '/dev/block/ram4' block 1, major 1, minor 4 r=0
+<6>[   43.233573] init: make_device '/dev/block/ram5' block 1, major 1, minor 5 r=0
+<6>[   43.241396] init: make_device '/dev/block/ram6' block 1, major 1, minor 6 r=0
+<6>[   43.249532] init: make_device '/dev/block/ram7' block 1, major 1, minor 7 r=0
+<6>[   43.256513] init: make_device '/dev/block/ram8' block 1, major 1, minor 8 r=0
+<6>[   43.264605] init: make_device '/dev/block/ram9' block 1, major 1, minor 9 r=0
+<6>[   43.272159] init: make_device '/dev/block/ram10' block 1, major 1, minor 10 r=0
+<6>[   43.280156] init: make_device '/dev/block/ram11' block 1, major 1, minor 11 r=0
+<6>[   43.288804] init: make_device '/dev/block/ram12' block 1, major 1, minor 12 r=0
+<6>[   43.296652] init: make_device '/dev/block/ram13' block 1, major 1, minor 13 r=0
+<6>[   43.304398] init: make_device '/dev/block/ram14' block 1, major 1, minor 14 r=0
+<6>[   43.320271] init: make_device '/dev/block/ram15' block 1, major 1, minor 15 r=0
+<6>[   43.327937] init: make_device '/dev/block/loop0' block 1, major 7, minor 0 r=0
+<6>[   43.336645] init: make_device '/dev/block/loop1' block 1, major 7, minor 1 r=0
+<6>[   43.345084] init: make_device '/dev/block/loop2' block 1, major 7, minor 2 r=0
+<6>[   43.352829] init: make_device '/dev/block/loop3' block 1, major 7, minor 3 r=0
+<6>[   43.360461] init: make_device '/dev/block/loop4' block 1, major 7, minor 4 r=0
+<6>[   43.369490] init: make_device '/dev/block/loop5' block 1, major 7, minor 5 r=0
+<6>[   43.378189] init: make_device '/dev/block/loop6' block 1, major 7, minor 6 r=0
+<6>[   43.385570] init: make_device '/dev/block/loop7' block 1, major 7, minor 7 r=0
+<6>[   43.393748] init: make_device '/dev/block/tfsr0!c' block 1, major 139, minor 0 r=0
+<6>[   43.401936] init: make_device '/dev/block/tfsr1' block 1, major 139, minor 1 r=0
+<6>[   43.410262] init: make_device '/dev/block/tfsr2' block 1, major 139, minor 2 r=0
+<6>[   43.418623] init: make_device '/dev/block/tfsr3' block 1, major 139, minor 3 r=0
+<6>[   43.432068] init: make_device '/dev/block/tfsr4' block 1, major 139, minor 4 r=0
+<6>[   43.440254] init: make_device '/dev/block/tfsr5' block 1, major 139, minor 5 r=0
+<6>[   43.447444] init: make_device '/dev/block/tfsr6' block 1, major 139, minor 6 r=0
+<6>[   43.454035] init: make_device '/dev/block/tfsr7' block 1, major 139, minor 7 r=0
+<6>[   43.460948] init: make_device '/dev/block/mmcblk0' block 1, major 179, minor 0 r=0
+<6>[   43.467799] init: make_device '/dev/block/mmcblk0p1' block 1, major 179, minor 1 r=0
+<6>[   43.474478] init: make_device '/dev/block/mmcblk0p2' block 1, major 179, minor 2 r=0
+<6>[   43.483803] init: make_device '/dev/block/mmcblk0p3' block 1, major 179, minor 3 r=0
+<6>[   43.490306] init: make_device '/dev/block/mmcblk1' block 1, major 179, minor 8 r=0
+<6>[   43.497479] init: make_device '/dev/block/mmcblk1p1' block 1, major 179, minor 9 r=0
+<6>[   43.504765] init: make_device '/dev/block/mmcblk1p2' block 1, major 179, minor 10 r=0
+<6>[   43.511981] init: make_device '/dev/block/mmcblk1p5' block 1, major 179, minor 13 r=0
+<6>[   43.519535] init: make_device '/dev/block/mmcblk1p6' block 1, major 179, minor 14 r=0
+<6>[   43.526916] init: make_device '/dev/block/mmcblk1p7' block 1, major 179, minor 15 r=0
+<6>[   43.533368] init: make_device '/dev/block/bml0!c' block 1, major 137, minor 0 r=0
+<6>[   43.540923] init: make_device '/dev/block/bml1' block 1, major 137, minor 1 r=0
+<6>[   43.547601] init: make_device '/dev/block/bml2' block 1, major 137, minor 2 r=0
+<6>[   43.554184] init: make_device '/dev/block/bml3' block 1, major 137, minor 3 r=0
+<6>[   43.560429] init: make_device '/dev/block/bml4' block 1, major 137, minor 4 r=0
+<6>[   43.567290] init: make_device '/dev/block/bml5' block 1, major 137, minor 5 r=0
+<6>[   43.574211] init: make_device '/dev/block/bml6' block 1, major 137, minor 6 r=0
+<6>[   43.580490] init: make_device '/dev/block/bml7' block 1, major 137, minor 7 r=0
+<6>[   43.600431] init: make_device '/dev/block/stl1' block 1, major 138, minor 1 r=0
+<6>[   43.608054] init: make_device '/dev/block/stl2' block 1, major 138, minor 2 r=0
+<6>[   43.614558] init: make_device '/dev/block/stl3' block 1, major 138, minor 3 r=0
+<6>[   43.621133] init: make_device '/dev/block/stl4' block 1, major 138, minor 4 r=0
+<6>[   43.627967] init: make_device '/dev/block/stl5' block 1, major 138, minor 5 r=0
+<6>[   43.634359] init: make_device '/dev/block/stl6' block 1, major 138, minor 6 r=0
+<6>[   43.640716] init: make_device '/dev/block/stl7' block 1, major 138, minor 7 r=0
+<6>[   43.646111] init: waitpid returned pid 2288, status = 00000100
+<5>[   43.650664] init: process 'DR-daemon', pid 2288 exited
+<5>[   43.656562] init: process 'DR-daemon' killing any children in process group
+<3>[   43.660526] init: init.svc.DR-daemon:restarting
+<6>[   43.669806] init: waitpid returned pid 2297, status = 00000000
+<5>[   43.674247] init: process 'immvibed', pid 2297 exited
+<3>[   43.677369] init: init.svc.immvibed:stopped
+<6>[   43.686302] init: waitpid returned pid 2310, status = 00000100
+<3>[   43.689485] init: untracked pid 2310 exited
+<4>[   44.265835] printk:do_inquiry fsg->cdrom 0 curlun->id 0
+<4>[   44.270066] printk:do_inquiry fsg->cdrom 0 curlun->id 0
+<4>[   44.288661] printk:do_inquiry fsg->cdrom 0 curlun->id 1
+<4>[   44.293353] printk:do_inquiry fsg->cdrom 0 curlun->id 1
+<3>[   44.398543] init: persist.sys.language:en
+<3>[   44.414076] init: Unable to write persistent property to temp file /data/property/.temp errno: 30
+<3>[   44.441813] init: persist.sys.country:GB
+<3>[   44.458882] init: Unable to write persistent property to temp file /data/property/.temp errno: 30
+<3>[   44.473262] init: persist.sys.localevar:
+<3>[   44.484970] init: Unable to write persistent property to temp file /data/property/.temp errno: 30
+<3>[   44.497025] init: ro.csc.country_code:Nordic
+<4>[   46.503916] DmaAddr=@4f3e0000 Total=32768bytes PrdSz=2048 #Prds=4, dmaEnd 0x4f3e8000
+<5>[   46.506604] init: starting 'DR-daemon'
+<3>[   46.509882] init: init.svc.DR-daemon:running
+<6>[   46.549814] init: waitpid returned pid 2370, status = 00000100
+<5>[   46.554496] init: process 'DR-daemon', pid 2370 exited
+<5>[   46.560394] init: process 'DR-daemon' killing any children in process group
+<3>[   46.564158] init: init.svc.DR-daemon:restarting
+<4>[   46.586492] DmaAddr=@4f3e0000 Total=32768bytes PrdSz=2048 #Prds=4, dmaEnd 0x4f3e8000
+<6>[   47.542561] fg_read_vcell: VCELL=3878
+<4>[   50.996915] !@beginofsystem_init1()
+<6>[   51.004044] init: make_device '/dev/vcs7' block 0, major 7, minor 7 r=0
+<6>[   51.010922] init: make_device '/dev/vcsa7' block 0, major 7, minor 135 r=0
+<4>[   51.253207] !@endofsystem_init1()
+<3>[   51.257473] init: no such service 'bootanim'
+<5>[   51.264411] init: starting 'DR-daemon'
+<3>[   51.267707] init: init.svc.DR-daemon:running
+<6>[   51.299357] init: waitpid returned pid 2386, status = 00000100
+<5>[   51.307795] init: process 'DR-daemon', pid 2386 exited
+<5>[   51.313692] init: process 'DR-daemon' killing any children in process group
+<3>[   51.317951] init: init.svc.DR-daemon:restarting
+<4>[   51.407103] !@beginofPackageManager
+<6>[   52.542576] fg_read_vcell: VCELL=3878
+<5>[   56.328894] init: starting 'DR-daemon'
+<3>[   56.332249] init: init.svc.DR-daemon:running
+<6>[   56.389008] init: waitpid returned pid 2392, status = 00000100
+<5>[   56.393083] init: process 'DR-daemon', pid 2392 exited
+<5>[   56.415869] init: process 'DR-daemon' killing any children in process group
+<3>[   56.429069] init: init.svc.DR-daemon:restarting
+<6>[   57.542573] fg_read_vcell: VCELL=3878
+<5>[   61.443984] init: starting 'DR-daemon'
+<3>[   61.447296] init: init.svc.DR-daemon:running
+<6>[   61.482979] init: waitpid returned pid 2393, status = 00000100
+<5>[   61.487053] init: process 'DR-daemon', pid 2393 exited
+<5>[   61.499978] init: process 'DR-daemon' killing any children in process group
+<3>[   61.530638] init: init.svc.DR-daemon:restarting
+<6>[   62.542526] fg_read_vcell: VCELL=3878
+<5>[   66.545554] init: starting 'DR-daemon'
+<3>[   66.548892] init: init.svc.DR-daemon:running
+<6>[   66.580472] init: waitpid returned pid 2394, status = 00000100
+<5>[   66.603925] init: process 'DR-daemon', pid 2394 exited
+<5>[   66.619049] init: process 'DR-daemon' killing any children in process group
+<3>[   66.624392] init: init.svc.DR-daemon:restarting
+<6>[   67.542561] fg_read_vcell: VCELL=3878
+<5>[   71.647085] init: starting 'DR-daemon'
+<3>[   71.650379] init: init.svc.DR-daemon:running
+<6>[   71.695498] init: waitpid returned pid 2395, status = 00000100
+<5>[   71.699573] init: process 'DR-daemon', pid 2395 exited
+<5>[   71.708169] init: process 'DR-daemon' killing any children in process group
+<3>[   71.711637] init: init.svc.DR-daemon:restarting
+<6>[   72.542502] fg_read_vcell: VCELL=3878
+<5>[   76.721380] init: starting 'DR-daemon'
+<3>[   76.724683] init: init.svc.DR-daemon:running
+<6>[   76.756064] init: waitpid returned pid 2396, status = 00000100
+<5>[   76.760139] init: process 'DR-daemon', pid 2396 exited
+<5>[   76.793810] init: process 'DR-daemon' killing any children in process group
+<3>[   76.799837] init: init.svc.DR-daemon:restarting
+<4>[   76.972893] !@2nfofPackageManager
+<6>[   77.542610] fg_read_vcell: VCELL=3878
+<5>[   81.811039] init: starting 'DR-daemon'
+<3>[   81.815131] init: init.svc.DR-daemon:running
+<6>[   81.862176] init: waitpid returned pid 2410, status = 00000100
+<5>[   81.883000] init: process 'DR-daemon', pid 2410 exited
+<5>[   81.896719] init: process 'DR-daemon' killing any children in process group
+<3>[   81.912669] init: init.svc.DR-daemon:restarting
+<6>[   82.542550] fg_read_vcell: VCELL=3878
+<5>[   86.920807] init: starting 'DR-daemon'
+<3>[   86.924674] init: init.svc.DR-daemon:running
+<6>[   86.983841] init: waitpid returned pid 2411, status = 00000100
+<5>[   86.987916] init: process 'DR-daemon', pid 2411 exited
+<5>[   86.993813] init: process 'DR-daemon' killing any children in process group
+<3>[   86.997283] init: init.svc.DR-daemon:restarting
+<6>[   87.262683] init: waitpid returned pid 2290, status = 00000009
+<5>[   87.266497] init: process 'zygote', pid 2290 exited
+<5>[   87.272135] init: process 'zygote' killing any children in process group
+<6>[   87.280261] request_suspend_state: wakeup (3->0) at 87245210419 (2011-05-22 18:20:14.275048630 UTC)
+<5>[   87.283904] init: service 'media' is being killed
+<3>[   87.290323] init: init.svc.media:stopping
+<5>[   87.296654] init: starting 'media'
+<3>[   87.299750] init: init.svc.media:running
+<3>[   87.321088] init: init.svc.zygote:restarting
+<6>[   87.336768] init: waitpid returned pid 2277, status = 00000009
+<5>[   87.340930] init: process 'playlogos1', pid 2277 exited
+<3>[   87.350801] init: init.svc.playlogos1:stopped
+<6>[   87.364106] init: waitpid returned pid 2291, status = 0000000f
+<3>[   87.367227] init: untracked pid 2291 exited
+<5>[   87.381227] init: starting 'zygote'
+<3>[   87.384261] init: init.svc.zygote:running
+<6>[   87.398069] init: Created socket '/dev/socket/zygote' with mode '666', user '0', group '0'
+<6>[   87.542531] fg_read_vcell: VCELL=3878
+<3>[   87.577406] init: ro.csc.country_code:Nordic
+<4>[   87.725369] DmaAddr=@4f3e0000 Total=32768bytes PrdSz=2048 #Prds=4, dmaEnd 0x4f3e8000
+<4>[   87.787772] DmaAddr=@4f3e0000 Total=32768bytes PrdSz=2048 #Prds=4, dmaEnd 0x4f3e8000
+<4>[   89.690715] !@beginofsystem_init1()
+<4>[   89.789537] !@endofsystem_init1()
+<3>[   89.793683] init: no such service 'bootanim'
+<4>[   89.875428] !@beginofPackageManager
+<5>[   91.799490] init: starting 'DR-daemon'
+<3>[   91.802793] init: init.svc.DR-daemon:running
+<6>[   91.834035] init: waitpid returned pid 2433, status = 00000100
+<5>[   91.838110] init: process 'DR-daemon', pid 2433 exited
+<5>[   91.853401] init: process 'DR-daemon' killing any children in process group
+<3>[   91.866593] init: init.svc.DR-daemon:restarting
+<6>[   92.542537] fg_read_vcell: VCELL=3878
+<5>[   96.885420] init: starting 'DR-daemon'
+<3>[   96.888714] init: init.svc.DR-daemon:running
+<6>[   96.916210] init: waitpid returned pid 2434, status = 00000100
+<5>[   96.929748] init: process 'DR-daemon', pid 2434 exited
+<5>[   96.935644] init: process 'DR-daemon' killing any children in process group
+<3>[   96.950069] init: init.svc.DR-daemon:restarting
+<6>[   97.542523] fg_read_vcell: VCELL=3878
+<5>[  101.975278] init: starting 'DR-daemon'
+<3>[  101.978580] init: init.svc.DR-daemon:running
+<6>[  102.006284] init: waitpid returned pid 2437, status = 00000100
+<5>[  102.019554] init: process 'DR-daemon', pid 2437 exited
+<5>[  102.033100] init: process 'DR-daemon' killing any children in process group
+<3>[  102.042363] init: init.svc.DR-daemon:restarting
+<6>[  102.542468] fg_read_vcell: VCELL=3878
+<4>[  103.024781] !@2nfofPackageManager
+<5>[  106.061547] init: starting 'DR-daemon'
+<3>[  106.065300] init: init.svc.DR-daemon:running
+<6>[  106.123820] init: waitpid returned pid 2451, status = 00000100
+<5>[  106.127937] init: process 'DR-daemon', pid 2451 exited
+<5>[  106.133835] init: process 'DR-daemon' killing any children in process group
+<3>[  106.137313] init: init.svc.DR-daemon:restarting
+<6>[  107.542832] fg_read_vcell: VCELL=3878
+<5>[  111.148929] init: starting 'DR-daemon'
+<3>[  111.153929] init: init.svc.DR-daemon:running
+<6>[  111.211412] init: waitpid returned pid 2452, status = 00000100
+<5>[  111.215538] init: process 'DR-daemon', pid 2452 exited
+<5>[  111.221436] init: process 'DR-daemon' killing any children in process group
+<3>[  111.224905] init: init.svc.DR-daemon:restarting
+<6>[  112.542877] fg_read_vcell: VCELL=3878
+<6>[  113.307975] init: waitpid returned pid 2413, status = 00000009
+<5>[  113.311788] init: process 'zygote', pid 2413 exited
+<5>[  113.317633] init: process 'zygote' killing any children in process group
+<6>[  113.325743] request_suspend_state: wakeup (0->0) at 113290617629 (2011-05-22 18:20:40.320455840 UTC)
+<5>[  113.329386] init: service 'media' is being killed
+<3>[  113.335327] init: init.svc.media:stopping
+<5>[  113.341658] init: starting 'media'
+<3>[  113.344694] init: init.svc.media:running
+<3>[  113.354687] init: init.svc.zygote:restarting
+<6>[  113.368026] init: waitpid returned pid 2412, status = 0000000f
+<3>[  113.377992] init: untracked pid 2412 exited
+<5>[  113.389050] init: starting 'zygote'
+<3>[  113.392119] init: init.svc.zygote:running
+<6>[  113.405918] init: Created socket '/dev/socket/zygote' with mode '666', user '0', group '0'
+<3>[  113.585176] init: ro.csc.country_code:Nordic
+<4>[  113.764424] DmaAddr=@4f3e0000 Total=32768bytes PrdSz=2048 #Prds=4, dmaEnd 0x4f3e8000
+<4>[  113.826819] DmaAddr=@4f3e0000 Total=32768bytes PrdSz=2048 #Prds=4, dmaEnd 0x4f3e8000
+<4>[  115.715555] !@beginofsystem_init1()
+<4>[  115.814152] !@endofsystem_init1()
+<3>[  115.818262] init: no such service 'bootanim'
+<4>[  115.900068] !@beginofPackageManager
+<5>[  116.825225] init: starting 'DR-daemon'
+<3>[  116.828537] init: init.svc.DR-daemon:running
+<6>[  116.857784] init: waitpid returned pid 2474, status = 00000100
+<5>[  116.871105] init: process 'DR-daemon', pid 2474 exited
+<5>[  116.877002] init: process 'DR-daemon' killing any children in process group
+<3>[  116.890022] init: init.svc.DR-daemon:restarting
+<6>[  117.542547] fg_read_vcell: VCELL=3878
+<5>[  121.908848] init: starting 'DR-daemon'
+<3>[  121.912160] init: init.svc.DR-daemon:running
+<6>[  121.946065] init: waitpid returned pid 2475, status = 00000100
+<5>[  121.950139] init: process 'DR-daemon', pid 2475 exited
+<5>[  121.962777] init: process 'DR-daemon' killing any children in process group
+<3>[  121.975978] init: init.svc.DR-daemon:restarting
+<6>[  122.542535] fg_read_vcell: VCELL=3878
+<5>[  126.994761] init: starting 'DR-daemon'
+<3>[  126.998064] init: init.svc.DR-daemon:running
+<6>[  127.029410] init: waitpid returned pid 2476, status = 00000100
+<5>[  127.033485] init: process 'DR-daemon', pid 2476 exited
+<5>[  127.048672] init: process 'DR-daemon' killing any children in process group
+<3>[  127.061917] init: init.svc.DR-daemon:restarting
+<6>[  127.542532] fg_read_vcell: VCELL=3878
+<4>[  129.005970] !@2nfofPackageManager
+<5>[  131.080886] init: starting 'DR-daemon'
+<3>[  131.084119] init: init.svc.DR-daemon:running
+<6>[  131.102838] init: waitpid returned pid 2490, status = 00000100
+<5>[  131.106913] init: process 'DR-daemon', pid 2490 exited
+<5>[  131.112810] init: process 'DR-daemon' killing any children in process group
+<3>[  131.116627] init: init.svc.DR-daemon:restarting
+<6>[  132.542577] fg_read_vcell: VCELL=3878
+<5>[  136.128064] init: starting 'DR-daemon'
+<3>[  136.133237] init: init.svc.DR-daemon:running
+<6>[  136.210999] init: waitpid returned pid 2491, status = 00000100
+<5>[  136.215116] init: process 'DR-daemon', pid 2491 exited
+<5>[  136.221013] init: process 'DR-daemon' killing any children in process group
+<3>[  136.224482] init: init.svc.DR-daemon:restarting
+<6>[  137.542878] fg_read_vcell: VCELL=3878
+<6>[  139.299120] init: waitpid returned pid 2454, status = 00000009
+<5>[  139.302934] init: process 'zygote', pid 2454 exited
+<5>[  139.308632] init: process 'zygote' killing any children in process group
+<6>[  139.316872] request_suspend_state: wakeup (0->0) at 139281746169 (2011-05-22 18:21:06.311582671 UTC)
+<5>[  139.320609] init: service 'media' is being killed
+<3>[  139.326447] init: init.svc.media:stopping
+<5>[  139.332777] init: starting 'media'
+<3>[  139.335874] init: init.svc.media:running
+<3>[  139.346864] init: init.svc.zygote:restarting
+<6>[  139.360203] init: waitpid returned pid 2453, status = 0000000f
+<3>[  139.370177] init: untracked pid 2453 exited
+<5>[  139.381227] init: starting 'zygote'
+<3>[  139.384288] init: init.svc.zygote:running
+<6>[  139.398200] init: Created socket '/dev/socket/zygote' with mode '666', user '0', group '0'
+<3>[  139.571820] init: ro.csc.country_code:Nordic
+<4>[  139.760513] DmaAddr=@4f3e0000 Total=32768bytes PrdSz=2048 #Prds=4, dmaEnd 0x4f3e8000
+<4>[  139.822942] DmaAddr=@4f3e0000 Total=32768bytes PrdSz=2048 #Prds=4, dmaEnd 0x4f3e8000
+<5>[  141.590576] init: starting 'DR-daemon'
+<3>[  141.593914] init: init.svc.DR-daemon:running
+<6>[  141.619579] init: waitpid returned pid 2498, status = 00000100
+<5>[  141.623654] init: process 'DR-daemon', pid 2498 exited
+<5>[  141.634670] init: process 'DR-daemon' killing any children in process group
+<3>[  141.643950] init: init.svc.DR-daemon:restarting
+<4>[  141.747421] !@beginofsystem_init1()
+<4>[  141.846347] !@endofsystem_init1()
+<3>[  141.850405] init: no such service 'bootanim'
+<4>[  141.932072] !@beginofPackageManager
+<6>[  142.542498] fg_read_vcell: VCELL=3878
+<5>[  146.858061] init: starting 'DR-daemon'
+<3>[  146.861356] init: init.svc.DR-daemon:running
+<6>[  146.892762] init: waitpid returned pid 2514, status = 00000100
+<5>[  146.896837] init: process 'DR-daemon', pid 2514 exited
+<5>[  146.911930] init: process 'DR-daemon' killing any children in process group
+<3>[  146.925191] init: init.svc.DR-daemon:restarting
+<6>[  147.542486] fg_read_vcell: VCELL=3878
+<5>[  151.944009] init: starting 'DR-daemon'
+<3>[  151.947312] init: init.svc.DR-daemon:running
+<6>[  151.984278] init: waitpid returned pid 2515, status = 00000100
+<5>[  151.988353] init: process 'DR-daemon', pid 2515 exited
+<5>[  152.001841] init: process 'DR-daemon' killing any children in process group
+<3>[  152.014997] init: init.svc.DR-daemon:restarting
+<6>[  152.542508] fg_read_vcell: VCELL=3878
+<4>[  155.050195] !@2nfofPackageManager
+<5>[  156.034027] init: starting 'DR-daemon'
+<3>[  156.037295] init: init.svc.DR-daemon:running
+<6>[  156.055632] init: waitpid returned pid 2529, status = 00000100
+<5>[  156.059707] init: process 'DR-daemon', pid 2529 exited
+<5>[  156.065604] init: process 'DR-daemon' killing any children in process group
+<3>[  156.069073] init: init.svc.DR-daemon:restarting
+<6>[  157.542630] fg_read_vcell: VCELL=3878
+<5>[  161.080208] init: starting 'DR-daemon'
+<3>[  161.085626] init: init.svc.DR-daemon:running
+<6>[  161.155935] init: waitpid returned pid 2530, status = 00000100
+<5>[  161.160251] init: process 'DR-daemon', pid 2530 exited
+<5>[  161.166149] init: process 'DR-daemon' killing any children in process group
+<3>[  161.169618] init: init.svc.DR-daemon:restarting
+<6>[  162.542811] fg_read_vcell: VCELL=3878
+<6>[  165.364222] init: waitpid returned pid 2493, status = 00000009
+<5>[  165.368035] init: process 'zygote', pid 2493 exited
+<5>[  165.373734] init: process 'zygote' killing any children in process group
+<6>[  165.381956] request_suspend_state: wakeup (0->0) at 165346849289 (2011-05-22 18:21:32.376685666 UTC)
+<5>[  165.385598] init: service 'media' is being killed
+<3>[  165.394151] init: init.svc.media:stopping
+<5>[  165.400482] init: starting 'media'
+<3>[  165.403804] init: init.svc.media:running
+<3>[  165.413250] init: init.svc.zygote:restarting
+<6>[  165.426597] init: waitpid returned pid 2492, status = 0000000f
+<3>[  165.436563] init: untracked pid 2492 exited
+<5>[  165.447630] init: starting 'zygote'
+<3>[  165.450691] init: init.svc.zygote:running
+<6>[  165.464568] init: Created socket '/dev/socket/zygote' with mode '666', user '0', group '0'
+<3>[  165.643765] init: ro.csc.country_code:Nordic
+<4>[  165.830775] DmaAddr=@4f3e0000 Total=32768bytes PrdSz=2048 #Prds=4, dmaEnd 0x4f3e8000
+<4>[  165.893213] DmaAddr=@4f3e0000 Total=32768bytes PrdSz=2048 #Prds=4, dmaEnd 0x4f3e8000
+<5>[  166.655957] init: starting 'DR-daemon'
+<3>[  166.659295] init: init.svc.DR-daemon:running
+<6>[  166.689506] init: waitpid returned pid 2537, status = 00000100
+<5>[  166.693580] init: process 'DR-daemon', pid 2537 exited
+<5>[  166.704916] init: process 'DR-daemon' killing any children in process group
+<3>[  166.714240] init: init.svc.DR-daemon:restarting
+<6>[  167.542510] fg_read_vcell: VCELL=3878
+<4>[  167.819835] !@beginofsystem_init1()
+<4>[  167.919107] !@endofsystem_init1()
+<3>[  167.923209] init: no such service 'bootanim'
+<4>[  168.004746] !@beginofPackageManager
+<5>[  171.932273] init: starting 'DR-daemon'
+<3>[  171.935576] init: init.svc.DR-daemon:running
+<6>[  171.975257] init: waitpid returned pid 2553, status = 00000100
+<5>[  171.979331] init: process 'DR-daemon', pid 2553 exited
+<5>[  171.989116] init: process 'DR-daemon' killing any children in process group
+<7>[  171.995368] [TSP]### Finger[0] Down (423,113) - touch num is (1)   status=0xc0
+<3>[  172.015006] init: init.svc.DR-daemon:restarting
+<7>[  172.100089] [TSP]### Finger[0] Up (332,95) - touch num is (0)  status=0x20
+<7>[  172.180073] [TSP]### Finger[0] Down (131,102) - touch num is (1)   status=0xc0
+<7>[  172.418793] [TSP]### Finger[0] Up (136,97) - touch num is (0)  status=0x20
+<6>[  172.542516] fg_read_vcell: VCELL=3878
+<3>[  173.503657] s3c_keygpio_isr:245 input_report_key(df381000, 26, 1)
+<7>[  173.512936] s3c_keygpio_isr pwr key_status =0
+<3>[  174.267346] s3c_keygpio_isr:245 input_report_key(df381000, 26, 0)
+<7>[  174.276711] s3c_keygpio_isr pwr key_status =64
+<5>[  177.029946] init: starting 'DR-daemon'
+<3>[  177.033249] init: init.svc.DR-daemon:running
+<6>[  177.064890] init: waitpid returned pid 2554, status = 00000100
+<5>[  177.068965] init: process 'DR-daemon', pid 2554 exited
+<5>[  177.081889] init: process 'DR-daemon' killing any children in process group
+<3>[  177.097023] init: init.svc.DR-daemon:restarting
+<6>[  177.542512] fg_read_vcell: VCELL=3878
+<4>[  181.111906] !@2nfofPackageManager
+<5>[  182.115816] init: starting 'DR-daemon'
+<3>[  182.119119] init: init.svc.DR-daemon:running
+<6>[  182.138296] init: waitpid returned pid 2570, status = 00000100
+<5>[  182.142371] init: process 'DR-daemon', pid 2570 exited
+<5>[  182.148269] init: process 'DR-daemon' killing any children in process group
+<3>[  182.153178] init: init.svc.DR-daemon:restarting
+<6>[  182.542720] fg_read_vcell: VCELL=3878
+<5>[  187.164674] init: starting 'DR-daemon'
+<3>[  187.169744] init: init.svc.DR-daemon:running
+<6>[  187.240957] init: waitpid returned pid 2571, status = 00000100
+<5>[  187.245074] init: process 'DR-daemon', pid 2571 exited
+<5>[  187.250972] init: process 'DR-daemon' killing any children in process group
+<3>[  187.254449] init: init.svc.DR-daemon:restarting
+<6>[  187.543029] fg_read_vcell: VCELL=3878
+<6>[  191.395097] init: waitpid returned pid 2532, status = 00000009
+<5>[  191.398972] init: process 'zygote', pid 2532 exited
+<5>[  191.404679] init: process 'zygote' killing any children in process group
+<6>[  191.412953] request_suspend_state: wakeup (0->0) at 191377867116 (2011-05-22 18:21:58.407705369 UTC)
+<5>[  191.416596] init: service 'media' is being killed
+<3>[  191.422494] init: init.svc.media:stopping
+<5>[  191.428825] init: starting 'media'
+<3>[  191.431887] init: init.svc.media:running
+<3>[  191.444499] init: init.svc.zygote:restarting
+<6>[  191.457846] init: waitpid returned pid 2531, status = 0000000f
+<3>[  191.467812] init: untracked pid 2531 exited
+<5>[  191.474402] init: starting 'zygote'
+<3>[  191.483476] init: init.svc.zygote:running
+<6>[  191.495747] init: Created socket '/dev/socket/zygote' with mode '666', user '0', group '0'
+<3>[  191.674988] init: ro.csc.country_code:Nordic
+<4>[  191.854149] DmaAddr=@4f3e0000 Total=32768bytes PrdSz=2048 #Prds=4, dmaEnd 0x4f3e8000
+<4>[  191.916552] DmaAddr=@4f3e0000 Total=32768bytes PrdSz=2048 #Prds=4, dmaEnd 0x4f3e8000
+<6>[  192.542469] fg_read_vcell: VCELL=3878
+<5>[  192.687198] init: starting 'DR-daemon'
+<3>[  192.690527] init: init.svc.DR-daemon:running
+<6>[  192.720772] init: waitpid returned pid 2578, status = 00000100
+<5>[  192.724847] init: process 'DR-daemon', pid 2578 exited
+<5>[  192.736156] init: process 'DR-daemon' killing any children in process group
+<3>[  192.745445] init: init.svc.DR-daemon:restarting
+<4>[  193.845238] !@beginofsystem_init1()
+<4>[  193.944840] !@endofsystem_init1()
+<3>[  193.948959] init: no such service 'bootanim'
+<4>[  194.030765] !@beginofPackageManager
+<6>[  197.542466] fg_read_vcell: VCELL=3878
+<5>[  197.955699] init: starting 'DR-daemon'
+<3>[  197.959002] init: init.svc.DR-daemon:running
+<6>[  197.996835] init: waitpid returned pid 2594, status = 00000100
+<5>[  198.000910] init: process 'DR-daemon', pid 2594 exited
+<5>[  198.013539] init: process 'DR-daemon' killing any children in process group
+<3>[  198.026713] init: init.svc.DR-daemon:restarting
+<5>[  202.049454] init: starting 'DR-daemon'
+<3>[  202.052757] init: init.svc.DR-daemon:running
+<6>[  202.092438] init: waitpid returned pid 2595, status = 00000100
+<5>[  202.096513] init: process 'DR-daemon', pid 2595 exited
+<5>[  202.111180] init: process 'DR-daemon' killing any children in process group
+<3>[  202.119905] init: init.svc.DR-daemon:restarting
+<6>[  202.542436] fg_read_vcell: VCELL=3878
+<4>[  207.080864] !@2nfofPackageManager
+<5>[  207.139287] init: starting 'DR-daemon'
+<3>[  207.142572] init: init.svc.DR-daemon:running
+<6>[  207.174083] init: waitpid returned pid 2598, status = 00000100
+<5>[  207.178159] init: process 'DR-daemon', pid 2598 exited
+<5>[  207.193208] init: process 'DR-daemon' killing any children in process group
+<3>[  207.206417] init: init.svc.DR-daemon:restarting
+<6>[  207.542433] fg_read_vcell: VCELL=3878
+<5>[  212.224591] init: starting 'DR-daemon'
+<3>[  212.229930] init: init.svc.DR-daemon:running
+<6>[  212.280448] init: waitpid returned pid 2610, status = 00000100
+<5>[  212.284756] init: process 'DR-daemon', pid 2610 exited
+<5>[  212.291044] init: process 'DR-daemon' killing any children in process group
+<3>[  212.294703] init: init.svc.DR-daemon:restarting
+<6>[  212.543117] fg_read_vcell: VCELL=3878
+<5>[  217.380927] init: starting 'DR-daemon'
+<3>[  217.391931] init: init.svc.DR-daemon:running
+<6>[  217.414307] init: waitpid returned pid 2573, status = 00000009
+<5>[  217.421704] init: process 'zygote', pid 2573 exited
+<5>[  217.431211] init: process 'zygote' killing any children in process group
+<6>[  217.439415] request_suspend_state: wakeup (0->0) at 217404342278 (2011-05-22 18:22:24.434180448 UTC)
+<5>[  217.443057] init: service 'media' is being killed
+<3>[  217.448990] init: init.svc.media:stopping
+<5>[  217.455321] init: starting 'media'
+<3>[  217.458374] init: init.svc.media:running
+<3>[  217.467907] init: init.svc.zygote:restarting
+<6>[  217.481272] init: waitpid returned pid 2572, status = 0000000f
+<3>[  217.491585] init: untracked pid 2572 exited
+<6>[  217.504630] init: waitpid returned pid 2611, status = 00000100
+<5>[  217.515618] init: process 'DR-daemon', pid 2611 exited
+<5>[  217.521514] init: process 'DR-daemon' killing any children in process group
+<3>[  217.530604] init: init.svc.DR-daemon:restarting
+<6>[  217.542460] fg_read_vcell: VCELL=3878
+<5>[  217.549165] init: starting 'zygote'
+<3>[  217.552183] init: init.svc.zygote:running
+<6>[  217.569990] init: Created socket '/dev/socket/zygote' with mode '666', user '0', group '0'
+<3>[  217.740314] init: ro.csc.country_code:Nordic
+<4>[  217.881443] DmaAddr=@4f3e0000 Total=32768bytes PrdSz=2048 #Prds=4, dmaEnd 0x4f3e8000
+<4>[  217.943881] DmaAddr=@4f3e0000 Total=32768bytes PrdSz=2048 #Prds=4, dmaEnd 0x4f3e8000
+<4>[  219.850831] !@beginofsystem_init1()
+<4>[  219.950598] !@endofsystem_init1()
+<3>[  219.954735] init: no such service 'bootanim'
+<4>[  220.036428] !@beginofPackageManager
+<6>[  222.542467] fg_read_vcell: VCELL=3878
+<5>[  222.963420] init: starting 'DR-daemon'
+<3>[  222.966731] init: init.svc.DR-daemon:running
+<6>[  222.994504] init: waitpid returned pid 2633, status = 00000100
+<5>[  223.001980] init: process 'DR-daemon', pid 2633 exited
+<5>[  223.017383] init: process 'DR-daemon' killing any children in process group
+<3>[  223.030601] init: init.svc.DR-daemon:restarting
+<5>[  227.049430] init: starting 'DR-daemon'
+<3>[  227.052725] init: init.svc.DR-daemon:running
+<6>[  227.084365] init: waitpid returned pid 2634, status = 00000100
+<5>[  227.088440] init: process 'DR-daemon', pid 2634 exited
+<5>[  227.107262] init: process 'DR-daemon' killing any children in process group
+<3>[  227.120454] init: init.svc.DR-daemon:restarting
+<6>[  227.542455] fg_read_vcell: VCELL=3878
+<5>[  232.135342] init: starting 'DR-daemon'
+<3>[  232.138628] init: init.svc.DR-daemon:running
+<6>[  232.170313] init: waitpid returned pid 2635, status = 00000100
+<5>[  232.174387] init: process 'DR-daemon', pid 2635 exited
+<5>[  232.185368] init: process 'DR-daemon' killing any children in process group
+<3>[  232.206410] init: init.svc.DR-daemon:restarting
+<6>[  232.542487] fg_read_vcell: VCELL=3878
+<4>[  233.203250] !@2nfofPackageManager
+<5>[  237.226821] init: starting 'DR-daemon'
+<3>[  237.231657] init: init.svc.DR-daemon:running
+<6>[  237.291864] init: waitpid returned pid 2649, status = 00000100
+<5>[  237.295980] init: process 'DR-daemon', pid 2649 exited
+<5>[  237.301878] init: process 'DR-daemon' killing any children in process group
+<3>[  237.305355] init: init.svc.DR-daemon:restarting
+<6>[  237.542972] fg_read_vcell: VCELL=3878
+<5>[  242.316971] init: starting 'DR-daemon'
+<3>[  242.321799] init: init.svc.DR-daemon:running
+<6>[  242.410365] init: waitpid returned pid 2650, status = 00000100
+<5>[  242.414729] init: process 'DR-daemon', pid 2650 exited
+<5>[  242.420983] init: process 'DR-daemon' killing any children in process group
+<3>[  242.424634] init: init.svc.DR-daemon:restarting
+<6>[  242.542868] fg_read_vcell: VCELL=3878
+<6>[  243.638790] init: waitpid returned pid 2613, status = 00000009
+<5>[  243.642664] init: process 'zygote', pid 2613 exited
+<5>[  243.648579] init: process 'zygote' killing any children in process group
+<6>[  243.657080] request_suspend_state: wakeup (0->0) at 243621983500 (2011-05-22 18:22:50.651816378 UTC)
+<5>[  243.660980] init: service 'media' is being killed
+<3>[  243.669490] init: init.svc.media:stopping
+<5>[  243.675821] init: starting 'media'
+<3>[  243.679125] init: init.svc.media:running
+<3>[  243.690549] init: init.svc.zygote:restarting
+<6>[  243.703923] init: waitpid returned pid 2612, status = 0000000f
+<3>[  243.713810] init: untracked pid 2612 exited
+<5>[  243.724895] init: starting 'zygote'
+<3>[  243.728111] init: init.svc.zygote:running
+<6>[  243.742301] init: Created socket '/dev/socket/zygote' with mode '666', user '0', group '0'
+<3>[  243.934091] init: ro.csc.country_code:Nordic
+<4>[  244.143287] DmaAddr=@4f3e0000 Total=32768bytes PrdSz=2048 #Prds=4, dmaEnd 0x4f3e8000
+<4>[  244.205655] DmaAddr=@4f3e0000 Total=32768bytes PrdSz=2048 #Prds=4, dmaEnd 0x4f3e8000
+<4>[  246.077211] !@beginofsystem_init1()
+<4>[  246.177307] !@endofsystem_init1()
+<3>[  246.181418] init: no such service 'bootanim'
+<4>[  246.263041] !@beginofPackageManager
+<5>[  247.188988] init: starting 'DR-daemon'
+<3>[  247.192308] init: init.svc.DR-daemon:running
+<6>[  247.232553] init: waitpid returned pid 2672, status = 00000100
+<5>[  247.236628] init: process 'DR-daemon', pid 2672 exited
+<5>[  247.251781] init: process 'DR-daemon' killing any children in process group
+<3>[  247.264964] init: init.svc.DR-daemon:restarting
+<6>[  247.542410] fg_read_vcell: VCELL=3878
+<5>[  252.275968] init: starting 'DR-daemon'
+<3>[  252.279271] init: init.svc.DR-daemon:running
+<6>[  252.316116] init: waitpid returned pid 2673, status = 00000100
+<5>[  252.320190] init: process 'DR-daemon', pid 2673 exited
+<5>[  252.333748] init: process 'DR-daemon' killing any children in process group
+<3>[  252.346922] init: init.svc.DR-daemon:restarting
+<6>[  252.542450] fg_read_vcell: VCELL=3878
+<5>[  257.365809] init: starting 'DR-daemon'
+<3>[  257.369112] init: init.svc.DR-daemon:running
+<6>[  257.400450] init: waitpid returned pid 2674, status = 00000100
+<5>[  257.404524] init: process 'DR-daemon', pid 2674 exited
+<5>[  257.419756] init: process 'DR-daemon' killing any children in process group
+<3>[  257.432939] init: init.svc.DR-daemon:restarting
+<6>[  257.542386] fg_read_vcell: VCELL=3878
+<4>[  259.364338] !@2nfofPackageManager
+<5>[  262.456994] init: starting 'DR-daemon'
+<3>[  262.461853] init: init.svc.DR-daemon:running
+<6>[  262.538999] init: waitpid returned pid 2688, status = 00000100
+<6>[  262.542760] fg_read_vcell: VCELL=3878
+<5>[  262.546985] init: process 'DR-daemon', pid 2688 exited
+<5>[  262.552882] init: process 'DR-daemon' killing any children in process group
+<3>[  262.556351] init: init.svc.DR-daemon:restarting
+<6>[  267.542780] fg_read_vcell: VCELL=3878
+<5>[  267.567962] init: starting 'DR-daemon'
+<3>[  267.572801] init: init.svc.DR-daemon:running
+<6>[  267.661645] init: waitpid returned pid 2689, status = 00000100
+<5>[  267.665915] init: process 'DR-daemon', pid 2689 exited
+<5>[  267.671952] init: process 'DR-daemon' killing any children in process group
+<3>[  267.675637] init: init.svc.DR-daemon:restarting
+<6>[  269.651043] init: waitpid returned pid 2652, status = 00000009
+<5>[  269.654857] init: process 'zygote', pid 2652 exited
+<5>[  269.660556] init: process 'zygote' killing any children in process group
+<6>[  269.668839] request_suspend_state: wakeup (0->0) at 269633790534 (2011-05-22 18:23:16.663628662 UTC)
+<5>[  269.672481] init: service 'media' is being killed
+<3>[  269.678318] init: init.svc.media:stopping
+<5>[  269.684650] init: starting 'media'
+<3>[  269.687746] init: init.svc.media:running
+<3>[  269.698285] init: init.svc.zygote:restarting
+<6>[  269.711624] init: waitpid returned pid 2651, status = 0000000f
+<3>[  269.721598] init: untracked pid 2651 exited
+<5>[  269.732648] init: starting 'zygote'
+<3>[  269.735709] init: init.svc.zygote:running
+<6>[  269.750046] init: Created socket '/dev/socket/zygote' with mode '666', user '0', group '0'
+<3>[  269.923544] init: ro.csc.country_code:Nordic
+<4>[  270.111994] DmaAddr=@4f3e0000 Total=32768bytes PrdSz=2048 #Prds=4, dmaEnd 0x4f3e8000
+<4>[  270.174389] DmaAddr=@4f3e0000 Total=32768bytes PrdSz=2048 #Prds=4, dmaEnd 0x4f3e8000
+<4>[  272.065042] !@beginofsystem_init1()
+<4>[  272.165096] !@endofsystem_init1()
+<3>[  272.169249] init: no such service 'bootanim'
+<5>[  272.176187] init: starting 'DR-daemon'
+<3>[  272.179457] init: init.svc.DR-daemon:running
+<6>[  272.220465] init: waitpid returned pid 2713, status = 00000100
+<5>[  272.224540] init: process 'DR-daemon', pid 2713 exited
+<5>[  272.240023] init: process 'DR-daemon' killing any children in process group
+<3>[  272.253223] init: init.svc.DR-daemon:restarting
+<4>[  272.293328] !@beginofPackageManager
+<6>[  272.542465] fg_read_vcell: VCELL=3878
+<5>[  277.272050] init: starting 'DR-daemon'
+<3>[  277.275353] init: init.svc.DR-daemon:running
+<6>[  277.313126] init: waitpid returned pid 2718, status = 00000100
+<5>[  277.317201] init: process 'DR-daemon', pid 2718 exited
+<5>[  277.329882] init: process 'DR-daemon' killing any children in process group
+<3>[  277.343056] init: init.svc.DR-daemon:restarting
+<6>[  277.542444] fg_read_vcell: VCELL=3878
+<5>[  282.366246] init: starting 'DR-daemon'
+<3>[  282.369540] init: init.svc.DR-daemon:running
+<6>[  282.396489] init: waitpid returned pid 2719, status = 00000100
+<5>[  282.410115] init: process 'DR-daemon', pid 2719 exited
+<5>[  282.416011] init: process 'DR-daemon' killing any children in process group
+<3>[  282.429004] init: init.svc.DR-daemon:restarting
+<6>[  282.542441] fg_read_vcell: VCELL=3878
+<4>[  285.342300] !@2nfofPackageManager
+<5>[  287.454278] init: starting 'DR-daemon'
+<3>[  287.458242] init: init.svc.DR-daemon:running
+<6>[  287.486092] init: waitpid returned pid 2733, status = 00000100
+<5>[  287.490166] init: process 'DR-daemon', pid 2733 exited
+<5>[  287.496064] init: process 'DR-daemon' killing any children in process group
+<3>[  287.499533] init: init.svc.DR-daemon:restarting
+<6>[  287.542457] fg_read_vcell: VCELL=3878
+<5>[  292.511028] init: starting 'DR-daemon'
+<3>[  292.516169] init: init.svc.DR-daemon:running
+<6>[  292.542814] fg_read_vcell: VCELL=3878
+<6>[  292.580129] init: waitpid returned pid 2734, status = 00000100
+<5>[  292.584238] init: process 'DR-daemon', pid 2734 exited
+<5>[  292.590136] init: process 'DR-daemon' killing any children in process group
+<3>[  292.593613] init: init.svc.DR-daemon:restarting
+<5>[  292.649368] init: starting 'dumpstate'
+<3>[  292.653234] init: init.svc.dumpstate:running
+<6>[  292.666157] init: Created socket '/dev/socket/dumpstate' with mode '660', user '2000', group '1007'
+<4>[  293.662114] [VIBETONZ] enable_vibetonz_from_user : time = 150 msec 
+<4>[  293.663855] [VIBETONZ] ENABLE
+<4>[  293.816625] [VIBETONZ] DISABLE
+<6>[  295.545446] init: waitpid returned pid 2691, status = 00000009
+<5>[  295.549494] init: process 'zygote', pid 2691 exited
+<5>[  295.556633] init: process 'zygote' killing any children in process group
+<6>[  295.565045] request_suspend_state: wakeup (0->0) at 295530017358 (2011-05-22 18:23:42.559855944 UTC)
+<5>[  295.586400] init: service 'media' is being killed
+<3>[  295.596313] init: init.svc.media:stopping
+<5>[  295.602643] init: starting 'media'
+<3>[  295.607526] init: init.svc.media:running
+<3>[  295.616338] init: init.svc.zygote:restarting
+<6>[  295.673495] init: waitpid returned pid 2690, status = 0000000f
+<3>[  295.704735] init: untracked pid 2690 exited
+<5>[  295.717893] init: starting 'zygote'
+<3>[  295.720927] init: init.svc.zygote:running
+<6>[  295.760044] init: Created socket '/dev/socket/zygote' with mode '666', user '0', group '0'
+<3>[  296.212613] init: ro.csc.country_code:Nordic
+<4>[  296.467446] DmaAddr=@4f3e0000 Total=32768bytes PrdSz=2048 #Prds=4, dmaEnd 0x4f3e8000
+<4>[  296.529832] DmaAddr=@4f3e0000 Total=32768bytes PrdSz=2048 #Prds=4, dmaEnd 0x4f3e8000
+<5>[  297.224527] init: starting 'DR-daemon'
+<3>[  297.227900] init: init.svc.DR-daemon:running
+<6>[  297.251899] init: waitpid returned pid 2750, status = 00000100
+<5>[  297.255974] init: process 'DR-daemon', pid 2750 exited
+<5>[  297.275159] init: process 'DR-daemon' killing any children in process group
+<3>[  297.278628] init: init.svc.DR-daemon:restarting
+<6>[  297.542415] fg_read_vcell: VCELL=3878
+<4>[  298.462039] !@beginofsystem_init1()
+<4>[  298.562326] !@endofsystem_init1()
+<3>[  298.566472] init: no such service 'bootanim'
+<4>[  298.651443] !@beginofPackageManager
+<6>[  302.542386] fg_read_vcell: VCELL=3878
+<5>[  302.572751] init: starting 'DR-daemon'
+<3>[  302.576071] init: init.svc.DR-daemon:running
+<6>[  302.611589] init: waitpid returned pid 2766, status = 00000100
+<5>[  302.615664] init: process 'DR-daemon', pid 2766 exited
+<5>[  302.630566] init: process 'DR-daemon' killing any children in process group
+<3>[  302.639949] init: init.svc.DR-daemon:restarting
+<6>[  307.542425] fg_read_vcell: VCELL=3878
+<5>[  307.662635] init: starting 'DR-daemon'
+<3>[  307.665938] init: init.svc.DR-daemon:running
+<6>[  307.701248] init: waitpid returned pid 2767, status = 00000100
+<5>[  307.705323] init: process 'DR-daemon', pid 2767 exited
+<5>[  307.720457] init: process 'DR-daemon' killing any children in process group
+<3>[  307.729746] init: init.svc.DR-daemon:restarting
+<4>[  311.724577] !@2nfofPackageManager
+<6>[  312.542387] fg_read_vcell: VCELL=3878
+<5>[  312.753664] init: starting 'DR-daemon'
+<3>[  312.757239] init: init.svc.DR-daemon:running
+<6>[  312.784855] init: waitpid returned pid 2781, status = 00000100
+<5>[  312.788930] init: process 'DR-daemon', pid 2781 exited
+<5>[  312.794828] init: process 'DR-daemon' killing any children in process group
+<3>[  312.798297] init: init.svc.DR-daemon:restarting
+<6>[  317.542678] fg_read_vcell: VCELL=3878
+<5>[  317.807253] init: starting 'DR-daemon'
+<3>[  317.810755] init: init.svc.DR-daemon:running
+<6>[  318.086874] init: waitpid returned pid 2813, status = 00000100
+<5>[  318.091035] init: process 'DR-daemon', pid 2813 exited
+<5>[  318.098754] init: process 'DR-daemon' killing any children in process group
+<3>[  318.104539] init: init.svc.DR-daemon:restarting
+<4>[  318.155286] [VIBETONZ] enable_vibetonz_from_user : time = 75 msec 
+<4>[  318.156933] [VIBETONZ] ENABLE
+<4>[  318.234619] [VIBETONZ] DISABLE
+<4>[  318.287750] [VIBETONZ] enable_vibetonz_from_user : time = 75 msec 
+<4>[  318.289398] [VIBETONZ] ENABLE
+<4>[  318.367067] [VIBETONZ] DISABLE
+<4>[  318.420667] [VIBETONZ] enable_vibetonz_from_user : time = 75 msec 
+<4>[  318.422315] [VIBETONZ] ENABLE
+<4>[  318.499984] [VIBETONZ] DISABLE
+<6>[  318.558090] init: waitpid returned pid 2737, status = 00000000
+<5>[  318.562902] init: process 'dumpstate', pid 2737 exited
+<3>[  318.566406] init: init.svc.dumpstate:stopped
+<6>[  318.575425] init: waitpid returned pid 2745, status = 0000000f
+<3>[  318.578546] init: untracked pid 2745 exited
+<6>[  322.026946] init: waitpid returned pid 2742, status = 00000009
+<5>[  322.030760] init: process 'zygote', pid 2742 exited
+<5>[  322.036398] init: process 'zygote' killing any children in process group
+<6>[  322.044508] request_suspend_state: wakeup (0->0) at 322009502229 (2011-05-22 18:24:09.039340482 UTC)
+<5>[  322.048150] init: service 'media' is being killed
+<3>[  322.054231] init: init.svc.media:stopping
+<5>[  322.060562] init: starting 'media'
+<3>[  322.063650] init: init.svc.media:running
+<3>[  322.073234] init: init.svc.zygote:restarting
+<6>[  322.090581] init: waitpid returned pid 2741, status = 0000000f
+<3>[  322.100503] init: untracked pid 2741 exited
+<5>[  322.111830] init: starting 'DR-daemon'
+<3>[  322.115116] init: init.svc.DR-daemon:running
+<5>[  322.135040] init: starting 'zygote'
+<3>[  322.138056] init: init.svc.zygote:running
+<6>[  322.151874] init: Created socket '/dev/socket/zygote' with mode '666', user '0', group '0'
+<6>[  322.164797] init: waitpid returned pid 2815, status = 00000100
+<5>[  322.175673] init: process 'DR-daemon', pid 2815 exited
+<5>[  322.189212] init: process 'DR-daemon' killing any children in process group
+<3>[  322.206324] init: init.svc.DR-daemon:restarting
+<3>[  322.346769] init: ro.csc.country_code:Nordic
+<4>[  322.518245] DmaAddr=@4f3e0000 Total=32768bytes PrdSz=2048 #Prds=4, dmaEnd 0x4f3e8000
+<6>[  322.542391] fg_read_vcell: VCELL=3878
+<4>[  322.584526] DmaAddr=@4f3e0000 Total=32768bytes PrdSz=2048 #Prds=4, dmaEnd 0x4f3e8000
+<4>[  324.478648] !@beginofsystem_init1()
+<4>[  324.579161] !@endofsystem_init1()
+<3>[  324.583263] init: no such service 'bootanim'
+<4>[  324.665034] !@beginofPackageManager
+<6>[  327.542380] fg_read_vcell: VCELL=3878
+<5>[  327.591947] init: starting 'DR-daemon'
+<3>[  327.595330] init: init.svc.DR-daemon:running
+<6>[  327.631540] init: waitpid returned pid 2836, status = 00000100
+<5>[  327.635615] init: process 'DR-daemon', pid 2836 exited
+<5>[  327.650135] init: process 'DR-daemon' killing any children in process group
+<3>[  327.663317] init: init.svc.DR-daemon:restarting
+<6>[  332.542333] fg_read_vcell: VCELL=3878
+<5>[  332.682170] init: starting 'DR-daemon'
+<3>[  332.685473] init: init.svc.DR-daemon:running
+<6>[  332.723489] init: waitpid returned pid 2837, status = 00000100
+<5>[  332.727564] init: process 'DR-daemon', pid 2837 exited
+<5>[  332.740011] init: process 'DR-daemon' killing any children in process group
+<3>[  332.753203] init: init.svc.DR-daemon:restarting
+<6>[  337.542398] fg_read_vcell: VCELL=3878
+<4>[  337.718810] !@2nfofPackageManager
+<5>[  337.772003] init: starting 'DR-daemon'
+<3>[  337.775297] init: init.svc.DR-daemon:running
+<6>[  337.810650] init: waitpid returned pid 2840, status = 00000100
+<5>[  337.814725] init: process 'DR-daemon', pid 2840 exited
+<5>[  337.829818] init: process 'DR-daemon' killing any children in process group
+<3>[  337.839115] init: init.svc.DR-daemon:restarting
+<6>[  342.542721] fg_read_vcell: VCELL=3878
+<5>[  342.862485] init: starting 'DR-daemon'
+<3>[  342.867450] init: init.svc.DR-daemon:running
+<6>[  342.945506] init: waitpid returned pid 2852, status = 00000100
+<5>[  342.949649] init: process 'DR-daemon', pid 2852 exited
+<5>[  342.955650] init: process 'DR-daemon' killing any children in process group
+<3>[  342.959145] init: init.svc.DR-daemon:restarting
+<6>[  347.542704] fg_read_vcell: VCELL=3878
+<5>[  348.053818] init: starting 'DR-daemon'
+<3>[  348.057968] init: init.svc.DR-daemon:running
+<6>[  348.090703] init: waitpid returned pid 2816, status = 00000009
+<5>[  348.097249] init: process 'zygote', pid 2816 exited
+<5>[  348.102886] init: process 'zygote' killing any children in process group
+<6>[  348.114994] request_suspend_state: wakeup (0->0) at 348080003287 (2011-05-22 18:24:35.109841414 UTC)
+<5>[  348.118636] init: service 'media' is being killed
+<3>[  348.124578] init: init.svc.media:stopping
+<5>[  348.130909] init: starting 'media'
+<3>[  348.133962] init: init.svc.media:running
+<3>[  348.143590] init: init.svc.zygote:restarting
+<6>[  348.156947] init: waitpid returned pid 2814, status = 0000000f
+<3>[  348.166913] init: untracked pid 2814 exited
+<6>[  348.180313] init: waitpid returned pid 2853, status = 00000100
+<5>[  348.187363] init: process 'DR-daemon', pid 2853 exited
+<5>[  348.196989] init: process 'DR-daemon' killing any children in process group
+<3>[  348.206288] init: init.svc.DR-daemon:restarting
+<5>[  348.224910] init: starting 'zygote'
+<3>[  348.227952] init: init.svc.zygote:running
+<6>[  348.241648] init: Created socket '/dev/socket/zygote' with mode '666', user '0', group '0'
+<3>[  348.417358] init: ro.csc.country_code:Nordic
+<4>[  348.557239] DmaAddr=@4f3e0000 Total=32768bytes PrdSz=2048 #Prds=4, dmaEnd 0x4f3e8000
+<4>[  348.619659] DmaAddr=@4f3e0000 Total=32768bytes PrdSz=2048 #Prds=4, dmaEnd 0x4f3e8000
+<4>[  350.529706] !@beginofsystem_init1()
+<4>[  350.630670] !@endofsystem_init1()
+<3>[  350.634720] init: no such service 'bootanim'
+<4>[  350.714860] !@beginofPackageManager
+<6>[  352.542399] fg_read_vcell: VCELL=3878
+<5>[  353.643100] init: starting 'DR-daemon'
+<3>[  353.646404] init: init.svc.DR-daemon:running
+<6>[  353.681739] init: waitpid returned pid 2875, status = 00000100
+<5>[  353.685814] init: process 'DR-daemon', pid 2875 exited
+<5>[  353.700888] init: process 'DR-daemon' killing any children in process group
+<3>[  353.710169] init: init.svc.DR-daemon:restarting
+<6>[  357.542377] fg_read_vcell: VCELL=3878
+<5>[  358.732924] init: starting 'DR-daemon'
+<3>[  358.736227] init: init.svc.DR-daemon:running
+<6>[  358.772708] init: waitpid returned pid 2876, status = 00000100
+<5>[  358.776783] init: process 'DR-daemon', pid 2876 exited
+<5>[  358.790765] init: process 'DR-daemon' killing any children in process group
+<3>[  358.803940] init: init.svc.DR-daemon:restarting
+<6>[  362.542356] fg_read_vcell: VCELL=3878
+<5>[  363.822696] init: starting 'DR-daemon'
+<3>[  363.826000] init: init.svc.DR-daemon:running
+<6>[  363.861977] init: waitpid returned pid 2877, status = 00000100
+<5>[  363.866052] init: process 'DR-daemon', pid 2877 exited
+<5>[  363.880598] init: process 'DR-daemon' killing any children in process group
+<3>[  363.890797] init: init.svc.DR-daemon:restarting
+<4>[  363.900771] !@2nfofPackageManager
+<6>[  367.542366] fg_read_vcell: VCELL=3878
+<5>[  368.909222] init: starting 'DR-daemon'
+<3>[  368.914041] init: init.svc.DR-daemon:running
+<6>[  368.991161] init: waitpid returned pid 2891, status = 00000100
+<5>[  368.995286] init: process 'DR-daemon', pid 2891 exited
+<5>[  369.001296] init: process 'DR-daemon' killing any children in process group
+<3>[  369.004809] init: init.svc.DR-daemon:restarting
+<6>[  372.542738] fg_read_vcell: VCELL=3878
+<5>[  374.018686] init: starting 'DR-daemon'
+<3>[  374.026730] init: init.svc.DR-daemon:running
+<6>[  374.217304] init: waitpid returned pid 2892, status = 00000100
+<5>[  374.221378] init: process 'DR-daemon', pid 2892 exited
+<5>[  374.232646] init: process 'DR-daemon' killing any children in process group
+<3>[  374.236531] init: init.svc.DR-daemon:restarting
+<6>[  374.245811] init: waitpid returned pid 2855, status = 00000009
+<5>[  374.249627] init: process 'zygote', pid 2855 exited
+<5>[  374.255264] init: process 'zygote' killing any children in process group
+<6>[  374.263487] request_suspend_state: wakeup (0->0) at 374228505967 (2011-05-22 18:25:01.258342344 UTC)
+<5>[  374.267129] init: service 'media' is being killed
+<3>[  374.273217] init: init.svc.media:stopping
+<5>[  374.279549] init: starting 'media'
+<3>[  374.282602] init: init.svc.media:running
+<3>[  374.292013] init: init.svc.zygote:restarting
+<6>[  374.305301] init: waitpid returned pid 2854, status = 0000000f
+<3>[  374.315327] init: untracked pid 2854 exited
+<5>[  374.326402] init: starting 'zygote'
+<3>[  374.329463] init: init.svc.zygote:running
+<6>[  374.363003] init: Created socket '/dev/socket/zygote' with mode '666', user '0', group '0'
+<3>[  374.534246] init: ro.csc.country_code:Nordic
+<4>[  374.721334] DmaAddr=@4f3e0000 Total=32768bytes PrdSz=2048 #Prds=4, dmaEnd 0x4f3e8000
+<4>[  374.787640] DmaAddr=@4f3e0000 Total=32768bytes PrdSz=2048 #Prds=4, dmaEnd 0x4f3e8000
+<4>[  376.671589] !@beginofsystem_init1()
+<4>[  376.770264] !@endofsystem_init1()
+<3>[  376.774357] init: no such service 'bootanim'
+<4>[  376.854463] !@beginofPackageManager
+<6>[  377.542383] fg_read_vcell: VCELL=3878
+<5>[  378.781994] init: starting 'DR-daemon'
+<3>[  378.785323] init: init.svc.DR-daemon:running
+<6>[  378.822238] init: waitpid returned pid 2914, status = 00000100
+<5>[  378.826312] init: process 'DR-daemon', pid 2914 exited
+<5>[  378.837605] init: process 'DR-daemon' killing any children in process group
+<3>[  378.850850] init: init.svc.DR-daemon:restarting
+<6>[  382.542388] fg_read_vcell: VCELL=3878
+<5>[  383.869650] init: starting 'DR-daemon'
+<3>[  383.872953] init: init.svc.DR-daemon:running
+<6>[  383.908722] init: waitpid returned pid 2915, status = 00000100
+<5>[  383.912797] init: process 'DR-daemon', pid 2915 exited
+<5>[  383.927508] init: process 'DR-daemon' killing any children in process group
+<3>[  383.940674] init: init.svc.DR-daemon:restarting
+<6>[  387.542367] fg_read_vcell: VCELL=3878
+<5>[  388.955580] init: starting 'DR-daemon'
+<3>[  388.958883] init: init.svc.DR-daemon:running
+<6>[  388.996881] init: waitpid returned pid 2916, status = 00000100
+<5>[  389.000956] init: process 'DR-daemon', pid 2916 exited
+<5>[  389.013376] init: process 'DR-daemon' killing any children in process group
+<3>[  389.026568] init: init.svc.DR-daemon:restarting
+<4>[  389.940329] !@2nfofPackageManager
+<6>[  392.542402] fg_read_vcell: VCELL=3878
+<5>[  393.045758] init: starting 'DR-daemon'
+<3>[  393.049497] init: init.svc.DR-daemon:running
+<6>[  393.137921] init: waitpid returned pid 2930, status = 00000100
+<5>[  393.142116] init: process 'DR-daemon', pid 2930 exited
+<5>[  393.148049] init: process 'DR-daemon' killing any children in process group
+<3>[  393.151579] init: init.svc.DR-daemon:restarting
+<6>[  397.542785] fg_read_vcell: VCELL=3878
+<5>[  398.163208] init: starting 'DR-daemon'
+<3>[  398.168273] init: init.svc.DR-daemon:running
+<6>[  398.240318] init: waitpid returned pid 2931, status = 00000100
+<5>[  398.244444] init: process 'DR-daemon', pid 2931 exited
+<5>[  398.250454] init: process 'DR-daemon' killing any children in process group
+<3>[  398.253958] init: init.svc.DR-daemon:restarting
+<6>[  400.242239] init: waitpid returned pid 2894, status = 00000009
+<5>[  400.246052] init: process 'zygote', pid 2894 exited
+<5>[  400.251759] init: process 'zygote' killing any children in process group
+<6>[  400.259982] request_suspend_state: wakeup (0->0) at 400225015052 (2011-05-22 18:25:27.254851471 UTC)
+<5>[  400.263624] init: service 'media' is being killed
+<3>[  400.272402] init: init.svc.media:stopping
+<5>[  400.278733] init: starting 'media'
+<3>[  400.281725] init: init.svc.media:running
+<3>[  400.289609] init: init.svc.zygote:restarting
+<6>[  400.305300] init: waitpid returned pid 2893, status = 0000000f
+<3>[  400.315274] init: untracked pid 2893 exited
+<5>[  400.326314] init: starting 'zygote'
+<3>[  400.329375] init: init.svc.zygote:running
+<6>[  400.343348] init: Created socket '/dev/socket/zygote' with mode '666', user '0', group '0'
+<3>[  400.516561] init: ro.csc.country_code:Nordic
+<4>[  400.705661] DmaAddr=@4f3e0000 Total=32768bytes PrdSz=2048 #Prds=4, dmaEnd 0x4f3e8000
+<4>[  400.772020] DmaAddr=@4f3e0000 Total=32768bytes PrdSz=2048 #Prds=4, dmaEnd 0x4f3e8000
+<6>[  402.542368] fg_read_vcell: VCELL=3878
+<4>[  402.660722] !@beginofsystem_init1()
+<4>[  402.759491] !@endofsystem_init1()
+<3>[  402.763541] init: no such service 'bootanim'
+<4>[  402.843777] !@beginofPackageManager
+<5>[  403.770166] init: starting 'DR-daemon'
+<3>[  403.773495] init: init.svc.DR-daemon:running
+<6>[  403.810496] init: waitpid returned pid 2953, status = 00000100
+<5>[  403.814571] init: process 'DR-daemon', pid 2953 exited
+<5>[  403.825890] init: process 'DR-daemon' killing any children in process group
+<3>[  403.838995] init: init.svc.DR-daemon:restarting
+<6>[  407.542356] fg_read_vcell: VCELL=3878
+<5>[  408.857839] init: starting 'DR-daemon'
+<3>[  408.861142] init: init.svc.DR-daemon:running
+<6>[  408.896886] init: waitpid returned pid 2954, status = 00000100
+<5>[  408.900961] init: process 'DR-daemon', pid 2954 exited
+<5>[  408.915662] init: process 'DR-daemon' killing any children in process group
+<3>[  408.928872] init: init.svc.DR-daemon:restarting
+<6>[  412.542291] fg_read_vcell: VCELL=3878
+<5>[  413.947767] init: starting 'DR-daemon'
+<3>[  413.951070] init: init.svc.DR-daemon:running
+<6>[  413.986528] init: waitpid returned pid 2955, status = 00000100
+<5>[  413.990602] init: process 'DR-daemon', pid 2955 exited
+<5>[  414.005555] init: process 'DR-daemon' killing any children in process group
+<3>[  414.014844] init: init.svc.DR-daemon:restarting
+<4>[  415.950000] !@2nfofPackageManager
+<6>[  417.542341] fg_read_vcell: VCELL=3878
+<5>[  418.037839] init: starting 'DR-daemon'
+<3>[  418.041265] init: init.svc.DR-daemon:running
+<6>[  418.082049] init: waitpid returned pid 2969, status = 00000100
+<5>[  418.086122] init: process 'DR-daemon', pid 2969 exited
+<5>[  418.092020] init: process 'DR-daemon' killing any children in process group
+<3>[  418.095489] init: init.svc.DR-daemon:restarting
+<6>[  422.542648] fg_read_vcell: VCELL=3878
+<5>[  423.106997] init: starting 'DR-daemon'
+<3>[  423.112064] init: init.svc.DR-daemon:running
+<6>[  423.181100] init: waitpid returned pid 2970, status = 00000100
+<5>[  423.185225] init: process 'DR-daemon', pid 2970 exited
+<5>[  423.191235] init: process 'DR-daemon' killing any children in process group
+<3>[  423.194740] init: init.svc.DR-daemon:restarting
+<6>[  426.252352] init: waitpid returned pid 2933, status = 00000009
+<5>[  426.256166] init: process 'zygote', pid 2933 exited
+<5>[  426.261873] init: process 'zygote' killing any children in process group
+<6>[  426.270104] request_suspend_state: wakeup (0->0) at 426235148212 (2011-05-22 18:25:53.264984589 UTC)
+<5>[  426.273746] init: service 'media' is being killed
+<3>[  426.279757] init: init.svc.media:stopping
+<5>[  426.286087] init: starting 'media'
+<3>[  426.289158] init: init.svc.media:running
+<3>[  426.299740] init: init.svc.zygote:restarting
+<6>[  426.313088] init: waitpid returned pid 2932, status = 0000000f
+<3>[  426.319203] init: untracked pid 2932 exited
+<5>[  426.330226] init: starting 'zygote'
+<3>[  426.333287] init: init.svc.zygote:running
+<6>[  426.347243] init: Created socket '/dev/socket/zygote' with mode '666', user '0', group '0'
+<3>[  426.522450] init: ro.csc.country_code:Nordic
+<4>[  426.713458] DmaAddr=@4f3e0000 Total=32768bytes PrdSz=2048 #Prds=4, dmaEnd 0x4f3e8000
+<4>[  426.779816] DmaAddr=@4f3e0000 Total=32768bytes PrdSz=2048 #Prds=4, dmaEnd 0x4f3e8000
+<6>[  427.542344] fg_read_vcell: VCELL=3878
+<5>[  428.529774] init: starting 'DR-daemon'
+<3>[  428.533077] init: init.svc.DR-daemon:running
+<6>[  428.564770] init: waitpid returned pid 2977, status = 00000100
+<5>[  428.568845] init: process 'DR-daemon', pid 2977 exited
+<5>[  428.579791] init: process 'DR-daemon' killing any children in process group
+<3>[  428.589081] init: init.svc.DR-daemon:restarting
+<4>[  428.704374] !@beginofsystem_init1()
+<4>[  428.803351] !@endofsystem_init1()
+<3>[  428.807383] init: no such service 'bootanim'
+<4>[  428.887767] !@beginofPackageManager
+<6>[  432.542401] fg_read_vcell: VCELL=3878
+<5>[  433.814909] init: starting 'DR-daemon'
+<3>[  433.818221] init: init.svc.DR-daemon:running
+<6>[  433.854008] init: waitpid returned pid 2993, status = 00000100
+<5>[  433.858082] init: process 'DR-daemon', pid 2993 exited
+<5>[  433.872750] init: process 'DR-daemon' killing any children in process group
+<3>[  433.885951] init: init.svc.DR-daemon:restarting
+<6>[  437.542336] fg_read_vcell: VCELL=3878
+<5>[  438.904733] init: starting 'DR-daemon'
+<3>[  438.908036] init: init.svc.DR-daemon:running
+<6>[  438.943060] init: waitpid returned pid 2994, status = 00000100
+<5>[  438.947134] init: process 'DR-daemon', pid 2994 exited
+<5>[  438.962547] init: process 'DR-daemon' killing any children in process group
+<3>[  438.971836] init: init.svc.DR-daemon:restarting
+<4>[  441.930944] !@2nfofPackageManager
+<6>[  442.542732] fg_read_vcell: VCELL=3878
+<5>[  443.994977] init: starting 'DR-daemon'
+<3>[  443.998724] init: init.svc.DR-daemon:running
+<6>[  444.083438] init: waitpid returned pid 3008, status = 00000100
+<5>[  444.087563] init: process 'DR-daemon', pid 3008 exited
+<5>[  444.093573] init: process 'DR-daemon' killing any children in process group
+<3>[  444.097077] init: init.svc.DR-daemon:restarting
+<6>[  447.543048] fg_read_vcell: VCELL=3878
+<5>[  448.108127] init: starting 'DR-daemon'
+<3>[  448.112967] init: init.svc.DR-daemon:running
+<6>[  448.191075] init: waitpid returned pid 3009, status = 00000100
+<5>[  448.195209] init: process 'DR-daemon', pid 3009 exited
+<5>[  448.201211] init: process 'DR-daemon' killing any children in process group
+<3>[  448.204706] init: init.svc.DR-daemon:restarting
+<6>[  452.241163] init: waitpid returned pid 2972, status = 00000009
+<5>[  452.244977] init: process 'zygote', pid 2972 exited
+<5>[  452.250684] init: process 'zygote' killing any children in process group
+<6>[  452.258923] request_suspend_state: wakeup (0->0) at 452223979788 (2011-05-22 18:26:19.253816249 UTC)
+<5>[  452.262566] init: service 'media' is being killed
+<3>[  452.271101] init: init.svc.media:stopping
+<5>[  452.277432] init: starting 'media'
+<3>[  452.280736] init: init.svc.media:running
+<3>[  452.291023] init: init.svc.zygote:restarting
+<6>[  452.305377] init: waitpid returned pid 2971, status = 0000000f
+<3>[  452.311370] init: untracked pid 2971 exited
+<5>[  452.322472] init: starting 'zygote'
+<3>[  452.325541] init: init.svc.zygote:running
+<6>[  452.339445] init: Created socket '/dev/socket/zygote' with mode '666', user '0', group '0'
+<3>[  452.517280] init: ro.csc.country_code:Nordic
+<6>[  452.542268] fg_read_vcell: VCELL=3878
+<4>[  452.709529] DmaAddr=@4f3e0000 Total=32768bytes PrdSz=2048 #Prds=4, dmaEnd 0x4f3e8000
+<4>[  452.775844] DmaAddr=@4f3e0000 Total=32768bytes PrdSz=2048 #Prds=4, dmaEnd 0x4f3e8000
+<5>[  453.526931] init: starting 'DR-daemon'
+<3>[  453.530287] init: init.svc.DR-daemon:running
+<6>[  453.560531] init: waitpid returned pid 3016, status = 00000100
+<5>[  453.564606] init: process 'DR-daemon', pid 3016 exited
+<5>[  453.575847] init: process 'DR-daemon' killing any children in process group
+<3>[  453.585127] init: init.svc.DR-daemon:restarting
+<4>[  454.698900] !@beginofsystem_init1()
+<4>[  454.798077] !@endofsystem_init1()
+<3>[  454.802188] init: no such service 'bootanim'
+<4>[  454.882277] !@beginofPackageManager
+<6>[  457.542360] fg_read_vcell: VCELL=3878
+<5>[  458.811017] init: starting 'DR-daemon'
+<3>[  458.814320] init: init.svc.DR-daemon:running
+<6>[  458.849934] init: waitpid returned pid 3032, status = 00000100
+<5>[  458.854008] init: process 'DR-daemon', pid 3032 exited
+<5>[  458.868841] init: process 'DR-daemon' killing any children in process group
+<3>[  458.878936] init: init.svc.DR-daemon:restarting
+<6>[  462.542321] fg_read_vcell: VCELL=3878
+<5>[  463.900832] init: starting 'DR-daemon'
+<3>[  463.904145] init: init.svc.DR-daemon:running
+<6>[  463.939394] init: waitpid returned pid 3033, status = 00000100
+<5>[  463.943468] init: process 'DR-daemon', pid 3033 exited
+<5>[  463.958638] init: process 'DR-daemon' killing any children in process group
+<3>[  463.967962] init: init.svc.DR-daemon:restarting
+<6>[  467.542317] fg_read_vcell: VCELL=3878
+<4>[  468.017302] !@2nfofPackageManager
+<5>[  468.991828] init: starting 'DR-daemon'
+<3>[  468.995350] init: init.svc.DR-daemon:running
+<6>[  469.020138] init: waitpid returned pid 3047, status = 00000100
+<5>[  469.024213] init: process 'DR-daemon', pid 3047 exited
+<5>[  469.030111] init: process 'DR-daemon' killing any children in process group
+<3>[  469.033580] init: init.svc.DR-daemon:restarting
+<6>[  472.542425] fg_read_vcell: VCELL=3878
+<5>[  473.041603] init: starting 'DR-daemon'
+<3>[  473.045460] init: init.svc.DR-daemon:running
+<6>[  473.100841] init: waitpid returned pid 3048, status = 00000100
+<5>[  473.104975] init: process 'DR-daemon', pid 3048 exited
+<5>[  473.111081] init: process 'DR-daemon' killing any children in process group
+<3>[  473.114567] init: init.svc.DR-daemon:restarting
+<6>[  477.542648] fg_read_vcell: VCELL=3878
+<5>[  478.126273] init: starting 'DR-daemon'
+<3>[  478.137594] init: init.svc.DR-daemon:running
+<6>[  478.358936] init: waitpid returned pid 3049, status = 00000100
+<5>[  478.363010] init: process 'DR-daemon', pid 3049 exited
+<5>[  478.374867] init: process 'DR-daemon' killing any children in process group
+<3>[  478.378335] init: init.svc.DR-daemon:restarting
+<6>[  478.387616] init: waitpid returned pid 3011, status = 00000009
+<5>[  478.391432] init: process 'zygote', pid 3011 exited
+<5>[  478.397069] init: process 'zygote' killing any children in process group
+<6>[  478.405153] request_suspend_state: wakeup (0->0) at 478370237916 (2011-05-22 18:26:45.400075918 UTC)
+<5>[  478.408795] init: service 'media' is being killed
+<3>[  478.414703] init: init.svc.media:stopping
+<5>[  478.421033] init: starting 'media'
+<3>[  478.424095] init: init.svc.media:running
+<3>[  478.432596] init: init.svc.zygote:restarting
+<6>[  478.445953] init: waitpid returned pid 3010, status = 0000000f
+<3>[  478.455909] init: untracked pid 3010 exited
+<5>[  478.466976] init: starting 'zygote'
+<3>[  478.470002] init: init.svc.zygote:running
+<6>[  478.483871] init: Created socket '/dev/socket/zygote' with mode '666', user '0', group '0'
+<3>[  478.659191] init: ro.csc.country_code:Nordic
+<4>[  478.842333] DmaAddr=@4f3e0000 Total=32768bytes PrdSz=2048 #Prds=4, dmaEnd 0x4f3e8000
+<4>[  478.908691] DmaAddr=@4f3e0000 Total=32768bytes PrdSz=2048 #Prds=4, dmaEnd 0x4f3e8000
+<4>[  480.792562] !@beginofsystem_init1()
+<4>[  480.891817] !@endofsystem_init1()
+<3>[  480.895919] init: no such service 'bootanim'
+<4>[  480.976077] !@beginofPackageManager
+<6>[  482.542328] fg_read_vcell: VCELL=3878
+<5>[  483.904639] init: starting 'DR-daemon'
+<3>[  483.907941] init: init.svc.DR-daemon:running
+<6>[  483.943936] init: waitpid returned pid 3071, status = 00000100
+<5>[  483.948011] init: process 'DR-daemon', pid 3071 exited
+<5>[  483.962556] init: process 'DR-daemon' killing any children in process group
+<3>[  483.975757] init: init.svc.DR-daemon:restarting
+<6>[  487.542246] fg_read_vcell: VCELL=3878
+<5>[  488.994593] init: starting 'DR-daemon'
+<3>[  488.997896] init: init.svc.DR-daemon:running
+<6>[  489.033613] init: waitpid returned pid 3072, status = 00000100
+<5>[  489.037688] init: process 'DR-daemon', pid 3072 exited
+<5>[  489.052442] init: process 'DR-daemon' killing any children in process group
+<3>[  489.065616] init: init.svc.DR-daemon:restarting
