@@ -1,0 +1,445 @@
+--------- beginning of /dev/log/main
+I/DEBUG   ( 2284): debuggerd: Dec 17 2010 17:08:00
+I/NPS_MOBEX( 2286): task Start
+E/IMGSRV  ( 2276): [OpenServices fail] open failed!
+E/        ( 2276): pvrsrvinit: SrvInit failed (1)
+E/        ( 2276): [info] pvrsrvinit success
+I/NPS_MOBEX( 2286): wscMessageGet msgid:4097
+--------- beginning of /dev/log/system
+I/Vold    ( 2278): Vold 2.1 (the revenge) firing up
+I/Vold    ( 2278): Volume::setState -> Volume sdcard /mnt/sdcard state changed from -1 (Initializing) to 0 (No-Media)
+I/Vold    ( 2278): Volume::setState -> Volume sdcard1 /mnt/sdcard/external_sd state changed from -1 (Initializing) to 0 (No-Media)
+I/Netd    ( 2280): Netd 1.0 starting
+D/DirectVolume( 2278): DirectVolume::handleBlockEvent -> mCurrentlyMMCRootPath /devices/platform/s3c-sdhci.0/mmc_host/mmc0
+D/DirectVolume( 2278): DirectVolume::handleBlockEvent-> ::NlActionAdd:: major 179,minor 0 (disk)
+E/Vold    ( 2278): Volume::createDeviceNode -> group(1015,sdcard_rw) 
+D/DirectVolume( 2278): DirectVolume::handleDiskAdded -> mDiskMajor 179, mDiskMinor 0, NPARTS:3
+I/Vold    ( 2278): Volume::setState -> Volume sdcard /mnt/sdcard state changed from 0 (No-Media) to 2 (Pending)
+D/DirectVolume( 2278): DirectVolume::handleBlockEvent-> ::NlActionAdd:: major 179,minor 1 (partition)
+E/Vold    ( 2278): Volume::createDeviceNode -> group(1015,sdcard_rw) 
+D/DirectVolume( 2278): DirectVolume::handlePartitionAdded -> major 179, minor 1, PARTN 1
+D/DirectVolume( 2278): DirectVolume::handleBlockEvent-> ::NlActionAdd:: major 179,minor 2 (partition)
+E/Vold    ( 2278): Volume::createDeviceNode -> group(1015,sdcard_rw) 
+D/DirectVolume( 2278): DirectVolume::handlePartitionAdded -> major 179, minor 2, PARTN 2
+D/DirectVolume( 2278): DirectVolume::handleBlockEvent-> ::NlActionAdd:: major 179,minor 3 (partition)
+E/Vold    ( 2278): Volume::createDeviceNode -> group(1015,sdcard_rw) 
+D/DirectVolume( 2278): DirectVolume::handlePartitionAdded -> major 179, minor 3, PARTN 3
+I/Vold    ( 2278): Volume::setState -> Volume sdcard /mnt/sdcard state changed from 2 (Pending) to 1 (Idle-Unmounted)
+D/DirectVolume( 2278): DirectVolume::handleBlockEvent -> mCurrentlyMMCRootPath /devices/platform/s3c-sdhci.2/mmc_host/mmc2
+D/DirectVolume( 2278): DirectVolume::handleBlockEvent-> ::NlActionAdd:: major 179,minor 8 (disk)
+E/Vold    ( 2278): Volume::createDeviceNode -> group(1015,sdcard_rw) 
+D/DirectVolume( 2278): DirectVolume::handleDiskAdded -> mDiskMajor 179, mDiskMinor 8, NPARTS:5
+I/Vold    ( 2278): Volume::setState -> Volume sdcard1 /mnt/sdcard/external_sd state changed from 0 (No-Media) to 2 (Pending)
+D/DirectVolume( 2278): DirectVolume::handleBlockEvent-> ::NlActionAdd:: major 179,minor 9 (partition)
+E/Vold    ( 2278): Volume::createDeviceNode -> group(1015,sdcard_rw) 
+D/DirectVolume( 2278): DirectVolume::handlePartitionAdded -> major 179, minor 9, PARTN 1
+D/DirectVolume( 2278): DirectVolume::handleBlockEvent-> ::NlActionAdd:: major 179,minor 10 (partition)
+E/Vold    ( 2278): Volume::createDeviceNode -> group(1015,sdcard_rw) 
+D/DirectVolume( 2278): DirectVolume::handlePartitionAdded -> major 179, minor 10, PARTN 2
+D/DirectVolume( 2278): DirectVolume::handleBlockEvent-> ::NlActionAdd:: major 179,minor 13 (partition)
+E/Vold    ( 2278): Volume::createDeviceNode -> group(1015,sdcard_rw) 
+D/DirectVolume( 2278): DirectVolume::handlePartitionAdded -> major 179, minor 13, PARTN 5
+D/DirectVolume( 2278): DirectVolume::handleBlockEvent-> ::NlActionAdd:: major 179,minor 14 (partition)
+E/Vold    ( 2278): Volume::createDeviceNode -> group(1015,sdcard_rw) 
+D/DirectVolume( 2278): DirectVolume::handlePartitionAdded -> major 179, minor 14, PARTN 6
+D/DirectVolume( 2278): DirectVolume::handleBlockEvent-> ::NlActionAdd:: major 179,minor 15 (partition)
+E/Vold    ( 2278): Volume::createDeviceNode -> group(1015,sdcard_rw) 
+D/DirectVolume( 2278): DirectVolume::handlePartitionAdded -> major 179, minor 15, PARTN 7
+D/Vold    ( 2278): check usb connected (ums online)
+D/sensor_stub( 2292): sensor_stub_init
+E/DataRouter( 2285): Main entered
+E/DataRouter( 2285): Data Router: INIT+
+E/DataRouter( 2285): dr_pcsync_init
+E/DataRouter( 2285): dr_init_pcsync_ipc
+E/DataRouter( 2285): dr_pcsync_launch
+E/DataRouter( 2285): this is the 1th MAR build
+E/DataRouter( 2285): +
+E/DataRouter( 2285): open_socket: channel 57
+E/DataRouter( 2285): open_socket: Can't setsockopt(SO_BINDTODEVICE) to svnet0. No such device.
+E/DataRouter( 2285): smd Interface open failed errno is 19  -1
+E/DataRouter( 2285): [*] dr_smd_ril_open_client sucess 34388
+E/DataRouter( 2285): [dr_smd_ril_init] dr_smd_ril_open_client successful 
+E/DataRouter( 2285): [*] RegisterUnsolicitedHandler() successfully done 
+E/DataRouter( 2285): [dr_smd_ril_init] dr_smd_ril_register_UnSol_Hdlr successful 
+E/DataRouter( 2285): [*] Connect_RILD() error 4 retrycount 0
+E/DataRouter( 2285): dr_pcsync_monitor
+E/DataRouter( 2285): Waiting for connection request
+E/DataRouter( 2285):  Value of server socket is 7
+E/DataRouter( 2285): [*] Connect_RILD() error 4 retrycount 1
+E/DataRouter( 2285): [*] Connect_RILD() error 4 retrycount 2
+I/ServiceManager( 2274): Waiting for sevice SurfaceFlinger...
+I/        ( 2295): TVOUT_DEBUG ServiceManager main 1 
+I/        ( 2295): TVOUT_DEBUG ServiceManager main 2 
+I/        ( 2295): TVOUT_DEBUG ServiceManager: 0xadb0
+I/        ( 2295): TVOUT_DEBUG ServiceManager main 3
+D/AndroidRuntime( 2287): 
+D/AndroidRuntime( 2287): >>>>>>>>>>>>>> AndroidRuntime START <<<<<<<<<<<<<<
+D/AndroidRuntime( 2287): CheckJNI is OFF
+D/AndroidRuntime( 2287): setted country_code = Nordic
+E/AndroidRuntime( 2287): /system/csc/sales_code.dat ==> cannot open file
+D/AndroidRuntime( 2287): found sales_code tag = <>, </> 
+D/dalvikvm( 2287): creating instr width table
+E/DataRouter( 2285): [*] Connect_RILD() error 4 retrycount 3
+I/        ( 2288): ServiceManager: 0xadb0
+D/dalvikvm( 2287): Unable to stat classpath element '/system/framework/kafdex.jar'
+D/AudioHardwareALSA( 2288): Mixer: element name: 'Playback'
+D/AudioHardwareALSA( 2288): Mixer: element name: 'Playback Headset'
+D/AudioHardwareALSA( 2288): Mixer: element name: 'Playback Spkr'
+D/AudioHardwareALSA( 2288): Mixer: master 'PCM' not found.
+D/AudioHardwareALSA( 2288): Mixer: route 'Earpiece' not found.
+D/AudioHardwareALSA( 2288): Mixer: route 'Speaker' not found.
+D/AudioHardwareALSA( 2288): Mixer: route 'Bluetooth' not found.
+D/AudioHardwareALSA( 2288): Mixer: route 'Headphone' not found.
+D/AudioHardwareALSA( 2288): Mixer: route 'Bluetooth A2DP' not found.
+D/AudioHardwareALSA( 2288): Mixer: element name: 'Playback'
+D/AudioHardwareALSA( 2288): Mixer: element name: 'Playback Headset'
+D/AudioHardwareALSA( 2288): Mixer: element name: 'Playback Spkr'
+D/AudioHardwareALSA( 2288): Mixer: element name: 'Capture'
+D/AudioHardwareALSA( 2288): Mixer: master 'Capture' found.
+D/AudioHardwareALSA( 2288): Mixer: route 'Capture' found.
+D/AudioHardwareALSA( 2288): Mixer: route '' not found.
+D/AudioHardwareALSA( 2288): Mixer: route 'Bluetooth Capture' not found.
+D/AudioHardwareALSA( 2288): Mixer: route 'Capture' found.
+D/AudioHardwareALSA( 2288): Mixer: route 'Bluetooth A2DP Capture' not found.
+D/AudioHardwareALSA( 2288): mixer initialized.
+D/AudioHardwareALSA( 2288): ### android::AudioHardwareIPC::AudioHardwareIPC()
+D/AudioHardwareALSA( 2288): Success Initializing IPC
+D/AudioHardwareInterface( 2288): setMode(NORMAL), mode(0)
+W/CameraService( 2288): CameraService started: pid=2288
+I/AudioHardwareALSA( 2288): 
+I/AudioHardwareALSA( 2288): virtual android::AudioStreamOut* android::AudioHardwareALSA::openOutputStream(uint32_t, int*, uint32_t*, uint32_t*, android::status_t*) - format = 0, channels = 0, sampleRate = 0, devices = 2
+E/SoundBooster( 2288): readSBTable: file open error!
+V/AudioHardwareALSA( 2288): (int android::AudioStreamOutALSA::SoundSolutionInit()) SoundBooster init
+E/AcousticEQ( 2288): [AEQ] aeqcoe.txt: file open error!
+V/AudioHardwareALSA( 2288): (int android::AudioStreamOutALSA::SoundSolutionInit()) Acoustic equalizer init
+D/AudioHardwareALSA( 2288): ALSAStreamOps - input   - format = 0, channels = 0, rate = 0
+D/AudioHardwareALSA( 2288): ALSAStreamOps - default - format = 2, channels = 2, rate = 44100
+D/AudioHardwareALSA( 2288): 
+D/AudioHardwareALSA( 2288):  ALSA OPEN mode 0,device 2 
+I/AudioHardwareALSA( 2288): Try to open ALSA PLAYBACK device AndroidPlayback_Speaker_normal
+I/ServiceManager( 2274): Waiting for sevice SurfaceFlinger...
+I/AudioHardwareALSA( 2288): Initialized ALSA PLAYBACK device AndroidPlayback_Speaker_normal
+D/AudioHardwareALSA( 2288): Set PLAYBACK PCM format to S16_LE (Signed 16 bit Little Endian)
+D/AudioHardwareALSA( 2288): Using 2 channels for PLAYBACK.
+D/AudioHardwareALSA( 2288): Set PLAYBACK sample rate to 44100 HZ
+D/AudioHardwareALSA( 2288): Buffer size: 2048
+D/AudioHardwareALSA( 2288): Latency: 46439
+I/AudioFlinger( 2288): AudioFlinger's thread 0x2adc0 ready to run
+D/AudioHardwareALSA( 2288): AudioStreamOutALSA::setParameters() routing=2
+D/AudioHardwareALSA( 2288): 
+D/AudioHardwareALSA( 2288):  ALSA OPEN mode 0,device 2 
+I/AudioHardwareALSA( 2288): Try to open ALSA PLAYBACK device AndroidPlayback_Speaker_normal
+I/AudioHardwareALSA( 2288): Initialized ALSA PLAYBACK device AndroidPlayback_Speaker_normal
+D/AudioHardwareALSA( 2288): Set PLAYBACK PCM format to S16_LE (Signed 16 bit Little Endian)
+D/AudioHardwareALSA( 2288): Using 2 channels for PLAYBACK.
+D/AudioHardwareALSA( 2288): Set PLAYBACK sample rate to 44100 HZ
+D/AudioHardwareALSA( 2288): Buffer size: 2048
+D/AudioHardwareALSA( 2288): Latency: 46439
+I/AudioHardwareALSA( 2288): virtual android::status_t android::AudioHardwareALSA::setFmRadioVolume(float) : Volume = [0.003350]
+I/AudioHardwareALSA( 2288): [virtual int android::AudioHardwareALSA::setCodecStatus(int)], Data=1
+D/AndroidRuntime( 2287): --- registering native functions ---
+E/DataRouter( 2285): [*] Connect_RILD() error 4 retrycount 4
+I/ServiceManager( 2274): Waiting for sevice SurfaceFlinger...
+E/DataRouter( 2285): [*] Connect_RILD() error 4 retrycount 5
+I/ServiceManager( 2274): Waiting for sevice SurfaceFlinger...
+I/SamplingProfilerIntegration( 2287): Profiler is disabled.
+I/Zygote  ( 2287): Preloading classes...
+E/Zygote  ( 2287): setreuid() failed. errno: 2
+D/dalvikvm( 2287): GC_EXPLICIT freed 849 objects / 49664 bytes in 1ms
+D/SKIA_FONT( 2287): load_system_fonts(), name = Droid Sans, style = 0, uniqueID = 1
+D/SKIA_FONT( 2287): load_system_fonts(), name = Droid Sans, style = 1, uniqueID = 2
+D/SKIA_FONT( 2287): load_system_fonts(), name = Droid Serif, style = 0, uniqueID = 3
+D/SKIA_FONT( 2287): load_system_fonts(), name = Droid Serif, style = 1, uniqueID = 4
+D/SKIA_FONT( 2287): load_system_fonts(), name = Droid Serif, style = 2, uniqueID = 5
+D/SKIA_FONT( 2287): load_system_fonts(), name = Droid Serif, style = 3, uniqueID = 6
+D/SKIA_FONT( 2287): load_system_fonts(), name = Droid Sans Mono, style = 0, uniqueID = 7
+D/SKIA_FONT( 2287): load_system_fonts(), name = Droid Sans Arabic, style = 0, uniqueID = 8
+D/SKIA_FONT( 2287): load_system_fonts(), name = Droid Sans Hebrew, style = 0, uniqueID = 9
+D/SKIA_FONT( 2287): load_system_fonts(), name = Droid Sans Thai, style = 0, uniqueID = 10
+D/SKIA_FONT( 2287): load_system_fonts(), name = Droid Sans, style = 0, uniqueID = 11
+D/SKIA_FONT( 2287): load_system_fonts(), name = Droid Sans Fallback, style = 0, uniqueID = 12
+D/SKIA_FONT( 2287): load_system_fonts(), oldSansUID = 0, newSansUID = 1
+D/SKIA_FONT( 2287): load_system_fonts(), oldSansBoldUID = 0, newSansBoldUID = 2
+D/dalvikvm( 2287): GC_EXPLICIT freed 219 objects / 13584 bytes in 2ms
+I/bluetooth_ScoSocket.cpp( 2287): Entry name = MY-CAR ScoTypes = 0x7f
+I/bluetooth_ScoSocket.cpp( 2287): Entry name = Motorola HF850 ScoTypes = 0x7
+D/dalvikvm( 2287): GC_EXPLICIT freed 357 objects / 17368 bytes in 3ms
+D/dalvikvm( 2287): GC_EXPLICIT freed 446 objects / 27616 bytes in 2ms
+E/DataRouter( 2285): [*] Connect_RILD() error 4 retrycount 6
+D/dalvikvm( 2287): GC_EXPLICIT freed 2126 objects / 110440 bytes in 4ms
+D/dalvikvm( 2287): GC_EXPLICIT freed 578 objects / 26512 bytes in 4ms
+D/dalvikvm( 2287): GC_FOR_MALLOC freed 5142 objects / 231960 bytes in 7ms
+I/ServiceManager( 2274): Waiting for sevice SurfaceFlinger...
+D/dalvikvm( 2287): GC_FOR_MALLOC freed 10704 objects / 398736 bytes in 9ms
+D/dalvikvm( 2287): GC_FOR_MALLOC freed 9139 objects / 423392 bytes in 10ms
+D/dalvikvm( 2287): GC_FOR_MALLOC freed 9209 objects / 447336 bytes in 11ms
+D/dalvikvm( 2287): GC_FOR_MALLOC freed 7947 objects / 480208 bytes in 11ms
+D/dalvikvm( 2287): GC_FOR_MALLOC freed 8073 objects / 475624 bytes in 12ms
+D/dalvikvm( 2287): GC_FOR_MALLOC freed 7466 objects / 473120 bytes in 12ms
+E/DataRouter( 2285): [*] Connect_RILD() error 4 retrycount 7
+D/dalvikvm( 2287): GC_FOR_MALLOC freed 8056 objects / 468600 bytes in 12ms
+D/dalvikvm( 2287): GC_EXPLICIT freed 2428 objects / 168232 bytes in 11ms
+W/SurfaceComposerClient( 2274): SurfaceFlinger not published, waiting...
+D/dalvikvm( 2287): GC_EXPLICIT freed 507 objects / 27136 bytes in 11ms
+D/dalvikvm( 2287): GC_EXPLICIT freed 350 objects / 19104 bytes in 12ms
+D/dalvikvm( 2287): GC_EXPLICIT freed 296 objects / 34544 bytes in 16ms
+D/dalvikvm( 2287): GC_EXPLICIT freed 272 objects / 18520 bytes in 16ms
+I/ServiceManager( 2274): Waiting for sevice SurfaceFlinger...
+D/dalvikvm( 2287): GC_EXPLICIT freed 333 objects / 18040 bytes in 17ms
+D/dalvikvm( 2287): GC_EXPLICIT freed 446 objects / 27808 bytes in 17ms
+D/dalvikvm( 2287): GC_EXPLICIT freed 251 objects / 20832 bytes in 17ms
+E/DataRouter( 2285): [*] Connect_RILD() error 4 retrycount 8
+D/dalvikvm( 2287): GC_EXPLICIT freed 304 objects / 34056 bytes in 18ms
+D/dalvikvm( 2287): GC_EXPLICIT freed 623 objects / 33896 bytes in 18ms
+D/dalvikvm( 2287): GC_EXPLICIT freed 862 objects / 46992 bytes in 18ms
+D/dalvikvm( 2287): GC_EXPLICIT freed 1753 objects / 86272 bytes in 19ms
+D/dalvikvm( 2287): GC_EXPLICIT freed 449 objects / 29448 bytes in 19ms
+D/dalvikvm( 2287): GC_EXPLICIT freed 315 objects / 20112 bytes in 19ms
+I/Zygote  ( 2287): ...preloaded 1266 classes in 2912ms.
+E/Zygote  ( 2287): setreuid() failed. errno: 17
+D/dalvikvm( 2287): GC_EXPLICIT freed 104 objects / 14232 bytes in 20ms
+I/ServiceManager( 2274): Waiting for sevice SurfaceFlinger...
+I/Zygote  ( 2287): Preloading resources...
+D/dalvikvm( 2287): GC_EXPLICIT freed 312 objects / 15568 bytes in 34ms
+E/DataRouter( 2285): [*] Connect_RILD() error 4 retrycount 9
+I/Zygote  ( 2287): ...preloaded 61 resources in 137ms.
+D/dalvikvm( 2287): GC_EXPLICIT freed 398 objects / 23240 bytes in 21ms
+I/Zygote  ( 2287): ...preloaded 15 resources in 27ms.
+D/dalvikvm( 2287): GC_EXPLICIT freed 231 objects / 10528 bytes in 21ms
+D/dalvikvm( 2287): GC_EXPLICIT freed 104 objects / 4096 bytes in 20ms
+D/dalvikvm( 2287): GC_EXPLICIT freed 2 objects / 48 bytes in 18ms
+I/dalvikvm( 2287): System server process 2373 has been created
+I/Zygote  ( 2287): Accepting command socket connections
+I/sysproc ( 2373): !@beginofsystem_init1()
+I/sysproc ( 2373): Entered system_init()
+I/sysproc ( 2373): ServiceManager: 0x11d8a8
+I/SurfaceFlinger( 2373): SurfaceFlinger is starting
+I/SurfaceFlinger( 2373): SurfaceFlinger's main thread ready to run. Initializing graphics H/W...
+E/SurfaceFlinger( 2373): Couldn't open /sys/power/wait_for_fb_sleep or /sys/power/wait_for_fb_wake
+E/IMGSRV  ( 2373): [OpenServices fail] open failed!
+E/IMGSRV  ( 2373): [PVRSRVConnect fail] PVRSRVConnectServices failed!
+E/IMGSRV  ( 2373): [OpenServices fail] open failed!
+E/IMGSRV  ( 2373): [PVRSRVConnect fail] PVRSRVConnectServices failed!
+E/FramebufferNativeWindow( 2373): couldn't open framebuffer HAL (No such device)
+D/libEGL  ( 2373): loaded /system/lib/egl/libEGL_POWERVR_SGX540_120.so
+D/libEGL  ( 2373): loaded /system/lib/egl/libGLESv1_CM_POWERVR_SGX540_120.so
+D/libEGL  ( 2373): loaded /system/lib/egl/libGLESv2_POWERVR_SGX540_120.so
+E/IMGSRV  ( 2373): [OpenServices fail] open failed!
+E/IMGSRV  ( 2373): [PVRSRVConnect fail] PVRSRVConnectServices failed!
+E/IMGSRV  ( 2373): [SRV_SGXServicesInit fail] PVRSRVConnect failed!
+E/IMGSRV  ( 2373): [eglInitialize fail] 0 attempt to initialize!
+E/IMGSRV  ( 2373): [OpenServices fail] open failed!
+E/IMGSRV  ( 2373): [PVRSRVConnect fail] PVRSRVConnectServices failed!
+E/IMGSRV  ( 2373): [SRV_SGXServicesInit fail] PVRSRVConnect failed!
+E/IMGSRV  ( 2373): [eglInitialize fail] 1 attempt to initialize!
+E/IMGSRV  ( 2373): [OpenServices fail] open failed!
+E/IMGSRV  ( 2373): [PVRSRVConnect fail] PVRSRVConnectServices failed!
+E/IMGSRV  ( 2373): [SRV_SGXServicesInit fail] PVRSRVConnect failed!
+E/IMGSRV  ( 2373): [eglInitialize fail] SRV_ServicesInit failed!
+W/libEGL  ( 2373): 0: eglInitialize(0x1) failed (EGL_BAD_ALLOC)
+E/libEGL  ( 2373): eglInitialize:740 error 3001 (EGL_NOT_INITIALIZED)
+I/ServiceManager( 2274): Waiting for sevice SurfaceFlinger...
+E/DataRouter( 2285): [*] Connect_RILD() error 4 retrycount 10
+I/DEBUG   ( 2284): *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** ***
+I/DEBUG   ( 2284): Build fingerprint: 'samsung/GT-I9000/GT-I9000/GT-I9000:2.2.1/FROYO/XXJPX:user/release-keys'
+I/DEBUG   ( 2284): pid: 2373, tid: 2380  >>> system_server <<<
+I/DEBUG   ( 2284): signal 11 (SIGSEGV), fault addr 65726854
+I/DEBUG   ( 2284):  r0 001339f0  r1 00000002  r2 4b51dd5c  r3 65726854
+I/DEBUG   ( 2284):  r4 4b51ddc0  r5 00000001  r6 4b51dd9c  r7 00000000
+I/DEBUG   ( 2284):  r8 00100000  r9 a811c479  10 4b41e000  fp 00130fb8
+I/DEBUG   ( 2284):  ip ac52920c  sp 4b51dd58  lr ab90a151  pc 65726854  cpsr 00000010
+I/DEBUG   ( 2284):  d0  6472656767756265  d1  5d6c696166206549
+I/DEBUG   ( 2284):  d2  7265535f5652535a  d3  696e497365636945
+I/DEBUG   ( 2284):  d4  4310ea90430cef88  d5  4310eaf84310eac4
+I/DEBUG   ( 2284):  d6  3f8000004310eb60  d7  000000003f800000
+I/DEBUG   ( 2284):  d8  0000000000000000  d9  0000000000000000
+I/DEBUG   ( 2284):  d10 0000000000000000  d11 0000000000000000
+I/DEBUG   ( 2284):  d12 0000000000000000  d13 0000000000000000
+I/DEBUG   ( 2284):  d14 0000000000000000  d15 0000000000000000
+I/DEBUG   ( 2284):  d16 0000000000000000  d17 3fe999999999999a
+I/DEBUG   ( 2284):  d18 42eccefa43de3400  d19 3fe00000000000b4
+I/DEBUG   ( 2284):  d20 4008000000000000  d21 3fd99a27ad32ddf5
+I/DEBUG   ( 2284):  d22 3fd24998d6307188  d23 3fcc7288e957b53b
+I/DEBUG   ( 2284):  d24 3fc74721cad6b0ed  d25 3fc39a09d078c69f
+I/DEBUG   ( 2284):  d26 0000000000000000  d27 0000000000000000
+I/DEBUG   ( 2284):  d28 0000000000000000  d29 0000000000000000
+I/DEBUG   ( 2284):  d30 0000000000000000  d31 0000000000000000
+I/DEBUG   ( 2284):  scr 20000012
+I/DEBUG   ( 2284): 
+I/DEBUG   ( 2284):          #00  pc 65726854  
+I/DEBUG   ( 2284):          #01  pc 0000a14e  /system/lib/libui.so
+I/DEBUG   ( 2284):          #02  pc 00016728  /system/lib/libsurfaceflinger.so
+I/DEBUG   ( 2284):          #03  pc 00016be2  /system/lib/libsurfaceflinger.so
+I/DEBUG   ( 2284):          #04  pc 00021f48  /system/lib/libsurfaceflinger.so
+I/DEBUG   ( 2284):          #05  pc 0001c032  /system/lib/libutils.so
+I/DEBUG   ( 2284):          #06  pc 0001c4e0  /system/lib/libutils.so
+I/DEBUG   ( 2284):          #07  pc 000111b0  /system/lib/libc.so
+I/DEBUG   ( 2284):          #08  pc 00010ca0  /system/lib/libc.so
+I/DEBUG   ( 2284): 
+I/DEBUG   ( 2284): code around pc:
+I/DEBUG   ( 2284): 65726834 ffffffff ffffffff ffffffff ffffffff 
+I/DEBUG   ( 2284): 65726844 ffffffff ffffffff ffffffff ffffffff 
+I/DEBUG   ( 2284): 65726854 ffffffff ffffffff ffffffff ffffffff 
+I/DEBUG   ( 2284): 65726864 ffffffff ffffffff ffffffff ffffffff 
+I/DEBUG   ( 2284): 65726874 ffffffff ffffffff ffffffff ffffffff 
+I/DEBUG   ( 2284): 
+I/DEBUG   ( 2284): code around lr:
+I/DEBUG   ( 2284): ab90a130 b01b0015 bf00bdf0 4605b573 461c460e 
+I/DEBUG   ( 2284): ab90a140 0015f06f 6d53b162 21024610 4798aa01 
+I/DEBUG   ( 2284): ab90a150 db052800 46314628 46239a01 ff48f7ff 
+I/DEBUG   ( 2284): ab90a160 bf00bd7c 47706880 6941b901 69c2040b 
+I/DEBUG   ( 2284): ab90a170 42930c1b f8d0da07 f85cc018 b1180033 
+I/DEBUG   ( 2284): 
+I/DEBUG   ( 2284): stack:
+I/DEBUG   ( 2284):     4b51dd18  00100000  [heap]
+I/DEBUG   ( 2284):     4b51dd1c  a811c479  /system/lib/libutils.so
+I/DEBUG   ( 2284):     4b51dd20  4b41e000  
+I/DEBUG   ( 2284):     4b51dd24  abe04c51  /system/lib/libEGL.so
+I/DEBUG   ( 2284):     4b51dd28  00000001  
+I/DEBUG   ( 2284):     4b51dd2c  abe05c57  /system/lib/libEGL.so
+I/DEBUG   ( 2284):     4b51dd30  00000000  
+I/DEBUG   ( 2284):     4b51dd34  00000002  
+I/DEBUG   ( 2284):     4b51dd38  00000000  
+I/DEBUG   ( 2284):     4b51dd3c  00000000  
+I/DEBUG   ( 2284):     4b51dd40  00000000  
+I/DEBUG   ( 2284):     4b51dd44  abe08948  /system/lib/libEGL.so
+I/DEBUG   ( 2284):     4b51dd48  abe08ab0  /system/lib/libEGL.so
+I/DEBUG   ( 2284):     4b51dd4c  abe02bb5  /system/lib/libEGL.so
+I/DEBUG   ( 2284):     4b51dd50  df002777  
+I/DEBUG   ( 2284):     4b51dd54  e3a070ad  
+I/DEBUG   ( 2284): #01 4b51dd58  00000001  
+I/DEBUG   ( 2284):     4b51dd5c  4b51dd9c  
+I/DEBUG   ( 2284):     4b51dd60  001339a0  [heap]
+I/DEBUG   ( 2284):     4b51dd64  ac529140  /system/lib/libsurfaceflinger.so
+I/DEBUG   ( 2284):     4b51dd68  00000001  
+I/DEBUG   ( 2284):     4b51dd6c  ac51672b  /system/lib/libsurfaceflinger.so
+I/ServiceManager( 2274): Waiting for sevice SurfaceFlinger...
+E/DataRouter( 2285): [*] Connect_RILD() error 4 retrycount 11
+I/ServiceManager( 2274): Waiting for sevice SurfaceFlinger...
+E/DataRouter( 2285): [*] Connect_RILD() error 4 retrycount 12
+W/SurfaceComposerClient( 2274): SurfaceFlinger not published, waiting...
+E/DataRouter( 2285): [*] Connect_RILD() error 4 retrycount 13
+I/ServiceManager( 2274): Waiting for sevice SurfaceFlinger...
+E/DataRouter( 2285): [*] Connect_RILD() error 4 retrycount 14
+I/ServiceManager( 2274): Waiting for sevice SurfaceFlinger...
+E/DataRouter( 2285): [*] Connect_RILD() error 4 retrycount 15
+I/ServiceManager( 2274): Waiting for sevice SurfaceFlinger...
+E/DataRouter( 2285): [*] Connect_RILD() error 4 retrycount 16
+I/ServiceManager( 2274): Waiting for sevice SurfaceFlinger...
+I/DEBUG   ( 2284): dumpmesg > /data/log/dumpstate_app_native.log
+E/DataRouter( 2285): [*] Connect_RILD() error 4 retrycount 17
+I/ServiceManager( 2274): Waiting for sevice SurfaceFlinger...
+I/dumpstate( 2396): begin
+E/DataRouter( 2285): [*] Connect_RILD() error 4 retrycount 18
+W/SurfaceComposerClient( 2274): SurfaceFlinger not published, waiting...
+I/ServiceManager( 2274): Waiting for sevice SurfaceFlinger...
+E/DataRouter( 2285): [*] Connect_RILD() error 4 retrycount 19
+I/ServiceManager( 2274): Waiting for sevice SurfaceFlinger...
+E/DataRouter( 2285): [*] Connect_RILD() error 4 retrycount 20
+I/ServiceManager( 2274): Waiting for sevice SurfaceFlinger...
+E/DataRouter( 2285): [*] Connect_RILD() error 4 retrycount 21
+I/ServiceManager( 2274): Waiting for sevice SurfaceFlinger...
+E/DataRouter( 2285): [*] Connect_RILD() error 4 retrycount 22
+I/ServiceManager( 2274): Waiting for sevice SurfaceFlinger...
+E/DataRouter( 2285): [*] Connect_RILD() error 4 retrycount 23
+W/SurfaceComposerClient( 2274): SurfaceFlinger not published, waiting...
+E/DataRouter( 2285): [*] Connect_RILD() error 4 retrycount 24
+I/ServiceManager( 2274): Waiting for sevice SurfaceFlinger...
+E/DataRouter( 2285): [*] Connect_RILD() error 4 retrycount 25
+I/ServiceManager( 2274): Waiting for sevice SurfaceFlinger...
+E/DataRouter( 2285): [*] Connect_RILD() error 4 retrycount 26
+I/ServiceManager( 2274): Waiting for sevice SurfaceFlinger...
+E/DataRouter( 2285): [*] Connect_RILD() error 4 retrycount 27
+I/ServiceManager( 2274): Waiting for sevice SurfaceFlinger...
+E/DataRouter( 2285): [*] Connect_RILD() error 4 retrycount 28
+I/ServiceManager( 2274): Waiting for sevice SurfaceFlinger...
+E/DataRouter( 2285): [*] Connect_RILD() error 4 retrycount 29
+W/SurfaceComposerClient( 2274): SurfaceFlinger not published, waiting...
+I/ServiceManager( 2274): Waiting for sevice SurfaceFlinger...
+E/DataRouter( 2285): [*] Connect_RILD() error 4 retrycount 30
+I/ServiceManager( 2274): Waiting for sevice SurfaceFlinger...
+E/DataRouter( 2285): [*] Connect_RILD() error 4 retrycount 31
+I/ServiceManager( 2274): Waiting for sevice SurfaceFlinger...
+E/DataRouter( 2285): [*] Connect_RILD() error 4 retrycount 32
+I/ServiceManager( 2274): Waiting for sevice SurfaceFlinger...
+E/DataRouter( 2285): [*] Connect_RILD() error 4 retrycount 33
+I/ServiceManager( 2274): Waiting for sevice SurfaceFlinger...
+E/DataRouter( 2285): [*] Connect_RILD() error 4 retrycount 34
+W/SurfaceComposerClient( 2274): SurfaceFlinger not published, waiting...
+E/DataRouter( 2285): [*] Connect_RILD() error 4 retrycount 35
+I/ServiceManager( 2274): Waiting for sevice SurfaceFlinger...
+E/DataRouter( 2285): [*] Connect_RILD() error 4 retrycount 36
+I/ServiceManager( 2274): Waiting for sevice SurfaceFlinger...
+E/DataRouter( 2285): [*] Connect_RILD() error 4 retrycount 37
+I/ServiceManager( 2274): Waiting for sevice SurfaceFlinger...
+E/DataRouter( 2285): [*] Connect_RILD() error 4 retrycount 38
+I/ServiceManager( 2274): Waiting for sevice SurfaceFlinger...
+E/DataRouter( 2285): [*] Connect_RILD() error 4 retrycount 39
+I/ServiceManager( 2274): Waiting for sevice SurfaceFlinger...
+E/DataRouter( 2285): [*] Connect_RILD() error 4 retrycount 40
+W/SurfaceComposerClient( 2274): SurfaceFlinger not published, waiting...
+I/ServiceManager( 2274): Waiting for sevice SurfaceFlinger...
+E/DataRouter( 2285): [*] Connect_RILD() error 4 retrycount 41
+I/ServiceManager( 2274): Waiting for sevice SurfaceFlinger...
+E/DataRouter( 2285): [*] Connect_RILD() error 4 retrycount 42
+I/ServiceManager( 2274): Waiting for sevice SurfaceFlinger...
+E/DataRouter( 2285): [*] Connect_RILD() error 4 retrycount 43
+I/ServiceManager( 2274): Waiting for sevice SurfaceFlinger...
+E/DataRouter( 2285): [*] Connect_RILD() error 4 retrycount 44
+I/ServiceManager( 2274): Waiting for sevice SurfaceFlinger...
+E/DataRouter( 2285): [*] Connect_RILD() error 4 retrycount 45
+W/SurfaceComposerClient( 2274): SurfaceFlinger not published, waiting...
+E/DataRouter( 2285): [*] Connect_RILD() error 4 retrycount 46
+I/ServiceManager( 2274): Waiting for sevice SurfaceFlinger...
+D/VoldCmdListener( 2278): asec list
+E/DataRouter( 2285): [*] Connect_RILD() error 4 retrycount 47
+I/ServiceManager( 2274): Waiting for sevice SurfaceFlinger...
+E/DataRouter( 2285): [*] Connect_RILD() error 4 retrycount 48
+I/ServiceManager( 2274): Waiting for sevice SurfaceFlinger...
+E/DataRouter( 2285): [*] Connect_RILD() error 4 retrycount 49
+I/ServiceManager( 2274): Waiting for sevice SurfaceFlinger...
+E/DataRouter( 2285): [*] Connect_RILD() error 4
+E/DataRouter( 2285): [dr_smd_ril_init] dr_smd_ril_Connect failed
+E/DataRouter( 2285): [*] RegisterUnsolicitedHandler() for NULL successfully done 
+E/DataRouter( 2285): [*] dr_smd_ril_close_client 34388
+E/DataRouter( 2285): Data Routerdr_smd_ril_init Failed 
+E/DataRouter( 2285): +
+E/DataRouter( 2285): Pipe Created   
+E/DataRouter( 2285): Pipe Created sucessfully  
+E/DataRouter( 2285): Pipe Created   
+E/DataRouter( 2285): Launching MassStorage Monitor Thread
+E/DataRouter( 2285): Data Router: INIT-
+E/DataRouter( 2285): __initialize_usb_ipc
+E/DataRouter( 2285): Before the Modem Read select 
+E/DataRouter( 2285): Initialise USB and start the thread 
+E/DataRouter( 2285): +
+E/DataRouter( 2285): USB Interface is open with 0xe
+E/DataRouter( 2285): USB interface is now configured for usb_fd = 0xe
+E/DataRouter( 2285): -
+E/DataRouter( 2285): THREAD LAUNCH 
+E/DataRouter( 2285): +
+E/DataRouter( 2285): +
+E/DataRouter( 2285): USB monitor thread launched, usb_fd= 0xe
+E/DataRouter( 2285): Before the while loop 
+E/DataRouter( 2285): Before the usb select 
+I/ServiceManager( 2274): Waiting for sevice SurfaceFlinger...
+W/SurfaceComposerClient( 2274): SurfaceFlinger not published, waiting...
+I/ServiceManager( 2274): Waiting for sevice SurfaceFlinger...
+I/ServiceManager( 2274): Waiting for sevice SurfaceFlinger...
+I/ServiceManager( 2274): Waiting for sevice SurfaceFlinger...
+I/ServiceManager( 2274): Waiting for sevice SurfaceFlinger...
+I/ServiceManager( 2274): Waiting for sevice SurfaceFlinger...
+W/SurfaceComposerClient( 2274): SurfaceFlinger not published, waiting...
+I/ServiceManager( 2274): Waiting for sevice SurfaceFlinger...
+I/ServiceManager( 2274): Waiting for sevice SurfaceFlinger...
+I/ServiceManager( 2274): Waiting for sevice SurfaceFlinger...
+I/ServiceManager( 2274): Waiting for sevice SurfaceFlinger...
+I/ServiceManager( 2274): Waiting for sevice SurfaceFlinger...
+I/dumpstate( 2396): done
+E/SurfaceComposerClient( 2274): Servicemanager was hanged, so we reboot the device
+D/Zygote  ( 2287): Process 2373 terminated by signal (11)
+I/Zygote  ( 2287): Exit zygote because system server (2373) has terminated
+I/ServiceManager( 2277): service 'media.audio_flinger' died
+I/ServiceManager( 2277): service 'media.player' died
+I/ServiceManager( 2277): service 'media.camera' died
+I/ServiceManager( 2277): service 'media.audio_policy' died
