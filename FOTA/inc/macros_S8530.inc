@@ -1,5 +1,3 @@
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ; Macros
 
 macro NORETURN
@@ -19,21 +17,30 @@ macro START
 	align 4
 
 c_start:
-	ldr	r0, [_key]
-	ldrb	r0, [r0, 2]	; CALL key
-	cmp	r0, 0
-	bne	c_run
-	bx	lr		; back to the bootloader
 
-align 4
+	ldr		r0, [_key]
+	ldrb		r0, [r0]     ; Middle key
+	cmp		r0, 1
+	beq		fota_dload_mode
+	ldr		r0, [_key]
+	ldrb		r0, [r0, 2]	; CALL key
+	cmp		r0, 0
+	bne		c_run
 
-_key				dw pressed_button
+	bx		lr		; back to the bootloader
+fota_dload_mode:
+	bl		enable_fota_output
+	bl		dloadmode
+	NORETURN
+
+_key	dw pressed_button
 
 f_ver:
 	db 0x100 - (f_ver-c_start) dup 0
 	db 'FOTA_ENGINE_VER_INFO_2.0'
 	db 232 dup 0
-
+	
+align 4
 c_run:
 }
 
