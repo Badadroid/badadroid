@@ -31,19 +31,19 @@ rebell_strlen_ret:
 ;void rebell_fillmem(R0 void* ptr, R1 byte fillbyte, R2 int length)
 rebell_fillmem:
 	STMFD	SP!, {R3,LR\}
-	MOV		R3, 0
+	MOV	R3, 0
 rebell_fillmem_loop:
-	CMP		R3, R2
-	BGE		rebell_fillmem_ret
+	CMP	R3, R2
+	BGE	rebell_fillmem_ret
 	STRB	R1, [R0, R3]
-	ADD		R3, R3, 1
-	B		rebell_fillmem_loop
+	ADD	R3, R3, 1
+	B	rebell_fillmem_loop
 rebell_fillmem_ret:
-	LDMFD	SP!, {R3-R4,PC\}
+	LDMFD	SP!, {R3,PC\}
 ;be aware of code below, need someone to check and fix it
 ;it is 100% copy->paste from PBL with commented out 0x40 mapping
 configure_ram:
-	STMFD	SP!, {R0-R1,LR\}
+	STMFD	SP!, {R0-R5,LR\}
 	LDR	R0, [APLL_LOCK]
 	ORR	R0, R0, #0x6200
 	ORR	R0, R0, #8
@@ -155,15 +155,15 @@ configram3:
 ;LDR     R1, [conf_0xFFF1010]
 ;STR     R1, [R0]
 ;LDR     R1, [conf_0x212100]
-	MOV	R5, R0
-	MOV	R0, 9999
-	BL	int_debugprint
-	MOV	R0, R5
+	;MOV     R5, R0
+	;MOV     R0, 9999
+	;BL      int_debugprint
+       ; MOV     R0, R5
 ;STR     R1, [R0,#4]
 
-	MOV	R0, 9999
-	BL	int_debugprint
-	LDMFD	SP!, {R0-R1,PC\}
+	;MOV     R0, 9999
+	;BL      int_debugprint
+	LDMFD	SP!, {R0-R5,PC\}
 ;endproc
 
 	conf_0xE2700000  dw 0xE2700000
