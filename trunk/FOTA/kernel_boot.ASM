@@ -120,11 +120,11 @@ START
        ; SUB     R5, R5, 2
 	ADD	R2, R2, R5, LSL#2 ;add length of string*2 (mem is zeroed anyway)
 
-	MOV	R0, 0	;ATAG_NONE size (zero, because of weird linux kernel programmers)
+	MOV	R0, 0	;ATAG_NONE size
 	STR	R0, [R2]
 
 	ADD	R2, R2, 4
-	MOV	R0, 0x00000000	 ;ATAG_NONE
+	MOV	R0, 0	;ATAG_NONE
 	STR	R0, [R2] ;thats the whole ATAG struct
 
 	BL	relockernel
