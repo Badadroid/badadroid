@@ -44,12 +44,18 @@ START
 	bl	debug_print
 
 	MCR	p15, 0, R8,c1,c0 ;turn off MMUCache with previous gained MMU control reg
+	BL	CoDisableMmu
 	ldr	r0, [s_done_a]
 	bl	debug_print
 	bl	configure_ram
 
-	LDR	R2, [ATAG_ptr]
+	LDR	R0, [ATAG_ptr]
+	MOV	R1, 0x00
+	MOV	R2, 512
+	BL	rebell_fillmem ;clear memory there
 
+
+	LDR	R2, [ATAG_ptr]
 	 ; I9000 SBL uses full ATAG_CORE struct (length 5 instead of 2)
 	 ; but it isnt needed and tbh I've got no clue how to reproduce it
 	 ; http://www.simtec.co.uk/products/SWLINUX/files/booting_article.html#ATAG_CORE
@@ -86,18 +92,15 @@ START
 	STR	R0, [R2]
 	ADD	R2, R2, 4
 
-
-	;LDR     R0, [s_atagcmdline_a]
-	;BL      strlen
-       ; MOV     R5, CMDLINE_LEN  ;hardcoded strlen
-	;MOV     R0, CMDLINE_LEN  ;hardcoded strlen
-
+		MOV	R0, 12345
+	BL	int_debugprint
 	LDR	R0, [s_atagcmdline_a]
 	BL	rebell_strlen
 	ADD	R0, R0, 1  ;include zero-ending
 	MOV	R5, R0
-
-
+		MOV	R0, 12345
+	BL	int_debugprint
+	MOV	R0, R5
 
 	ADD	R0, R0, 0xD
 	MOV	R0, R0,LSR#2
@@ -108,16 +111,15 @@ START
 	STR	R0, [R2]
 	ADD	R2, R2, 4
 
-	STMFD	sp!, {R2}
+	MOV	R6, R2
 	LDR	R0, [s_atagcmdline_a] ;src
 	MOV	R1, R2		      ;dst
 	MOV	R2, R5		      ;size
 	BL	rebell_memcpy
-	LDMFD	sp!,{R2}
-	SUB	R5, R5, 2
-	ADD	R2, R2, R5,LSL#2 ;add length of string
+	MOV	R2, R6
+       ; SUB     R5, R5, 2
+	ADD	R2, R2, R5, LSL#2 ;add length of string*2 (mem is zeroed anyway)
 
-	MOV	R0, R2
 	MOV	R0, 0	;ATAG_NONE size (zero, because of weird linux kernel programmers)
 	STR	R0, [R2]
 
@@ -128,101 +130,9 @@ START
 	BL	relockernel
 	ldr	r0, [s_done_a]
 	bl	debug_print
-	MRS	R0, CPSR
-BIC	R0, R0, #0xFF
-ORR	R0, R0, #0xD3
-MSR	CPSR_cf, R0
-MOV	R0, #0
-MCR	p15, 0, R0,c8,c7
-MCR	p15, 0, R0,c7,c5
-MCR	p15, 0, R0,c7,c6, 2
-MRC	p15, 0, R0,c1,c0
-BIC	R0, R0, #0x1000
-MCR	p15, 0, R0,c1,c0
-BL	sub_40244118
-MRC	p15, 0, R0,c1,c0
-BIC	R0, R0, #0x2000
-BIC	R0, R0, #7
-ORR	R0, R0, #2
-ORR	R0, R0, #0x800
-MCR	p15, 0, R0,c1,c0
-LDR	R0, [WATCHDOG_TIMER]
-MOV	R1, #0
-STR	R1, [R0]
-LDR	R0, [MANUAL_IRQ]
-LDR	R1, [R0,#0x40]
-STR	R1, [R0,#0x40]
-LDR	R1, [R0,#0x44]
-STR	R1, [R0,#0x44]
-LDR	R1, [R0,#0x48]
-STR	R1, [R0,#0x48]
-LDR	R1, [R0,#0x4C]
-STR	R1, [R0,#0x4C]
-
-MOV	R0, #0xF2000000
-LDR	R1, [VIC1]
-LDR	R2, [VIC2]
-LDR	R3, [VIC3]
-MOV	R4, 0xFFFFFFFF
-STR	R4, [R0,#0x14]
-STR	R4, [R1,#0x14]
-STR	R4, [R2,#0x14]
-STR	R4, [R3,#0x14]
-MOV	R4, #0
-STR	R4, [R0,#0xC]
-STR	R4, [R1,#0xC]
-STR	R4, [R2,#0xC]
-STR	R4, [R3,#0xC]
-MOV	R4, #0
-STR	R4, [R0,#0xF00]
-STR	R4, [R1,#0xF00]
-STR	R4, [R2,#0xF00]
-STR	R4, [R3,#0xF00]
 
 
-LDR	R3, [CLK_DIV0]
-LDR	R3, [R3]
 
-
-AND	R3, R3, #0x80000000
-LDR	R3, [clk_div_mask]
-ORR	R3, R2, R3
-LDR	R2, [CLK_DIV0]
-;STR     R3, [R2]
-
-BL	timer_driver
-
-LDR	R2, [CLK_GATE_IP0]
-LDR	R3, [CLK_GATE_IP0]
-LDR	R3, [R3]
-BIC	R3, R3, #0x80000000
-STR	R3, [R2]
-LDR	R2, [CLK_GATE_IP1]
-LDR	R3, [CLK_GATE_IP1]
-LDR	R3, [R3]
-BIC	R3, R3, #0x10000000
-STR	R3, [R2]
-LDR	R2, [CLK_GATE_IP2]
-LDR	R3, [CLK_GATE_IP2]
-LDR	R3, [R3]
-BIC	R3, R3, #0x200
-BIC	R3, R3, #2
-STR	R3, [R2]
-LDR	R2, [CLK_GATE_IP3]
-LDR	R3, [CLK_GATE_IP3]
-LDR	R3, [R3]
-BIC	R3, R3, #3
-STR	R3, [R2]
-LDR	R2, [CLK_GATE_IP4]
-LDR	R3, [CLK_GATE_IP4]
-LDR	R3, [R3]
-BIC	R3, R3, #6
-STR	R3, [R2]
-
-
-	LDR	R1, [kernel_start]
-	LDR	R0, [s_jumpingout_a]
-	BL	debug_print
 
 	MOV	R0, #0xA9
 	BL	GPIO_Drv_UnsetExtInterrupt
@@ -233,16 +143,60 @@ STR	R3, [R2]
 
 	;BL      CoDisableL2Cache
 	BL	CoDisableDCache
-	;BL      CoInvalidateBothCaches
-	;BL      System_DisableVIC
+       ; BL      CoInvalidateBothCaches
+
+	BL	System_DisableVIC
 	BL	System_DisableIRQ
-       ; BL      System_DisableFIQ
+	BL	System_DisableFIQ
+
+LDR	R0, [EXT_INT]	;zero ext INTs
+MOV	R1, 0
+STR	R1, [R0,#0x40]
+STR	R1, [R0,#0x44]
+STR	R1, [R0,#0x48]
+STR	R1, [R0,#0x4C]
+
+MOV	R0, #0xF2000000
+LDR	R1, [VIC1]
+LDR	R2, [VIC2]
+LDR	R3, [VIC3]
+MOV	R4, 0xFFFFFFFF	;clear INT
+STR	R4, [R0,#0x14]
+STR	R4, [R1,#0x14]
+STR	R4, [R2,#0x14]
+STR	R4, [R3,#0x14]
+
+STR	R4, [R0,#0x1C]	;clear software INT
+STR	R4, [R1,#0x1C]
+STR	R4, [R2,#0x1C]
+STR	R4, [R3,#0x1C]
+
+LDR	R5, [INTC_DMA_CLR]   ;clear DMA INT
+STR	R4, [R5]
+LDR	R5, [INTC_ONENAND_CLR] ;clear oneNand INT
+STR	R4, [R5]
+
+MOV	R4, #0		;set all interrupts to IRQ mode
+STR	R4, [R0,#0xC]
+STR	R4, [R1,#0xC]
+STR	R4, [R2,#0xC]
+STR	R4, [R3,#0xC]
+MOV	R4, #0		;clear ISRs
+STR	R4, [R0,#0xF00]
+STR	R4, [R1,#0xF00]
+STR	R4, [R2,#0xF00]
+STR	R4, [R3,#0xF00]
+
+
 
 	LDR	R0, [SYSCON_NORMAL_CFG]
 	MOV	R1, 0xFFFFFFFF
 	STR	R1, [R0]    ;POWAH ON EVRYTHINKS (clock registers in all modules must be available for kernel)
 
 
+	LDR	R1, [kernel_start]
+	LDR	R0, [s_jumpingout_a]
+	BL	debug_print
 
 	MOV	R0, 0	  ;must be 0
 	MOV	R1, 0x891 ;machine id of I9000
@@ -268,96 +222,19 @@ relockernel:
 	BL	rebell_memcpy
 
 	LDMFD	SP!, {R0-R2,PC}
- sub_40244118:
-MOV	R0, 0xFFFFFFFF
-MRC	p15, 1, R0,c0,c0, 1
-ANDS	R3, R0, #0x7000000
-MOV	R3, R3,LSR#23
-BEQ	locret_4024419C
-MOV	R10, #0
-loc_40244130:
-ADD	R2, R10, R10,LSR#1
-MOV	R1, R0,LSR R2
-AND	R1, R1, #7
-CMP	R1, #2
-BLT	loc_40244190
-MCR	p15, 2, R10,c0,c0
-MOV	R1, #0
-MCR	p15, 0, R1,c7,c5, 4
-MRC	p15, 1, R1,c0,c0
-AND	R2, R1, #7
-ADD	R2, R2, #4
-LDR	R4, [def_0x3FF]
-ANDS	R4, R4, R1,LSR#3
-CLZ	R5, R4
-LDR	R7, [def_0x7FFF]
-ANDS	R7, R7, R1,LSR#13
-loc_40244170:
-MOV	R9, R4
-loc_40244174:
-ORR	R11, R10, R9,LSL R5
-ORR	R11, R11, R7,LSL R2
-MCR	p15, 0, R11,c7,c6, 2
-SUBS	R9, R9, #1
-BGE	loc_40244174
-SUBS	R7, R7, #1
-BGE	loc_40244170
-loc_40244190:
-ADD	R10, R10, #2
-CMP	R3, R10
-BGT	loc_40244130
-locret_4024419C:
-MOV	PC, LR
 
-timer_driver:
-
-var_18= -0x18
-var_4= -4
-
-STR	R11, [SP,#var_4]!
-ADD	R11, SP, #4+var_4
-SUB	SP, SP, #0xC
-LDR	R2, [TCFG0]
-MOV	R3, #0xF00
-STR	R3, [R2]
-LDR	R3, [TCFG1]
-LDR	R3, [R3]
-BIC	R3, R3, #0xF0000
-STR	R3, [R11,#0x10+var_18]
-LDR	R2, [TCFG1]
-LDR	R3, [R11,#0x10+var_18]
-ORR	R3, R3, #0x10000
-STR	R3, [R2]
-LDR	R2, [TCNTB4]
-MOV	R3, 0xFFFFFFFF
-STR	R3, [R2]
-LDR	R2, [TCON]
-LDR	R3, [TCON]
-LDR	R3, [R3]
-BIC	R3, R3, #0x700000
-ORR	R3, R3, #0x600000
-STR	R3, [R2]
-LDR	R2, [TCON]
-LDR	R3, [TCON]
-LDR	R3, [R3]
-BIC	R3, R3, #0x700000
-ORR	R3, R3, #0x500000
-STR	R3, [R2]
-MOV	SP, R11
-LDMFD	SP!, {R11}
-BX	LR
-
-TCFG0	dw  0xE2500000
-TCFG1	dw  0xE2500004
-TCON	dw  0xE2500008
-
-TCNTB4	dw  0xE250003C
 
 
 FUNCTIONS
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;; variables below
 DEFAULT_VARIABLES
     pagetable		dw gMMUL1PageTable
+
+    GPIO_INT_FIRST	dw 0xE0200700
+    GPIO_INT_LAST	dw 0xE0200754
+
+    INTC_DMA_CLR	dw 0xB0601004
+    INTC_ONENAND_CLR	dw 0xB0601008
 
     SYSCON_NORMAL_CFG	dw 0xE010C010
     CLK_DIV0		dw 0xE0100300
@@ -384,7 +261,7 @@ DEFAULT_VARIABLES
     VIC3		dw 0xF2300000
     def_0x3FF		dw 0x3FF
     def_0x7FFF		dw 0x7FFF
-    MANUAL_IRQ		dw 0xE0200F00
+    EXT_INT		dw 0xE0200F00
 
 
     kernel_buf		dw 0x44000000
@@ -406,8 +283,8 @@ DEFAULT_STRINGS_ADDR
 
 DEFAULT_STRINGS
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;; ;add custom strings below
-    s_kernel_path    du '/g/galaxyboot/zImage_oleg',0
-    s_atagcmdline    db 'bootmode= console=ttySAC2,115200 loglevel=4',0
+    s_kernel_path    du '/g/galaxyboot/zImage',0
+    s_atagcmdline    db 'console=ttySAC2,115200 loglevel=4',0
    ; CMDLINE_LEN      =  46 ;strlen+1 it is hardcoded for now, as I am too dumb to use BL3 str functions properly. ~Rebellos
     s_loadkernel     db ' Loading kernel image to buf',0
     s_jumpingout     db ' Jumpout to 0x%X',0

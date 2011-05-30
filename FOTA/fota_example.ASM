@@ -11,22 +11,22 @@ include 'inc/functions.inc'	  ;this one provides default functions
 
 START	;don't touch this macro, it contains correct FOTA magic numbers and does auto CALL-KEY check and jumps here if its pressed
 	;MMUCache is required for TFS4 system operations, enabling cache enables the whole MMU too
-	MOV	r1, #1
-	LDR	r0, [pagetable]
-	BL	MemMMUCacheEnable
-	bl	enable_fota_output
-	MOV	R0, 1234
-	BL	int_debugprint	    ;prints "debug: 1234" to the FOTA or UART
-	BL	__PfsNandInit	    ;oneNAND FS
-	BL	__PfsMassInit	    ;SDHC on interface MMC0 init (internal 2gb sd card)
-	LDR	R0, [s_dir_path_a]  ;load the address of directory we want to list
-	BL	listdir 	    ;jump into list function
-	BL	dloadmode	    ;enter download mode and inform about that after all, that makes our life easier
+	MOV		r1, #1
+	LDR		r0, [pagetable]
+	BL		MemMMUCacheEnable
+	bl		enable_fota_output
+	MOV		R0, 1234
+	BL		int_debugprint	    ;prints "debug: 1234" to the FOTA or UART
+	BL		__PfsNandInit	    ;oneNAND FS
+	BL		__PfsMassInit	    ;SDHC on interface MMC0 init (internal 2gb sd card)
+	LDR		R0, [s_dir_path_a]  ;load the address of directory we want to list
+	BL		listdir 	    ;jump into list function
+	BL		dloadmode	    ;enter download mode and inform about that after all, that makes our life easier
 
 FUNCTIONS ;macro from functions.inc
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;; variables below
 DEFAULT_VARIABLES	;macro from vars.inc
-    pagetable dw gMMUL1PageTable
+    pagetable 		 dw gMMUL1PageTable
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;; strings at the end
 DEFAULT_STRINGS_ADDR	;macro from vars.inc

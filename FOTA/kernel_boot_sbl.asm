@@ -92,7 +92,7 @@ START
 	;BL      System_DisableVIC
 	;BL      System_DisableIRQ
     ;BL      System_DisableFIQ
-	;BL      configure_ram ;reconfigure DMC1 to map bank0 onto 0x30 instead of 0x20, code from PBL, it isn't trustable
+	BL	configure_ram ;reconfigure DMC1 to map bank0 onto 0x30 instead of 0x20, code from PBL, it isn't trustable
 
 	;BL      relockernel
 
@@ -140,7 +140,7 @@ DEFAULT_VARIABLES
     sbl_start		dw 0x40244000
     sbl_size		dw 0x140000
 
-    kernel_start	dw 0x22000000
+    kernel_start	dw 0x32000000
 
     kernel_buf		dw 0x44000000
     kernel_size_a	dw kernel_size
@@ -151,8 +151,8 @@ DEFAULT_VARIABLES
     sbl_atag_addr	dw 0x40244FC0
     sbl_atag_addr2	dw 0x40246DF8
 
-    atag_ptr		dw 0x40000100
-    kernel_ptr		dw 0x22000000
+    atag_ptr		dw 0x30000100
+    kernel_ptr		dw 0x32000000
 
     ;opcode              dw 0xE1A0F00E
     jmp_op		dw 0xEA000000
@@ -196,9 +196,10 @@ copykernel:
 	MOV	R0, 9999
 	BL	int_debugprint
 
-	MOV    R0, #0xA9
-	BL     GPIO_Drv_UnsetExtInterrupt
-	BL     disp_Normal_Init
+       ; MOV    R0, #0xA9
+	;BL     GPIO_Drv_UnsetExtInterrupt
+	;BL     disp_Normal_Init
+	BL	relockernel
 
 
 
