@@ -14,132 +14,142 @@ dloadmode:
 	bl	maxim_charging_control
 	bl	DloadMain
 
-;int strlen(char* str)
+;int rebell_strlen(char* str)
 rebell_strlen:
-STMFD	SP!, {R1-R4,LR\}
-MOV	R1, 0
+	STMFD	SP!, {R1-R4,LR\}
+	MOV	R1, 0
 rebell_strlen_loop:
-LDRB	R2, [R0], 1
-CMP	R2, 0x0
-BEQ	rebell_strlen_ret
-ADD	R1, R1, 1
-B	rebell_strlen_loop
+	LDRB	R2, [R0], 1
+	CMP	R2, 0x0
+	BEQ	rebell_strlen_ret
+	ADD	R1, R1, 1
+	B	rebell_strlen_loop
 rebell_strlen_ret:
-MOV	R0, R1
-LDMFD	SP!, {R1-R4,PC\}
+	MOV	R0, R1
+	LDMFD	SP!, {R1-R4,PC\}
 
+;void rebell_fillmem(R0 void* ptr, R1 byte fillbyte, R2 int length)
+rebell_fillmem:
+	STMFD	SP!, {R3,LR\}
+	MOV		R3, 0
+rebell_fillmem_loop:
+	CMP		R3, R2
+	BGE		rebell_fillmem_ret
+	STRB	R1, [R0, R3]
+	ADD		R3, R3, 1
+	B		rebell_fillmem_loop
+rebell_fillmem_ret:
+	LDMFD	SP!, {R3-R4,PC\}
 ;be aware of code below, need someone to check and fix it
 ;it is 100% copy->paste from PBL with commented out 0x40 mapping
 configure_ram:
-STMFD	SP!, {R0-R1,LR\}
-LDR	R0, [APLL_LOCK]
-ORR	R0, R0, #0x6200
-ORR	R0, R0, #8
-MOV	R1, #0
-STR	R1, [R0]
-LDR	R0, [RST_STAT]
-LDR	R3, [R0]
-AND	R3, R3, #0x10000
-LDR	R0, [ASYNC_MSYS_DMC0]
-MOV	R1, #0
-STR	R1, [R0]
-MOV	R1, #0
-STR	R1, [R0,#0xC]
-LDR	R0, [DMC0_REG]
-LDR	R1, [conf_0x101000]
-STR	R1, [R0,#0x18]
-MOV	R1, #0x84
-STR	R1, [R0,#0x1C]
-LDR	R1, [conf_0x101000]
-ADD	R1, R1, 2
-STR	R1, [R0,#0x18]
-LDR	R1, [conf_0x101000]
-ADD	R1, R1, 3
-STR	R1, [R0,#0x18]
-
-MOV	R2, #0x4000
+	STMFD	SP!, {R0-R1,LR\}
+	LDR	R0, [APLL_LOCK]
+	ORR	R0, R0, #0x6200
+	ORR	R0, R0, #8
+	MOV	R1, #0
+	STR	R1, [R0]
+	LDR	R0, [RST_STAT]
+	LDR	R3, [R0]
+	AND	R3, R3, #0x10000
+	LDR	R0, [ASYNC_MSYS_DMC0]
+	MOV	R1, #0
+	STR	R1, [R0]
+	MOV	R1, #0
+	STR	R1, [R0,#0xC]
+	LDR	R0, [DMC0_REG]
+	LDR	R1, [conf_0x101000]
+	STR	R1, [R0,#0x18]
+	MOV	R1, #0x84
+	STR	R1, [R0,#0x1C]
+	LDR	R1, [conf_0x101000]
+	ADD	R1, R1, 2
+	STR	R1, [R0,#0x18]
+	LDR	R1, [conf_0x101000]
+	ADD	R1, R1, 3
+	STR	R1, [R0,#0x18]
+	MOV	R2, #0x4000
 loopconfram:
-SUBS	R2, R2, #1
-CMP	R2, #0
-BNE	loopconfram
-LDR	R1, [conf_0x60101003]
-STR	R1, [R0,#0x18]
-CMP	R3, #0x10000
-BNE	configram2
-LDR	R1, [conf_0x60101001]
-STR	R1, [R0,#0x18]
+	SUBS	R2, R2, #1
+	CMP	R2, #0
+	BNE	loopconfram
+	LDR	R1, [conf_0x60101003]
+	STR	R1, [R0,#0x18]
+	CMP	R3, #0x10000
+	BNE	configram2
+	LDR	R1, [conf_0x60101001]
+	STR	R1, [R0,#0x18]
 configram2:
-LDR	R1, [conf_0xFFF1010]
-STR	R1, [R0]
-LDR	R1, [conf_0x212100]
-STR	R1, [R0,#4]
-LDR	R1, [conf_0x30F82222]
-STR	R1, [R0,#8]
-LDR	R1, [conf_0x40F02222]
-STR	R1, [R0,#0xC]
-MOV	R1, #0xFF000000
-STR	R1, [R0,#0x14]
-MOV	R1, 0x50E
-STR	R1, [R0,#0x30]
-LDR	R1, [conf_0x14233287]
-STR	R1, [R0,#0x34]
-LDR	R1, [conf_0x12130005]
-STR	R1, [R0,#0x38]
-LDR	R1, [conf_0xE140222]
-STR	R1, [R0,#0x3C]
-MOV	R1, #0x7000000
-STR	R1, [R0,#0x10]
-MOV	R1, #0x1000000
-STR	R1, [R0,#0x10]
-MOV	R1, #0x5000000
-STR	R1, [R0,#0x10]
-MOV	R1, #0x5000000
-STR	R1, [R0,#0x10]
-MOV	R1, #0x32
-STR	R1, [R0,#0x10]
-LDR	R1, [conf_0x20020]
-STR	R1, [R0,#0x10]
-MOV	R1, #0x7100000
-STR	R1, [R0,#0x10]
-MOV	R1, #0x1100000
-STR	R1, [R0,#0x10]
-MOV	R1, #0x5100000
-STR	R1, [R0,#0x10]
-MOV	R1, #0x5100000
-STR	R1, [R0,#0x10]
-LDR	R1, [conf_0x100032]
-STR	R1, [R0,#0x10]
-LDR	R1, [conf_0x120020]
-STR	R1, [R0,#0x10]
-LDR	R1, [conf_0xFFF10B0]
-STR	R1, [R0]
-MOV	R1, 0xFFFF00FF
-STR	R1, [R0,#0x28]
-LDR	R1, [conf_0x212113]
-STR	R1, [R0,#4]
-LDR	R0, [DMC1_REG] ; DMC1_config
-LDR	R1, [conf_0x101000]
-STR	R1, [R0,#0x18]
-MOV	R1, #0x84
-STR	R1, [R0,#0x1C]
-LDR	R1, [conf_0x101000]
-ADD	R1, R1, 2
-STR	R1, [R0,#0x18]
-LDR	R1, [conf_0x101000]
-ADD	R1, R1, 3
-STR	R1, [R0,#0x18]
-
-MOV	R2, #0x4000
+	LDR	R1, [conf_0xFFF1010]
+	STR	R1, [R0]
+	LDR	R1, [conf_0x212100]
+	STR	R1, [R0,#4]
+	LDR	R1, [conf_0x30F82222]
+	STR	R1, [R0,#8]
+	LDR	R1, [conf_0x40F02222]
+	STR	R1, [R0,#0xC]
+	MOV	R1, #0xFF000000
+	STR	R1, [R0,#0x14]
+	MOV	R1, 0x50E
+	STR	R1, [R0,#0x30]
+	LDR	R1, [conf_0x14233287]
+	STR	R1, [R0,#0x34]
+	LDR	R1, [conf_0x12130005]
+	STR	R1, [R0,#0x38]
+	LDR	R1, [conf_0xE140222]
+	STR	R1, [R0,#0x3C]
+	MOV	R1, #0x7000000
+	STR	R1, [R0,#0x10]
+	MOV	R1, #0x1000000
+	STR	R1, [R0,#0x10]
+	MOV	R1, #0x5000000
+	STR	R1, [R0,#0x10]
+	MOV	R1, #0x5000000
+	STR	R1, [R0,#0x10]
+	MOV	R1, #0x32
+	STR	R1, [R0,#0x10]
+	LDR	R1, [conf_0x20020]
+	STR	R1, [R0,#0x10]
+	MOV	R1, #0x7100000
+	STR	R1, [R0,#0x10]
+	MOV	R1, #0x1100000
+	STR	R1, [R0,#0x10]
+	MOV	R1, #0x5100000
+	STR	R1, [R0,#0x10]
+	MOV	R1, #0x5100000
+	STR	R1, [R0,#0x10]
+	LDR	R1, [conf_0x100032]
+	STR	R1, [R0,#0x10]
+	LDR	R1, [conf_0x120020]
+	STR	R1, [R0,#0x10]
+	LDR	R1, [conf_0xFFF10B0]
+	STR	R1, [R0]
+	MOV	R1, 0xFFFF00FF
+	STR	R1, [R0,#0x28]
+	LDR	R1, [conf_0x212113]
+	STR	R1, [R0,#4]
+	LDR	R0, [DMC1_REG] ; DMC1_config
+	LDR	R1, [conf_0x101000]
+	STR	R1, [R0,#0x18]
+	MOV	R1, #0x84
+	STR	R1, [R0,#0x1C]
+	LDR	R1, [conf_0x101000]
+	ADD	R1, R1, 2
+	STR	R1, [R0,#0x18]
+	LDR	R1, [conf_0x101000]
+	ADD	R1, R1, 3
+	STR	R1, [R0,#0x18]
+	MOV	R2, #0x4000
 loopconfram2:
-SUBS	R2, R2, #1
-CMP	R2, #0
+	SUBS	R2, R2, #1
+	CMP	R2, #0
 BNE	loopconfram2
-LDR	R1, [conf_0x50101003]
-STR	R1, [R0,#0x18]
-CMP	R3, #0x10000
+	LDR	R1, [conf_0x50101003]
+	STR	R1, [R0,#0x18]
+	CMP	R3, #0x10000
 BNE	configram3
-LDR	R1, [conf_0x50101001]
-STR	R1, [R0,#0x18]
+	LDR	R1, [conf_0x50101001]
+	STR	R1, [R0,#0x18]
 configram3:
 ;LDR     R0, [DMC1_REG]
 ;LDR     R1, [conf_0xFFF1010]
@@ -153,7 +163,8 @@ configram3:
 
 	MOV	R0, 9999
 	BL	int_debugprint
-LDMFD	SP!, {R0-R1,PC\}
+	LDMFD	SP!, {R0-R1,PC\}
+;endproc
 
 	conf_0xE2700000  dw 0xE2700000
 	conf_0xE2900C00  dw 0xE2900C00
@@ -203,7 +214,6 @@ rebell_memcpy_copyloop:
 	cmp	r3, r2
 	BLT	rebell_memcpy_copyloop
 	MOV	R0, R2
-
 	LDMFD	SP!, {R3-R6,PC\}
 
 ;void debug_print(char* fmt, ...)
