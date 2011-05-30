@@ -2,8 +2,8 @@
 
 ; mounting external SD card doesn't seem to be so easy
 
-include 'inc/S8500XXJEE.inc'	  ;here include the right BL function pointers, depends on model and BL you've got
-include 'inc/macros_S8500.inc'	  ;model dependend FOTA header and footer
+include 'inc/S8530JPKA1.inc'	  ;here include the right BL function pointers, depends on model and BL you've got
+include 'inc/macros_S8530.inc'	  ;model dependend FOTA header and footer
 
 include 'inc/vars.inc'		  ;this one provides default strings and variables, which are being used by functions
 include 'inc/functions.inc'	  ;this one provides default functions
@@ -14,7 +14,7 @@ START	;don't touch this macro, it contains correct FOTA magic numbers and does a
 	MOV	r1, #1
 	LDR	r0, [pagetable]
 	BL	MemMMUCacheEnable
-	bl	enable_uart_output;enable_fota_output
+	bl	enable_fota_output
 	MOV	R0, 1234
 	BL	int_debugprint	    ;prints "debug: 1234" to the FOTA or UART
 	BL	__PfsNandInit	    ;oneNAND FS
