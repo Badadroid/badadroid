@@ -293,7 +293,6 @@ DEFAULT_STRINGS
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;; ;add custom strings below
     s_kernel_path    du '/g/galaxyboot/zImage',0
     s_atagcmdline    db 'console=ttySAC2,115200 loglevel=4',0
-   ; CMDLINE_LEN      =  46 ;strlen+1 it is hardcoded for now, as I am too dumb to use BL3 str functions properly. ~Rebellos
     s_loadkernel     db ' Loading kernel image to buf',0
     s_jumpingout     db ' Jumpout to 0x%X',0
     s_mmuoff	     db ' Turning off MMU',0
