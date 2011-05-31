@@ -1,5 +1,5 @@
-=~=~=~=~=~=~=~=~=~=~=~= PuTTY log 2011.05.13 22:32:55 =~=~=~=~=~=~=~=~=~=~=~=
-[PAM:   ] ++FSR_PAM_Init
+=~=~=~=~=~=~=~=~=~=~=~= PuTTY log 2011.05.31 19:18:41 =~=~=~=~=~=~=~=~=~=~=~=
+PAM:   ] ++FSR_PAM_Init
 [PAM:   ]   OneNAND physical base address       : 0xb0000000
 [PAM:   ]   OneNAND virtual  base address       : 0xb0000000
 [PAM:   ]   FSR_PAM_InitNANDController Success!! 
@@ -58,52 +58,782 @@ SD_MEM_Phy_TransferState(ch0) :High: Rx : SD_FeedBackClock_InverterDelay
 SD_HostCtrl_IssueCommand[ch0] not SDclk off, cmd13, SD_CLK_CTRL:0xf
 SD_HostCtrl_IssueCommand[ch0] not SDclk off, cmd13, SD_CLK_CTRL:0xf
 -SDHC_Open(Ch0)
- debug: 0x66711C
+ debug: 0x663E10
  Loading kernel image to buf
  loadfile to 0x44000000
- loadsize is 6713628 bytes
- debug: 6713628
+ loadsize is 6700560 bytes
+ debug: 6700560
  done!
  Turning off MMU
  done!
- DMC1 config
- debug: 9999
- debug: 9999
- 0x43800A91=>0x3000012C,s=0xE
- debug: 9999
+ debug: 12345
+ debug: 12345
+ 0x43800BEE=>0x3000012C,s=0x22
+ Reloc kernel to 0x32000000
+ 0x44000000=>0x32000000,s=0x663E10
+ done!
 Display_LSI_Boot : disp_Main_Clean 
 Display_LSI_Boot : disp_Main_Clean_All 
 Display_LSI_Boot : disp_dimming_backlight 
 Display_LSI_Boot : disp_Normal_Init 
- Reloc kernel to 0x32000000
- 0x44000000=>0x32000000,s=0x66711C
- done!
  Jumpout to 0x32000000
-Uncompressing Linux....................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................... done, booting the kernel.
+Uncompressing Linux...................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................... done, booting the kernel.
 <6>Initializing cgroup subsys cpu
-<5>Linux version 2.6.32.9 (user@user-PH67-UD3-B3) (gcc version 4.5.2 (Sourcery G++ Lite 2011.03-41) ) #2 Fri May 13 15:01:04 EEST 2011
+<5>Linux version 2.6.32.9 (user@user-MS-7514) (gcc version 4.5.2 (Sourcery G++ Lite 2011.03-41) ) #1 Sun May 29 15:18:38 EEST 2011
 CPU: ARMv7 Processor [412fc082] revision 2 (ARMv7), cr=10c53c7f
 CPU: VIPT nonaliasing data cache, VIPT nonaliasing instruction cache
 Machine: SMDKC110
 Memory policy: ECC disabled, Data cache writeback
 <7>On node 0 totalpages: 20480
-<7>free_area_init_node: node 0, pgdat c104f8b8, node_mem_map c122b000
+<7>free_area_init_node: node 0, pgdat c1049860, node_mem_map c1220000
 <7>  Normal zone: 160 pages used for memmap
 <7>  Normal zone: 0 pages reserved
 <7>  Normal zone: 20320 pages, LIFO batch:3
 <7>On node 1 totalpages: 65536
-<7>free_area_init_node: node 1, pgdat c104ff70, node_mem_map d0002000
+<7>free_area_init_node: node 1, pgdat c1049f18, node_mem_map d0002000
 <7>  Normal zone: 512 pages used for memmap
 <7>  Normal zone: 0 pages reserved
 <7>  Normal zone: 65024 pages, LIFO batch:15
 <7>On node 2 totalpages: 0
-<7>free_area_init_node: node 2, pgdat c1050628, node_mem_map c12d3c20
+<7>free_area_init_node: node 2, pgdat c104a5d0, node_mem_map c12c8c20
 <4>  Normal zone: 1 pages exceeds realsize 0
 <7>On node 3 totalpages: 0
-<7>free_area_init_node: node 3, pgdat c1050ce0, node_mem_map c12dbce0
+<7>free_area_init_node: node 3, pgdat c104ac88, node_mem_map c12d0ce0
 <4>  Normal zone: 1 pages exceeds realsize 0
 CPU S5PV210/S5PC110 (id 0x43110222)
 <7>s5pv210_init_clocks: initializing clocks
 <6>S3C24XX Clocks, Copyright 2004 Simtec Electronics
 <3>copy: bad source 0
+<3>mout_audss: bad source 0
+<7>s5pv210_setup_clocks: registering clocks
+<7>s5pv210_setup_clocks: clkdiv0 = 14131330, clkdiv1 = 00400400
+<7>s5pv210_setup_clocks: xtal is 24000000
+<6>S5PV210: PLL settings, A=800000000, M=667000000, E=80000000
+<6>s5pv210: 33554432 bytes system memory reserved for mfc at 0x312db000
+<6>s5pv210: 33554432 bytes system memory reserved for mfc at 0x40204000
+<6>s5pv210: 12582912 bytes system memory reserved for fimc0 at 0x42204000
+<6>s5pv210: 1048576 bytes system memory reserved for fimc1 at 0x42e04000
+<6>s5pv210: 12582912 bytes system memory reserved for fimc2 at 0x42f04000
+<6>s5pv210: 2097152 bytes system memory reserved for pmem at 0x332db000
+<6>s5pv210: 4194304 bytes system memory reserved for pmem_gpu1 at 0x334db000
+<6>s5pv210: 1536000 bytes system memory reserved for pmem_adsp at 0x338db000
+<6>s5pv210: 10485760 bytes system memory reserved for texstream at 0x33a52000
+<6>s5pv210: 3145728 bytes system memory reserved for fimd at 0x43b04000
+<6>s5pv210: 262144 bytes system memory reserved for wifi at 0x34452000
+Built 2 zonelists in Zone order, mobility grouping on.  Total pages: 85344
+<5>Kernel command line: console=ttySAC2,115200 loglevel=4
+<6>PID hash table entries: 2048 (order: 1, 8192 bytes)
+<6>Dentry cache hash table entries: 65536 (order: 6, 262144 bytes)
+<6>Inode-cache hash table entries: 32768 (order: 5, 131072 bytes)
+<6>Memory: 80MB 256MB = 336MB total
+<5>Memory: 209656KB available (9144K code, 1897K data, 7124K init, 0K highmem)
+<6>SLUB: Genslabs=9, HWalign=64, Order=0-3, MinObjects=0, CPUs=1, Nodes=4
+<6>Hierarchical RCU implementation.
+<6>NR_IRQS:339
+<6>VIC @fd000000: id 0x00041192, vendor 0x41
+<6>VIC @fd010000: id 0x00041192, vendor 0x41
+<6>VIC @fd020000: id 0x00041192, vendor 0x41
+<6>VIC @fd030000: id 0x00041192, vendor 0x41
+<6>mult[140737]
+<6>max_delta_ns[2147483647]
+<6>min_delta_ns[30517]
+<6>rate[32768]
+<6>HZ[256]
+Console: colour dummy device 80x30
+[    0.000000] copy: bad source 0
+[    0.000000] mout_audss< bad source 0
+6>console [ttySAC2] enabled
+<6>Calibrating delay loop... <c>796.20 BogoMIPS (lpj=1556480)
+Mount-cache hash table entries: 512
+<6>Initializing cgroup subsys debug
+<6>Initializing cgroup subsys cpuacct
+<6>Initializing cgroup subsys freezer
+<6>CPU: Testing write buffer coherency: ok
+<0>KERNEL:kernel_sec_get_debug_level_from_boot=0x574f4c44
+[    0.121625] KERNEL:kernel_sec_get_debug_level_from_b<ot=0x574f4c44
+0>KERNEL:magic_number=0x0 DEBUG LEVEL low!!
+[    0.131684] KERNEL:magic_number=0x0 DEB<G LEVEL low!!
+0>(kernel_sec_set_upload_cause) : upload_cause set 0
+[    0.141398] (kernel_sec_set_upload_cause) : upload_cause set 0
+<6>regulator: core version 0.5
+<6>NET: Registered protocol family 16
+S5PC110 Hardware version : EVT1 
+HWREV is 0xf
+S3C Power Management, Copyright 2004 Simtec Electronics
+<6>S5PV210 Power Domain API Enable
+<6>S5PV210: Initializing architecture
+<6>S3C PL330-DMA Controller Driver, (c) 2008-2009 Samsung Electronics
+<6>Total 24 DMA channels will be initialized.
+DMA: got clock for controller 0 and disabled 
+DMA: got clock for controller 1 and disabled 
+DMA: got clock for controller 2 and disabled 
+<6>s3c24xx-pwm s3c24xx-pwm.0: tin at 33350000, tdiv at 33350000, tin=divclk, base 0
+<6>s3c24xx-pwm s3c24xx-pwm.1: tin at 33350000, tdiv at 33350000, tin=divclk, base 8
+<6>s3c24xx-pwm s3c24xx-pwm.2: tin at 33350000, tdiv at 33350000, tin=divclk, base 12
+<6>s3c24xx-pwm s3c24xx-pwm.3: tin at 33350000, tdiv at 33350000, tin=divclk, base 16
+bio: create slab <bio-0> at 0
+<6>vgaarb: loaded
+<5>SCSI subsystem initialized
+<6>s3c-i2c s3c2410-i2c.0: i2c-0: S3C I2C adapter
+<6>s3c-i2c s3c2410-i2c.1: i2c-1: S3C I2C adapter
+<6>s3c-i2c s3c2410-i2c.2: i2c-2: S3C I2C adapter
+<6>Bluetooth: Core ver 2.15
+<6>NET: Registered protocol family 31
+<6>Bluetooth: HCI device and connection manager initialized
+<6>Bluetooth: HCI socket layer initialized
+<6>Switching to clocksource clock_source_systimer
+<6>NET: Registered protocol family 2
+<6>IP route cache hash table entries: 4096 (order: 2, 16384 bytes)
+<6>TCP established hash table entries: 16384 (order: 5, 131072 bytes)
+<6>TCP bind hash table entries: 16384 (order: 6, 327680 bytes)
+<6>TCP: Hash tables configured (established 16384 bind 16384)
+<6>TCP reno registered
+<6>NET: Registered protocol family 1
+<7>[BT] rfkill_register(bt_rfk) 
+<7>[BT] Device Powering ON 
+<7>[BT] GPIO_BT_nRST = 0
+[BT] GPIO_WLAN_BT_EN = 1
+<7>[BT] bt_host_wake_irq_handler start
+[BT] GPIO_BT_nRST = 1
+<7>[BT] Device Powering OFF 
+<7>[BT] bt_host_wake_irq_handler start
+[BT] GPIO_BT_nRST = 0
+[BT] GPIO_WLAN_BT_EN = 0
+<7>[BT] bt_host_wake_irq_handler start
+[BT] In the unblocked state of the sleep
+<7>[BT] GPIO_BT_WAKE = 0
+[BT] wake_unlock(bt_wake_lock)
+[BT] In the unblocked state of the sleep
+<7>[BT] GPIO_BT_WAKE = 0
+[BT] wake_unlock(bt_wake_lock)
+S5PC11X_FREQ_TAB=0 , S5PC11X_MAXFREQLEVEL=4
+<6>S5PV210 ADC driver, (c) 2010 Samsung Electronics
+[ JACK_DRIVER (sec_jack_init,800) ] 
+<6>SEC JACK: Registering jack driver
+<6>input: sec_jack as /devices/virtual/input/input0
+[ JACK_DRIVER (sec_jack_probe,676) ] sended isr send=0Xbe, ret =0
+[ JACK_DRIVER (sec_jack_probe,695) ] det isr det=0X26, ret =0
+<4>NetWinder Floating Point Emulator V0.97 (extended precision)
+<6>ashmem: initialized
+<6>ROMFS MTD (C) 2007 Red Hat, Inc.
+<6>msgmni has been set to 410
+<6>alg: No test for cipher_null (cipher_null-generic)
+<6>alg: No test for ecb(cipher_null) (ecb-cipher_null)
+<6>alg: No test for digest_null (digest_null-generic)
+<6>alg: No test for compress_null (compress_null-generic)
+<6>alg: No test for stdrng (krng)
+<6>alg: No test for ghash (ghash-generic)
+<6>io scheduler noop registered
+<6>io scheduler anticipatory registered
+<6>io scheduler deadline registered
+<6>io scheduler cfq registered (default)
+MDNIE  INIT ..........
+<6>S3C MDNIE Driver, (c) 2010 Samsung Electronics
+MDNIE  INIT SUCCESS Addr : 0xe083c000
+IELCD  INIT ..........
+<6>S3C IELCD Driver, (c) 2010 Samsung Electronics
+IELCD  INIT SUCCESS Addr : 0xe0840000
+<6>s3cfb s3cfb: [fb0] dma: 0x43b04000, cpu: 0xe0c00000, size: 0x002ee000
+<6>FIMD src sclk = 166750000
+<6>s3cfb s3cfb: parent clock: 166750000, vclk: 25628040, vclk div: 7
+<6>s3cfb s3cfb: registered successfully
+<6>s5pv210-uart.0: s3c2410_serial0 at MMIO 0xe2900000 (irq = 16) is a S3C6400/10
+<6>s5pv210-uart.1: s3c2410_serial1 at MMIO 0xe2900400 (irq = 20) is a S3C6400/10
+<6>s5pv210-uart.2: s3c2410_serial2 at MMIO 0xe2900800 (irq = 24) is a S3C6400/10
+<6>s5pv210-uart.3: s3c2410_serial3 at MMIO 0xe2900c00 (irq = 28) is a S3C6400/10
+<6>brd: module loaded
+<6>loop: module loaded
+<6>pmem: 1 init
+<6>pmem_gpu1: 1 init
+<6>pmem_adsp: 1 init
+[BIF:IN ] ++FSR_BML_Init(nFlag: 0x0)
+[PAM:   ] ++FSR_PAM_Init
+[PAM:   ]   OneNAND physical base address       : 0xb0000000
+[PAM:   ]   OneNAND virtual  base address       : 0xe0880000
+[PAM:   ]   OneNAND nMID=0xec : nDID=0x50 Page size=4
+[PAM:   ] --FSR_PAM_Init
+[BIF:   ]   FSR VERSION: FSR_1.2.1p1_b139_RTM
+[OND:INF]   FSR_OND_4K_Open(nDev:0, pParam:0xc4c03e50, nFlag:0x00000000) / 1033 line
+            pstOND4kCxt->nBaseAddr: 0xe0880000
+            nDev=0, nMID=0x00ec, nDID=0x0050, nVID=0x013e
+[OND:INF]   pstOND4kCxt->nSysConf1:0xf0c6 / 1116 line
+[OND:INF]   pstOND4kCxt->nBlksForSLCArea[0]:2048 / 1133 line
+[OND:INF]   pstOND4kCxt->nIntID   :0x0000 / 1236 line
+[OND:INF]   1X_CACHEPGM CMD : 0x007f
+[OND:INF]   1X_PLOAD    CMD : 0x0003
+[BBM:INF]   Scan from 2004 to 2047 to find BML meta blocks (die: 0)
+[BBM:INF]   ffff ffff ffff ffff ffff ffff ffff ffff ffff ffff 
+[BBM:INF]   ffff ffff ffff ffff ffff ffff ffff ffff ffff ffff 
+[BBM:INF]   ffff ffff ffff ffff ffff ffff ffff ffff ffff ffff 
+[BBM:INF]   ffff ffff ffff ffff ffff ffff ffff ffff ffff ffff 
+[BBM:INF]   a5a5 a5a5 ffff 
+FSR: Registered TinyFSR Driver.
+<6>tl2796_probe::1124->s6e63m0 probed successfuly
+<6>PPP generic driver version 2.4.2
+<6>PPP Deflate Compression module registered
+<6>PPP BSD Compression module registered
+<6>PPP MPPE Compression module registered
+<6>NET: Registered protocol family 24
+<6>PPPoL2TP kernel driver, V1.0
+<6>SLIP: version 0.8.4-NET3.019-NEWTTY (dynamic channels, max=256) (6 bit encapsulation enabled).
+<6>CSLIP: code copyright 1989 Regents of the University of California.
+[otg_clock_enable] clk_enable(otg_clock) OK.
+[otg_clock_enable] clk_disable(otg_clock) OK.
+<6>s3c-udc : S3C HS USB OTG Device Driver, (c) 2008-2009 Samsung Electronics
+s3c-udc : version 15 March 2009 (DMA Mode) 
+[ADB_UMS_ACM_RNDIS_MTP] string_dev = 100004560000 
+<4>android_adb_ums_acm_rndis_mtp gadget: using random self ethernet address
+<4>android_adb_ums_acm_rndis_mtp gadget: using random host ethernet address
+<6>usb0: MAC 6a:88:10:b0:46:79
+<6>usb0: HOST MAC ce:2b:34:6d:90:a9
+<6>acm_function_add
+<6>DUN is registerd
+<6>fsg_function_bind cdrom patch after fsg->nluns 2
+<6>android_adb_ums_acm_rndis_mtp gadget: Number of LUNs=2
+<6>shaman: mass_storage_function_add success
+<6>adb_function_add
+[mtpg_function_bind] line = [891] 
+[mtpg_function_bind] dual speed line = [958] 
+***** [mtpg_function_bind:975] calling mtp_function_enable with 0 
+[mtp_function_enable] mtp_function => (disabled)
+****** mtp_function_enable and line 1267 null_desc 
+  interface 0 = acm/c4c7d480
+  interface 1 = acm/c4c7d480
+  interface 2 = usb_mass_storage/c4bd3800
+  interface 3 = adb/c4893c00
+  interface 4 = Gadget_MTP/c4893e00
+  interface 5 = rndis/c4c7d780
+  interface 6 = rndis/c4c7d780
+<6>mass_storage_function_config_changed
+  interface 0 = usb_mass_storage/c4bd3800
+<6>android_adb_ums_acm_rndis_mtp gadget: Android Composite USB, version: May 29 2011
+<6>android_adb_ums_acm_rndis_mtp gadget: android_adb_ums_acm_rndis_mtp ready
+<6>Registered gadget driver 'android_adb_ums_acm_rndis_mtp'
+[udc_enable]AP_USB_Power off by Bootup : 1<4>mice: could not register psaux device, error: -16
+<6>mice: PS/2 mouse device common for all mice
+<6>input: s3c-keypad as /devices/virtual/input/input1
+s3c-keypad Initialized
+S3C-Keypad H3C f000333 H2C ff00f33 
+S3C-Keypad keypad_scan() is called
+S3C-Keypad row val = 7<6>S3C Keypad Driver
+<6>i2c /dev entries driver
+<6>i2c-gpio i2c-gpio.4: using pins 247 (SDA) and 246 (SCL)
+<6>i2c-gpio i2c-gpio.5: using pins 203 (SDA) and 204 (SCL)
+<6>regulator: DCDC1: 750 <--> 1500 mV 
+<6>regulator: DCDC2: 750 <--> 1500 mV 
+<6>regulator: LDO4: 3300 mV 
+<6>regulator: LDO7: 1800 mV 
+<6>regulator: LDO17: 3000 <--> 3200 mV 
+<6>i2c-gpio i2c-gpio.6: using pins 206 (SDA) and 209 (SCL)
+[FSA9480] fsa9480_codec_probe
+,2alarmsfsa9480_interrupt
+<6>s3c2410-rtc s3c2410-rtc: rtc core: registered s3c as rtc0
+[FSA9480] FSA9480_ReadIntRegister
+<7>*** DEBUG : ...and finally MMC. (1)***
+<7>Another host want the wakelock : 1
+<7> Universal : Card status  0
+<6>VFP support v0.3: implementor 41 architecture 3 part 30 variant c rev 2
+<7>qt602240 GPIO Status
+<7>TOUCH_EN  : High
+<7>TOUCH_INT : Low
+<7>*** DEBUG : First we search for SDIO...(2)***
+<7>*** DEBUG : ...then normal SD...(2) ***
+<6>ldo38_control : turn ON LDO3 and LDO8 (cur_stat=0, req=1)
+[otg_clock_enable] clk_enable(otg_clock) OK.
+[udc_enable]AP_USB_Power off by Bootup : 1[FSA9480] FSA9480_ProcessDevice (dev1 : 0x0, dev2 : 0x8)
+FSA9480_DEV_TY2_JIG_UART_OFF --- ATTACH
+JIT UART OFF
+qt602240_i2c is attached..
+<7>|  Quantum Touch Driver Probe!            |
+<6>input: qt602240_ts_input as /devices/virtual/input/input2
+QT_reprogram check
+[QT] init_touch_driver start
+[QT] init_I2C start
+
+[TSP] Touch device found
+Version:    0x16
+Family:   0x80
+Variant:    0x1
+Build number:   0xab
+Matrix X size : 18
+Matrix Y size : 12
+Calculated CRC:0x5c 0xe4 0x8e 0x00 
+
+Stored CRC:0x5c 0xe4 0x8e 0x00 
+
+Info block CRC value OK.
+
+
+[TSP]qt_Power_Config_Init real board 
+<6>mmc2: new high speed SDHC card at address e624
+<6>mmcblk1: mmc2:e624 SU16G 14.8 GiB 
+<6> mmcblk1:
+[TSP][reset_chip] 
+
+<7>mmc2: wake_lock_timeout 1sec 0
+Chip reset OK!
+[QT] ret : 0, qt602240->client name : qt602240_ts
+<7>[TSP] msg id =  1 90 f9 7b e8 0 0 0 0
+[QT] qt602240_init/5959
+[QT] qt602240_init/5987, platform_driver_register!!
+<6>s3c2410-rtc s3c2410-rtc: setting system clock to 2011-05-31 16:18:08 UTC (1306858688)
+<6>FIMC0 registered successfully
+<7>[TSP] msg id =  1 0 f9 7b e8 0 0 0 0
+<6>FIMC1 registered successfully
+<6>FIMC2 registered successfully
+<6>S5PC1XX TVOUT Driver, (c) 2009 Samsung Electronics
+<6>s5p-tvout s5p-tvout: hpd status is cable removed
+<6>fg_read_vcell: VCELL=3878
+[SOC] C:0, P:75
+pmic interrupt registered 
+<6>Freeing init memory: 7124K
+<4>Warning: unable to open an initial console.
+<3>init: /init.rc: 227: chmod requires 2 arguments
+[    2.354809] init: /init.rc: 227: chmod requires 2 arguments
+!@Init process: device_init #3
+<3>init: ro.secure:1
+[    2.828024] init: ro.secure:1
+<3>init: ro.allow.mock.location:0
+[    2.834007] init: ro.allow.m<ck.location:0
+3>init: ro.debuggable:1
+[    2.840251] init: ro.debuggable:1
+<3>init: persist.service.adb.enable:1
+[    2.847832] init: persist.service.adb.enable:1
+<3>init: cannot open '/initlogo.rle'
+[    2.862256] init: cannot open '/initlogo.rle'
+<3>init: ro.factorytest:0
+[    2.868934] init: ro<factorytest:0
+3>init: ro.serialno:
+[    2.874224] init< ro.serialno:
+3>init: ro.bootmode:unknown
+[    2.879775] init: ro.bo<tmode:unknown
+3>init: ro.baseband:unknown
+[    2.885933] init: ro.ba<eband:unknown
+3>init: ro.carrier:unknown
+[    2.892004] init: ro.c<rrier:unknown
+3>init: ro.bootloader:unknown
+[    2.898249] init: ro.boot<oader:unknown
+3>init: ro.hardware:SMDKC110
+[    2.904667] init: ro.har<ware:SMDKC110
+3>init: ro.revision:48
+[    2.910478] init: <o.revision:48
+3>init: dpm.allowcamera:0
+[    2.916029] init: dpm<allowcamera:0
+6>init: command 'loglevel' r=0
+<6>init: command 'export' r=0
+<6>init: command 'export' r=0
+<6>init: command 'export' r=0
+<6>init: command 'export' r=0
+<6>init: command 'export' r=0
+<6>init: command 'export' r=0
+<6>init: command 'export' r=0
+<6>init: command 'export' r=0
+<6>init: command 'export' r=0
+<6>init: command 'export' r=0
+<6>init: command 'export' r=0
+<6>init: command 'insmod' r=0
+PA FB = 0x43B04000, bits per pixel = 32
+screen width=480 height=800 va=0xd3b04000 pa=0x43b04000
+Back frameBuffer[0].VAddr=d3c7b000 PAddr=43c7b000 size=1536000
+<6>init: command 'insmod' r=0
+<6>init: command 'insmod' r=0
+[VIBETONZ:WJYOO] MISC_REGISTER nRet = 0
+<6>init: command 'insmod' r=0
+<6>init: command 'insmod' r=0
+<3>init: audioflinger.bootsnd:1
+[    3.068624] init: audioflinger.bootsnd:1
+<6>init: command 'setprop' r=0
+<6>init: command 'symlink' r=0
+<6>init: command 'symlink' r=0
+<6>init: command 'mkdir' r=0
+<6>init: command 'mkdir' r=0
+<6>init: command 'mkdir' r=0
+<6>init: command 'mount' r=0
+<6>init: command 'mkdir' r=0
+<4>fsr: module license 'Samsung Proprietary' taints kernel.
+<4>Disabling lock debugging due to kernel taint
+[BIF:IN ] ++FSR_BML_Init(nFlag: 0x0)
+[PAM:   ] ++FSR_PAM_Init
+[PAM:   ]   OneNAND physical base address       : 0xb0000000
+[PAM:   ]   OneNAND virtual  base address       : 0xe0980000
+[PAM:   ]   OneNAND Controller DMA physical base address       : 0xb0600000
+[PAM:   ]   OneNAND Controller DMA virtual  base address       : 0xe09c0000
+[PAM:   ]   OneNAND nMID=0xec : nDID=0x50 Page size=4
+[PAM:   ] --FSR_PAM_Init
+[BIF:   ]   FSR VERSION: FSR_1.2.1p1_b139_RTM
+[OND:INF]   FSR_OND_4K_Open(nDev:0, pParam:0xc4c03e00, nFlag:0x00000000) / 1033 line
+            pstOND4kCxt->nBaseAddr: 0xe0980000
+            nDev=0, nMID=0x00ec, nDID=0x0050, nVID=0x013e
+[OND:INF]   pstOND4kCxt->nSysConf1:0xf0c6 / 1116 line
+[OND:INF]   pstOND4kCxt->nBlksForSLCArea[0]:2048 / 1133 line
+[OND:INF]   pstOND4kCxt->nIntID   :0x0000 / 1236 line
+[OND:INF]   1X_CACHEPGM CMD : 0x007f
+[OND:INF]   1X_PLOAD    CMD : 0x0003
+[BBM:INF]   Scan from 2004 to 2047 to find BML meta blocks (die: 0)
+[BBM:INF]   ffff ffff ffff ffff ffff ffff ffff ffff ffff ffff 
+[BBM:INF]   ffff ffff ffff ffff ffff ffff ffff ffff ffff ffff 
+[BBM:INF]   ffff ffff ffff ffff ffff ffff ffff ffff ffff ffff 
+[BBM:INF]   ffff ffff ffff ffff ffff ffff ffff ffff ffff ffff 
+[BBM:INF]   a5a5 a5a5 ffff 
+[BBM:   ]  << DevNO:0, DieNO: 0 MAPPING INFORMATION >>
+[BBM:   ]   Bad Mark Information
+[BBM:   ]      - Bad Mark (0x2222) by erase error
+[BBM:   ]      - Bad Mark (0x4444) by write error
+[BBM:   ]   << Total : 0 BAD-MAPPING INFORMATION >>
+[BIF:   ]   nPartition Information (nVol : 0)
+            nVer : 0xffffffff
+            00 / nID:0x09 / nAttr:0x00001002 / 1stVun:    0 / Units:    1
+            01 / nID:0x00 / nAttr:0x00001002 / 1stVun:    1 / Units:    7
+            02 / nID:0x01 / nAttr:0x00001001 / 1stVun:    8 / Units:  796
+            03 / nID:0x20 / nAttr:0x00001101 / 1stVun:  804 / Units:  716
+            04 / nID:0x21 / nAttr:0x00001101 / 1stVun: 1520 / Units:  372
+            05 / nID:0x23 / nAttr:0x00001101 / 1stVun: 1892 / Units:   56
+            06 / nID:0x24 / nAttr:0x00001001 / 1stVun: 1948 / Units:   56
+[BBM:INF]   The registered blocks in ERL are handled
+[BBM:INF]   (number of blocks: 0)
+BML: Registered BML Driver.
+<6>init: command 'insmod' r=0
+[BIF:IN ] ++FSR_BML_Init(nFlag: 0x0)
+[BIF:   ]   FSR_BML_Init(nFlag:0x0, nRe:FSR_BML_ALREADY_INITIALIZED) / 1027 line
+FSR: Registered STL Driver.
+<6>init: command 'insmod' r=0
+<6>init: command 'insmod' r=0
+<6>init: command 'insmod' r=0
+<6>init: command 'mkdir' r=0
+<6>init: command 'insmod' r=0
+[BIF:   ]   FSR VERSION: FSR_1.2.1p1_b139_RTM
+[BIF:   ]   FSR_BML_Open(nVol:0, nFlag:0x0, nOpenCnt:2) / 1171 line
+[SIF:INF]   stPartEntry.nAttr has no FSR_BML_PI_ATTR_STL
+[SIF:INF]   ===> STL Clst[ 2] Scan Root Info
+[SIF:ERR] Root page : ZeroBit Error (nVpn = 0)
+[SIF:ERR] STL Partition(Cluster) is not formatted. 
+[SIF:ERR] --FSR_STL_OpenCluster() L(3844): 0x80000002 - Root may be corrupted
+[BIF:   ]   FSR_BML_Close(nVol: 0, nFlag: 0x0, nOpenCnt: 1)
+LinuStoreIII_NERR: stl_block_open[666] STL: open error = 80000002
+
+<6>init: command 'mount' r=-1
+<6>param_init
+<3>lfs_param_op: filp_open failed. (-2)
+[    3.660706] lfs_param_op: filp_ope< failed. (-2)
+3>param_init(304): Loading parameters failed. Parameters have been initialized as default.
+[    3.673282] param_init(304): Loading parameters failed. Parameters have been initialized as default.
+<6>init: command 'insmod' r=0
+<6>init: command 'symlink' r=0
+<6>init: command 'mkdir' r=0
+<6>init: command 'mkdir' r=0
+<6>init: command 'mkdir' r=0
+<6>init: command 'chown' r=0
+<6>init: command 'chmod' r=0
+<6>init: command 'mkdir' r=0
+<6>init: command 'mkdir' r=0
+<6>init: command 'mkdir' r=0
+<6>init: command 'mkdir' r=0
+<6>init: command 'mkdir' r=0
+<6>init: command 'mkdir' r=0
+<6>init: command 'mount' r=0
+<6>init: command 'write' r=0
+<6>init: command 'write' r=0
+<6>init: command 'write' r=0
+<6>init: command 'write' r=0
+<6>init: command 'write' r=0
+<6>init: command 'write' r=0
+<6>init: command 'write' r=0
+<6>init: command 'mkdir' r=0
+<6>init: command 'mount' r=0
+<6>init: command 'chown' r=0
+<6>init: command 'chown' r=0
+<6>init: command 'chmod' r=0
+<6>init: command 'write' r=-22
+<6>init: command 'mkdir' r=0
+<6>init: command 'chown' r=0
+<6>init: command 'chmod' r=0
+<6>init: command 'write' r=0
+<6>init: command 'mkdir' r=0
+<6>init: command 'chown' r=0
+<6>init: command 'chmod' r=0
+<6>init: command 'write' r=0
+<6>init: command 'mount' r=-1
+<6>init: command 'chmod' r=-2
+<6>init: command 'mount' r=-1
+[FSA9480]connectivity_switching_init = switch_sel : 0x1
+<6>inside set_param_value1 idx = 4, value = -1055894028
+<3>lfs_param_op: filp_open failed. (-2)
+[    3.795712] lfs_param_op: filp_ope[ failed. (-2)
+FSA9480_Enable_AP_USB] Enable AP USB
+[ap_usb_power_on]AP USB Power ON, askon: 0, mtp : 0
+!!!!!!!!!!! [ap_usb_power_on]AP samsung_kies_mtp_mode_flag0, mtp:0
+<6>inside set_param_value1 idx = 4, value = -1055894028
+<3>lfs_param_op: filp_open failed. (-2)
+[    3.833484] lfs_param_op: filp_op[UART Switch] Path : PDA
+<6>inside set_param_value1 idx = 4, value = -1055894028
+<3>lfs_param_op: filp_open failed. (-2)
+[    4.179240] lfs_param_op: filp_ope< failed. (-2)
+6>init: command 'write' r=0
+[FSA9480]usb_sel_store
+ [FSA9480] usb_switch_mode: Path = PDA
+[FSA9480_Enable_AP_USB] Enable AP USB
+[ap_usb_power_on]AP USB Power ON, askon: 0, mtp : 0
+!!!!!!!!!!! [ap_usb_power_on]AP samsung_kies_mtp_mode_flag0, mtp:0
+<6>inside set_param_value1 idx = 4, value = -1055894028
+<3>lfs_param_op: filp_open failed. (-2)
+[    4.225112] lfs_param_op: filp_ope< failed. (-2)
+6>init: command 'write' r=0
+<6>init: command 'ifup' r=0
+<6>init: command 'hostname' r=0
+<6>init: command 'domainname' r=0
+<6>init: command 'setrlimit' r=0
+<3>init: ro.FOREGROUND_APP_ADJ:0
+[    4.246890] init: ro.FOREGR<UND_APP_ADJ:0
+6>init: command 'setprop' r=0
+<3>init: ro.VISIBLE_APP_ADJ:1
+[    4.256257] init: ro.VIS<BLE_APP_ADJ:1
+6>init: command 'setprop' r=0
+<3>init: ro.SECONDARY_SERVER_ADJ:2
+[    4.265798] init: ro.SECONDAR<_SERVER_ADJ:2
+6>init: command 'setprop' r=0
+<3>init: ro.BACKUP_APP_ADJ:2
+[    4.275252] init: ro.BA<KUP_APP_ADJ:2
+6>init: command 'setprop' r=0
+<3>init: ro.HOME_APP_ADJ:4
+[    4.284011] init: ro.<OME_APP_ADJ:4
+6>init: command 'setprop' r=0
+<3>init: ro.HIDDEN_APP_MIN_ADJ:7
+[    4.293118] init: ro.HIDDEN<APP_MIN_ADJ:7
+6>init: command 'setprop' r=0
+<3>init: ro.CONTENT_PROVIDER_ADJ:14
+[    4.303006] init: ro.CONTENT_P<OVIDER_ADJ:14
+6>init: command 'setprop' r=0
+<3>init: ro.EMPTY_APP_ADJ:15
+[    4.312546] init: ro.EM<TY_APP_ADJ:15
+6>init: command 'setprop' r=0
+<3>init: ro.FOREGROUND_APP_MEM:2560
+[    4.322087] init: ro.FOREGROUN<_APP_MEM:2560
+6>init: command 'setprop' r=0
+<3>init: ro.VISIBLE_APP_MEM:4096
+[    4.331974] init: ro.VISIBL<_APP_MEM:4096
+6>init: command 'setprop' r=0
+<3>init: ro.SECONDARY_SERVER_MEM:5120
+[    4.342035] init: ro.SECONDARY_S<RVER_MEM:5120
+6>init: command 'setprop' r=0
+<3>init: ro.BACKUP_APP_MEM:5120
+[    4.352009] init: ro.BACKU<_APP_MEM:5120
+6>init: command 'setprop' r=0
+<3>init: ro.HOME_APP_MEM:5120
+[    4.361289] init: ro.HOM<_APP_MEM:5120
+6>init: command 'setprop' r=0
+<3>init: ro.HIDDEN_APP_MEM:6144
+[    4.370569] init: ro.HIDDE<_APP_MEM:6144
+6>init: command 'setprop' r=0
+<3>init: ro.CONTENT_PROVIDER_MEM:7168
+[    4.380544] init: ro.CONTENT_PRO<IDER_MEM:7168
+6>init: command 'setprop' r=0
+<3>init: ro.EMPTY_APP_MEM:8192
+[    4.390431] init: ro.EMPT<_APP_MEM:8192
+6>init: command 'setprop' r=0
+<3>init: wifi.interface:eth0
+[    4.399538] init: wifi.<nterface:eth0
+6>init: command 'setprop' r=0
+<3>init: ro.bt.bdaddr_path:/data/misc/bluetooth/bt_addr
+[    4.410813] init: ro.bt.bdaddr_path:/data/misc/blu<tooth/bt_addr
+6>init: command 'setprop' r=0
+<6>init: command 'write' r=0
+<6>init: command 'write' r=0
+<6>init: command 'write' r=0
+<6>init: command 'write' r=0
+<6>init: command 'write' r=0
+<6>init: command 'write' r=0
+<6>init: command 'write' r=0
+<6>init: command 'write' r=0
+<6>init: command 'chown' r=-2
+<6>init: command 'chown' r=-2
+<6>init: command 'chown' r=-2
+<6>init: command 'chown' r=-2
+<6>init: command 'chown' r=-2
+<6>init: command 'chown' r=0
+<6>init: command 'chown' r=0
+<6>init: command 'chown' r=0
+<6>init: command 'chown' r=0
+<6>init: command 'chmod' r=0
+<6>init: command 'chmod' r=0
+<6>init: command 'chmod' r=0
+<6>init: command 'chmod' r=0
+<6>init: command 'chown' r=0
+<6>init: command 'chown' r=-2
+<6>init: command 'chown' r=0
+<6>init: command 'chown' r=-2
+<6>init: command 'chown' r=-2
+<6>init: command 'chown' r=-2
+<6>init: command 'chown' r=-2
+<6>init: command 'chown' r=-2
+<6>init: command 'chown' r=-2
+<6>init: command 'chown' r=-2
+<6>init: command 'chown' r=-2
+<6>init: command 'chown' r=-2
+<6>init: command 'chown' r=-2
+<6>init: command 'chown' r=-2
+<6>init: command 'chown' r=-2
+<6>init: command 'chown' r=-2
+<6>init: command 'chown' r=-2
+<6>init: command 'chown' r=0
+<6>init: command 'chown' r=0
+<6>init: command 'chown' r=0
+<6>init: command 'chown' r=0
+<6>init: command 'chown' r=0
+<6>init: command 'chown' r=0
+<6>init: command 'chown' r=0
+<6>init: command 'chown' r=0
+<6>init: command 'chown' r=0
+<3>init: net.tcp.buffersize.default:4096,87380,196608,4096,16384,110208
+[    4.549844] init: net.tcp.buffersize.default:4096,87380,196608,409<,16384,110208
+3>init: net.change:net.tcp.buffersize.default
+[    4.561292] init: net.change:net.tcp.buff<rsize.default
+6>init: command 'setprop' r=0
+<3>init: net.tcp.buffersize.wifi:4095,87380,196608,4096,16384,110208
+[    4.575256] init: net.tcp.buffersize.wifi:4095,87380,196608,409<,16384,110208
+3>init: net.change:net.tcp.buffersize.wifi
+[    4.586184] init: net.change:net.tcp.b<ffersize.wifi
+6>init: command 'setprop' r=0
+<3>init: net.tcp.buffersize.umts:4094,87380,196608,4096,16384,110208
+[    4.599888] init: net.tcp.buffersize.umts:4094,87380,196608,409<,16384,110208
+3>init: net.change:net.tcp.buffersize.umts
+[    4.610816] init: net.change:net.tcp.b<ffersize.umts
+6>init: command 'setprop' r=0
+<3>init: net.tcp.buffersize.edge:4093,26280,35040,4096,16384,35040
+[    4.624346] init: net.tcp.buffersize.edge:4093,26280,35040,40<6,16384,35040
+3>init: net.change:net.tcp.buffersize.edge
+[    4.635101] init: net.change:net.tcp.b<ffersize.edge
+6>init: command 'setprop' r=0
+<3>init: net.tcp.buffersize.gprs:4092,8760,11680,4096,8760,11680
+[    4.648458] init: net.tcp.buffersize.gprs:4092,8760,11680,4<96,8760,11680
+3>init: net.change:net.tcp.buffersize.gprs
+[    4.659039] init: net.change:net.tcp.b<ffersize.gprs
+6>init: command 'setprop' r=0
+<6>init: command 'chmod' r=-2
+<6>init: command 'chmod' r=-2
+<6>init: command 'chmod' r=-2
+<6>init: command 'chmod' r=-2
+<6>init: command 'chmod' r=-2
+<6>init: command 'chmod' r=-2
+<6>init: command 'chmod' r=-2
+<6>init: command 'chmod' r=-2
+<6>init: command 'write' r=0
+<6>init: command 'write' r=0
+<6>init: command 'write' r=-2
+<6>init: command 'write' r=-2
+<6>init: command 'chown' r=-2
+<6>init: command 'chown' r=-2
+<6>init: command 'chown' r=0
+<6>init: command 'chmod' r=-2
+<6>init: command 'chmod' r=-2
+<6>init: command 'chown' r=0
+<6>init: command 'chmod' r=0
+<6>init: command 'chown' r=0
+<6>init: command 'chmod' r=0
+<6>init: command 'chmod' r=0
+<6>init: command 'chmod' r=0
+<6>init: command 'chown' r=0
+<6>init: command 'chown' r=0
+<6>init: command 'chmod' r=-2
+<6>init: command 'chown' r=0
+<6>init: command 'chown' r=0
+<3>init: cannot find '/system/bin/sh', disabling 'console'
+[    4.746039] init: cannot find '/system/bin/sh', disab<ing 'console'
+3>init: cannot find '/system/bin/playlogos1', disabling 'playlogos1'
+[    4.758355] init: cannot find '/system/bin/playlogos1', disablin< 'playlogos1'
+3>init: cannot find '/system/bin/pvrsrvinit', disabling 'pvrsrvinit'
+[    4.771625] init: cannot find '/system/bin/pvrsrvinit', disablin< 'pvrsrvinit'
+3>init: cannot find '/system/bin/servicemanager', disabling 'servicemanager'
+[    4.785589] init: cannot find '/system/bin/servicemanager', disabling 's<rvicemanager'
+3>init: cannot find '/system/bin/vold', disabling 'vold'
+[    4.798512] init: cannot find '/system/bin/vold', di<abling 'vold'
+3>init: cannot find '/system/bin/notified_event', disabling 'notified_event'
+[    4.811435] init: cannot find '/system/bin/notified_event', disabling 'n<tified_event'
+3>init: cannot find '/system/bin/netd', disabling 'netd'
+[    4.824358] init: cannot find '/system/bin/netd', di<abling 'netd'
+3>init: cannot find '/system/bin/debuggerd', disabling 'debuggerd'
+[    4.836414] init: cannot find '/system/bin/debuggerd', disabli<g 'debuggerd'
+3>init: cannot find '/system/bin/drexe', disabling 'DR-daemon'
+[    4.848990] init: cannot find '/system/bin/drexe', disabli<g 'DR-daemon'
+3>init: cannot find '/system/bin/npsmobex', disabling 'mobex-daemon'
+[    4.861739] init: cannot find '/system/bin/npsmobex', disabling <mobex-daemon'
+3>init: cannot find '/system/bin/app_process', disabling 'zygote'
+[    4.874749] init: cannot find '/system/bin/app_process', disa<ling 'zygote'
+3>init: cannot find '/system/bin/mediaserver', disabling 'media'
+[    4.887412] init: cannot find '/system/bin/mediaserver', dis<bling 'media'
+3>init: cannot find '/system/bin/vtserver', disabling 'vt'
+[    4.899468] init: cannot find '/system/bin/vtserver', <isabling 'vt'
+3>init: cannot find '/system/bin/dbus-daemon', disabling 'dbus'
+[    4.911436] init: cannot find '/system/bin/dbus-daemon', di<abling 'dbus'
+3>init: cannot find '/system/bin/installd', disabling 'installd'
+[    4.923926] init: cannot find '/system/bin/installd', disabl<ng 'installd'
+3>init: cannot find '/system/etc/install-recovery.sh', disabling 'flash_recovery'
+[    4.937976] init: cannot find '/system/etc/install-recovery.sh', disabling 'f<ash_recovery'
+3>init: cannot find '/system/bin/sensorserver_yamaha', disabling 'sensor-daemon'
+[    4.953415] init: cannot find '/system/bin/sensorserver_yamaha', disabling '<ensor-daemon'
+3>init: cannot find '/system/bin/keystore', disabling 'keystore'
+[    4.967379] init: cannot find '/system/bin/keystore', disabl<ng 'keystore'
+3>init: cannot find '/system/bin/immvibed', disabling 'immvibed'
+[    4.979955] init: cannot find '/system/bin/immvibed', disabl<ng 'immvibed'
+3>init: cannot find '/system/bin/immvbsd', disabling 'immvbsd'
+[    4.992357] init: cannot find '/system/bin/immvbsd', disab<ing 'immvbsd'
+3>init: cannot find '/system/bin/tvoutserver', disabling 'tvout'
+[    5.004760] init: cannot find '/system/bin/tvoutserver', dis<bling 'tvout'
+3>init: cannot find '/system/bin/sh', disabling 'dfta'
+[    5.016469] init: cannot find '/system/bin/sh', di<abling 'dfta'
+6>init: command 'class_start' r=0
+<6>init: processing action 0x34078 (property:persist.service.adb.enable=1)
+<5>init: starting 'adbd'
+<3>init: init.svc.adbd:running
+[    5.037172] init: init.svc.adbd:running
+<6>warning: `adbd' uses 32-bit capabilities (legacy support in use)
+<6>init: command 'start' r=0
+<6>init: make_device '/dev/pvrsrvkm' block 0, major 240, minor 0 r=0
+<6>enabling adb
+[USB] enable_adb - enable(0x10), prev_status(0x01)
+Here is enable_adb@@@@
+[enable_adb]USBSTATUS_ADB
+<6>acm_function_config_changed
+<6>mass_storage_function_config_changed
+<6>adb_function_config_changed
+  interface 0 = acm/c4c7d480
+  interface 1 = acm/c4c7d480
+  interface 2 = usb_mass_storage/c4bd3800
+  interface 3 = adb/c4893c00
+[ap_usb_power_on]AP USB Power ON, askon: 0, mtp : 0
+!!!!!!!!!!! [ap_usb_power_on]AP samsung_kies_mtp_mode_flag0, mtp:0
+<6>init: make_device '/dev/s3c_bc' block 0, major 253, minor 0 r=0
+<6>init: make_device '/dev/tspdrv' block 0, major 10, minor 43 r=0
+<6>init: make_device '/dev/fmradio' block 0, major 10, minor 42 r=0
+<6>init: make_device '/dev/block/bml0!c' block 1, major 137, minor 0 r=0
+<6>init: make_device '/dev/block/bml1' block 1, major 137, minor 1 r=0
+<6>init: make_device '/dev/block/bml2' block 1, major 137, minor 2 r=0
+<6>init: make_device '/dev/block/bml3' block 1, major 137, minor 3 r=0
+<6>init: make_device '/dev/block/bml4' block 1, major 137, minor 4 r=0
+<6>init: make_device '/dev/block/bml5' block 1, major 137, minor 5 r=0
+<6>init: make_device '/dev/block/bml6' block 1, major 137, minor 6 r=0
+<6>init: make_device '/dev/block/bml7' block 1, major 137, minor 7 r=0
+<6>init: make_device '/dev/block/stl1' block 1, major 138, minor 1 r=0
+<6>init: make_device '/dev/block/stl2' block 1, major 138, minor 2 r=0
+<6>init: make_device '/dev/block/stl3' block 1, major 138, minor 3 r=0
+<6>init: make_device '/dev/block/stl4' block 1, major 138, minor 4 r=0
+<6>init: make_device '/dev/block/stl5' block 1, major 138, minor 5 r=0
+<6>init: make_device '/dev/block/stl6' block 1, major 138, minor 6 r=0
+<6>init: make_device '/dev/block/stl7' block 1, major 138, minor 7 r=0
+<6>init: make_device '/dev/storage' block 0, major 10, minor 234 r=0
+<6>init: make_device '/dev/bthid' block 0, major 10, minor 224 r=0
+<6>fg_read_vcell: VCELL=3878
+<6>fg_read_vcell: VCELL=3878
+<6>fg_read_vcell: VCELL=3878
+<6>fg_read_vcell: VCELL=3878
+<6>fg_read_vcell: VCELL=3878
+<6>fg_read_vcell: VCELL=3878
+<6>fg_read_vcell: VCELL=3878
+<6>fg_read_vcell: VCELL=3878
+<6>fg_read_vcell: VCELL=3878
+<6>fg_read_vcell: VCELL=3878
+<6>fg_read_vcell: VCELL=3878
+<6>fg_read_vcell: VCELL=3878
+<6>fg_read_vcell: VCELL=3878
+<6>fg_read_vcell: VCELL=3878
+<6>fg_read_vcell: VCELL=3878
 
