@@ -201,9 +201,12 @@ copykernel:
 	;BL     disp_Normal_Init
 	BL	relockernel
 
-
+	LDR R0, [sbl_boot_mode]
+	MOV R1, 1
+	STR R1, [R0]
 
 
 	LDMFD	SP!, {R1-R2,PC}
-
+sbl_boot_params dw 0x40704AD4
+sbl_boot_mode dw 0x40704AE0
 END
