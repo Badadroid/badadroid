@@ -201,7 +201,8 @@ copykernel:
 	;BL     disp_Normal_Init
 	BL	relockernel
 	MOV	R0, #9
-	BL	0x40244ACC ;get_bootparam_offset
+	LDR	R1, [sbl_get_boot_param]
+	BLX	R1 ;get_bootparam_offset
 	MOV	R3, R0
 	LDR	R1, [sbl_boot_params]
 	ADD	R3, R3, #1
@@ -213,5 +214,6 @@ copykernel:
 	STR	R1, [R3]
 
 	LDMFD	SP!, {R1-R3,PC}
+sbl_get_boot_param dw 0x40244ACC
 sbl_boot_params dw 0x40704AD4
 END
