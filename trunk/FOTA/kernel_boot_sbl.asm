@@ -192,7 +192,7 @@ copykernel_helper:
 	code_len = copykernel_helper - c_start
 	db	0x4000 - code_len dup 0xFF
 copykernel:
-	STMFD	SP!, {R1-R2,LR}
+	STMFD	SP!, {R1-R3,LR}
 	MOV	R0, 9999
 	BL	int_debugprint
 
@@ -200,13 +200,18 @@ copykernel:
 	;BL     GPIO_Drv_UnsetExtInterrupt
 	;BL     disp_Normal_Init
 	BL	relockernel
+	MOV	R0, #9
+	BL	0x40244ACC ;get_bootparam_offset
+	MOV	R3, R0
+	LDR	R1, [sbl_boot_params]
+	ADD	R3, R3, #1
+	MOV	R2, #4
+	MOV	R3, R3,LSL#3
+	ADD	R3, R1, R3
+	ADD	R3, R3, R2
+	MOV	R1, 0
+	STR	R1, [R3]
 
-	LDR R0, [sbl_boot_mode]
-	MOV R1, 1
-	STR R1, [R0]
-
-
-	LDMFD	SP!, {R1-R2,PC}
+	LDMFD	SP!, {R1-R3,PC}
 sbl_boot_params dw 0x40704AD4
-sbl_boot_mode dw 0x40704AE0
 END
