@@ -149,12 +149,19 @@ START
 	BL	System_DisableIRQ
 	BL	System_DisableFIQ
 
-LDR	R0, [EXT_INT]	;zero ext INTs
-MOV	R1, 0
-STR	R1, [R0,#0x40]
-STR	R1, [R0,#0x44]
-STR	R1, [R0,#0x48]
-STR	R1, [R0,#0x4C]
+LDR	R0, [EXT_INT_MASKS]   ;zero ext INT masks
+MOV	R1, 0xFF
+STR	R1, [R0,#0x0]
+STR	R1, [R0,#0x4]
+STR	R1, [R0,#0x8]
+STR	R1, [R0,#0xC]
+
+LDR	R0, [EXT_INT_CTRL]   ;zero ext INT signaling methods
+MOV	R1, 0x0
+STR	R1, [R0,#0x0]
+STR	R1, [R0,#0x4]
+STR	R1, [R0,#0x8]
+STR	R1, [R0,#0xC]
 
 MOV	R0, #0xF2000000
 LDR	R1, [VIC1]
@@ -261,7 +268,8 @@ DEFAULT_VARIABLES
     VIC3		dw 0xF2300000
     def_0x3FF		dw 0x3FF
     def_0x7FFF		dw 0x7FFF
-    EXT_INT		dw 0xE0200F00
+    EXT_INT_MASKS	dw 0xE0200F00
+    EXT_INT_CTRL	dw 0xE0200E00
 
 
     kernel_buf		dw 0x44000000
