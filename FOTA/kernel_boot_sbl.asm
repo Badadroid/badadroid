@@ -56,9 +56,9 @@ START
 	str	r0, [r1]
 
 
-	ldr	r0, [ldmfd_r11_pc]
-	ldr	r1, [sbl_lcd_patch]
-	STR	r0, [r1]
+	;ldr     r0, [ldmfd_r11_pc]
+	;ldr     r1, [sbl_lcd_patch]
+	;STR     r0, [r1]
 
 	ldr	r0, [s_done_a]
 	bl	debug_print
@@ -119,9 +119,14 @@ START
 	LDR	R0, [s_jumpingout_a]
 	BL	debug_print
 
-	BL	FIMD_Drv_Stop
-	BL	FIMD_Drv_INITIALIZE
+	;BL      FIMD_Drv_Stop
+	;BL      FIMD_Drv_INITIALIZE
 	;BL     InitializeDisplay
+
+	LDR	R0, [SYSCON_NORMAL_CFG]
+	LDR	R1, [R0]
+	BIC	R1, R1, 0xBE ;turn off all power-managed S5PC110 blocks, this will reset LCD controller :)
+	STR	R1, [R0]
 
 	LDR	R5, [sbl_start]
 	BLX	R5
@@ -148,6 +153,7 @@ FUNCTIONS
 DEFAULT_VARIABLES
     pagetable		dw gMMUL1PageTable
 
+    SYSCON_NORMAL_CFG	dw 0xE010C010
     sbl_start		dw 0x40244000
     sbl_size		dw 0x140000
 
