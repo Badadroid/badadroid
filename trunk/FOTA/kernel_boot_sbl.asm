@@ -112,7 +112,9 @@ START
 	LDR	R0, [s_jumpingout_a]
 	BL	debug_print
 
+	BL	FIMD_Drv_Stop
 	BL	FIMD_Drv_INITIALIZE
+	;BL	InitializeDisplay
 
 	LDR	R5, [sbl_start]
 	BLX	R5
