@@ -49,10 +49,17 @@ START
 	ldr	r1, [sbl_kernel_addr2]
 	str	r0, [r1]
 
+
 	ldr	r0, [jmp_op]
 	ADD	R0, R0, 0xA ;14 ops
 	ldr	r1, [sbl_jmp_patch] ;where to place our jump patch?
 	str	r0, [r1]
+
+
+	ldr	r0, [ldmfd_r11_pc]
+	ldr	r1, [sbl_lcd_patch]
+	STR	r0, [r1]
+
 	ldr	r0, [s_done_a]
 	bl	debug_print
 
@@ -114,7 +121,7 @@ START
 
 	BL	FIMD_Drv_Stop
 	BL	FIMD_Drv_INITIALIZE
-	;BL	InitializeDisplay
+	;BL     InitializeDisplay
 
 	LDR	R5, [sbl_start]
 	BLX	R5
@@ -162,6 +169,9 @@ DEFAULT_VARIABLES
     jmp_op		dw 0xEA000000
 
     sbl_jmp_patch	dw 0x40246D88
+
+    ldmfd_r11_pc	dw 0xE8BD8800
+    sbl_lcd_patch	dw 0x40250F94
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;; strings at the end
 DEFAULT_STRINGS_ADDR
