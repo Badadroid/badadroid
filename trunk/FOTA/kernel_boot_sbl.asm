@@ -1,6 +1,6 @@
 
-include 'inc/S8530JPKA1.inc'	  ;here include the right BL function pointers, depends on model and BL you've got
-include 'inc/macros_S8530.inc'	  ;model dependend FOTA header and footer
+include 'inc/S8500XXJEE.inc'	  ;here include the right BL function pointers, depends on model and BL you've got
+include 'inc/macros_S8500.inc'	  ;model dependend FOTA header and footer
 
 include 'inc/vars.inc'
 include 'inc/functions.inc'
@@ -111,6 +111,8 @@ START
 	LDR	R1, [sbl_start]
 	LDR	R0, [s_jumpingout_a]
 	BL	debug_print
+
+	BL	FIMD_Drv_INITIALIZE
 
 	LDR	R5, [sbl_start]
 	BLX	R5
