@@ -1,6 +1,6 @@
 
-include 'inc/S8500XXJEE.inc'	  ;here include the right BL function pointers, depends on model and BL you've got
-include 'inc/macros_S8500.inc'	  ;model dependend FOTA header and footer
+include 'inc/S8530JPKA1.inc'	  ;here include the right BL function pointers, depends on model and BL you've got
+include 'inc/macros_S8530.inc'	  ;model dependend FOTA header and footer
 
 include 'inc/vars.inc'
 include 'inc/functions.inc'
@@ -134,12 +134,12 @@ START
 
 
 
-	MOV	R0, #0xA9
-	BL	GPIO_Drv_UnsetExtInterrupt
-	BL	disp_Normal_Init
+	;MOV     R0, #0xA9
+	;BL      GPIO_Drv_UnsetExtInterrupt
+	;BL      disp_Normal_Init
        ; BL      DRV_Modem_BootingStart
-	MOV	R0, #0xA9
-	BL	GPIO_Drv_UnsetExtInterrupt
+	;MOV     R0, #0xA9
+	;BL      GPIO_Drv_UnsetExtInterrupt
 
 	;BL      CoDisableL2Cache
 	BL	CoDisableDCache
@@ -195,10 +195,84 @@ STR	R4, [R2,#0xF00]
 STR	R4, [R3,#0xF00]
 
 
+	LDR	R0, [VIDINTCON0]
+	MOV	R1, 0
+	STR	R1, [R0]
+	LDR	R0, [VIDINTCON1]
+	STR	R1, [R0]
 
 	LDR	R0, [SYSCON_NORMAL_CFG]
 	MOV	R1, 0xFFFFFFFF
 	STR	R1, [R0]    ;POWAH ON EVRYTHINKS (clock registers in all modules must be available for kernel)
+
+LDR	R4, [UART2_PTR]
+MOV	R3, #0x23
+STRH	R3, [SP,#8]
+MOV	R3, #0x80
+STRH	R3, [SP,#6]
+LDR	R3, [R4, #4]
+BIC	R3, R3, #0xF
+STR	R3, [R4, #4]
+MOV	R3, #0
+STR	R3, [R4, #8]
+MOV	R3, #0
+STR	R3, [R4, #0xC]
+MOV	R3, #3
+STR	R3, [R4]
+MOV	R3, #0x240
+STR	R3, [R4, 4]
+LDRH	R3, [SP,#8]
+STR	R3, [R4, 0x28]
+LDRH	R3, [SP,#6]
+STR	R3, [R4, 0x2C]
+LDR	R3, [R4, 4]
+ORR	R3, R3, #5
+STR	R3, [R4, 4]
+
+BL	timer_driver
+
+		LDR	R3, [CLK_DIV1]
+		LDR	R3, [R3]
+		BIC	R3, R3, #0xF00000
+		ORR	R3, R3, #0x300000
+		LDR	R2, [CLK_DIV1]
+		STR	R3, [R2]
+LDR	R3, [CLK_DIV0]
+LDR	R3, [R3]
+AND	R3, R3, #0x80000000
+MOV	R2, R3
+LDR	R3, [clk_div_mask]
+ORR	R3, R2, R3
+LDR	R2, [CLK_DIV0]
+;STR     R3, [R2]
+
+LDR	R2, [CLK_GATE_IP0]
+LDR	R3, [CLK_GATE_IP0]
+LDR	R3, [R3]
+BIC	R3, R3, #0x80000000
+STR	R3, [R2]
+LDR	R2, [CLK_GATE_IP1]
+LDR	R3, [CLK_GATE_IP1]
+LDR	R3, [R3]
+BIC	R3, R3, #0x10000000
+STR	R3, [R2]
+LDR	R2, [CLK_GATE_IP2]
+LDR	R3, [CLK_GATE_IP2]
+LDR	R3, [R3]
+BIC	R3, R3, #0x200
+BIC	R3, R3, #2
+STR	R3, [R2]
+LDR	R2, [CLK_GATE_IP3]
+LDR	R3, [CLK_GATE_IP3]
+LDR	R3, [R3]
+BIC	R3, R3, #3
+STR	R3, [R2]
+LDR	R2, [CLK_GATE_IP4]
+LDR	R3, [CLK_GATE_IP4]
+LDR	R3, [R3]
+BIC	R3, R3, #6
+STR	R3, [R2]
+
 
 
 	LDR	R1, [kernel_start]
@@ -230,7 +304,49 @@ relockernel:
 
 	LDMFD	SP!, {R0-R2,PC}
 
+timer_driver:
 
+var_18= -0x18
+var_4= -4
+
+STR	R11, [SP,#var_4]!
+ADD	R11, SP, #4+var_4
+SUB	SP, SP, #0xC
+LDR	R2, [TCFG0]
+MOV	R3, #0xF00
+STR	R3, [R2]
+LDR	R3, [TCFG1]
+LDR	R3, [R3]
+BIC	R3, R3, #0xF0000
+STR	R3, [R11,#0x10+var_18]
+LDR	R2, [TCFG1]
+LDR	R3, [R11,#0x10+var_18]
+ORR	R3, R3, #0x10000
+STR	R3, [R2]
+LDR	R2, [TCNTB4]
+MOV	R3, 0xFFFFFFFF
+STR	R3, [R2]
+LDR	R2, [TCON]
+LDR	R3, [TCON]
+LDR	R3, [R3]
+BIC	R3, R3, #0x700000
+ORR	R3, R3, #0x600000
+STR	R3, [R2]
+LDR	R2, [TCON]
+LDR	R3, [TCON]
+LDR	R3, [R3]
+BIC	R3, R3, #0x700000
+ORR	R3, R3, #0x500000
+STR	R3, [R2]
+MOV	SP, R11
+LDMFD	SP!, {R11}
+BX	LR
+
+TCFG0	dw  0xE2500000
+TCFG1	dw  0xE2500004
+TCON	dw  0xE2500008
+
+TCNTB4	dw  0xE250003C
 
 FUNCTIONS
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;; variables below
@@ -244,8 +360,7 @@ DEFAULT_VARIABLES
     INTC_ONENAND_CLR	dw 0xB0601008
 
     SYSCON_NORMAL_CFG	dw 0xE010C010
-    CLK_DIV0		dw 0xE0100300
-    clk_div_mask	dw 0x14131330
+
 
     kernel_start	dw 0x32000000
 
@@ -255,6 +370,16 @@ DEFAULT_VARIABLES
     ATAG_REVISION	dw 0x54410007
     ATAG_CMDLINE	dw 0x54410009
 
+    UART2_PTR		dw 0xE2900800
+    clk_div_mask	dw 0x14131330
+    CLK_DIV0		dw 0xE0100300
+    CLK_DIV1		dw 0xE0100304
+    CLK_DIV2		dw 0xE0100308
+    CLK_DIV3		dw 0xE010030C
+    CLK_DIV4		dw 0xE0100310
+    CLK_DIV5		dw 0xE0100314
+    CLK_DIV6		dw 0xE0100318
+    CLK_DIV7		dw 0xE010031C
     CLK_GATE_IP0	dw 0xE0100460
     CLK_GATE_IP1	dw 0xE0100464
     CLK_GATE_IP2	dw 0xE0100468
@@ -270,6 +395,9 @@ DEFAULT_VARIABLES
     def_0x7FFF		dw 0x7FFF
     EXT_INT_MASKS	dw 0xE0200F00
     EXT_INT_CTRL	dw 0xE0200E00
+
+    VIDINTCON0		dw 0xF8000130
+    VIDINTCON1		dw 0xF8000134
 
 
     kernel_buf		dw 0x44000000

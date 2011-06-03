@@ -28,11 +28,45 @@ loopek3:
 	CMP	R1, R2
 	BGT	end_print3
 	LDR	R0, [R1], 4
-	BL	hex_debugprint
+	;BL      hex_debugprint
 	B	loopek3
 end_print3:
 
 
+	LDR	R0, [TZIC0FIQEnable]
+	LDR	R0, [R0]
+	BL	hex_debugprint
+
+	LDR	R0, [TZIC1FIQEnable]
+	LDR	R0, [R0]
+	BL	hex_debugprint
+
+	LDR	R0, [TZIC2FIQEnable]
+	LDR	R0, [R0]
+	BL	hex_debugprint
+
+	LDR	R0, [TZIC3FIQEnable]
+	LDR	R0, [R0]
+	BL	hex_debugprint
+
+
+	LDR	R0, [SYSCON_NORMAL_CFG]
+	LDR	R1, [R0]
+	BIC	R1, R1, 0x3E ;turn off everything
+	STR	R1, [R0]
+
+	LDR	R0, [SYSCON_NORMAL_CFG]
+	MOV	R1, 0xFFFFFFFF
+	STR	R1, [R0]
+
+
+	LDR	R0, [TZIC2FIQEnable]
+	LDR	R0, [R0]
+	BL	hex_debugprint
+
+	LDR	R0, [TZIC3FIQEnable]
+	LDR	R0, [R0]
+	BL	hex_debugprint
 	BL	dloadmode
 
        ; BL      boot_hw_power_down
@@ -52,6 +86,12 @@ DEFAULT_VARIABLES
     EXT_LAST_MASK	dw 0xE0200F0C
     DWORD_LOOP_BEGIN	dw 0xE0200E00
     DWORD_LOOP_END	dw 0xE0200E0C
+    SYSCON_NORMAL_CFG	dw 0xE010C010
+
+    TZIC0FIQEnable	dw 0xB0601024;0xF2800004;0xF2000F00
+    TZIC1FIQEnable	dw 0xB0601028;0xF2900004;0xF2100F00
+    TZIC2FIQEnable	dw 0xF8000130;0xF2200f00
+    TZIC3FIQEnable	dw 0xF8000134;0xF2300f00
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;; strings at the end
 DEFAULT_STRINGS_ADDR
