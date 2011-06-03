@@ -15,17 +15,17 @@
 +-------------------------------+
 Launch Image at 0x42480000
 
-[BOOT_V1.0  (May 28 2010, 21:22:23)] 
+[BOOT_V1.0  (May 28 2010, 21:22:23)] 
 SelectBootingMode: H/W...0xe.
 [BOOT] ARMCLK: 400000 KHz, MSYSHCLK 200000 KHz,MSYSPCLK: 100000 KHz,                            [BOOT] DSYSHCLK 166750 KHz,DSYSPCLK: 83375 KHz,PSYSHCLK: 133400 KHz, PSYSPCLK: 66700 KHz,SYSCON_A2M: 200000 KHz  
-+++FIMD_Drv_INITIALIZE
++++FIMD_Drv_INITIALIZE
 FIMD_Drv_ChangeMode: MDNIE_MODE
 Frame Rate:62SCLK_FIMD:133400 kHz ClkDiv:4
 S6E63M0 : LDI_Pentile_Set_Change Pentile_Value =6c 
 ---FIMD_Drv_INITIALIZE
 ---FIMD_Drv_SetWinOnOff(WIN4:1)
-LCD initialize Finished
-Flash_Unlock failed
+LCD initialize Finished
+Flash_Unlock failed
 Poweron status - 20
 FSA9480 0x03 Register = 1
 FSA9480 0x0A Register = 0
@@ -80,1863 +80,1862 @@ Frame Rate:62SCLK_FIMD:133400 kHz ClkDiv:4
 S6E63M0 : LDI_Pentile_Set_Change Pentile_Value =6c 
 ---FIMD_Drv_INITIALIZE
 
-Set cpu clk. from 800MHz to 800MHz.
-OM=0x9, device=OnenandMux(Audi)
-IROM e-fused - Non Secure Boot Version.
+Set cpu clk. from 800MHz to 800MHz.
+OM=0x9, device=OnenandMux(Audi)
+IROM e-fused - Non Secure Boot Version.
 
------------------------------------------------------------
-   Samsung SBL2FOTAv03 by mijoma-SBL S8500
-   Copyright (C) Samsung Electronics Co., Ltd. 2006-2010
+-----------------------------------------------------------
+   Samsung SBL2FOTAv03 by mijoma-SBL S8500
+   Copyright (C) Samsung Electronics Co., Ltd. 2006-2010
 
-   Board Name: ARIES REV 03
-   Build On: Mar 20 2011 14:57:11
------------------------------------------------------------
+   Board Name: ARIES REV 03
+   Build On: Mar 20 2011 14:57:11
+-----------------------------------------------------------
 
-Re_partition: magic code(0x0)
-[PAM:   ] ++FSR_PAM_Init
-[PAM:   ]   OneNAND physical base address       : 0xb0000000
-[PAM:   ]   OneNAND virtual  base address       : 0xb0000000
-[PAM:   ]   OneNAND nMID=0xec : nDID=0x50
-[PAM:   ] --FSR_PAM_Init
-fsr_bml_load_partition: pi->nNumOfPartEntry = 7
-partitions loading success
-board partition information update.. source: 0x0
-.Done.
- read 1 units.
-==== PARTITION INFORMATION ====
- ID         : *unknown id* (0x9)
- ATTR       : RO SLC (0x1002)
- FIRST_UNIT : 0
- NO_UNITS   : 1
-===============================
- ID         : *unknown id* (0x0)
- ATTR       : RO SLC (0x1002)
- FIRST_UNIT : 1
- NO_UNITS   : 7
-===============================
- ID         : *unknown id* (0x1)
- ATTR       : RW SLC (0x1001)
- FIRST_UNIT : 8
- NO_UNITS   : 796
-===============================
- ID         : *unknown id* (0x14)
- ATTR       : RW STL SLC (0x1101)
- FIRST_UNIT : 804
- NO_UNITS   : 716
-===============================
- ID         : *unknown id* (0x15)
- ATTR       : RW STL SLC (0x1101)
- FIRST_UNIT : 1520
- NO_UNITS   : 372
-===============================
- ID         : *unknown id* (0x17)
- ATTR       : RW STL SLC (0x1101)
- FIRST_UNIT : 1892
- NO_UNITS   : 56
-===============================
- ID         : *unknown id* (0x18)
- ATTR       : RW SLC (0x1001)
- FIRST_UNIT : 1948
- NO_UNITS   : 56
-===============================
-FlashDevOpen 232: Error(nErr=0x80000002)
-j4fs_open 136: Error(nErr=0x40000000)
-loke_init: j4fs_open failed..
-EXT_I2C(3) -> No ACK
-EXT_I2C(3) -> No ACK
-EXT_I2C(3) -> No ACK
-EXT_I2C(3) -> No ACK
-EXT_I2C(3) -> No ACK
-EXT_I2C(3) -> No ACK
-EXT_I2C(3) -> No ACK
-EXT_I2C(3) -> No ACK
-EXT_I2C(3) -> No ACK
-EXT_I2C(3) -> No ACK
-EXT_I2C(3) -> No ACK
-EXT_I2C(3) -> No ACK
-init_fuel_gauge: vcell = 0mV, soc = 0
-FlashDevRead 63: Error(offset,length,j4fs_end,nErr)=(0x40000,0x1000,0x0,0x80040001)
-nps status file does not exist..
-nps status is incorrect!! set default status.(completed)
-nps status=0x504d4f43
-PMIC_IRQ1    = 0x0 
-PMIC_IRQ2    = 0x0 
-PMIC_IRQ3    = 0x0 
-PMIC_IRQ4    = 0x0 
-PMIC_STATUS1 = 0x40 
-PMIC_STATUS2 = 0x0 
-get_debug_level current debug level is 0x0.
-get_debug_level current debug level is 0x0.
-get_debug_level current debug level is 0x0.
-aries_process_platform: Debug Level Invalid
-keypad_scan: key value ----------------->= 0x0
-CONFIG_ARIES_REV:48 , CONFIG_ARIES_REV03:48 
-aries_process_platform: final s1 booting mode = 0
-EXT_I2C(3) -> No ACK
-EXT_I2C(3) -> No ACK
-EXT_I2C(3) -> No ACK
-aries_check_boot_low_battery: low battery detect. voltage=0, limit voltage=3430
-FlashDevRead 63: Error(offset,length,j4fs_end,nErr)=(0x40000,0x1000,0x0,0x80040001)
-DISPLAY_PATH_SEL[MDNIE 0x1]is on
-MDNIE setting Init start!!
-vsync interrupt is off
-video interrupt is off
-[fb0] turn on
-MDNIE setting Init end!!
+Re_partition: magic code(0x0)
+[PAM:   ] ++FSR_PAM_Init
+[PAM:   ]   OneNAND physical base address       : 0xb0000000
+[PAM:   ]   OneNAND virtual  base address       : 0xb0000000
+[PAM:   ]   OneNAND nMID=0xec : nDID=0x50
+[PAM:   ] --FSR_PAM_Init
+fsr_bml_load_partition: pi->nNumOfPartEntry = 7
+partitions loading success
+board partition information update.. source: 0x0
+.Done.
+ read 1 units.
+==== PARTITION INFORMATION ====
+ ID         : *unknown id* (0x9)
+ ATTR       : RO SLC (0x1002)
+ FIRST_UNIT : 0
+ NO_UNITS   : 1
+===============================
+ ID         : *unknown id* (0x0)
+ ATTR       : RO SLC (0x1002)
+ FIRST_UNIT : 1
+ NO_UNITS   : 7
+===============================
+ ID         : *unknown id* (0x1)
+ ATTR       : RW SLC (0x1001)
+ FIRST_UNIT : 8
+ NO_UNITS   : 796
+===============================
+ ID         : *unknown id* (0x14)
+ ATTR       : RW STL SLC (0x1101)
+ FIRST_UNIT : 804
+ NO_UNITS   : 716
+===============================
+ ID         : *unknown id* (0x15)
+ ATTR       : RW STL SLC (0x1101)
+ FIRST_UNIT : 1520
+ NO_UNITS   : 372
+===============================
+ ID         : *unknown id* (0x17)
+ ATTR       : RW STL SLC (0x1101)
+ FIRST_UNIT : 1892
+ NO_UNITS   : 56
+===============================
+ ID         : *unknown id* (0x18)
+ ATTR       : RW SLC (0x1001)
+ FIRST_UNIT : 1948
+ NO_UNITS   : 56
+===============================
+FlashDevOpen 232: Error(nErr=0x80000002)
+j4fs_open 136: Error(nErr=0x40000000)
+loke_init: j4fs_open failed..
+EXT_I2C(3) -> No ACK
+EXT_I2C(3) -> No ACK
+EXT_I2C(3) -> No ACK
+EXT_I2C(3) -> No ACK
+EXT_I2C(3) -> No ACK
+EXT_I2C(3) -> No ACK
+EXT_I2C(3) -> No ACK
+EXT_I2C(3) -> No ACK
+EXT_I2C(3) -> No ACK
+EXT_I2C(3) -> No ACK
+EXT_I2C(3) -> No ACK
+EXT_I2C(3) -> No ACK
+init_fuel_gauge: vcell = 0mV, soc = 0
+FlashDevRead 63: Error(offset,length,j4fs_end,nErr)=(0x40000,0x1000,0x0,0x80040001)
+nps status file does not exist..
+nps status is incorrect!! set default status.(completed)
+nps status=0x504d4f43
+PMIC_IRQ1    = 0x0 
+PMIC_IRQ2    = 0x0 
+PMIC_IRQ3    = 0x0 
+PMIC_IRQ4    = 0x0 
+PMIC_STATUS1 = 0x40 
+PMIC_STATUS2 = 0x0 
+get_debug_level current debug level is 0x0.
+get_debug_level current debug level is 0x0.
+get_debug_level current debug level is 0x0.
+aries_process_platform: Debug Level Invalid
+keypad_scan: key value ----------------->= 0x0
+CONFIG_ARIES_REV:48 , CONFIG_ARIES_REV03:48 
+aries_process_platform: final s1 booting mode = 0
+EXT_I2C(3) -> No ACK
+EXT_I2C(3) -> No ACK
+EXT_I2C(3) -> No ACK
+aries_check_boot_low_battery: low battery detect. voltage=0, limit voltage=3430
+FlashDevRead 63: Error(offset,length,j4fs_end,nErr)=(0x40000,0x1000,0x0,0x80040001)
+DISPLAY_PATH_SEL[MDNIE 0x1]is on
+MDNIE setting Init start!!
+vsync interrupt is off
+video interrupt is off
+[fb0] turn on
+MDNIE setting Init end!!
 
-Autoboot (0 seconds) in progress, press any key to stop 
-get_debug_level current debug level is 0x0.
-get_debug_level current debug level is 0x0.
-boot_kernel: Debug Level Low
- debug: 9999
+Autoboot (0 seconds) in progress, press any key to stop 
+get_debug_level current debug level is 0x0.
+get_debug_level current debug level is 0x0.
+boot_kernel: Debug Level Low
+ debug: 9999
  Reloc kernel to 0x32000000
  0x44000000=>0x32000000,s=0x6A0558
 setting param.serialnr=0x3834785f 0x2a500ec
-setting param.board_rev=0x30
-setting param.cmdline=console=ttySAC2,115200 loglevel=4
+setting param.board_rev=0x30
+setting param.cmdline=console=ttySAC2,115200 loglevel=4
 
-Starting kernel at 0x32000000...
+Starting kernel at 0x32000000...
 
 Uncompressing Linux......................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................... done, booting the kernel.
 <6>Initializing cgroup subsys cpu
-<5>Linux version 2.6.32.9 (user@user-MS-7514) (gcc version 4.5.2 (Sourcery G++ Lite 2011.03-41) ) #7 Wed Jun 1 21:48:07 EEST 2011
-CPU: ARMv7 Processor [412fc082] revision 2 (ARMv7), cr=10c53c7f
-CPU: VIPT nonaliasing data cache, VIPT nonaliasing instruction cache
-Machine: SMDKC110
-Memory policy: ECC disabled, Data cache writeback
-<7>On node 0 totalpages: 20480
-<7>free_area_init_node: node 0, pgdat c10e1860, node_mem_map c12b8000
-<7>  Normal zone: 160 pages used for memmap
-<7>  Normal zone: 0 pages reserved
-<7>  Normal zone: 20320 pages, LIFO batch:3
-<7>On node 1 totalpages: 65536
-<7>free_area_init_node: node 1, pgdat c10e1f18, node_mem_map d0002000
-<7>  Normal zone: 512 pages used for memmap
-<7>  Normal zone: 0 pages reserved
-<7>  Normal zone: 65024 pages, LIFO batch:15
-<7>On node 2 totalpages: 0
-<7>free_area_init_node: node 2, pgdat c10e25d0, node_mem_map c1360c20
-<4>  Normal zone: 1 pages exceeds realsize 0
-<7>On node 3 totalpages: 0
-<7>free_area_init_node: node 3, pgdat c10e2c88, node_mem_map c1368ce0
-<4>  Normal zone: 1 pages exceeds realsize 0
-CPU S5PV210/S5PC110 (id 0x43110222)
-<7>s5pv210_init_clocks: initializing clocks
-<6>S3C24XX Clocks, Copyright 2004 Simtec Electronics
-<3>copy: bad source 0
-<3>mout_audss: bad source 0
-<7>s5pv210_setup_clocks: registering clocks
-<7>s5pv210_setup_clocks: clkdiv0 = 14131330, clkdiv1 = 00300400
-<7>s5pv210_setup_clocks: xtal is 24000000
-<6>S5PV210: PLL settings, A=800000000, M=667000000, E=80000000
-<6>s5pv210: 33554432 bytes system memory reserved for mfc at 0x31373000
-<6>s5pv210: 33554432 bytes system memory reserved for mfc at 0x40204000
-<6>s5pv210: 12582912 bytes system memory reserved for fimc0 at 0x42204000
-<6>s5pv210: 1048576 bytes system memory reserved for fimc1 at 0x42e04000
-<6>s5pv210: 12582912 bytes system memory reserved for fimc2 at 0x42f04000
-<6>s5pv210: 2097152 bytes system memory reserved for pmem at 0x33373000
-<6>s5pv210: 4194304 bytes system memory reserved for pmem_gpu1 at 0x33573000
-<6>s5pv210: 1536000 bytes system memory reserved for pmem_adsp at 0x33973000
-<6>s5pv210: 10485760 bytes system memory reserved for texstream at 0x33aea000
-<6>s5pv210: 3145728 bytes system memory reserved for fimd at 0x43b04000
-<6>s5pv210: 262144 bytes system memory reserved for wifi at 0x344ea000
-Built 2 zonelists in Zone order, mobility grouping on.  Total pages: 85344
-<5>Kernel command line: console=ttySAC2,115200 loglevel=4
-<6>PID hash table entries: 2048 (order: 1, 8192 bytes)
-<6>Dentry cache hash table entries: 65536 (order: 6, 262144 bytes)
-<6>Inode-cache hash table entries: 32768 (order: 5, 131072 bytes)
-<6>Memory: 80MB 256MB = 336MB total
-<5>Memory: 209052KB available (9144K code, 1897K data, 7728K init, 0K highmem)
-<6>SLUB: Genslabs=9, HWalign=64, Order=0-3, MinObjects=0, CPUs=1, Nodes=4
-<6>Hierarchical RCU implementation.
-<6>NR_IRQS:339
-<6>VIC @fd000000: id 0x00041192, vendor 0x41
-<6>VIC @fd010000: id 0x00041192, vendor 0x41
-<6>VIC @fd020000: id 0x00041192, vendor 0x41
-<6>VIC @fd030000: id 0x00041192, vendor 0x41
-<6>mult[140737]
-<6>max_delta_ns[2147483647]
-<6>min_delta_ns[30517]
-<6>rate[32768]
-<6>HZ[256]
-Console: colour dummy device 80x30
-[    0.000000] copy: bad source 0
+<5>Linux version 2.6.32.9 (user@user-MS-7514) (gcc version 4.5.2 (Sourcery G++ Lite 2011.03-41) ) #7 Wed Jun 1 21:48:07 EEST 2011
+CPU: ARMv7 Processor [412fc082] revision 2 (ARMv7), cr=10c53c7f
+CPU: VIPT nonaliasing data cache, VIPT nonaliasing instruction cache
+Machine: SMDKC110
+Memory policy: ECC disabled, Data cache writeback
+<7>On node 0 totalpages: 20480
+<7>free_area_init_node: node 0, pgdat c10e1860, node_mem_map c12b8000
+<7>  Normal zone: 160 pages used for memmap
+<7>  Normal zone: 0 pages reserved
+<7>  Normal zone: 20320 pages, LIFO batch:3
+<7>On node 1 totalpages: 65536
+<7>free_area_init_node: node 1, pgdat c10e1f18, node_mem_map d0002000
+<7>  Normal zone: 512 pages used for memmap
+<7>  Normal zone: 0 pages reserved
+<7>  Normal zone: 65024 pages, LIFO batch:15
+<7>On node 2 totalpages: 0
+<7>free_area_init_node: node 2, pgdat c10e25d0, node_mem_map c1360c20
+<4>  Normal zone: 1 pages exceeds realsize 0
+<7>On node 3 totalpages: 0
+<7>free_area_init_node: node 3, pgdat c10e2c88, node_mem_map c1368ce0
+<4>  Normal zone: 1 pages exceeds realsize 0
+CPU S5PV210/S5PC110 (id 0x43110222)
+<7>s5pv210_init_clocks: initializing clocks
+<6>S3C24XX Clocks, Copyright 2004 Simtec Electronics
+<3>copy: bad source 0
+<3>mout_audss: bad source 0
+<7>s5pv210_setup_clocks: registering clocks
+<7>s5pv210_setup_clocks: clkdiv0 = 14131330, clkdiv1 = 00300400
+<7>s5pv210_setup_clocks: xtal is 24000000
+<6>S5PV210: PLL settings, A=800000000, M=667000000, E=80000000
+<6>s5pv210: 33554432 bytes system memory reserved for mfc at 0x31373000
+<6>s5pv210: 33554432 bytes system memory reserved for mfc at 0x40204000
+<6>s5pv210: 12582912 bytes system memory reserved for fimc0 at 0x42204000
+<6>s5pv210: 1048576 bytes system memory reserved for fimc1 at 0x42e04000
+<6>s5pv210: 12582912 bytes system memory reserved for fimc2 at 0x42f04000
+<6>s5pv210: 2097152 bytes system memory reserved for pmem at 0x33373000
+<6>s5pv210: 4194304 bytes system memory reserved for pmem_gpu1 at 0x33573000
+<6>s5pv210: 1536000 bytes system memory reserved for pmem_adsp at 0x33973000
+<6>s5pv210: 10485760 bytes system memory reserved for texstream at 0x33aea000
+<6>s5pv210: 3145728 bytes system memory reserved for fimd at 0x43b04000
+<6>s5pv210: 262144 bytes system memory reserved for wifi at 0x344ea000
+Built 2 zonelists in Zone order, mobility grouping on.  Total pages: 85344
+<5>Kernel command line: console=ttySAC2,115200 loglevel=4
+<6>PID hash table entries: 2048 (order: 1, 8192 bytes)
+<6>Dentry cache hash table entries: 65536 (order: 6, 262144 bytes)
+<6>Inode-cache hash table entries: 32768 (order: 5, 131072 bytes)
+<6>Memory: 80MB 256MB = 336MB total
+<5>Memory: 209052KB available (9144K code, 1897K data, 7728K init, 0K highmem)
+<6>SLUB: Genslabs=9, HWalign=64, Order=0-3, MinObjects=0, CPUs=1, Nodes=4
+<6>Hierarchical RCU implementation.
+<6>NR_IRQS:339
+<6>VIC @fd000000: id 0x00041192, vendor 0x41
+<6>VIC @fd010000: id 0x00041192, vendor 0x41
+<6>VIC @fd020000: id 0x00041192, vendor 0x41
+<6>VIC @fd030000: id 0x00041192, vendor 0x41
+<6>mult[140737]
+<6>max_delta_ns[2147483647]
+<6>min_delta_ns[30517]
+<6>rate[32768]
+<6>HZ[256]
+Console: colour dummy device 80x30
+[    0.000000] copy: bad source 0
 [    0.000000] mout_audss< bad source 0
 6>console [ttySAC2] enabled
-<6>Calibrating delay loop... <c>796.20 BogoMIPS (lpj=1556480)
-Mount-cache hash table entries: 512
-<6>Initializing cgroup subsys debug
-<6>Initializing cgroup subsys cpuacct
-<6>Initializing cgroup subsys freezer
-<6>CPU: Testing write buffer coherency: ok
-<0>KERNEL:kernel_sec_get_debug_level_from_boot=0x574f4c44
-[    0.121648] KERNEL:kernel_sec_get_debug_level_from_b<ot=0x574f4c44
+<6>Calibrating delay loop... <c>796.20 BogoMIPS (lpj=1556480)
+Mount-cache hash table entries: 512
+<6>Initializing cgroup subsys debug
+<6>Initializing cgroup subsys cpuacct
+<6>Initializing cgroup subsys freezer
+<6>CPU: Testing write buffer coherency: ok
+<0>KERNEL:kernel_sec_get_debug_level_from_boot=0x574f4c44
+[    0.121648] KERNEL:kernel_sec_get_debug_level_from_b<ot=0x574f4c44
 0>KERNEL:magic_number=0x0 DEBUG LEVEL low!!
-[    0.131708] KERNEL:magic_number=0x0 DEB<G LEVEL low!!
+[    0.131708] KERNEL:magic_number=0x0 DEB<G LEVEL low!!
 0>(kernel_sec_set_upload_cause) : upload_cause set 0
-[    0.141422] (kernel_sec_set_upload_cause) : upload_cause set 0
+[    0.141422] (kernel_sec_set_upload_cause) : upload_cause set 0
 <6>regulator: core version 0.5
-<6>NET: Registered protocol family 16
-S5PC110 Hardware version : EVT1 
-HWREV is 0xf
-S3C Power Management, Copyright 2004 Simtec Electronics
-<6>S5PV210 Power Domain API Enable
-<6>S5PV210: Initializing architecture
-<6>S3C PL330-DMA Controller Driver, (c) 2008-2009 Samsung Electronics
-<6>Total 24 DMA channels will be initialized.
-DMA: got clock for controller 0 and disabled 
-DMA: got clock for controller 1 and disabled 
-DMA: got clock for controller 2 and disabled 
-<6>s3c24xx-pwm s3c24xx-pwm.0: tin at 66700000, tdiv at 66700000, tin=divclk, base 0
-<6>s3c24xx-pwm s3c24xx-pwm.1: tin at 66700000, tdiv at 66700000, tin=divclk, base 8
-<6>s3c24xx-pwm s3c24xx-pwm.2: tin at 4168750, tdiv at 4168750, tin=divclk, base 12
-<6>s3c24xx-pwm s3c24xx-pwm.3: tin at 4168750, tdiv at 4168750, tin=divclk, base 16
-bio: create slab <bio-0> at 0
-<6>vgaarb: loaded
-<5>SCSI subsystem initialized
-<6>s3c-i2c s3c2410-i2c.0: i2c-0: S3C I2C adapter
-<6>s3c-i2c s3c2410-i2c.1: i2c-1: S3C I2C adapter
-<6>s3c-i2c s3c2410-i2c.2: i2c-2: S3C I2C adapter
-<6>Bluetooth: Core ver 2.15
-<6>NET: Registered protocol family 31
-<6>Bluetooth: HCI device and connection manager initialized
-<6>Bluetooth: HCI socket layer initialized
-<6>Switching to clocksource clock_source_systimer
-<6>NET: Registered protocol family 2
-<6>IP route cache hash table entries: 4096 (order: 2, 16384 bytes)
-<6>TCP established hash table entries: 16384 (order: 5, 131072 bytes)
-<6>TCP bind hash table entries: 16384 (order: 6, 327680 bytes)
-<6>TCP: Hash tables configured (established 16384 bind 16384)
-<6>TCP reno registered
-<6>NET: Registered protocol family 1
-<7>[BT] rfkill_register(bt_rfk) 
-<7>[BT] Device Powering ON 
-<7>[BT] GPIO_BT_nRST = 0
-[BT] GPIO_WLAN_BT_EN = 1
-<7>[BT] bt_host_wake_irq_handler start
-[BT] GPIO_BT_nRST = 1
-<7>[BT] Device Powering OFF 
-<7>[BT] bt_host_wake_irq_handler start
-[BT] GPIO_BT_nRST = 0
-[BT] GPIO_WLAN_BT_EN = 0
-<7>[BT] bt_host_wake_irq_handler start
-[BT] In the unblocked state of the sleep
-<7>[BT] GPIO_BT_WAKE = 0
-[BT] wake_unlock(bt_wake_lock)
-[BT] In the unblocked state of the sleep
-<7>[BT] GPIO_BT_WAKE = 0
-[BT] wake_unlock(bt_wake_lock)
-S5PC11X_FREQ_TAB=0 , S5PC11X_MAXFREQLEVEL=4
-<6>S5PV210 ADC driver, (c) 2010 Samsung Electronics
-[ JACK_DRIVER (sec_jack_init,800) ] 
-<6>SEC JACK: Registering jack driver
-<6>input: sec_jack as /devices/virtual/input/input0
-[ JACK_DRIVER (sec_jack_probe,676) ] sended isr send=0Xbe, ret =0
-[ JACK_DRIVER (sec_jack_probe,695) ] det isr det=0X26, ret =0
-<4>NetWinder Floating Point Emulator V0.97 (extended precision)
-<6>ashmem: initialized
-<6>ROMFS MTD (C) 2007 Red Hat, Inc.
-<6>msgmni has been set to 408
-<6>alg: No test for cipher_null (cipher_null-generic)
-<6>alg: No test for ecb(cipher_null) (ecb-cipher_null)
-<6>alg: No test for digest_null (digest_null-generic)
-<6>alg: No test for compress_null (compress_null-generic)
-<6>alg: No test for stdrng (krng)
-<6>alg: No test for ghash (ghash-generic)
-<6>io scheduler noop registered
-<6>io scheduler anticipatory registered
-<6>io scheduler deadline registered
-<6>io scheduler cfq registered (default)
-MDNIE  INIT ..........
-<6>S3C MDNIE Driver, (c) 2010 Samsung Electronics
-MDNIE  INIT SUCCESS Addr : 0xe083c000
-IELCD  INIT ..........
-<6>S3C IELCD Driver, (c) 2010 Samsung Electronics
-IELCD  INIT SUCCESS Addr : 0xe0840000
-<6>s3cfb s3cfb: [fb0] dma: 0x43b04000, cpu: 0xe0c00000, size: 0x002ee000
-<6>FIMD src sclk = 166750000
-<6>s3cfb s3cfb: parent clock: 166750000, vclk: 25628040, vclk div: 7
-<6>s3cfb s3cfb: registered successfully
-<6>s5pv210-uart.0: s3c2410_serial0 at MMIO 0xe2900000 (irq = 16) is a S3C6400/10
-<6>s5pv210-uart.1: s3c2410_serial1 at MMIO 0xe2900400 (irq = 20) is a S3C6400/10
-<6>s5pv210-uart.2: s3c2410_serial2 at MMIO 0xe2900800 (irq = 24) is a S3C6400/10
-<6>s5pv210-uart.3: s3c2410_serial3 at MMIO 0xe2900c00 (irq = 28) is a S3C6400/10
-<6>brd: module loaded
-<6>loop: module loaded
-<6>pmem: 1 init
-<6>pmem_gpu1: 1 init
-<6>pmem_adsp: 1 init
-[BIF:IN ] ++FSR_BML_Init(nFlag: 0x0)
-[PAM:   ] ++FSR_PAM_Init
-[PAM:   ]   OneNAND physical base address       : 0xb0000000
-[PAM:   ]   OneNAND virtual  base address       : 0xe0880000
-[PAM:   ]   OneNAND nMID=0xec : nDID=0x50 Page size=4
-[PAM:   ] --FSR_PAM_Init
-[BIF:   ]   FSR VERSION: FSR_1.2.1p1_b139_RTM
-[OND:INF]   FSR_OND_4K_Open(nDev:0, pParam:0xc4ff1e50, nFlag:0x00000000) / 1033 line
-            pstOND4kCxt->nBaseAddr: 0xe0880000
-            nDev=0, nMID=0x00ec, nDID=0x0050, nVID=0x013e
-[OND:INF]   pstOND4kCxt->nSysConf1:0xf0c6 / 1116 line
-[OND:INF]   pstOND4kCxt->nBlksForSLCArea[0]:2048 / 1133 line
-[OND:INF]   pstOND4kCxt->nIntID   :0x0000 / 1236 line
-[OND:INF]   1X_CACHEPGM CMD : 0x007f
-[OND:INF]   1X_PLOAD    CMD : 0x0003
-[BBM:INF]   Scan from 2004 to 2047 to find BML meta blocks (die: 0)
-[BBM:INF]   ffff ffff ffff ffff ffff ffff ffff ffff ffff ffff 
-[BBM:INF]   ffff ffff ffff ffff ffff ffff ffff ffff ffff ffff 
-[BBM:INF]   ffff ffff ffff ffff ffff ffff ffff ffff ffff ffff 
-[BBM:INF]   ffff ffff ffff ffff ffff ffff ffff ffff ffff ffff 
-[BBM:INF]   a5a5 a5a5 ffff 
-FSR: Registered TinyFSR Driver.
-<6>tl2796_probe::1124->s6e63m0 probed successfuly
-<6>PPP generic driver version 2.4.2
-<6>PPP Deflate Compression module registered
-<6>PPP BSD Compression module registered
-<6>PPP MPPE Compression module registered
-<6>NET: Registered protocol family 24
-<6>PPPoL2TP kernel driver, V1.0
-<6>SLIP: version 0.8.4-NET3.019-NEWTTY (dynamic channels, max=256) (6 bit encapsulation enabled).
-<6>CSLIP: code copyright 1989 Regents of the University of California.
-[otg_clock_enable] clk_enable(otg_clock) OK.
-[otg_clock_enable] clk_disable(otg_clock) OK.
-<6>s3c-udc : S3C HS USB OTG Device Driver, (c) 2008-2009 Samsung Electronics
-s3c-udc : version 15 March 2009 (DMA Mode) 
-[ADB_UMS_ACM_RNDIS_MTP] string_dev = 1000785f02a5 
-<4>android_adb_ums_acm_rndis_mtp gadget: using random self ethernet address
-<4>android_adb_ums_acm_rndis_mtp gadget: using random host ethernet address
-<6>usb0: MAC a2:b1:63:59:bf:f9
-<6>usb0: HOST MAC f2:a1:c5:9b:d0:56
-<6>acm_function_add
-<6>DUN is registerd
-<6>fsg_function_bind cdrom patch after fsg->nluns 2
-<6>android_adb_ums_acm_rndis_mtp gadget: Number of LUNs=2
-<6>shaman: mass_storage_function_add success
-<6>adb_function_add
-[mtpg_function_bind] line = [891] 
-[mtpg_function_bind] dual speed line = [958] 
-***** [mtpg_function_bind:975] calling mtp_function_enable with 0 
-[mtp_function_enable] mtp_function => (disabled)
-****** mtp_function_enable and line 1267 null_desc 
-  interface 0 = acm/df81b600
-  interface 1 = acm/df81b600
-  interface 2 = usb_mass_storage/df8a1800
-  interface 3 = adb/df8dec00
-  interface 4 = Gadget_MTP/df8dee00
-  interface 5 = rndis/df81b900
-  interface 6 = rndis/df81b900
-<6>mass_storage_function_config_changed
-  interface 0 = usb_mass_storage/df8a1800
-<6>android_adb_ums_acm_rndis_mtp gadget: Android Composite USB, version: May 29 2011
-<6>android_adb_ums_acm_rndis_mtp gadget: android_adb_ums_acm_rndis_mtp ready
-<6>Registered gadget driver 'android_adb_ums_acm_rndis_mtp'
-[udc_enable]AP_USB_Power off by Bootup : 1<4>mice: could not register psaux device, error: -16
-<6>mice: PS/2 mouse device common for all mice
-<6>input: s3c-keypad as /devices/virtual/input/input1
-s3c-keypad Initialized
-S3C-Keypad H3C f000333 H2C ff00f33 
-S3C-Keypad keypad_scan() is called
-S3C-Keypad row val = 7<6>S3C Keypad Driver
-<6>i2c /dev entries driver
-<6>i2c-gpio i2c-gpio.4: using pins 247 (SDA) and 246 (SCL)
-<6>i2c-gpio i2c-gpio.5: using pins 203 (SDA) and 204 (SCL)
-<6>regulator: DCDC1: 750 <--> 1500 mV 
-<6>regulator: DCDC2: 750 <--> 1500 mV 
-<6>regulator: LDO4: 3300 mV 
-<6>regulator: LDO7: 1800 mV 
-<6>regulator: LDO17: 3000 <--> 3200 mV 
-<6>i2c-gpio i2c-gpio.6: using pins 206 (SDA) and 209 (SCL)
-[FSA9480] fsa9480_codec_probe
-HVWk s3c, for alarmsfsa9480_interrupt
-<6>s3c2410-rtc s3c2410-rtc: rtc core: registered s3c as rtc0
-[FSA9480] FSA9480_ReadIntRegister
-<7>Another host want the wakelock : 1
-<7> Universal : Card status  0
-<6>VFP support v0.3: implementor 41 architecture 3 part 30 variant c rev 2
-<7>qt602240 GPIO Status
-<7>TOUCH_EN  : High
-<7>TOUCH_INT : Low
-<7>*** DEBUG : First we search for SDIO...(2)***
-<7>*** DEBUG : ...then normal SD...(2) ***
-<6>ldo38_control : turn ON LDO3 and LDO8 (cur_stat=0, req=1)
-[otg_clock_enable] clk_enable(otg_clock) OK.
-[udc_enable]AP_USB_Power off by Bootup : 1[FSA9480] FSA9480_ProcessDevice (dev1 : 0x0, dev2 : 0x8)
-FSA9480_DEV_TY2_JIG_UART_OFF --- ATTACH
-JIT UART OFF
-qt602240_i2c is attached..
-<7>|  Quantum Touch Driver Probe!            |
-<6>input: qt602240_ts_input as /devices/virtual/input/input2
-QT_reprogram check
-[QT] init_touch_driver start
-[QT] init_I2C start
+<6>NET: Registered protocol family 16
+S5PC110 Hardware version : EVT1 
+HWREV is 0xf
+S3C Power Management, Copyright 2004 Simtec Electronics
+<6>S5PV210 Power Domain API Enable
+<6>S5PV210: Initializing architecture
+<6>S3C PL330-DMA Controller Driver, (c) 2008-2009 Samsung Electronics
+<6>Total 24 DMA channels will be initialized.
+DMA: got clock for controller 0 and disabled 
+DMA: got clock for controller 1 and disabled 
+DMA: got clock for controller 2 and disabled 
+<6>s3c24xx-pwm s3c24xx-pwm.0: tin at 66700000, tdiv at 66700000, tin=divclk, base 0
+<6>s3c24xx-pwm s3c24xx-pwm.1: tin at 66700000, tdiv at 66700000, tin=divclk, base 8
+<6>s3c24xx-pwm s3c24xx-pwm.2: tin at 4168750, tdiv at 4168750, tin=divclk, base 12
+<6>s3c24xx-pwm s3c24xx-pwm.3: tin at 4168750, tdiv at 4168750, tin=divclk, base 16
+bio: create slab <bio-0> at 0
+<6>vgaarb: loaded
+<5>SCSI subsystem initialized
+<6>s3c-i2c s3c2410-i2c.0: i2c-0: S3C I2C adapter
+<6>s3c-i2c s3c2410-i2c.1: i2c-1: S3C I2C adapter
+<6>s3c-i2c s3c2410-i2c.2: i2c-2: S3C I2C adapter
+<6>Bluetooth: Core ver 2.15
+<6>NET: Registered protocol family 31
+<6>Bluetooth: HCI device and connection manager initialized
+<6>Bluetooth: HCI socket layer initialized
+<6>Switching to clocksource clock_source_systimer
+<6>NET: Registered protocol family 2
+<6>IP route cache hash table entries: 4096 (order: 2, 16384 bytes)
+<6>TCP established hash table entries: 16384 (order: 5, 131072 bytes)
+<6>TCP bind hash table entries: 16384 (order: 6, 327680 bytes)
+<6>TCP: Hash tables configured (established 16384 bind 16384)
+<6>TCP reno registered
+<6>NET: Registered protocol family 1
+<7>[BT] rfkill_register(bt_rfk) 
+<7>[BT] Device Powering ON 
+<7>[BT] GPIO_BT_nRST = 0
+[BT] GPIO_WLAN_BT_EN = 1
+<7>[BT] bt_host_wake_irq_handler start
+[BT] GPIO_BT_nRST = 1
+<7>[BT] Device Powering OFF 
+<7>[BT] bt_host_wake_irq_handler start
+[BT] GPIO_BT_nRST = 0
+[BT] GPIO_WLAN_BT_EN = 0
+<7>[BT] bt_host_wake_irq_handler start
+[BT] In the unblocked state of the sleep
+<7>[BT] GPIO_BT_WAKE = 0
+[BT] wake_unlock(bt_wake_lock)
+[BT] In the unblocked state of the sleep
+<7>[BT] GPIO_BT_WAKE = 0
+[BT] wake_unlock(bt_wake_lock)
+S5PC11X_FREQ_TAB=0 , S5PC11X_MAXFREQLEVEL=4
+<6>S5PV210 ADC driver, (c) 2010 Samsung Electronics
+[ JACK_DRIVER (sec_jack_init,800) ] 
+<6>SEC JACK: Registering jack driver
+<6>input: sec_jack as /devices/virtual/input/input0
+[ JACK_DRIVER (sec_jack_probe,676) ] sended isr send=0Xbe, ret =0
+[ JACK_DRIVER (sec_jack_probe,695) ] det isr det=0X26, ret =0
+<4>NetWinder Floating Point Emulator V0.97 (extended precision)
+<6>ashmem: initialized
+<6>ROMFS MTD (C) 2007 Red Hat, Inc.
+<6>msgmni has been set to 408
+<6>alg: No test for cipher_null (cipher_null-generic)
+<6>alg: No test for ecb(cipher_null) (ecb-cipher_null)
+<6>alg: No test for digest_null (digest_null-generic)
+<6>alg: No test for compress_null (compress_null-generic)
+<6>alg: No test for stdrng (krng)
+<6>alg: No test for ghash (ghash-generic)
+<6>io scheduler noop registered
+<6>io scheduler anticipatory registered
+<6>io scheduler deadline registered
+<6>io scheduler cfq registered (default)
+MDNIE  INIT ..........
+<6>S3C MDNIE Driver, (c) 2010 Samsung Electronics
+MDNIE  INIT SUCCESS Addr : 0xe083c000
+IELCD  INIT ..........
+<6>S3C IELCD Driver, (c) 2010 Samsung Electronics
+IELCD  INIT SUCCESS Addr : 0xe0840000
+<6>s3cfb s3cfb: [fb0] dma: 0x43b04000, cpu: 0xe0c00000, size: 0x002ee000
+<6>FIMD src sclk = 166750000
+<6>s3cfb s3cfb: parent clock: 166750000, vclk: 25628040, vclk div: 7
+<6>s3cfb s3cfb: registered successfully
+<6>s5pv210-uart.0: s3c2410_serial0 at MMIO 0xe2900000 (irq = 16) is a S3C6400/10
+<6>s5pv210-uart.1: s3c2410_serial1 at MMIO 0xe2900400 (irq = 20) is a S3C6400/10
+<6>s5pv210-uart.2: s3c2410_serial2 at MMIO 0xe2900800 (irq = 24) is a S3C6400/10
+<6>s5pv210-uart.3: s3c2410_serial3 at MMIO 0xe2900c00 (irq = 28) is a S3C6400/10
+<6>brd: module loaded
+<6>loop: module loaded
+<6>pmem: 1 init
+<6>pmem_gpu1: 1 init
+<6>pmem_adsp: 1 init
+[BIF:IN ] ++FSR_BML_Init(nFlag: 0x0)
+[PAM:   ] ++FSR_PAM_Init
+[PAM:   ]   OneNAND physical base address       : 0xb0000000
+[PAM:   ]   OneNAND virtual  base address       : 0xe0880000
+[PAM:   ]   OneNAND nMID=0xec : nDID=0x50 Page size=4
+[PAM:   ] --FSR_PAM_Init
+[BIF:   ]   FSR VERSION: FSR_1.2.1p1_b139_RTM
+[OND:INF]   FSR_OND_4K_Open(nDev:0, pParam:0xc4ff1e50, nFlag:0x00000000) / 1033 line
+            pstOND4kCxt->nBaseAddr: 0xe0880000
+            nDev=0, nMID=0x00ec, nDID=0x0050, nVID=0x013e
+[OND:INF]   pstOND4kCxt->nSysConf1:0xf0c6 / 1116 line
+[OND:INF]   pstOND4kCxt->nBlksForSLCArea[0]:2048 / 1133 line
+[OND:INF]   pstOND4kCxt->nIntID   :0x0000 / 1236 line
+[OND:INF]   1X_CACHEPGM CMD : 0x007f
+[OND:INF]   1X_PLOAD    CMD : 0x0003
+[BBM:INF]   Scan from 2004 to 2047 to find BML meta blocks (die: 0)
+[BBM:INF]   ffff ffff ffff ffff ffff ffff ffff ffff ffff ffff 
+[BBM:INF]   ffff ffff ffff ffff ffff ffff ffff ffff ffff ffff 
+[BBM:INF]   ffff ffff ffff ffff ffff ffff ffff ffff ffff ffff 
+[BBM:INF]   ffff ffff ffff ffff ffff ffff ffff ffff ffff ffff 
+[BBM:INF]   a5a5 a5a5 ffff 
+FSR: Registered TinyFSR Driver.
+<6>tl2796_probe::1124->s6e63m0 probed successfuly
+<6>PPP generic driver version 2.4.2
+<6>PPP Deflate Compression module registered
+<6>PPP BSD Compression module registered
+<6>PPP MPPE Compression module registered
+<6>NET: Registered protocol family 24
+<6>PPPoL2TP kernel driver, V1.0
+<6>SLIP: version 0.8.4-NET3.019-NEWTTY (dynamic channels, max=256) (6 bit encapsulation enabled).
+<6>CSLIP: code copyright 1989 Regents of the University of California.
+[otg_clock_enable] clk_enable(otg_clock) OK.
+[otg_clock_enable] clk_disable(otg_clock) OK.
+<6>s3c-udc : S3C HS USB OTG Device Driver, (c) 2008-2009 Samsung Electronics
+s3c-udc : version 15 March 2009 (DMA Mode) 
+[ADB_UMS_ACM_RNDIS_MTP] string_dev = 1000785f02a5 
+<4>android_adb_ums_acm_rndis_mtp gadget: using random self ethernet address
+<4>android_adb_ums_acm_rndis_mtp gadget: using random host ethernet address
+<6>usb0: MAC a2:b1:63:59:bf:f9
+<6>usb0: HOST MAC f2:a1:c5:9b:d0:56
+<6>acm_function_add
+<6>DUN is registerd
+<6>fsg_function_bind cdrom patch after fsg->nluns 2
+<6>android_adb_ums_acm_rndis_mtp gadget: Number of LUNs=2
+<6>shaman: mass_storage_function_add success
+<6>adb_function_add
+[mtpg_function_bind] line = [891] 
+[mtpg_function_bind] dual speed line = [958] 
+***** [mtpg_function_bind:975] calling mtp_function_enable with 0 
+[mtp_function_enable] mtp_function => (disabled)
+****** mtp_function_enable and line 1267 null_desc 
+  interface 0 = acm/df81b600
+  interface 1 = acm/df81b600
+  interface 2 = usb_mass_storage/df8a1800
+  interface 3 = adb/df8dec00
+  interface 4 = Gadget_MTP/df8dee00
+  interface 5 = rndis/df81b900
+  interface 6 = rndis/df81b900
+<6>mass_storage_function_config_changed
+  interface 0 = usb_mass_storage/df8a1800
+<6>android_adb_ums_acm_rndis_mtp gadget: Android Composite USB, version: May 29 2011
+<6>android_adb_ums_acm_rndis_mtp gadget: android_adb_ums_acm_rndis_mtp ready
+<6>Registered gadget driver 'android_adb_ums_acm_rndis_mtp'
+[udc_enable]AP_USB_Power off by Bootup : 1<4>mice: could not register psaux device, error: -16
+<6>mice: PS/2 mouse device common for all mice
+<6>input: s3c-keypad as /devices/virtual/input/input1
+s3c-keypad Initialized
+S3C-Keypad H3C f000333 H2C ff00f33 
+S3C-Keypad keypad_scan() is called
+S3C-Keypad row val = 7<6>S3C Keypad Driver
+<6>i2c /dev entries driver
+<6>i2c-gpio i2c-gpio.4: using pins 247 (SDA) and 246 (SCL)
+<6>i2c-gpio i2c-gpio.5: using pins 203 (SDA) and 204 (SCL)
+<6>regulator: DCDC1: 750 <--> 1500 mV 
+<6>regulator: DCDC2: 750 <--> 1500 mV 
+<6>regulator: LDO4: 3300 mV 
+<6>regulator: LDO7: 1800 mV 
+<6>regulator: LDO17: 3000 <--> 3200 mV 
+<6>i2c-gpio i2c-gpio.6: using pins 206 (SDA) and 209 (SCL)
+[FSA9480] fsa9480_codec_probe
+HVWk s3c, for alarmsfsa9480_interrupt
+<6>s3c2410-rtc s3c2410-rtc: rtc core: registered s3c as rtc0
+[FSA9480] FSA9480_ReadIntRegister
+<7>Another host want the wakelock : 1
+<7> Universal : Card status  0
+<6>VFP support v0.3: implementor 41 architecture 3 part 30 variant c rev 2
+<7>qt602240 GPIO Status
+<7>TOUCH_EN  : High
+<7>TOUCH_INT : Low
+<7>*** DEBUG : First we search for SDIO...(2)***
+<7>*** DEBUG : ...then normal SD...(2) ***
+<6>ldo38_control : turn ON LDO3 and LDO8 (cur_stat=0, req=1)
+[otg_clock_enable] clk_enable(otg_clock) OK.
+[udc_enable]AP_USB_Power off by Bootup : 1[FSA9480] FSA9480_ProcessDevice (dev1 : 0x0, dev2 : 0x8)
+FSA9480_DEV_TY2_JIG_UART_OFF --- ATTACH
+JIT UART OFF
+qt602240_i2c is attached..
+<7>|  Quantum Touch Driver Probe!            |
+<6>input: qt602240_ts_input as /devices/virtual/input/input2
+QT_reprogram check
+[QT] init_touch_driver start
+[QT] init_I2C start
 
-[TSP] Touch device found
-Version:    0x16
-Family:   0x80
-Variant:    0x1
-Build number:   0xab
-Matrix X size : 19
-Matrix Y size : 11
-Calculated CRC:0x1c 0x34 0xff 0x00 
+[TSP] Touch device found
+Version:    0x16
+Family:   0x80
+Variant:    0x1
+Build number:   0xab
+Matrix X size : 19
+Matrix Y size : 11
+Calculated CRC:0x1c 0x34 0xff 0x00 
 
-Stored CRC:0x1c 0x34 0xff 0x00 
+Stored CRC:0x1c 0x34 0xff 0x00 
 
-Info block CRC value OK.
+Info block CRC value OK.
 
 
-[TSP]qt_Power_Config_Init real board 
-<6>mmc2: new high speed SDHC card at address e624
-<6>mmcblk1: mmc2:e624 SU16G 14.8 GiB 
-<6> mmcblk1:
-[TSP][reset_chip] 
+[TSP]qt_Power_Config_Init real board 
+<6>mmc2: new high speed SDHC card at address e624
+<6>mmcblk1: mmc2:e624 SU16G 14.8 GiB 
+<6> mmcblk1:
+[TSP][reset_chip] 
 
-<7>mmc2: wake_lock_timeout 1sec 0
-Chip reset OK!
-[QT] ret : 0, qt602240->client name : qt602240_ts
-<7>[TSP] msg id =  1 90 d0 8c 67 0 0 0 0
-[QT] qt602240_init/5959
-[QT] qt602240_init/5987, platform_driver_register!!
-<6>s3c2410-rtc s3c2410-rtc: setting system clock to 2011-06-01 19:57:56 UTC (1306958276)
-<6>FIMC0 registered successfully
-<7>[TSP] msg id =  1 0 d0 8c 67 0 0 0 0
-<6>FIMC1 registered successfully
-<6>FIMC2 registered successfully
-<6>S5PC1XX TVOUT Driver, (c) 2009 Samsung Electronics
-<6>s5p-tvout s5p-tvout: hpd status is cable removed
-<6>fg_read_vcell: VCELL=3878
-[SOC] C:0, P:75
-pmic interrupt registered 
-<6>Freeing init memory: 7728K
-<4>Warning: unable to open an initial console.
-<3>init: /init.rc: 40: invalid command 'chmode'
-[    2.342275] init: /init.rc: 40: invalid command 'chmode'
+<7>mmc2: wake_lock_timeout 1sec 0
+Chip reset OK!
+[QT] ret : 0, qt602240->client name : qt602240_ts
+<7>[TSP] msg id =  1 90 d0 8c 67 0 0 0 0
+[QT] qt602240_init/5959
+[QT] qt602240_init/5987, platform_driver_register!!
+<6>s3c2410-rtc s3c2410-rtc: setting system clock to 2011-06-01 19:57:56 UTC (1306958276)
+<6>FIMC0 registered successfully
+<7>[TSP] msg id =  1 0 d0 8c 67 0 0 0 0
+<6>FIMC1 registered successfully
+<6>FIMC2 registered successfully
+<6>S5PC1XX TVOUT Driver, (c) 2009 Samsung Electronics
+<6>s5p-tvout s5p-tvout: hpd status is cable removed
+<6>fg_read_vcell: VCELL=3878
+[SOC] C:0, P:75
+pmic interrupt registered 
+<6>Freeing init memory: 7728K
+<4>Warning: unable to open an initial console.
+<3>init: /init.rc: 40: invalid command 'chmode'
+[    2.342275] init: /init.rc: 40: invalid command 'chmode'
 <3>init: /init.rc: 263: chmod requires 2 arguments
-[    2.352075] init: /init.rc: 263: chmod requires 2 arguments
+[    2.352075] init: /init.rc: 263: chmod requires 2 arguments
 <3>init: /init.rc: 375: invalid option 'enabled'
-[    2.361962] init: /init.rc: 375: invalid option 'enabled'
+[    2.361962] init: /init.rc: 375: invalid option 'enabled'
 !@Init process: device_init #3
-<3>init: ro.secure:1
-[    2.837466] init: ro.secure:1
+<3>init: ro.secure:1
+[    2.837466] init: ro.secure:1
 <3>init: ro.allow.mock.location:0
-[    2.843449] init: ro.allow.mock.location:0
+[    2.843449] init: ro.allow.mock.location:0
 <3>init: ro.debuggable:1
-[    2.849781] init: r<.debuggable:1
+[    2.849781] init: r<.debuggable:1
 3>init: persist.service.adb.enable:1
-[    2.856372] init: persist.service.adb.enable:1
+[    2.856372] init: persist.service.adb.enable:1
 <3>init: cannot open '/initlogo.rle'
-[    2.869860] init: cannot open '/initlogo.rle'
+[    2.869860] init: cannot open '/initlogo.rle'
 <3>init: ro.factorytest:0
-[    2.876538] init: ro<factorytest:0
+[    2.876538] init: ro<factorytest:0
 3>init: ro.serialno:
-[    2.881829] init< ro.serialno:
+[    2.881829] init< ro.serialno:
 3>init: ro.bootmode:unknown
-[    2.887379] init: ro.bo<tmode:unknown
+[    2.887379] init: ro.bo<tmode:unknown
 3>init: ro.baseband:unknown
-[    2.893537] init: ro.ba<eband:unknown
+[    2.893537] init: ro.ba<eband:unknown
 3>init: ro.carrier:unknown
-[    2.899608] init: ro.c<rrier:unknown
+[    2.899608] init: ro.c<rrier:unknown
 3>init: ro.bootloader:unknown
-[    2.905853] init: ro.boot<oader:unknown
+[    2.905853] init: ro.boot<oader:unknown
 3>init: ro.hardware:SMDKC110
-[    2.912271] init: ro.har<ware:SMDKC110
+[    2.912271] init: ro.har<ware:SMDKC110
 3>init: ro.revision:48
-[    2.918082] init: <o.revision:48
+[    2.918082] init: <o.revision:48
 3>init: dpm.allowcamera:0
-[    2.923633] init: dpm<allowcamera:0
+[    2.923633] init: dpm<allowcamera:0
 6>init: command 'loglevel' r=0
-<6>init: command 'export' r=0
-<6>init: command 'export' r=0
-<6>init: command 'export' r=0
-<6>init: command 'export' r=0
-<6>init: command 'export' r=0
-<6>init: command 'export' r=0
-<6>init: command 'export' r=0
-<6>init: command 'export' r=0
-<6>init: command 'export' r=0
-<6>init: command 'export' r=0
-<6>init: command 'export' r=0
-<6>init: command 'insmod' r=0
-PA FB = 0x43B04000, bits per pixel = 32
-screen width=480 height=800 va=0xd3b04000 pa=0x43b04000
-Back frameBuffer[0].VAddr=d3c7b000 PAddr=43c7b000 size=1536000
-<6>init: command 'insmod' r=0
-<6>init: command 'insmod' r=0
-[VIBETONZ:WJYOO] MISC_REGISTER nRet = 0
-<6>init: command 'insmod' r=0
-<2>--------Si4709_driver_init called
-[    3.071452] --------Si4709_driver_init called
+<6>init: command 'export' r=0
+<6>init: command 'export' r=0
+<6>init: command 'export' r=0
+<6>init: command 'export' r=0
+<6>init: command 'export' r=0
+<6>init: command 'export' r=0
+<6>init: command 'export' r=0
+<6>init: command 'export' r=0
+<6>init: command 'export' r=0
+<6>init: command 'export' r=0
+<6>init: command 'export' r=0
+<6>init: command 'insmod' r=0
+PA FB = 0x43B04000, bits per pixel = 32
+screen width=480 height=800 va=0xd3b04000 pa=0x43b04000
+Back frameBuffer[0].VAddr=d3c7b000 PAddr=43c7b000 size=1536000
+<6>init: command 'insmod' r=0
+<6>init: command 'insmod' r=0
+[VIBETONZ:WJYOO] MISC_REGISTER nRet = 0
+<6>init: command 'insmod' r=0
+<2>--------Si4709_driver_init called
+[    3.071452] --------Si4709_driver_init called
 <2>--------Si4709_isr: FM device called IRQ: 321
-[    3.080123] --------Si4709_isr: FM device called IRQ: 321
+[    3.080123] --------Si4709_isr: FM device called IRQ: 321
 <2>--------Si4709_driver_init request_irq success 192
-[    3.090270] --------Si4709_driver_init request_i<q success 192
+[    3.090270] --------Si4709_driver_init request_i<q success 192
 2>--------Si4709 i2c driver Si4709_i2c_driver_init called
-[    3.101198] --------Si4709 i2c driver Si4709_i2c_driver_init called
+[    3.101198] --------Si4709 i2c driver Si4709_i2c_driver_init called
 <2>------------- si4709_i2c_probe 88
 
-[    3.110912] ------------- si4709_i2c_probe 88
+[    3.110912] ------------- si4709_i2c_probe 88
 [<   3.110920] 
 2>--------Si4709 i2c driver Si4709_probe called
-[    3.120973] --------Si4709 i2c driver Si470<_probe called
+[    3.120973] --------Si4709 i2c driver Si470<_probe called
 2>--------Si4709_dev_init called
-[    3.129299] --------Si4709_dev_init called
+[    3.129299] --------Si4709_dev_init called
 <2>--------Si4709_dev_init call over
-[    3.140549] --------Si4709_dev_init call over
+[    3.140549] --------Si4709_dev_init call over
 <2>--------Si4709_driver_init successful
-[    3.148528] --------Si4709_driver_init successful
+[    3.148528] --------Si4709_driver_init successful
 <6>init: command 'insmod' r=0
-<6>init: command 'mkdir' r=0
-<6>init: command 'mount' r=0
-<6>init: command 'symlink' r=0
-<6>init: command 'symlink' r=0
-<6>init: command 'symlink' r=0
-<6>init: command 'mkdir' r=0
-<6>init: command 'mount' r=0
-<6>init: command 'mkdir' r=0
-<6>init: command 'mount' r=0
-<6>init: command 'mkdir' r=0
-<6>init: command 'mount' r=0
-<3>init: audioflinger.bootsnd:1
-[    3.223160] init: audiofli<ger.bootsnd:1
+<6>init: command 'mkdir' r=0
+<6>init: command 'mount' r=0
+<6>init: command 'symlink' r=0
+<6>init: command 'symlink' r=0
+<6>init: command 'symlink' r=0
+<6>init: command 'mkdir' r=0
+<6>init: command 'mount' r=0
+<6>init: command 'mkdir' r=0
+<6>init: command 'mount' r=0
+<6>init: command 'mkdir' r=0
+<6>init: command 'mount' r=0
+<3>init: audioflinger.bootsnd:1
+[    3.223160] init: audiofli<ger.bootsnd:1
 6>init: command 'setprop' r=0
-<6>init: command 'symlink' r=0
-<6>init: command 'symlink' r=0
-<6>init: command 'mkdir' r=0
-<6>init: command 'mkdir' r=0
-<6>init: command 'symlink' r=0
-<6>init: command 'chown' r=0
-<6>init: command 'mkdir' r=0
-<6>init: command 'mount' r=0
-<6>init: command 'mkdir' r=0
-<4>fsr: module license 'Samsung Proprietary' taints kernel.
-<4>Disabling lock debugging due to kernel taint
-[BIF:IN ] ++FSR_BML_Init(nFlag: 0x0)
-[PAM:   ] ++FSR_PAM_Init
-[PAM:   ]   OneNAND physical base address       : 0xb0000000
-[PAM:   ]   OneNAND virtual  base address       : 0xe0b40000
-[PAM:   ]   OneNAND Controller DMA physical base address       : 0xb0600000
-[PAM:   ]   OneNAND Controller DMA virtual  base address       : 0xe0b80000
-[PAM:   ]   OneNAND nMID=0xec : nDID=0x50 Page size=4
-[PAM:   ] --FSR_PAM_Init
-[BIF:   ]   FSR VERSION: FSR_1.2.1p1_b139_RTM
-[OND:INF]   FSR_OND_4K_Open(nDev:0, pParam:0xc4ff1e00, nFlag:0x00000000) / 1033 line
-            pstOND4kCxt->nBaseAddr: 0xe0b40000
-            nDev=0, nMID=0x00ec, nDID=0x0050, nVID=0x013e
-[OND:INF]   pstOND4kCxt->nSysConf1:0xf0c6 / 1116 line
-[OND:INF]   pstOND4kCxt->nBlksForSLCArea[0]:2048 / 1133 line
-[OND:INF]   pstOND4kCxt->nIntID   :0x0000 / 1236 line
-[OND:INF]   1X_CACHEPGM CMD : 0x007f
-[OND:INF]   1X_PLOAD    CMD : 0x0003
-[BBM:INF]   Scan from 2004 to 2047 to find BML meta blocks (die: 0)
-[BBM:INF]   ffff ffff ffff ffff ffff ffff ffff ffff ffff ffff 
-[BBM:INF]   ffff ffff ffff ffff ffff ffff ffff ffff ffff ffff 
-[BBM:INF]   ffff ffff ffff ffff ffff ffff ffff ffff ffff ffff 
-[BBM:INF]   ffff ffff ffff ffff ffff ffff ffff ffff ffff ffff 
-[BBM:INF]   a5a5 a5a5 ffff 
-[BBM:   ]  << DevNO:0, DieNO: 0 MAPPING INFORMATION >>
-[BBM:   ]   Bad Mark Information
-[BBM:   ]      - Bad Mark (0x2222) by erase error
-[BBM:   ]      - Bad Mark (0x4444) by write error
-[BBM:   ]   << Total : 0 BAD-MAPPING INFORMATION >>
-[BIF:   ]   nPartition Information (nVol : 0)
-            nVer : 0xffffffff
-            00 / nID:0x09 / nAttr:0x00001002 / 1stVun:    0 / Units:    1
-            01 / nID:0x00 / nAttr:0x00001002 / 1stVun:    1 / Units:    7
-            02 / nID:0x01 / nAttr:0x00001001 / 1stVun:    8 / Units:  796
-            03 / nID:0x20 / nAttr:0x00001101 / 1stVun:  804 / Units:  716
-            04 / nID:0x21 / nAttr:0x00001101 / 1stVun: 1520 / Units:  372
-            05 / nID:0x23 / nAttr:0x00001101 / 1stVun: 1892 / Units:   56
-            06 / nID:0x24 / nAttr:0x00001001 / 1stVun: 1948 / Units:   56
-[BBM:INF]   The registered blocks in ERL are handled
-[BBM:INF]   (number of blocks: 0)
-BML: Registered BML Driver.
-<6>init: command 'insmod' r=0
-[BIF:IN ] ++FSR_BML_Init(nFlag: 0x0)
-[BIF:   ]   FSR_BML_Init(nFlag:0x0, nRe:FSR_BML_ALREADY_INITIALIZED) / 1027 line
-FSR: Registered STL Driver.
-<6>init: command 'insmod' r=0
-<6>init: command 'insmod' r=0
-<6>init: command 'insmod' r=0
-<6>init: command 'insmod' r=0
-<6>param_init
-<6>load_lfs_param_value: param.blk read successfully.
-<6>init: command 'insmod' r=0
-<6>init: command 'symlink' r=0
-<6>init: command 'mkdir' r=-17
-<6>init: command 'mkdir' r=-17
-<6>init: command 'mkdir' r=0
-<6>init: command 'chown' r=0
-<6>init: command 'chmod' r=0
-<6>init: command 'mkdir' r=-17
-<6>init: command 'mkdir' r=0
-<6>init: command 'mkdir' r=0
-<6>init: command 'mkdir' r=0
-<6>init: command 'mkdir' r=0
-<6>init: command 'mkdir' r=0
-<6>init: command 'mount' r=0
-<6>init: command 'write' r=0
-<6>init: command 'write' r=0
-<6>init: command 'write' r=0
-<6>init: command 'write' r=0
-<6>init: command 'write' r=0
-<6>init: command 'write' r=0
-<6>init: command 'write' r=0
-<6>init: command 'mkdir' r=0
-<6>init: command 'mount' r=0
-<6>init: command 'chown' r=0
-<6>init: command 'chown' r=0
-<6>init: command 'chmod' r=0
-<6>init: command 'write' r=-22
-<6>init: command 'mkdir' r=0
-<6>init: command 'chown' r=0
-<6>init: command 'chmod' r=0
-<6>init: command 'write' r=0
-<6>init: command 'mkdir' r=0
-<6>init: command 'chown' r=0
-<6>init: command 'chmod' r=0
-<6>init: command 'write' r=0
-<6>init: command 'chmod' r=-2
-<6>init: command 'chown' r=-1
-<6>init: command 'chmod' r=0
-<6>init: command 'chmod' r=-2
-<6>init: command 'chmod' r=-2
-<6>init: command 'chown' r=-2
-<6>init: command 'symlink' r=0
-<6>init: command 'mkdir' r=-17
-<6>init: command 'chown' r=-1
-<6>init: command 'chmod' r=0
-<6>init: command 'copy' r=-1
-<6>init: command 'chown' r=-2
-<6>init: command 'chmod' r=-2
-<6>init: command 'copy' r=-1
-<6>init: command 'chown' r=-2
-<6>init: command 'chmod' r=-2
-<6>init: command 'write' r=-2
-<6>init: command 'chown' r=-1
-<6>init: command 'chmod' r=0
-<6>init: command 'chown' r=-1
-<6>init: command 'chmod' r=0
-<6>init: command 'mount' r=-1
-<6>init: command 'chown' r=0
-[FSA9480]connectivity_switching_init = switch_sel : 0x7
-[FSA9480_Enable_AP_USB] Enable AP USB
-[ap_usb_power_on]AP USB Power ON, askon: 0, mtp : 0
-!!!!!!!!!!! [ap_usb_power_on]AP samsung_kies_mtp_mode_flag0, mtp:0
-[USB] enable_adb - enable(0x01), prev_status(0x00)
-Here is enable_adb@@@@
-[enable_adb]USBSTATUS_SAMSUNG_KIES
-<6>acm_function_config_changed
-<6>mtp_function_config_changed
-  interface 0 = acm/df81b600
-  interface 1 = acm/df81b600
-  interface 2 = Gadget_MTP/df8dee00
-[ap_usb_power_on]AP USB Power ON, askon: 0, mtp : 0
-!!!!!!!!!!! [ap_usb_power_on]AP samsung_kies_mtp_mode_flag0, mtp:0
-<6>ldo38_control : turn ON LDO3 and LDO8 (cur_stat=1, req=1)
-[otg_clock_enable] already clk_enabled.
-[otg_clock_enable] clk_disable(otg_clock) OK.
-<6>ldo38_control : turn OFF LDO3 and LDO8 (cur_stat=1, req=1)
-<6>init: command 'chown' r=0
-<6>init: command 'chmod' r=0
-<6>init: command 'chown' r=0
-<6>init: command 'chmod' r=0
-[FSA9480]connectivity_switching_init = switch_sel : 0x7
-<6>init: command 'mkdir' r=-17
-<6>init: command 'chown' r=-1
-<6>init: command 'chmod' r=0
-<6>init: command 'mkdir' r=-17
-<6>init: command 'mkdir' r=-17
-<6>init: command 'mkdir' r=-17
-<6>init: command 'mkdir' r=-17
-<6>init: command 'mkdir' r=-17
-<6>init: command 'mkdir' r=-17
-<6>init: command 'mkdir' r=-17
-<6>init: command 'mkdir' r=-17
-<6>init: command 'mkdir' r=-17
-<6>init: command 'chmod' r=0
-<6>init: command 'mkdir' r=-17
-<6>init: command 'mkdir' r=-17
-<6>init: command 'mkdir' r=-17
-<6>init: command 'chmod' r=-2
-<6>init: command 'mkdir' r=-17
-<6>init: command 'mkdir' r=-17
-<6>init: command 'mkdir' r=-17
-<6>init: command 'mkdir' r=-17
-<6>init: command 'mkdir' r=-17
-<6>init: command 'mkdir' r=-17
-<6>init: command 'mkdir' r=-17
-<6>init: command 'chmod' r=0
-<6>init: command 'chmod' r=0
-<6>init: command 'chmod' r=0
-<6>init: command 'chmod' r=0
-<6>init: command 'chmod' r=0
-<6>init: command 'chmod' r=0
-<6>init: command 'mkdir' r=-17
-<6>init: command 'chown' r=-1
-<6>init: command 'chmod' r=0
-<6>init: command 'mkdir' r=-17
-<6>init: command 'mkdir' r=-17
-<6>init: command 'chown' r=0
-<6>init: command 'chmod' r=0
-<6>init: command 'chown' r=0
-<6>init: command 'chmod' r=0
-Storage device init
-<6>init: command 'insmod' r=0
-######## bthid_init: ########
-######## bthid_init: done ########
-<6>init: command 'insmod' r=0
-<6>init: command 'mkdir' r=-17
-<6>init: command 'chown' r=0
-<6>init: command 'chmod' r=0
-<6>init: command 'chmod' r=-2
-<6>init: command 'mkdir' r=-17
-<6>init: command 'mkdir' r=-17
-<6>init: command 'mkdir' r=0
-<6>init: command 'chmod' r=-2
-<6>init: command 'mkdir' r=-17
-<6>init: command 'mount' r=0
-<6>init: command 'mkdir' r=-30
-<6>init: command 'chown' r=-2
-<3>init: ro.build.id:FRF91
-[    4.280002] init: ro.<uild.id:FRF91
+<6>init: command 'symlink' r=0
+<6>init: command 'symlink' r=0
+<6>init: command 'mkdir' r=0
+<6>init: command 'mkdir' r=0
+<6>init: command 'symlink' r=0
+<6>init: command 'chown' r=0
+<6>init: command 'mkdir' r=0
+<6>init: command 'mount' r=0
+<6>init: command 'mkdir' r=0
+<4>fsr: module license 'Samsung Proprietary' taints kernel.
+<4>Disabling lock debugging due to kernel taint
+[BIF:IN ] ++FSR_BML_Init(nFlag: 0x0)
+[PAM:   ] ++FSR_PAM_Init
+[PAM:   ]   OneNAND physical base address       : 0xb0000000
+[PAM:   ]   OneNAND virtual  base address       : 0xe0b40000
+[PAM:   ]   OneNAND Controller DMA physical base address       : 0xb0600000
+[PAM:   ]   OneNAND Controller DMA virtual  base address       : 0xe0b80000
+[PAM:   ]   OneNAND nMID=0xec : nDID=0x50 Page size=4
+[PAM:   ] --FSR_PAM_Init
+[BIF:   ]   FSR VERSION: FSR_1.2.1p1_b139_RTM
+[OND:INF]   FSR_OND_4K_Open(nDev:0, pParam:0xc4ff1e00, nFlag:0x00000000) / 1033 line
+            pstOND4kCxt->nBaseAddr: 0xe0b40000
+            nDev=0, nMID=0x00ec, nDID=0x0050, nVID=0x013e
+[OND:INF]   pstOND4kCxt->nSysConf1:0xf0c6 / 1116 line
+[OND:INF]   pstOND4kCxt->nBlksForSLCArea[0]:2048 / 1133 line
+[OND:INF]   pstOND4kCxt->nIntID   :0x0000 / 1236 line
+[OND:INF]   1X_CACHEPGM CMD : 0x007f
+[OND:INF]   1X_PLOAD    CMD : 0x0003
+[BBM:INF]   Scan from 2004 to 2047 to find BML meta blocks (die: 0)
+[BBM:INF]   ffff ffff ffff ffff ffff ffff ffff ffff ffff ffff 
+[BBM:INF]   ffff ffff ffff ffff ffff ffff ffff ffff ffff ffff 
+[BBM:INF]   ffff ffff ffff ffff ffff ffff ffff ffff ffff ffff 
+[BBM:INF]   ffff ffff ffff ffff ffff ffff ffff ffff ffff ffff 
+[BBM:INF]   a5a5 a5a5 ffff 
+[BBM:   ]  << DevNO:0, DieNO: 0 MAPPING INFORMATION >>
+[BBM:   ]   Bad Mark Information
+[BBM:   ]      - Bad Mark (0x2222) by erase error
+[BBM:   ]      - Bad Mark (0x4444) by write error
+[BBM:   ]   << Total : 0 BAD-MAPPING INFORMATION >>
+[BIF:   ]   nPartition Information (nVol : 0)
+            nVer : 0xffffffff
+            00 / nID:0x09 / nAttr:0x00001002 / 1stVun:    0 / Units:    1
+            01 / nID:0x00 / nAttr:0x00001002 / 1stVun:    1 / Units:    7
+            02 / nID:0x01 / nAttr:0x00001001 / 1stVun:    8 / Units:  796
+            03 / nID:0x20 / nAttr:0x00001101 / 1stVun:  804 / Units:  716
+            04 / nID:0x21 / nAttr:0x00001101 / 1stVun: 1520 / Units:  372
+            05 / nID:0x23 / nAttr:0x00001101 / 1stVun: 1892 / Units:   56
+            06 / nID:0x24 / nAttr:0x00001001 / 1stVun: 1948 / Units:   56
+[BBM:INF]   The registered blocks in ERL are handled
+[BBM:INF]   (number of blocks: 0)
+BML: Registered BML Driver.
+<6>init: command 'insmod' r=0
+[BIF:IN ] ++FSR_BML_Init(nFlag: 0x0)
+[BIF:   ]   FSR_BML_Init(nFlag:0x0, nRe:FSR_BML_ALREADY_INITIALIZED) / 1027 line
+FSR: Registered STL Driver.
+<6>init: command 'insmod' r=0
+<6>init: command 'insmod' r=0
+<6>init: command 'insmod' r=0
+<6>init: command 'insmod' r=0
+<6>param_init
+<6>load_lfs_param_value: param.blk read successfully.
+<6>init: command 'insmod' r=0
+<6>init: command 'symlink' r=0
+<6>init: command 'mkdir' r=-17
+<6>init: command 'mkdir' r=-17
+<6>init: command 'mkdir' r=0
+<6>init: command 'chown' r=0
+<6>init: command 'chmod' r=0
+<6>init: command 'mkdir' r=-17
+<6>init: command 'mkdir' r=0
+<6>init: command 'mkdir' r=0
+<6>init: command 'mkdir' r=0
+<6>init: command 'mkdir' r=0
+<6>init: command 'mkdir' r=0
+<6>init: command 'mount' r=0
+<6>init: command 'write' r=0
+<6>init: command 'write' r=0
+<6>init: command 'write' r=0
+<6>init: command 'write' r=0
+<6>init: command 'write' r=0
+<6>init: command 'write' r=0
+<6>init: command 'write' r=0
+<6>init: command 'mkdir' r=0
+<6>init: command 'mount' r=0
+<6>init: command 'chown' r=0
+<6>init: command 'chown' r=0
+<6>init: command 'chmod' r=0
+<6>init: command 'write' r=-22
+<6>init: command 'mkdir' r=0
+<6>init: command 'chown' r=0
+<6>init: command 'chmod' r=0
+<6>init: command 'write' r=0
+<6>init: command 'mkdir' r=0
+<6>init: command 'chown' r=0
+<6>init: command 'chmod' r=0
+<6>init: command 'write' r=0
+<6>init: command 'chmod' r=-2
+<6>init: command 'chown' r=-1
+<6>init: command 'chmod' r=0
+<6>init: command 'chmod' r=-2
+<6>init: command 'chmod' r=-2
+<6>init: command 'chown' r=-2
+<6>init: command 'symlink' r=0
+<6>init: command 'mkdir' r=-17
+<6>init: command 'chown' r=-1
+<6>init: command 'chmod' r=0
+<6>init: command 'copy' r=-1
+<6>init: command 'chown' r=-2
+<6>init: command 'chmod' r=-2
+<6>init: command 'copy' r=-1
+<6>init: command 'chown' r=-2
+<6>init: command 'chmod' r=-2
+<6>init: command 'write' r=-2
+<6>init: command 'chown' r=-1
+<6>init: command 'chmod' r=0
+<6>init: command 'chown' r=-1
+<6>init: command 'chmod' r=0
+<6>init: command 'mount' r=-1
+<6>init: command 'chown' r=0
+[FSA9480]connectivity_switching_init = switch_sel : 0x7
+[FSA9480_Enable_AP_USB] Enable AP USB
+[ap_usb_power_on]AP USB Power ON, askon: 0, mtp : 0
+!!!!!!!!!!! [ap_usb_power_on]AP samsung_kies_mtp_mode_flag0, mtp:0
+[USB] enable_adb - enable(0x01), prev_status(0x00)
+Here is enable_adb@@@@
+[enable_adb]USBSTATUS_SAMSUNG_KIES
+<6>acm_function_config_changed
+<6>mtp_function_config_changed
+  interface 0 = acm/df81b600
+  interface 1 = acm/df81b600
+  interface 2 = Gadget_MTP/df8dee00
+[ap_usb_power_on]AP USB Power ON, askon: 0, mtp : 0
+!!!!!!!!!!! [ap_usb_power_on]AP samsung_kies_mtp_mode_flag0, mtp:0
+<6>ldo38_control : turn ON LDO3 and LDO8 (cur_stat=1, req=1)
+[otg_clock_enable] already clk_enabled.
+[otg_clock_enable] clk_disable(otg_clock) OK.
+<6>ldo38_control : turn OFF LDO3 and LDO8 (cur_stat=1, req=1)
+<6>init: command 'chown' r=0
+<6>init: command 'chmod' r=0
+<6>init: command 'chown' r=0
+<6>init: command 'chmod' r=0
+[FSA9480]connectivity_switching_init = switch_sel : 0x7
+<6>init: command 'mkdir' r=-17
+<6>init: command 'chown' r=-1
+<6>init: command 'chmod' r=0
+<6>init: command 'mkdir' r=-17
+<6>init: command 'mkdir' r=-17
+<6>init: command 'mkdir' r=-17
+<6>init: command 'mkdir' r=-17
+<6>init: command 'mkdir' r=-17
+<6>init: command 'mkdir' r=-17
+<6>init: command 'mkdir' r=-17
+<6>init: command 'mkdir' r=-17
+<6>init: command 'mkdir' r=-17
+<6>init: command 'chmod' r=0
+<6>init: command 'mkdir' r=-17
+<6>init: command 'mkdir' r=-17
+<6>init: command 'mkdir' r=-17
+<6>init: command 'chmod' r=-2
+<6>init: command 'mkdir' r=-17
+<6>init: command 'mkdir' r=-17
+<6>init: command 'mkdir' r=-17
+<6>init: command 'mkdir' r=-17
+<6>init: command 'mkdir' r=-17
+<6>init: command 'mkdir' r=-17
+<6>init: command 'mkdir' r=-17
+<6>init: command 'chmod' r=0
+<6>init: command 'chmod' r=0
+<6>init: command 'chmod' r=0
+<6>init: command 'chmod' r=0
+<6>init: command 'chmod' r=0
+<6>init: command 'chmod' r=0
+<6>init: command 'mkdir' r=-17
+<6>init: command 'chown' r=-1
+<6>init: command 'chmod' r=0
+<6>init: command 'mkdir' r=-17
+<6>init: command 'mkdir' r=-17
+<6>init: command 'chown' r=0
+<6>init: command 'chmod' r=0
+<6>init: command 'chown' r=0
+<6>init: command 'chmod' r=0
+Storage device init
+<6>init: command 'insmod' r=0
+######## bthid_init: ########
+######## bthid_init: done ########
+<6>init: command 'insmod' r=0
+<6>init: command 'mkdir' r=-17
+<6>init: command 'chown' r=0
+<6>init: command 'chmod' r=0
+<6>init: command 'chmod' r=-2
+<6>init: command 'mkdir' r=-17
+<6>init: command 'mkdir' r=-17
+<6>init: command 'mkdir' r=0
+<6>init: command 'chmod' r=-2
+<6>init: command 'mkdir' r=-17
+<6>init: command 'mount' r=0
+<6>init: command 'mkdir' r=-30
+<6>init: command 'chown' r=-2
+<3>init: ro.build.id:FRF91
+[    4.280002] init: ro.<uild.id:FRF91
 3>init: ro.build.display.id:google_sdk-eng 2.2 FRF91 43546 test-keys
-[    4.289542] init: ro.build.display.id:google_sdk-eng 2.2 FRF91 4<546 test-keys
+[    4.289542] init: ro.build.display.id:google_sdk-eng 2.2 FRF91 4<546 test-keys
 3>init: ro.build.version.incremental:43546
-[    4.300557] init: ro.build.version.inc<emental:43546
+[    4.300557] init: ro.build.version.inc<emental:43546
 3>init: ro.build.version.sdk:8
-[    4.308276] init: ro.build<version.sdk:8
+[    4.308276] init: ro.build<version.sdk:8
 3>init: ro.build.version.codename:REL
-[    4.315561] init: ro.build.versio<.codename:REL
+[    4.315561] init: ro.build.versio<.codename:REL
 3>init: ro.build.version.release:2.2
-[    4.323367] init: ro.build.versi<n.release:2.2
+[    4.323367] init: ro.build.versi<n.release:2.2
 3>init: ro.build.date:Wed Jun 30 15:32:02 PDT 2010
-[    4.332301] init: ro.build.date:Wed Jun 30 15:<2:02 PDT 2010
+[    4.332301] init: ro.build.date:Wed Jun 30 15:<2:02 PDT 2010
 3>init: ro.build.date.utc:1277937122
-[    4.341234] init: ro.build.date.<tc:1277937122
+[    4.341234] init: ro.build.date.<tc:1277937122
 3>init: ro.build.type:eng
-[    4.347999] init: ro.<uild.type:eng
+[    4.347999] init: ro.<uild.type:eng
 3>init: ro.build.user:android-build
-[    4.354678] init: ro.build.user<android-build
+[    4.354678] init: ro.build.user<android-build
 3>init: ro.build.host:e-honda.mtv.corp.google.com
-[    4.363437] init: ro.build.host:e-honda.mtv.c<rp.google.com
+[    4.363437] init: ro.build.host:e-honda.mtv.c<rp.google.com
 3>init: ro.build.tags:test-keys
-[    4.371850] init: ro.build.<ags:test-keys
+[    4.371850] init: ro.build.<ags:test-keys
 3>init: ro.product.model:google_sdk
-[    4.379049] init: ro.product.mo<el:google_sdk
+[    4.379049] init: ro.product.mo<el:google_sdk
 3>init: ro.product.brand:generic
-[    4.386335] init: ro.product<brand:generic
+[    4.386335] init: ro.product<brand:generic
 3>init: ro.product.name:google_sdk
-[    4.393533] init: ro.product.n<me:google_sdk
+[    4.393533] init: ro.product.n<me:google_sdk
 3>init: ro.product.device:generic
-[    4.400819] init: ro.product.<evice:generic
+[    4.400819] init: ro.product.<evice:generic
 3>init: ro.product.board:
-[    4.407324] init: ro.<roduct.board:
+[    4.407324] init: ro.<roduct.board:
 3>init: ro.product.cpu.abi:armeabi
-[    4.413915] init: ro.product.c<u.abi:armeabi
+[    4.413915] init: ro.product.c<u.abi:armeabi
 3>init: ro.product.manufacturer:unknown
-[    4.421721] init: ro.product.manufa<turer:unknown
+[    4.421721] init: ro.product.manufa<turer:unknown
 3>init: ro.product.locale.language:en
-[    4.429787] init: ro.product.loca<e.language:en
+[    4.429787] init: ro.product.loca<e.language:en
 3>init: ro.product.locale.region:US
-[    4.437506] init: ro.product.lo<ale.region:US
+[    4.437506] init: ro.product.lo<ale.region:US
 3>init: ro.wifi.channels:
-[    4.444185] init: ro.<ifi.channels:
+[    4.444185] init: ro.<ifi.channels:
 3>init: ro.board.platform:
-[    4.450082] init: ro.b<ard.platform:
+[    4.450082] init: ro.b<ard.platform:
 3>init: ro.build.product:generic
-[    4.456587] init: ro.build.p<oduct:generic
+[    4.456587] init: ro.build.p<oduct:generic
 3>init: ro.build.description:google_sdk-eng 2.2 FRF91 43546 test-keys
-[    4.466821] init: ro.build.description:google_sdk-eng 2.2 FRF91 4<546 test-keys
+[    4.466821] init: ro.build.description:google_sdk-eng 2.2 FRF91 4<546 test-keys
 3>init: ro.build.fingerprint:generic/google_sdk/generic/:2.2/FRF91/43546:eng/test-keys
-[    4.481739] init: ro.build.fingerprint:generic/google_sdk/generic/:2.2/FRF91/43546<eng/test-keys
+[    4.481739] init: ro.build.fingerprint:generic/google_sdk/generic/:2.2/FRF91/43546<eng/test-keys
 3>init: rild.libpath:/system/lib/libreference-ril.so
-[    4.495183] init: rild.libpath:/system/lib/libre<erence-ril.so
+[    4.495183] init: rild.libpath:/system/lib/libre<erence-ril.so
 3>init: rild.libargs:-d /dev/ttyS0
-[    4.504116] init: rild.libargs<-d /dev/ttyS0
+[    4.504116] init: rild.libargs<-d /dev/ttyS0
 3>init: ro.config.notification_sound:OnTheHunt.ogg
-[    4.512876] init: ro.config.notification_sound<OnTheHunt.ogg
+[    4.512876] init: ro.config.notification_sound<OnTheHunt.ogg
 3>init: ro.config.alarm_alert:Alarm_Classic.ogg
-[    4.522763] init: ro.config.alarm_alert:Ala<m_Classic.ogg
+[    4.522763] init: ro.config.alarm_alert:Ala<m_Classic.ogg
 3>init: media.stagefright.enable-player:true
-[    4.532130] init: media.stagefright.enab<e-player:true
+[    4.532130] init: media.stagefright.enab<e-player:true
 3>init: media.stagefright.enable-meta:true
-[    4.541064] init: media.stagefright.en<ble-meta:true
+[    4.541064] init: media.stagefright.en<ble-meta:true
 3>init: media.stagefright.enable-scan:true
-[    4.549824] init: media.stagefright.en<ble-scan:true
+[    4.549824] init: media.stagefright.en<ble-scan:true
 3>init: media.stagefright.enable-http:true
-[    4.558583] init: media.stagefright.en<ble-http:true
+[    4.558583] init: media.stagefright.en<ble-http:true
 3>init: ro.kernel.android.checkjni:1
-[    4.566823] init: ro.kernel.andr<id.checkjni:1
+[    4.566823] init: ro.kernel.andr<id.checkjni:1
 3>init: ro.setupwizard.mode:OPTIONAL
-[    4.574542] init: ro.setupwizard<mode:OPTIONAL
+[    4.574542] init: ro.setupwizard<mode:OPTIONAL
 3>init: xmpp.auto-presence:true
-[    4.581828] init: xmpp.auto<presence:true
+[    4.581828] init: xmpp.auto<presence:true
 3>init: ro.config.nocheckin:yes
-[    4.588679] init: ro.config<nocheckin:yes
+[    4.588679] init: ro.config<nocheckin:yes
 3>init: net.bt.name:Android
-[    4.595184] init: net.b<.name:Android
+[    4.595184] init: net.b<.name:Android
 3>init: net.change:net.bt.name
-[    4.601602] init: net.chan<e:net.bt.name
+[    4.601602] init: net.chan<e:net.bt.name
 3>init: dalvik.vm.stack-trace-file:/data/anr/traces.txt
-[    4.610449] init: dalvik.vm.stack-trace-file:/data/anr/traces.txt
+[    4.610449] init: dalvik.vm.stack-trace-file:/data/anr/traces.txt
 <6>init: Created socket '/dev/socket/property_service' with mode '666', user '0', group '0'
-<6>init: processing action 0x33320 (boot)
-[UART Switch] Path : PDA
-<6>inside set_param_value1 idx = 4, value = -1055271436
-<6>save_lfs_param_value: param.blk write successfully.
-<6>init: command 'write' r=0
-[FSA9480]usb_sel_store
- [FSA9480] usb_switch_mode: Path = PDA
-[FSA9480_Enable_AP_USB] Enable AP USB
-[ap_usb_power_on]AP USB Power ON, askon: 0, mtp : 0
-!!!!!!!!!!! [ap_usb_power_on]AP samsung_kies_mtp_mode_flag0, mtp:0
-<6>inside set_param_value1 idx = 4, value = -1055271436
-<6>save_lfs_param_value: param.blk write successfully.
-<6>init: command 'write' r=0
-<6>init: command 'ifup' r=0
-<6>init: command 'hostname' r=0
-<6>init: command 'domainname' r=0
-<6>init: command 'setrlimit' r=0
-<3>init: ro.FOREGROUND_APP_ADJ:0
-[    4.839038] init: ro.FOREGR<UND_APP_ADJ:0
+<6>init: processing action 0x33320 (boot)
+[UART Switch] Path : PDA
+<6>inside set_param_value1 idx = 4, value = -1055271436
+<6>save_lfs_param_value: param.blk write successfully.
+<6>init: command 'write' r=0
+[FSA9480]usb_sel_store
+ [FSA9480] usb_switch_mode: Path = PDA
+[FSA9480_Enable_AP_USB] Enable AP USB
+[ap_usb_power_on]AP USB Power ON, askon: 0, mtp : 0
+!!!!!!!!!!! [ap_usb_power_on]AP samsung_kies_mtp_mode_flag0, mtp:0
+<6>inside set_param_value1 idx = 4, value = -1055271436
+<6>save_lfs_param_value: param.blk write successfully.
+<6>init: command 'write' r=0
+<6>init: command 'ifup' r=0
+<6>init: command 'hostname' r=0
+<6>init: command 'domainname' r=0
+<6>init: command 'setrlimit' r=0
+<3>init: ro.FOREGROUND_APP_ADJ:0
+[    4.839038] init: ro.FOREGR<UND_APP_ADJ:0
 6>init: command 'setprop' r=0
-<3>init: ro.VISIBLE_APP_ADJ:1
-[    4.848405] init: ro.VIS<BLE_APP_ADJ:1
+<3>init: ro.VISIBLE_APP_ADJ:1
+[    4.848405] init: ro.VIS<BLE_APP_ADJ:1
 6>init: command 'setprop' r=0
-<3>init: ro.SECONDARY_SERVER_ADJ:2
-[    4.857946] init: ro.SECONDAR<_SERVER_ADJ:2
+<3>init: ro.SECONDARY_SERVER_ADJ:2
+[    4.857946] init: ro.SECONDAR<_SERVER_ADJ:2
 6>init: command 'setprop' r=0
-<3>init: ro.BACKUP_APP_ADJ:2
-[    4.867399] init: ro.BA<KUP_APP_ADJ:2
+<3>init: ro.BACKUP_APP_ADJ:2
+[    4.867399] init: ro.BA<KUP_APP_ADJ:2
 6>init: command 'setprop' r=0
-<3>init: ro.HOME_APP_ADJ:4
-[    4.876159] init: ro.<OME_APP_ADJ:4
+<3>init: ro.HOME_APP_ADJ:4
+[    4.876159] init: ro.<OME_APP_ADJ:4
 6>init: command 'setprop' r=0
-<3>init: ro.HIDDEN_APP_MIN_ADJ:7
-[    4.885266] init: ro.HIDDEN<APP_MIN_ADJ:7
+<3>init: ro.HIDDEN_APP_MIN_ADJ:7
+[    4.885266] init: ro.HIDDEN<APP_MIN_ADJ:7
 6>init: command 'setprop' r=0
-<3>init: ro.CONTENT_PROVIDER_ADJ:14
-[    4.895154] init: ro.CONTENT_P<OVIDER_ADJ:14
+<3>init: ro.CONTENT_PROVIDER_ADJ:14
+[    4.895154] init: ro.CONTENT_P<OVIDER_ADJ:14
 6>init: command 'setprop' r=0
-<3>init: ro.EMPTY_APP_ADJ:15
-[    4.904694] init: ro.EM<TY_APP_ADJ:15
+<3>init: ro.EMPTY_APP_ADJ:15
+[    4.904694] init: ro.EM<TY_APP_ADJ:15
 6>init: command 'setprop' r=0
-<3>init: ro.FOREGROUND_APP_MEM:2560
-[    4.914235] init: ro.FOREGROUN<_APP_MEM:2560
+<3>init: ro.FOREGROUND_APP_MEM:2560
+[    4.914235] init: ro.FOREGROUN<_APP_MEM:2560
 6>init: command 'setprop' r=0
-<3>init: ro.VISIBLE_APP_MEM:4096
-[    4.924122] init: ro.VISIBL<_APP_MEM:4096
+<3>init: ro.VISIBLE_APP_MEM:4096
+[    4.924122] init: ro.VISIBL<_APP_MEM:4096
 6>init: command 'setprop' r=0
-<3>init: ro.SECONDARY_SERVER_MEM:5120
-[    4.934183] init: ro.SECONDARY_S<RVER_MEM:5120
+<3>init: ro.SECONDARY_SERVER_MEM:5120
+[    4.934183] init: ro.SECONDARY_S<RVER_MEM:5120
 6>init: command 'setprop' r=0
-<3>init: ro.BACKUP_APP_MEM:5120
-[    4.944157] init: ro.BACKU<_APP_MEM:5120
+<3>init: ro.BACKUP_APP_MEM:5120
+[    4.944157] init: ro.BACKU<_APP_MEM:5120
 6>init: command 'setprop' r=0
-<3>init: ro.HOME_APP_MEM:5120
-[    4.953437] init: ro.HOM<_APP_MEM:5120
+<3>init: ro.HOME_APP_MEM:5120
+[    4.953437] init: ro.HOM<_APP_MEM:5120
 6>init: command 'setprop' r=0
-<3>init: ro.HIDDEN_APP_MEM:6144
-[    4.962718] init: ro.HIDDE<_APP_MEM:6144
+<3>init: ro.HIDDEN_APP_MEM:6144
+[    4.962718] init: ro.HIDDE<_APP_MEM:6144
 6>init: command 'setprop' r=0
-<3>init: ro.CONTENT_PROVIDER_MEM:7168
-[    4.972692] init: ro.CONTENT_PRO<IDER_MEM:7168
+<3>init: ro.CONTENT_PROVIDER_MEM:7168
+[    4.972692] init: ro.CONTENT_PRO<IDER_MEM:7168
 6>init: command 'setprop' r=0
-<3>init: ro.EMPTY_APP_MEM:8192
-[    4.982579] init: ro.EMPT<_APP_MEM:8192
+<3>init: ro.EMPTY_APP_MEM:8192
+[    4.982579] init: ro.EMPT<_APP_MEM:8192
 6>init: command 'setprop' r=0
-<3>init: wifi.interface:eth0
-[    4.991686] init: wifi.<nterface:eth0
+<3>init: wifi.interface:eth0
+[    4.991686] init: wifi.<nterface:eth0
 6>init: command 'setprop' r=0
-<3>init: ro.bt.bdaddr_path:/data/misc/bluetooth/bt_addr
-[    5.002961] init: ro.bt.bdaddr_path:/data/misc/blu<tooth/bt_addr
+<3>init: ro.bt.bdaddr_path:/data/misc/bluetooth/bt_addr
+[    5.002961] init: ro.bt.bdaddr_path:/data/misc/blu<tooth/bt_addr
 6>init: command 'setprop' r=0
-<6>init: command 'write' r=0
-<6>init: command 'write' r=0
-<6>init: command 'write' r=0
-<6>init: command 'write' r=0
-<6>init: command 'write' r=0
-<6>init: command 'write' r=0
-<6>init: command 'write' r=0
-<6>init: command 'write' r=0
-<6>init: command 'chown' r=-2
-<6>init: command 'chown' r=-2
-<6>init: command 'chown' r=-2
-<6>init: command 'chown' r=-2
-<6>init: command 'chown' r=-2
-<6>init: command 'chown' r=0
-<6>init: command 'chown' r=0
-<6>init: command 'chown' r=0
-<6>init: command 'chown' r=0
-<6>init: command 'chmod' r=0
-<6>init: command 'chmod' r=0
-<6>init: command 'chmod' r=0
-<6>init: command 'chmod' r=0
-<6>init: command 'chown' r=0
-<6>init: command 'chown' r=-2
-<6>init: command 'chown' r=0
-<6>init: command 'chown' r=-2
-<6>init: command 'chown' r=-2
-<6>init: command 'chown' r=-2
-<6>init: command 'chown' r=-2
-<6>init: command 'chown' r=-2
-<6>init: command 'chown' r=-2
-<6>init: command 'chown' r=-2
-<6>init: command 'chown' r=-2
-<6>init: command 'chown' r=-2
-<6>init: command 'chown' r=-2
-<6>init: command 'chown' r=-2
-<6>init: command 'chown' r=-2
-<6>init: command 'chown' r=-2
-<6>init: command 'chown' r=-2
-<6>init: command 'chown' r=0
-<6>init: command 'chown' r=0
-<6>init: command 'chown' r=0
-<6>init: command 'chown' r=0
-<6>init: command 'chown' r=0
-<6>init: command 'chown' r=0
-<6>init: command 'chown' r=0
-<6>init: command 'chown' r=0
-<6>init: command 'chown' r=0
-<3>init: net.tcp.buffersize.default:4096,87380,196608,4096,16384,110208
-[    5.141992] init: net.tcp.buffersize.default:4096,87380,196608,409<,16384,110208
+<6>init: command 'write' r=0
+<6>init: command 'write' r=0
+<6>init: command 'write' r=0
+<6>init: command 'write' r=0
+<6>init: command 'write' r=0
+<6>init: command 'write' r=0
+<6>init: command 'write' r=0
+<6>init: command 'write' r=0
+<6>init: command 'chown' r=-2
+<6>init: command 'chown' r=-2
+<6>init: command 'chown' r=-2
+<6>init: command 'chown' r=-2
+<6>init: command 'chown' r=-2
+<6>init: command 'chown' r=0
+<6>init: command 'chown' r=0
+<6>init: command 'chown' r=0
+<6>init: command 'chown' r=0
+<6>init: command 'chmod' r=0
+<6>init: command 'chmod' r=0
+<6>init: command 'chmod' r=0
+<6>init: command 'chmod' r=0
+<6>init: command 'chown' r=0
+<6>init: command 'chown' r=-2
+<6>init: command 'chown' r=0
+<6>init: command 'chown' r=-2
+<6>init: command 'chown' r=-2
+<6>init: command 'chown' r=-2
+<6>init: command 'chown' r=-2
+<6>init: command 'chown' r=-2
+<6>init: command 'chown' r=-2
+<6>init: command 'chown' r=-2
+<6>init: command 'chown' r=-2
+<6>init: command 'chown' r=-2
+<6>init: command 'chown' r=-2
+<6>init: command 'chown' r=-2
+<6>init: command 'chown' r=-2
+<6>init: command 'chown' r=-2
+<6>init: command 'chown' r=-2
+<6>init: command 'chown' r=0
+<6>init: command 'chown' r=0
+<6>init: command 'chown' r=0
+<6>init: command 'chown' r=0
+<6>init: command 'chown' r=0
+<6>init: command 'chown' r=0
+<6>init: command 'chown' r=0
+<6>init: command 'chown' r=0
+<6>init: command 'chown' r=0
+<3>init: net.tcp.buffersize.default:4096,87380,196608,4096,16384,110208
+[    5.141992] init: net.tcp.buffersize.default:4096,87380,196608,409<,16384,110208
 3>init: net.change:net.tcp.buffersize.default
-[    5.153440] init: net.change:net.tcp.buff<rsize.default
+[    5.153440] init: net.change:net.tcp.buff<rsize.default
 6>init: command 'setprop' r=0
-<3>init: net.tcp.buffersize.wifi:4095,87380,196608,4096,16384,110208
-[    5.167404] init: net.tcp.buffersize.wifi:4095,87380,196608,409<,16384,110208
+<3>init: net.tcp.buffersize.wifi:4095,87380,196608,4096,16384,110208
+[    5.167404] init: net.tcp.buffersize.wifi:4095,87380,196608,409<,16384,110208
 3>init: net.change:net.tcp.buffersize.wifi
-[    5.178332] init: net.change:net.tcp.b<ffersize.wifi
+[    5.178332] init: net.change:net.tcp.b<ffersize.wifi
 6>init: command 'setprop' r=0
-<3>init: net.tcp.buffersize.umts:4094,87380,196608,4096,16384,110208
-[    5.192036] init: net.tcp.buffersize.umts:4094,87380,196608,409<,16384,110208
+<3>init: net.tcp.buffersize.umts:4094,87380,196608,4096,16384,110208
+[    5.192036] init: net.tcp.buffersize.umts:4094,87380,196608,409<,16384,110208
 3>init: net.change:net.tcp.buffersize.umts
-[    5.202964] init: net.change:net.tcp.b<ffersize.umts
+[    5.202964] init: net.change:net.tcp.b<ffersize.umts
 6>init: command 'setprop' r=0
-<3>init: net.tcp.buffersize.edge:4093,26280,35040,4096,16384,35040
-[    5.216494] init: net.tcp.buffersize.edge:4093,26280,35040,40<6,16384,35040
+<3>init: net.tcp.buffersize.edge:4093,26280,35040,4096,16384,35040
+[    5.216494] init: net.tcp.buffersize.edge:4093,26280,35040,40<6,16384,35040
 3>init: net.change:net.tcp.buffersize.edge
-[    5.227249] init: net.change:net.tcp.b<ffersize.edge
+[    5.227249] init: net.change:net.tcp.b<ffersize.edge
 6>init: command 'setprop' r=0
-<3>init: net.tcp.buffersize.gprs:4092,8760,11680,4096,8760,11680
-[    5.240606] init: net.tcp.buffersize.gprs:4092,8760,11680,4<96,8760,11680
+<3>init: net.tcp.buffersize.gprs:4092,8760,11680,4096,8760,11680
+[    5.240606] init: net.tcp.buffersize.gprs:4092,8760,11680,4<96,8760,11680
 3>init: net.change:net.tcp.buffersize.gprs
-[    5.251187] init: net.change:net.tcp.b<ffersize.gprs
+[    5.251187] init: net.change:net.tcp.b<ffersize.gprs
 6>init: command 'setprop' r=0
-<6>init: command 'chmod' r=-2
-<6>init: command 'chmod' r=-2
-<6>init: command 'chmod' r=-2
-<6>init: command 'chmod' r=-2
-<6>init: command 'chmod' r=-2
-<6>init: command 'chmod' r=-2
-<6>init: command 'chmod' r=-2
-<6>init: command 'chmod' r=-2
-<6>init: command 'write' r=0
-<6>init: command 'write' r=0
-<6>init: command 'write' r=-2
-<6>init: command 'write' r=-2
-<6>init: command 'chown' r=-2
-<6>init: command 'chown' r=-2
-<6>init: command 'chown' r=0
-<6>init: command 'chmod' r=-2
-<6>init: command 'chmod' r=-2
-<6>init: command 'chown' r=0
-<6>init: command 'chmod' r=0
-<6>init: command 'chown' r=0
-<6>init: command 'chmod' r=0
-<6>init: command 'chmod' r=0
-<6>init: command 'chmod' r=0
-<6>init: command 'chown' r=0
-<6>init: command 'chown' r=0
-<6>init: command 'chmod' r=-2
-<6>init: command 'chown' r=0
-<6>init: command 'chown' r=0
-<5>init: starting 'console'
-<3>init: init.svc.console:running
-[    5.339272] init: init.svc.console:running
+<6>init: command 'chmod' r=-2
+<6>init: command 'chmod' r=-2
+<6>init: command 'chmod' r=-2
+<6>init: command 'chmod' r=-2
+<6>init: command 'chmod' r=-2
+<6>init: command 'chmod' r=-2
+<6>init: command 'chmod' r=-2
+<6>init: command 'chmod' r=-2
+<6>init: command 'write' r=0
+<6>init: command 'write' r=0
+<6>init: command 'write' r=-2
+<6>init: command 'write' r=-2
+<6>init: command 'chown' r=-2
+<6>init: command 'chown' r=-2
+<6>init: command 'chown' r=0
+<6>init: command 'chmod' r=-2
+<6>init: command 'chmod' r=-2
+<6>init: command 'chown' r=0
+<6>init: command 'chmod' r=0
+<6>init: command 'chown' r=0
+<6>init: command 'chmod' r=0
+<6>init: command 'chmod' r=0
+<6>init: command 'chmod' r=0
+<6>init: command 'chown' r=0
+<6>init: command 'chown' r=0
+<6>init: command 'chmod' r=-2
+<6>init: command 'chown' r=0
+<6>init: command 'chown' r=0
+<5>init: starting 'console'
+<3>init: init.svc.console:running
+[    5.339272] init: init.svc.console:running
 sh: can't access <5>init: starting 'adbd'
-tty; job contro<3>init: init.svc.adbd:running
-[    5.352498] init: init.svc.adbd:running
+tty; job contro<3>init: init.svc.adbd:running
+[    5.352498] init: init.svc.adbd:running
 l turned off
 <6>warning: `adbd' uses 32-bit capabilities (legacy support in use)
-# <5>init: starting 'pvrsrvinit'
-<3>init: init.svc.pvrsrvinit:running
-[    5.369897] init: init.svc.pvrsrvinit:running
+# <5>init: starting 'pvrsrvinit'
+<3>init: init.svc.pvrsrvinit:running
+[    5.369897] init: init.svc.pvrsrvinit:running
 <6>enabling adb
-[USB] enable_adb - enable(0x10), prev_status(0x01)
-Here is enable_adb@@@@
-[enable_adb]USBSTATUS_ADB
-<6>acm_function_config_changed
-<6>mass_storage_function_config_changed
-<6>adb_function_config_changed
-  interface 0 = acm/df81b600
-  interface 1 = acm/df81b600
-  interface 2 = usb_mass_storage/df8a1800
-  interface 3 = adb/df8dec00
-[ap_usb_power_on]AP USB Power ON, askon: 0, mtp : 0
-!!!!!!!!!!! [ap_usb_power_on]AP samsung_kies_mtp_mode_flag0, mtp:0
-<5>init: starting 'servicemanager'
-<3>init: init.svc.servicemanager:running
-[    5.426663] init: init.svc.servicemanager:running
+[USB] enable_adb - enable(0x10), prev_status(0x01)
+Here is enable_adb@@@@
+[enable_adb]USBSTATUS_ADB
+<6>acm_function_config_changed
+<6>mass_storage_function_config_changed
+<6>adb_function_config_changed
+  interface 0 = acm/df81b600
+  interface 1 = acm/df81b600
+  interface 2 = usb_mass_storage/df8a1800
+  interface 3 = adb/df8dec00
+[ap_usb_power_on]AP USB Power ON, askon: 0, mtp : 0
+!!!!!!!!!!! [ap_usb_power_on]AP samsung_kies_mtp_mode_flag0, mtp:0
+<5>init: starting 'servicemanager'
+<3>init: init.svc.servicemanager:running
+[    5.426663] init: init.svc.servicemanager:running
 <5>init: starting 'vold'
-<3>init: init.svc.vold:running
-[    5.439552] init: init.svc.vold:running
+<3>init: init.svc.vold:running
+[    5.439552] init: init.svc.vold:running
 <6>init: Created socket '/dev/socket/vold' with mode '660', user '0', group '1009'
-<5>init: starting 'notified_event'
-<3>init: init.svc.notified_event:running
-[    5.457661] init: init.svc.notified_event:running
+<5>init: starting 'notified_event'
+<3>init: init.svc.notified_event:running
+[    5.457661] init: init.svc.notified_event:running
 <6>init: Created socket '/dev/socket/notified_event' with mode '660', user '0', group '1000'
-<5>init: starting 'netd'
-<3>init: init.svc.netd:running
-[    5.476646] init: init.svc.netd:running
+<5>init: starting 'netd'
+<3>init: init.svc.netd:running
+[    5.476646] init: init.svc.netd:running
 <6>init: Created socket '/dev/socket/netd' with mode '660', user '0', group '1000'
-<5>init: starting 'debuggerd'
-<3>init: init.svc.debuggerd:running
-[    5.494703] init: init.svc.debuggerd:running
+<5>init: starting 'debuggerd'
+<3>init: init.svc.debuggerd:running
+[    5.494703] init: init.svc.debuggerd:running
 <3>init: cannot find '/system/bin/efsd', disabling 'efs-daemon'
-[    5.510472] init: cannot find '/system/bin/efsd', disabling 'efs-daemon'
+[    5.510472] init: cannot find '/system/bin/efsd', disabling 'efs-daemon'
 <5>init: starting 'ril-daemon'
-<3>init: init.svc.ril-daemon:running
-[    5.526100] init: init.svc.ril-daemon:running
+<3>init: init.svc.ril-daemon:running
+[    5.526100] init: init.svc.ril-daemon:running
 <6>init: Created socket '/dev/socket/rild-debug' with mode '660', user '1001', group '1000'
-<5>init: starting 'DR-daemon'
-<3>init: init.svc.DR-daemon:running
-[    5.544921] init: init.svc.DR-daemon:running
+<5>init: starting 'DR-daemon'
+<3>init: init.svc.DR-daemon:running
+[    5.544921] init: init.svc.DR-daemon:running
 <6>init: Created socket '/dev/socket/rild' with mode '660', user '0', group '1001'
-<5>init: starting 'mobex-daemon'
-<3>init: init.svc.mobex-daemon:running
-[    5.565485] init: init.svc.mobex-daemon:running
+<5>init: starting 'mobex-daemon'
+<3>init: init.svc.mobex-daemon:running
+[    5.565485] init: init.svc.mobex-daemon:running
 <5>init: starting 'zygote'
-<3>init: init.svc.zygote:running
-[    5.576023] init: init.svc.zygote:running
+<3>init: init.svc.zygote:running
+[    5.576023] init: init.svc.zygote:running
 <6>init: Created socket '/dev/socket/zygote' with mode '666', user '0', group '0'
-<5>init: starting 'media'
-<3>init: init.svc.media:running
-[    5.601306] init: init.svc.media:running
+<5>init: starting 'media'
+<3>init: init.svc.media:running
+[    5.601306] init: init.svc.media:running
 <3>init: cannot find '/system/bin/vtserver', disabling 'vt'
-[    5.612667] init: cannot find '/system/bin/vtserver', disabling 'vt'
+[    5.612667] init: cannot find '/system/bin/vtserver', disabling 'vt'
 <5>init: starting 'dbus'
-<3>init: init.svc.dbus:running
-[    5.624333] init: init.svc.dbus:running
+<3>init: init.svc.dbus:running
+[    5.624333] init: init.svc.dbus:running
 <6>init: Created socket '/dev/socket/dbus' with mode '660', user '1002', group '1002'
-<5>init: starting 'installd'
-<3>init: init.svc.installd:running
-[    5.642564] init: init.svc.installd:running
+<5>init: starting 'installd'
+<3>init: init.svc.installd:running
+[    5.642564] init: init.svc.installd:running
 <6>init: Created socket '/dev/socket/installd' with mode '600', user '1000', group '1000'
-<3>init: cannot find '/system/etc/install-recovery.sh', disabling 'flash_recovery'
-[    5.664837] init: cannot find '/system/etc/install-recovery.sh', disabling 'flash_recovery'
+<3>init: cannot find '/system/etc/install-recovery.sh', disabling 'flash_recovery'
+[    5.664837] init: cannot find '/system/etc/install-recovery.sh', disabling 'flash_recovery'
 <5>init: starting 'sensor-daemon'
-<3>init: init.svc.sensor-daemon:running
-[    5.680890] init: init.svc.sensor-daemon:running
+<3>init: init.svc.sensor-daemon:running
+[    5.680890] init: init.svc.sensor-daemon:running
 <5>init: starting 'keystore'
-<3>init: init.svc.keystore:running
-[    5.695488] init: init.svc.keystore:running
+<3>init: init.svc.keystore:running
+[    5.695488] init: init.svc.keystore:running
 <6>init: Created socket '/dev/socket/keystore' with mode '666', user '0', group '0'
-<5>init: starting 'immvibed'
-<3>init: init.svc.immvibed:running
-[    5.717960] init: init.svc.immvibed:running
+<5>init: starting 'immvibed'
+<3>init: init.svc.immvibed:running
+[    5.717960] init: init.svc.immvibed:running
 <3>init: cannot find '/system/bin/immvbsd', disabling 'immvbsd'
-[    5.729990] init: cannot find '/system/bin/immvbsd', disabling 'immvbsd'
+[    5.729990] init: cannot find '/system/bin/immvbsd', disabling 'immvbsd'
 <5>init: starting 'tvout'
-<3>init: init.svc.tvout:running
-[    5.745132] init: init.svc.tvout:running
+<3>init: init.svc.tvout:running
+[    5.745132] init: init.svc.tvout:running
 <6>init: command 'class_start' r=0
-<6>init: processing action 0x34508 (property:persist.service.adb.enable=1)
-<6>init: command 'start' r=0
-<6>init: waitpid returned pid 2263, status = 0000ff00
-<5>init: process 'pvrsrvinit', pid 2263 exited
-<3>init: init.svc.pvrsrvinit:stopped
-[    5.813268] init: init.svc.pvrsrvinit:stopped
+<6>init: processing action 0x34508 (property:persist.service.adb.enable=1)
+<6>init: command 'start' r=0
+<6>init: waitpid returned pid 2263, status = 0000ff00
+<5>init: process 'pvrsrvinit', pid 2263 exited
+<3>init: init.svc.pvrsrvinit:stopped
+[    5.813268] init: init.svc.pvrsrvinit:stopped
 <6>init: waitpid returned pid 2267, status = 0000ff00
-<5>init: process 'netd', pid 2267 exited
-<5>init: process 'netd' killing any children in process group
-<3>init: init.svc.netd:restarting
-[    5.840337] init: init.svc.netd:restarting
+<5>init: process 'netd', pid 2267 exited
+<5>init: process 'netd' killing any children in process group
+<3>init: init.svc.netd:restarting
+[    5.840337] init: init.svc.netd:restarting
 <6>init: waitpid returned pid 2274, status = 0000ff00
-<5>init: process 'DR-daemon', pid 2274 exited
-<5>init: process 'DR-daemon' killing any children in process group
-<3>init: init.svc.DR-daemon:restarting
-[    5.867328] init: init.svc.DR-daemon:restarting
+<5>init: process 'DR-daemon', pid 2274 exited
+<5>init: process 'DR-daemon' killing any children in process group
+<3>init: init.svc.DR-daemon:restarting
+[    5.867328] init: init.svc.DR-daemon:restarting
 <6>init: waitpid returned pid 2278, status = 0000ff00
-<5>init: process 'dbus', pid 2278 exited
-<5>init: process 'dbus' killing any children in process group
-<3>init: init.svc.dbus:restarting
-[    5.893417] init: init.svc.dbus:restarting
+<5>init: process 'dbus', pid 2278 exited
+<5>init: process 'dbus' killing any children in process group
+<3>init: init.svc.dbus:restarting
+[    5.893417] init: init.svc.dbus:restarting
 <6>init: waitpid returned pid 2280, status = 0000ff00
-<5>init: process 'sensor-daemon', pid 2280 exited
-<5>init: process 'sensor-daemon' killing any children in process group
-<3>init: init.svc.sensor-daemon:restarting
-[    5.930078] init: init.svc.sensor-daemon:restarting
+<5>init: process 'sensor-daemon', pid 2280 exited
+<5>init: process 'sensor-daemon' killing any children in process group
+<3>init: init.svc.sensor-daemon:restarting
+[    5.930078] init: init.svc.sensor-daemon:restarting
 <6>init: waitpid returned pid 2295, status = 0000ff00
-<5>init: process 'tvout', pid 2295 exited
-<5>init: process 'tvout' killing any children in process group
-<3>init: init.svc.tvout:restarting
-[    5.967659] init: init.svc.tvout:restarting
+<5>init: process 'tvout', pid 2295 exited
+<5>init: process 'tvout' killing any children in process group
+<3>init: init.svc.tvout:restarting
+[    5.967659] init: init.svc.tvout:restarting
 <6>init: waitpid returned pid 2288, status = 00000000
-<5>init: process 'immvibed', pid 2288 exited
-<3>init: init.svc.immvibed:stopped
-[    5.983773] init: init.svc.immvibed:stopped
+<5>init: process 'immvibed', pid 2288 exited
+<3>init: init.svc.immvibed:stopped
+[    5.983773] init: init.svc.immvibed:stopped
 <6>init: waitpid returned pid 2336, status = 00000100
-<3>init: untracked pid 2336 exited
-[    5.995968] init: untracked pid 2336 exited
+<3>init: untracked pid 2336 exited
+[    5.995968] init: untracked pid 2336 exited
 <6>init: make_device '/dev/pvrsrvkm' block 0, major 240, minor 0 r=0
-<6>init: make_device '/dev/s3c_bc' block 0, major 253, minor 0 r=0
-<6>init: make_device '/dev/tspdrv' block 0, major 10, minor 43 r=0
-<6>init: make_device '/dev/fmradio' block 0, major 10, minor 42 r=0
-<6>init: make_device '/dev/block/bml0!c' block 1, major 137, minor 0 r=0
-<6>init: make_device '/dev/block/bml1' block 1, major 137, minor 1 r=0
-<6>init: make_device '/dev/block/bml2' block 1, major 137, minor 2 r=0
-<6>init: make_device '/dev/block/bml3' block 1, major 137, minor 3 r=0
-<6>init: make_device '/dev/block/bml4' block 1, major 137, minor 4 r=0
-<6>init: make_device '/dev/block/bml5' block 1, major 137, minor 5 r=0
-<6>init: make_device '/dev/block/bml6' block 1, major 137, minor 6 r=0
-<6>init: make_device '/dev/block/bml7' block 1, major 137, minor 7 r=0
-<6>init: make_device '/dev/block/stl1' block 1, major 138, minor 1 r=0
-<6>init: make_device '/dev/block/stl2' block 1, major 138, minor 2 r=0
-<6>init: make_device '/dev/block/stl3' block 1, major 138, minor 3 r=0
-<6>init: make_device '/dev/block/stl4' block 1, major 138, minor 4 r=0
-<6>init: make_device '/dev/block/stl5' block 1, major 138, minor 5 r=0
-<6>init: make_device '/dev/block/stl6' block 1, major 138, minor 6 r=0
-<6>init: make_device '/dev/block/stl7' block 1, major 138, minor 7 r=0
-<6>init: make_device '/dev/storage' block 0, major 10, minor 234 r=0
-<6>init: make_device '/dev/bthid' block 0, major 10, minor 224 r=0
-<6>init: make_device '/dev/block/ram0' block 1, major 1, minor 0 r=0
-<6>init: make_device '/dev/block/ram1' block 1, major 1, minor 1 r=0
-<6>init: make_device '/dev/block/ram2' block 1, major 1, minor 2 r=0
-<6>init: make_device '/dev/block/ram3' block 1, major 1, minor 3 r=0
-<6>init: make_device '/dev/block/ram4' block 1, major 1, minor 4 r=0
-<6>init: make_device '/dev/block/ram5' block 1, major 1, minor 5 r=0
-<6>init: make_device '/dev/block/ram6' block 1, major 1, minor 6 r=0
-<6>init: make_device '/dev/block/ram7' block 1, major 1, minor 7 r=0
-<6>init: make_device '/dev/block/ram8' block 1, major 1, minor 8 r=0
-<6>init: make_device '/dev/block/ram9' block 1, major 1, minor 9 r=0
-<6>init: make_device '/dev/block/ram10' block 1, major 1, minor 10 r=0
-<6>init: make_device '/dev/block/ram11' block 1, major 1, minor 11 r=0
-<6>init: make_device '/dev/block/ram12' block 1, major 1, minor 12 r=0
-<6>init: make_device '/dev/block/ram13' block 1, major 1, minor 13 r=0
-<6>init: make_device '/dev/block/ram14' block 1, major 1, minor 14 r=0
-<6>init: make_device '/dev/block/ram15' block 1, major 1, minor 15 r=0
-<6>init: make_device '/dev/block/loop0' block 1, major 7, minor 0 r=0
-<6>init: make_device '/dev/block/loop1' block 1, major 7, minor 1 r=0
-<6>init: make_device '/dev/block/loop2' block 1, major 7, minor 2 r=0
-<6>init: make_device '/dev/block/loop3' block 1, major 7, minor 3 r=0
-<6>init: make_device '/dev/block/loop4' block 1, major 7, minor 4 r=0
-<6>init: make_device '/dev/block/loop5' block 1, major 7, minor 5 r=0
-<6>init: make_device '/dev/block/loop6' block 1, major 7, minor 6 r=0
-<6>init: make_device '/dev/block/loop7' block 1, major 7, minor 7 r=0
-<6>init: make_device '/dev/block/tfsr0!c' block 1, major 139, minor 0 r=0
-<6>init: make_device '/dev/block/tfsr1' block 1, major 139, minor 1 r=0
-<6>init: make_device '/dev/block/tfsr2' block 1, major 139, minor 2 r=0
-<6>init: make_device '/dev/block/tfsr3' block 1, major 139, minor 3 r=0
-<6>init: make_device '/dev/block/tfsr4' block 1, major 139, minor 4 r=0
-<6>init: make_device '/dev/block/tfsr5' block 1, major 139, minor 5 r=0
-<6>init: make_device '/dev/block/tfsr6' block 1, major 139, minor 6 r=0
-<6>init: make_device '/dev/block/tfsr7' block 1, major 139, minor 7 r=0
-<6>init: make_device '/dev/block/mmcblk0' block 1, major 179, minor 0 r=0
-<6>init: make_device '/dev/block/mmcblk0p1' block 1, major 179, minor 1 r=0
-<6>init: make_device '/dev/block/mmcblk0p2' block 1, major 179, minor 2 r=0
-<6>init: make_device '/dev/block/mmcblk0p3' block 1, major 179, minor 3 r=0
-<6>init: make_device '/dev/block/mmcblk1' block 1, major 179, minor 8 r=0
-<6>init: make_device '/dev/block/bml0!c' block 1, major 137, minor 0 r=0
-<6>init: make_device '/dev/block/bml1' block 1, major 137, minor 1 r=0
-<6>init: make_device '/dev/block/bml2' block 1, major 137, minor 2 r=0
-<6>init: make_device '/dev/block/bml3' block 1, major 137, minor 3 r=0
-<6>init: make_device '/dev/block/bml4' block 1, major 137, minor 4 r=0
-<6>init: make_device '/dev/block/bml5' block 1, major 137, minor 5 r=0
-<6>init: make_device '/dev/block/bml6' block 1, major 137, minor 6 r=0
-<6>init: make_device '/dev/block/bml7' block 1, major 137, minor 7 r=0
-<6>init: make_device '/dev/block/stl1' block 1, major 138, minor 1 r=0
-<6>init: make_device '/dev/block/stl2' block 1, major 138, minor 2 r=0
-<6>init: make_device '/dev/block/stl3' block 1, major 138, minor 3 r=0
-<6>init: make_device '/dev/block/stl4' block 1, major 138, minor 4 r=0
-<6>init: make_device '/dev/block/stl5' block 1, major 138, minor 5 r=0
-<6>init: make_device '/dev/block/stl6' block 1, major 138, minor 6 r=0
-<6>init: make_device '/dev/block/stl7' block 1, major 138, minor 7 r=0
-<6>fg_read_vcell: VCELL=3878
-<5>init: starting 'netd'
-<3>init: init.svc.netd:running
-[   10.680348] init: init.svc.netd:running
+<6>init: make_device '/dev/s3c_bc' block 0, major 253, minor 0 r=0
+<6>init: make_device '/dev/tspdrv' block 0, major 10, minor 43 r=0
+<6>init: make_device '/dev/fmradio' block 0, major 10, minor 42 r=0
+<6>init: make_device '/dev/block/bml0!c' block 1, major 137, minor 0 r=0
+<6>init: make_device '/dev/block/bml1' block 1, major 137, minor 1 r=0
+<6>init: make_device '/dev/block/bml2' block 1, major 137, minor 2 r=0
+<6>init: make_device '/dev/block/bml3' block 1, major 137, minor 3 r=0
+<6>init: make_device '/dev/block/bml4' block 1, major 137, minor 4 r=0
+<6>init: make_device '/dev/block/bml5' block 1, major 137, minor 5 r=0
+<6>init: make_device '/dev/block/bml6' block 1, major 137, minor 6 r=0
+<6>init: make_device '/dev/block/bml7' block 1, major 137, minor 7 r=0
+<6>init: make_device '/dev/block/stl1' block 1, major 138, minor 1 r=0
+<6>init: make_device '/dev/block/stl2' block 1, major 138, minor 2 r=0
+<6>init: make_device '/dev/block/stl3' block 1, major 138, minor 3 r=0
+<6>init: make_device '/dev/block/stl4' block 1, major 138, minor 4 r=0
+<6>init: make_device '/dev/block/stl5' block 1, major 138, minor 5 r=0
+<6>init: make_device '/dev/block/stl6' block 1, major 138, minor 6 r=0
+<6>init: make_device '/dev/block/stl7' block 1, major 138, minor 7 r=0
+<6>init: make_device '/dev/storage' block 0, major 10, minor 234 r=0
+<6>init: make_device '/dev/bthid' block 0, major 10, minor 224 r=0
+<6>init: make_device '/dev/block/ram0' block 1, major 1, minor 0 r=0
+<6>init: make_device '/dev/block/ram1' block 1, major 1, minor 1 r=0
+<6>init: make_device '/dev/block/ram2' block 1, major 1, minor 2 r=0
+<6>init: make_device '/dev/block/ram3' block 1, major 1, minor 3 r=0
+<6>init: make_device '/dev/block/ram4' block 1, major 1, minor 4 r=0
+<6>init: make_device '/dev/block/ram5' block 1, major 1, minor 5 r=0
+<6>init: make_device '/dev/block/ram6' block 1, major 1, minor 6 r=0
+<6>init: make_device '/dev/block/ram7' block 1, major 1, minor 7 r=0
+<6>init: make_device '/dev/block/ram8' block 1, major 1, minor 8 r=0
+<6>init: make_device '/dev/block/ram9' block 1, major 1, minor 9 r=0
+<6>init: make_device '/dev/block/ram10' block 1, major 1, minor 10 r=0
+<6>init: make_device '/dev/block/ram11' block 1, major 1, minor 11 r=0
+<6>init: make_device '/dev/block/ram12' block 1, major 1, minor 12 r=0
+<6>init: make_device '/dev/block/ram13' block 1, major 1, minor 13 r=0
+<6>init: make_device '/dev/block/ram14' block 1, major 1, minor 14 r=0
+<6>init: make_device '/dev/block/ram15' block 1, major 1, minor 15 r=0
+<6>init: make_device '/dev/block/loop0' block 1, major 7, minor 0 r=0
+<6>init: make_device '/dev/block/loop1' block 1, major 7, minor 1 r=0
+<6>init: make_device '/dev/block/loop2' block 1, major 7, minor 2 r=0
+<6>init: make_device '/dev/block/loop3' block 1, major 7, minor 3 r=0
+<6>init: make_device '/dev/block/loop4' block 1, major 7, minor 4 r=0
+<6>init: make_device '/dev/block/loop5' block 1, major 7, minor 5 r=0
+<6>init: make_device '/dev/block/loop6' block 1, major 7, minor 6 r=0
+<6>init: make_device '/dev/block/loop7' block 1, major 7, minor 7 r=0
+<6>init: make_device '/dev/block/tfsr0!c' block 1, major 139, minor 0 r=0
+<6>init: make_device '/dev/block/tfsr1' block 1, major 139, minor 1 r=0
+<6>init: make_device '/dev/block/tfsr2' block 1, major 139, minor 2 r=0
+<6>init: make_device '/dev/block/tfsr3' block 1, major 139, minor 3 r=0
+<6>init: make_device '/dev/block/tfsr4' block 1, major 139, minor 4 r=0
+<6>init: make_device '/dev/block/tfsr5' block 1, major 139, minor 5 r=0
+<6>init: make_device '/dev/block/tfsr6' block 1, major 139, minor 6 r=0
+<6>init: make_device '/dev/block/tfsr7' block 1, major 139, minor 7 r=0
+<6>init: make_device '/dev/block/mmcblk0' block 1, major 179, minor 0 r=0
+<6>init: make_device '/dev/block/mmcblk0p1' block 1, major 179, minor 1 r=0
+<6>init: make_device '/dev/block/mmcblk0p2' block 1, major 179, minor 2 r=0
+<6>init: make_device '/dev/block/mmcblk0p3' block 1, major 179, minor 3 r=0
+<6>init: make_device '/dev/block/mmcblk1' block 1, major 179, minor 8 r=0
+<6>init: make_device '/dev/block/bml0!c' block 1, major 137, minor 0 r=0
+<6>init: make_device '/dev/block/bml1' block 1, major 137, minor 1 r=0
+<6>init: make_device '/dev/block/bml2' block 1, major 137, minor 2 r=0
+<6>init: make_device '/dev/block/bml3' block 1, major 137, minor 3 r=0
+<6>init: make_device '/dev/block/bml4' block 1, major 137, minor 4 r=0
+<6>init: make_device '/dev/block/bml5' block 1, major 137, minor 5 r=0
+<6>init: make_device '/dev/block/bml6' block 1, major 137, minor 6 r=0
+<6>init: make_device '/dev/block/bml7' block 1, major 137, minor 7 r=0
+<6>init: make_device '/dev/block/stl1' block 1, major 138, minor 1 r=0
+<6>init: make_device '/dev/block/stl2' block 1, major 138, minor 2 r=0
+<6>init: make_device '/dev/block/stl3' block 1, major 138, minor 3 r=0
+<6>init: make_device '/dev/block/stl4' block 1, major 138, minor 4 r=0
+<6>init: make_device '/dev/block/stl5' block 1, major 138, minor 5 r=0
+<6>init: make_device '/dev/block/stl6' block 1, major 138, minor 6 r=0
+<6>init: make_device '/dev/block/stl7' block 1, major 138, minor 7 r=0
+<6>fg_read_vcell: VCELL=3878
+<5>init: starting 'netd'
+<3>init: init.svc.netd:running
+[   10.680348] init: init.svc.netd:running
 <6>init: Created socket '/dev/socket/netd' with mode '660', user '0', group '1000'
-<5>init: starting 'DR-daemon'
-<3>init: init.svc.DR-daemon:running
-[   10.698553] init: init.svc.DR-daemon:running
+<5>init: starting 'DR-daemon'
+<3>init: init.svc.DR-daemon:running
+[   10.698553] init: init.svc.DR-daemon:running
 <5>init: starting 'dbus'
-<3>init: init.svc.dbus:running
-[   10.718050] init: init.svc.dbus:running
+<3>init: init.svc.dbus:running
+[   10.718050] init: init.svc.dbus:running
 <6>init: Created socket '/dev/socket/dbus' with mode '660', user '1002', group '1002'
-<5>init: starting 'sensor-daemon'
-<3>init: init.svc.sensor-daemon:running
-[   10.744225] init: init.svc.sensor-daemon:running
+<5>init: starting 'sensor-daemon'
+<3>init: init.svc.sensor-daemon:running
+[   10.744225] init: init.svc.sensor-daemon:running
 <5>init: starting 'tvout'
-<3>init: init.svc.tvout:running
-[   10.773948] init: init.svc.tvout:running
+<3>init: init.svc.tvout:running
+[   10.773948] init: init.svc.tvout:running
 <6>init: waitpid returned pid 2350, status = 0000ff00
-<5>init: process 'netd', pid 2350 exited
-<5>init: process 'netd' killing any children in process group
-<3>init: init.svc.netd:restarting
-[   10.812387] init: init.svc.netd:restarting
+<5>init: process 'netd', pid 2350 exited
+<5>init: process 'netd' killing any children in process group
+<3>init: init.svc.netd:restarting
+[   10.812387] init: init.svc.netd:restarting
 <6>init: waitpid returned pid 2352, status = 0000ff00
-<5>init: process 'DR-daemon', pid 2352 exited
-<5>init: process 'DR-daemon' killing any children in process group
-<3>init: init.svc.DR-daemon:restarting
-[   10.844228] init: init.svc.DR-daemon:restarting
+<5>init: process 'DR-daemon', pid 2352 exited
+<5>init: process 'DR-daemon' killing any children in process group
+<3>init: init.svc.DR-daemon:restarting
+[   10.844228] init: init.svc.DR-daemon:restarting
 <6>init: waitpid returned pid 2353, status = 0000ff00
-<5>init: process 'dbus', pid 2353 exited
-<5>init: process 'dbus' killing any children in process group
-<3>init: init.svc.dbus:restarting
-[   10.867957] init: init.svc.dbus:restarting
+<5>init: process 'dbus', pid 2353 exited
+<5>init: process 'dbus' killing any children in process group
+<3>init: init.svc.dbus:restarting
+[   10.867957] init: init.svc.dbus:restarting
 <6>init: waitpid returned pid 2354, status = 0000ff00
-<5>init: process 'sensor-daemon', pid 2354 exited
-<5>init: process 'sensor-daemon' killing any children in process group
-<3>init: init.svc.sensor-daemon:restarting
-[   10.897913] init: init.svc.sensor-daemon:restarting
+<5>init: process 'sensor-daemon', pid 2354 exited
+<5>init: process 'sensor-daemon' killing any children in process group
+<3>init: init.svc.sensor-daemon:restarting
+[   10.897913] init: init.svc.sensor-daemon:restarting
 <6>init: waitpid returned pid 2355, status = 0000ff00
-<5>init: process 'tvout', pid 2355 exited
-<5>init: process 'tvout' killing any children in process group
-<3>init: init.svc.tvout:restarting
-[   10.926882] init: init.svc.tvout:restarting
+<5>init: process 'tvout', pid 2355 exited
+<5>init: process 'tvout' killing any children in process group
+<3>init: init.svc.tvout:restarting
+[   10.926882] init: init.svc.tvout:restarting
 <6>init: make_device '/dev/vcs7' block 0, major 7, minor 7 r=0
-<6>init: make_device '/dev/vcsa7' block 0, major 7, minor 135 r=0
-<5>init: starting 'bootanim'
-<3>init: init.svc.bootanim:running
-[   10.956414] init: init.svc.bootanim:running
+<6>init: make_device '/dev/vcsa7' block 0, major 7, minor 135 r=0
+<5>init: starting 'bootanim'
+<3>init: init.svc.bootanim:running
+[   10.956414] init: init.svc.bootanim:running
 <6>fg_read_vcell: VCELL=3878
-<3>init: sys.settings_secure_version:1
-[   15.132161] init: sys.settings_secure_version:1
+<3>init: sys.settings_secure_version:1
+[   15.132161] init: sys.settings_secure_version:1
 <5>init: starting 'netd'
-<3>init: init.svc.netd:running
-[   15.152958] init: init.svc.netd:running
+<3>init: init.svc.netd:running
+[   15.152958] init: init.svc.netd:running
 <6>init: Created socket '/dev/socket/netd' with mode '660', user '0', group '1000'
-[VIBETONZ] enable_vibetonz_from_user : time = 0 msec 
-[VIBETONZ] DISABLE
-<5>init: starting 'DR-daemon'
-<3>init: init.svc.DR-daemon:running
-[   15.197520] init: init.svc.DR-daemon:running
-<5>init: starting 'dbus'
-<3>init: init.svc.dbus:running
-[   15.243167] init: init.svc.dbus:running
-<6>init: Created socket '/dev/socket/dbus' with mode '660', user '1002', group '1002'
-<5>init: starting 'sensor-daemon'
-<3>init: init.svc.sensor-daemon:running
-[   15.290420] init: init.svc.sensor-daemon:running
-<5>init: starting 'tvout'
-<3>init: init.svc.tvout:running
-[   15.363958] init: init.svc.tvout:running
-<6>init: waitpid returned pid 2373, status = 0000ff00
-<5>init: process 'netd', pid 2373 exited
-<5>init: process 'netd' killing any children in process group
-<3>init: init.svc.netd:restarting
-[   15.453770] init: init.svc.netd:restarting
-<6>init: waitpid returned pid 2375, status = 0000ff00
-<5>init: process 'DR-daemon', pid 2375 exited
-<5>init: process 'DR-daemon' killing any children in process group
-<3>init: init.svc.DR-daemon:restarting
-[   15.545626] init: init.svc.DR-daemon:restarting
-<6>init: waitpid returned pid 2377, status = 0000ff00
-<5>init: process 'dbus', pid 2377 exited
-<5>init: process 'dbus' killing any children in process group
-<3>init: init.svc.dbus:restarting
-[   15.640736] init: init.svc.dbus:restarting
-<6>init: waitpid returned pid 2381, status = 0000ff00
-<5>init: process 'sensor-daemon', pid 2381 exited
-<5>init: process 'sensor-daemon' killing any children in process group
-<3>init: init.svc.sensor-daemon:restarting
-[   15.664394] init: init.svc.sensor-daemon:restarting
-<6>init: waitpid returned pid 2382, status = 0000ff00
-<5>init: process 'tvout', pid 2382 exited
-<5>init: process 'tvout' killing any children in process group
-<3>init: init.svc.tvout:restarting
-[   15.758871] init: init.svc.tvout:restarting
-<3>init: hw.keyboards.65537.devname:s3c-keypad
-[   15.787241] init: hw.keyboards.65537.devname:s3c-keypad
-<3>init: hw.keyboards.65538.devname:sec_jack
-[   15.809721] init: hw.keyboards.65538.devname:sec_jack
-<3>init: sys.settings_secure_version:2
-[   15.818219] init: sys.settings_secure_version:2
-<3>init: sys.settings_secure_version:2
-[   15.826199] init: sys.settings_secure_version:2
-<3>init: sys.settings_secure_version:2
-[   15.834178] init: sys.settings_secure_version:2
-<3>init: sys.settings_secure_version:2
-[   15.842157] init: sys.settings_secure_version:2
-<3>init: sys.settings_secure_version:3
-[   15.858255] init: sys.settings_secure_version:3
-<3>init: net.hostname:android_9774d56d682e549c
-[   15.873789] init: net.hostname:android_9774d56d682e549c
-<3>init: net.change:net.hostname
-[   15.920113] init: net.change:net.hostname
-<6>fg_read_vcell: VCELL=3878
-<3>init: sys.settings_secure_version:4
-[   17.641273] init: sys.settings_secure_version:4
 [VIBETONZ] enable_vibetonz_from_user : time = 0 msec 
-[VIBETONZ] DISABLE
-[VIBETONZ] enable_vibetonz_from_user : time = 1 msec 
-[VIBETONZ] ENABLE
-[VIBETONZ] DISABLE
-[VIBETONZ] enable_vibetonz_from_user : time = 21 msec 
-[VIBETONZ] ENABLE
-<3>init: dev.bootcomplete:1
-[   17.699956] init: dev.bootcomplete:1
+[VIBETONZ] DISABLE
+<5>init: starting 'DR-daemon'
+<3>init: init.svc.DR-daemon:running
+[   15.197520] init: init.svc.DR-daemon:running
+<5>init: starting 'dbus'
+<3>init: init.svc.dbus:running
+[   15.243167] init: init.svc.dbus:running
+<6>init: Created socket '/dev/socket/dbus' with mode '660', user '1002', group '1002'
+<5>init: starting 'sensor-daemon'
+<3>init: init.svc.sensor-daemon:running
+[   15.290420] init: init.svc.sensor-daemon:running
+<5>init: starting 'tvout'
+<3>init: init.svc.tvout:running
+[   15.363958] init: init.svc.tvout:running
+<6>init: waitpid returned pid 2373, status = 0000ff00
+<5>init: process 'netd', pid 2373 exited
+<5>init: process 'netd' killing any children in process group
+<3>init: init.svc.netd:restarting
+[   15.453770] init: init.svc.netd:restarting
+<6>init: waitpid returned pid 2375, status = 0000ff00
+<5>init: process 'DR-daemon', pid 2375 exited
+<5>init: process 'DR-daemon' killing any children in process group
+<3>init: init.svc.DR-daemon:restarting
+[   15.545626] init: init.svc.DR-daemon:restarting
+<6>init: waitpid returned pid 2377, status = 0000ff00
+<5>init: process 'dbus', pid 2377 exited
+<5>init: process 'dbus' killing any children in process group
+<3>init: init.svc.dbus:restarting
+[   15.640736] init: init.svc.dbus:restarting
+<6>init: waitpid returned pid 2381, status = 0000ff00
+<5>init: process 'sensor-daemon', pid 2381 exited
+<5>init: process 'sensor-daemon' killing any children in process group
+<3>init: init.svc.sensor-daemon:restarting
+[   15.664394] init: init.svc.sensor-daemon:restarting
+<6>init: waitpid returned pid 2382, status = 0000ff00
+<5>init: process 'tvout', pid 2382 exited
+<5>init: process 'tvout' killing any children in process group
+<3>init: init.svc.tvout:restarting
+[   15.758871] init: init.svc.tvout:restarting
+<3>init: hw.keyboards.65537.devname:s3c-keypad
+[   15.787241] init: hw.keyboards.65537.devname:s3c-keypad
+<3>init: hw.keyboards.65538.devname:sec_jack
+[   15.809721] init: hw.keyboards.65538.devname:sec_jack
+<3>init: sys.settings_secure_version:2
+[   15.818219] init: sys.settings_secure_version:2
+<3>init: sys.settings_secure_version:2
+[   15.826199] init: sys.settings_secure_version:2
+<3>init: sys.settings_secure_version:2
+[   15.834178] init: sys.settings_secure_version:2
+<3>init: sys.settings_secure_version:2
+[   15.842157] init: sys.settings_secure_version:2
+<3>init: sys.settings_secure_version:3
+[   15.858255] init: sys.settings_secure_version:3
+<3>init: net.hostname:android_9774d56d682e549c
+[   15.873789] init: net.hostname:android_9774d56d682e549c
+<3>init: net.change:net.hostname
+[   15.920113] init: net.change:net.hostname
+<6>fg_read_vcell: VCELL=3878
+<3>init: sys.settings_secure_version:4
+[   17.641273] init: sys.settings_secure_version:4
+[VIBETONZ] enable_vibetonz_from_user : time = 0 msec 
+[VIBETONZ] DISABLE
+[VIBETONZ] enable_vibetonz_from_user : time = 1 msec 
+[VIBETONZ] ENABLE
+[VIBETONZ] DISABLE
+[VIBETONZ] enable_vibetonz_from_user : time = 21 msec 
+[VIBETONZ] ENABLE
+<3>init: dev.bootcomplete:1
+[   17.699956] init: dev.bootcomplete:1
 <6>request_suspend_state: wakeup (3->0) at 17682411799 (2011-06-01 19:58:11.945907298 UTC)
-[VIBETONZ] DISABLE
-<3>init: sys.settings_secure_version:5
-[   19.222704] init: sys.settings_secure_version:5
+[VIBETONZ] DISABLE
+<3>init: sys.settings_secure_version:5
+[   19.222704] init: sys.settings_secure_version:5
 <5>init: service 'bootanim' is being killed
-<3>init: init.svc.bootanim:stopping
-[   19.490799] init: init.svc.bootanim:stopping
+<3>init: init.svc.bootanim:stopping
+[   19.490799] init: init.svc.bootanim:stopping
 <6>init: waitpid returned pid 2362, status = 0000000f
-<5>init: process 'bootanim', pid 2362 exited
-<3>init: init.svc.bootanim:stopped
-[   19.575389] init: init.svc.bootanim:stopped
+<5>init: process 'bootanim', pid 2362 exited
+<3>init: init.svc.bootanim:stopped
+[   19.575389] init: init.svc.bootanim:stopped
 <3>init: gsm.version.ril-impl:android reference-ril 1.0
-[   20.228738] init: gsm.version.ril-impl:android reference-ril 1.0
+[   20.228738] init: gsm.version.ril-impl:android reference-ril 1.0
 <5>init: starting 'netd'
-<3>init: init.svc.netd:running
-[   20.314056] init: init.svc.netd:running
+<3>init: init.svc.netd:running
+[   20.314056] init: init.svc.netd:running
 <6>init: Created socket '/dev/socket/netd' with mode '660', user '0', group '1000'
-<5>init: starting 'DR-daemon'
-<3>init: init.svc.DR-daemon:running
-[   20.420605] init: init.svc.DR-daemon:running
+<5>init: starting 'DR-daemon'
+<3>init: init.svc.DR-daemon:running
+[   20.420605] init: init.svc.DR-daemon:running
 <5>init: starting 'dbus'
-<3>init: init.svc.dbus:running
-[   20.521091] init: init.svc.dbus:running
+<3>init: init.svc.dbus:running
+[   20.521091] init: init.svc.dbus:running
 <6>init: Created socket '/dev/socket/dbus' with mode '660', user '1002', group '1002'
-<5>init: starting 'sensor-daemon'
-<3>init: init.svc.sensor-daemon:running
-[   20.595818] init: init.svc.sensor-daemon:running
+<5>init: starting 'sensor-daemon'
+<3>init: init.svc.sensor-daemon:running
+[   20.595818] init: init.svc.sensor-daemon:running
 <5>init: starting 'tvout'
-<3>init: init.svc.tvout:running
-[   20.700642] init: init.svc.tvout:running
+<3>init: init.svc.tvout:running
+[   20.700642] init: init.svc.tvout:running
 <6>init: waitpid returned pid 2437, status = 0000ff00
-<5>init: process 'netd', pid 2437 exited
-<5>init: process 'netd' killing any children in process group
-<3>init: init.svc.netd:restarting
-[   20.995400] init: init.svc.netd:restarting
+<5>init: process 'netd', pid 2437 exited
+<5>init: process 'netd' killing any children in process group
+<3>init: init.svc.netd:restarting
+[   20.995400] init: init.svc.netd:restarting
 <6>init: waitpid returned pid 2438, status = 0000ff00
-<5>init: process 'DR-daemon', pid 2438 exited
-<5>init: process 'DR-daemon' killing any children in process group
-<3>init: init.svc.DR-daemon:restarting
-[   21.194571] init: init.svc.DR-daemon:restarting
+<5>init: process 'DR-daemon', pid 2438 exited
+<5>init: process 'DR-daemon' killing any children in process group
+<3>init: init.svc.DR-daemon:restarting
+[   21.194571] init: init.svc.DR-daemon:restarting
 <6>init: waitpid returned pid 2439, status = 0000ff00
-<5>init: process 'dbus', pid 2439 exited
-<5>init: process 'dbus' killing any children in process group
-<3>init: init.svc.dbus:restarting
-[   21.424131] init: init.svc.dbus:restarting
+<5>init: process 'dbus', pid 2439 exited
+<5>init: process 'dbus' killing any children in process group
+<3>init: init.svc.dbus:restarting
+[   21.424131] init: init.svc.dbus:restarting
 <6>init: waitpid returned pid 2441, status = 0000ff00
-<5>init: process 'sensor-daemon', pid 2441 exited
-<5>init: process 'sensor-daemon' killing any children in process group
-<3>init: init.svc.sensor-daemon:restarting
-[   21.663129] init: init.svc.sensor-daemon:restarting
+<5>init: process 'sensor-daemon', pid 2441 exited
+<5>init: process 'sensor-daemon' killing any children in process group
+<3>init: init.svc.sensor-daemon:restarting
+[   21.663129] init: init.svc.sensor-daemon:restarting
 <6>init: waitpid returned pid 2445, status = 0000ff00
-<5>init: process 'tvout', pid 2445 exited
-<5>init: process 'tvout' killing any children in process group
-<3>init: init.svc.tvout:restarting
-[   21.877268] init: init.svc.tvout:restarting
+<5>init: process 'tvout', pid 2445 exited
+<5>init: process 'tvout' killing any children in process group
+<3>init: init.svc.tvout:restarting
+[   21.877268] init: init.svc.tvout:restarting
 <3>init: gsm.sim.operator.numeric:
-[   21.935526] init: gsm.sim.operator.numeric:
+[   21.935526] init: gsm.sim.operator.numeric:
 <3>init: gsm.sim.operator.alpha:
-[   21.986871] init: gsm.sim.operator.alpha:
+[   21.986871] init: gsm.sim.operator.alpha:
 <3>init: gsm.sim.operator.iso-country:
-[   22.053455] init: gsm.sim.operator.iso-country:
+[   22.053455] init: gsm.sim.operator.iso-country:
 <3>init: sys.settings_system_version:1
-[   22.123794] init: sys.settings_system_version:1
+[   22.123794] init: sys.settings_system_version:1
 <3>init: gsm.sim.state:UNKNOWN
-[   22.181948] init: gsm.sim.state:UNKNOWN
+[   22.181948] init: gsm.sim.state:UNKNOWN
 <3>init: gsm.current.phone-type:1
-[   22.252399] init: gsm.current.phone-type:1
+[   22.252399] init: gsm.current.phone-type:1
 <3>init: gsm.operator.alpha:
-[   22.310517] init: gsm.operator.alpha:
+[   22.310517] init: gsm.operator.alpha:
 <6>fg_read_vcell: VCELL=3878
-<3>init: gsm.operator.numeric:
-[   22.360943] init: gsm.operator.numeric:
+<3>init: gsm.operator.numeric:
+[   22.360943] init: gsm.operator.numeric:
 <3>init: gsm.operator.iso-country:
-[   22.427336] init: gsm.operator.iso-country:
+[   22.427336] init: gsm.operator.iso-country:
 <3>init: gsm.operator.isroaming:false
-[   22.487085] init: gsm.operator.isroaming:false
+[   22.487085] init: gsm.operator.isroaming:false
 <3>init: gsm.sim.operator.numeric:
-[   22.535750] init: gsm.sim.operator.numeric:
+[   22.535750] init: gsm.sim.operator.numeric:
 <3>init: gsm.sim.operator.alpha:
-[   22.603824] init: gsm.sim.operator.alpha:
+[   22.603824] init: gsm.sim.operator.alpha:
 <3>init: gsm.sim.operator.iso-country:
-[   22.644665] init: gsm.sim.operator.iso-country:
+[   22.644665] init: gsm.sim.operator.iso-country:
 <3>init: gsm.sim.state:UNKNOWN
-[   22.701284] init: gsm.sim.state:UNKNOWN
+[   22.701284] init: gsm.sim.state:UNKNOWN
 <7>[TSP]### Finger[0] Down (218,371) - touch num is (1)   status=0xc0
-<7>[TSP]### Finger[0] Up (218,371) - touch num is (0)  status=0x20
-<5>init: starting 'netd'
-<3>init: init.svc.netd:running
-[   25.761422] init: init.svc.netd:running
+<7>[TSP]### Finger[0] Up (218,371) - touch num is (0)  status=0x20
+<5>init: starting 'netd'
+<3>init: init.svc.netd:running
+[   25.761422] init: init.svc.netd:running
 <5>init: starting 'DR-daemon'
-<6>init: Created socket '/dev/socket/netd' with mode '660', user '0', group '1000'
-<3>init: init.svc.DR-daemon:running
-[   25.778959] init: init.svc.DR-daemon:running
+<6>init: Created socket '/dev/socket/netd' with mode '660', user '0', group '1000'
+<3>init: init.svc.DR-daemon:running
+[   25.778959] init: init.svc.DR-daemon:running
 <5>init: starting 'dbus'
-<3>init: init.svc.dbus:running
-[   25.793703] init: init.svc.dbus:running
+<3>init: init.svc.dbus:running
+[   25.793703] init: init.svc.dbus:running
 <6>init: Created socket '/dev/socket/dbus' with mode '660', user '1002', group '1002'
-<5>init: starting 'sensor-daemon'
-<3>init: init.svc.sensor-daemon:running
-[   25.811717] init: init.svc.sensor-daemon:running
+<5>init: starting 'sensor-daemon'
+<3>init: init.svc.sensor-daemon:running
+[   25.811717] init: init.svc.sensor-daemon:running
 <5>init: starting 'tvout'
-<3>init: init.svc.tvout:running
-[   25.827104] init: init.svc.tvout:running
+<3>init: init.svc.tvout:running
+[   25.827104] init: init.svc.tvout:running
 <6>init: waitpid returned pid 2461, status = 0000ff00
-<5>init: process 'netd', pid 2461 exited
-<5>init: process 'netd' killing any children in process group
-<3>init: init.svc.netd:restarting
-[   25.850868] init: init.svc.netd:restarting
+<5>init: process 'netd', pid 2461 exited
+<5>init: process 'netd' killing any children in process group
+<3>init: init.svc.netd:restarting
+[   25.850868] init: init.svc.netd:restarting
 <6>init: waitpid returned pid 2462, status = 0000ff00
-<5>init: process 'DR-daemon', pid 2462 exited
-<5>init: process 'DR-daemon' killing any children in process group
-<3>init: init.svc.DR-daemon:restarting
-[   25.873158] init: init.svc.DR-daemon:restarting
+<5>init: process 'DR-daemon', pid 2462 exited
+<5>init: process 'DR-daemon' killing any children in process group
+<3>init: init.svc.DR-daemon:restarting
+[   25.873158] init: init.svc.DR-daemon:restarting
 <6>init: waitpid returned pid 2463, status = 0000ff00
-<5>init: process 'dbus', pid 2463 exited
-<5>init: process 'dbus' killing any children in process group
-<3>init: init.svc.dbus:restarting
-[   25.894581] init: init.svc.dbus:restarting
+<5>init: process 'dbus', pid 2463 exited
+<5>init: process 'dbus' killing any children in process group
+<3>init: init.svc.dbus:restarting
+[   25.894581] init: init.svc.dbus:restarting
 <6>init: waitpid returned pid 2464, status = 0000ff00
-<5>init: process 'sensor-daemon', pid 2464 exited
-<5>init: process 'sensor-daemon' killing any children in process group
-<3>init: init.svc.sensor-daemon:restarting
-[   25.917911] init: init.svc.sensor-daemon:restarting
+<5>init: process 'sensor-daemon', pid 2464 exited
+<5>init: process 'sensor-daemon' killing any children in process group
+<3>init: init.svc.sensor-daemon:restarting
+[   25.917911] init: init.svc.sensor-daemon:restarting
 <6>init: waitpid returned pid 2465, status = 0000ff00
-<5>init: process 'tvout', pid 2465 exited
-<5>init: process 'tvout' killing any children in process group
-<3>init: init.svc.tvout:restarting
-[   25.939941] init: init.svc.tvout:restarting
+<5>init: process 'tvout', pid 2465 exited
+<5>init: process 'tvout' killing any children in process group
+<3>init: init.svc.tvout:restarting
+[   25.939941] init: init.svc.tvout:restarting
 <6>fg_read_vcell: VCELL=3878
-<5>init: starting 'netd'
-<3>init: init.svc.netd:running
-[   30.953029] init: init.svc.netd:running
+<5>init: starting 'netd'
+<3>init: init.svc.netd:running
+[   30.953029] init: init.svc.netd:running
 <5>init: starting 'DR-daemon'
-<6>init: Created socket '/dev/socket/netd' with mode '660', user '0', group '1000'
-<3>init: init.svc.DR-daemon:running
-[   30.970575] init: init.svc.DR-daemon:running
+<6>init: Created socket '/dev/socket/netd' with mode '660', user '0', group '1000'
+<3>init: init.svc.DR-daemon:running
+[   30.970575] init: init.svc.DR-daemon:running
 <5>init: starting 'dbus'
-<3>init: init.svc.dbus:running
-[   30.985346] init: init.svc.dbus:running
+<3>init: init.svc.dbus:running
+[   30.985346] init: init.svc.dbus:running
 <6>init: Created socket '/dev/socket/dbus' with mode '660', user '1002', group '1002'
-<5>init: starting 'sensor-daemon'
-<3>init: init.svc.sensor-daemon:running
-[   31.003394] init: init.svc.sensor-daemon:running
+<5>init: starting 'sensor-daemon'
+<3>init: init.svc.sensor-daemon:running
+[   31.003394] init: init.svc.sensor-daemon:running
 <5>init: starting 'tvout'
-<3>init: init.svc.tvout:running
-[   31.018494] init: init.svc.tvout:running
+<3>init: init.svc.tvout:running
+[   31.018494] init: init.svc.tvout:running
 <6>init: waitpid returned pid 2466, status = 0000ff00
-<5>init: process 'netd', pid 2466 exited
-<5>init: process 'netd' killing any children in process group
-<3>init: init.svc.netd:restarting
-[   31.042527] init: init.svc.netd:restarting
+<5>init: process 'netd', pid 2466 exited
+<5>init: process 'netd' killing any children in process group
+<3>init: init.svc.netd:restarting
+[   31.042527] init: init.svc.netd:restarting
 <6>init: waitpid returned pid 2467, status = 0000ff00
-<5>init: process 'DR-daemon', pid 2467 exited
-<5>init: process 'DR-daemon' killing any children in process group
-<3>init: init.svc.DR-daemon:restarting
-[   31.064817] init: init.svc.DR-daemon:restarting
+<5>init: process 'DR-daemon', pid 2467 exited
+<5>init: process 'DR-daemon' killing any children in process group
+<3>init: init.svc.DR-daemon:restarting
+[   31.064817] init: init.svc.DR-daemon:restarting
 <6>init: waitpid returned pid 2468, status = 0000ff00
-<5>init: process 'dbus', pid 2468 exited
-<5>init: process 'dbus' killing any children in process group
-<3>init: init.svc.dbus:restarting
-[   31.086240] init: init.svc.dbus:restarting
+<5>init: process 'dbus', pid 2468 exited
+<5>init: process 'dbus' killing any children in process group
+<3>init: init.svc.dbus:restarting
+[   31.086240] init: init.svc.dbus:restarting
 <6>init: waitpid returned pid 2469, status = 0000ff00
-<5>init: process 'sensor-daemon', pid 2469 exited
-<5>init: process 'sensor-daemon' killing any children in process group
-<3>init: init.svc.sensor-daemon:restarting
-[   31.109570] init: init.svc.sensor-daemon:restarting
+<5>init: process 'sensor-daemon', pid 2469 exited
+<5>init: process 'sensor-daemon' killing any children in process group
+<3>init: init.svc.sensor-daemon:restarting
+[   31.109570] init: init.svc.sensor-daemon:restarting
 <6>init: waitpid returned pid 2470, status = 0000ff00
-<5>init: process 'tvout', pid 2470 exited
-<5>init: process 'tvout' killing any children in process group
-<3>init: init.svc.tvout:restarting
-[   31.131600] init: init.svc.tvout:restarting
+<5>init: process 'tvout', pid 2470 exited
+<5>init: process 'tvout' killing any children in process group
+<3>init: init.svc.tvout:restarting
+[   31.131600] init: init.svc.tvout:restarting
 <6>fg_read_vcell: VCELL=3878
-<7>[TSP]### Finger[0] Down (133,325) - touch num is (1)   status=0xc0
-<7>[TSP]### Finger[0] Up (133,325) - touch num is (0)  status=0x20
-<5>init: starting 'netd'
-<3>init: init.svc.netd:running
-[   35.141101] init: init.svc.netd:running
+<7>[TSP]### Finger[0] Down (133,325) - touch num is (1)   status=0xc0
+<7>[TSP]### Finger[0] Up (133,325) - touch num is (0)  status=0x20
+<5>init: starting 'netd'
+<3>init: init.svc.netd:running
+[   35.141101] init: init.svc.netd:running
 <6>init: Created socket '/dev/socket/netd' with mode '660', user '0', group '1000'
-<5>init: starting 'DR-daemon'
-<3>init: init.svc.DR-daemon:running
-[   35.181015] init: init.svc.DR-daemon:running
+<5>init: starting 'DR-daemon'
+<3>init: init.svc.DR-daemon:running
+[   35.181015] init: init.svc.DR-daemon:running
 <5>init: starting 'dbus'
-<3>init: init.svc.dbus:running
-[   35.268597] init: init.svc.dbus:running
+<3>init: init.svc.dbus:running
+[   35.268597] init: init.svc.dbus:running
 <6>init: Created socket '/dev/socket/dbus' with mode '660', user '1002', group '1002'
-<5>init: starting 'sensor-daemon'
-<3>init: init.svc.sensor-daemon:running
-[   35.314486] init: init.svc.sensor-daemon:running
+<5>init: starting 'sensor-daemon'
+<3>init: init.svc.sensor-daemon:running
+[   35.314486] init: init.svc.sensor-daemon:running
 <5>init: starting 'tvout'
-<3>init: init.svc.tvout:running
-[   35.417636] init: init.svc.tvout:running
+<3>init: init.svc.tvout:running
+[   35.417636] init: init.svc.tvout:running
 <7>mmcblk1: error -84 transferring data, sector 29668128, nr 77, card status 0xe00
-<6>init: waitpid returned pid 2491, status = 0000ff00
-<7>mmcblk1: error -5 transferring data, sector 29668128, nr 77, card status 0xe00
-<5>init: process 'netd', pid 2491 exited
-<5>init: process 'netd' killing any children in process group
-<7>end_request: I/O error, dev mmcblk1, sector 29668129
-<7>end_request: I/O error, dev mmcblk1, sector 29668136
-<7>end_request: I/O error, dev mmcblk1, sector 29668144
-<7>end_request: I/O error, dev mmcblk1, sector 29668152
-<7>end_request: I/O error, dev mmcblk1, sector 29668160
-<7>end_request: I/O error, dev mmcblk1, sector 29668168
-<7>end_request: I/O error, dev mmcblk1, sector 29668176
-<7>end_request: I/O error, dev mmcblk1, sector 29668184
-<7>end_request: I/O error, dev mmcblk1, sector 29668192
-<7>end_request: I/O error, dev mmcblk1, sector 29668200
-<3>init: init.svc.netd:restarting
-[   35.623346] init: init.svc.netd:restarting
+<6>init: waitpid returned pid 2491, status = 0000ff00
+<7>mmcblk1: error -5 transferring data, sector 29668128, nr 77, card status 0xe00
+<5>init: process 'netd', pid 2491 exited
+<5>init: process 'netd' killing any children in process group
+<7>end_request: I/O error, dev mmcblk1, sector 29668129
+<7>end_request: I/O error, dev mmcblk1, sector 29668136
+<7>end_request: I/O error, dev mmcblk1, sector 29668144
+<7>end_request: I/O error, dev mmcblk1, sector 29668152
+<7>end_request: I/O error, dev mmcblk1, sector 29668160
+<7>end_request: I/O error, dev mmcblk1, sector 29668168
+<7>end_request: I/O error, dev mmcblk1, sector 29668176
+<7>end_request: I/O error, dev mmcblk1, sector 29668184
+<7>end_request: I/O error, dev mmcblk1, sector 29668192
+<7>end_request: I/O error, dev mmcblk1, sector 29668200
+<3>init: init.svc.netd:restarting
+[   35.623346] init: init.svc.netd:restarting
 <6>init: waitpid returned pid 2492, status = 0000ff00
-<7>[TSP]### Finger[0] Down (216,368) - touch num is (1)   status=0xc0
-<5>init: process 'DR-daemon', pid 2492 exited
-<5>init: process 'DR-daemon' killing any children in process group
-<3>init: init.svc.DR-daemon:restarting
-[   35.776001] init: init.svc.DR-daemon:restarting
+<7>[TSP]### Finger[0] Down (216,368) - touch num is (1)   status=0xc0
+<5>init: process 'DR-daemon', pid 2492 exited
+<5>init: process 'DR-daemon' killing any children in process group
+<3>init: init.svc.DR-daemon:restarting
+[   35.776001] init: init.svc.DR-daemon:restarting
 <7>[TSP]### Finger[0] Up (216,368) - touch num is (0)  status=0x20
-<6>init: waitpid returned pid 2493, status = 0000ff00
-<5>init: process 'dbus', pid 2493 exited
-<5>init: process 'dbus' killing any children in process group
-<3>init: init.svc.dbus:restarting
-[   35.982728] init: init.svc.dbus:restarting
+<6>init: waitpid returned pid 2493, status = 0000ff00
+<5>init: process 'dbus', pid 2493 exited
+<5>init: process 'dbus' killing any children in process group
+<3>init: init.svc.dbus:restarting
+[   35.982728] init: init.svc.dbus:restarting
 <6>init: waitpid returned pid 2494, status = 0000ff00
-<5>init: process 'sensor-daemon', pid 2494 exited
-<5>init: process 'sensor-daemon' killing any children in process group
-<3>init: init.svc.sensor-daemon:restarting
-[   36.272514] init: init.svc.sensor-daemon:restarting
+<5>init: process 'sensor-daemon', pid 2494 exited
+<5>init: process 'sensor-daemon' killing any children in process group
+<3>init: init.svc.sensor-daemon:restarting
+[   36.272514] init: init.svc.sensor-daemon:restarting
 <7>[TSP]### Finger[0] Down (222,374) - touch num is (1)   status=0xc0
-<6>init: waitpid returned pid 2495, status = 0000ff00
-<5>init: process 'tvout', pid 2495 exited
-<7>[TSP]### Finger[0] Up (222,374) - touch num is (0)  status=0x20
-<5>init: process 'tvout' killing any children in process group
-<3>init: init.svc.tvout:restarting
-[   36.537401] init: init.svc.tvout:restarting
+<6>init: waitpid returned pid 2495, status = 0000ff00
+<5>init: process 'tvout', pid 2495 exited
+<7>[TSP]### Finger[0] Up (222,374) - touch num is (0)  status=0x20
+<5>init: process 'tvout' killing any children in process group
+<3>init: init.svc.tvout:restarting
+[   36.537401] init: init.svc.tvout:restarting
 <3>init: sys.settings_system_version:2
-[   36.834732] init: sys.settings_system_version:2
+[   36.834732] init: sys.settings_system_version:2
 <6>fg_read_vcell: VCELL=3878
-<7>[TSP]### Finger[0] Down (240,354) - touch num is (1)   status=0xc0
-<7>[TSP]### Finger[0] Up (240,354) - touch num is (0)  status=0x20
-<7>[TSP]### Finger[0] Down (214,372) - touch num is (1)   status=0xc0
-<7>[TSP]### Finger[0] Up (214,372) - touch num is (0)  status=0x20
-<5>init: starting 'netd'
-<3>init: init.svc.netd:running
-[   40.865060] init: init.svc.netd:running
+<7>[TSP]### Finger[0] Down (240,354) - touch num is (1)   status=0xc0
+<7>[TSP]### Finger[0] Up (240,354) - touch num is (0)  status=0x20
+<7>[TSP]### Finger[0] Down (214,372) - touch num is (1)   status=0xc0
+<7>[TSP]### Finger[0] Up (214,372) - touch num is (0)  status=0x20
+<5>init: starting 'netd'
+<3>init: init.svc.netd:running
+[   40.865060] init: init.svc.netd:running
 <6>init: Created socket '/dev/socket/netd' with mode '660', user '0', group '1000'
-<5>init: starting 'DR-daemon'
-<3>init: init.svc.DR-daemon:running
-[   40.890864] init: init.svc.DR-daemon:running
+<5>init: starting 'DR-daemon'
+<3>init: init.svc.DR-daemon:running
+[   40.890864] init: init.svc.DR-daemon:running
 <5>init: starting 'dbus'
-<3>init: init.svc.dbus:running
-[   40.913934] init: init.svc.dbus:running
+<3>init: init.svc.dbus:running
+[   40.913934] init: init.svc.dbus:running
 <6>init: Created socket '/dev/socket/dbus' with mode '660', user '1002', group '1002'
-<5>init: starting 'sensor-daemon'
-<3>init: init.svc.sensor-daemon:running
-[   40.931948] init: init.svc.sensor-daemon:running
+<5>init: starting 'sensor-daemon'
+<3>init: init.svc.sensor-daemon:running
+[   40.931948] init: init.svc.sensor-daemon:running
 <5>init: starting 'tvout'
-<3>init: init.svc.tvout:running
-[   40.950292] init: init.svc.tvout:running
+<3>init: init.svc.tvout:running
+[   40.950292] init: init.svc.tvout:running
 <6>init: waitpid returned pid 2568, status = 0000ff00
-<5>init: process 'netd', pid 2568 exited
-<5>init: process 'netd' killing any children in process group
-<3>init: init.svc.netd:restarting
-[   40.974541] init: init.svc.netd:restarting
+<5>init: process 'netd', pid 2568 exited
+<5>init: process 'netd' killing any children in process group
+<3>init: init.svc.netd:restarting
+[   40.974541] init: init.svc.netd:restarting
 <6>init: waitpid returned pid 2569, status = 0000ff00
-<5>init: process 'DR-daemon', pid 2569 exited
-<5>init: process 'DR-daemon' killing any children in process group
-<3>init: init.svc.DR-daemon:restarting
-[   40.996831] init: init.svc.DR-daemon:restarting
+<5>init: process 'DR-daemon', pid 2569 exited
+<5>init: process 'DR-daemon' killing any children in process group
+<3>init: init.svc.DR-daemon:restarting
+[   40.996831] init: init.svc.DR-daemon:restarting
 <6>init: waitpid returned pid 2570, status = 0000ff00
-<5>init: process 'dbus', pid 2570 exited
-<5>init: process 'dbus' killing any children in process group
-<3>init: init.svc.dbus:restarting
-[   41.019304] init: init.svc.dbus:restarting
+<5>init: process 'dbus', pid 2570 exited
+<5>init: process 'dbus' killing any children in process group
+<3>init: init.svc.dbus:restarting
+[   41.019304] init: init.svc.dbus:restarting
 <6>init: waitpid returned pid 2571, status = 0000ff00
-<5>init: process 'sensor-daemon', pid 2571 exited
-<5>init: process 'sensor-daemon' killing any children in process group
-<3>init: init.svc.sensor-daemon:restarting
-[   41.044300] init: init.svc.sensor-daemon:restarting
+<5>init: process 'sensor-daemon', pid 2571 exited
+<5>init: process 'sensor-daemon' killing any children in process group
+<3>init: init.svc.sensor-daemon:restarting
+[   41.044300] init: init.svc.sensor-daemon:restarting
 <6>init: waitpid returned pid 2572, status = 0000ff00
-<5>init: process 'tvout', pid 2572 exited
-<5>init: process 'tvout' killing any children in process group
-<3>init: init.svc.tvout:restarting
-[   41.066329] init: init.svc.tvout:restarting
+<5>init: process 'tvout', pid 2572 exited
+<5>init: process 'tvout' killing any children in process group
+<3>init: init.svc.tvout:restarting
+[   41.066329] init: init.svc.tvout:restarting
 <6>fg_read_vcell: VCELL=3878
-<5>init: starting 'netd'
-<3>init: init.svc.netd:running
-[   45.078695] init: init.svc.netd:running
+<5>init: starting 'netd'
+<3>init: init.svc.netd:running
+[   45.078695] init: init.svc.netd:running
 <5>init: starting 'DR-daemon'
-<6>init: Created socket '/dev/socket/netd' with mode '660', user '0', group '1000'
-<3>init: init.svc.DR-daemon:running
-[   45.096214] init: init.svc.DR-daemon:running
+<6>init: Created socket '/dev/socket/netd' with mode '660', user '0', group '1000'
+<3>init: init.svc.DR-daemon:running
+[   45.096214] init: init.svc.DR-daemon:running
 <5>init: starting 'dbus'
-<3>init: init.svc.dbus:running
-[   45.110968] init: init.svc.dbus:running
+<3>init: init.svc.dbus:running
+[   45.110968] init: init.svc.dbus:running
 <6>init: Created socket '/dev/socket/dbus' with mode '660', user '1002', group '1002'
-<5>init: starting 'sensor-daemon'
-<3>init: init.svc.sensor-daemon:running
-[   45.128999] init: init.svc.sensor-daemon:running
+<5>init: starting 'sensor-daemon'
+<3>init: init.svc.sensor-daemon:running
+[   45.128999] init: init.svc.sensor-daemon:running
 <5>init: starting 'tvout'
-<3>init: init.svc.tvout:running
-[   45.143379] init: init.svc.tvout:running
+<3>init: init.svc.tvout:running
+[   45.143379] init: init.svc.tvout:running
 <6>init: waitpid returned pid 2580, status = 0000ff00
-<5>init: process 'netd', pid 2580 exited
-<5>init: process 'netd' killing any children in process group
-<3>init: init.svc.netd:restarting
-[   45.168080] init: init.svc.netd:restarting
+<5>init: process 'netd', pid 2580 exited
+<5>init: process 'netd' killing any children in process group
+<3>init: init.svc.netd:restarting
+[   45.168080] init: init.svc.netd:restarting
 <6>init: waitpid returned pid 2581, status = 0000ff00
-<5>init: process 'DR-daemon', pid 2581 exited
-<5>init: process 'DR-daemon' killing any children in process group
-<3>init: init.svc.DR-daemon:restarting
-[   45.190370] init: init.svc.DR-daemon:restarting
+<5>init: process 'DR-daemon', pid 2581 exited
+<5>init: process 'DR-daemon' killing any children in process group
+<3>init: init.svc.DR-daemon:restarting
+[   45.190370] init: init.svc.DR-daemon:restarting
 <6>init: waitpid returned pid 2582, status = 0000ff00
-<5>init: process 'dbus', pid 2582 exited
-<5>init: process 'dbus' killing any children in process group
-<3>init: init.svc.dbus:restarting
-[   45.211793] init: init.svc.dbus:restarting
+<5>init: process 'dbus', pid 2582 exited
+<5>init: process 'dbus' killing any children in process group
+<3>init: init.svc.dbus:restarting
+[   45.211793] init: init.svc.dbus:restarting
 <6>init: waitpid returned pid 2583, status = 0000ff00
-<5>init: process 'sensor-daemon', pid 2583 exited
-<5>init: process 'sensor-daemon' killing any children in process group
-<3>init: init.svc.sensor-daemon:restarting
-[   45.235124] init: init.svc.sensor-daemon:restarting
+<5>init: process 'sensor-daemon', pid 2583 exited
+<5>init: process 'sensor-daemon' killing any children in process group
+<3>init: init.svc.sensor-daemon:restarting
+[   45.235124] init: init.svc.sensor-daemon:restarting
 <6>init: waitpid returned pid 2584, status = 0000ff00
-<5>init: process 'tvout', pid 2584 exited
-<5>init: process 'tvout' killing any children in process group
-<3>init: init.svc.tvout:restarting
-[   45.257154] init: init.svc.tvout:restarting
+<5>init: process 'tvout', pid 2584 exited
+<5>init: process 'tvout' killing any children in process group
+<3>init: init.svc.tvout:restarting
+[   45.257154] init: init.svc.tvout:restarting
 <7>[TSP]### Finger[0] Down (231,366) - touch num is (1)   status=0xc0
-<7>[TSP]### Finger[0] Up (231,366) - touch num is (0)  status=0x20
-<6>fg_read_vcell: VCELL=3878
-<7>[TSP]### Finger[0] Down (192,98) - touch num is (1)   status=0xc0
-<7>[TSP]### Finger[0] Up (192,98) - touch num is (0)  status=0x20
-<5>init: starting 'netd'
-<3>init: init.svc.netd:running
-[   50.269944] init: init.svc.netd:running
+<7>[TSP]### Finger[0] Up (231,366) - touch num is (0)  status=0x20
+<6>fg_read_vcell: VCELL=3878
+<7>[TSP]### Finger[0] Down (192,98) - touch num is (1)   status=0xc0
+<7>[TSP]### Finger[0] Up (192,98) - touch num is (0)  status=0x20
+<5>init: starting 'netd'
+<3>init: init.svc.netd:running
+[   50.269944] init: init.svc.netd:running
 <6>init: Created socket '/dev/socket/netd' with mode '660', user '0', group '1000'
-<5>init: starting 'DR-daemon'
-<3>init: init.svc.DR-daemon:running
-[   50.313761] init: init.svc.DR-daemon:running
+<5>init: starting 'DR-daemon'
+<3>init: init.svc.DR-daemon:running
+[   50.313761] init: init.svc.DR-daemon:running
 <5>init: starting 'dbus'
-<3>init: init.svc.dbus:running
-[   50.401525] init: init.svc.dbus:running
+<3>init: init.svc.dbus:running
+[   50.401525] init: init.svc.dbus:running
 <6>init: Created socket '/dev/socket/dbus' with mode '660', user '1002', group '1002'
-<5>init: starting 'sensor-daemon'
-<3>init: init.svc.sensor-daemon:running
-[   50.476046] init: init.svc.sensor-daemon:running
+<5>init: starting 'sensor-daemon'
+<3>init: init.svc.sensor-daemon:running
+[   50.476046] init: init.svc.sensor-daemon:running
 <5>init: starting 'tvout'
-<3>init: init.svc.tvout:running
-[   50.549021] init: init.svc.tvout:running
+<3>init: init.svc.tvout:running
+[   50.549021] init: init.svc.tvout:running
 <6>init: waitpid returned pid 2595, status = 0000ff00
-<5>init: process 'netd', pid 2595 exited
-<5>init: process 'netd' killing any children in process group
-<3>init: init.svc.netd:restarting
-[   50.697453] init: init.svc.netd:restarting
+<5>init: process 'netd', pid 2595 exited
+<5>init: process 'netd' killing any children in process group
+<3>init: init.svc.netd:restarting
+[   50.697453] init: init.svc.netd:restarting
 <6>init: waitpid returned pid 2596, status = 0000ff00
-<5>init: process 'DR-daemon', pid 2596 exited
-<5>init: process 'DR-daemon' killing any children in process group
-<3>init: init.svc.DR-daemon:restarting
-[   50.850197] init: init.svc.DR-daemon:restarting
+<5>init: process 'DR-daemon', pid 2596 exited
+<5>init: process 'DR-daemon' killing any children in process group
+<3>init: init.svc.DR-daemon:restarting
+[   50.850197] init: init.svc.DR-daemon:restarting
 <6>init: waitpid returned pid 2597, status = 0000ff00
-<5>init: process 'dbus', pid 2597 exited
-<5>init: process 'dbus' killing any children in process group
-<3>init: init.svc.dbus:restarting
-[   51.006087] init: init.svc.dbus:restarting
+<5>init: process 'dbus', pid 2597 exited
+<5>init: process 'dbus' killing any children in process group
+<3>init: init.svc.dbus:restarting
+[   51.006087] init: init.svc.dbus:restarting
 <6>init: waitpid returned pid 2598, status = 0000ff00
-<5>init: process 'sensor-daemon', pid 2598 exited
-<5>init: process 'sensor-daemon' killing any children in process group
-<3>init: init.svc.sensor-daemon:restarting
-[   51.099184] init: init.svc.sensor-daemon:restarting
+<5>init: process 'sensor-daemon', pid 2598 exited
+<5>init: process 'sensor-daemon' killing any children in process group
+<3>init: init.svc.sensor-daemon:restarting
+[   51.099184] init: init.svc.sensor-daemon:restarting
 <6>init: waitpid returned pid 2599, status = 0000ff00
-<5>init: process 'tvout', pid 2599 exited
-<5>init: process 'tvout' killing any children in process group
-<3>init: init.svc.tvout:restarting
-[   51.121214] init: init.svc.tvout:restarting
+<5>init: process 'tvout', pid 2599 exited
+<5>init: process 'tvout' killing any children in process group
+<3>init: init.svc.tvout:restarting
+[   51.121214] init: init.svc.tvout:restarting
 <7>[TSP]### Finger[0] Down (219,379) - touch num is (1)   status=0xc0
-<7>[TSP]### Finger[0] Up (219,379) - touch num is (0)  status=0x20
-<6>fg_read_vcell: VCELL=3878
-<7>[TSP]### Finger[0] Down (222,352) - touch num is (1)   status=0xc0
-<7>[TSP]### Finger[0] Up (222,352) - touch num is (0)  status=0x20
-<7>[TSP]### Finger[0] Down (219,359) - touch num is (1)   status=0xc0
-<7>[TSP]### Finger[0] Up (219,359) - touch num is (0)  status=0x20
-<5>init: starting 'netd'
-<3>init: init.svc.netd:running
-[   55.133244] init: init.svc.netd:running
+<7>[TSP]### Finger[0] Up (219,379) - touch num is (0)  status=0x20
+<6>fg_read_vcell: VCELL=3878
+<7>[TSP]### Finger[0] Down (222,352) - touch num is (1)   status=0xc0
+<7>[TSP]### Finger[0] Up (222,352) - touch num is (0)  status=0x20
+<7>[TSP]### Finger[0] Down (219,359) - touch num is (1)   status=0xc0
+<7>[TSP]### Finger[0] Up (219,359) - touch num is (0)  status=0x20
+<5>init: starting 'netd'
+<3>init: init.svc.netd:running
+[   55.133244] init: init.svc.netd:running
 <6>init: Created socket '/dev/socket/netd' with mode '660', user '0', group '1000'
-<5>init: starting 'DR-daemon'
-<3>init: init.svc.DR-daemon:running
-[   55.173123] init: init.svc.DR-daemon:running
+<5>init: starting 'DR-daemon'
+<3>init: init.svc.DR-daemon:running
+[   55.173123] init: init.svc.DR-daemon:running
 <5>init: starting 'dbus'
-<3>init: init.svc.dbus:running
-[   55.238683] init: init.svc.dbus:running
+<3>init: init.svc.dbus:running
+[   55.238683] init: init.svc.dbus:running
 <6>init: Created socket '/dev/socket/dbus' with mode '660', user '1002', group '1002'
-<5>init: starting 'sensor-daemon'
-<3>init: init.svc.sensor-daemon:running
-[   55.302743] init: init.svc.sensor-daemon:running
+<5>init: starting 'sensor-daemon'
+<3>init: init.svc.sensor-daemon:running
+[   55.302743] init: init.svc.sensor-daemon:running
 <5>init: starting 'tvout'
-<3>init: init.svc.tvout:running
-[   55.387306] init: init.svc.tvout:running
+<3>init: init.svc.tvout:running
+[   55.387306] init: init.svc.tvout:running
 <6>init: waitpid returned pid 2614, status = 0000ff00
-<7>[TSP]### Finger[0] Down (221,377) - touch num is (1)   status=0xc0
-<5>init: process 'netd', pid 2614 exited
-<5>init: process 'netd' killing any children in process group
-<3>init: init.svc.netd:restarting
-[   55.545159] init: init.svc.netd:restarting
+<7>[TSP]### Finger[0] Down (221,377) - touch num is (1)   status=0xc0
+<5>init: process 'netd', pid 2614 exited
+<5>init: process 'netd' killing any children in process group
+<3>init: init.svc.netd:restarting
+[   55.545159] init: init.svc.netd:restarting
 <6>init: waitpid returned pid 2615, status = 0000ff00
-<7>[TSP]### Finger[0] Up (221,377) - touch num is (0)  status=0x20
-<5>init: process 'DR-daemon', pid 2615 exited
-<5>init: process 'DR-daemon' killing any children in process group
-<3>init: init.svc.DR-daemon:restarting
-[   55.709567] init: init.svc.DR-daemon:restarting
+<7>[TSP]### Finger[0] Up (221,377) - touch num is (0)  status=0x20
+<5>init: process 'DR-daemon', pid 2615 exited
+<5>init: process 'DR-daemon' killing any children in process group
+<3>init: init.svc.DR-daemon:restarting
+[   55.709567] init: init.svc.DR-daemon:restarting
 <6>init: waitpid returned pid 2616, status = 0000ff00
-<5>init: process 'dbus', pid 2616 exited
-<5>init: process 'dbus' killing any children in process group
-<3>init: init.svc.dbus:restarting
-[   55.849830] init: init.svc.dbus:restarting
+<5>init: process 'dbus', pid 2616 exited
+<5>init: process 'dbus' killing any children in process group
+<3>init: init.svc.dbus:restarting
+[   55.849830] init: init.svc.dbus:restarting
 <6>init: waitpid returned pid 2617, status = 0000ff00
-<5>init: process 'sensor-daemon', pid 2617 exited
-<5>init: process 'sensor-daemon' killing any children in process group
-<3>init: init.svc.sensor-daemon:restarting
-[   56.017308] init: init.svc.sensor-daemon:restarting
+<5>init: process 'sensor-daemon', pid 2617 exited
+<5>init: process 'sensor-daemon' killing any children in process group
+<3>init: init.svc.sensor-daemon:restarting
+[   56.017308] init: init.svc.sensor-daemon:restarting
 <6>init: waitpid returned pid 2618, status = 0000ff00
-<5>init: process 'tvout', pid 2618 exited
-<5>init: process 'tvout' killing any children in process group
-<3>init: init.svc.tvout:restarting
-[   56.142071] init: init.svc.tvout:restarting
+<5>init: process 'tvout', pid 2618 exited
+<5>init: process 'tvout' killing any children in process group
+<3>init: init.svc.tvout:restarting
+[   56.142071] init: init.svc.tvout:restarting
 <7>[TSP]### Finger[0] Down (225,361) - touch num is (1)   status=0xc0
-<7>[TSP]### Finger[0] Up (225,361) - touch num is (0)  status=0x20
-<6>fg_read_vcell: VCELL=3878
-<7>[TSP]### Finger[0] Down (225,355) - touch num is (1)   status=0xc0
-<7>[TSP]### Finger[0] Up (225,355) - touch num is (0)  status=0x20
-<7>[TSP]### Finger[0] Down (224,358) - touch num is (1)   status=0xc0
-<7>[TSP]### Finger[0] Up (224,358) - touch num is (0)  status=0x20
-<5>init: starting 'netd'
-<3>init: init.svc.netd:running
-[   60.152738] init: init.svc.netd:running
+<7>[TSP]### Finger[0] Up (225,361) - touch num is (0)  status=0x20
+<6>fg_read_vcell: VCELL=3878
+<7>[TSP]### Finger[0] Down (225,355) - touch num is (1)   status=0xc0
+<7>[TSP]### Finger[0] Up (225,355) - touch num is (0)  status=0x20
+<7>[TSP]### Finger[0] Down (224,358) - touch num is (1)   status=0xc0
+<7>[TSP]### Finger[0] Up (224,358) - touch num is (0)  status=0x20
+<5>init: starting 'netd'
+<3>init: init.svc.netd:running
+[   60.152738] init: init.svc.netd:running
 <6>init: Created socket '/dev/socket/netd' with mode '660', user '0', group '1000'
-<7>[TSP]### Finger[0] Down (227,358) - touch num is (1)   status=0xc0
-<5>init: starting 'DR-daemon'
-<3>init: init.svc.DR-daemon:running
-[   60.209521] init: init.svc.DR-daemon:running
+<7>[TSP]### Finger[0] Down (227,358) - touch num is (1)   status=0xc0
+<5>init: starting 'DR-daemon'
+<3>init: init.svc.DR-daemon:running
+[   60.209521] init: init.svc.DR-daemon:running
 <5>init: starting 'dbus'
-<3>init: init.svc.dbus:running
-[   60.267353] init: init.svc.dbus:running
+<3>init: init.svc.dbus:running
+[   60.267353] init: init.svc.dbus:running
 <6>init: Created socket '/dev/socket/dbus' with mode '660', user '1002', group '1002'
-<7>[TSP]### Finger[0] Up (227,358) - touch num is (0)  status=0x20
-<5>init: starting 'sensor-daemon'
-<3>init: init.svc.sensor-daemon:running
-[   60.360738] init: init.svc.sensor-daemon:running
+<7>[TSP]### Finger[0] Up (227,358) - touch num is (0)  status=0x20
+<5>init: starting 'sensor-daemon'
+<3>init: init.svc.sensor-daemon:running
+[   60.360738] init: init.svc.sensor-daemon:running
 <5>init: starting 'tvout'
-<3>init: init.svc.tvout:running
-[   60.451434] init: init.svc.tvout:running
+<3>init: init.svc.tvout:running
+[   60.451434] init: init.svc.tvout:running
 <6>init: waitpid returned pid 2633, status = 0000ff00
-<5>init: process 'netd', pid 2633 exited
-<5>init: process 'netd' killing any children in process group
-<3>init: init.svc.netd:restarting
-[   60.588104] init: init.svc.netd:restarting
+<5>init: process 'netd', pid 2633 exited
+<5>init: process 'netd' killing any children in process group
+<3>init: init.svc.netd:restarting
+[   60.588104] init: init.svc.netd:restarting
 <6>init: waitpid returned pid 2634, status = 0000ff00
-<5>init: process 'DR-daemon', pid 2634 exited
-<5>init: process 'DR-daemon' killing any children in process group
-<3>init: init.svc.DR-daemon:restarting
-[   60.620151] init: init.svc.DR-daemon:restarting
+<5>init: process 'DR-daemon', pid 2634 exited
+<5>init: process 'DR-daemon' killing any children in process group
+<3>init: init.svc.DR-daemon:restarting
+[   60.620151] init: init.svc.DR-daemon:restarting
 <6>init: waitpid returned pid 2635, status = 0000ff00
-<5>init: process 'dbus', pid 2635 exited
-<5>init: process 'dbus' killing any children in process group
-<3>init: init.svc.dbus:restarting
-[   60.775966] init: init.svc.dbus:restarting
+<5>init: process 'dbus', pid 2635 exited
+<5>init: process 'dbus' killing any children in process group
+<3>init: init.svc.dbus:restarting
+[   60.775966] init: init.svc.dbus:restarting
 <6>init: waitpid returned pid 2636, status = 0000ff00
-<5>init: process 'sensor-daemon', pid 2636 exited
-<5>init: process 'sensor-daemon' killing any children in process group
-<3>init: init.svc.sensor-daemon:restarting
-[   60.862844] init: init.svc.sensor-daemon:restarting
+<5>init: process 'sensor-daemon', pid 2636 exited
+<5>init: process 'sensor-daemon' killing any children in process group
+<3>init: init.svc.sensor-daemon:restarting
+[   60.862844] init: init.svc.sensor-daemon:restarting
 <6>init: waitpid returned pid 2637, status = 0000ff00
-<5>init: process 'tvout', pid 2637 exited
-<5>init: process 'tvout' killing any children in process group
-<3>init: init.svc.tvout:restarting
-[   60.895888] init: init.svc.tvout:restarting
+<5>init: process 'tvout', pid 2637 exited
+<5>init: process 'tvout' killing any children in process group
+<3>init: init.svc.tvout:restarting
+[   60.895888] init: init.svc.tvout:restarting
 <7>[TSP]### Finger[0] Down (235,351) - touch num is (1)   status=0xc0
-<7>[TSP]### Finger[0] Up (235,351) - touch num is (0)  status=0x20
-<6>fg_read_vcell: VCELL=3878
-<5>init: starting 'netd'
-<3>init: init.svc.netd:running
-[   65.911180] init: init.svc.netd:running
+<7>[TSP]### Finger[0] Up (235,351) - touch num is (0)  status=0x20
+<6>fg_read_vcell: VCELL=3878
+<5>init: starting 'netd'
+<3>init: init.svc.netd:running
+[   65.911180] init: init.svc.netd:running
 <5>init: starting 'DR-daemon'
-<6>init: Created socket '/dev/socket/netd' with mode '660', user '0', group '1000'
-<3>init: init.svc.DR-daemon:running
-[   65.933514] init: init.svc.DR-daemon:running
+<6>init: Created socket '/dev/socket/netd' with mode '660', user '0', group '1000'
+<3>init: init.svc.DR-daemon:running
+[   65.933514] init: init.svc.DR-daemon:running
 <5>init: starting 'dbus'
-<3>init: init.svc.dbus:running
-[   65.959491] init: init.svc.dbus:running
+<3>init: init.svc.dbus:running
+[   65.959491] init: init.svc.dbus:running
 <6>init: Created socket '/dev/socket/dbus' with mode '660', user '1002', group '1002'
-<5>init: starting 'sensor-daemon'
-<3>init: init.svc.sensor-daemon:running
-[   66.002905] init: init.svc.sensor-daemon:running
+<5>init: starting 'sensor-daemon'
+<3>init: init.svc.sensor-daemon:running
+[   66.002905] init: init.svc.sensor-daemon:running
 <5>init: starting 'tvout'
-<3>init: init.svc.tvout:running
-[   66.024856] init: init.svc.tvout:running
+<3>init: init.svc.tvout:running
+[   66.024856] init: init.svc.tvout:running
 <6>init: waitpid returned pid 2638, status = 0000ff00
-<5>init: process 'netd', pid 2638 exited
-<5>init: process 'netd' killing any children in process group
-<3>init: init.svc.netd:restarting
-[   66.072036] init: init.svc.netd:restarting
+<5>init: process 'netd', pid 2638 exited
+<5>init: process 'netd' killing any children in process group
+<3>init: init.svc.netd:restarting
+[   66.072036] init: init.svc.netd:restarting
 <6>init: waitpid returned pid 2639, status = 0000ff00
-<5>init: process 'DR-daemon', pid 2639 exited
-<5>init: process 'DR-daemon' killing any children in process group
-<3>init: init.svc.DR-daemon:restarting
-[   66.094325] init: init.svc.DR-daemon:restarting
+<5>init: process 'DR-daemon', pid 2639 exited
+<5>init: process 'DR-daemon' killing any children in process group
+<3>init: init.svc.DR-daemon:restarting
+[   66.094325] init: init.svc.DR-daemon:restarting
 <6>init: waitpid returned pid 2640, status = 0000ff00
-<5>init: process 'dbus', pid 2640 exited
-<5>init: process 'dbus' killing any children in process group
-<3>init: init.svc.dbus:restarting
-[   66.115748] init: init.svc.dbus:restarting
+<5>init: process 'dbus', pid 2640 exited
+<5>init: process 'dbus' killing any children in process group
+<3>init: init.svc.dbus:restarting
+[   66.115748] init: init.svc.dbus:restarting
 <6>init: waitpid returned pid 2641, status = 0000ff00
-<5>init: process 'sensor-daemon', pid 2641 exited
-<5>init: process 'sensor-daemon' killing any children in process group
-<3>init: init.svc.sensor-daemon:restarting
-[   66.159183] init: init.svc.sensor-daemon:restarting
+<5>init: process 'sensor-daemon', pid 2641 exited
+<5>init: process 'sensor-daemon' killing any children in process group
+<3>init: init.svc.sensor-daemon:restarting
+[   66.159183] init: init.svc.sensor-daemon:restarting
 <6>init: waitpid returned pid 2642, status = 0000ff00
-<5>init: process 'tvout', pid 2642 exited
-<5>init: process 'tvout' killing any children in process group
-<3>init: init.svc.tvout:restarting
-[   66.207432] init: init.svc.tvout:restarting
+<5>init: process 'tvout', pid 2642 exited
+<5>init: process 'tvout' killing any children in process group
+<3>init: init.svc.tvout:restarting
+[   66.207432] init: init.svc.tvout:restarting
 <6>fg_read_vcell: VCELL=3878
-<7>[TSP]### Finger[0] Down (206,334) - touch num is (1)   status=0xc0
-<7>[TSP]### Finger[0] Up (206,334) - touch num is (0)  status=0x20
-<5>init: starting 'netd'
-<3>init: init.svc.netd:running
-[   70.233426] init: init.svc.netd:running
+<7>[TSP]### Finger[0] Down (206,334) - touch num is (1)   status=0xc0
+<7>[TSP]### Finger[0] Up (206,334) - touch num is (0)  status=0x20
+<5>init: starting 'netd'
+<3>init: init.svc.netd:running
+[   70.233426] init: init.svc.netd:running
 <5>init: starting 'DR-daemon'
-<6>init: Created socket '/dev/socket/netd' with mode '660', user '0', group '1000'
-<3>init: init.svc.DR-daemon:running
-[   70.255460] init: init.svc.DR-daemon:running
+<6>init: Created socket '/dev/socket/netd' with mode '660', user '0', group '1000'
+<3>init: init.svc.DR-daemon:running
+[   70.255460] init: init.svc.DR-daemon:running
 <5>init: starting 'dbus'
-<3>init: init.svc.dbus:running
-[   70.270629] init: init.svc.dbus:running
+<3>init: init.svc.dbus:running
+[   70.270629] init: init.svc.dbus:running
 <6>init: Created socket '/dev/socket/dbus' with mode '660', user '1002', group '1002'
-<5>init: starting 'sensor-daemon'
-<3>init: init.svc.sensor-daemon:running
-[   70.311655] init: init.svc.sensor-daemon:running
+<5>init: starting 'sensor-daemon'
+<3>init: init.svc.sensor-daemon:running
+[   70.311655] init: init.svc.sensor-daemon:running
 <5>init: starting 'tvout'
-<3>init: init.svc.tvout:running
-[   70.340482] init: init.svc.tvout:running
+<3>init: init.svc.tvout:running
+[   70.340482] init: init.svc.tvout:running
 <6>init: waitpid returned pid 2650, status = 0000ff00
-<5>init: process 'netd', pid 2650 exited
-<5>init: process 'netd' killing any children in process group
-<3>init: init.svc.netd:restarting
-[   70.374488] init: init.svc.netd:restarting
+<5>init: process 'netd', pid 2650 exited
+<5>init: process 'netd' killing any children in process group
+<3>init: init.svc.netd:restarting
+[   70.374488] init: init.svc.netd:restarting
 <6>init: waitpid returned pid 2651, status = 0000ff00
-<5>init: process 'DR-daemon', pid 2651 exited
-<5>init: process 'DR-daemon' killing any children in process group
-<3>init: init.svc.DR-daemon:restarting
-[   70.396778] init: init.svc.DR-daemon:restarting
+<5>init: process 'DR-daemon', pid 2651 exited
+<5>init: process 'DR-daemon' killing any children in process group
+<3>init: init.svc.DR-daemon:restarting
+[   70.396778] init: init.svc.DR-daemon:restarting
 <6>init: waitpid returned pid 2652, status = 0000ff00
-<5>init: process 'dbus', pid 2652 exited
-<5>init: process 'dbus' killing any children in process group
-<3>init: init.svc.dbus:restarting
-[   70.418278] init: init.svc.dbus:restarting
+<5>init: process 'dbus', pid 2652 exited
+<5>init: process 'dbus' killing any children in process group
+<3>init: init.svc.dbus:restarting
+[   70.418278] init: init.svc.dbus:restarting
 <6>init: waitpid returned pid 2653, status = 0000ff00
-<5>init: process 'sensor-daemon', pid 2653 exited
-<5>init: process 'sensor-daemon' killing any children in process group
-<3>init: init.svc.sensor-daemon:restarting
-[   70.441609] init: init.svc.sensor-daemon:restarting
+<5>init: process 'sensor-daemon', pid 2653 exited
+<5>init: process 'sensor-daemon' killing any children in process group
+<3>init: init.svc.sensor-daemon:restarting
+[   70.441609] init: init.svc.sensor-daemon:restarting
 <6>init: waitpid returned pid 2654, status = 0000ff00
-<5>init: process 'tvout', pid 2654 exited
-<5>init: process 'tvout' killing any children in process group
-<3>init: init.svc.tvout:restarting
-[   70.463639] init: init.svc.tvout:restarting
+<5>init: process 'tvout', pid 2654 exited
+<5>init: process 'tvout' killing any children in process group
+<3>init: init.svc.tvout:restarting
+[   70.463639] init: init.svc.tvout:restarting
 <6>fg_read_vcell: VCELL=3878
-
