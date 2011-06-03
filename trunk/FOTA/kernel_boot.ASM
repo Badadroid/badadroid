@@ -40,6 +40,16 @@ START
 	ldr	r0, [s_done_a]
 	bl	debug_print
 
+	ldr	r0, [s_loadsbl_a]
+	bl	debug_print
+	LDR	R2, [sbl_size]
+	LDR	R1, [sbl_start]
+	LDR	R0, [s_sbl_path_a]
+	BL	loadfile
+	BL	int_debugprint
+	ldr	r0, [s_done_a]
+	bl	debug_print
+
 	ldr	r0, [s_mmuoff_a]
 	bl	debug_print
 
@@ -208,99 +218,16 @@ STR	R4, [R3,#0xF00]
 	MOV	R1, 0xFFFFFFFF
 	STR	R1, [R0]    ;POWAH ON EVRYTHINKS (clock registers in all modules must be available for kernel)
 
-LDR	R4, [UART2_PTR]
-MOV	R3, #0x23
-STRH	R3, [SP,#8]
-MOV	R3, #0x80
-STRH	R3, [SP,#6]
-LDR	R3, [R4, #4]
-BIC	R3, R3, #0xF
-STR	R3, [R4, #4]
-MOV	R3, #0
-STR	R3, [R4, #8]
-MOV	R3, #0
-STR	R3, [R4, #0xC]
-MOV	R3, #3
-STR	R3, [R4]
-MOV	R3, #0x240
-STR	R3, [R4, 4]
-LDRH	R3, [SP,#8]
-STR	R3, [R4, 0x28]
-LDRH	R3, [SP,#6]
-STR	R3, [R4, 0x2C]
-LDR	R3, [R4, 4]
-ORR	R3, R3, #5
-STR	R3, [R4, 4]
 
-BL	timer_driver
+	BL	timer_driver
+	BL	configure_clocks
 
-		LDR	R3, [CLK_DIV1]
-		LDR	R3, [R3]
-		BIC	R3, R3, #0xF00000
-		ORR	R3, R3, #0x300000
-		LDR	R2, [CLK_DIV1]
-		STR	R3, [R2]
-LDR	R3, [CLK_DIV0]
-LDR	R3, [R3]
-AND	R3, R3, #0x80000000
-MOV	R2, R3
-LDR	R3, [clk_div_mask]
-ORR	R3, R2, R3
-LDR	R2, [CLK_DIV0]
-STR	R3, [R2]
-
-wait_for_stable_div:
-LDR	R3, [CLK_DIV_STAT0]
-LDR	R3, [R3]
-AND	R3, R3, #1
-CMP	R3, #0
-BNE	wait_for_stable_div
-
-LDR	R3, [DMC0_REG]
-LDR	R3, [R3, 0x18]
-BIC	R3, R3, #2
-LDR	R2, [DMC0_REG]
-STR	R3, [R2, 0x18]
-LDR	R3, [DMC1_REG]
-LDR	R3, [R3, 0x18]
-BIC	R3, R3, #2
-LDR	R2, [DMC1_REG]
-STR	R3, [R2, 0x18]
-
-
-LDR	R2, [CLK_GATE_IP0]
-LDR	R3, [CLK_GATE_IP0]
-LDR	R3, [R3]
-BIC	R3, R3, #0x80000000
-STR	R3, [R2]
-LDR	R2, [CLK_GATE_IP1]
-LDR	R3, [CLK_GATE_IP1]
-LDR	R3, [R3]
-BIC	R3, R3, #0x10000000
-STR	R3, [R2]
-LDR	R2, [CLK_GATE_IP2]
-LDR	R3, [CLK_GATE_IP2]
-LDR	R3, [R3]
-BIC	R3, R3, #0x200
-BIC	R3, R3, #2
-STR	R3, [R2]
-LDR	R2, [CLK_GATE_IP3]
-LDR	R3, [CLK_GATE_IP3]
-LDR	R3, [R3]
-BIC	R3, R3, #3
-STR	R3, [R2]
-LDR	R2, [CLK_GATE_IP4]
-LDR	R3, [CLK_GATE_IP4]
-LDR	R3, [R3]
-BIC	R3, R3, #6
-STR	R3, [R2]
-
-
+	LDR	R1, [SBL_lcd_init_ptr]
+	BLX	R1
 
 	LDR	R1, [kernel_start]
 	LDR	R0, [s_jumpingout_a]
 	BL	debug_print
-
 	MOV	R0, 0	  ;must be 0
 	MOV	R1, 0x891 ;machine id of I9000
 	LDR	R2, [ATAG_ptr]
@@ -326,57 +253,12 @@ relockernel:
 
 	LDMFD	SP!, {R0-R2,PC}
 
-timer_driver:
-
-var_18= -0x18
-var_4= -4
-
-STR	R11, [SP,#var_4]!
-ADD	R11, SP, #4+var_4
-SUB	SP, SP, #0xC
-LDR	R2, [TCFG0]
-MOV	R3, #0xF00
-STR	R3, [R2]
-LDR	R3, [TCFG1]
-LDR	R3, [R3]
-BIC	R3, R3, #0xF0000
-STR	R3, [R11,#0x10+var_18]
-LDR	R2, [TCFG1]
-LDR	R3, [R11,#0x10+var_18]
-ORR	R3, R3, #0x10000
-STR	R3, [R2]
-LDR	R2, [TCNTB4]
-MOV	R3, 0xFFFFFFFF
-STR	R3, [R2]
-LDR	R2, [TCON]
-LDR	R3, [TCON]
-LDR	R3, [R3]
-BIC	R3, R3, #0x700000
-ORR	R3, R3, #0x600000
-STR	R3, [R2]
-LDR	R2, [TCON]
-LDR	R3, [TCON]
-LDR	R3, [R3]
-BIC	R3, R3, #0x700000
-ORR	R3, R3, #0x500000
-STR	R3, [R2]
-MOV	SP, R11
-LDMFD	SP!, {R11}
-BX	LR
-
-TCFG0	dw  0xE2500000
-TCFG1	dw  0xE2500004
-TCON	dw  0xE2500008
-
-TCNTB4	dw  0xE250003C
-
 FUNCTIONS
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;; variables below
 DEFAULT_VARIABLES
     pagetable		dw gMMUL1PageTable
 
-    GPIO_INT_FIRST	dw 0xE0200700
-    GPIO_INT_LAST	dw 0xE0200754
+
 
     INTC_DMA_CLR	dw 0xB0601004
     INTC_ONENAND_CLR	dw 0xB0601008
@@ -384,7 +266,6 @@ DEFAULT_VARIABLES
     SYSCON_NORMAL_CFG	dw 0xE010C010
 
 
-    kernel_start	dw 0x32000000
 
     ATAG_ptr		dw 0x30000100 ;
     ATAG_CORE		dw 0x54410001
@@ -392,24 +273,6 @@ DEFAULT_VARIABLES
     ATAG_REVISION	dw 0x54410007
     ATAG_CMDLINE	dw 0x54410009
 
-    UART2_PTR		dw 0xE2900800
-    clk_div_mask	dw 0x14131330
-    CLK_DIV0		dw 0xE0100300
-    CLK_DIV1		dw 0xE0100304
-    CLK_DIV2		dw 0xE0100308
-    CLK_DIV3		dw 0xE010030C
-    CLK_DIV4		dw 0xE0100310
-    CLK_DIV5		dw 0xE0100314
-    CLK_DIV6		dw 0xE0100318
-    CLK_DIV7		dw 0xE010031C
-    CLK_GATE_IP0	dw 0xE0100460
-    CLK_GATE_IP1	dw 0xE0100464
-    CLK_GATE_IP2	dw 0xE0100468
-    CLK_GATE_IP3	dw 0xE010046C
-    CLK_GATE_IP4	dw 0xE0100470
-    CLK_DIV_STAT0	dw 0xE0101000
-
-    WATCHDOG_TIMER	dw 0xE2700000
 
     VIC1		dw 0xF2100000
     VIC2		dw 0xF2200000
@@ -422,10 +285,14 @@ DEFAULT_VARIABLES
     VIDINTCON0		dw 0xF8000130
     VIDINTCON1		dw 0xF8000134
 
-
+    kernel_start	dw 0x32000000
     kernel_buf		dw 0x44000000
     kernel_size_a	dw kernel_size
-    kernel_size 	dw 0 ;overwritten during runtime ;0x6664C8  ;6710472
+    kernel_size 	dw 0 ;overwritten during runtime
+
+    SBL_lcd_init_ptr	dw 0x40250F90
+    sbl_start		dw 0x40244000
+    sbl_size		dw 0x140000
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;; strings at the end
@@ -439,15 +306,19 @@ DEFAULT_STRINGS_ADDR
     s_mmuoff_a	     dw s_mmuoff
     s_kernelreturn_a dw s_kernelreturn
     s_atagcmdline_a  dw s_atagcmdline
+    s_sbl_path_a     dw s_sbl_path
+    s_loadsbl_a      dw s_loadsbl
 
 DEFAULT_STRINGS
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;; ;add custom strings below
     s_kernel_path    du '/g/galaxyboot/zImage',0
+    s_sbl_path	     du '/g/galaxyboot/sbl.bin',0
     s_atagcmdline    db 'console=ttySAC2,115200 loglevel=4',0
     s_loadkernel     db ' Loading kernel image to buf',0
     s_jumpingout     db ' Jumpout to 0x%X',0
     s_mmuoff	     db ' Turning off MMU',0
     s_kernelreloc    db ' Reloc kernel to 0x%X',0
     s_kernelreturn   db ' WTF KERNEL RETURNED',0
+    s_loadsbl	     db ' Loading SBL',0
 
 END
