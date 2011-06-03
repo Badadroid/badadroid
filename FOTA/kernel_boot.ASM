@@ -202,6 +202,9 @@ STR	R4, [R3,#0xF00]
 	STR	R1, [R0]
 
 	LDR	R0, [SYSCON_NORMAL_CFG]
+	LDR	R1, [R0]
+	BIC	R1, R1, 0xBE ;turn off all power-managed S5PC110 blocks, this will reset LCD controller :)
+	STR	R1, [R0]
 	MOV	R1, 0xFFFFFFFF
 	STR	R1, [R0]    ;POWAH ON EVRYTHINKS (clock registers in all modules must be available for kernel)
 
