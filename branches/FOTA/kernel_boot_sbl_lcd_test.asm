@@ -115,18 +115,29 @@ START
       ; MOV    R0, #0xA9
       ; BL     GPIO_Drv_UnsetExtInterrupt
 
-	LDR	R1, [sbl_start]
-	LDR	R0, [s_jumpingout_a]
-	BL	debug_print
-
-	;BL      FIMD_Drv_Stop
-	;BL      FIMD_Drv_INITIALIZE
-	;BL     InitializeDisplay
-
 	LDR	R0, [SYSCON_NORMAL_CFG]
 	LDR	R1, [R0]
 	BIC	R1, R1, 0xBE ;turn off all power-managed S5PC110 blocks, this will reset LCD controller :)
 	STR	R1, [R0]
+
+	LDR	R5, [NOP_CODE]
+	LDR	R0, [SBL_patch_table_adr]
+
+do_patch:
+	LDR	R1, [R0], 4 ;post increment R0 by 4
+	CMP	R1, 0
+	BEQ	patch_done
+	STR	R5, [R1]
+	B	do_patch
+
+patch_done:
+	LDR	R0, [s_done_a]
+	BL	debug_print
+
+	LDR	R1, [sbl_start]
+	LDR	R0, [s_jumpingout_a]
+	BL	debug_print
+
 
 	LDR	R5, [sbl_start]
 	BLX	R5
@@ -176,8 +187,12 @@ DEFAULT_VARIABLES
 
     sbl_jmp_patch	dw 0x40246D88
 
-    ldmfd_r11_pc	dw 0xE8BD8800
-    sbl_lcd_patch	dw 0x40250F94
+    ;ldmfd_r11_pc        dw 0xE8BD8800
+    ;sbl_lcd_patch       dw 0x40250F94
+    SBL_patch_table_adr dw SBL_patch_table
+    NOP_CODE		dw 0xE1A00000
+    SBL_patch_table	dw 0x40250FB0
+dw 0x0	     ;end
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;; strings at the end
 DEFAULT_STRINGS_ADDR
