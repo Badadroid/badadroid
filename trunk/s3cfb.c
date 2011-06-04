@@ -43,12 +43,15 @@
 #ifdef CONFIG_FB_S3C_MDNIE
 #include "s3cfb_mdnie.h"
 #endif
-#if defined(CONFIG_FB_S3C_TL2796)
-#include "s3cfb_tl2796.h"
-#endif
 #include <linux/gpio.h>
 #include <plat/gpio-cfg.h>
 #include <mach/gpio.h>
+
+#if defined (CONFIG_FB_S3C_TL2796)
+extern void tl2796_ldi_init(void);
+extern void tl2796_ldi_enable(void);
+extern void tl2796_ldi_disable(void);
+#endif
 
 static struct s3cfb_global *fbdev;
 
@@ -1510,11 +1513,6 @@ static int s3cfb_remove(struct platform_device *pdev)
 
 	return 0;
 }
-#if defined (CONFIG_FB_S3C_TL2796)
-extern void tl2796_ldi_init(void);
-extern void tl2796_ldi_enable(void);
-extern void tl2796_ldi_disable(void);
-#endif
 
 #ifdef CONFIG_PM
 #ifdef CONFIG_HAS_EARLYSUSPEND
