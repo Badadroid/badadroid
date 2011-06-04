@@ -1319,6 +1319,8 @@ static int s3cfb_probe(struct platform_device *pdev)
 #if defined(CONFIG_MACH_S5PC110_P1)
 	fbdev->lcd = (struct s3cfb_lcd*)pdata->lcd;
 #endif
+
+/////////////////////////////////////////////
 //#if !defined(CONFIG_MACH_S5PC110_ARIES)
 	if (pdata->cfg_gpio)
 		pdata->cfg_gpio(pdev);
@@ -1418,6 +1420,12 @@ static int s3cfb_probe(struct platform_device *pdev)
 
 	if (pdata->reset_lcd)
 		pdata->reset_lcd(pdev);
+		
+#if defined(CONFIG_FB_S3C_TL2796)
+	tl2796_ldi_init();
+	tl2796_ldi_enable();
+#endif
+
 #endif
 //#endif	/* CONFIG_MACH_S5PC110_ARIES */
 #ifdef CONFIG_HAS_WAKELOCK
@@ -1628,10 +1636,7 @@ void s3cfb_late_resume(struct early_suspend *h)
 #endif
 
 
-#if defined(CONFIG_FB_S3C_TL2796)
-	tl2796_ldi_init();
-	tl2796_ldi_enable();
-#endif
+
 
 
 #if defined (CONFIG_FB_S3C_LTE480WV)
