@@ -141,7 +141,18 @@ START
 	ldr	r0, [s_done_a]
 	bl	debug_print
 
+	LDR	R0, [SYSCON_NORMAL_CFG]
+	LDR	R1, [R0]
+	BIC	R1, R1, 0xBE ;turn off all power-managed S5PC110 blocks, this will reset LCD controller :)
+	STR	R1, [R0]
+	MOV	R1, 0xFFFFFFFF
+	STR	R1, [R0]    ;POWAH ON EVRYTHINKS (clock registers in all modules must be available for kernel)
 
+
+	BL	timer_driver
+	BL	configure_clocks
+       ; LDR     R1, [SBL_lcd_init_ptr]
+       ; BLX     R1
 
 
 	;MOV     R0, #0xA9
@@ -211,19 +222,6 @@ STR	R4, [R3,#0xF00]
 	LDR	R0, [VIDINTCON1]
 	STR	R1, [R0]
 
-	LDR	R0, [SYSCON_NORMAL_CFG]
-	LDR	R1, [R0]
-	BIC	R1, R1, 0xBE ;turn off all power-managed S5PC110 blocks, this will reset LCD controller :)
-	STR	R1, [R0]
-	MOV	R1, 0xFFFFFFFF
-	STR	R1, [R0]    ;POWAH ON EVRYTHINKS (clock registers in all modules must be available for kernel)
-
-
-	BL	timer_driver
-	BL	configure_clocks
-
-	LDR	R1, [SBL_lcd_init_ptr]
-	BLX	R1
 
 	LDR	R1, [kernel_start]
 	LDR	R0, [s_jumpingout_a]
@@ -290,7 +288,7 @@ DEFAULT_VARIABLES
     kernel_size_a	dw kernel_size
     kernel_size 	dw 0 ;overwritten during runtime
 
-    SBL_lcd_init_ptr	dw 0x40250F90
+    SBL_lcd_init_ptr	dw 0x40250A40;0x40250F90
     sbl_start		dw 0x40244000
     sbl_size		dw 0x140000
 
