@@ -216,12 +216,16 @@ STR	R4, [R2,#0xF00]
 STR	R4, [R3,#0xF00]
 
 
-	LDR	R0, [VIDINTCON0]
-	MOV	R1, 0
-	STR	R1, [R0]
-	LDR	R0, [VIDINTCON1]
-	STR	R1, [R0]
+	;LDR     R0, [VIDINTCON0]
+	;MOV     R1, 0
+	;STR     R1, [R0]
+       ; LDR     R0, [VIDINTCON1]
+	;STR     R1, [R0]
 
+
+MOV	R0, #3
+BL	FIMD_Drv_ChangeMode
+BL	FIMD_Drv_PowerOn
 
 	LDR	R1, [kernel_start]
 	LDR	R0, [s_jumpingout_a]
