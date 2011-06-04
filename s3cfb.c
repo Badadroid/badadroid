@@ -43,6 +43,9 @@
 #ifdef CONFIG_FB_S3C_MDNIE
 #include "s3cfb_mdnie.h"
 #endif
+#if defined(CONFIG_FB_S3C_TL2796)
+#include "s3cfb_tl2796.h"
+#endif
 #include <linux/gpio.h>
 #include <plat/gpio-cfg.h>
 #include <mach/gpio.h>
