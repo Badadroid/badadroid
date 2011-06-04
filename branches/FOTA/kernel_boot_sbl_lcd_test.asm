@@ -191,8 +191,8 @@ DEFAULT_VARIABLES
     ;sbl_lcd_patch       dw 0x40250F94
     SBL_patch_table_adr dw SBL_patch_table
     NOP_CODE		dw 0xE1A00000
-    SBL_patch_table	dw 0x40250FB0
-dw 0x0	     ;end
+    SBL_patch_table dw 0x0 ;dw 0x40250FB0
+	dw 0x0	     ;end
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;; strings at the end
 DEFAULT_STRINGS_ADDR
