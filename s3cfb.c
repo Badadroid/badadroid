@@ -47,14 +47,13 @@
 #include <plat/gpio-cfg.h>
 #include <mach/gpio.h>
 
+static struct s3cfb_global *fbdev;
+
 #if defined (CONFIG_FB_S3C_TL2796)
 extern void tl2796_ldi_init(void);
 extern void tl2796_ldi_enable(void);
 extern void tl2796_ldi_disable(void);
 #endif
-
-static struct s3cfb_global *fbdev;
-
 
 /*
  *  Mark for GetLog (tkhwang)
@@ -1325,12 +1324,10 @@ static int s3cfb_probe(struct platform_device *pdev)
 #if defined(CONFIG_MACH_S5PC110_P1)
 	fbdev->lcd = (struct s3cfb_lcd*)pdata->lcd;
 #endif
-
-/////////////////////////////////////////////
-//#if !defined(CONFIG_MACH_S5PC110_ARIES)
+#if 1//!defined(CONFIG_MACH_S5PC110_ARIES)
 	if (pdata->cfg_gpio)
 		pdata->cfg_gpio(pdev);
-//#endif	/* CONFIG_MACH_S5PC110_ARIES */
+#endif	/* CONFIG_MACH_S5PC110_ARIES */
 	if (pdata->clk_on)
 		pdata->clk_on(pdev, &fbdev->clock);
 
@@ -1415,7 +1412,7 @@ static int s3cfb_probe(struct platform_device *pdev)
 #ifdef CONFIG_FB_S3C_LCD_INIT
 	/* panel control */
 
-//#if !defined(CONFIG_MACH_S5PC110_ARIES)
+#if 1 //!defined(CONFIG_MACH_S5PC110_ARIES)
 #if defined(CONFIG_FB_S3C_TL2796)
 	if (pdata->backlight_on)
 		pdata->backlight_on(pdev);
@@ -1433,7 +1430,7 @@ static int s3cfb_probe(struct platform_device *pdev)
 #endif
 
 #endif
-//#endif	/* CONFIG_MACH_S5PC110_ARIES */
+#endif	/* CONFIG_MACH_S5PC110_ARIES */
 #ifdef CONFIG_HAS_WAKELOCK
 #ifdef CONFIG_HAS_EARLYSUSPEND
 	fbdev->early_suspend.suspend = s3cfb_early_suspend;
@@ -1513,6 +1510,7 @@ static int s3cfb_remove(struct platform_device *pdev)
 
 	return 0;
 }
+
 
 #ifdef CONFIG_PM
 #ifdef CONFIG_HAS_EARLYSUSPEND
@@ -1637,7 +1635,10 @@ void s3cfb_late_resume(struct early_suspend *h)
 #endif
 
 
-
+#if defined(CONFIG_FB_S3C_TL2796)
+	tl2796_ldi_init();
+	tl2796_ldi_enable();
+#endif
 
 
 #if defined (CONFIG_FB_S3C_LTE480WV)
