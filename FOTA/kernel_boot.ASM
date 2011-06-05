@@ -223,9 +223,9 @@ STR	R4, [R3,#0xF00]
 	;STR     R1, [R0]
 
 
-MOV	R0, #3
-BL	FIMD_Drv_ChangeMode
-BL	FIMD_Drv_PowerOn
+;MOV     R0, #3
+;BL      FIMD_Drv_ChangeMode
+;BL      FIMD_Drv_PowerOn
 ;BL       FIMD_Drv_SetGPIO
 
 	LDR	R5, [NOP_CODE]
