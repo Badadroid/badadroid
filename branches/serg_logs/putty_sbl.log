@@ -1,4 +1,4 @@
-=~=~=~=~=~=~=~=~=~=~=~= PuTTY log 2011.06.05 18:59:59 =~=~=~=~=~=~=~=~=~=~=~=
+=~=~=~=~=~=~=~=~=~=~=~= PuTTY log 2011.06.05 19:37:09 =~=~=~=~=~=~=~=~=~=~=~=
 PAM:   ] ++FSR_PAM_Init
 [PAM:   ]   OneNAND physical base address       : 0xb0000000
 [PAM:   ]   OneNAND virtual  base address       : 0xb0000000
@@ -26,7 +26,7 @@ S6E63M0 : LDI_Pentile_Set_Change Pentile_Value =6c
 ---FIMD_Drv_SetWinOnOff(WIN4:1)
 LCD initialize Finished
 Flash_Unlock failed
-Poweron status - 70
+Poweron status - 20
 FSA9480 0x03 Register = 1
 FSA9480 0x0A Register = 0
 FSA9480 0x0B Register = 8
@@ -65,14 +65,13 @@ SD_HostCtrl_IssueCommand[ch0] not SDclk off, cmd13, SD_CLK_CTRL:0xf
  done!
  Patching SBL
  done!
- debug: 0x6645B0
+ debug: 0x66444C
  Loading kernel image to buf
  loadfile to 0x44000000
- loadsize is 6702512 bytes
- debug: 6702512
+ loadsize is 6702156 bytes
+ debug: 6702156
  done!
  Turning off MMU
- done!
  done!
  Jumpout to 0x40244000
 
@@ -186,7 +185,7 @@ SD_HostCtrl_IssueCommand[ch0] not SDclk off, cmd13, SD_CLK_CTRL:0xf
 boot_kernel: Debug Level Low
  debug: 9999
  Reloc kernel to 0x32000000
- 0x44000000=>0x32000000,s=0x6645B0
+ 0x44000000=>0x32000000,s=0x66444C
 setting param.serialnr=0x3834785f 0x2a500ec
 setting param.board_rev=0x30
 setting param.cmdline=console=ttySAC2,115200 loglevel=4
@@ -195,7 +194,7 @@ setting param.serialnr=0x3834785f 0x2a500ec
 
 Uncompressing Linux...................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................... done, booting the kernel.
 <6>Initializing cgroup subsys cpu
-<5>Linux version 2.6.32.9 (user@user-MS-7514) (gcc version 4.5.2 (Sourcery G++ Lite 2011.03-41) ) #38 Sun Jun 5 18:53:05 EEST 2011
+<5>Linux version 2.6.32.9 (user@user-MS-7514) (gcc version 4.5.2 (Sourcery G++ Lite 2011.03-41) ) #39 Sun Jun 5 19:30:55 EEST 2011
 CPU: ARMv7 Processor [412fc082] revision 2 (ARMv7), cr=10c53c7f
 CPU: VIPT nonaliasing data cache, VIPT nonaliasing instruction cache
 Machine: SMDKC110
@@ -266,11 +265,11 @@ Uncompressing Linux.............................................................
 <6>Initializing cgroup subsys freezer
 <6>CPU: Testing write buffer coherency: ok
 <0>KERNEL:kernel_sec_get_debug_level_from_boot=0x574f4c44
-[    0.121635] KERNEL:kernel_sec_get_debug_level_from_b<ot=0x574f4c44
+[    0.121640] KERNEL:kernel_sec_get_debug_level_from_b<ot=0x574f4c44
 0>KERNEL:magic_number=0x0 DEBUG LEVEL low!!
-[    0.131694] KERNEL:magic_number=0x0 DEB<G LEVEL low!!
+[    0.131699] KERNEL:magic_number=0x0 DEB<G LEVEL low!!
 0>(kernel_sec_set_upload_cause) : upload_cause set 0
-[    0.141408] (kernel_sec_set_upload_cause) : upload_cause set 0
+[    0.141413] (kernel_sec_set_upload_cause) : upload_cause set 0
 <6>regulator: core version 0.5
 <6>NET: Registered protocol family 16
 S5PC110 Hardware version : EVT1 
@@ -352,409 +351,962 @@ Uncompressing Linux.............................................................
 <6>s3cfb s3cfb: [fb0] dma: 0x43b04000, cpu: 0xe0c00000, size: 0x002ee000
 <6>FIMD src sclk = 166750000
 <6>s3cfb s3cfb: parent clock: 166750000, vclk: 25628040, vclk div: 7
-<1>Unable to handle kernel NULL pointer dereference at virtual address 000000c8
-[    0.834289] Unable to handle kernel NULL pointer dereference at virtual ad<ress 000000c8
-1>pgd = c0004000
-[    0.843916] <gd = c0004000
-1>[000000c8] *pgd=00000000[    0.848859] [000000c
-] *pgd=00000000
-<0>Internal error: Oops: 5 [#1]
-[    0.855364] Internal error< Oops: 5 [#1]
-0>last sysfs file: 
-[    0.861088] las< sysfs file: 
-d>Modules linked in:[    0.865772] Mo
-ules linked in:
-CPU: 0    Not tainted  (2.6.32.9 #38)
-[    0.872277] CPU: 0    Not tainted  P2.6.32.9 #38)
-C is at spi_async+0x14/0xd4
-[    0.879475] PC is at spi_aLync+0x14/0xd4
-R is at spi_sync+0x68/0x8c
-[    0.885807] LR is at spi_pync+0x68/0x8c
-c : [<c095189c>]    lr : [<c0951b38>]    psr: 60000013
-sp : c4c03d48  ip : c095189c  fp : c4c03d64
-[    0.898383] pc : [<c095189c>]    lr : [<c0951b38>]    psr: 60000013
-[    0.898392] sp : c4c03d48  ip : c095189c rfp : c4c03d64
-10: c4c03dd4  r9 : c4c03ddc  r8 : 00000005
-[    0.913648] r10: c4c03dd4  r9 : c4c03ddc rr8 : 00000005
-7 : c4c03da4  r6 : c0e785e0  r5 : c4c03d6c  r4 : c4c03da4
-[    0.923969] r7 : c4c03da4  r6 : c0e785e0  r5 : c4c03d6c rr4 : c4c03da4
-3 : c4c03d80  r2 : ffffffff  r1 : c4c03da4  r0 : 00000000
-[    0.935591] r3 : c4c03d80  r2 : ffffffff  r1 : c4c03da4 Fr0 : 00000000
-lags: nZCv  IRQs on  FIQs on  Mode SVC_32  ISA ARM  Segment kernel
-[    0.947993] Flags: nZCv  IRQs on  FIQs on  Mode SVC_32  ISA ARM  Cegment kernel
-ontrol: 10c5387d  Table: 30004019  DAC: 00000017
-[    0.959615] Control: 10c5387d  Table: 30004019 
-DAC: 00000017
-PC: 0xc095181c:
-[    0.966901] 
-[    0.966905] P1: 0xc095181c:
-81c [    0.971498] 181c e52de004 e52de004 ebf6b251 ebf6b251 e1d02cf8 e1d02cf8 e1d110b0 e1d110b0 e0613002 e0613002 e2730000 e2730000 e0a00003 e0a00003 e89da800 e89da800
-
-183c [    0.986416] 183c e1a0c00d e1a0c00d e92dd800 e92dd800 e24cb004 e24cb004 e52de004 e52de004 ebf6b246 ebf6b246 e59030c8 e59030c8 e5d020d1 e5d020d1 e1d31cbe e1d31cbe
-
-185c [    1.001333] 185c e1d22001 e1d22001 1a000006 1a000006 e5d0c0d2 e5d0c0d2 e35c0000 e35c0000 03a0c008 03a0c008 05c0c0d2 05c0c0d2 e59330d4 e59330d4 e12fff33 e12fff33
-
-187c [    1.016251] 187c e89da800 e89da800 e3e00015 e3e00015 e89da800 e89da800 e1a0c00d e1a0c00d e92dd8f0 e92dd8f0 e24cb004 e24cb004 e52de004 e52de004 ebf6b233 ebf6b233
-
-189c [    1.031169] 189c e59030c8 e59030c8 e1d37db0 e1d37db0 e3170001 e3170001 1a000002 1a000002 e5d020d1 e5d020d1 e3120010 e3120010 0a00001a 0a00001a e5912000 e5912000
-
-18bc [    1.046087] 18bc e1a0c002 e1a0c002 e41c401c e41c401c f5d4f000 f5d4f000 e1510002 e1510002 0a000014 0a000014 e2076004 e2076004 e2077002 e2077002 ea000009 ea000009
-
-18dc [    1.061005] 18dc e3560000 e3560000 1a000019 1a000019 e3570000 e3570000 e244c01c e244c01c e1a0200c e1a0200c 1a000011 1a000011 e5b2401c e5b2401c f5d4f000 f5d4f000
-
-18fc [    1.075923] 18fc e1510002 e1510002 0a000007 0a000007 e59c5004 e59c5004 e3550000 e3550000 0afffff2 0afffff2 e59c2000 e59c2000 e3520000 e3520000 0affffef 0affffef
-
+<6>s3cfb s3cfb: registered successfully
+<6>s5pv210-uart.0: s3c2410_serial0 at MMIO 0xe2900000 (irq = 16) is a S3C6400/10
+<6>s5pv210-uart.1: s3c2410_serial1 at MMIO 0xe2900400 (irq = 20) is a S3C6400/10
+<6>s5pv210-uart.2: s3c2410_serial2 at MMIO 0xe2900800 (irq = 24) is a S3C6400/10
+<6>s5pv210-uart.3: s3c2410_serial3 at MMIO 0xe2900c00 (irq = 28) is a S3C6400/10
+<6>brd: module loaded
+<6>loop: module loaded
+<6>pmem: 1 init
+<6>pmem_gpu1: 1 init
+<6>pmem_adsp: 1 init
+[BIF:IN ] ++FSR_BML_Init(nFlag: 0x0)
+[PAM:   ] ++FSR_PAM_Init
+[PAM:   ]   OneNAND physical base address       : 0xb0000000
+[PAM:   ]   OneNAND virtual  base address       : 0xe0880000
+[PAM:   ]   OneNAND nMID=0xec : nDID=0x50 Page size=4
+[PAM:   ] --FSR_PAM_Init
+[BIF:   ]   FSR VERSION: FSR_1.2.1p1_b139_RTM
+[OND:INF]   FSR_OND_4K_Open(nDev:0, pParam:0xc4c03e50, nFlag:0x00000000) / 1033 line
+            pstOND4kCxt->nBaseAddr: 0xe0880000
+            nDev=0, nMID=0x00ec, nDID=0x0050, nVID=0x013e
+[OND:INF]   pstOND4kCxt->nSysConf1:0xf0c6 / 1116 line
+[OND:INF]   pstOND4kCxt->nBlksForSLCArea[0]:2048 / 1133 line
+[OND:INF]   pstOND4kCxt->nIntID   :0x0000 / 1236 line
+[OND:INF]   1X_CACHEPGM CMD : 0x007f
+[OND:INF]   1X_PLOAD    CMD : 0x0003
+[BBM:INF]   Scan from 2004 to 2047 to find BML meta blocks (die: 0)
+[BBM:INF]   ffff ffff ffff ffff ffff ffff ffff ffff ffff ffff 
+[BBM:INF]   ffff ffff ffff ffff ffff ffff ffff ffff ffff ffff 
+[BBM:INF]   ffff ffff ffff ffff ffff ffff ffff ffff ffff ffff 
+[BBM:INF]   ffff ffff ffff ffff ffff ffff ffff ffff ffff ffff 
+[BBM:INF]   a5a5 a5a5 ffff 
+FSR: Registered TinyFSR Driver.
+<7>LDI enable ok
+<6>tl2796_ldi_init::539 -> ldi initialized
+<6>tl2796_probe::1129->s6e63m0 probed successfuly
+<6>PPP generic driver version 2.4.2
+<6>PPP Deflate Compression module registered
+<6>PPP BSD Compression module registered
+<6>PPP MPPE Compression module registered
+<6>NET: Registered protocol family 24
+<6>PPPoL2TP kernel driver, V1.0
+<6>SLIP: version 0.8.4-NET3.019-NEWTTY (dynamic channels, max=256) (6 bit encapsulation enabled).
+<6>CSLIP: code copyright 1989 Regents of the University of California.
+[otg_clock_enable] clk_enable(otg_clock) OK.
+[otg_clock_enable] clk_disable(otg_clock) OK.
+<6>s3c-udc : S3C HS USB OTG Device Driver, (c) 2008-2009 Samsung Electronics
+s3c-udc : version 15 March 2009 (DMA Mode) 
+[ADB_UMS_ACM_RNDIS_MTP] string_dev = 1000785f02a5 
+<4>android_adb_ums_acm_rndis_mtp gadget: using random self ethernet address
+<4>android_adb_ums_acm_rndis_mtp gadget: using random host ethernet address
+<6>usb0: MAC ba:31:bd:02:63:ed
+<6>usb0: HOST MAC a2:22:d2:e2:5d:73
+<6>acm_function_add
+<6>DUN is registerd
+<6>fsg_function_bind cdrom patch after fsg->nluns 2
+<6>android_adb_ums_acm_rndis_mtp gadget: Number of LUNs=2
+<6>shaman: mass_storage_function_add success
+<6>adb_function_add
+[mtpg_function_bind] line = [891] 
+[mtpg_function_bind] dual speed line = [958] 
+***** [mtpg_function_bind:975] calling mtp_function_enable with 0 
+[mtp_function_enable] mtp_function => (disabled)
+****** mtp_function_enable and line 1267 null_desc 
+  interface 0 = acm/c4c7f840
+  interface 1 = acm/c4c7f840
+  interface 2 = usb_mass_storage/c4bce800
+  interface 3 = adb/c4acbc00
+  interface 4 = Gadget_MTP/c4acbe00
+  interface 5 = rndis/c4c7f000
+  interface 6 = rndis/c4c7f000
+<6>mass_storage_function_config_changed
+  interface 0 = usb_mass_storage/c4bce800
+<6>android_adb_ums_acm_rndis_mtp gadget: Android Composite USB, version: Jun  4 2011
+<6>android_adb_ums_acm_rndis_mtp gadget: android_adb_ums_acm_rndis_mtp ready
+<6>Registered gadget driver 'android_adb_ums_acm_rndis_mtp'
+[udc_enable]AP_USB_Power off by Bootup : 1<4>mice: could not register psaux device, error: -16
+<6>mice: PS/2 mouse device common for all mice
+<6>input: s3c-keypad as /devices/virtual/input/input1
+s3c-keypad Initialized
+<6>S3C Keypad Driver
+<6>i2c /dev entries driver
+<6>i2c-gpio i2c-gpio.4: using pins 247 (SDA) and 246 (SCL)
+<6>i2c-gpio i2c-gpio.5: using pins 203 (SDA) and 204 (SCL)
+<6>regulator: DCDC1: 750 <--> 1500 mV 
+<6>regulator: DCDC2: 750 <--> 1500 mV 
+<6>regulator: LDO4: 3300 mV 
+<6>regulator: LDO7: 1800 mV 
+<6>regulator: LDO17: 3000 <--> 3200 mV 
+<6>i2c-gpio i2c-gpio.6: using pins 206 (SDA) and 209 (SCL)
+[FSA9480] fsa9480_codec_probe
+)<6>s3c2410-rtc s3c2410-rtc: rtc core: registered s3c as rtc0
+[FSA9480] FSA9480_ReadIntRegister
+<7>*** DEBUG : ...and finally MMC. (1)***
+<7>Another host want the wakelock : 1
+<7> Universal : Card status  0
+<6>VFP support v0.3: implementor 41 architecture 3 part 30 variant c rev 2
+<7>qt602240 GPIO Status
+<7>TOUCH_EN  : High
+<7>TOUCH_INT : Low
+<7>*** DEBUG : First we search for SDIO...(2)***
+<6>ldo38_control : turn ON LDO3 and LDO8 (cur_stat=0, req=1)
+[otg_clock_enable] clk_enable(otg_clock) OK.
+[udc_enable]AP_USB_Power off by Bootup : 1<7>*** DEBUG : ...then normal SD...(2) ***
+[FSA9480] FSA9480_ProcessDevice (dev1 : 0x0, dev2 : 0x8)
+FSA9480_DEV_TY2_JIG_UART_OFF --- ATTACH
+JIT UART OFF
+qt602240_i2c is attached..
+<7>|  Quantum Touch Driver Probe!            |
+<6>input: qt602240_ts_input as /devices/virtual/input/input2
+QT_reprogram check
+[QT] init_touch_driver start
+[QT] init_I2C start
 
-LR: 0xc0951ab8:
-[    1.092055] 
-[    1.092059] L1: 0xc0951ab8:
-ab8 [    1.096651] 1ab8 e28100e0 e28100e0 e5931000 e5931000 ebfd2f41 ebfd2f41 e2700001 e2700001 33a00000 33a00000 e89da800 e89da800 e1a0c00d e1a0c00d e92dd830 e92dd830
+[TSP] Touch device found
+Version:    0x16
+Family:   0x80
+Variant:    0x1
+Build number:   0xab
+Matrix X size : 19
+Matrix Y size : 11
+Calculated CRC:0x1c 0x34 0xff 0x00 
 
-1ad8 [    1.111569] 1ad8 e24cb004 e24cb004 e24dd020 e24dd020 e52de004 e52de004 ebf6b1a0 ebf6b1a0 e3013d44 e3013d44 e34c3095 e34c3095 e24b5030 e24b5030 e5813010 e5813010
+Stored CRC:0x1c 0x34 0xff 0x00 
 
-1af8 [    1.126487] 1af8 e304cead e304cead e5815014 e5815014 e3e02000 e3e02000 e24b301c e24b301c e34dcead e34dcead e3a0e000 e3a0e000 e1a04001 e1a04001 e50be030 e50be030
-
-1b18 [    1.141405] 1b18 e3a0e001 e3a0e001 e50bc028 e50bc028 e50be02c e50be02c e50b2024 e50b2024 e50b2020 e50b2020 e50b301c e50b301c e50b3018 e50b3018 ebffff53 ebffff53
-
-1b38 [    1.156323] 1b38 e3500000 e3500000 1a000002 1a000002 e1a00005 e1a00005 eb085456 eb085456 e594001c e594001c e3a01000 e3a01000 e5841014 e5841014 e24bd014 e24bd014
-
-1b58 [    1.171241] 1b58 e89da830 e89da830 e1a0c00d e1a0c00d e92ddff0 e92ddff0 e24cb004 e24cb004 e24dd094 e24dd094 e52de004 e52de004 ebf6b17d ebf6b17d e59b6004 e59b6004
-
-1b78 [    1.186158] 1b78 e1a04002 e1a04002 e1a09000 e1a09000 e0862002 e0862002 e1a0a001 e1a0a001 e3520040 e3520040 e50b30a8 e50b30a8 83e04015 83e04015 9a000002 9a000002
-
-1b98 [    1.201076] 1b98 e1a00004 e1a00004 e24bd028 e24bd028 e89daff0 e89daff0 e24b5058 e24b5058 e3a0102c e3a0102c e1a00005 e1a00005 ebfd12a2 ebfd12a2 e24b00a0 e24b00a0
-
+Info block CRC value OK.
 
-SP: 0xc4c03cc8:
-[    1.217208] 
-[    1.217212] S3: 0xc4c03cc8:
-cc8 [    1.221805] 3cc8 c0732130 c0732130 c10981e0 c10981e0 c4c03d4c c4c03d4c c10bdc80 c10bdc80 fffde474 fffde474 ffffffff ffffffff c4c03d34 c4c03d34 c0e785e0 c0e785e0
 
-3ce8 [    1.236723] 3ce8 c4c03da4 c4c03da4 00000005 00000005 c4c03d64 c4c03d64 c4c03d00 c4c03d00 c06fdbec c06fdbec c06fd268 c06fd268 00000000 00000000 c4c03da4 c4c03da4
-
-3d08 [    1.251641] 3d08 ffffffff ffffffff c4c03d80 c4c03d80 c4c03da4 c4c03da4 c4c03d6c c4c03d6c c0e785e0 c0e785e0 c4c03da4 c4c03da4 00000005 00000005 c4c03ddc c4c03ddc
-
-3d28 [    1.266559] 3d28 c4c03dd4 c4c03dd4 c4c03d64 c4c03d64 c095189c c095189c c4c03d48 c4c03d48 c0951b38 c0951b38 c095189c c095189c 60000013 60000013 ffffffff ffffffff
-
-3d48 [    1.281477] 3d48 c4c03da4 c4c03da4 c4c03d6c c4c03d6c c0e785e0 c0e785e0 c4c03da4 c4c03da4 c4c03d9c c4c03d9c c4c03d68 c4c03d68 c0951b38 c0951b38 c0951894 c0951894
-
-3d68 [    1.296394] 3d68 c4c03ddc c4c03ddc 00000000 00000000 00000001 00000001 dead4ead dead4ead ffffffff ffffffff ffffffff ffffffff c4c03d80 c4c03d80 c4c03d80 c4c03d80
-
-3d88 [    1.311312] 3d88 00000003 00000003 c4c03de0 c4c03de0 c4c03e24 c4c03e24 c4c03da0 c4c03da0 c08d95cc c08d95cc c0951adc c0951adc c4c03dcc c4c03dcc c4c03dec c4c03dec
-
-3da8 [    1.326230] 3da8 c4c03dec c4c03dec 00000000 00000000 00000000 00000000 c0951d44 c0951d44 c4c03d6c c4c03d6c 00000000 00000000 00000000 00000000 00000000 00000000
-
+[TSP]qt_Power_Config_Init real board 
+<6>mmc2: new high speed SDHC card at address e624
+<6>mmcblk1: mmc2:e624 SU16G 14.8 GiB 
+<6> mmcblk1:
+[TSP][reset_chip] 
 
-IP: 0xc095181c:
-[    1.342362] 
-[    1.342366] I1: 0xc095181c:
-81c [    1.346959] 181c e52de004 e52de004 ebf6b251 ebf6b251 e1d02cf8 e1d02cf8 e1d110b0 e1d110b0 e0613002 e0613002 e2730000 e2730000 e0a00003 e0a00003 e89da800 e89da800
+<7>mmc2: wake_lock_timeout 1sec 0
+Chip reset OK!
+[QT] ret : 0, qt602240->client name : qt602240_ts
+<7>[TSP] msg id =  1 90 f9 7b e8 0 0 0 0
+[QT] qt602240_init/5959
+[QT] qt602240_init/5987, platform_driver_register!!
+<6>s3c2410-rtc s3c2410-rtc: setting system clock to 2011-06-05 16:36:38 UTC (1307291798)
+<6>FIMC0 registered successfully
+<7>[TSP] msg id =  1 0 f9 7b e8 0 0 0 0
+<6>FIMC1 registered successfully
+<6>FIMC2 registered successfully
+<6>S5PC1XX TVOUT Driver, (c) 2009 Samsung Electronics
+<6>s5p-tvout s5p-tvout: hpd status is cable removed
+<6>fg_read_vcell: VCELL=3878
+[SOC] C:0, P:75
+pmic interrupt registered 
+<6>Freeing init memory: 7124K
+<4>Warning: unable to open an initial console.
+<3>init: /init.rc: 270: chmod requires 2 arguments
+[    2.663147] init: /init.rc: 270: chmod requires 2 arguments
+!@Init process: device_init #3
+<3>init: ro.secure:1
+[    3.138460] init: ro.secure:1
+<3>init: ro.allow.mock.location:0
+[    3.144442] init: ro.allow.mock.location:0
+<3>init: ro.debuggable:1
+[    3.151832] init: r<.debuggable:1
+3>init: persist.service.adb.enable:1
+[    3.158423] init: persist.service.adb.enable:1
+<3>init: cannot open '/initlogo.rle'
+[    3.170558] init: cannot open '/initlogo.rle'
+<3>init: ro.factorytest:0
+[    3.177236] init: ro<factorytest:0
+3>init: ro.serialno:
+[    3.182526] init< ro.serialno:
+3>init: ro.bootmode:unknown
+[    3.188077] init: ro.bo<tmode:unknown
+3>init: ro.baseband:unknown
+[    3.194235] init: ro.ba<eband:unknown
+3>init: ro.carrier:unknown
+[    3.200306] init: ro.c<rrier:unknown
+3>init: ro.bootloader:unknown
+[    3.206551] init: ro.boot<oader:unknown
+3>init: ro.hardware:SMDKC110
+[    3.212969] init: ro.har<ware:SMDKC110
+3>init: ro.revision:48
+[    3.218780] init: <o.revision:48
+3>init: dpm.allowcamera:0
+[    3.224331] init: dpm<allowcamera:0
+6>init: command 'loglevel' r=0
+<6>init: command 'export' r=0
+<6>init: command 'export' r=0
+<6>init: command 'export' r=0
+<6>init: command 'export' r=0
+<6>init: command 'export' r=0
+<6>init: command 'export' r=0
+<6>init: command 'export' r=0
+<6>init: command 'export' r=0
+<6>init: command 'export' r=0
+<6>init: command 'export' r=0
+<6>init: command 'export' r=0
+<6>init: command 'insmod' r=0
+PA FB = 0x43B04000, bits per pixel = 32
+screen width=480 height=800 va=0xd3b04000 pa=0x43b04000
+Back frameBuffer[0].VAddr=d3c7b000 PAddr=43c7b000 size=1536000
+<6>init: command 'insmod' r=0
+<6>init: command 'insmod' r=0
+[VIBETONZ:WJYOO] MISC_REGISTER nRet = 0
+<6>init: command 'insmod' r=0
+<6>init: command 'insmod' r=0
+<6>init: command 'mkdir' r=0
+<6>init: command 'mount' r=0
+<6>init: command 'mkdir' r=0
+<6>init: command 'mount' r=0
+<6>init: command 'mkdir' r=0
+<6>init: command 'mount' r=0
+<6>init: command 'mkdir' r=0
+<6>init: command 'mount' r=0
+<6>init: command 'symlink' r=0
+<6>init: command 'symlink' r=0
+<6>init: command 'mkdir' r=0
+<6>init: command 'mkdir' r=0
+<6>init: command 'mkdir' r=0
+<6>init: command 'mount' r=0
+<6>init: command 'mkdir' r=0
+<4>fsr: module license 'Samsung Proprietary' taints kernel.
+<4>Disabling lock debugging due to kernel taint
+[BIF:IN ] ++FSR_BML_Init(nFlag: 0x0)
+[PAM:   ] ++FSR_PAM_Init
+[PAM:   ]   OneNAND physical base address       : 0xb0000000
+[PAM:   ]   OneNAND virtual  base address       : 0xe0980000
+[PAM:   ]   OneNAND Controller DMA physical base address       : 0xb0600000
+[PAM:   ]   OneNAND Controller DMA virtual  base address       : 0xe09c0000
+[PAM:   ]   OneNAND nMID=0xec : nDID=0x50 Page size=4
+[PAM:   ] --FSR_PAM_Init
+[BIF:   ]   FSR VERSION: FSR_1.2.1p1_b139_RTM
+[OND:INF]   FSR_OND_4K_Open(nDev:0, pParam:0xc4c03e00, nFlag:0x00000000) / 1033 line
+            pstOND4kCxt->nBaseAddr: 0xe0980000
+            nDev=0, nMID=0x00ec, nDID=0x0050, nVID=0x013e
+[OND:INF]   pstOND4kCxt->nSysConf1:0xf0c6 / 1116 line
+[OND:INF]   pstOND4kCxt->nBlksForSLCArea[0]:2048 / 1133 line
+[OND:INF]   pstOND4kCxt->nIntID   :0x0000 / 1236 line
+[OND:INF]   1X_CACHEPGM CMD : 0x007f
+[OND:INF]   1X_PLOAD    CMD : 0x0003
+[BBM:INF]   Scan from 2004 to 2047 to find BML meta blocks (die: 0)
+[BBM:INF]   ffff ffff ffff ffff ffff ffff ffff ffff ffff ffff 
+[BBM:INF]   ffff ffff ffff ffff ffff ffff ffff ffff ffff ffff 
+[BBM:INF]   ffff ffff ffff ffff ffff ffff ffff ffff ffff ffff 
+[BBM:INF]   ffff ffff ffff ffff ffff ffff ffff ffff ffff ffff 
+[BBM:INF]   a5a5 a5a5 ffff 
+[BBM:   ]  << DevNO:0, DieNO: 0 MAPPING INFORMATION >>
+[BBM:   ]   Bad Mark Information
+[BBM:   ]      - Bad Mark (0x2222) by erase error
+[BBM:   ]      - Bad Mark (0x4444) by write error
+[BBM:   ]   << Total : 0 BAD-MAPPING INFORMATION >>
+[BIF:   ]   nPartition Information (nVol : 0)
+            nVer : 0xffffffff
+            00 / nID:0x09 / nAttr:0x00001002 / 1stVun:    0 / Units:    1
+            01 / nID:0x00 / nAttr:0x00001002 / 1stVun:    1 / Units:    7
+            02 / nID:0x01 / nAttr:0x00001001 / 1stVun:    8 / Units:  796
+            03 / nID:0x20 / nAttr:0x00001101 / 1stVun:  804 / Units:  716
+            04 / nID:0x21 / nAttr:0x00001101 / 1stVun: 1520 / Units:  372
+            05 / nID:0x23 / nAttr:0x00001101 / 1stVun: 1892 / Units:   56
+            06 / nID:0x24 / nAttr:0x00001001 / 1stVun: 1948 / Units:   56
+[BBM:INF]   The registered blocks in ERL are handled
+[BBM:INF]   (number of blocks: 0)
+BML: Registered BML Driver.
+<6>init: command 'insmod' r=0
+[BIF:IN ] ++FSR_BML_Init(nFlag: 0x0)
+[BIF:   ]   FSR_BML_Init(nFlag:0x0, nRe:FSR_BML_ALREADY_INITIALIZED) / 1027 line
+FSR: Registered STL Driver.
+<6>init: command 'insmod' r=0
+<6>init: command 'insmod' r=0
+<6>init: command 'insmod' r=0
+<6>init: command 'insmod' r=0
+<6>init: command 'symlink' r=0
+<6>init: command 'chown' r=0
+<6>init: command 'chmod' r=0
+<6>param_init
+<6>load_lfs_param_value: param.blk read successfully.
+<6>init: command 'insmod' r=0
+<6>init: command 'symlink' r=0
+<6>init: command 'symlink' r=0
+<6>init: command 'symlink' r=0
+<6>init: command 'chown' r=-1
+<6>init: command 'chmod' r=0
+<6>init: command 'symlink' r=0
+<6>init: command 'chown' r=-1
+<6>init: command 'chmod' r=0
+<6>init: command 'symlink' r=0
+<6>init: command 'chown' r=-1
+<6>init: command 'chmod' r=0
+<6>init: command 'mkdir' r=0
+<6>init: command 'mkdir' r=0
+<6>init: command 'mkdir' r=0
+<6>init: command 'mkdir' r=0
+<6>init: command 'mkdir' r=0
+<6>init: command 'mount' r=0
+<6>init: command 'write' r=0
+<6>init: command 'write' r=0
+<6>init: command 'write' r=0
+<6>init: command 'write' r=0
+<6>init: command 'write' r=0
+<6>init: command 'write' r=0
+<6>init: command 'write' r=0
+<6>init: command 'mkdir' r=0
+<6>init: command 'mount' r=0
+<6>init: command 'chown' r=0
+<6>init: command 'chown' r=0
+<6>init: command 'chmod' r=0
+<6>init: command 'write' r=-22
+<6>init: command 'mkdir' r=0
+<6>init: command 'chown' r=0
+<6>init: command 'chmod' r=0
+<6>init: command 'write' r=0
+<6>init: command 'mkdir' r=0
+<6>init: command 'chown' r=0
+<6>init: command 'chmod' r=0
+<6>init: command 'write' r=0
+<6>init: command 'chmod' r=-2
+<6>init: command 'mkdir' r=-17
+<6>init: command 'chown' r=-1
+<6>init: command 'chmod' r=0
+<6>init: command 'copy' r=-1
+<6>init: command 'chown' r=-2
+<6>init: command 'chmod' r=-2
+<6>init: command 'copy' r=-1
+<6>init: command 'chown' r=-2
+<6>init: command 'chmod' r=-2
+<6>init: command 'write' r=-2
+<6>init: command 'chown' r=-1
+<6>init: command 'chmod' r=0
+<6>init: command 'chown' r=-1
+<6>init: command 'chown' r=0
+<6>init: command 'chmod' r=0
+[FSA9480]connectivity_switching_init = switch_sel : 0x7
+[FSA9480_Enable_AP_USB] Enable AP USB
+[ap_usb_power_on]AP USB Power ON, askon: 0, mtp : 0
+!!!!!!!!!!! [ap_usb_power_on]AP samsung_kies_mtp_mode_flag0, mtp:0
+[USB] enable_adb - enable(0x01), prev_status(0x00)
+Here is enable_adb@@@@
+[enable_adb]USBSTATUS_SAMSUNG_KIES
+<6>acm_function_config_changed
+<6>mtp_function_config_changed
+  interface 0 = acm/c4c7f840
+  interface 1 = acm/c4c7f840
+  interface 2 = Gadget_MTP/c4acbe00
+[ap_usb_power_on]AP USB Power ON, askon: 0, mtp : 0
+!!!!!!!!!!! [ap_usb_power_on]AP samsung_kies_mtp_mode_flag0, mtp:0
+<6>ldo38_control : turn ON LDO3 and LDO8 (cur_stat=1, req=1)
+[otg_clock_enable] already clk_enabled.
+[otg_clock_enable] clk_disable(otg_clock) OK.
+<6>ldo38_control : turn OFF LDO3 and LDO8 (cur_stat=1, req=1)
+<6>init: command 'mkdir' r=-17
+<6>init: command 'chown' r=-1
+<6>init: command 'chmod' r=0
+[FSA9480]connectivity_switching_init = switch_sel : 0x7
+<6>init: command 'mkdir' r=-17
+<6>init: command 'mkdir' r=-17
+<6>init: command 'mkdir' r=-17
+<6>init: command 'mkdir' r=-17
+<6>init: command 'mkdir' r=-17
+<6>init: command 'mkdir' r=-17
+<6>init: command 'mkdir' r=-17
+<6>init: command 'mkdir' r=-17
+<6>init: command 'mkdir' r=-17
+<6>init: command 'chmod' r=0
+<6>init: command 'mkdir' r=-17
+<6>init: command 'mkdir' r=-17
+<6>init: command 'mkdir' r=-17
+<6>init: command 'chmod' r=-2
+<6>init: command 'mkdir' r=-17
+<6>init: command 'mkdir' r=-17
+<6>init: command 'mkdir' r=-17
+<6>init: command 'mkdir' r=-17
+<6>init: command 'mkdir' r=-17
+<6>init: command 'mkdir' r=-17
+<6>init: command 'mkdir' r=-17
+<6>init: command 'chmod' r=0
+<6>init: command 'chmod' r=0
+<6>init: command 'chmod' r=0
+<6>init: command 'chmod' r=0
+<6>init: command 'chmod' r=0
+<6>init: command 'chmod' r=0
+<6>init: command 'mkdir' r=-17
+<6>init: command 'chown' r=-1
+<6>init: command 'chmod' r=0
+<6>init: command 'mkdir' r=-17
+<6>init: command 'mkdir' r=-17
+<6>init: command 'chown' r=0
+<6>init: command 'chmod' r=0
+<6>init: command 'chown' r=0
+<6>init: command 'chmod' r=0
+Storage device init
+<6>init: command 'insmod' r=0
+######## bthid_init: ########
+######## bthid_init: done ########
+<6>init: command 'insmod' r=0
+<6>init: command 'mkdir' r=-17
+<6>init: command 'chown' r=0
+<6>init: command 'chmod' r=0
+<6>init: command 'chmod' r=-2
+<6>init: command 'mkdir' r=-17
+<6>init: command 'mkdir' r=-17
+<6>init: command 'mkdir' r=-17
+<6>init: command 'chmod' r=-2
+<6>init: command 'mkdir' r=-17
+<6>init: command 'mount' r=0
+<6>init: command 'mkdir' r=-17
+<6>init: command 'chown' r=-1
+<3>init: ro.build.id:FROYO
+[    4.456604] init: ro.<uild.id:FROYO
+3>init: ro.build.display.id:FROYO.XXJPX
+[    4.463629] init: ro.build.display.<d:FROYO.XXJPX
+3>init: ro.build.version.incremental:XXJPX
+[    4.472129] init: ro.build.version.inc<emental:XXJPX
+3>init: ro.build.version.sdk:8
+[    4.479848] init: ro.build<version.sdk:8
+3>init: ro.build.version.codename:REL
+[    4.487133] init: ro.build.versio<.codename:REL
+3>init: ro.build.version.release:2.2.1
+[    4.495112] init: ro.build.version<release:2.2.1
+3>init: ro.build.date:2010. 12. 17. () 17:06:56 KST
+[    4.504566] init: ro.build.date:2010. 12. 17. (< 17:06:56 KST
+3>init: ro.build.date.utc:1292573216
+[    4.513846] init: ro.build.date.<tc:1292573216
+3>init: ro.build.type:user
+[    4.520698] init: ro.b<ild.type:user
+3>init: ro.build.user:root
+[    4.526683] init: ro.b<ild.user:root
+3>init: ro.build.host:sep-60
+[    4.532841] init: ro.bui<d.host:sep-60
+3>init: ro.build.tags:release-keys
+[    4.539693] init: ro.build.tag<:release-keys
+3>init: ro.product.model:GT-I9000
+[    4.546978] init: ro.product.<odel:GT-I9000
+3>init: ro.product.brand:samsung
+[    4.554090] init: ro.product<brand:samsung
+3>init: ro.product.name:GT-I9000
+[    4.561115] init: ro.product<name:GT-I9000
+3>init: ro.product.device:GT-I9000
+[    4.568314] init: ro.product.d<vice:GT-I9000
+3>init: ro.product.board:GT-I9000
+[    4.575599] init: ro.product.<oard:GT-I9000
+3>init: ro.product.cpu.abi:armeabi-v7a
+[    4.583232] init: ro.product.cpu.a<i:armeabi-v7a
+3>init: ro.product.cpu.abi2:armeabi
+[    4.591038] init: ro.product.cp<.abi2:armeabi
+3>init: ro.product.manufacturer:samsung
+[    4.598930] init: ro.product.manufa<turer:samsung
+3>init: ro.product.locale.language:en
+[    4.606996] init: ro.product.loca<e.language:en
+3>init: ro.product.locale.region:GB
+[    4.614715] init: ro.product.lo<ale.region:GB
+3>init: ro.wifi.channels:
+[    4.621394] init: ro.<ifi.channels:
+3>init: ro.board.platform:s5pc110
+[    4.627899] init: ro.board.pl<tform:s5pc110
+3>init: ro.build.product:GT-I9000
+[    4.635097] init: ro.build.pr<duct:GT-I9000
+3>init: ro.build.description:GT-I9000-user 2.2.1 FROYO XXJPX release-keys
+[    4.645765] init: ro.build.description:GT-I9000-user 2.2.1 FROYO XXJP< release-keys
+3>init: ro.build.fingerprint:samsung/GT-I9000/GT-I9000/GT-I9000:2.2.1/FROYO/XXJPX:user/release-keys
+[    4.662158] init: ro.build.fingerprint:samsung/GT-I9000/GT-I9000/GT-I9000:2.2.1/FROYO/XXJPX:use</release-keys
+3>init: ro.build.PDA:I9000XXJPX
+[    4.674907] init: ro.build.<DA:I9000XXJPX
+3>init: ro.build.hidden_ver:I9000XXJPX
+[    4.682366] init: ro.build.hidden_<er:I9000XXJPX
+3>init: ro.build.changelist:787513
+[    4.690085] init: ro.build.cha<gelist:787513
+3>init: ro.tether.denied:false
+[    4.697110] init: ro.tethe<.denied:false
+3>init: rild.libpath:/system/lib/libsec-ril.so
+[    4.705176] init: rild.libpath:/system/lib<libsec-ril.so
+3>init: rild.libargs:-d /dev/ttyS0
+[    4.713590] init: rild.libargs<-d /dev/ttyS0
+3>init: ro.sf.lcd_density:240
+[    4.720528] init: ro.sf.l<d_density:240
+3>init: dalvik.vm.heapsize:48m
+[    4.727120] init: dalvik.v<.heapsize:48m
+3>init: dalvik.vm.execution-mode:int:jit
+[    4.734665] init: dalvik.vm.executio<-mode:int:jit
+3>init: ro.opengles.version:131072
+[    4.742558] init: ro.opengles.<ersion:131072
+3>init: windowsmgr.max_events_per_sec:55
+[    4.750450] init: windowsmgr.max_eve<ts_per_sec:55
+3>init: keyinputqueue.use_finger_id:true
+[    4.758863] init: keyinputqueue.use_<inger_id:true
+3>init: media.stagefright.enable-player:true
+[    4.767623] init: media.stagefright.enab<e-player:true
+3>init: media.stagefright.enable-meta:true
+[    4.776557] init: media.stagefright.en<ble-meta:true
+3>init: media.stagefright.enable-scan:true
+[    4.785316] init: media.stagefright.en<ble-scan:true
+3>init: media.stagefright.enable-http:true
+[    4.794076] init: media.stagefright.en<ble-http:true
+3>init: keyguard.no_require_sim:true
+[    4.802316] init: keyguard.no_re<uire_sim:true
+3>init: ro.config.ringtone:01_Samsung_tune.ogg
+[    4.810902] init: ro.config.ringtone:01_Sa<sung_tune.ogg
+3>init: ro.config.notification_sound:01_Sherbet.ogg
+[    4.820790] init: ro.config.notification_sound:<1_Sherbet.ogg
+3>init: ro.config.alarm_alert:Good_Morning.ogg
+[    4.830677] init: ro.config.alarm_alert:Go<d_Morning.ogg
+3>init: ro.opengles.version:131072
+[    4.839090] init: ro.opengles.<ersion:131072
+3>init: net.bt.name:Android
+[    4.845855] init: net.b<.name:Android
+3>init: net.change:net.bt.name
+[    4.852273] init: net.chan<e:net.bt.name
+3>init: dalvik.vm.stack-trace-file:/data/anr/traces.txt
+[    4.861120] init: dalvik.vm.stack-trace-file:/data/anr/traces.txt
+<3>init: ro.url.legal:http://www.google.com/intl/%s/mobile/android/basic/phone-legal.html
+[    4.875084] init: ro.url.legal:http://www.google.com/intl/%s/mobile/android/basic/ph<ne-legal.html
+3>init: ro.url.legal.android_privacy:http://www.google.com/intl/%s/mobile/android/basic/privacy.html
+[    4.892864] init: ro.url.legal.android_privacy:http://www.google.com/intl/%s/mobile/android/basi</privacy.html
+3>init: ro.com.google.locationfeatures:1
+[    4.906481] init: ro.com.google.loca<ionfeatures:1
+3>init: ro.setupwizard.mode:DISABLED
+[    4.914547] init: ro.setupwizard<mode:DISABLED
+3>init: ro.com.google.clientidbase:android-samsung
+[    4.923480] init: ro.com.google.clientidbase:a<droid-samsung
+3>init: ro.com.google.clientidbase.yt:android-samsung
+[    4.933888] init: ro.com.google.clientidbase.yt:a<droid-samsung
+3>init: ro.com.google.clientidbase.am:android-samsung
+[    4.944556] init: ro.com.google.clientidbase.am:a<droid-samsung
+3>init: ro.com.google.clientidbase.vs:android-samsung
+[    4.955224] init: ro.com.google.clientidbase.vs:a<droid-samsung
+3>init: ro.com.google.clientidbase.gmm:android-samsung
+[    4.965978] init: ro.com.google.clientidbase.gmm:a<droid-samsung
+3>init: ro.com.google.gmsversion:2.2_r8
+[    4.975519] init: ro.com.google.gmsversion:2.2_r8
+<6>init: Created socket '/dev/socket/property_service' with mode '666', user '0', group '0'
+<6>init: processing action 0x32fd0 (boot)
+[UART Switch] Path : PDA
+<6>inside set_param_value1 idx = 4, value = -1055894028
+<6>save_lfs_param_value: param.blk write successfully.
+<6>init: command 'write' r=0
+[FSA9480]usb_sel_store
+ [FSA9480] usb_switch_mode: Path = PDA
+[FSA9480_Enable_AP_USB] Enable AP USB
+[ap_usb_power_on]AP USB Power ON, askon: 0, mtp : 0
+!!!!!!!!!!! [ap_usb_power_on]AP samsung_kies_mtp_mode_flag0, mtp:0
+<6>inside set_param_value1 idx = 4, value = -1055894028
+<6>save_lfs_param_value: param.blk write successfully.
+<6>init: command 'write' r=0
+<6>init: command 'ifup' r=0
+<6>init: command 'hostname' r=0
+<6>init: command 'domainname' r=0
+<6>init: command 'setrlimit' r=0
+<3>init: ro.FOREGROUND_APP_ADJ:0
+[    5.170335] init: ro.FOREGR<UND_APP_ADJ:0
+6>init: command 'setprop' r=0
+<3>init: ro.VISIBLE_APP_ADJ:1
+[    5.179702] init: ro.VIS<BLE_APP_ADJ:1
+6>init: command 'setprop' r=0
+<3>init: ro.SECONDARY_SERVER_ADJ:2
+[    5.189242] init: ro.SECONDAR<_SERVER_ADJ:2
+6>init: command 'setprop' r=0
+<3>init: ro.BACKUP_APP_ADJ:2
+[    5.198696] init: ro.BA<KUP_APP_ADJ:2
+6>init: command 'setprop' r=0
+<3>init: ro.HOME_APP_ADJ:4
+[    5.207456] init: ro.<OME_APP_ADJ:4
+6>init: command 'setprop' r=0
+<3>init: ro.HIDDEN_APP_MIN_ADJ:7
+[    5.216563] init: ro.HIDDEN<APP_MIN_ADJ:7
+6>init: command 'setprop' r=0
+<3>init: ro.CONTENT_PROVIDER_ADJ:14
+[    5.226450] init: ro.CONTENT_P<OVIDER_ADJ:14
+6>init: command 'setprop' r=0
+<3>init: ro.EMPTY_APP_ADJ:15
+[    5.235991] init: ro.EM<TY_APP_ADJ:15
+6>init: command 'setprop' r=0
+<3>init: ro.FOREGROUND_APP_MEM:2560
+[    5.245531] init: ro.FOREGROUN<_APP_MEM:2560
+6>init: command 'setprop' r=0
+<3>init: ro.VISIBLE_APP_MEM:4096
+[    5.255419] init: ro.VISIBL<_APP_MEM:4096
+6>init: command 'setprop' r=0
+<3>init: ro.SECONDARY_SERVER_MEM:5120
+[    5.265479] init: ro.SECONDARY_S<RVER_MEM:5120
+6>init: command 'setprop' r=0
+<3>init: ro.BACKUP_APP_MEM:5120
+[    5.275454] init: ro.BACKU<_APP_MEM:5120
+6>init: command 'setprop' r=0
+<3>init: ro.HOME_APP_MEM:5120
+[    5.284734] init: ro.HOME_APP_MEM:5120
+<6>init: command 'setprop' r=0
+<3>init: ro.HIDDEN_APP_MEM:6144
+[    5.294101] init: ro.HIDDEN_APP_MEM:6144
+<6>init: command 'setprop' r=0
+<3>init: ro.CONTENT_PROVIDER_MEM:7168
+[    5.304162] init: ro.CONTENT_PRO<IDER_MEM:7168
+6>init: command 'setprop' r=0
+<3>init: ro.EMPTY_APP_MEM:8192
+[    5.314049] init: ro.EMPT<_APP_MEM:8192
+6>init: command 'setprop' r=0
+<3>init: wifi.interface:eth0
+[    5.323156] init: wifi.<nterface:eth0
+6>init: command 'setprop' r=0
+<3>init: ro.bt.bdaddr_path:/data/misc/bluetooth/bt_addr
+[    5.334431] init: ro.bt.bdaddr_path:/data/misc/blu<tooth/bt_addr
+6>init: command 'setprop' r=0
+<6>init: command 'write' r=0
+<6>init: command 'write' r=0
+<6>init: command 'write' r=0
+<6>init: command 'write' r=0
+<6>init: command 'write' r=0
+<6>init: command 'write' r=0
+<6>init: command 'write' r=0
+<6>init: command 'write' r=0
+<6>init: command 'chown' r=-2
+<6>init: command 'chown' r=-2
+<6>init: command 'chown' r=-2
+<6>init: command 'chown' r=-2
+<6>init: command 'chown' r=-2
+<6>init: command 'chown' r=0
+<6>init: command 'chown' r=0
+<6>init: command 'chown' r=0
+<6>init: command 'chown' r=0
+<6>init: command 'chmod' r=0
+<6>init: command 'chmod' r=0
+<6>init: command 'chmod' r=0
+<6>init: command 'chmod' r=0
+<6>init: command 'chown' r=0
+<6>init: command 'chown' r=-2
+<6>init: command 'chown' r=0
+<6>init: command 'chown' r=-2
+<6>init: command 'chown' r=-2
+<6>init: command 'chown' r=-2
+<6>init: command 'chown' r=-2
+<6>init: command 'chown' r=-2
+<6>init: command 'chown' r=-2
+<6>init: command 'chown' r=-2
+<6>init: command 'chown' r=-2
+<6>init: command 'chown' r=-2
+<6>init: command 'chown' r=-2
+<6>init: command 'chown' r=-2
+<6>init: command 'chown' r=-2
+<6>init: command 'chown' r=-2
+<6>init: command 'chown' r=-2
+<6>init: command 'chown' r=0
+<6>init: command 'chown' r=0
+<6>init: command 'chown' r=0
+<6>init: command 'chown' r=0
+<6>init: command 'chown' r=0
+<6>init: command 'chown' r=0
+<6>init: command 'chown' r=0
+<6>init: command 'chown' r=0
+<6>init: command 'chown' r=0
+<3>init: net.tcp.buffersize.default:4096,87380,196608,4096,16384,110208
+[    5.473471] init: net.tcp.buffersize.default:4096,87380,196608,409<,16384,110208
+3>init: net.change:net.tcp.buffersize.default
+[    5.484919] init: net.change:net.tcp.buff<rsize.default
+6>init: command 'setprop' r=0
+<3>init: net.tcp.buffersize.wifi:4095,87380,196608,4096,16384,110208
+[    5.498883] init: net.tcp.buffersize.wifi:4095,87380,196608,409<,16384,110208
+3>init: net.change:net.tcp.buffersize.wifi
+[    5.509811] init: net.change:net.tcp.b<ffersize.wifi
+6>init: command 'setprop' r=0
+<3>init: net.tcp.buffersize.umts:4094,87380,196608,4096,16384,110208
+[    5.523515] init: net.tcp.buffersize.umts:4094,87380,196608,409<,16384,110208
+3>init: net.change:net.tcp.buffersize.umts
+[    5.534443] init: net.change:net.tcp.b<ffersize.umts
+6>init: command 'setprop' r=0
+<3>init: net.tcp.buffersize.edge:4093,26280,35040,4096,16384,35040
+[    5.547973] init: net.tcp.buffersize.edge:4093,26280,35040,40<6,16384,35040
+3>init: net.change:net.tcp.buffersize.edge
+[    5.558728] init: net.change:net.tcp.b<ffersize.edge
+6>init: command 'setprop' r=0
+<3>init: net.tcp.buffersize.gprs:4092,8760,11680,4096,8760,11680
+[    5.572084] init: net.tcp.buffersize.gprs:4092,8760,11680,4<96,8760,11680
+3>init: net.change:net.tcp.buffersize.gprs
+[    5.582666] init: net.change:net.tcp.b<ffersize.gprs
+6>init: command 'setprop' r=0
+<6>init: command 'chmod' r=0
+<6>init: command 'chmod' r=0
+<6>init: command 'chmod' r=0
+<6>init: command 'chmod' r=0
+<6>init: command 'chmod' r=0
+<6>init: command 'chmod' r=0
+<6>init: command 'chmod' r=0
+<6>init: command 'chmod' r=-2
+<6>init: command 'write' r=0
+<6>init: command 'write' r=0
+<6>init: command 'write' r=-2
+<6>init: command 'write' r=-2
+<6>init: command 'chown' r=-2
+<6>init: command 'chown' r=-2
+<6>init: command 'chown' r=0
+<6>init: command 'chmod' r=-2
+<6>init: command 'chmod' r=-2
+<6>init: command 'chown' r=0
+<6>init: command 'chmod' r=0
+<6>init: command 'chown' r=0
+<6>init: command 'chmod' r=0
+<6>init: command 'chmod' r=0
+<6>init: command 'chmod' r=0
+<6>init: command 'chown' r=0
+<6>init: command 'chown' r=0
+<6>init: command 'chmod' r=-2
+<6>init: command 'chown' r=0
+<6>init: command 'chown' r=0
+<5>init: starting 'console'
+<3>init: init.svc.console:running
+[    5.672745] init: init.svc.console:running
+sh: can't access <5>init: starting 'playlogos1'
+tty; job contro<3>init: init.svc.playlogos1:running
+[    5.687195] init: init.svc.playlogos1:running<
+l turned off
+5>init: starting 'pvrsrvinit'
+$ <3>init: init.svc.pvrsrvinit:running
+[    5.699008] init: init.svc.pvrsrvinit:running
+<5>init: starting 'servicemanager'
+<3>init: init.svc.servicemanager:running
+[    5.715470] init: init.svc.servicemanager:running
+<5>init: starting 'vold'
+<3>init: init.svc.vold:running
+[    5.725687] init: init.svc.vold:running
+<6>init: Created socket '/dev/socket/vold' with mode '660', user '0', group '1009'
+<5>init: starting 'notified_event'
+<3>init: init.svc.notified_event:running
+[    5.749000] init: init.svc.notified_event:running
+<6>init: Created socket '/dev/socket/notified_event' with mode '660', user '0', group '1000'
+<5>init: starting 'netd'
+<3>init: init.svc.netd:running
+[    5.769981] init: init.svc.netd:running
+<6>init: Created socket '/dev/socket/netd' with mode '660', user '0', group '1000'
+<5>init: starting 'debuggerd'
+<3>init: init.svc.debuggerd:running
+[    5.787734] init: init.svc.debuggerd:running
+<5>init: starting 'mobex-daemon'
+<3>init: init.svc.mobex-daemon:running
+[    5.800674] init: init.svc.mobex-daemon:running
+<5>init: starting 'zygote'
+<3>init: init.svc.zygote:running
+[    5.811569] init: init.svc.zygote:running
+<6>init: Created socket '/dev/socket/zygote' with mode '666', user '0', group '0'
+<5>init: starting 'media'
+<3>init: init.svc.media:running
+[    5.830458] init: init.svc.media:running
+<3>init: cannot find '/system/bin/vtserver', disabling 'vt'
+[    5.840190] init: cannot find '/system/bin/vtserver', disabling 'vt'
+<5>init: starting 'dbus'
+<3>init: init.svc.dbus:running
+[    5.869810] init: init.svc.dbus:running
+<6>init: Created socket '/dev/socket/dbus' with mode '660', user '1002', group '1002'
+<5>init: starting 'installd'
+<3>init: init.svc.installd:running
+[    5.904969] init: init.svc.installd:running
+<6>init: Created socket '/dev/socket/installd' with mode '600', user '1000', group '1000'
+<3>init: cannot find '/system/etc/install-recovery.sh', disabling 'flash_recovery'
+[    5.934355] init: cannot find '/system/etc/install-recovery.sh', disabling 'flash_recovery'
+<6>PVR_K:(Warning): SysFinalise: Version string: SGX540 S5PC110 [475, services4/system/s5pc110/sysconfig.c]
+<5>init: starting 'sensor-daemon'
+<3>init: init.svc.sensor-daemon:running
+[    5.960859] init: init.svc.sensor-daemon:running
+<5>init: starting 'keystore'
+<3>init: init.svc.keystore:running
+[    5.972204] init: init.svc.keystore:running
+<6>init: Created socket '/dev/socket/keystore' with mode '666', user '0', group '0'
+<5>init: starting 'immvibed'
+<3>init: init.svc.immvibed:running
+[    5.992889] init: init.svc.immvibed:running
+<3>init: cannot find '/system/bin/immvbsd', disabling 'immvbsd'
+[    6.003445] init: cannot find '/system/bin/immvbsd', disabling 'immvbsd'
+<5>init: starting 'tvout'
+<3>init: init.svc.tvout:running
+[    6.015716] init: init.svc.tvout:running
+<5>init: starting 'dfta'
+<3>init: init.svc.dfta:running
+[    6.025170] init: init.svc.dfta:running
+<6>init: command 'class_start' r=0
+<6>init: processing action 0x342c0 (property:persist.service.adb.enable=1)
+<5>init: starting 'adbd'
+<3>init: init.svc.adbd:running
+[    6.050436] init: init.svc.adbd:running
+<6>warning: `adbd' uses 32-bit capabilities (legacy support in use)
+<6>init: command 'start' r=0
+<6>init: waitpid returned pid 2262, status = 00000000
+<6>enabling adb
+[USB] enable_adb - enable(0x10), prev_status(0x01)
+Here is enable_adb@@@@
+[enable_adb]USBSTATUS_ADB
+<6>acm_function_config_changed
+<6>mass_storage_function_config_changed
+<6>adb_function_config_changed
+  interface 0 = acm/c4c7f840
+  interface 1 = acm/c4c7f840
+  interface 2 = usb_mass_storage/c4bce800
+  interface 3 = adb/c4acbc00
+[ap_usb_power_on]AP USB Power ON, askon: 0, mtp : 0
+!!!!!!!!!!! [ap_usb_power_on]AP samsung_kies_mtp_mode_flag0, mtp:0
+<5>init: process 'pvrsrvinit', pid 2262 exited
+<3>init: init.svc.pvrsrvinit:stopped
+[    6.151521] init: init.svc.pvrsrvinit:stopped
+<6>init: waitpid returned pid 2279, status = 00000200
+<5>init: process 'dfta', pid 2279 exited
+<3>init: init.svc.dfta:stopped
+[    6.175841] init: init.svc.dfta:stopped
+<6>init: make_device '/dev/pvrsrvkm' block 0, major 240, minor 0 r=0
+<6>init: make_device '/dev/s3c_bc' block 0, major 253, minor 0 r=0
+<6>init: make_device '/dev/tspdrv' block 0, major 10, minor 43 r=0
+<6>init: make_device '/dev/fmradio' block 0, major 10, minor 42 r=0
+<6>init: make_device '/dev/block/bml0!c' block 1, major 137, minor 0 r=0
+<6>init: make_device '/dev/block/bml1' block 1, major 137, minor 1 r=0
+<6>init: make_device '/dev/block/bml2' block 1, major 137, minor 2 r=0
+<6>init: make_device '/dev/block/bml3' block 1, major 137, minor 3 r=0
+<6>init: make_device '/dev/block/bml4' block 1, major 137, minor 4 r=0
+<6>init: make_device '/dev/block/bml5' block 1, major 137, minor 5 r=0
+<6>init: make_device '/dev/block/bml6' block 1, major 137, minor 6 r=0
+<6>init: make_device '/dev/block/bml7' block 1, major 137, minor 7 r=0
+<6>init: make_device '/dev/block/stl1' block 1, major 138, minor 1 r=0
+<6>init: make_device '/dev/block/stl2' block 1, major 138, minor 2 r=0
+<6>init: make_device '/dev/block/stl3' block 1, major 138, minor 3 r=0
+<6>init: make_device '/dev/block/stl4' block 1, major 138, minor 4 r=0
+<6>init: make_device '/dev/block/stl5' block 1, major 138, minor 5 r=0
+<6>init: make_device '/dev/block/stl6' block 1, major 138, minor 6 r=0
+<6>init: make_device '/dev/block/stl7' block 1, major 138, minor 7 r=0
+<6>init: make_device '/dev/storage' block 0, major 10, minor 234 r=0
+<6>init: make_device '/dev/bthid' block 0, major 10, minor 224 r=0
+<6>init: make_device '/dev/block/ram0' block 1, major 1, minor 0 r=0
+<6>init: make_device '/dev/block/ram1' block 1, major 1, minor 1 r=0
+<6>init: make_device '/dev/block/ram2' block 1, major 1, minor 2 r=0
+<6>init: make_device '/dev/block/ram3' block 1, major 1, minor 3 r=0
+<6>init: make_device '/dev/block/ram4' block 1, major 1, minor 4 r=0
+<6>init: make_device '/dev/block/ram5' block 1, major 1, minor 5 r=0
+<6>init: make_device '/dev/block/ram6' block 1, major 1, minor 6 r=0
+<6>init: make_device '/dev/block/ram7' block 1, major 1, minor 7 r=0
+<6>init: make_device '/dev/block/ram8' block 1, major 1, minor 8 r=0
+<6>init: make_device '/dev/block/ram9' block 1, major 1, minor 9 r=0
+<6>init: make_device '/dev/block/ram10' block 1, major 1, minor 10 r=0
+<6>init: make_device '/dev/block/ram11' block 1, major 1, minor 11 r=0
+<6>init: make_device '/dev/block/ram12' block 1, major 1, minor 12 r=0
+<6>init: make_device '/dev/block/ram13' block 1, major 1, minor 13 r=0
+<6>init: make_device '/dev/block/ram14' block 1, major 1, minor 14 r=0
+<6>init: make_device '/dev/block/ram15' block 1, major 1, minor 15 r=0
+<6>init: make_device '/dev/block/loop0' block 1, major 7, minor 0 r=0
+<6>init: make_device '/dev/block/loop1' block 1, major 7, minor 1 r=0
+<6>init: make_device '/dev/block/loop2' block 1, major 7, minor 2 r=0
+<6>init: make_device '/dev/block/loop3' block 1, major 7, minor 3 r=0
+<6>init: make_device '/dev/block/loop4' block 1, major 7, minor 4 r=0
+<6>init: make_device '/dev/block/loop5' block 1, major 7, minor 5 r=0
+<6>init: make_device '/dev/block/loop6' block 1, major 7, minor 6 r=0
+<6>init: make_device '/dev/block/loop7' block 1, major 7, minor 7 r=0
+<6>init: make_device '/dev/block/tfsr0!c' block 1, major 139, minor 0 r=0
+<6>init: make_device '/dev/block/tfsr1' block 1, major 139, minor 1 r=0
+<6>init: make_device '/dev/block/tfsr2' block 1, major 139, minor 2 r=0
+<6>init: make_device '/dev/block/tfsr3' block 1, major 139, minor 3 r=0
+<6>init: make_device '/dev/block/tfsr4' block 1, major 139, minor 4 r=0
+<6>init: make_device '/dev/block/tfsr5' block 1, major 139, minor 5 r=0
+<6>init: make_device '/dev/block/tfsr6' block 1, major 139, minor 6 r=0
+<6>init: make_device '/dev/block/tfsr7' block 1, major 139, minor 7 r=0
+<6>init: make_device '/dev/block/mmcblk0' block 1, major 179, minor 0 r=0
+<6>init: make_device '/dev/block/mmcblk0p1' block 1, major 179, minor 1 r=0
+<6>init: make_device '/dev/block/mmcblk0p2' block 1, major 179, minor 2 r=0
+<6>init: make_device '/dev/block/mmcblk0p3' block 1, major 179, minor 3 r=0
+<6>init: make_device '/dev/block/mmcblk1' block 1, major 179, minor 8 r=0
+<6>init: make_device '/dev/block/bml0!c' block 1, major 137, minor 0 r=0
+<6>init: make_device '/dev/block/bml1' block 1, major 137, minor 1 r=0
+<6>init: make_device '/dev/block/bml2' block 1, major 137, minor 2 r=0
+<6>init: make_device '/dev/block/bml3' block 1, major 137, minor 3 r=0
+<6>init: make_device '/dev/block/bml4' block 1, major 137, minor 4 r=0
+<6>init: make_device '/dev/block/bml5' block 1, major 137, minor 5 r=0
+<6>init: make_device '/dev/block/bml6' block 1, major 137, minor 6 r=0
+<6>init: make_device '/dev/block/bml7' block 1, major 137, minor 7 r=0
+<6>init: make_device '/dev/block/stl1' block 1, major 138, minor 1 r=0
+<6>init: make_device '/dev/block/stl2' block 1, major 138, minor 2 r=0
+<6>init: make_device '/dev/block/stl3' block 1, major 138, minor 3 r=0
+<6>init: make_device '/dev/block/stl4' block 1, major 138, minor 4 r=0
+<6>init: make_device '/dev/block/stl5' block 1, major 138, minor 5 r=0
+<6>init: make_device '/dev/block/stl6' block 1, major 138, minor 6 r=0
+<6>init: make_device '/dev/block/stl7' block 1, major 138, minor 7 r=0
+<6>init: waitpid returned pid 2277, status = 00000000
+<5>init: process 'immvibed', pid 2277 exited
+<3>init: init.svc.immvibed:stopped
+[    6.799033] init: init.svc.immvibed:stopped
+<6>init: waitpid returned pid 2330, status = 00000100
+<3>init: untracked pid 2330 exited
+[    6.832511] init: untracked pid 2330 exited
+<6>fg_read_vcell: VCELL=3878
+DmaAddr=@4f820000 Total=32768bytes PrdSz=2048 #Prds=4, dmaEnd 0x4f828000
+DmaAddr=@4f820000 Total=32768bytes PrdSz=2048 #Prds=4, dmaEnd 0x4f828000
+<3>FAT: Filesystem error (dev mmcblk1)
+[    8.417695] FAT: Filesystem error<(dev mmcblk1)
+3>    [  f 8.422723]     at_get_cluster: invalid cluster chain (i_pos 0)fat_get_cluster: invalid cluster
+chain (i_pos 0)
+<3>    File system has been set read-only
+[    8.436601]     File system has been set read-only
+<3>FAT: Filesystem error (dev mmcblk1)
+[    8.471468] FAT: Filesystem error<(dev mmcblk1)
+3>    [  f 8.476497]     at_get_cluster: invalid cluster chain (i_pos 0)fat_get_cluster: invalid cluster
+chain (i_pos 0)
+<3>FAT: Filesystem error (dev mmcblk1)
+[    8.490115] FAT: Filesystem error<(dev mmcblk1)
+3>    [  f 8.495144]     at_get_cluster: invalid cluster chain (i_pos 0)fat_get_cluster: invalid cluster
+chain (i_pos 0)
+<3>FAT: Filesystem error (dev mmcblk1)
+[    8.531130] FAT: Filesystem error<(dev mmcblk1)
+3>    [  f 8.536160]     at_get_cluster: invalid cluster chain (i_pos 0)fat_get_cluster: invalid cluster
+chain (i_pos 0)
+<3>FAT: Filesystem error (dev mmcblk1)
+[    8.549777] FAT: Filesystem error<(dev mmcblk1)
+3>    [  f 8.554807]     at_get_cluster: invalid cluster chain (i_pos 0)fat_get_cluster: invalid cluster
+chain (i_pos 0)
+<3>FAT: Filesystem error (dev mmcblk1)
+[    8.578026] FAT: Filesystem error<(dev mmcblk1)
+3>    [  f 8.583056]     at_get_cluster: invalid cluster chain (i_pos 0)fat_get_cluster: invalid cluster
+chain (i_pos 0)
+<3>FAT: Filesystem error (dev mmcblk1)
+[    8.596673] FAT: Filesystem error<(dev mmcblk1)
+3>    [  f 8.601703]     at_get_cluster: invalid cluster chain (i_pos 0)fat_get_cluster: invalid cluster
+chain (i_pos 0)
+<3>FAT: Filesystem error (dev mmcblk1)
+[    8.625338] FAT: Filesystem error<(dev mmcblk1)
+3>    [  f 8.630368]     at_get_cluster: invalid cluster chain (i_pos 0)fat_get_cluster: invalid cluster
+chain (i_pos 0)
+<3>FAT: Filesystem error (dev mmcblk1)
+[    8.643985] FAT: Filesystem error<(dev mmcblk1)
+3>    [  f 8.649015]     at_get_cluster: invalid cluster chain (i_pos 0)fat_get_cluster: invalid cluster
+chain (i_pos 0)
+<3>FAT: Filesystem error (dev mmcblk1)
+[    8.672390] FAT: Filesystem error<(dev mmcblk1)
+3>    [  f 8.677420]     at_get_cluster: invalid cluster chain (i_pos 0)fat_get_cluster: invalid cluster
+chain (i_pos 0)
+<3>FAT: Filesystem error (dev mmcblk1)
+[    8.691037] FAT: Filesystem error<(dev mmcblk1)
+3>    [  f 8.696067]     at_get_cluster: invalid cluster chain (i_pos 0)fat_get_cluster: invalid cluster
+chain (i_pos 0)
+<3>FAT: Filesystem error (dev mmcblk1)
+[    8.720976] FAT: Filesystem error<(dev mmcblk1)
+3>    [  f 8.726007]     at_get_cluster: invalid cluster chain (i_pos 0)fat_get_cluster: invalid cluster
+chain (i_pos 0)
+<3>FAT: Filesystem error (dev mmcblk1)
+[    8.739624] FAT: Filesystem error<(dev mmcblk1)
+3>    [  f 8.744654]     at_get_cluster: invalid cluster chain (i_pos 0)fat_get_cluster: invalid cluster
+chain (i_pos 0)
+<3>FAT: Filesystem error (dev mmcblk1)
+[    8.764620] FAT: Filesystem error<(dev mmcblk1)
+3>    [  f 8.769650]     at_get_cluster: invalid cluster chain (i_pos 0)fat_get_cluster: invalid cluster
+chain (i_pos 0)
+<3>FAT: Filesystem error (dev mmcblk1)
+[    8.833764] FAT: Filesystem error<(dev mmcblk1)
+3>    [  f 8.838792]     at_get_cluster: invalid cluster chain (i_pos 0)fat_get_cluster: invalid cluster
+chain (i_pos 0)
+!@beginofsystem_init1()
+<6>init: make_device '/dev/vcs7' block 0, major 7, minor 7 r=0
+<6>init: make_device '/dev/vcsa7' block 0, major 7, minor 135 r=0
+!@endofsystem_init1()
+<3>init: no such service 'bootanim'
+[   12.086570] init: no such service 'bootanim'
+!@beginofPackageManager
+<6>fg_read_vcell: VCELL=3878
+<3>FAT: Filesystem error (dev mmcblk1)
+[   17.578855] FAT: Filesystem error<(dev mmcblk1)
+3>    [  f17.583884]     at_get_cluster: invalid cluster chain (i_pos 0)fat_get_cluster: invalid cluster
+chain (i_pos 0)
+<3>FAT: Filesystem error (dev mmcblk1)
+[   17.597761] FAT: Filesystem error<(dev mmcblk1)
+3>    [  f17.602791]     at_get_cluster: invalid cluster chain (i_pos 0)fat_get_cluster: invalid cluster
+chain (i_pos 0)
+<6>fg_read_vcell: VCELL=3878
+<6>fg_read_vcell: VCELL=3878
+<6>fg_read_vcell: VCELL=3878
 
-183c [    1.361877] 183c e1a0c00d e1a0c00d e92dd800 e92dd800 e24cb004 e24cb004 e52de004 e52de004 ebf6b246 ebf6b246 e59030c8 e59030c8 e5d020d1 e5d020d1 e1d31cbe e1d31cbe
-
-185c [    1.376795] 185c e1d22001 e1d22001 1a000006 1a000006 e5d0c0d2 e5d0c0d2 e35c0000 e35c0000 03a0c008 03a0c008 05c0c0d2 05c0c0d2 e59330d4 e59330d4 e12fff33 e12fff33
-
-187c [    1.391713] 187c e89da800 e89da800 e3e00015 e3e00015 e89da800 e89da800 e1a0c00d e1a0c00d e92dd8f0 e92dd8f0 e24cb004 e24cb004 e52de004 e52de004 ebf6b233 ebf6b233
-
-189c [    1.406630] 189c e59030c8 e59030c8 e1d37db0 e1d37db0 e3170001 e3170001 1a000002 1a000002 e5d020d1 e5d020d1 e3120010 e3120010 0a00001a 0a00001a e5912000 e5912000
-
-18bc [    1.421548] 18bc e1a0c002 e1a0c002 e41c401c e41c401c f5d4f000 f5d4f000 e1510002 e1510002 0a000014 0a000014 e2076004 e2076004 e2077002 e2077002 ea000009 ea000009
-
-18dc [    1.436466] 18dc e3560000 e3560000 1a000019 1a000019 e3570000 e3570000 e244c01c e244c01c e1a0200c e1a0200c 1a000011 1a000011 e5b2401c e5b2401c f5d4f000 f5d4f000
-
-18fc [    1.451384] 18fc e1510002 e1510002 0a000007 0a000007 e59c5004 e59c5004 e3550000 e3550000 0afffff2 0afffff2 e59c2000 e59c2000 e3520000 e3520000 0affffef 0affffef
-
-
-FP: 0xc4c03ce4:
-[    1.467516] 
-[    1.467520] F3: 0xc4c03ce4:
-ce4 [    1.472113] 3ce4 c0e785e0 c0e785e0 c4c03da4 c4c03da4 00000005 00000005 c4c03d64 c4c03d64 c4c03d00 c4c03d00 c06fdbec c06fdbec c06fd268 c06fd268 00000000 00000000
-
-3d04 [    1.487031] 3d04 c4c03da4 c4c03da4 ffffffff ffffffff c4c03d80 c4c03d80 c4c03da4 c4c03da4 c4c03d6c c4c03d6c c0e785e0 c0e785e0 c4c03da4 c4c03da4 00000005 00000005
-
-3d24 [    1.501948] 3d24 c4c03ddc c4c03ddc c4c03dd4 c4c03dd4 c4c03d64 c4c03d64 c095189c c095189c c4c03d48 c4c03d48 c0951b38 c0951b38 c095189c c095189c 60000013 60000013
-
-3d44 [    1.516866] 3d44 ffffffff ffffffff c4c03da4 c4c03da4 c4c03d6c c4c03d6c c0e785e0 c0e785e0 c4c03da4 c4c03da4 c4c03d9c c4c03d9c c4c03d68 c4c03d68 c0951b38 c0951b38
-
-3d64 [    1.531784] 3d64 c0951894 c0951894 c4c03ddc c4c03ddc 00000000 00000000 00000001 00000001 dead4ead dead4ead ffffffff ffffffff ffffffff ffffffff c4c03d80 c4c03d80
-
-3d84 [    1.546702] 3d84 c4c03d80 c4c03d80 00000003 00000003 c4c03de0 c4c03de0 c4c03e24 c4c03e24 c4c03da0 c4c03da0 c08d95cc c08d95cc c0951adc c0951adc c4c03dcc c4c03dcc
-
-3da4 [    1.561620] 3da4 c4c03dec c4c03dec c4c03dec c4c03dec 00000000 00000000 00000000 00000000 c0951d44 c0951d44 c4c03d6c c4c03d6c 00000000 00000000 00000000 00000000
-
-3dc4 [    1.576538] 3dc4 00000000 00000000 00000000 00000000 00000000 00000000 c4c03df6 c4c03df6 00000000 00000000 00000002 00000002 00000000 00000000 00000000 00000000
-
-
-R1: 0xc4c03d24:
-[    1.592670] 
-[    1.592674] R3: 0xc4c03d24:
-d24 [    1.597266] 3d24 c4c03ddc c4c03ddc c4c03dd4 c4c03dd4 c4c03d64 c4c03d64 c095189c c095189c c4c03d48 c4c03d48 c0951b38 c0951b38 c095189c c095189c 60000013 60000013
-
-3d44 [    1.612184] 3d44 ffffffff ffffffff c4c03da4 c4c03da4 c4c03d6c c4c03d6c c0e785e0 c0e785e0 c4c03da4 c4c03da4 c4c03d9c c4c03d9c c4c03d68 c4c03d68 c0951b38 c0951b38
-
-3d64 [    1.627102] 3d64 c0951894 c0951894 c4c03ddc c4c03ddc 00000000 00000000 00000001 00000001 dead4ead dead4ead ffffffff ffffffff ffffffff ffffffff c4c03d80 c4c03d80
-
-3d84 [    1.642020] 3d84 c4c03d80 c4c03d80 00000003 00000003 c4c03de0 c4c03de0 c4c03e24 c4c03e24 c4c03da0 c4c03da0 c08d95cc c08d95cc c0951adc c0951adc c4c03dcc c4c03dcc
-
-3da4 [    1.656938] 3da4 c4c03dec c4c03dec c4c03dec c4c03dec 00000000 00000000 00000000 00000000 c0951d44 c0951d44 c4c03d6c c4c03d6c 00000000 00000000 00000000 00000000
-
-3dc4 [    1.671856] 3dc4 00000000 00000000 00000000 00000000 00000000 00000000 c4c03df6 c4c03df6 00000000 00000000 00000002 00000002 00000000 00000000 00000000 00000000
-
-3de4 [    1.686773] 3de4 00000000 00000000 00000000 00000000 c4c03da4 c4c03da4 c4c03da4 c4c03da4 00f89bc8 00f89bc8 00000000 00000000 c4c68880 c4c68880 c4c68880 c4c68880
-
-3e04 [    1.701691] 3e04 c1075150 c1075150 c4863688 c4863688 00000005 00000005 c10fdac8 c10fdac8 00000001 00000001 c4c03e34 c4c03e34 c4c03e28 c4c03e28 c08d9c14 c08d9c14
-
-
-R3: 0xc4c03d00:
-[    1.717823] 
-[    1.717827] R3: 0xc4c03d00:
-d00 [    1.722420] 3d00 00000000 00000000 c4c03da4 c4c03da4 ffffffff ffffffff c4c03d80 c4c03d80 c4c03da4 c4c03da4 c4c03d6c c4c03d6c c0e785e0 c0e785e0 c4c03da4 c4c03da4
-
-3d20 [    1.737338] 3d20 00000005 00000005 c4c03ddc c4c03ddc c4c03dd4 c4c03dd4 c4c03d64 c4c03d64 c095189c c095189c c4c03d48 c4c03d48 c0951b38 c0951b38 c095189c c095189c
-
-3d40 [    1.752256] 3d40 60000013 60000013 ffffffff ffffffff c4c03da4 c4c03da4 c4c03d6c c4c03d6c c0e785e0 c0e785e0 c4c03da4 c4c03da4 c4c03d9c c4c03d9c c4c03d68 c4c03d68
-
-3d60 [    1.767174] 3d60 c0951b38 c0951b38 c0951894 c0951894 c4c03ddc c4c03ddc 00000000 00000000 00000001 00000001 dead4ead dead4ead ffffffff ffffffff ffffffff ffffffff
-
-3d80 [    1.782092] 3d80 c4c03d80 c4c03d80 c4c03d80 c4c03d80 00000003 00000003 c4c03de0 c4c03de0 c4c03e24 c4c03e24 c4c03da0 c4c03da0 c08d95cc c08d95cc c0951adc c0951adc
-
-3da0 [    1.797009] 3da0 c4c03dcc c4c03dcc c4c03dec c4c03dec c4c03dec c4c03dec 00000000 00000000 00000000 00000000 c0951d44 c0951d44 c4c03d6c c4c03d6c 00000000 00000000
-
-3dc0 [    1.811927] 3dc0 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 c4c03df6 c4c03df6 00000000 00000000 00000002 00000002 00000000 00000000
-
-3de0 [    1.826845] 3de0 00000000 00000000 00000000 00000000 00000000 00000000 c4c03da4 c4c03da4 c4c03da4 c4c03da4 00f89bc8 00f89bc8 00000000 00000000 c4c68880 c4c68880
-
-
-R4: 0xc4c03d24:
-[    1.842977] 
-[    1.842981] R3: 0xc4c03d24:
-d24 [    1.847574] 3d24 c4c03ddc c4c03ddc c4c03dd4 c4c03dd4 c4c03d64 c4c03d64 c095189c c095189c c4c03d48 c4c03d48 c0951b38 c0951b38 c095189c c095189c 60000013 60000013
-
-3d44 [    1.862492] 3d44 ffffffff ffffffff c4c03da4 c4c03da4 c4c03d6c c4c03d6c c0e785e0 c0e785e0 c4c03da4 c4c03da4 c4c03d9c c4c03d9c c4c03d68 c4c03d68 c0951b38 c0951b38
-
-3d64 [    1.877410] 3d64 c0951894 c0951894 c4c03ddc c4c03ddc 00000000 00000000 00000001 00000001 dead4ead dead4ead ffffffff ffffffff ffffffff ffffffff c4c03d80 c4c03d80
-
-3d84 [    1.892328] 3d84 c4c03d80 c4c03d80 00000003 00000003 c4c03de0 c4c03de0 c4c03e24 c4c03e24 c4c03da0 c4c03da0 c08d95cc c08d95cc c0951adc c0951adc c4c03dcc c4c03dcc
-
-3da4 [    1.907245] 3da4 c4c03dec c4c03dec c4c03dec c4c03dec 00000000 00000000 00000000 00000000 c0951d44 c0951d44 c4c03d6c c4c03d6c 00000000 00000000 00000000 00000000
-
-3dc4 [    1.922163] 3dc4 00000000 00000000 00000000 00000000 00000000 00000000 c4c03df6 c4c03df6 00000000 00000000 00000002 00000002 00000000 00000000 00000000 00000000
-
-3de4 [    1.937081] 3de4 00000000 00000000 00000000 00000000 c4c03da4 c4c03da4 c4c03da4 c4c03da4 00f89bc8 00f89bc8 00000000 00000000 c4c68880 c4c68880 c4c68880 c4c68880
-
-3e04 [    1.951999] 3e04 c1075150 c1075150 c4863688 c4863688 00000005 00000005 c10fdac8 c10fdac8 00000001 00000001 c4c03e34 c4c03e34 c4c03e28 c4c03e28 c08d9c14 c08d9c14
-
-
-R5: 0xc4c03cec:
-[    1.968131] 
-[    1.968135] R3: 0xc4c03cec:
-cec [    1.972728] 3cec 00000005 00000005 c4c03d64 c4c03d64 c4c03d00 c4c03d00 c06fdbec c06fdbec c06fd268 c06fd268 00000000 00000000 c4c03da4 c4c03da4 ffffffff ffffffff
-
-3d0c [    1.987645] 3d0c c4c03d80 c4c03d80 c4c03da4 c4c03da4 c4c03d6c c4c03d6c c0e785e0 c0e785e0 c4c03da4 c4c03da4 00000005 00000005 c4c03ddc c4c03ddc c4c03dd4 c4c03dd4
-
-3d2c [    2.002563] 3d2c c4c03d64 c4c03d64 c095189c c095189c c4c03d48 c4c03d48 c0951b38 c0951b38 c095189c c095189c 60000013 60000013 ffffffff ffffffff c4c03da4 c4c03da4
-
-3d4c [    2.017481] 3d4c c4c03d6c c4c03d6c c0e785e0 c0e785e0 c4c03da4 c4c03da4 c4c03d9c c4c03d9c c4c03d68 c4c03d68 c0951b38 c0951b38 c0951894 c0951894 c4c03ddc c4c03ddc
-
-3d6c [    2.032399] 3d6c 00000000 00000000 00000001 00000001 dead4ead dead4ead ffffffff ffffffff ffffffff ffffffff c4c03d80 c4c03d80 c4c03d80 c4c03d80 00000003 00000003
-
-3d8c [    2.047317] 3d8c c4c03de0 c4c03de0 c4c03e24 c4c03e24 c4c03da0 c4c03da0 c08d95cc c08d95cc c0951adc c0951adc c4c03dcc c4c03dcc c4c03dec c4c03dec c4c03dec c4c03dec
-
-3dac [    2.062235] 3dac 00000000 00000000 00000000 00000000 c0951d44 c0951d44 c4c03d6c c4c03d6c 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000
-
-3dcc [    2.077153] 3dcc 00000000 00000000 c4c03df6 c4c03df6 00000000 00000000 00000002 00000002 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000
-
-
-R6: 0xc0e78560:
-[    2.093285] 
-[    2.093289] R8: 0xc0e78560:
-560 [    2.097881] 8560 c0e78908 c0e78908 c0e788d4 c0e788d4 c0e788a0 c0e788a0 c0e7886c c0e7886c c0e78838 c0e78838 c0e78804 c0e78804 c0e787d0 c0e787d0 c0e7879c c0e7879c
-
-8580 [    2.112799] 8580 c0e78768 c0e78768 37326c74 37326c74 705f3639 705f3639 65626f72 65626f72 00000000 00000000 37326c74 37326c74 6c5f3639 6c5f3639 695f6964 695f6964
-
-85a0 [    2.127717] 85a0 0074696e 0074696e 37326c74 37326c74 6c5f3639 6c5f3639 645f6964 645f6964 62617369 62617369 0000656c 0000656c 20000029 20000029 00000000 00000000
-
-85c0 [    2.142635] 85c0 20000028 20000028 00000000 00000000 10000010 10000010 20000078 20000078 00000000 00000000 10000011 10000011 20000078 20000078 00000000 00000000
-
-85e0 [    2.157553] 85e0 00141000 00141000 010100f8 010100f8 012a012a 012a012a 01070107 01070107 019f0154 019f0154 01860163 01860163 0133011a 0133011a 0100010d 0100010d
-
-8600 [    2.172471] 8600 00f20100 00f20100 01030102 01030102 0110011c 0110011c 00f70110 00f70110 01000100 01000100 00f60100 00f60100 018e0100 018e0100 00b30107 00b30107
-
-8620 [    2.187389] 8620 00b5016c 00b5016c 0112012c 0112012c 010a010c 010a010c 010e0110 010e0110 01130117 01130117 011a011f 011a011f 0124012a 0124012a 011b011f 011b011f
-
-8640 [    2.202306] 8640 0117011a 0117011a 0126012b 0126012b 01200122 01200122 0134013a 0134013a 012c0130 012c0130 01260129 01260129 01230125 01230125 01200121 01200121
-
-
-R7: 0xc4c03d24:
-[    2.218438] 
-[    2.218442] R3: 0xc4c03d24:
-d24 [    2.223035] 3d24 c4c03ddc c4c03ddc c4c03dd4 c4c03dd4 c4c03d64 c4c03d64 c095189c c095189c c4c03d48 c4c03d48 c0951b38 c0951b38 c095189c c095189c 60000013 60000013
-
-3d44 [    2.237953] 3d44 ffffffff ffffffff c4c03da4 c4c03da4 c4c03d6c c4c03d6c c0e785e0 c0e785e0 c4c03da4 c4c03da4 c4c03d9c c4c03d9c c4c03d68 c4c03d68 c0951b38 c0951b38
-
-3d64 [    2.252871] 3d64 c0951894 c0951894 c4c03ddc c4c03ddc 00000000 00000000 00000001 00000001 dead4ead dead4ead ffffffff ffffffff ffffffff ffffffff c4c03d80 c4c03d80
-
-3d84 [    2.267789] 3d84 c4c03d80 c4c03d80 00000003 00000003 c4c03de0 c4c03de0 c4c03e24 c4c03e24 c4c03da0 c4c03da0 c08d95cc c08d95cc c0951adc c0951adc c4c03dcc c4c03dcc
-
-3da4 [    2.282706] 3da4 c4c03dec c4c03dec c4c03dec c4c03dec 00000000 00000000 00000000 00000000 c0951d44 c0951d44 c4c03d6c c4c03d6c 00000000 00000000 00000000 00000000
-
-3dc4 [    2.297624] 3dc4 00000000 00000000 00000000 00000000 00000000 00000000 c4c03df6 c4c03df6 00000000 00000000 00000002 00000002 00000000 00000000 00000000 00000000
-
-3de4 [    2.312542] 3de4 00000000 00000000 00000000 00000000 c4c03da4 c4c03da4 c4c03da4 c4c03da4 00f89bc8 00f89bc8 00000000 00000000 c4c68880 c4c68880 c4c68880 c4c68880
-
-3e04 [    2.327460] 3e04 c1075150 c1075150 c4863688 c4863688 00000005 00000005 c10fdac8 c10fdac8 00000001 00000001 c4c03e34 c4c03e34 c4c03e28 c4c03e28 c08d9c14 c08d9c14
-
-
-R9: 0xc4c03d5c:
-[    2.343592] 
-[    2.343596] R3: 0xc4c03d5c:
-d5c [    2.348189] 3d5c c4c03d68 c4c03d68 c0951b38 c0951b38 c0951894 c0951894 c4c03ddc c4c03ddc 00000000 00000000 00000001 00000001 dead4ead dead4ead ffffffff ffffffff
-
-3d7c [    2.363107] 3d7c ffffffff ffffffff c4c03d80 c4c03d80 c4c03d80 c4c03d80 00000003 00000003 c4c03de0 c4c03de0 c4c03e24 c4c03e24 c4c03da0 c4c03da0 c08d95cc c08d95cc
-
-3d9c [    2.378025] 3d9c c0951adc c0951adc c4c03dcc c4c03dcc c4c03dec c4c03dec c4c03dec c4c03dec 00000000 00000000 00000000 00000000 c0951d44 c0951d44 c4c03d6c c4c03d6c
-
-3dbc [    2.392942] 3dbc 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 c4c03df6 c4c03df6 00000000 00000000 00000002 00000002
-
-3ddc [    2.407860] 3ddc 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 c4c03da4 c4c03da4 c4c03da4 c4c03da4 00f89bc8 00f89bc8 00000000 00000000
-
-3dfc [    2.422778] 3dfc c4c68880 c4c68880 c4c68880 c4c68880 c1075150 c1075150 c4863688 c4863688 00000005 00000005 c10fdac8 c10fdac8 00000001 00000001 c4c03e34 c4c03e34
-
-3e1c [    2.437696] 3e1c c4c03e28 c4c03e28 c08d9c14 c08d9c14 c08d9514 c08d9514 c4c03e8c c4c03e8c c4c03e38 c4c03e38 c08d8710 c08d8710 c08d9c00 c08d9c00 c0f69cbc c0f69cbc
-
-3e3c [    2.452614] 3e3c c4f7ec00 c4f7ec00 c4fcb600 c4fcb600 002ee000 002ee000 c1054908 c1054908 c4c68880 c4c68880 45160000 45160000 c1054900 c1054900 00000010 00000010
-
-
-R10: 0xc4c03d54:
-[    2.468833] 
-[    2.468836] R13: 0xc4c03d54:
-d54 [    2.473516] 3d54 c4c03da4 c4c03da4 c4c03d9c c4c03d9c c4c03d68 c4c03d68 c0951b38 c0951b38 c0951894 c0951894 c4c03ddc c4c03ddc 00000000 00000000 00000001 00000001
-
-3d74 [    2.488434] 3d74 dead4ead dead4ead ffffffff ffffffff ffffffff ffffffff c4c03d80 c4c03d80 c4c03d80 c4c03d80 00000003 00000003 c4c03de0 c4c03de0 c4c03e24 c4c03e24
-
-3d94 [    2.503352] 3d94 c4c03da0 c4c03da0 c08d95cc c08d95cc c0951adc c0951adc c4c03dcc c4c03dcc c4c03dec c4c03dec c4c03dec c4c03dec 00000000 00000000 00000000 00000000
-
-3db4 [    2.518270] 3db4 c0951d44 c0951d44 c4c03d6c c4c03d6c 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 c4c03df6 c4c03df6
-
-3dd4 [    2.533188] 3dd4 00000000 00000000 00000002 00000002 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 c4c03da4 c4c03da4 c4c03da4 c4c03da4
-
-3df4 [    2.548105] 3df4 00f89bc8 00f89bc8 00000000 00000000 c4c68880 c4c68880 c4c68880 c4c68880 c1075150 c1075150 c4863688 c4863688 00000005 00000005 c10fdac8 c10fdac8
-
-3e14 [    2.563023] 3e14 00000001 00000001 c4c03e34 c4c03e34 c4c03e28 c4c03e28 c08d9c14 c08d9c14 c08d9514 c08d9514 c4c03e8c c4c03e8c c4c03e38 c4c03e38 c08d8710 c08d8710
-
-3e34 [    2.577941] 3e34 c08d9c00 c08d9c00 c0f69cbc c0f69cbc c4f7ec00 c4f7ec00 c4fcb600 c4fcb600 002ee000 002ee000 c1054908 c1054908 c4c68880 c4c68880 45160000 45160000
-
-<0>Process swapper (pid: 1, stack limit = 0xc4c022e8)
-[    2.597196] Process swapper (pid: 1, stack limit<= 0xc4c022e8)
-0>Stack: (0xc4c03d48 to 0xc4c04000)
-[    2.606216] Stack: (0xc4c03d48 <o 0xc4c04000)
-0>3d40:                   c4c03da4 c4c03d6c c0e785e0 c4c03da4 c4c03d9c c4c03d68
-[    2.617577] 3d40:                   c4c03da4 c4c03d6c c0e785e0 c4c03da4 c4c<3d9c c4c03d68
-0>3d60: c0951b38 c0951894 c4c03ddc 00000000 00000001 dead4ead ffffffff ffffffff
-[    2.632755] 3d60: c0951b38 c0951894 c4c03ddc 00000000 00000001 dead4ead fff<ffff ffffffff
-0>3d80: c4c03d80 c4c03d80 00000003 c4c03de0 c4c03e24 c4c03da0 c08d95cc c0951adc
-[    2.647933] 3d80: c4c03d80 c4c03d80 00000003 c4c03de0 c4c03e24 c4c03da0 c08<95cc c0951adc
-0>3da0: c4c03dcc c4c03dec c4c03dec 00000000 00000000 c0951d44 c4c03d6c 00000000
-[    2.663111] 3da0: c4c03dcc c4c03dec c4c03dec 00000000 00000000 c0951d44 c4c<3d6c 00000000
-0>3dc0: 00000000 00000000 00000000 00000000 c4c03df6 00000000 00000002 00000000
-[    2.678290] 3dc0: 00000000 00000000 00000000 00000000 c4c03df6 00000000 000<0002 00000000
-0>3de0: 00000000 00000000 00000000 c4c03da4 c4c03da4 00f89bc8 00000000 c4c68880
-[    2.693468] 3de0: 00000000 00000000 00000000 c4c03da4 c4c03da4 00f89bc8 000<0000 c4c68880
-0>3e00: c4c68880 c1075150 c4863688 00000005 c10fdac8 00000001 c4c03e34 c4c03e28
-[    2.708646] 3e00: c4c68880 c1075150 c4863688 00000005 c10fdac8 00000001 c4c<3e34 c4c03e28
-0>3e20: c08d9c14 c08d9514 c4c03e8c c4c03e38 c08d8710 c08d9c00 c0f69cbc c4f7ec00
-[    2.723824] 3e20: c08d9c14 c08d9514 c4c03e8c c4c03e38 c08d8710 c08d9c00 c0f<9cbc c4f7ec00
-0>3e40: c4fcb600 002ee000 c1054908 c4c68880 45160000 c1054900 00000010 c0f69cbc
-[    2.739002] 3e40: c4fcb600 002ee000 c1054908 c4c68880 45160000 c1054900 000<0010 c0f69cbc
-0>3e60: c4c03e7c c10ffee8 c1079ba0 c1054908 c1074fc0 c0909a08 00000000 00000000
-[    2.754180] 3e60: c4c03e7c c10ffee8 c1079ba0 c1054908 c1074fc0 c0909a08 000<0000 00000000
-0>3e80: c4c03e9c c4c03e90 c090b740 c08d80b4 c4c03ec4 c4c03ea0 c090a2e0 c090b724
-[    2.769358] 3e80: c4c03e9c c4c03e90 c090b740 c08d80b4 c4c03ec4 c4c03ea0 c09<a2e0 c090b724
-0>3ea0: 00000000 c1054908 c1074fc0 c105493c 00000000 c0909a08 c4c03ee4 c4c03ec8
-[    2.784536] 3ea0: 00000000 c1054908 c1074fc0 c105493c 00000000 c0909a08 c4c<3ee4 c4c03ec8
-0>3ec0: c090a468 c090a260 c090a3cc c1074fc0 c090a3cc 00000000 c4c03f0c c4c03ee8
-[    2.799714] 3ec0: c090a468 c090a260 c090a3cc c1074fc0 c090a3cc 00000000 c4c<3f0c c4c03ee8
-0>3ee0: c09091c8 c090a3d8 c4802c48 c4c68540 c0898d5c c1074fc0 c1079ba0 c49c5080
-[    2.814892] 3ee0: c09091c8 c090a3d8 c4802c48 c4c68540 c0898d5c c1074fc0 c10<9ba0 c49c5080
-0>3f00: c4c03f1c c4c03f10 c0909fb8 c0909174 c4c03f5c c4c03f20 c0909aac c0909f98
-[    2.830070] 3f00: c4c03f1c c4c03f10 c0909fb8 c0909174 c4c03f5c c4c03f20 c09<9aac c0909f98
-0>3f20: c0f69cbc c0b69bec c4802c00 c1074fc0 c4c02000 c1074fc0 c4c02000 00000000
-[    2.845248] 3f20: c0f69cbc c0b69bec c4802c00 c1074fc0 c4c02000 c1074fc0 c4c<2000 00000000
-0>3f40: 00000000 00000000 00000000 00000000 c4c03f84 c4c03f60 c090a6d4 c09099e4
-[    2.860426] 3f40: 00000000 00000000 00000000 00000000 c4c03f84 c4c03f60 c09<a6d4 c09099e4
-0>3f60: c109ac00 c4c02000 00000000 c08d6884 00000000 00000000 c4c03f94 c4c03f88
-[    2.875604] 3f60: c109ac00 c4c02000 00000000 c08d6884 00000000 00000000 c4c<3f94 c4c03f88
-0>3f80: c090bd0c c090a658 c4c03fa4 c4c03f98 c08d68a4 c090bcb4 c4c03fdc c4c03fa8
-[    2.890782] 3f80: c090bd0c c090a658 c4c03fa4 c4c03f98 c08d68a4 c090bcb4 c4c<3fdc c4c03fa8
-0>3fa0: c06fd53c c08d6890 c1066498 c4c00480 c077e4c0 c07815ac c002fcb4 c002fffc
-[    2.905960] 3fa0: c06fd53c c08d6890 c1066498 c4c00480 c077e4c0 c07815ac c00<fcb4 c002fffc
-0>3fc0: 00000000 00000000 00000000 00000000 c4c03ff4 c4c03fe0 c0008c08 c06fd504
-[    2.921138] 3fc0: 00000000 00000000 00000000 00000000 c4c03ff4 c4c03fe0 c00<8c08 c06fd504
-0>3fe0: 00000000 00000000 00000000 c4c03ff8 c06ff19c c0008b54 00080000 08000000
-[    2.936316] 3fe0: 00000000 00000000 00000000 c4c03ff8 c06ff19c c0008b54 000[0000 08000000
-<c095189c>] (spi_async+0x14/0xd4) from [<c0951b38>] (spi_sync+0x68/0x8c)
-[    2.950887] [<c095189c>] (spi_async+0x14/0xd4) from [<c0951b38>] (spi_s[nc+0x68/0x8c)
-<c0951b38>] (spi_sync+0x68/0x8c) from [<c08d95cc>] (s6e63m0_panel_send_sequence+0xc4/0x110)
-[    2.966759] [<c0951b38>] (spi_sync+0x68/0x8c) from [<c08d95cc>] (s6e63m0_panel_send_sequen[e+0xc4/0x110)
-<c08d95cc>] (s6e63m0_panel_send_sequence+0xc4/0x110) from [<c08d9c14>] (tl2796_ldi_init+0x20/0x70)
-[    2.984886] [<c08d95cc>] (s6e63m0_panel_send_sequence+0xc4/0x110) from [<c08d9c14>] (tl2796_ldi_i[it+0x20/0x70)
-<c08d9c14>] (tl2796_ldi_init+0x20/0x70) from [<c08d8710>] (s3cfb_probe+0x668/0x71c)
-[    3.002319] [<c08d9c14>] (tl2796_ldi_init+0x20/0x70) from [<c08d8710>] (s3cfb_prob[+0x668/0x71c)
-<c08d8710>] (s3cfb_probe+0x668/0x71c) from [<c090b740>] (platform_drv_probe+0x28/0x2c)
-[    3.018711] [<c08d8710>] (s3cfb_probe+0x668/0x71c) from [<c090b740>] (platform_drv_pr[be+0x28/0x2c)
-<c090b740>] (platform_drv_probe+0x28/0x2c) from [<c090a2e0>] (driver_probe_device+0x8c/0x178)
-[    3.035971] [<c090b740>] (platform_drv_probe+0x28/0x2c) from [<c090a2e0>] (driver_probe_devi[e+0x8c/0x178)
-<c090a2e0>] (driver_probe_device+0x8c/0x178) from [<c090a468>] (__driver_attach+0x9c/0xa0)
-[    3.053577] [<c090a2e0>] (driver_probe_device+0x8c/0x178) from [<c090a468>] (__driver_att[ch+0x9c/0xa0)
-<c090a468>] (__driver_attach+0x9c/0xa0) from [<c09091c8>] (bus_for_each_dev+0x60/0x8c)
-[    3.070577] [<c090a468>] (__driver_attach+0x9c/0xa0) from [<c09091c8>] (bus_for_each_[ev+0x60/0x8c)
-<c09091c8>] (bus_for_each_dev+0x60/0x8c) from [<c0909fb8>] (driver_attach+0x2c/0x30)
-[    3.087056] [<c09091c8>] (bus_for_each_dev+0x60/0x8c) from [<c0909fb8>] (driver_att[ch+0x2c/0x30)
-<c0909fb8>] (driver_attach+0x2c/0x30) from [<c0909aac>] (bus_add_driver+0xd4/0x330)
-[    3.103274] [<c0909fb8>] (driver_attach+0x2c/0x30) from [<c0909aac>] (bus_add_driv[r+0xd4/0x330)
-<c0909aac>] (bus_add_driver+0xd4/0x330) from [<c090a6d4>] (driver_register+0x88/0x198)
-[    3.119667] [<c0909aac>] (bus_add_driver+0xd4/0x330) from [<c090a6d4>] (driver_regist[r+0x88/0x198)
-<c090a6d4>] (driver_register+0x88/0x198) from [<c090bd0c>] (platform_driver_register+0x64/0x68)
-[    3.137100] [<c090a6d4>] (driver_register+0x88/0x198) from [<c090bd0c>] (platform_driver_regis[er+0x64/0x68)
-<c090bd0c>] (platform_driver_register+0x64/0x68) from [<c08d68a4>] (s3cfb_register+0x20/0x28)
-[    3.155140] [<c090bd0c>] (platform_driver_register+0x64/0x68) from [<c08d68a4>] (s3cfb_regis[er+0x20/0x28)
-<c08d68a4>] (s3cfb_register+0x20/0x28) from [<c06fd53c>] (do_one_initcall+0x44/0x1b8)
-[    3.172313] [<c08d68a4>] (s3cfb_register+0x20/0x28) from [<c06fd53c>] (do_one_initca[l+0x44/0x1b8)
-<c06fd53c>] (do_one_initcall+0x44/0x1b8) from [<c0008c08>] (kernel_init+0xc0/0x120)
-[    3.188619] [<c06fd53c>] (do_one_initcall+0x44/0x1b8) from [<c0008c08>] (kernel_in[t+0xc0/0x120)
-<c0008c08>] (kernel_init+0xc0/0x120) from [<c06ff19c>] (kernel_thread_exit+0x0/0x8)
-[    3.204751] [<c0008c08>] (kernel_init+0xc0/0x120) from [<c06ff19c>] (kernel_thread<exit+0x0/0x8)
-0>Code: e92dd8f0 e24cb004 e52de004 ebf6b233 (e59030c8) 
-[    3.218454] Code: e92dd8f0 e24cb004 e52de004 ebf6b233 (e59030c8) 
-<4>---[ end trace da227214a82491b7 ]---
-[    3.228082] ---[ end trace da22721<a82491b7 ]---
-0>Kernel panic - not syncing: Attempted to kill init!
-[    3.237449] Kernel panic - not syncing: Attempted[to kill init!
-<c0705800>] (unwind_backtrace+0x0/0xec) from [<c0b66740>] (dump_stack+0x20/0x24)
-[    3.250458] [<c0705800>] (unwind_backtrace+0x0/0xec) from [<c0b66740>] (dump_st[ck+0x20/0x24)
-<c0b66740>] (dump_stack+0x20/0x24) from [<c0b667a4>] (panic+0x60/0x118)
-[    3.265289] [<c0b66740>] (dump_stack+0x20/0x24) from [<c0b667a4>] (pan[c+0x60/0x118)
-<c0b667a4>] (panic+0x60/0x118) from [<c073f664>] (complete_and_exit+0x0/0x2c)
-[    3.279860] [<c0b667a4>] (panic+0x60/0x118) from [<c073f664>] (complete_and_[xit+0x0/0x2c)
-<c073f664>] (complete_and_exit+0x0/0x2c) from [<c0702de8>] (die+0x12c/0x188)
-[    3.294865] [<c073f664>] (complete_and_exit+0x0/0x2c) from [<c0702de8>] (di[+0x12c/0x188)
-<c0702de8>] (die+0x12c/0x188) from [<c0707184>] (do_page_fault+0x0/0x204)
-[    3.309522] [<c0702de8>] (die+0x12c/0x188) from [<c0707184>] (do_page_fa<lt+0x0/0x204)
-0>[kernel_sec_dump_set_cp_upload] set cp upload mode, MailboxBA 0xabcd00c9
-[    3.324007] [kernel_sec_dump_set_cp_upload] set cp upload mode, MailboxBA 0xabcd00c9
-<0>  - Fail to set CP uploadmode.
-[    8.362679]   - Fail to set <P uploadmode.
-0> modem_wait_count : 501 
-[    8.369184]  modem_wai<_count : 501 
-0>(kernel_sec_save_final_context) Final context was saved before the system reset.
-[    8.380025] (kernel_sec_save_final_context) Final context was saved before the<system reset.
-0>(kernel_sec_set_upload_cause) : upload_cause set c8
-[    8.393209] (kernel_sec_set_upload_cause) : uploa<_cause set c8
-0>KERNEL:magic_number=0 CLEAR_UPLOAD_MAGIC_NUMBER
-[    8.403530] KERNEL:magic_number=0 CLEAR_UPLOA<_MAGIC_NUMBER
-0>(kernel_sec_hw_reset) Upload Magic Code is cleared for silet reset.
-[    8.415238] (kernel_sec_hw_reset) Upload Magic Code is cleared fo< silet reset.
-0>(kernel_sec_hw_reset) 
-[    8.424779] (kernel_<ec_hw_reset) 
-0>(kernel_sec_hw_reset) The forced reset was called. The system will be reset !!
-[    8.435273] (kernel_sec_hw_reset) The forced reset was called. The system will be reset !!
