@@ -1423,11 +1423,11 @@ static int s3cfb_probe(struct platform_device *pdev)
 
 	if (pdata->reset_lcd)
 		pdata->reset_lcd(pdev);
-		
+		/* Init is in after loading SPI in tl2796_probe
 #if defined(CONFIG_FB_S3C_TL2796)
 	tl2796_ldi_init();
 	tl2796_ldi_enable();
-#endif
+#endif*/
 
 #endif
 #endif	/* CONFIG_MACH_S5PC110_ARIES */

@@ -1077,6 +1077,10 @@ static int __init tl2796_probe(struct spi_device *spi)
 	spi->bits_per_word = 9;
 	ret = spi_setup(spi);
 	lcd.g_spi = spi;
+	
+	tl2796_ldi_init();
+	tl2796_ldi_enable();
+	
 	lcd.lcd_dev = lcd_device_register("s5p_lcd",&spi->dev,&lcd,&s5p_lcd_ops);
 	lcd.bl_dev = backlight_device_register("s5p_bl",&spi->dev,&lcd,&s5p_bl_ops);
 	lcd.bl_dev->props.max_brightness = 255;
