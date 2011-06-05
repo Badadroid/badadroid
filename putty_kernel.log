@@ -1,11 +1,5 @@
-=~=~=~=~=~=~=~=~=~=~=~= PuTTY log 2011.06.05 19:33:00 =~=~=~=~=~=~=~=~=~=~=~=
-<6>fg_read_vcell: VCELL=3878
-<3>s3c_keygpio_isr:216 input_report_key(c4a89000, 26, 1)
-[   34.113361] s3c_keygpio_isr:216 input_report_key(c4<89000, 26, 1)
-7>s3c_keygpio_isr pwr key_status =0
-<6>fg_read_vcell: VCELL=3878
-!@2nfofPackageManager
-[PAM:   ] ++FSR_PAM_Init
+=~=~=~=~=~=~=~=~=~=~=~= PuTTY log 2011.06.05 19:54:06 =~=~=~=~=~=~=~=~=~=~=~=
+PAM:   ] ++FSR_PAM_Init
 [PAM:   ]   OneNAND physical base address       : 0xb0000000
 [PAM:   ]   OneNAND virtual  base address       : 0xb0000000
 [PAM:   ]   FSR_PAM_InitNANDController Success!! 
@@ -32,7 +26,7 @@ S6E63M0 : LDI_Pentile_Set_Change Pentile_Value =6c
 ---FIMD_Drv_SetWinOnOff(WIN4:1)
 LCD initialize Finished
 Flash_Unlock failed
-Poweron status - 70
+Poweron status - 20
 FSA9480 0x03 Register = 1
 FSA9480 0x0A Register = 0
 FSA9480 0x0B Register = 8
@@ -79,10 +73,11 @@ SD_HostCtrl_IssueCommand[ch0] not SDclk off, cmd13, SD_CLK_CTRL:0xf
  done!
  debug: 12345
  debug: 12345
- 0x43800E42=>0x3000012C,s=0x22
+ 0x43800E4E=>0x3000012C,s=0x22
  Reloc kernel to 0x32000000
  0x44000000=>0x32000000,s=0x66444C
  done!
+FIMD_Drv_ChangeMode: MDNIE_MODE
  Jumpout to 0x32000000
 Uncompressing Linux...................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................... done, booting the kernel.
 <6>Initializing cgroup subsys cpu
@@ -157,11 +152,11 @@ Uncompressing Linux.............................................................
 <6>Initializing cgroup subsys freezer
 <6>CPU: Testing write buffer coherency: ok
 <0>KERNEL:kernel_sec_get_debug_level_from_boot=0x574f4c44
-[    0.121616] KERNEL:kernel_sec_get_debug_level_from_b<ot=0x574f4c44
+[    0.121615] KERNEL:kernel_sec_get_debug_level_from_b<ot=0x574f4c44
 0>KERNEL:magic_number=0x0 DEBUG LEVEL low!!
 [    0.131675] KERNEL:magic_number=0x0 DEB<G LEVEL low!!
 0>(kernel_sec_set_upload_cause) : upload_cause set 0
-[    0.141389] (kernel_sec_set_upload_cause) : upload_cause set 0
+[    0.141388] (kernel_sec_set_upload_cause) : upload_cause set 0
 <6>regulator: core version 0.5
 <6>NET: Registered protocol family 16
 S5PC110 Hardware version : EVT1 
@@ -293,8 +288,8 @@ Uncompressing Linux.............................................................
 [ADB_UMS_ACM_RNDIS_MTP] string_dev = 100004560000 
 <4>android_adb_ums_acm_rndis_mtp gadget: using random self ethernet address
 <4>android_adb_ums_acm_rndis_mtp gadget: using random host ethernet address
-<6>usb0: MAC 06:9b:d8:a3:10:68
-<6>usb0: HOST MAC e6:d0:97:9b:ce:be
+<6>usb0: MAC 06:9d:16:fd:f1:74
+<6>usb0: HOST MAC 46:73:a1:d8:67:92
 <6>acm_function_add
 <6>DUN is registerd
 <6>fsg_function_bind cdrom patch after fsg->nluns 2
@@ -306,15 +301,15 @@ Uncompressing Linux.............................................................
 ***** [mtpg_function_bind:975] calling mtp_function_enable with 0 
 [mtp_function_enable] mtp_function => (disabled)
 ****** mtp_function_enable and line 1267 null_desc 
-  interface 0 = acm/c4f6a480
-  interface 1 = acm/c4f6a480
-  interface 2 = usb_mass_storage/c4bee800
-  interface 3 = adb/c489dc00
-  interface 4 = Gadget_MTP/c489de00
-  interface 5 = rndis/c4f6a3c0
-  interface 6 = rndis/c4f6a3c0
+  interface 0 = acm/c4f6a600
+  interface 1 = acm/c4f6a600
+  interface 2 = usb_mass_storage/c489e800
+  interface 3 = adb/c4acbc00
+  interface 4 = Gadget_MTP/c4acbe00
+  interface 5 = rndis/c4f6a0c0
+  interface 6 = rndis/c4f6a0c0
 <6>mass_storage_function_config_changed
-  interface 0 = usb_mass_storage/c4bee800
+  interface 0 = usb_mass_storage/c489e800
 <6>android_adb_ums_acm_rndis_mtp gadget: Android Composite USB, version: Jun  4 2011
 <6>android_adb_ums_acm_rndis_mtp gadget: android_adb_ums_acm_rndis_mtp ready
 <6>Registered gadget driver 'android_adb_ums_acm_rndis_mtp'
@@ -335,7 +330,7 @@ Uncompressing Linux.............................................................
 <6>regulator: LDO17: 3000 <--> 3200 mV 
 <6>i2c-gpio i2c-gpio.6: using pins 206 (SDA) and 209 (SCL)
 [FSA9480] fsa9480_codec_probe
-tc: rtc core: registered s3c as rtc0
+Y's3c as rtc0
 fsa9480_interrupt
 [FSA9480] FSA9480_ReadIntRegister
 <7>*** DEBUG : ...and finally MMC. (1)***
@@ -346,10 +341,10 @@ Uncompressing Linux.............................................................
 <7>TOUCH_EN  : High
 <7>TOUCH_INT : Low
 <7>*** DEBUG : First we search for SDIO...(2)***
+<7>*** DEBUG : ...then normal SD...(2) ***
 <6>ldo38_control : turn ON LDO3 and LDO8 (cur_stat=0, req=1)
 [otg_clock_enable] clk_enable(otg_clock) OK.
-[udc_enable]AP_USB_Power off by Bootup : 1<7>*** DEBUG : ...then normal SD...(2) ***
-[FSA9480] FSA9480_ProcessDevice (dev1 : 0x0, dev2 : 0x8)
+[udc_enable]AP_USB_Power off by Bootup : 1[FSA9480] FSA9480_ProcessDevice (dev1 : 0x0, dev2 : 0x8)
 FSA9480_DEV_TY2_JIG_UART_OFF --- ATTACH
 JIT UART OFF
 qt602240_i2c is attached..
@@ -364,11 +359,11 @@ Uncompressing Linux.............................................................
 Family:   0x80
 Variant:    0x1
 Build number:   0xab
-Matrix X size : 19
-Matrix Y size : 11
-Calculated CRC:0x1c 0x34 0xff 0x00 
+Matrix X size : 18
+Matrix Y size : 12
+Calculated CRC:0x5c 0xe4 0x8e 0x00 
 
-Stored CRC:0x1c 0x34 0xff 0x00 
+Stored CRC:0x5c 0xe4 0x8e 0x00 
 
 Info block CRC value OK.
 
@@ -381,14 +376,18 @@ Uncompressing Linux.............................................................
 
 <7>mmc2: wake_lock_timeout 1sec 0
 Chip reset OK!
-[QT] ret : 0, qt602240->client name : qt602240_ts
-<7>[TSP] msg id =  1 90 f9 7b e8 0 0 0 0
+read_mem : i2c read failed
+
+ [TSP] read_mem is failed -- check your TSP chip!!
+
+[QT] ret : 0, qt602240->client name : qt602240_ts
 [QT] qt602240_init/5959
 [QT] qt602240_init/5987, platform_driver_register!!
-<6>s3c2410-rtc s3c2410-rtc: setting system clock to 2011-06-05 16:32:39 UTC (1307291559)
+<7>[TSP] msg id =  1 90 f9 7b e8 0 0 0 0
+<6>s3c2410-rtc s3c2410-rtc: setting system clock to 2011-06-05 16:53:35 UTC (1307292815)
 <6>FIMC0 registered successfully
-<7>[TSP] msg id =  1 0 f9 7b e8 0 0 0 0
 <6>FIMC1 registered successfully
+<7>[TSP] msg id =  1 0 f9 7b e8 0 0 0 0
 <6>FIMC2 registered successfully
 <6>S5PC1XX TVOUT Driver, (c) 2009 Samsung Electronics
 <6>s5p-tvout s5p-tvout: hpd status is cable removed
@@ -398,36 +397,36 @@ Uncompressing Linux.............................................................
 <6>Freeing init memory: 7124K
 <4>Warning: unable to open an initial console.
 <3>init: /init.rc: 270: chmod requires 2 arguments
-[    2.670781] init: /init.rc: 270: chmod requires 2 arguments
+[    2.681978] init: /init.rc: 270: chmod requires 2 arguments
 !@Init process: device_init #3
 <3>init: ro.secure:1
-[    3.146588] init: ro.secure:1
-<3>init: ro.allow.mock.location:0
-[    3.152571] init: ro.allow.mock.location:0
+[    3.157585] ini<: ro.secure:1
+3>init: ro.allow.mock.location:0
+[    3.163481] init: ro.allow.mock.location:0
 <3>init: ro.debuggable:1
-[    3.159762] init: r<.debuggable:1
+[    3.170845] init: r<.debuggable:1
 3>init: persist.service.adb.enable:1
-[    3.166353] init: persist.service.adb.enable:1
+[    3.177437] init: persist.service.adb.enable:1
 <3>init: cannot open '/initlogo.rle'
-[    3.178313] init: cannot open '/initlogo.rle'
+[    3.190040] init: cannot open '/initlogo.rle'
 <3>init: ro.factorytest:0
-[    3.184991] init: ro<factorytest:0
+[    3.196718] init: ro<factorytest:0
 3>init: ro.serialno:
-[    3.190282] init< ro.serialno:
+[    3.202008] init< ro.serialno:
 3>init: ro.bootmode:unknown
-[    3.195833] init: ro.bo<tmode:unknown
+[    3.207559] init: ro.bo<tmode:unknown
 3>init: ro.baseband:unknown
-[    3.201991] init: ro.ba<eband:unknown
+[    3.213717] init: ro.ba<eband:unknown
 3>init: ro.carrier:unknown
-[    3.208062] init: ro.c<rrier:unknown
+[    3.219788] init: ro.c<rrier:unknown
 3>init: ro.bootloader:unknown
-[    3.214307] init: ro.boot<oader:unknown
+[    3.226033] init: ro.boot<oader:unknown
 3>init: ro.hardware:SMDKC110
-[    3.220725] init: ro.har<ware:SMDKC110
+[    3.232451] init: ro.har<ware:SMDKC110
 3>init: ro.revision:48
-[    3.226536] init: <o.revision:48
+[    3.238262] init: <o.revision:48
 3>init: dpm.allowcamera:0
-[    3.232086] init: dpm<allowcamera:0
+[    3.243813] init: dpm<allowcamera:0
 6>init: command 'loglevel' r=0
 <6>init: command 'export' r=0
 <6>init: command 'export' r=0
@@ -573,7 +572,6 @@ Uncompressing Linux.............................................................
 <6>init: command 'chmod' r=0
 <6>init: command 'chown' r=-1
 <6>init: command 'chown' r=0
-<6>init: command 'chmod' r=0
 [FSA9480]connectivity_switching_init = switch_sel : 0x7
 [FSA9480_Enable_AP_USB] Enable AP USB
 [ap_usb_power_on]AP USB Power ON, askon: 0, mtp : 0
@@ -583,15 +581,16 @@ Uncompressing Linux.............................................................
 [enable_adb]USBSTATUS_SAMSUNG_KIES
 <6>acm_function_config_changed
 <6>mtp_function_config_changed
-  interface 0 = acm/c4f6a480
-  interface 1 = acm/c4f6a480
-  interface 2 = Gadget_MTP/c489de00
+  interface 0 = acm/c4f6a600
+  interface 1 = acm/c4f6a600
+  interface 2 = Gadget_MTP/c4acbe00
 [ap_usb_power_on]AP USB Power ON, askon: 0, mtp : 0
 !!!!!!!!!!! [ap_usb_power_on]AP samsung_kies_mtp_mode_flag0, mtp:0
 <6>ldo38_control : turn ON LDO3 and LDO8 (cur_stat=1, req=1)
 [otg_clock_enable] already clk_enabled.
 [otg_clock_enable] clk_disable(otg_clock) OK.
 <6>ldo38_control : turn OFF LDO3 and LDO8 (cur_stat=1, req=1)
+<6>init: command 'chmod' r=0
 <6>init: command 'mkdir' r=-17
 <6>init: command 'chown' r=-1
 <6>init: command 'chmod' r=0
@@ -650,127 +649,127 @@ Uncompressing Linux.............................................................
 <6>init: command 'mkdir' r=-17
 <6>init: command 'chown' r=-1
 <3>init: ro.build.id:FROYO
-[    4.463345] init: ro.<uild.id:FROYO
+[    4.474525] init: ro.<uild.id:FROYO
 3>init: ro.build.display.id:FROYO.XXJPX
-[    4.470370] init: ro.build.display.<d:FROYO.XXJPX
+[    4.481550] init: ro.build.display.<d:FROYO.XXJPX
 3>init: ro.build.version.incremental:XXJPX
-[    4.478870] init: ro.build.version.inc<emental:XXJPX
+[    4.490049] init: ro.build.version.inc<emental:XXJPX
 3>init: ro.build.version.sdk:8
-[    4.486589] init: ro.build<version.sdk:8
+[    4.497769] init: ro.build<version.sdk:8
 3>init: ro.build.version.codename:REL
-[    4.493874] init: ro.build.versio<.codename:REL
+[    4.505054] init: ro.build.versio<.codename:REL
 3>init: ro.build.version.release:2.2.1
-[    4.501854] init: ro.build.version<release:2.2.1
+[    4.513033] init: ro.build.version<release:2.2.1
 3>init: ro.build.date:2010. 12. 17. () 17:06:56 KST
-[    4.511308] init: ro.build.date:2010. 12. 17. (< 17:06:56 KST
+[    4.522487] init: ro.build.date:2010. 12. 17. (< 17:06:56 KST
 3>init: ro.build.date.utc:1292573216
-[    4.520588] init: ro.build.date.<tc:1292573216
+[    4.531768] init: ro.build.date.<tc:1292573216
 3>init: ro.build.type:user
-[    4.527439] init: ro.b<ild.type:user
+[    4.538619] init: ro.b<ild.type:user
 3>init: ro.build.user:root
-[    4.533424] init: ro.b<ild.user:root
+[    4.544604] init: ro.b<ild.user:root
 3>init: ro.build.host:sep-60
-[    4.539582] init: ro.bui<d.host:sep-60
+[    4.550762] init: ro.bui<d.host:sep-60
 3>init: ro.build.tags:release-keys
-[    4.546434] init: ro.build.tag<:release-keys
+[    4.557613] init: ro.build.tag<:release-keys
 3>init: ro.product.model:GT-I9000
-[    4.553719] init: ro.product.<odel:GT-I9000
+[    4.564899] init: ro.product.<odel:GT-I9000
 3>init: ro.product.brand:samsung
-[    4.560831] init: ro.product<brand:samsung
+[    4.572011] init: ro.product<brand:samsung
 3>init: ro.product.name:GT-I9000
-[    4.567857] init: ro.product<name:GT-I9000
+[    4.579036] init: ro.product<name:GT-I9000
 3>init: ro.product.device:GT-I9000
-[    4.575055] init: ro.product.d<vice:GT-I9000
+[    4.586235] init: ro.product.d<vice:GT-I9000
 3>init: ro.product.board:GT-I9000
-[    4.582341] init: ro.product.<oard:GT-I9000
+[    4.593520] init: ro.product.<oard:GT-I9000
 3>init: ro.product.cpu.abi:armeabi-v7a
-[    4.589973] init: ro.product.cpu.a<i:armeabi-v7a
+[    4.601153] init: ro.product.cpu.a<i:armeabi-v7a
 3>init: ro.product.cpu.abi2:armeabi
-[    4.597779] init: ro.product.cp<.abi2:armeabi
+[    4.608959] init: ro.product.cp<.abi2:armeabi
 3>init: ro.product.manufacturer:samsung
-[    4.605672] init: ro.product.manufa<turer:samsung
+[    4.616851] init: ro.product.manufa<turer:samsung
 3>init: ro.product.locale.language:en
-[    4.613737] init: ro.product.loca<e.language:en
+[    4.624917] init: ro.product.loca<e.language:en
 3>init: ro.product.locale.region:GB
-[    4.621457] init: ro.product.lo<ale.region:GB
+[    4.632636] init: ro.product.lo<ale.region:GB
 3>init: ro.wifi.channels:
-[    4.628135] init: ro.<ifi.channels:
+[    4.639315] init: ro.<ifi.channels:
 3>init: ro.board.platform:s5pc110
-[    4.634640] init: ro.board.pl<tform:s5pc110
+[    4.645819] init: ro.board.pl<tform:s5pc110
 3>init: ro.build.product:GT-I9000
-[    4.641838] init: ro.build.pr<duct:GT-I9000
+[    4.653018] init: ro.build.pr<duct:GT-I9000
 3>init: ro.build.description:GT-I9000-user 2.2.1 FROYO XXJPX release-keys
-[    4.652506] init: ro.build.description:GT-I9000-user 2.2.1 FROYO XXJP< release-keys
+[    4.663686] init: ro.build.description:GT-I9000-user 2.2.1 FROYO XXJP< release-keys
 3>init: ro.build.fingerprint:samsung/GT-I9000/GT-I9000/GT-I9000:2.2.1/FROYO/XXJPX:user/release-keys
-[    4.668899] init: ro.build.fingerprint:samsung/GT-I9000/GT-I9000/GT-I9000:2.2.1/FROYO/XXJPX:use</release-keys
+[    4.680078] init: ro.build.fingerprint:samsung/GT-I9000/GT-I9000/GT-I9000:2.2.1/FROYO/XXJPX:use</release-keys
 3>init: ro.build.PDA:I9000XXJPX
-[    4.681648] init: ro.build.<DA:I9000XXJPX
+[    4.692828] init: ro.build.<DA:I9000XXJPX
 3>init: ro.build.hidden_ver:I9000XXJPX
-[    4.689107] init: ro.build.hidden_<er:I9000XXJPX
+[    4.700287] init: ro.build.hidden_<er:I9000XXJPX
 3>init: ro.build.changelist:787513
-[    4.696826] init: ro.build.cha<gelist:787513
+[    4.708006] init: ro.build.cha<gelist:787513
 3>init: ro.tether.denied:false
-[    4.703852] init: ro.tethe<.denied:false
+[    4.715031] init: ro.tethe<.denied:false
 3>init: rild.libpath:/system/lib/libsec-ril.so
-[    4.711918] init: rild.libpath:/system/lib<libsec-ril.so
+[    4.723097] init: rild.libpath:/system/lib<libsec-ril.so
 3>init: rild.libargs:-d /dev/ttyS0
-[    4.720331] init: rild.libargs<-d /dev/ttyS0
+[    4.731510] init: rild.libargs<-d /dev/ttyS0
 3>init: ro.sf.lcd_density:240
-[    4.727269] init: ro.sf.l<d_density:240
+[    4.738449] init: ro.sf.l<d_density:240
 3>init: dalvik.vm.heapsize:48m
-[    4.733861] init: dalvik.v<.heapsize:48m
+[    4.745040] init: dalvik.v<.heapsize:48m
 3>init: dalvik.vm.execution-mode:int:jit
-[    4.741406] init: dalvik.vm.executio<-mode:int:jit
+[    4.752586] init: dalvik.vm.executio<-mode:int:jit
 3>init: ro.opengles.version:131072
-[    4.749299] init: ro.opengles.<ersion:131072
+[    4.760479] init: ro.opengles.<ersion:131072
 3>init: windowsmgr.max_events_per_sec:55
-[    4.757192] init: windowsmgr.max_eve<ts_per_sec:55
+[    4.768371] init: windowsmgr.max_eve<ts_per_sec:55
 3>init: keyinputqueue.use_finger_id:true
-[    4.765605] init: keyinputqueue.use_<inger_id:true
+[    4.776784] init: keyinputqueue.use_<inger_id:true
 3>init: media.stagefright.enable-player:true
-[    4.774364] init: media.stagefright.enab<e-player:true
+[    4.785544] init: media.stagefright.enab<e-player:true
 3>init: media.stagefright.enable-meta:true
-[    4.783298] init: media.stagefright.en<ble-meta:true
+[    4.794477] init: media.stagefright.en<ble-meta:true
 3>init: media.stagefright.enable-scan:true
-[    4.792058] init: media.stagefright.en<ble-scan:true
+[    4.803237] init: media.stagefright.en<ble-scan:true
 3>init: media.stagefright.enable-http:true
-[    4.800817] init: media.stagefright.en<ble-http:true
+[    4.811997] init: media.stagefright.en<ble-http:true
 3>init: keyguard.no_require_sim:true
-[    4.809057] init: keyguard.no_re<uire_sim:true
+[    4.820237] init: keyguard.no_re<uire_sim:true
 3>init: ro.config.ringtone:01_Samsung_tune.ogg
-[    4.817644] init: ro.config.ringtone:01_Sa<sung_tune.ogg
+[    4.828823] init: ro.config.ringtone:01_Sa<sung_tune.ogg
 3>init: ro.config.notification_sound:01_Sherbet.ogg
-[    4.827531] init: ro.config.notification_sound:<1_Sherbet.ogg
+[    4.838711] init: ro.config.notification_sound:<1_Sherbet.ogg
 3>init: ro.config.alarm_alert:Good_Morning.ogg
-[    4.837418] init: ro.config.alarm_alert:Go<d_Morning.ogg
+[    4.848598] init: ro.config.alarm_alert:Go<d_Morning.ogg
 3>init: ro.opengles.version:131072
-[    4.845831] init: ro.opengles.<ersion:131072
+[    4.857011] init: ro.opengles.<ersion:131072
 3>init: net.bt.name:Android
-[    4.852596] init: net.b<.name:Android
+[    4.863776] init: net.b<.name:Android
 3>init: net.change:net.bt.name
-[    4.859014] init: net.chan<e:net.bt.name
+[    4.870194] init: net.chan<e:net.bt.name
 3>init: dalvik.vm.stack-trace-file:/data/anr/traces.txt
-[    4.867861] init: dalvik.vm.stack-trace-file:/data/anr/traces.txt
+[    4.879041] init: dalvik.vm.stack-trace-file:/data/anr/traces.txt
 <3>init: ro.url.legal:http://www.google.com/intl/%s/mobile/android/basic/phone-legal.html
-[    4.881825] init: ro.url.legal:http://www.google.com/intl/%s/mobile/android/basic/ph<ne-legal.html
+[    4.893005] init: ro.url.legal:http://www.google.com/intl/%s/mobile/android/basic/ph<ne-legal.html
 3>init: ro.url.legal.android_privacy:http://www.google.com/intl/%s/mobile/android/basic/privacy.html
-[    4.899605] init: ro.url.legal.android_privacy:http://www.google.com/intl/%s/mobile/android/basi</privacy.html
+[    4.910785] init: ro.url.legal.android_privacy:http://www.google.com/intl/%s/mobile/android/basi</privacy.html
 3>init: ro.com.google.locationfeatures:1
-[    4.913222] init: ro.com.google.loca<ionfeatures:1
+[    4.924401] init: ro.com.google.loca<ionfeatures:1
 3>init: ro.setupwizard.mode:DISABLED
-[    4.921288] init: ro.setupwizard<mode:DISABLED
+[    4.932467] init: ro.setupwizard<mode:DISABLED
 3>init: ro.com.google.clientidbase:android-samsung
-[    4.930221] init: ro.com.google.clientidbase:a<droid-samsung
+[    4.941401] init: ro.com.google.clientidbase:a<droid-samsung
 3>init: ro.com.google.clientidbase.yt:android-samsung
-[    4.940629] init: ro.com.google.clientidbase.yt:a<droid-samsung
+[    4.951809] init: ro.com.google.clientidbase.yt:a<droid-samsung
 3>init: ro.com.google.clientidbase.am:android-samsung
-[    4.951297] init: ro.com.google.clientidbase.am:a<droid-samsung
+[    4.962477] init: ro.com.google.clientidbase.am:a<droid-samsung
 3>init: ro.com.google.clientidbase.vs:android-samsung
-[    4.961965] init: ro.com.google.clientidbase.vs:a<droid-samsung
+[    4.973145] init: ro.com.google.clientidbase.vs:a<droid-samsung
 3>init: ro.com.google.clientidbase.gmm:android-samsung
-[    4.972720] init: ro.com.google.clientidbase.gmm:a<droid-samsung
+[    4.983899] init: ro.com.google.clientidbase.gmm:a<droid-samsung
 3>init: ro.com.google.gmsversion:2.2_r8
-[    4.982260] init: ro.com.google.gmsversion:2.2_r8
+[    4.993440] init: ro.com.google.gmsversion:2.2_r8
 <6>init: Created socket '/dev/socket/property_service' with mode '666', user '0', group '0'
 <6>init: processing action 0x32fd0 (boot)
 [UART Switch] Path : PDA
@@ -790,58 +789,58 @@ Uncompressing Linux.............................................................
 <6>init: command 'domainname' r=0
 <6>init: command 'setrlimit' r=0
 <3>init: ro.FOREGROUND_APP_ADJ:0
-[    5.175385] init: ro.FOREGR<UND_APP_ADJ:0
+[    5.187232] init: ro.FOREGR<UND_APP_ADJ:0
 6>init: command 'setprop' r=0
 <3>init: ro.VISIBLE_APP_ADJ:1
-[    5.184752] init: ro.VIS<BLE_APP_ADJ:1
+[    5.196599] init: ro.VIS<BLE_APP_ADJ:1
 6>init: command 'setprop' r=0
 <3>init: ro.SECONDARY_SERVER_ADJ:2
-[    5.194292] init: ro.SECONDAR<_SERVER_ADJ:2
+[    5.206140] init: ro.SECONDAR<_SERVER_ADJ:2
 6>init: command 'setprop' r=0
 <3>init: ro.BACKUP_APP_ADJ:2
-[    5.203746] init: ro.BA<KUP_APP_ADJ:2
+[    5.215593] init: ro.BA<KUP_APP_ADJ:2
 6>init: command 'setprop' r=0
 <3>init: ro.HOME_APP_ADJ:4
-[    5.212506] init: ro.<OME_APP_ADJ:4
+[    5.224353] init: ro.<OME_APP_ADJ:4
 6>init: command 'setprop' r=0
 <3>init: ro.HIDDEN_APP_MIN_ADJ:7
-[    5.221613] init: ro.HIDDEN<APP_MIN_ADJ:7
+[    5.233460] init: ro.HIDDEN<APP_MIN_ADJ:7
 6>init: command 'setprop' r=0
 <3>init: ro.CONTENT_PROVIDER_ADJ:14
-[    5.231500] init: ro.CONTENT_P<OVIDER_ADJ:14
+[    5.243348] init: ro.CONTENT_P<OVIDER_ADJ:14
 6>init: command 'setprop' r=0
 <3>init: ro.EMPTY_APP_ADJ:15
-[    5.241041] init: ro.EM<TY_APP_ADJ:15
+[    5.252888] init: ro.EM<TY_APP_ADJ:15
 6>init: command 'setprop' r=0
 <3>init: ro.FOREGROUND_APP_MEM:2560
-[    5.250581] init: ro.FOREGROUN<_APP_MEM:2560
+[    5.262429] init: ro.FOREGROUN<_APP_MEM:2560
 6>init: command 'setprop' r=0
 <3>init: ro.VISIBLE_APP_MEM:4096
-[    5.260469] init: ro.VISIBL<_APP_MEM:4096
+[    5.272316] init: ro.VISIBL<_APP_MEM:4096
 6>init: command 'setprop' r=0
 <3>init: ro.SECONDARY_SERVER_MEM:5120
-[    5.270529] init: ro.SECONDARY_S<RVER_MEM:5120
-6>init: command 'setprop' r=0
+[    5.282377] init: ro.SECONDARY_SERVER_MEM:5120
+<6>init: command 'setprop' r=0
 <3>init: ro.BACKUP_APP_MEM:5120
-[    5.280503] init: ro.BACKUP_APP_MEM:5120
+[    5.292438] init: ro.BACKUP_APP_MEM:5120
 <6>init: command 'setprop' r=0
 <3>init: ro.HOME_APP_MEM:5120
-[    5.289871] init: ro.HOME_APP_MEM:5120
-<6>init: command 'setprop' r=0
+[    5.301805] init: ro.HOM<_APP_MEM:5120
+6>init: command 'setprop' r=0
 <3>init: ro.HIDDEN_APP_MEM:6144
-[    5.299238] init: ro.HIDDE<_APP_MEM:6144
+[    5.311085] init: ro.HIDDE<_APP_MEM:6144
 6>init: command 'setprop' r=0
 <3>init: ro.CONTENT_PROVIDER_MEM:7168
-[    5.309212] init: ro.CONTENT_PRO<IDER_MEM:7168
+[    5.321059] init: ro.CONTENT_PRO<IDER_MEM:7168
 6>init: command 'setprop' r=0
 <3>init: ro.EMPTY_APP_MEM:8192
-[    5.319099] init: ro.EMPT<_APP_MEM:8192
+[    5.330947] init: ro.EMPT<_APP_MEM:8192
 6>init: command 'setprop' r=0
 <3>init: wifi.interface:eth0
-[    5.328206] init: wifi.<nterface:eth0
+[    5.340053] init: wifi.<nterface:eth0
 6>init: command 'setprop' r=0
 <3>init: ro.bt.bdaddr_path:/data/misc/bluetooth/bt_addr
-[    5.339481] init: ro.bt.bdaddr_path:/data/misc/blu<tooth/bt_addr
+[    5.351329] init: ro.bt.bdaddr_path:/data/misc/blu<tooth/bt_addr
 6>init: command 'setprop' r=0
 <6>init: command 'write' r=0
 <6>init: command 'write' r=0
@@ -891,29 +890,29 @@ Uncompressing Linux.............................................................
 <6>init: command 'chown' r=0
 <6>init: command 'chown' r=0
 <3>init: net.tcp.buffersize.default:4096,87380,196608,4096,16384,110208
-[    5.478538] init: net.tcp.buffersize.default:4096,87380,196608,409<,16384,110208
+[    5.490368] init: net.tcp.buffersize.default:4096,87380,196608,409<,16384,110208
 3>init: net.change:net.tcp.buffersize.default
-[    5.489986] init: net.change:net.tcp.buff<rsize.default
+[    5.501817] init: net.change:net.tcp.buff<rsize.default
 6>init: command 'setprop' r=0
 <3>init: net.tcp.buffersize.wifi:4095,87380,196608,4096,16384,110208
-[    5.503950] init: net.tcp.buffersize.wifi:4095,87380,196608,409<,16384,110208
+[    5.515780] init: net.tcp.buffersize.wifi:4095,87380,196608,409<,16384,110208
 3>init: net.change:net.tcp.buffersize.wifi
-[    5.514878] init: net.change:net.tcp.b<ffersize.wifi
+[    5.526709] init: net.change:net.tcp.b<ffersize.wifi
 6>init: command 'setprop' r=0
 <3>init: net.tcp.buffersize.umts:4094,87380,196608,4096,16384,110208
-[    5.528582] init: net.tcp.buffersize.umts:4094,87380,196608,409<,16384,110208
+[    5.540412] init: net.tcp.buffersize.umts:4094,87380,196608,409<,16384,110208
 3>init: net.change:net.tcp.buffersize.umts
-[    5.539510] init: net.change:net.tcp.b<ffersize.umts
+[    5.551340] init: net.change:net.tcp.b<ffersize.umts
 6>init: command 'setprop' r=0
 <3>init: net.tcp.buffersize.edge:4093,26280,35040,4096,16384,35040
-[    5.553040] init: net.tcp.buffersize.edge:4093,26280,35040,40<6,16384,35040
+[    5.564871] init: net.tcp.buffersize.edge:4093,26280,35040,40<6,16384,35040
 3>init: net.change:net.tcp.buffersize.edge
-[    5.563795] init: net.change:net.tcp.b<ffersize.edge
+[    5.575625] init: net.change:net.tcp.b<ffersize.edge
 6>init: command 'setprop' r=0
 <3>init: net.tcp.buffersize.gprs:4092,8760,11680,4096,8760,11680
-[    5.577152] init: net.tcp.buffersize.gprs:4092,8760,11680,4<96,8760,11680
+[    5.588982] init: net.tcp.buffersize.gprs:4092,8760,11680,4<96,8760,11680
 3>init: net.change:net.tcp.buffersize.gprs
-[    5.587733] init: net.change:net.tcp.b<ffersize.gprs
+[    5.599563] init: net.change:net.tcp.b<ffersize.gprs
 6>init: command 'setprop' r=0
 <6>init: command 'chmod' r=0
 <6>init: command 'chmod' r=0
@@ -945,78 +944,78 @@ Uncompressing Linux.............................................................
 <6>init: command 'chown' r=0
 <5>init: starting 'console'
 <3>init: init.svc.console:running
-[    5.677830] init: init.svc.console:running
+[    5.689643] init: init.svc.console:running
 sh: can't access <5>init: starting 'playlogos1'
 tty; job contro<3>init: init.svc.playlogos1:running
-[    5.692315] init: init.svc.playlogos1:running<
+[    5.704154] init: init.svc.playlogos1:running<
 l turned off
 5>init: starting 'pvrsrvinit'
 $ <3>init: init.svc.pvrsrvinit:running
-[    5.704127] init: init.svc.pvrsrvinit:running
+[    5.715966] init: init.svc.pvrsrvinit:running
 <5>init: starting 'servicemanager'
 <3>init: init.svc.servicemanager:running
-[    5.720424] init: init.svc.servicemanager:running
+[    5.732376] init: init.svc.servicemanager:running
 <5>init: starting 'vold'
 <3>init: init.svc.vold:running
-[    5.730745] init: init.svc.vold:running
+[    5.742732] init: init.svc.vold:running
 <6>init: Created socket '/dev/socket/vold' with mode '660', user '0', group '1009'
 <5>init: starting 'notified_event'
 <3>init: init.svc.notified_event:running
-[    5.753989] init: init.svc.notified_event:running
+[    5.765941] init: init.svc.notified_event:running
 <6>init: Created socket '/dev/socket/notified_event' with mode '660', user '0', group '1000'
 <5>init: starting 'netd'
 <3>init: init.svc.netd:running
-[    5.774918] init: init.svc.netd:running
+[    5.786878] init: init.svc.netd:running
 <6>init: Created socket '/dev/socket/netd' with mode '660', user '0', group '1000'
 <5>init: starting 'debuggerd'
 <3>init: init.svc.debuggerd:running
-[    5.792654] init: init.svc.debuggerd:running
+[    5.804623] init: init.svc.debuggerd:running
 <5>init: starting 'mobex-daemon'
 <3>init: init.svc.mobex-daemon:running
-[    5.805560] init: init.svc.mobex-daemon:running
+[    5.817572] init: init.svc.mobex-daemon:running
 <5>init: starting 'zygote'
 <3>init: init.svc.zygote:running
-[    5.816453] init: init.svc.zygote:running
+[    5.828448] init: init.svc.zygote:running
 <6>init: Created socket '/dev/socket/zygote' with mode '666', user '0', group '0'
 <5>init: starting 'media'
 <3>init: init.svc.media:running
-[    5.835309] init: init.svc.media:running
+[    5.847278] init: init.svc.media:running
 <3>init: cannot find '/system/bin/vtserver', disabling 'vt'
-[    5.845093] init: cannot find '/system/bin/vtserver', disabling 'vt'
+[    5.857053] init: cannot find '/system/bin/vtserver', disabling 'vt'
 <5>init: starting 'dbus'
 <3>init: init.svc.dbus:running
-[    5.858692] init: init.svc.dbus:running
+[    5.870644] init: init.svc.dbus:running
 <6>init: Created socket '/dev/socket/dbus' with mode '660', user '1002', group '1002'
 <5>init: starting 'installd'
 <3>init: init.svc.installd:running
-[    5.893237] init: init.svc.installd:running
+[    5.905319] init: init.svc.installd:running
 <6>init: Created socket '/dev/socket/installd' with mode '600', user '1000', group '1000'
 <3>init: cannot find '/system/etc/install-recovery.sh', disabling 'flash_recovery'
-[    5.915250] init: cannot find '/system/etc/install-recovery.sh', disabling 'flash_recovery'
+[    5.927358] init: cannot find '/system/etc/install-recovery.sh', disabling 'flash_recovery'
 <5>init: starting 'sensor-daemon'
 <3>init: init.svc.sensor-daemon:running
-[    5.932674] init: init.svc.sensor-daemon:running
+[    5.944816] init: init.svc.sensor-daemon:running
 <5>init: starting 'keystore'
 <3>init: init.svc.keystore:running
-[    5.944339] init: init.svc.keystore:running
+[    5.956464] init: init.svc.keystore:running
 <6>init: Created socket '/dev/socket/keystore' with mode '666', user '0', group '0'
 <5>init: starting 'immvibed'
 <3>init: init.svc.immvibed:running
-[    5.970514] init: init.svc.immvibed:running
+[    5.982735] init: init.svc.immvibed:running
 <3>init: cannot find '/system/bin/immvbsd', disabling 'immvbsd'
-[    5.992147] init: cannot find '/system/bin/immvbsd', disabling 'immvbsd'
+[    6.004359] init: cannot find '/system/bin/immvbsd', disabling 'immvbsd'
 <6>PVR_K:(Warning): SysFinalise: Version string: SGX540 S5PC110 [475, services4/system/s5pc110/sysconfig.c]
 <5>init: starting 'tvout'
 <3>init: init.svc.tvout:running
-[    6.029119] init: init.svc.tvout:running
+[    6.050871] init: init.svc.tvout:running
 <5>init: starting 'dfta'
 <3>init: init.svc.dfta:running
-[    6.041921] init: init.svc.dfta:running
+[    6.063648] init: init.svc.dfta:running
 <6>init: command 'class_start' r=0
 <6>init: processing action 0x342c0 (property:persist.service.adb.enable=1)
 <5>init: starting 'adbd'
 <3>init: init.svc.adbd:running
-[    6.084766] init: init.svc.adbd:running
+[    6.093951] init: init.svc.adbd:running
 <6>warning: `adbd' uses 32-bit capabilities (legacy support in use)
 <6>init: command 'start' r=0
 <6>init: waitpid returned pid 2262, status = 00000000
@@ -1027,19 +1026,19 @@ l turned off
 <6>acm_function_config_changed
 <6>mass_storage_function_config_changed
 <6>adb_function_config_changed
-  interface 0 = acm/c4f6a480
-  interface 1 = acm/c4f6a480
-  interface 2 = usb_mass_storage/c4bee800
-  interface 3 = adb/c489dc00
+  interface 0 = acm/c4f6a600
+  interface 1 = acm/c4f6a600
+  interface 2 = usb_mass_storage/c489e800
+  interface 3 = adb/c4acbc00
 [ap_usb_power_on]AP USB Power ON, askon: 0, mtp : 0
 !!!!!!!!!!! [ap_usb_power_on]AP samsung_kies_mtp_mode_flag0, mtp:0
 <5>init: process 'pvrsrvinit', pid 2262 exited
 <3>init: init.svc.pvrsrvinit:stopped
-[    6.169279] init: init.svc.pvrsrvinit:stopped
+[    6.182079] init: init.svc.pvrsrvinit:stopped
 <6>init: waitpid returned pid 2279, status = 00000200
 <5>init: process 'dfta', pid 2279 exited
 <3>init: init.svc.dfta:stopped
-[    6.198948] init: init.svc.dfta:stopped
+[    6.202383] init: init.svc.dfta:stopped
 <6>init: make_device '/dev/pvrsrvkm' block 0, major 240, minor 0 r=0
 <6>init: make_device '/dev/s3c_bc' block 0, major 253, minor 0 r=0
 <6>init: make_device '/dev/tspdrv' block 0, major 10, minor 43 r=0
@@ -1116,81 +1115,91 @@ l turned off
 <6>init: waitpid returned pid 2276, status = 00000000
 <5>init: process 'immvibed', pid 2276 exited
 <3>init: init.svc.immvibed:stopped
-[    6.853571] init: init.svc.immvibed:stopped
+[    6.825705] init: init.svc.immvibed:stopped
 <6>init: waitpid returned pid 2339, status = 00000100
 <3>init: untracked pid 2339 exited
-[    6.865809] init: untracked pid 2339 exited
+[    6.873312] init: untracked pid 2339 exited
 <6>fg_read_vcell: VCELL=3878
 DmaAddr=@4f800000 Total=32768bytes PrdSz=2048 #Prds=4, dmaEnd 0x4f808000
 DmaAddr=@4f800000 Total=32768bytes PrdSz=2048 #Prds=4, dmaEnd 0x4f808000
 <3>FAT: Filesystem error (dev mmcblk1)
-[    8.416769] FAT: Filesystem error<(dev mmcblk1)
-3>    [  f 8.421798]     at_get_cluster: invalid cluster chain (i_pos 0)fat_get_cluster: invalid cluster
+[    8.449024] FAT: Filesystem error<(dev mmcblk1)
+3>    [  f 8.454053]     at_get_cluster: invalid cluster chain (i_pos 0)fat_get_cluster: invalid cluster
 chain (i_pos 0)
 <3>    File system has been set read-only
-[    8.435675]     File system has been set read-only
+[    8.467930]     File system has been set read-only
 <3>FAT: Filesystem error (dev mmcblk1)
-[    8.470533] FAT: Filesystem error<(dev mmcblk1)
-3>    [  f 8.475563]     at_get_cluster: invalid cluster chain (i_pos 0)fat_get_cluster: invalid cluster
+[    8.502814] FAT: Filesystem error<(dev mmcblk1)
+3>    [  f 8.507844]     at_get_cluster: invalid cluster chain (i_pos 0)fat_get_cluster: invalid cluster
 chain (i_pos 0)
 <3>FAT: Filesystem error (dev mmcblk1)
-[    8.489180] FAT: Filesystem error<(dev mmcblk1)
-3>    [  f 8.494210]     at_get_cluster: invalid cluster chain (i_pos 0)fat_get_cluster: invalid cluster
+[    8.521461] FAT: Filesystem error<(dev mmcblk1)
+3>    [  f 8.526491]     at_get_cluster: invalid cluster chain (i_pos 0)fat_get_cluster: invalid cluster
 chain (i_pos 0)
 <3>FAT: Filesystem error (dev mmcblk1)
-[    8.530187] FAT: Filesystem error<(dev mmcblk1)
-3>    [  f 8.535217]     at_get_cluster: invalid cluster chain (i_pos 0)fat_get_cluster: invalid cluster
+[    8.562425] FAT: Filesystem error<(dev mmcblk1)
+3>    [  f 8.567455]     at_get_cluster: invalid cluster chain (i_pos 0)fat_get_cluster: invalid cluster
 chain (i_pos 0)
 <3>FAT: Filesystem error (dev mmcblk1)
-[    8.548834] FAT: Filesystem error<(dev mmcblk1)
-3>    [  f 8.553864]     at_get_cluster: invalid cluster chain (i_pos 0)fat_get_cluster: invalid cluster
+[    8.581072] FAT: Filesystem error<(dev mmcblk1)
+3>    [  f 8.586102]     at_get_cluster: invalid cluster chain (i_pos 0)fat_get_cluster: invalid cluster
 chain (i_pos 0)
 <3>FAT: Filesystem error (dev mmcblk1)
-[    8.577083] FAT: Filesystem error<(dev mmcblk1)
-3>    [  f 8.582113]     at_get_cluster: invalid cluster chain (i_pos 0)fat_get_cluster: invalid cluster
+[    8.609338] FAT: Filesystem error<(dev mmcblk1)
+3>    [  f 8.614368]     at_get_cluster: invalid cluster chain (i_pos 0)fat_get_cluster: invalid cluster
 chain (i_pos 0)
 <3>FAT: Filesystem error (dev mmcblk1)
-[    8.595730] FAT: Filesystem error<(dev mmcblk1)
-3>    [  f 8.600760]     at_get_cluster: invalid cluster chain (i_pos 0)fat_get_cluster: invalid cluster
+[    8.627985] FAT: Filesystem error<(dev mmcblk1)
+3>    [  f 8.633015]     at_get_cluster: invalid cluster chain (i_pos 0)fat_get_cluster: invalid cluster
 chain (i_pos 0)
 <3>FAT: Filesystem error (dev mmcblk1)
-[    8.624369] FAT: Filesystem error<(dev mmcblk1)
-3>    [  f 8.629399]     at_get_cluster: invalid cluster chain (i_pos 0)fat_get_cluster: invalid cluster
+[    8.656624] FAT: Filesystem error<(dev mmcblk1)
+3>    [  f 8.661654]     at_get_cluster: invalid cluster chain (i_pos 0)fat_get_cluster: invalid cluster
 chain (i_pos 0)
 <3>FAT: Filesystem error (dev mmcblk1)
-[    8.643016] FAT: Filesystem error<(dev mmcblk1)
-3>    [  f 8.648046]     at_get_cluster: invalid cluster chain (i_pos 0)fat_get_cluster: invalid cluster
+[    8.675271] FAT: Filesystem error<(dev mmcblk1)
+3>    [  f 8.680301]     at_get_cluster: invalid cluster chain (i_pos 0)fat_get_cluster: invalid cluster
 chain (i_pos 0)
 <3>FAT: Filesystem error (dev mmcblk1)
-[    8.671369] FAT: Filesystem error<(dev mmcblk1)
-3>    [  f 8.676399]     at_get_cluster: invalid cluster chain (i_pos 0)fat_get_cluster: invalid cluster
+[    8.703693] FAT: Filesystem error<(dev mmcblk1)
+3>    [  f 8.708723]     at_get_cluster: invalid cluster chain (i_pos 0)fat_get_cluster: invalid cluster
 chain (i_pos 0)
 <3>FAT: Filesystem error (dev mmcblk1)
-[    8.690016] FAT: Filesystem error<(dev mmcblk1)
-3>    [  f 8.695046]     at_get_cluster: invalid cluster chain (i_pos 0)fat_get_cluster: invalid cluster
+[    8.722340] FAT: Filesystem error<(dev mmcblk1)
+3>    [  f 8.727370]     at_get_cluster: invalid cluster chain (i_pos 0)fat_get_cluster: invalid cluster
 chain (i_pos 0)
 <3>FAT: Filesystem error (dev mmcblk1)
-[    8.719912] FAT: Filesystem error<(dev mmcblk1)
-3>    [  f 8.724942]     at_get_cluster: invalid cluster chain (i_pos 0)fat_get_cluster: invalid cluster
+[    8.752263] FAT: Filesystem error<(dev mmcblk1)
+3>    [  f 8.757293]     at_get_cluster: invalid cluster chain (i_pos 0)fat_get_cluster: invalid cluster
 chain (i_pos 0)
 <3>FAT: Filesystem error (dev mmcblk1)
-[    8.738559] FAT: Filesystem error<(dev mmcblk1)
-3>    [  f 8.743590]     at_get_cluster: invalid cluster chain (i_pos 0)fat_get_cluster: invalid cluster
+[    8.770910] FAT: Filesystem error<(dev mmcblk1)
+3>    [  f 8.775940]     at_get_cluster: invalid cluster chain (i_pos 0)fat_get_cluster: invalid cluster
 chain (i_pos 0)
 <3>FAT: Filesystem error (dev mmcblk1)
-[    8.763547] FAT: Filesystem error<(dev mmcblk1)
-3>    [  f 8.768577]     at_get_cluster: invalid cluster chain (i_pos 0)fat_get_cluster: invalid cluster
+[    8.795897] FAT: Filesystem error<(dev mmcblk1)
+3>    [  f 8.800928]     at_get_cluster: invalid cluster chain (i_pos 0)fat_get_cluster: invalid cluster
 chain (i_pos 0)
 <3>FAT: Filesystem error (dev mmcblk1)
-[    8.832664] FAT: Filesystem error<(dev mmcblk1)
-3>    [  f 8.837693]     at_get_cluster: invalid cluster chain (i_pos 0)fat_get_cluster: invalid cluster
+[    8.864954] FAT: Filesystem error<(dev mmcblk1)
+3>    [  f 8.869983]     at_get_cluster: invalid cluster chain (i_pos 0)fat_get_cluster: invalid cluster
 chain (i_pos 0)
 !@beginofsystem_init1()
 <6>init: make_device '/dev/vcs7' block 0, major 7, minor 7 r=0
 <6>init: make_device '/dev/vcsa7' block 0, major 7, minor 135 r=0
 !@endofsystem_init1()
 <3>init: no such service 'bootanim'
-[   12.070223] init: no such service 'bootanim'
+[   12.102791] init: no such service 'bootanim'
 !@beginofPackageManager
+<6>fg_read_vcell: VCELL=3878
+<3>FAT: Filesystem error (dev mmcblk1)
+[   17.566021] FAT: Filesystem error<(dev mmcblk1)
+3>    [  f17.571049]     at_get_cluster: invalid cluster chain (i_pos 0)fat_get_cluster: invalid cluster
+chain (i_pos 0)
+<3>FAT: Filesystem error (dev mmcblk1)
+[   17.584944] FAT: Filesystem error<(dev mmcblk1)
+3>    [  f17.589974]     at_get_cluster: invalid cluster chain (i_pos 0)fat_get_cluster: invalid cluster
+chain (i_pos 0)
+<6>fg_read_vcell: VCELL=3878
 <6>fg_read_vcell: VCELL=3878
 
