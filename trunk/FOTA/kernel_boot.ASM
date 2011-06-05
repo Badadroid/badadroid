@@ -223,9 +223,9 @@ STR	R4, [R3,#0xF00]
 	;STR     R1, [R0]
 
 
-MOV	R0, #3
-BL	FIMD_Drv_ChangeMode
-BL	FIMD_Drv_PowerOn
+;MOV     R0, #3
+;BL      FIMD_Drv_ChangeMode
+;BL      FIMD_Drv_PowerOn
 ;BL       FIMD_Drv_SetGPIO
 
 	LDR	R5, [NOP_CODE]
@@ -315,7 +315,7 @@ DEFAULT_VARIABLES
     kernel_size 	dw 0 ;overwritten during runtime
 
     SBL_sblinit_ptr	dw 0x4024F550
-    SBL_lcd_init_ptr	dw 0x40250598 ;0x40250A40;0x40250F90
+    SBL_lcd_init_ptr	dw 0x40250F90; 0x40250598 ;0x40250A40;0x40250F90
     sbl_start		dw 0x40244000
     sbl_size		dw 0x140000
 
