@@ -228,6 +228,27 @@ BL	FIMD_Drv_ChangeMode
 BL	FIMD_Drv_PowerOn
 ;BL       FIMD_Drv_SetGPIO
 
+	LDR	R5, [NOP_CODE]
+	LDR	R0, [SBL_patch_table_adr]
+
+do_patch:
+	LDR	R1, [R0], 4 ;post increment R0 by 4
+	CMP	R1, 0
+	BEQ	patch_done
+	STR	R5, [R1]
+	B	do_patch
+
+patch_done:
+	LDR	R0, [s_done_a]
+	BL	debug_print
+
+LDR	R1, [SBL_sblinit_ptr]
+BLX	R1
+	LDR	R0, [s_done_a]
+	BL	debug_print
+LDR	R1, [SBL_lcd_init_ptr]
+BLX	R1
+
 	LDR	R1, [kernel_start]
 	LDR	R0, [s_jumpingout_a]
 	BL	debug_print
@@ -293,9 +314,16 @@ DEFAULT_VARIABLES
     kernel_size_a	dw kernel_size
     kernel_size 	dw 0 ;overwritten during runtime
 
-    SBL_lcd_init_ptr	dw 0x40250A40;0x40250F90
+    SBL_sblinit_ptr	dw 0x4024F550
+    SBL_lcd_init_ptr	dw 0x40250598 ;0x40250A40;0x40250F90
     sbl_start		dw 0x40244000
     sbl_size		dw 0x140000
+
+
+    SBL_patch_table_adr dw SBL_patch_table
+    NOP_CODE		dw 0xE1A00000
+    SBL_patch_table	dw 0x0;0x4025095C
+dw 0x0	     ;end
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;; strings at the end
