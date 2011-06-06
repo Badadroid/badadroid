@@ -242,6 +242,11 @@ patch_done:
 	LDR	R0, [s_done_a]
 	BL	debug_print
 
+LDR	R0, [framebuffer_ptr]
+MOV	R1, 0x77
+LDR	R2, [framebuffer_size]
+BL	rebell_fillmem
+
 LDR	R1, [SBL_sblinit_ptr]
 BLX	R1
 	LDR	R0, [s_done_a]
@@ -318,6 +323,8 @@ DEFAULT_VARIABLES
     SBL_lcd_init_ptr	dw 0x40250F90; 0x40250598 ;0x40250A40;0x40250F90
     sbl_start		dw 0x40244000
     sbl_size		dw 0x140000
+    framebuffer_ptr	dw 0x40001000
+    framebuffer_size	dw 1152000
 
 
     SBL_patch_table_adr dw SBL_patch_table
