@@ -323,7 +323,7 @@ DEFAULT_VARIABLES
     SBL_lcd_init_ptr	dw 0x40250F90; 0x40250598 ;0x40250A40;0x40250F90
     sbl_start		dw 0x40244000
     sbl_size		dw 0x140000
-    framebuffer_ptr	dw 0x4EC00000
+    framebuffer_ptr	dw 0x403EC00C ;0x4EC00000
     framebuffer_size	dw 0x5DBFF
 
 
