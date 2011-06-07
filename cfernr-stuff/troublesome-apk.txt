@@ -1,13 +1,15 @@
-titanium backup
-logsprovider
-vending
-market
-google
-mms
-calendar
+calendarprovider
+clockpackage
+downloadprovider
 email
-media
-com.sgs
-com.androidapps
-download provider
+gmail
+google ///(all of them)
+logs provider
+marketupdater
+mediaprovider ///important
+mediauploader ///important
+mms
+vending
 video player
+
+data/app ///(delete all files inside)
