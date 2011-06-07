@@ -1,0 +1,13 @@
+titanium backup
+logsprovider
+vending
+market
+google
+mms
+calendar
+email
+media
+com.sgs
+com.androidapps
+download provider
+video player
