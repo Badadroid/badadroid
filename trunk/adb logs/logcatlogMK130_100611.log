@@ -1,0 +1,364 @@
+--------- beginning of /dev/log/main
+I/DEBUG   ( 2278): debuggerd: Jan 29 2011 15:12:45
+E/        ( 2270): [info] pvrsrvinit success
+I/NPS_MOBEX( 2280): task Start
+--------- beginning of /dev/log/system
+I/Vold    ( 2275): Vold 2.1 (the revenge) firing up
+I/Vold    ( 2275): Volume::setState -> Volume sdcard /mnt/sdcard state changed from -1 (Initializing) to 0 (No-Media)
+I/Netd    ( 2277): Netd 1.0 starting
+I/NPS_MOBEX( 2280): wscMessageGet msgid:4097
+D/DirectVolume( 2275): DirectVolume::handleBlockEvent -> mCurrentlyMMCRootPath /devices/platform/s3c-sdhci.2/mmc_host/mmc
+D/DirectVolume( 2275): DirectVolume::handleBlockEvent-> ::NlActionAdd:: major 179,minor 8 (disk)
+E/Vold    ( 2275): Volume::createDeviceNode -> group(1015,sdcard_rw) 
+D/DirectVolume( 2275): DirectVolume::handleDiskAdded -> mDiskMajor 179, mDiskMinor 8, NPARTS:3
+I/Vold    ( 2275): Volume::setState -> Volume sdcard /mnt/sdcard state changed from 0 (No-Media) to 2 (Pending)
+D/DirectVolume( 2275): DirectVolume::handleBlockEvent-> ::NlActionAdd:: major 179,minor 9 (partition)
+E/Vold    ( 2275): Volume::createDeviceNode -> group(1015,sdcard_rw) 
+D/DirectVolume( 2275): DirectVolume::handlePartitionAdded -> major 179, minor 9, PARTN 1
+D/DirectVolume( 2275): DirectVolume::handleBlockEvent-> ::NlActionAdd:: major 179,minor 10 (partition)
+E/Vold    ( 2275): Volume::createDeviceNode -> group(1015,sdcard_rw) 
+D/DirectVolume( 2275): DirectVolume::handlePartitionAdded -> major 179, minor 10, PARTN 2
+D/DirectVolume( 2275): DirectVolume::handleBlockEvent-> ::NlActionAdd:: major 179,minor 11 (partition)
+E/Vold    ( 2275): Volume::createDeviceNode -> group(1015,sdcard_rw) 
+D/DirectVolume( 2275): DirectVolume::handlePartitionAdded -> major 179, minor 11, PARTN 3
+I/Vold    ( 2275): Volume::setState -> Volume sdcard /mnt/sdcard state changed from 2 (Pending) to 1 (Idle-Unmounted)
+D/Vold    ( 2275): check usb mode (ums online
+D/Vold    ( 2275): )
+D/sensor_stub( 2288): sensor_stub_init
+I/        ( 2297): TVOUT_DEBUG ServiceManager main 1 
+I/        ( 2297): TVOUT_DEBUG ServiceManager main 2 
+I/        ( 2297): TVOUT_DEBUG ServiceManager: 0xadb0
+I/        ( 2297): TVOUT_DEBUG ServiceManager main 3
+D/AndroidRuntime( 2281): 
+D/AndroidRuntime( 2281): >>>>>>>>>>>>>> AndroidRuntime START <<<<<<<<<<<<<<
+D/AndroidRuntime( 2281): CheckJNI is OFF
+D/AndroidRuntime( 2281): Set to default setting : language=-Duser.language= region=-Duser.region=
+D/dalvikvm( 2281): creating instr width table
+I/        ( 2283): ServiceManager: 0xacc0
+I/H324mCameraInterface( 2284): VTCameraListener
+D/AudioHardwareALSA( 2283): Mixer: element name: 'Playback'
+D/AudioHardwareALSA( 2283): Mixer: element name: 'Playback Headset'
+D/AudioHardwareALSA( 2283): Mixer: element name: 'Playback Spkr'
+D/AudioHardwareALSA( 2283): Mixer: master 'PCM' not found.
+D/AudioHardwareALSA( 2283): Mixer: route 'Earpiece' not found.
+D/AudioHardwareALSA( 2283): Mixer: route 'Speaker' not found.
+D/AudioHardwareALSA( 2283): Mixer: route 'Bluetooth' not found.
+D/AudioHardwareALSA( 2283): Mixer: route 'Headphone' not found.
+D/AudioHardwareALSA( 2283): Mixer: route 'Bluetooth A2DP' not found.
+D/AudioHardwareALSA( 2283): Mixer: element name: 'Playback'
+D/AudioHardwareALSA( 2283): Mixer: element name: 'Playback Headset'
+D/AudioHardwareALSA( 2283): Mixer: element name: 'Playback Spkr'
+D/AudioHardwareALSA( 2283): Mixer: element name: 'Capture'
+D/AudioHardwareALSA( 2283): Mixer: master 'Capture' found.
+D/AudioHardwareALSA( 2283): Mixer: route 'Capture' found.
+D/AudioHardwareALSA( 2283): Mixer: route '' not found.
+D/AudioHardwareALSA( 2283): Mixer: route 'Bluetooth Capture' not found.
+D/AudioHardwareALSA( 2283): Mixer: route 'Capture' found.
+D/AudioHardwareALSA( 2283): Mixer: route 'Bluetooth A2DP Capture' not found.
+D/AudioHardwareALSA( 2283): mixer initialized.
+D/AudioHardwareALSA( 2283): ### android::AudioHardwareIPC::AudioHardwareIPC()
+D/AudioHardwareALSA( 2283): Success Initializing IPC
+D/AudioHardwareInterface( 2283): setMode(NORMAL), mode(0)
+W/CameraService( 2283): CameraService started: pid=2283
+V/AudioPolicyService( 2283): Using hardware specific audio policy
+E/VolumeCustomizer( 2283): [PJH] readStreamVolumeHardcoding is used fp:0, tuningFileUse:0
+E/VolumeCustomizer( 2283): [PJH] readStreamVolumeHardcoding is used fp:0, tuningFileUse:0
+E/VolumeCustomizer( 2283): [PJH] readStreamVolumeHardcoding is used fp:0, tuningFileUse:0
+E/VolumeCustomizer( 2283): [PJH] readSituationVolumeTable - Hardcoding  is used
+I/        ( 2284): VT Server.c ServiceManager: 0xddb8
+V/AudioFlinger( 2283): registerClient() 0x5641c, tid 2283, calling tid 2283
+V/AudioFlinger( 2283): Adding notification client 0x56420
+V/AudioFlinger( 2283): openOutput(), Device 2, SamplingRate 0, Format 0, Channels 0, flags 0
+I/AudioHardwareALSA( 2283): 
+I/AudioHardwareALSA( 2283): virtual android::AudioStreamOut* android::AudioHardwareALSA::openOutputStream(uint32_t, int*, uint32_t*, uint32_t*, android::status_t*) - format = 0, channels = 0, sampleRate = 0, devices = 2
+E/AcousticEQ( 2283): [AEQ] aeqcoe.txt: file open error!
+V/AudioHardwareALSA( 2283): (int android::AudioStreamOutALSA::SoundSolutionInit()) Acoustic equalizer init
+D/AudioHardwareALSA( 2283): ALSAStreamOps - input   - format = 0, channels = 0, rate = 0
+D/AudioHardwareALSA( 2283): ALSAStreamOps - default - format = 2, channels = 2, rate = 44100
+I/VideoTelephonyService( 2284): VideoTelephonyService started: pid=2284
+V/AudioHardwareALSA( 2283): [ALSAStreamOps]--------> ChangeRoute, mOldOutMode -1, mode 0
+V/AudioHardwareALSA( 2283): [ALSAStreamOps]--------> ChangeRoute, old_dev 0, dev 0
+D/AudioHardwareALSA( 2283): >>>>>>>>>> ALSA OPEN mode 0,device 2 <<<<<<<<<<
+I/AudioHardwareALSA( 2283): Initialized ALSA PLAYBACK device AndroidPlayback_Speaker_normal
+D/AudioHardwareALSA( 2283): Set PLAYBACK PCM format to S16_LE (Signed 16 bit Little Endian)
+D/AudioHardwareALSA( 2283): Using 2 channels for PLAYBACK.
+D/AudioHardwareALSA( 2283): Set PLAYBACK sample rate to 44100 HZ
+D/AudioHardwareALSA( 2283): Buffer size: 2048
+D/AudioHardwareALSA( 2283): Latency: 46439
+V/AudioFlinger( 2283): openOutput() openOutputStream returned output 0x57c10, SamplingRate 44100, Format 1, Channels c, status 0
+V/AudioFlinger( 2283): sendConfigEvent() num events 1 event 0, param 0
+V/AudioFlinger( 2283): openOutput() created mixer output: ID 1 thread 0x57f48
+V/AudioPolicyManager( 2283): setOutputDevice() output 1 device 2 delayMs 0 force 1
+V/AudioPolicyService( 2283): inserting command: 3 at index 0, num commands 0
+V/AudioPolicyService( 2283): AudioCommandThread() adding set parameter string routing=2, io 1 ,delay 0
+V/AudioFlinger( 2283): setParameters(): io 1, keyvalue routing=2, tid 2364, calling tid 2283
+V/AudioFlinger( 2283): ThreadBase::setParameters() routing=2
+I/AudioFlinger( 2283): AudioFlinger's thread 0x57f48 ready to run
+V/AudioFlinger( 2283): processConfigEvents() remaining events 1
+V/AudioFlinger( 2283): PlaybackThread::audioConfigChanged, thread 0x57f48, event 0, param 0
+D/AudioHardwareALSA( 2283): AudioStreamOutALSA::setParameters() routing=2
+V/AudioHardwareALSA( 2283): [ALSAStreamOps]--------> ChangeRoute, mOldOutMode 0, mode 0
+V/AudioHardwareALSA( 2283): [ALSAStreamOps]--------> ChangeRoute, old_dev 2, dev 2
+V/AudioHardwareALSA( 2283): [ALSAStreamOps]--------> mHandle is null, so new pcm create
+I/AudioHardwareALSA( 2283): [ALSAStreamOps] pcm close
+D/AudioHardwareALSA( 2283): >>>>>>>>>> ALSA OPEN mode 0,device 2 <<<<<<<<<<
+I/AudioHardwareALSA( 2283): Initialized ALSA PLAYBACK device AndroidPlayback_Speaker_normal
+D/AudioHardwareALSA( 2283): Set PLAYBACK PCM format to S16_LE (Signed 16 bit Little Endian)
+D/AudioHardwareALSA( 2283): Using 2 channels for PLAYBACK.
+D/AudioHardwareALSA( 2283): Set PLAYBACK sample rate to 44100 HZ
+D/AudioHardwareALSA( 2283): Buffer size: 2048
+D/AudioHardwareALSA( 2283): Latency: 46439
+V/AudioPolicyManager( 2283): applyStreamVolumes() for output 1 and device 2
+E/AudioPolicyManager( 2283): Speaker Volume = 0.158489 , device = 0x2, stream = 0, index = 1
+V/AudioPolicyManager( 2283): setStreamVolume() for output 1 stream 0, volume 0.158489, delay 0
+V/AudioPolicyManager( 2283): ----->>>>> Voice Call Volume is [0.166904] after re-calculate
+V/AudioPolicyService( 2283): inserting command: 4 at index 0, num commands 0
+V/AudioPolicyService( 2283): AudioCommandThread() adding set voice volume volume 1.000000
+V/AudioPolicyService( 2283): inserting command: 2 at index 0, num commands 0
+E/AudioPolicyManager( 2283): Speaker Volume = 0.089125 , device = 0x2, stream = 1, index = 1
+V/AudioPolicyManager( 2283): setStreamVolume() for output 1 stream 1, volume 0.089125, delay 0
+V/AudioPolicyService( 2283): inserting command: 2 at index 0, num commands 0
+E/AudioPolicyManager( 2283): Speaker Volume = 0.050119 , device = 0x2, stream = 2, index = 1
+V/AudioPolicyManager( 2283): setStreamVolume() for output 1 stream 2, volume 0.050119, delay 0
+V/AudioPolicyService( 2283): inserting command: 2 at index 0, num commands 0
+E/AudioPolicyManager( 2283): Speaker Volume = 0.005957 , device = 0x2, stream = 3, index = 1
+V/AudioPolicyManager( 2283): setStreamVolume() for output 1 stream 3, volume 0.005957, delay 0
+V/AudioPolicyService( 2283): inserting command: 2 at index 0, num commands 0
+E/AudioPolicyManager( 2283): Speaker Volume = 0.089125 , device = 0x2, stream = 4, index = 1
+V/AudioPolicyManager( 2283): setStreamVolume() for output 1 stream 4, volume 0.089125, delay 0
+V/AudioPolicyService( 2283): inserting command: 2 at index 0, num commands 0
+E/AudioPolicyManager( 2283): Speaker Volume = 0.035481 , device = 0x2, stream = 5, index = 1
+V/AudioPolicyManager( 2283): setStreamVolume() for output 1 stream 5, volume 0.035481, delay 0
+V/AudioPolicyService( 2283): inserting command: 2 at index 0, num commands 0
+V/AudioPolicyManager( 2283): checkAndSetVolume() cannot set stream 6 volume with force use = 0 for comm
+E/AudioPolicyManager( 2283): Speaker Volume = 0.007943 , device = 0x2, stream = 7, index = 1
+V/AudioPolicyManager( 2283): setStreamVolume() for output 1 stream 7, volume 0.007943, delay 0
+V/AudioPolicyService( 2283): inserting command: 2 at index 0, num commands 0
+E/AudioPolicyManager( 2283): Speaker Volume = 0.003350 , device = 0x2, stream = 8, index = 1
+V/AudioPolicyManager( 2283): setStreamVolume() for output 1 stream 8, volume 0.003350, delay 0
+V/AudioPolicyService( 2283): inserting command: 2 at index 0, num commands 0
+E/AudioPolicyManager( 2283): Speaker Volume = 0.003350 , device = 0x2, stream = 9, index = 1
+V/AudioPolicyManager( 2283): setStreamVolume() for output 1 stream 9, volume 0.003350, delay 0
+V/AudioPolicyService( 2283): inserting command: 2 at index 0, num commands 0
+E/AudioPolicyManager( 2283): Speaker Volume = 0.007943 , device = 0x2, stream = 10, index = 1
+V/AudioPolicyManager( 2283): setStreamVolume() for output 1 stream 10, volume 0.007943, delay 0
+V/AudioPolicyService( 2283): inserting command: 2 at index 0, num commands 0
+E/AudioPolicyManager( 2283): Speaker Volume = 0.003350 , device = 0x2, stream = 11, index = 1
+V/AudioPolicyManager( 2283): setStreamVolume() for output 1 stream 11, volume 0.003350, delay 0
+V/AudioPolicyService( 2283): inserting command: 2 at index 0, num commands 0
+V/AudioFlinger( 2283): AudioFlinger::setStreamVolume: stream(11) value(0.003350) thread(0x57f48)
+E/AudioPolicyManager( 2283): Speaker Volume = 0.003350 , device = 0x2, stream = 12, index = 1
+V/AudioPolicyManager( 2283): setStreamVolume() for output 1 stream 12, volume 0.003350, delay 0
+V/AudioPolicyManager( 2283): ----->>>>> Voice Call Volume is [0.013316] after re-calculate
+V/AudioPolicyService( 2283): inserting command: 4 at index 0, num commands 0
+V/AudioPolicyService( 2283): AudioCommandThread() adding set voice volume volume 1.000000
+V/AudioPolicyService( 2283): inserting command: 2 at index 0, num commands 0
+V/AudioPolicyManager( 2283): getDeviceForStrategy() strategy 0, device 2
+V/AudioPolicyManager( 2283): getDeviceForStrategy() strategy 1, device 1
+V/AudioPolicyManager( 2283): getDeviceForStrategy() strategy 2, device 2
+V/AudioPolicyManager( 2283): getDeviceForStrategy() strategy 0, device 2
+V/AudioPolicyManager( 2283): STRATEGY_SONIFICATION_RING! [2]
+V/AudioPolicyManager( 2283): getDeviceForStrategy() strategy 3, device 2
+V/AudioPolicyManager( 2283): getDeviceForStrategy() from cache strategy 0, device 2
+V/AudioPolicyManager( 2283): getDeviceForStrategy() strategy 4, device 2
+V/AudioPolicyManager( 2283): setSystemProperty() property ro.camera.sound.forced, value 0
+V/AudioPolicyManager( 2283): ENFORCED_AUDIBLE can be muted
+V/AudioFlinger( 2283): Audio hardware entering standby, mixer 0x57f48, mSuspended 0
+V/AudioFlinger( 2283): MixerThread 0x57f48 TID 2366 going to sleep
+I/ServiceManager( 2268): Waiting for sevice SurfaceFlinger...
+D/AndroidRuntime( 2281): --- registering native functions ---
+I/SamplingProfilerIntegration( 2281): Profiler is disabled.
+I/Zygote  ( 2281): Preloading classes...
+E/Zygote  ( 2281): setreuid() failed. errno: 2
+D/dalvikvm( 2281): GC_EXPLICIT freed 851 objects / 49744 bytes in 2ms
+D/SKIA_FONT( 2281): load_system_fonts(), name = Droid Sans, style = 0, uniqueID = 1
+I/ServiceManager( 2268): Waiting for sevice SurfaceFlinger...
+D/SKIA_FONT( 2281): load_system_fonts(), name = Droid Sans, style = 1, uniqueID = 2
+D/SKIA_FONT( 2281): load_system_fonts(), name = Droid Serif, style = 0, uniqueID = 3
+D/SKIA_FONT( 2281): load_system_fonts(), name = Droid Serif, style = 1, uniqueID = 4
+D/SKIA_FONT( 2281): load_system_fonts(), name = Droid Serif, style = 2, uniqueID = 5
+D/SKIA_FONT( 2281): load_system_fonts(), name = Droid Serif, style = 3, uniqueID = 6
+D/SKIA_FONT( 2281): load_system_fonts(), name = Droid Sans Mono, style = 0, uniqueID = 7
+D/SKIA_FONT( 2281): load_system_fonts(), name = Droid Sans Arabic, style = 0, uniqueID = 8
+D/SKIA_FONT( 2281): load_system_fonts(), name = Droid Sans Hebrew, style = 0, uniqueID = 9
+D/SKIA_FONT( 2281): load_system_fonts(), name = Droid Sans Thai, style = 0, uniqueID = 10
+D/SKIA_FONT( 2281): load_system_fonts(), name = Droid Sans, style = 0, uniqueID = 11
+D/SKIA_FONT( 2281): load_system_fonts(), name = Droid Sans Fallback, style = 0, uniqueID = 12
+D/SKIA_FONT( 2281): load_system_fonts(), oldSansUID = 0, newSansUID = 1
+D/SKIA_FONT( 2281): load_system_fonts(), oldSansBoldUID = 0, newSansBoldUID = 2
+D/dalvikvm( 2281): GC_EXPLICIT freed 219 objects / 13616 bytes in 2ms
+I/bluetooth_ScoSocket.cpp( 2281): Entry name = MY-CAR ScoTypes = 0x7f
+I/bluetooth_ScoSocket.cpp( 2281): Entry name = Motorola HF850 ScoTypes = 0x7
+D/dalvikvm( 2281): GC_EXPLICIT freed 357 objects / 17352 bytes in 2ms
+D/dalvikvm( 2281): GC_EXPLICIT freed 436 objects / 27104 bytes in 3ms
+D/dalvikvm( 2281): GC_EXPLICIT freed 2136 objects / 110944 bytes in 3ms
+D/dalvikvm( 2281): GC_EXPLICIT freed 593 objects / 27704 bytes in 4ms
+D/dalvikvm( 2281): GC_FOR_MALLOC freed 33141 objects / 1439176 bytes in 17ms
+I/ServiceManager( 2268): Waiting for sevice SurfaceFlinger...
+D/dalvikvm( 2281): GC_FOR_MALLOC freed 30639 objects / 1858320 bytes in 18ms
+D/dalvikvm( 2281): GC_EXPLICIT freed 4390 objects / 258928 bytes in 13ms
+D/dalvikvm( 2281): GC_EXPLICIT freed 507 objects / 26952 bytes in 12ms
+D/dalvikvm( 2281): GC_EXPLICIT freed 350 objects / 18896 bytes in 12ms
+D/dalvikvm( 2281): GC_EXPLICIT freed 310 objects / 35224 bytes in 16ms
+D/dalvikvm( 2281): GC_EXPLICIT freed 268 objects / 18288 bytes in 17ms
+I/ServiceManager( 2268): Waiting for sevice SurfaceFlinger...
+D/dalvikvm( 2281): GC_EXPLICIT freed 337 objects / 18256 bytes in 17ms
+D/dalvikvm( 2281): GC_EXPLICIT freed 446 objects / 27888 bytes in 17ms
+D/dalvikvm( 2281): GC_EXPLICIT freed 246 objects / 20360 bytes in 18ms
+D/dalvikvm( 2281): GC_EXPLICIT freed 314 objects / 34696 bytes in 19ms
+D/dalvikvm( 2281): GC_EXPLICIT freed 623 objects / 34000 bytes in 19ms
+D/dalvikvm( 2281): GC_EXPLICIT freed 862 objects / 47048 bytes in 19ms
+D/dalvikvm( 2281): GC_EXPLICIT freed 1753 objects / 86296 bytes in 20ms
+D/dalvikvm( 2281): GC_EXPLICIT freed 449 objects / 29560 bytes in 20ms
+D/dalvikvm( 2281): GC_EXPLICIT freed 317 objects / 20152 bytes in 20ms
+I/Zygote  ( 2281): ...preloaded 1266 classes in 2920ms.
+E/Zygote  ( 2281): setreuid() failed. errno: 17
+D/dalvikvm( 2281): GC_EXPLICIT freed 104 objects / 14224 bytes in 21ms
+I/ServiceManager( 2268): Waiting for sevice SurfaceFlinger...
+I/Zygote  ( 2281): Preloading resources...
+D/dalvikvm( 2281): GC_EXPLICIT freed 312 objects / 15592 bytes in 20ms
+I/Zygote  ( 2281): ...preloaded 61 resources in 72ms.
+D/dalvikvm( 2281): GC_EXPLICIT freed 396 objects / 23232 bytes in 21ms
+I/Zygote  ( 2281): ...preloaded 15 resources in 28ms.
+D/dalvikvm( 2281): GC_EXPLICIT freed 231 objects / 10536 bytes in 22ms
+D/dalvikvm( 2281): GC_EXPLICIT freed 104 objects / 4096 bytes in 21ms
+D/dalvikvm( 2281): GC_EXPLICIT freed 2 objects / 48 bytes in 21ms
+I/dalvikvm( 2281): System server process 2370 has been created
+I/Zygote  ( 2281): Accepting command socket connections
+I/sysproc ( 2370): !@beginofsystem_init1()
+I/sysproc ( 2370): Entered system_init()
+I/sysproc ( 2370): ServiceManager: 0x14a550
+V/SamsungPowerSound( 2370): powerSoundPlay [1]
+E/SamsungPowerSound( 2370): playmp3: sqlite3_open err=14
+W/SurfaceComposerClient( 2268): SurfaceFlinger not published, waiting...
+V/AudioPolicyManager( 2283): initStreamVolume() stream 1, min 0, max 7
+V/AudioPolicyManager( 2283): setStreamVolumeIndex() stream 1, index 4
+E/AudioPolicyManager( 2283): Speaker Volume = 0.298538 , device = 0x2, stream = 1, index = 4
+V/AudioPolicyManager( 2283): setStreamVolume() for output 1 stream 1, volume 0.298538, delay 0
+V/AudioPolicyService( 2283): inserting command: 2 at index 0, num commands 0
+V/SamsungPowerSound( 2370): power sound system volume index [4]
+E/SamsungPowerSound( 2370): earphone state info = 0
+E/SamsungPowerSound( 2370):  volume index [4]
+E/SamsungPowerSound( 2370): dock speaker state info = 0
+E/SamsungPowerSound( 2370):  volume index [4]
+V/MediaPlayer( 2370): constructor
+V/SamsungPowerSound( 2370): constructor
+V/MediaPlayer( 2370): setListener
+V/SamsungPowerSound( 2370): Power on sound [0]
+V/MediaPlayer( 2370): setDataSource(system/media/audio/ui/Samsung_PowerOn.mp3)
+E/MediaPlayerService( 2283):  create PVPlayer
+V/PVPlayer( 2283): PVPlayer constructor
+V/PVPlayer( 2283): construct PlayerDriver
+V/PlayerDriver( 2283): constructor
+V/PlayerDriver( 2283): OpenCore hardware module not found
+V/PlayerDriver( 2283): start player thread
+V/PlayerDriver( 2283): startPlayerThread
+V/PlayerDriver( 2283): InitializeForThread
+V/PlayerDriver( 2283): OMX_MasterInit
+I/ServiceManager( 2268): Waiting for sevice SurfaceFlinger...
+V/PlayerDriver( 2283): OsclScheduler::Init
+V/PlayerDriver( 2283): CreatePlayer
+D/        ( 2283): SISO TEST registering PVMFRecognizerPluginFactory
+D/        ( 2283): SISO TEST registering PVMFRecognizerPluginFactory success
+V/PlayerDriver( 2283): AddToScheduler
+V/PlayerDriver( 2283): PendForExec
+V/PlayerDriver( 2283): OsclActiveScheduler::Current
+V/PlayerDriver( 2283): StartScheduler
+V/PVPlayer( 2283): send PLAYER_SETUP
+V/PlayerDriver( 2283): Send player code: 2
+V/PlayerDriver( 2283): CommandCompleted
+V/PlayerDriver( 2283): Completed command PLAYER_SETUP status=1
+V/PVPlayer( 2283): setDataSource(system/media/audio/ui/Samsung_PowerOn.mp3)
+V/MediaPlayer( 2370): MediaPlayer::setAudioStreamType
+V/MediaPlayer( 2370): prepare
+V/PVPlayer( 2283): prepareAsync
+V/PVPlayer( 2283):   data source = system/media/audio/ui/Samsung_PowerOn.mp3
+V/PlayerDriver( 2283): Send player code: 3
+V/PlayerDriver( 2283): handleSetDataSource
+V/PlayerDriver( 2283): handleSetDataSource- scanning for extension
+V/PlayerDriver( 2283): CommandCompleted
+V/PlayerDriver( 2283): Completed command PLAYER_SET_DATA_SOURCE status=1
+V/PVPlayer( 2283): run_init s=0, cancelled=0
+V/PlayerDriver( 2283): Send player code: 6
+V/PlayerDriver( 2283): release string is 2.2.1 len 5
+E/        ( 2283): ASF_HeaderObjectLoad : ERROR code = 4
+V/PlayerDriver( 2283): CommandCompleted
+V/PlayerDriver( 2283): Completed command PLAYER_INIT status=1
+V/PVPlayer( 2283): run_set_video_surface s=0, cancelled=0
+V/PVPlayer( 2283): run_set_audio_output s=0, cancelled=0
+V/PlayerDriver( 2283): Send player code: 5
+V/PlayerDriver( 2283): Create realtime output
+V/PlayerDriver( 2283): CommandCompleted
+V/PlayerDriver( 2283): Completed command PLAYER_SET_AUDIO_SINK status=1
+V/PVPlayer( 2283): run_prepare s=0, cancelled=0
+V/PlayerDriver( 2283): Send player code: 7
+V/PlayerDriver( 2283): disable natpkt - 0
+V/PlayerDriver( 2283): HandleInformationalEvent: 44
+V/PlayerDriver( 2283): HandleInformationalEvent: type=44 UNHANDLED
+V/MediaPlayer( 2370): message received msg=200, ext1=1, ext2=44
+W/MediaPlayer( 2370): info/warning (1, 44)
+V/MediaPlayer( 2370): callback application
+V/SamsungPowerSound( 2370): msg=200, ext1=1, ext2=44
+V/SamsungPowerSound( 2370): Power sound playback dummy event
+V/MediaPlayer( 2370): back from callback
+V/PlayerDriver( 2283): CommandCompleted
+V/PlayerDriver( 2283): Completed command PLAYER_PREPARE status=1
+V/PlayerDriver( 2283): PLAYER_PREPARE complete mDownloadContextData=0x0, mDataReadyReceived=0
+V/MediaPlayer( 2370): message received msg=1, ext1=0, ext2=0
+V/MediaPlayer( 2370): prepared
+V/MediaPlayer( 2370): signal application thread
+V/MediaPlayer( 2370): callback application
+V/SamsungPowerSound( 2370): msg=1, ext1=0, ext2=0
+V/SamsungPowerSound( 2370): Power sound playback dummy event
+V/MediaPlayer( 2370): back from callback
+V/MediaPlayer( 2370): prepare complete - status=0
+E/VolumeCustomizer( 2370): [PJH] readStreamVolumeHardcoding is used fp:0, tuningFileUse:0
+E/VolumeCustomizer( 2370): [PJH] readStreamVolumeHardcoding is used fp:0, tuningFileUse:0
+E/VolumeCustomizer( 2370): [PJH] readStreamVolumeHardcoding is used fp:0, tuningFileUse:0
+E/VolumeCustomizer( 2370): [PJH] readSituationVolumeTable - Hardcoding  is used
+V/SamsungPowerSound( 2370): getSettingVolume [0.500000]
+V/MediaPlayer( 2370): MediaPlayer::setVolume(0.500000, 0.500000)
+V/MediaPlayer( 2370): start
+V/PVPlayer( 2283): setLooping(0)
+V/PVPlayer( 2283): check_for_live_streaming s=0, cancelled=0
+V/PlayerDriver( 2283): Send player code: 12
+V/PVPlayer( 2283): setLooping(0)
+V/PlayerDriver( 2283): Send player code: 12
+V/PVPlayer( 2283): start
+V/PlayerDriver( 2283): Send player code: 8
+V/PlayerDriver( 2283): CommandCompleted
+V/PlayerDriver( 2283): Completed command PLAYER_START status=1
+V/MediaPlayer( 2370): getDuration
+V/PlayerDriver( 2283): Send player code: 15
+V/PlayerDriver( 2283): CommandCompleted
+V/PlayerDriver( 2283): Completed command PLAYER_GET_DURATION status=1
+V/SamsungPowerSound( 2370): File duration : 4571
+I/SurfaceFlinger( 2370): SurfaceFlinger is starting
+V/AudioPolicyService( 2283): getOutput() tid 2381
+V/AudioPolicyManager( 2283): getDeviceForStrategy() strategy 0, device 2
+V/AudioPolicyManager( 2283): getOutput() stream 1, samplingRate 0, format 0, channels c, flags 0
+E/AudioTrack( 2283): AudioTrack::set channels[12] format[1] sampleRate[44100], framecount[8192]
+V/AudioTrack( 2283): AudioTrack::set ------> streamType [1]
+E/AudioTrack( 2283): getAudioMode[0]
+E/AudioTrack( 2283): AudioTrack::set afSampleRate[44100] afFrameCount[2048] afLatency[47]
+E/AudioTrack( 2283): AudioTrack::set minBufCount[2] minFrameCount[4096]
+I/SurfaceFlinger( 2370): SurfaceFlinger's main thread ready to run. Initializing graphics H/W...
+V/AudioFlinger( 2283): Track constructor name 4096, calling thread 2283
+V/PlayerDriver( 2283): HandleInformationalEvent: 41
+V/PlayerDriver( 2283): .... with duration = 4571 ms
+V/AudioTrack( 2283): flush
+V/AudioFlinger( 2283): flush(4096)
+V/AudioTrack( 2283): start 0x8fbc8
+V/AudioFlinger( 2283): start(4096), calling thread 2283
+V/AudioFlinger( 2283): ? => ACTIVE (4096) on thread 0x8fd50
+V/AudioPolicyManager( 2283): startOutput() output 1, stream 1
+V/AudioPolicyManager( 2283): getDeviceForStrategy() strategy 0, device 2
+V/AudioPolicyManager( 2283): changeRefCount() stream 1, count 1
+V/AudioPolicyManager( 2283): getDeviceForStrategy() from cache strategy 0, device 2
+V/AudioPolicyManager( 2283): getNewDevice() selected device 2
+V/AudioPolicyManager( 2283): setOutputDevice() output 1 device 2 delayMs 0 force 0
+V/AudioPolicyManager( 2283): setOutputDevice() setting same device 2 or null device for output 1
+E/AudioPolicyManager( 2283): Speaker Volume = 0.298538 , device = 0x2, stream = 1, index = 4
+V/AudioFlinger( 2283): mWaitWorkCV.broadcast
+V/AudioFlinger( 2283): MixerThread 0x57f48 TID 2366 waking up
+E/SurfaceFlinger( 2370): Couldn't open /sys/power/wait_for_fb_sleep or /sys/power/wait_for_fb_wake
