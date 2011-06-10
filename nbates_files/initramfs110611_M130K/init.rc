@@ -42,7 +42,8 @@ loglevel 8
     chown system cache /mnt_ext/cache
     chmod 0770 /mnt_ext/cache
 
-    mount ext2 /dev/block/mmcblk1p2 /mnt_ext/system
+    mount ext2 /dev/block/mmcblk1p2 /mnt_ext/system check=no
+    mount ext2 /dev/block/mmcblk1p2 /mnt_ext/system ro check=no remount
     mount ext2 /dev/block/mmcblk1p1 /mnt_ext/data
     chown system system /mnt_ext/data
     chmod 0771 /mnt_ext/data
