@@ -15,8 +15,10 @@ START
 	MOV	R0, 12345
 	BL	int_debugprint
 
-
-	LDR	R0, [rst_status]
+	LDR	R0, [_hwrev]
+	LDRB	R0, [R0]
+	BL	hex_debugprint
+	LDR	R0, [_gLCDType]
 	LDR	R0, [R0]
 	BL	hex_debugprint
 	MOV	R0, 12345
@@ -75,6 +77,8 @@ FUNCTIONS
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;; variables below
 DEFAULT_VARIABLES
     pagetable		dw gMMUL1PageTable
+    _hwrev		dw hwrev
+    _gLCDType		dw gLCDType
     const_0x186A0	dw 0x186A0
     dump_what		dw 0xE010C010
     watchdog		dw 0xE2700000
