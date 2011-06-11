@@ -32,18 +32,18 @@ loglevel 7
     mkdir /mnt_ext/system
     mkdir /mnt_ext/data 0771 system system
     chown system system /mnt_ext/data
-    chmod 0771 /mnt_ext/data
+    chmod 0777 /mnt_ext/data
     mkdir /mnt_ext/cache 0770 system cache
     chown system cache /mnt_ext/cache
-    chmod 0770 /mnt_ext/cache
+    chmod 0777 /mnt_ext/cache
 
     mount ext2 /dev/block/mmcblk1p2 /mnt_ext/system
     #mount ext2 /dev/block/mmcblk1p1 /mnt_ext/data
     chown system system /mnt_ext/data
-    chmod 0771 /mnt_ext/data
+    chmod 0777 /mnt_ext/data
     mount ext2 /dev/block/mmcblk1p3 /mnt_ext/cache
     chown system cache /mnt_ext/cache
-    chmod 0770 /mnt_ext/cache
+    chmod 0777 /mnt_ext/cache
 
     symlink /mnt_ext/system /system
     symlink /mnt_ext/data /data
