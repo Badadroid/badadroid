@@ -48,7 +48,7 @@ loglevel 7
     symlink /mnt_ext/system /system
     symlink /mnt_ext/data /data
     symlink /mnt_ext/cache /cache
-
+    
 
 #add booting sound property 
 #	setprop audioflinger.bootsnd 1
