@@ -36,7 +36,7 @@ START
 	;BL      Flash_Read_Data
 
 	LDR	R0, [dump_buf]
-	BL	__SysSecBootGet3rdPhaseFixedKey
+	BL	__SysSecBootReadNetLockInfoFromFlash
 
 	LDR	R2, [dump_size]
 	LDR	R1, [dump_buf]
@@ -63,7 +63,7 @@ DEFAULT_VARIABLES
 
 
    ; dump_what           dw 0xD0000000
-    dump_size		dw 0x10
+    dump_size		dw 0x19A0
 	
     dump_buf		    dw 0x44000000
     flash_dump_adr	    dw 0xEF000000
@@ -84,7 +84,7 @@ DEFAULT_STRINGS_ADDR
 
 DEFAULT_STRINGS
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;; ;add custom strings below
-    s_dumppath	     du '/g/dumps/syssec.3rdPhaseFixedKey.bin',0 ;where to save?
+    s_dumppath	     du '/g/dumps/syssec.gstSavedLockInfo.bin',0 ;where to save?
     s_dumppath2      du '/g/dumps/syssec.4thPhaseFixedKey.bin',0 ;where to save?
 	
     s_dirpath	     du '/g/dumps/',0 ;dir command
