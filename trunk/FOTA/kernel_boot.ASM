@@ -102,14 +102,11 @@ START
 	STR	R0, [R2]
 	ADD	R2, R2, 4
 
-		MOV	R0, 12345
-	BL	int_debugprint
+
 	LDR	R0, [s_atagcmdline_a]
 	BL	rebell_strlen
 	ADD	R0, R0, 1  ;include zero-ending
 	MOV	R5, R0
-		MOV	R0, 12345
-	BL	int_debugprint
 	MOV	R0, R5
 
 	ADD	R0, R0, 0xD
@@ -258,7 +255,7 @@ BLX	R1
 	LDR	R0, [s_jumpingout_a]
 	BL	debug_print
 	MOV	R0, 0	  ;must be 0
-	MOV	R1, 0x891 ;machine id of I9000
+	MOV	R1, 0x891 ;machine id of I9000 (SMDKC110)
 	LDR	R2, [ATAG_ptr]
 
 	LDR	R5, [kernel_start]
