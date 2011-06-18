@@ -10,10 +10,19 @@ include 'inc/functions.inc'
 START
 	SUB	SP, SP, #16
 
-	bl	enable_uart_output
+	bl	enable_fota_output
 
 	MOV	R0, 12345
 	BL	int_debugprint
+
+	ADD	R1, SP, 8
+	ADD	R0, SP, 4
+	BL	__GetNvPos
+	LDR	R0, [SP,4]
+	BL	hex_debugprint
+	LDR	R0, [SP,8]
+	BL	hex_debugprint
+	BL dloadmode
 
 	LDR	R0, [_hwrev]
 	LDRB	R0, [R0]
