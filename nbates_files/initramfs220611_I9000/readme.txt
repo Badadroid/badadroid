@@ -1,2 +1,2 @@
-copy the scripts into a folder containing olegs original initramfs sources, overwriting the .rc files and compile using it.
+copy the scripts and res folder into a folder containing olegs original initramfs sources, overwriting the files and compile using it.
 copy the vold.fstab from ./res/misc to /system/etc/ overwriting that vold.fstab
