@@ -1,5 +1,8 @@
 #include <stdio.h> 
 #define CHUNK 2048
+#define MBN_SIZE 0x1A0000
+#define MBN_BL3_START 0x20000
+#define BL_CRC_SIZE 0x4000
  
 unsigned int crc_tab[] = {   0x00000000, 0x77073096, 0xee0e612c, 0x990951ba,
                              0x076dc419, 0x706af48f, 0xe963a535, 0x9e6495a3,
@@ -90,21 +93,21 @@ int main(int argc, char **argv)
  
    fseek(inf, 0, SEEK_END);
    size = ftell(inf);
-   if (size < 0x1A0000)
+   if (size < MBN_SIZE)
    {
       printf("file too small\n");
       fclose(inf);
       return -2;
    }
  
-   fseek(inf, 0x20000, SEEK_SET);
+   fseek(inf, MBN_BL3_START, SEEK_SET);
  
    crc = 0xFFFFFFFF; //initialize
  
-   while((sum<0x180000)&&((n = fread(buf, 1, CHUNK, inf)) > 0))
+   while((sum<BL_CRC_SIZE)&&((n = fread(buf, 1, CHUNK, inf)) > 0))
    {
-      if (sum + n > 0x180000)
-         n = 0x180000 - sum;
+      if (sum + n > BL_CRC_SIZE)
+         n = BL_CRC_SIZE - sum;
       sum+=n;
       for(i = 0; i < n; i++)
          crc = ((crc >> 8)&(0xFFFFFF)) ^ crc_tab[buf[i] ^ (crc & 0xFF)];
@@ -113,7 +116,7 @@ int main(int argc, char **argv)
    crc ^= 0xFFFFFFFF; //negate at finish 
    fclose(inf);
    
-   if (sum < 0x180000)
+   if (sum < BL_CRC_SIZE)
    {
       printf("file read problem\n");
       return -3;

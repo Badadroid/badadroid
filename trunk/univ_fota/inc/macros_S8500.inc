@@ -38,6 +38,7 @@ no_match:
    bx    r9 ;return to bootloader
    
 crc_match:
+   mov   lr, r9 ;restore the LR
    ;copy pointers
    mov r0, #0
    ldr r2, [BL_abs_ptr]
@@ -56,10 +57,10 @@ crc_copy_loop:
    cmp      r0, 0
    bne      c_run
 
-   bx       r9      ; back to the bootloader
+   bx       lr      ; back to the bootloader
 
 _shadowed_bl_addr    dw    0x42480000
-_bl_size             dw    0x180000
+_bl_size             dw    0x4000
 
 
 f_ver:
