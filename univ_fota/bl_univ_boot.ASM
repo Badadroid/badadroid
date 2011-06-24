@@ -261,7 +261,6 @@ BL_ABSTRACT_POINTERS
 BL_STUB_TABLE
 BL_CRC_TABLE
 
-FUNCTIONS
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;; variables below
 DEFAULT_VARIABLES
 
@@ -337,5 +336,6 @@ DEFAULT_STRINGS
    s_kernelreturn         db ' WTF KERNEL RETURNED',0
    s_loadsbl              db ' Loading SBL',0
  
+FUNCTIONS
    
 END

@@ -2,6 +2,7 @@
 ;if adding new please make them model-independent
 macro FUNCTIONS
 {
+align 4
 ;crc32 by mijoma
 ;int calc_crc32(void* data, int length)
 calc_crc32:
