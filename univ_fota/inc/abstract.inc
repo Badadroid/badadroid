@@ -3,18 +3,22 @@ macro BL_CRC_TABLE
 align 4
 BL_crc_ptr dw crc_ptrs
 crc_ptrs:
-   include 'inc/crcS8500DDJE7.inc'
-   include 'inc/crcS8500JVKC1.inc'
-   include 'inc/crcS8500XXJD9.inc'
-   include 'inc/crcS8500XXJEE.inc'
-   include 'inc/crcS8500XXJID.inc'
-   include 'inc/crcS8500XXJF1.inc'
-   include 'inc/crcS8500XXJF4.inc'
-   include 'inc/crcS8500XXJH2.inc'
-   include 'inc/crcS8500XXJH3.inc'
-   include 'inc/crcS8500XXJI3.inc'
+
+   include 'inc/crcS8500DDJE7_MAY.inc'
+   include 'inc/crcS8500JVKC1_MAR.inc'
+   include 'inc/crcS8500XXJD9_APR.inc'
+   include 'inc/crcS8500XXJEE_MAY.inc'
+   include 'inc/crcS8500XXJF1_JUN.inc'
+   include 'inc/crcS8500XXJF4_JUL.inc'
+   include 'inc/crcS8500XXJH2_DEC.inc'
+   include 'inc/crcS8500XXJH3_AUG.inc'
+   include 'inc/crcS8500XXJI3_FEB.inc'
+   include 'inc/crcS8500XXJI3_NOV.inc'
+   include 'inc/crcS8500XXJID_SEP.inc'
+   include 'inc/crcS8500XXJL2_APR.inc'
    include 'inc/crcS8500XXJL2_DEC.inc'
    include 'inc/crcS8500XXJL2_MAR.inc'
+   
 dw 0 ;end marker
 }
 

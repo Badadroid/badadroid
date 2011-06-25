@@ -1,0 +1,11 @@
+dw 0xEC83D647 ;CRC32(S8500XXJL2)
+dw 0x424892AC ;MemMMUCacheEnable
+dw 0x424A0BE4 ;__PfsNandInit
+dw 0x424A0AD0 ;__PfsMassInit
+dw 0x424C87F8 ;tfs4_stat
+dw 0x424C76F0 ;tfs4_open
+dw 0x424C7C20 ;tfs4_read
+dw 0x424C7864 ;tfs4_close
+dw 0x424820F0 ;EdbgOutputDebugString
+dw 0x425C5A30 ;button_pressed
+dw 0x42664000 ;gMMUL1PageTable
