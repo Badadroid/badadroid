@@ -15,6 +15,7 @@ crc_ptrs:
    include 'inc/crcS8500XXJI3_FEB.inc'
    include 'inc/crcS8500XXJI3_NOV.inc'
    include 'inc/crcS8500XXJID_SEP.inc'
+   include 'inc/crcS8500XXJK2_MAY.inc'
    include 'inc/crcS8500XXJL2_APR.inc'
    include 'inc/crcS8500XXJL2_DEC.inc'
    include 'inc/crcS8500XXJL2_MAR.inc'
