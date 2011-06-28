@@ -9,6 +9,7 @@ crc_ptrs:
    include 'inc/crcS8500XXJD9_APR.inc'
    include 'inc/crcS8500XXJEE_MAY.inc'
    include 'inc/crcS8500XXJEF_JUN.inc'
+   include 'inc/crcS8500XXJEF_MAY.inc'
    include 'inc/crcS8500XXJF1_JUN.inc'
    include 'inc/crcS8500XXJF4_JUL.inc'
    include 'inc/crcS8500XXJH2_DEC.inc'
