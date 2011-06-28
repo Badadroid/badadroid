@@ -40,5 +40,5 @@ dev_mount sdcard /mnt/sdcard 1 /devices/platform/s3c-sdhci.2/mmc_host/mmc2
 	asec = disable
 	mbr_policy = skip
 }
-#dev_mount sdcard1 /mnt/sdcard/external_sd auto /devices/platform/s3c-sdhci.0/mmc_host/mmc0
+dev_mount sdcard1 /mnt/sdcard/external_sd 3 /devices/platform/s3c-sdhci.2/mmc_host/mmc2
 #keep this line.
