@@ -5,12 +5,14 @@ BL_crc_ptr dw crc_ptrs
 crc_ptrs:
 
    include 'inc/crcS8500DDJE7_MAY.inc'
+   include 'inc/crcS8500DDKD1_APR.inc'
    include 'inc/crcS8500JVKC1_MAR.inc'
    include 'inc/crcS8500XXJD9_APR.inc'
    include 'inc/crcS8500XXJEE_MAY.inc'
    include 'inc/crcS8500XXJEF_JUN.inc'
    include 'inc/crcS8500XXJEF_MAY.inc'
    include 'inc/crcS8500XXJF1_JUN.inc'
+   include 'inc/crcS8500XXJF4_AUG.inc'
    include 'inc/crcS8500XXJF4_JUL.inc'
    include 'inc/crcS8500XXJH2_DEC.inc'
    include 'inc/crcS8500XXJH2_NOV.inc'
