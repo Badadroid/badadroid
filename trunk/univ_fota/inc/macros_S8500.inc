@@ -30,8 +30,13 @@ bl_crc_loop:
    ldr   r3, [r1]
    cmp   r3, #0   ;finished?
    beq   no_match
+bl_crc_loop_local:
    cmp   r0, r3
    beq   crc_match
+   add   r1, r1, #4
+   ldr   r3, [r1]
+   cmp   r3, #0
+   bne   bl_crc_loop_local
    add   r1, r1, #bl_abs_st_len
    b     bl_crc_loop
 no_match:
@@ -39,6 +44,14 @@ no_match:
    
 crc_match:
    mov   lr, r9 ;restore the LR
+crc_skip:
+   add   r1, r1, #4
+   ldr   r3, [r1]
+   cmp   r3, #0
+   beq   crc_copy
+   b     crc_skip
+   
+crc_copy:
    ;copy pointers
    mov r0, #0
    ldr r2, [BL_abs_ptr]
