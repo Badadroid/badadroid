@@ -4,27 +4,13 @@ align 4
 BL_crc_ptr dw crc_ptrs
 crc_ptrs:
 
-   include 'inc/crcS8500DDJE7_MAY.inc'
-   include 'inc/crcS8500DDKD1_APR.inc'
-   include 'inc/crcS8500JVKC1_MAR.inc'
-   include 'inc/crcS8500XXJD9_APR.inc'
-   include 'inc/crcS8500XXJEE_MAY.inc'
-   include 'inc/crcS8500XXJEF_JUN.inc'
-   include 'inc/crcS8500XXJEF_MAY.inc'
-   include 'inc/crcS8500XXJF1_JUN.inc'
-   include 'inc/crcS8500XXJF4_AUG.inc'
-   include 'inc/crcS8500XXJF4_JUL.inc'
-   include 'inc/crcS8500XXJH2_DEC.inc'
-   include 'inc/crcS8500XXJH2_NOV.inc'
-   include 'inc/crcS8500XXJH3_AUG.inc'
-   include 'inc/crcS8500XXJI3_FEB.inc'
-   include 'inc/crcS8500XXJI3_NOV.inc'
-   include 'inc/crcS8500XXJI5_NOV.inc'
-   include 'inc/crcS8500XXJID_SEP.inc'
-   include 'inc/crcS8500XXJK2_MAY.inc'
-   include 'inc/crcS8500XXJL2_APR.inc'
-   include 'inc/crcS8500XXJL2_DEC.inc'
-   include 'inc/crcS8500XXJL2_MAR.inc'
+   include 'inc/crcS8500XXJD9.inc'
+   include 'inc/crcS8500XXJEE.inc'
+   include 'inc/crcS8500XXJF1.inc'
+   include 'inc/crcS8500XXJH2.inc'
+   include 'inc/crcS8500XXJID.inc'
+   include 'inc/crcS8500XXJK2.inc'
+   include 'inc/crcS8500XXJL2.inc'
    
 dw 0 ;end marker
 }
@@ -34,7 +20,7 @@ macro BL_ABSTRACT_POINTERS
 align 4
 bl_abs_st:
 
-   crc_value                 dw 0 
+   null_marker               dw 0 
    v_MemMMUCacheEnable       dw 0
    v___PfsNandInit           dw 0
    v___PfsMassInit           dw 0

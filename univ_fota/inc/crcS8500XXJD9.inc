@@ -1,4 +1,5 @@
 dw 0x1E5CBF00 ;CRC32(S8500XXJD9)
+dw 0x00000000 ;null_marker
 dw 0x424867D0 ;MemMMUCacheEnable
 dw 0x4249D804 ;__PfsNandInit
 dw 0x4249D6F0 ;__PfsMassInit
