@@ -13,7 +13,7 @@ loglevel 3
     export ANDROID_DATA /data
 
     export INTERNAL_STORAGE /mnt/sdcard
-    export EXTERNAL_STORAGE /mnt/sdcard
+    export EXTERNAL_STORAGE /mnt/sdcard/external_sd
     export ASEC_MOUNTPOINT /mnt/asec
 
     export BOOTCLASSPATH /system/framework/core.jar:/system/framework/ext.jar:/system/framework/framework.jar:/system/framework/android.policy.jar:/system/framework/services.jar
@@ -31,24 +31,35 @@ loglevel 3
     # ko files for vibrator
     insmod /lib/modules/vibrator.ko
 
-	# ko files for Fm radio
-	#insmod /lib/modules/Si4709_driver.ko
+    # ko files for Fm radio
+    insmod /lib/modules/Si4709_driver.ko
 
 # Mount the Android fs from sd
-    mkdir /mnt_ext
+     mkdir /mnt_sys
+     mkdir /mnt_data
+     mkdir /system
+     mkdir /data
+     mkdir /cache
+     
     
-    mount ext2 /dev/block/mmcblk1p2 /mnt_ext 
+#    mount ext2 /dev/block/mmcblk1p2 /mnt_ext 
+#    	
+#    symlink /mnt_ext/system /system
+#    symlink /mnt_ext/data /data
+#    symlink /mnt_ext/cache /cache
+#    symlink /mnt_ext/dbdata /dbdata
+#    symlink /mnt_ext/radio /radio
 
+    mount vfat /dev/block/mmcblk0p2 /mnt_sys noatime
+    mount vfat /dev/block/mmcblk0p3 /mnt_data noatime
+    
+    mount ext2 loop@/mnt_sys/android/system.img /system noatime 
+    mount ext2 loop@/mnt_sys/android/cache.img /cache noatime
+    mount ext2 loop@/mnt_data/data.img /data noatime
     
     
-    	
-    symlink /mnt_ext/system /system
-    symlink /mnt_ext/data /data
-    symlink /mnt_ext/cache /cache
-    symlink /mnt_ext/dbdata /dbdata
-	
 #add booting sound property 
-#	setprop audioflinger.bootsnd 1
+    setprop audioflinger.bootsnd 1
 
 # Backward compatibility
     symlink /system/etc /etc
@@ -57,7 +68,7 @@ loglevel 3
 # create mountpoints
     mkdir /mnt 0775 root system
     mkdir /mnt/sdcard 0000 system system
-    mount vfat /dev/block/mmcblk1p1 /mnt/sdcard
+#    mount vfat /dev/block/mmcblk1p1 /mnt/sdcard
     
 # Create cgroup mount point for cpu accounting
     mkdir /acct
@@ -66,8 +77,8 @@ loglevel 3
     
     insmod /lib/modules/fsr.ko
     insmod /lib/modules/fsr_stl.ko
-    insmod /lib/modules/rfs_glue.ko
-    insmod /lib/modules/rfs_fat.ko
+#    insmod /lib/modules/rfs_glue.ko
+#    insmod /lib/modules/rfs_fat.ko
 
 # parameter block
     mkdir /mnt/.lfs 0755 root root
@@ -78,11 +89,14 @@ loglevel 3
 
 # Backwards Compat - XXX: Going away in G*
     symlink /mnt/sdcard /sdcard
-
+    
+    chown radio radio /radio
+    chmod 0777 /radio
+    
     #mkdir /system
     #mkdir /data 0771 system system
 	
-    mkdir /efs 0771 system system
+    #mkdir /efs 0771 system system
     chown system system /efs
     chmod 0771 /efs
     #mkdir /cache 0770 system cache
@@ -105,8 +119,10 @@ loglevel 3
     write /proc/sys/kernel/panic_on_oops 1
     write /proc/sys/kernel/hung_task_timeout_secs 0
     write /proc/cpu/alignment 4
-    write /proc/sys/kernel/sched_latency_ns 10000000
-    write /proc/sys/kernel/sched_wakeup_granularity_ns 2000000
+    write /proc/sys/vm/swappiness 0
+    write /proc/sys/kernel/sched_latency_ns 18000000
+    write /proc/sys/kernel/sched_wakeup_granularity_ns 3000000
+    write /proc/sys/kernel/sched_min_granularity_ns 1500000
     write /proc/sys/kernel/sched_compat_yield 1
     write /proc/sys/kernel/sched_child_runs_first 0
 
@@ -137,27 +153,28 @@ loglevel 3
     #mkdir /data
     #mount rfs /dev/block/stl10 /data nosuid nodev check=no
     
+    
     chown system system /data
     chmod 0771 /data
     chown system system /mnt_ext/data
     chmod 0771 /mnt_ext/data
     
-    #mkdir /dbdata
+    symlink /data/dbdata /dbdata
     chown system system /dbdata
     chmod 0771 /dbdata
     chmod 0771 /dbdata
     
-    #mkdir /dbdata/databases
+    mkdir /dbdata/databases
     chown system sytem /dbdata/databases
     chmod 0777 /dbdata/databases
     
-    #mkdir /dbdata/system
+    mkdir /dbdata/system
     chown system system /dbdata/system
     chmod 0775 /dbdata/system
     
-    #mkdir /dbdata/db-journal
+    mkdir /dbdata/db-journal
     chown system system /dbdata/db-journal
-    chmod 0777 /dbdat/db-journal
+    chmod 0777 /dbdata/db-journal
     
     
     # Create dump dir and collect dumps.
@@ -195,7 +212,7 @@ loglevel 3
     chown system cache /cache/recovery
     chmod 0770 /cache/recovery
 
-    mount rfs /dev/block/stl6 /efs nosuid nodev check=no
+    symlink /mnt_ext/efs /efs
 
     chown system system /efs
     chown radio radio /efs
