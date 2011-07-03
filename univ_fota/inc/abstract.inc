@@ -11,6 +11,7 @@ crc_ptrs:
    include 'inc/crcS8500XXJID.inc'
    include 'inc/crcS8500XXJK2.inc'
    include 'inc/crcS8500XXJL2.inc'
+   include 'inc/crcS8500XXKF2.inc'
    
 dw 0 ;end marker
 }
