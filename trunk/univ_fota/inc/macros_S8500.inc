@@ -66,10 +66,21 @@ crc_copy_loop:
    bcc crc_copy_loop
          
    ldr      r0, [button_pressed]
-   ldrb     r0, [r0, 2]   ; CALL key
-   cmp      r0, 0
+   ldrb     r1, [r0, 2]   ; CALL key
+   cmp      r1, 0
    bne      c_run
-
+   ldrb     r1, [r0, 0]   ; menu/home key
+   cmp      r1, 0
+   beq      _return_to_bl
+   ldrb     r1, [r0, 7]   ; vol up key
+   cmp      r1, 0
+   beq      _return_to_bl
+   ldr      r0, [s_atagcmdlineRM_a]  ; quick and dirty address copy...
+   ldr      r1, [s_atagcmdline_aa]
+   str      r0, [r1]
+   b        c_run
+   
+_return_to_bl:
    bx       lr      ; back to the bootloader
 
 _shadowed_bl_addr    dw    0x42480000

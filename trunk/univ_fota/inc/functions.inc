@@ -309,7 +309,7 @@ debug_print_ret:
 ;void enable_uart_output()
 enable_uart_output:
    STMFD SP!, {R0-R1,LR\}
-   ADR   r1, output_switch
+   LDR   r1, [output_switch_a]
    MOV   r0, 2
    STR   R0, [r1]
    ldr   r0, [s_uartoutput_a]
