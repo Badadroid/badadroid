@@ -5,3 +5,9 @@ the images get stored on bada partition mmcblk0p3, system loopback gets mounted 
 2:put mkext2images.sh into bada storage root
 3:boot Android-Linux kernel in recovery mode and wait until the phone reboots
 4:boot Android
+
+to remove, repeat step 2 but copy the mkext2images-remove.sh file instead, then rename it to mkext2images.img
+
+the ext2system.img file needs to be an ext2 image that contains the extracted "factoryfs.rfs" files from firmware I9000XXJPX.
+
+the kernel will need the busybox executable in it's path variable in order for the scripts to work.
