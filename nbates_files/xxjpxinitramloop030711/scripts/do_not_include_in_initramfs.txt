@@ -1,0 +1,1 @@
+do not include this folder in the initramfs
