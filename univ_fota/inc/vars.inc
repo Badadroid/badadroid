@@ -4,6 +4,7 @@ macro DEFAULT_VARIABLES
 {
 
     output_switch	dw 0 ; 0=none 1=FOTA, 2=UART
+    output_switch_a dw output_switch
 
     ;delays are given in nanoseconds
     v_delay_100ms	dw 100000
