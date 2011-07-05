@@ -1,6 +1,7 @@
-# this is a very crude example of the symlinks to be done for the toolbox utilities, these can be done manually for fixing toolbox symlinks.
+# this is a very crude example of the symlinks to be done for the toolbox utilities, these can be done manually for fixing toolbox symlinks/hardlinks.
 # these commands can also work via busybox using ADB directly on the device.
 # location on the filesystem is "/system/bin"
+# NOTE: the links MUST be in place for DHCP and various services to work properly
 
 nathan@nathan-VirtualBox:~/samsungxxJPX/ext2loop/bin$ sudo ln -nf ./toolbox ./chmod
 nathan@nathan-VirtualBox:~/samsungxxJPX/ext2loop/bin$ sudo ln -nf ./toolbox ./chown
