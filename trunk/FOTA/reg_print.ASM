@@ -19,15 +19,38 @@ START
 	ADD	R0, SP, 4
 	BL	__GetNvPos
 	LDR	R0, [SP,4]
-	BL	hex_debugprint
+	;BL      hex_debugprint
 	LDR	R0, [SP,8]
-	BL	hex_debugprint
+       ; BL      hex_debugprint
+BL     DRV_Modem_BootingStart
+LDR	R0, [semaphore]
+MOV	R1, #0
+STR	R1, [R0]
+LDR	R0, [mailboxba]
+LDR	R1, [amss_run_req]
+STR	R1, [R0]
+
+get_sem:
+;BL      Get_Onedram_Semaphore
+CMP	R0, #0
+;BEQ     get_sem
+
+LDR	R9, [mailboxab]
+LDR	R0, [R9]
+BL	hex_debugprint
+;BL      Onedram_Release_Semaphore
+b	 get_sem
 	BL dloadmode
+	mailboxba dw 0x25FFF840
+	mailboxab dw 0x25FFF820
+	semaphore dw 0x25FFF000
+	amss_run_req dw 0x89EF89EF
+
 
 	LDR	R0, [_hwrev]
 	LDRB	R0, [R0]
 	BL	hex_debugprint
-	LDR	R0, [_gLCDType]
+;        LDR     R0, [_gLCDType]
 	LDR	R0, [R0]
 	BL	hex_debugprint
 	MOV	R0, 12345
@@ -87,7 +110,6 @@ FUNCTIONS
 DEFAULT_VARIABLES
     pagetable		dw gMMUL1PageTable
     _hwrev		dw hwrev
-    _gLCDType		dw gLCDType
     const_0x186A0	dw 0x186A0
     dump_what		dw 0xE010C010
     watchdog		dw 0xE2700000

@@ -1,6 +1,6 @@
 
-include 'inc/S8500XXJEE.inc'	  ;here include the right BL function pointers, depends on model and BL you've got
-include 'inc/macros_S8500.inc'	  ;model dependend FOTA header and footer
+include 'inc/S8530JPKA1.inc'	  ;here include the right BL function pointers, depends on model and BL you've got
+include 'inc/macros_S8530.inc'	  ;model dependend FOTA header and footer
 
 include 'inc/vars.inc'
 include 'inc/functions.inc'
@@ -29,35 +29,23 @@ START
 	MOV	R0, 12345
 	BL	int_debugprint
 
-
-	;LDR     R2, [dump_size]
-	;LDR     R1, [flash_dump_adr]
-	;LDR     R0, [dump_buf]
-	;BL      Flash_Read_Data
-
 	LDR	R0, [dump_buf]
-	BL	__SysSecBootReadNetLockInfoFromFlash
+	MOV	R1, 0x00
+	LDR	R2, [dump_size]
+	BL	rebell_fillmem
+
+	LDR	R2, [dump_size]
+	LDR	R1, [flash_dump_adr]
+	LDR	R0, [dump_buf]
+	BL	Flash_Read_Data
+
 
 	LDR	R2, [dump_size]
 	LDR	R1, [dump_buf]
 	LDR	R0, [s_dumppath_a]
 	BL	memdump
 
-	LDR	R0, [dump_buf]
-	BL	__SysSecBootGet4thPhaseFixedKey
 
-	LDR	R2, [dump_size]
-	LDR	R1, [dump_buf]
-	LDR	R0, [s_dumppath2_a]
-	BL	memdump
-
-	LDR	R0, [dump_buf]
-	BL	__SysSecBootGet3rdPhaseFixedKey
-
-	LDR	R2, [dump_size]
-	LDR	R1, [dump_buf]
-	LDR	R0, [s_dumppath3_a]
-	BL	memdump
 
 	LDR	R0, [s_dirpath_a]  ;load the address of directory we want to list
 	BL	listdir 	    ;jump into dir function, only to make sure our dump has been stored
@@ -71,10 +59,10 @@ DEFAULT_VARIABLES
 
 
    ; dump_what           dw 0xD0000000
-    dump_size		dw 0x19A0
+    dump_size		dw 0x40000
 	
     dump_buf		    dw 0x44000000
-    flash_dump_adr	    dw 0xEF000000
+    flash_dump_adr	    dw 0x1F040000
 			;0x00010000 ;64KB
 			;0x00400000 ;4MB
 			;0x01000000 ;16MB
@@ -87,15 +75,11 @@ DEFAULT_STRINGS_ADDR
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;; add custom strings addresses below (for using by LDR op)
     s_dumppath_a     dw s_dumppath
-    s_dumppath2_a    dw s_dumppath2
-    s_dumppath3_a    dw s_dumppath3
     s_dirpath_a      dw s_dirpath
 
 DEFAULT_STRINGS
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;; ;add custom strings below
-    s_dumppath	     du '/g/dumps/syssec.gstSavedLockInfo.bin',0 ;where to save?
-    s_dumppath2      du '/g/dumps/syssec.4thPhaseFixedKey.bin',0 ;where to save?
-    s_dumppath3      du '/g/dumps/syssec.3rdPhaseFixedKey.bin',0 ;where to save?
+    s_dumppath	     du '/g/dumps/0x1F040000.0x40000.bin',0 ;where to save?
 	
     s_dirpath	     du '/g/dumps/',0 ;dir command
 
