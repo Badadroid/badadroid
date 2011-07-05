@@ -1,0 +1,54 @@
+# this is a very crude example of the symlinks to be done for the toolbox utilities, these can be done manually for fixing toolbox symlinks.
+# these commands can also work via busybox using ADB directly on the device.
+# location on the filesystem is "/system/bin"
+
+nathan@nathan-VirtualBox:~/samsungxxJPX/ext2loop/bin$ sudo ln -nf ./toolbox ./chmod
+nathan@nathan-VirtualBox:~/samsungxxJPX/ext2loop/bin$ sudo ln -nf ./toolbox ./chown
+nathan@nathan-VirtualBox:~/samsungxxJPX/ext2loop/bin$ sudo ln -nf ./toolbox ./cmp
+nathan@nathan-VirtualBox:~/samsungxxJPX/ext2loop/bin$ sudo ln -nf ./toolbox ./date
+nathan@nathan-VirtualBox:~/samsungxxJPX/ext2loop/bin$ sudo ln -nf ./toolbox ./dd
+nathan@nathan-VirtualBox:~/samsungxxJPX/ext2loop/bin$ sudo ln -nf ./toolbox ./df
+nathan@nathan-VirtualBox:~/samsungxxJPX/ext2loop/bin$ sudo ln -nf ./toolbox ./dmesg
+nathan@nathan-VirtualBox:~/samsungxxJPX/ext2loop/bin$ sudo ln -nf ./toolbox ./getevent
+nathan@nathan-VirtualBox:~/samsungxxJPX/ext2loop/bin$ sudo ln -nf ./toolbox ./getprop
+nathan@nathan-VirtualBox:~/samsungxxJPX/ext2loop/bin$ sudo ln -nf ./toolbox ./hd
+nathan@nathan-VirtualBox:~/samsungxxJPX/ext2loop/bin$ sudo ln -nf ./toolbox ./id
+nathan@nathan-VirtualBox:~/samsungxxJPX/ext2loop/bin$ sudo ln -nf ./toolbox ./ifconfig
+nathan@nathan-VirtualBox:~/samsungxxJPX/ext2loop/bin$ sudo ln -nf ./toolbox ./iftop
+nathan@nathan-VirtualBox:~/samsungxxJPX/ext2loop/bin$ sudo ln -nf ./toolbox ./insmod
+nathan@nathan-VirtualBox:~/samsungxxJPX/ext2loop/bin$ sudo ln -nf ./toolbox ./ioctl
+nathan@nathan-VirtualBox:~/samsungxxJPX/ext2loop/bin$ sudo ln -nf ./toolbox ./ionice
+nathan@nathan-VirtualBox:~/samsungxxJPX/ext2loop/bin$ sudo ln -nf ./toolbox ./kill
+nathan@nathan-VirtualBox:~/samsungxxJPX/ext2loop/bin$ sudo ln -nf ./toolbox ./ln
+nathan@nathan-VirtualBox:~/samsungxxJPX/ext2loop/bin$ sudo ln -nf ./toolbox ./log
+nathan@nathan-VirtualBox:~/samsungxxJPX/ext2loop/bin$ sudo ln -nf ./toolbox ./ls
+nathan@nathan-VirtualBox:~/samsungxxJPX/ext2loop/bin$ sudo ln -nf ./toolbox ./lsmod
+nathan@nathan-VirtualBox:~/samsungxxJPX/ext2loop/bin$ sudo ln -nf ./toolbox ./mkdir
+nathan@nathan-VirtualBox:~/samsungxxJPX/ext2loop/bin$ sudo ln -nf ./toolbox ./mount
+nathan@nathan-VirtualBox:~/samsungxxJPX/ext2loop/bin$ sudo ln -nf ./toolbox ./mv
+nathan@nathan-VirtualBox:~/samsungxxJPX/ext2loop/bin$ sudo ln -nf ./toolbox ./nandread
+nathan@nathan-VirtualBox:~/samsungxxJPX/ext2loop/bin$ sudo ln -nf ./toolbox ./netstat
+nathan@nathan-VirtualBox:~/samsungxxJPX/ext2loop/bin$ sudo ln -nf ./toolbox ./newfs_msdos
+nathan@nathan-VirtualBox:~/samsungxxJPX/ext2loop/bin$ sudo ln -nf ./toolbox ./notify
+nathan@nathan-VirtualBox:~/samsungxxJPX/ext2loop/bin$ sudo ln -nf ./toolbox ./printenv
+nathan@nathan-VirtualBox:~/samsungxxJPX/ext2loop/bin$ sudo ln -nf ./toolbox ./ps
+nathan@nathan-VirtualBox:~/samsungxxJPX/ext2loop/bin$ sudo ln -nf ./toolbox ./reboot
+nathan@nathan-VirtualBox:~/samsungxxJPX/ext2loop/bin$ sudo ln -nf ./toolbox ./renice
+nathan@nathan-VirtualBox:~/samsungxxJPX/ext2loop/bin$ sudo ln -nf ./toolbox ./rm
+nathan@nathan-VirtualBox:~/samsungxxJPX/ext2loop/bin$ sudo ln -nf ./toolbox ./rmdir
+nathan@nathan-VirtualBox:~/samsungxxJPX/ext2loop/bin$ sudo ln -nf ./toolbox ./rmmod
+nathan@nathan-VirtualBox:~/samsungxxJPX/ext2loop/bin$ sudo ln -nf ./toolbox ./route
+nathan@nathan-VirtualBox:~/samsungxxJPX/ext2loop/bin$ sudo ln -nf ./toolbox ./schedtop
+nathan@nathan-VirtualBox:~/samsungxxJPX/ext2loop/bin$ sudo ln -nf ./toolbox ./sendevent
+nathan@nathan-VirtualBox:~/samsungxxJPX/ext2loop/bin$ sudo ln -nf ./toolbox ./setconsole
+nathan@nathan-VirtualBox:~/samsungxxJPX/ext2loop/bin$ sudo ln -nf ./toolbox ./setprop
+nathan@nathan-VirtualBox:~/samsungxxJPX/ext2loop/bin$ sudo ln -nf ./toolbox ./sleep
+nathan@nathan-VirtualBox:~/samsungxxJPX/ext2loop/bin$ sudo ln -nf ./toolbox ./smd
+nathan@nathan-VirtualBox:~/samsungxxJPX/ext2loop/bin$ sudo ln -nf ./toolbox ./start
+nathan@nathan-VirtualBox:~/samsungxxJPX/ext2loop/bin$ sudo ln -nf ./toolbox ./stop
+nathan@nathan-VirtualBox:~/samsungxxJPX/ext2loop/bin$ sudo ln -nf ./toolbox ./sync
+nathan@nathan-VirtualBox:~/samsungxxJPX/ext2loop/bin$ sudo ln -nf ./toolbox ./top
+nathan@nathan-VirtualBox:~/samsungxxJPX/ext2loop/bin$ sudo ln -nf ./toolbox ./umount
+nathan@nathan-VirtualBox:~/samsungxxJPX/ext2loop/bin$ sudo ln -nf ./toolbox ./vmstat
+nathan@nathan-VirtualBox:~/samsungxxJPX/ext2loop/bin$ sudo ln -nf ./toolbox ./watchprops
+nathan@nathan-VirtualBox:~/samsungxxJPX/ext2loop/bin$ sudo ln -nf ./toolbox ./wipe
