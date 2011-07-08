@@ -334,7 +334,7 @@ debug_print_ret:
 ;void enable_fota_output()
 enable_fota_output:
 	STMFD	SP!, {R0-R1,LR\}
-	ADR	r1, output_switch
+	LDR	r1, [output_switch_a]
 	MOV	r0, 1
 	STR	R0, [r1]
 	BL	disp_FOTA_Init
@@ -344,10 +344,12 @@ enable_fota_output:
 	bl	debug_print
 	LDMFD	SP!, {R0-R1,PC\}
 
+output_switch_a dw output_switch
+
 ;void enable_uart_output()
 enable_uart_output:
 	STMFD	SP!, {R0-R1,LR\}
-	ADR	r1, output_switch
+	LDR	r1, [output_switch_a]
 	MOV	r0, 2
 	STR	R0, [r1]
 	ldr	r0, [s_uartoutput_a]
@@ -667,4 +669,25 @@ timer_driver:
 	TCON	dw  0xE2500008
 
 	TCNTB4	dw  0xE250003C
+
+
+
+System_DisableVIC:
+   MRC	 p15, 0, R0,c1,c0
+   BIC	 R0, R0, #0x1000000
+   MCR	 p15, 0, R0,c1,c0
+   BX	 LR
+
+System_DisableIRQ:
+   MRS	 R0, CPSR
+   ORR	 R0, R0, #0x80
+   MSR	 CPSR_cxsf, R0
+   BX	 LR
+
+System_DisableFIQ:
+   MRS	 R0, CPSR
+   ORR	 R0, R0, #0x40
+   MSR	 CPSR_cxsf, R0
+   BX	 LR
+
 }

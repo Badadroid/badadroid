@@ -61,7 +61,9 @@ main_fota_code:
 	cmp		r0, 0
 
 	BNE		keystore
-	bx		lr		; back to the bootloader
+
+return_to_bl:
+	bx	 lr	 ; back to the bootloader
 
 	_key2		dw pressed_button
 keystore:
