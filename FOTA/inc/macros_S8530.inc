@@ -59,7 +59,7 @@ main_fota_code:
 	ldr		r0, [_key2]
 	ldrb		r0, [r0, 2]	; CALL key
 	cmp		r0, 0
-
+				   ;TODO RECOVERY MODE
 	BNE		keystore
 
 return_to_bl:

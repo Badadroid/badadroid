@@ -59,9 +59,11 @@ main_fota_code:
 	ldr		r0, [_key2]
 	ldrb		r0, [r0, 2]	; CALL key
 	cmp		r0, 0
-
+				   ;TODO RECOVERY MODE
 	BNE		keystore
-	bx		lr		; back to the bootloader
+
+return_to_bl:
+	bx	 lr	 ; back to the bootloader
 
 	_key2		dw pressed_button
 keystore:
