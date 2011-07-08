@@ -19,18 +19,14 @@ macro START
 
 c_start:
 
-	ldr		r0, [_key]
-	ldrb		r0, [r0, 2]	; CALL key
-	cmp		r0, 0
-	bne		c_run
+	B	      c_run
 
-	bx		lr		; back to the bootloader
+
 fota_dload_mode:
 	bl		enable_fota_output
 	bl		dloadmode
 	NORETURN
 
-_key	dw pressed_button
 
 f_ver:
 	db 0x100 - (f_ver-c_start) dup 0
@@ -59,10 +55,16 @@ main_fota_code:
 	ldrb		r0, [r0]     ; Middle key
 	cmp		r0, 1
 	beq		fota_dload_mode
-	B		keystore
+
+	ldr		r0, [_key2]
+	ldrb		r0, [r0, 2]	; CALL key
+	cmp		r0, 0
+
+	BNE		keystore
+	bx		lr		; back to the bootloader
+
 	_key2		dw pressed_button
 keystore:
-
 }
 
 macro END
