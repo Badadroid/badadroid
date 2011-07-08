@@ -1,4 +1,5 @@
 ; Macros
+include 'inc/S8500XXJEE.inc'
 
 macro NORETURN
 {
@@ -19,10 +20,6 @@ macro START
 c_start:
 
 	ldr		r0, [_key]
-	ldrb		r0, [r0]     ; Middle key
-	cmp		r0, 1
-	beq		fota_dload_mode
-	ldr		r0, [_key]
 	ldrb		r0, [r0, 2]	; CALL key
 	cmp		r0, 0
 	bne		c_run
@@ -41,11 +38,40 @@ f_ver:
 	db 232 dup 0
 	
 align 4
+bl3_image_size	   dw 0x17FF80
+shadowed_bl3_adr   dw 0x42480000
+bl3_image_adr	   dw bl3_image
 c_run:
+	BL	enable_uart_output
+	LDR	R0, [bl3_image_adr]
+	LDR	R1, [shadowed_bl3_adr]
+	LDR	R2, [bl3_image_size]
+	BL	rebell_memcpy
+	LDR	R0, [shadowed_bl3_adr]
+	BX	R0 ;restart BL3
+
+
+main_fota_code_helper:
+	code_len = main_fota_code_helper - c_start
+	db	0x4000 - code_len dup 0xFF
+main_fota_code:
+	ldr		r0, [_key2]
+	ldrb		r0, [r0]     ; Middle key
+	cmp		r0, 1
+	beq		fota_dload_mode
+	B		keystore
+	_key2		dw pressed_button
+keystore:
+
 }
 
 macro END
 {
+bl3_image_helper:
+	code_len = bl3_image_helper - c_start
+	db	0x10000 - code_len dup 0xFF
+bl3_image:
+	file 'S8500XXJEE_BL3.bin'
 magic_1:
 	code_len = magic_1 - c_start
 	db 0x280000 - code_len dup 0xFF
