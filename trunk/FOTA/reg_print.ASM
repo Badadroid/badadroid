@@ -3,8 +3,7 @@ include 'inc/macros_S8530.inc'	  ;model dependend FOTA header and footer
 include 'inc/vars.inc'
 include 'inc/functions.inc'
 
-;simple printing one register
-
+;simple printing some useful infoz
 START
 	SUB	SP, SP, #16
 
@@ -17,9 +16,10 @@ START
 	ADD	R0, SP, 4
 	BL	__GetNvPos
 	LDR	R0, [SP,4]
-	;BL      hex_debugprint
+	BL	hex_debugprint
 	LDR	R0, [SP,8]
-       ; BL      hex_debugprint
+	BL	hex_debugprint
+		BL dloadmode
 BL     DRV_Modem_BootingStart
 LDR	R0, [semaphore]
 MOV	R1, #0
