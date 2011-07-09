@@ -672,22 +672,5 @@ timer_driver:
 
 
 
-System_DisableVIC:
-   MRC	 p15, 0, R0,c1,c0
-   BIC	 R0, R0, #0x1000000
-   MCR	 p15, 0, R0,c1,c0
-   BX	 LR
-
-System_DisableIRQ:
-   MRS	 R0, CPSR
-   ORR	 R0, R0, #0x80
-   MSR	 CPSR_cxsf, R0
-   BX	 LR
-
-System_DisableFIQ:
-   MRS	 R0, CPSR
-   ORR	 R0, R0, #0x40
-   MSR	 CPSR_cxsf, R0
-   BX	 LR
 
 }
