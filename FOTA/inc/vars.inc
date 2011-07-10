@@ -10,9 +10,7 @@ macro DEFAULT_VARIABLES
     v_delay_100ms	dw 100000
     v_delay_800ms	dw 800000
     v_delay		dw 4000000
-}
-macro DEFAULT_STRINGS_ADDR
-{
+    align 4
     s_fmt_a		dw s_fmt
     s_dir_a		dw s_dir
     s_debug_fmt_hex_a	dw s_debug_fmt_hex
@@ -32,8 +30,10 @@ macro DEFAULT_STRINGS_ADDR
     s_loadfile_error_a	dw s_loadfile_error
     s_memcpy_a		dw s_memcpy
     s_dumpmem_error_a	dw s_dumpmem_error
+
+    align 4
 }
-macro DEFAULT_STRINGS
+macro DEFAULT_STRINGS_ADDR
 {
     s_fotaoutput		    db ' FOTA OUTPUT ENABLED',0
     s_uartoutput		    db ' UART OUTPUT ENABLED',0
@@ -41,7 +41,9 @@ macro DEFAULT_STRINGS
     s_notfound			    db ' not found!',0
     s_debug_fmt_int		    db ' debug: %d',0
     s_debug_fmt_hex		    db ' debug: 0x%X',0
-
+}
+macro DEFAULT_STRINGS
+{
     s_memdump			    db ' dump 0x%X,s=0x%X',0
     s_written			    db ' dump_return: 0x%X',0
     s_error			    db ' ERROR!',0
@@ -56,4 +58,5 @@ macro DEFAULT_STRINGS
     s_dumpmem_error		    db ' dumpmem error: 0x%X',0
     s_uart_newline		    db 0xD,0xA,0
     s_memcpy			    db ' 0x%X=>0x%X,s=0x%X',0
+    align 4
 }

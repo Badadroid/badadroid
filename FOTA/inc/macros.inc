@@ -1,6 +1,3 @@
-; Macros
-include 'inc/S8530JPKA1.inc'
-
 macro NORETURN
 {
 ___NORETURN:
@@ -39,7 +36,7 @@ shadowed_bl3_adr   dw 0x42480000
 bl3_image_adr	   dw bl3_image
 c_run:
 ;enable line below if you have matching BL and want to omit fota shadowing (faster bootup)
-B	main_fota_code
+;B       main_fota_code
 	BL	enable_uart_output
 	LDR	R0, [bl3_image_adr]
 	LDR	R1, [shadowed_bl3_adr]
@@ -54,49 +51,31 @@ main_fota_code_helper:
 	db	0x4000 - code_len dup 0xFF
 main_fota_code:
 	ldr		r0, [_key2]
-	ldrb		r0, [r0]     ; Middle key
+	ldrb		r0, [r0, 0]	; Menu/Home key
 	cmp		r0, 1
-	beq		fota_dload_mode
+	beq		check_vol_up
 
 	ldr		r0, [_key2]
-	ldrb		r0, [r0, 2]	; CALL key
+	ldrb		r0, [r0, 2]
 	cmp		r0, 0
-				   ;TODO RECOVERY MODE
-	BNE		keystore
+	BEQ		return_to_bl
+
+	B		fota_run     ;call key - run fota
+	;
+check_vol_up:
+	ldr		r0, [_key2]
+	ldrb		r0, [r0, 7]	; volup key
+	cmp		r0, 0
+	beq		fota_dload_mode  ;menu/home alone - dload mode
+
+	ldr		r0, [s_atagcmdlineRM_a]  ; quick and dirty address copy...
+	ldr		r1, [s_atagcmdline_aa]
+	str		r0, [r1]
+	B		fota_run	;home+volup - recovery mode
 
 return_to_bl:
 	bx	 lr	 ; back to the bootloader
 
 	_key2		dw pressed_button
-keystore:
-}
-
-macro END
-{
-bl3_image_helper:
-	code_len = bl3_image_helper - c_start
-	db	0x10000 - code_len dup 0xFF
-bl3_image:
-	file 'S8530JPKA1_BL3.bin'
-magic_1:
-	code_len = magic_1 - c_start
-	db 0x280000 - code_len dup 0xFF
-	db 'BPDZ'
-	db 12 dup 0
-	dw 0xABCDABCD
-	dw 0x0A900000
-	dw 0
-	db 'S8530'
-	db 27 dup 0
-	db 'fota'
-	dw 0
-	dw 6
-	dw 1
-	dw 2
-	dw 0x800
-	dw 0x20000
-
-magic_2:
-	code_len = magic_2 - c_start
-	db 0x280410 - code_len dup 0
+fota_run:
 }
