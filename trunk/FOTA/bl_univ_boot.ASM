@@ -1,4 +1,4 @@
-include 'inc/macros_S8500.inc'	  ;model dependend FOTA header and footer
+include 'inc/S8500.inc'   ;model dependend FOTA header and footer
 
 include 'inc/vars.inc'
 include 'inc/functions.inc'

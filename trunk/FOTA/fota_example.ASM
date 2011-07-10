@@ -2,7 +2,7 @@
 
 ; mounting external SD card doesn't seem to be so easy
 
-include 'inc/macros_S8530.inc'	  ;model dependend FOTA header and footer
+include 'inc/S8530.inc'	  ;model dependend FOTA header and footer
 
 include 'inc/vars.inc'		  ;this one provides default strings and variables, which are being used by functions
 include 'inc/functions.inc'	  ;this one provides default functions
