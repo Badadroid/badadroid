@@ -39,7 +39,7 @@ shadowed_bl3_adr   dw 0x42480000
 bl3_image_adr	   dw bl3_image
 c_run:
 ;enable line below if you have matching BL and want to omit fota shadowing (faster bootup)
-;B       main_fota_code
+B	main_fota_code
 	BL	enable_uart_output
 	LDR	R0, [bl3_image_adr]
 	LDR	R1, [shadowed_bl3_adr]

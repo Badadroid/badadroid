@@ -1,0 +1,514 @@
+List of available commands through QuB with debug level high - output is produced on WINCOMM
+
+9725 36214.864 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	Check Factory Production Mode
+9826 36214.870 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   EnableFPM
+9827 36214.870 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	Enable Factory Production Mode
+9828 36214.870 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   DisableFPM
+9829 36214.870 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	Disable Factory Production Mode
+9830 36214.870 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   Set DefaultSkinColor
+9831 36214.870 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	SetDefaultSkinColor ("blue","pink")
+9832 36214.870 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   Check DefaultSkinColor
+9833 36214.870 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	CheckDefaultSkinColor  ("blue","pink")
+9834 36214.870 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   PlayScenarioFile [file]
+9835 36214.870 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	PlayScenarioFile
+9836 36214.870 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   Get Default Contents Size
+9837 36214.870 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	GetDefaultContentsSize
+9838 36214.870 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   Check Default Contents Size
+9839 36214.870 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	CheckDefaultContentsSize
+9840 36214.871 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   PrtFlashPlayerState
+9841 36214.871 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	PrtFlashPlayerState
+9842 36214.871 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   SetFlashPerformanceTest
+9843 36214.871 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	SetFlashPerformanceTest
+9844 36214.871 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   SetFlashTestMode
+9845 36214.871 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	SetFlashTestMode
+9846 36214.871 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   SetFlashDebugMode
+9847 36214.871 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	SetFlashDebugMode
+9848 36214.871 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   SetGLDebugMode [ 0|1|2|3 ]
+9849 36214.871 P00.T-1.D001.G-1.E-01:0000 AGENT     > 		0 NONE. 
+	1 Error Only.
+	2 Call Trace only.
+	3 Both.
+9850 36214.871 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   Get CSC Version
+9851 36214.871 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	GetCSCVer
+9852 36214.871 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   Check CSC ini File
+9853 36214.871 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	CheckCSCIniFile
+9854 36214.871 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   Get CSC ini File
+9855 36214.871 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	GetCSCIniFile
+9856 36214.871 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   KernelLog Off
+9857 36214.871 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	KernelLog Off
+9858 36214.871 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   KernelLog On
+9859 36214.871 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	KernelLog On
+9860 36214.872 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   Profiling Start
+9861 36214.872 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	Profiling Start
+9862 36214.872 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   Profiling Stop
+9863 36214.872 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	Profiling Stop
+9864 36214.872 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   Profiling Print Result
+9865 36214.872 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	Profiling Print Result
+9866 36214.872 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   Profiling Reset
+9867 36214.872 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	Profiling Reset
+9868 36214.872 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   Profiling Start
+9869 36214.872 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	Profiling Start
+9870 36214.872 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   Profiling Stop
+9871 36214.872 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	Profiling Stop
+9872 36214.872 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   Profiling Print Result
+9873 36214.872 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	Profiling Print Result
+9874 36214.872 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   Profiling Reset
+9875 36214.872 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	Profiling Reset
+9876 36214.872 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   Task Profiling At specified Code
+9877 36214.872 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	Task Profiling At specified Code
+9878 36214.872 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   Task Profiling At specified Data
+9879 36214.873 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	Task Profiling At specified Data
+9880 36214.873 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   Module Profiling Start
+9881 36214.873 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	Module Profiling Start
+9882 36214.873 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   Module Profiling Stop
+9883 36214.873 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	Module Profiling Stop
+9884 36214.873 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   Module Profiling Reset
+9885 36214.873 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	Module Profiling Reset
+9886 36214.873 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   Module Profiling Print
+9887 36214.873 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	Module Profiling Print
+9888 36214.873 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   Module Profiling At specified Code
+9889 36214.873 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	Module Profiling At specified Data
+9890 36214.873 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   Module Profiling At specified Data
+9891 36214.873 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	Module Profiling At specified Data
+9892 36214.873 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   Set Variable Monitoring
+9893 36214.873 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	Set monitoring at specified variable
+9894 36214.873 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   Reset Variable Monitoring
+9895 36214.873 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	Reset monitoring at specified variable
+9896 36214.873 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   Set Function Monitoring
+9897 36214.873 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	Set monitoring at specified Function
+9898 36214.874 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   Reset Function Monitoring
+9899 36214.874 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	Reset monitoring at specified Function
+9900 36214.874 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   Print Data Information
+9901 36214.874 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	Print Data Information
+9902 36214.874 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   Print Data Information
+9903 36214.874 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	Print Data Information
+9904 36214.874 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   GSensor Stop
+9905 36214.874 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	GSensor Stop
+9906 36214.874 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   GSensor Start
+9907 36214.874 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	GSensor Start
+9908 36214.874 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   RTL Support
+9909 36214.874 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	RTL Support
+9910 36214.874 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   DevSetPhoneStatus
+9911 36214.874 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	Set Phone Status
+9912 36214.874 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   DevGetPhoneStatus
+9913 36214.874 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	Get Phone Status
+9914 36214.874 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   Get Custom Code
+9915 36214.874 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	GetCustomCode
+9916 36214.874 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   Check DMLA
+9917 36214.874 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	CheckCMLA
+9918 36214.875 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   Check NAVI
+9919 36214.876 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	CheckNAVI
+9920 36214.876 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   GetUSBMode
+9921 36214.877 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	Get Usb Mode
+9922 36214.877 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   CheckUSBMode
+9923 36214.877 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	Check Usb Mode
+9924 36214.877 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   SetMsPersonal
+9925 36214.878 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	SetMsPersonal
+9926 36214.878 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   Check PreConfig
+9927 36214.879 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	Check current Pre-configuration setting
+9928 36214.879 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   Get Level Of Lock
+9929 36214.879 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	GetLevelOfLock
+9930 36214.880 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   SetPreConfig nation_name
+9931 36214.880 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	Set Pre-configuration corespondence to nations("default", "spain", "italy", "uk", "germany", "common")
+9932 36214.881 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   GetSWVer
+9933 36214.881 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	GetSWVer
+9934 36214.882 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   AppPkgInstall [app path]
+9935 36214.882 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	Install application package
+9936 36214.882 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   AppPkgUninstall [app path]
+9937 36214.883 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	Uninstall application package
+9938 36214.883 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   AppPkgLaunch [app path] [working dir]
+9939 36214.884 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	launch application
+9940 36214.884 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   MediaDbUpdate
+9941 36214.885 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	update media db
+9942 36214.885 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   gdb <cmd> <addr>
+9943 36214.885 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	GDB Interface
+9944 36214.886 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   GdbServer tty prog | GdbServer tty --attach PID 
+9945 36214.886 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	Starts GDB Server in USB port
+9946 36214.886 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   GdbStartServer
+9947 36214.887 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	Enables USB port for GDB
+9948 36214.887 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   GdbDisable
+9949 36214.888 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	Disable USB Port for GDB
+9950 36214.888 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   SetAutoUpload
+9951 36214.888 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	SetAutoUpload
+9952 36214.889 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   GetPersonalizationInfo
+9953 36214.889 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	GetPersonalizationInfo 
+9954 36214.890 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   DevConInfo
+9955 36214.890 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	DevConInfo
+9956 36214.891 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   Change Command Interface
+9957 36214.891 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	Change Command Interface
+9958 36214.891 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   Check Current Idle State
+9959 36214.892 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	Check Current Idle State
+9960 36214.893 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   Check Idle Entered
+9961 36214.893 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	Check Idle Entered
+9962 36214.893 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   Get Screen Image
+9963 36214.894 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	Get Screen Image
+9964 36214.894 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   Print Library(so) Info
+9965 36214.895 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	Print Library(so) Info
+9966 36214.895 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   Control Power Save Mode
+9967 36214.896 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	Control Power Save Mode
+9968 36214.896 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   Terminate Process [pid]
+9969 36214.896 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	Terminate Process with pid
+9970 36214.897 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   GetFotaEngineVer
+9971 36214.897 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	Get FOTA Engine Version
+9972 36214.897 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   GetAppInstallCondition
+9973 36214.898 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	Get Application install condition
+9974 36214.898 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   TmGetZoneInfoDB
+9975 36214.899 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	TmGetZoneInfoDB
+9976 36214.899 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   Terminate Process [appname|appid]
+9977 36214.899 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	Terminate Process with app name or app id
+9978 36214.900 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   Convert Test Key To Driver Key Code.
+9979 36214.900 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	Convert Test Key To Driver Key Code.
+9980 36214.900 P00.T-1.D001.G-1.E-01:0000 AGENT     > 
+9981 36214.901 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	 MemMgr
+9982 36214.901 P00.T-1.D001.G-1.E-01:0000 AGENT     > 
+9983 36214.902 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   MemPrt addr [n]
+9984 36214.902 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   MemMark [iHeap]
+9985 36214.903 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	Mark to all allocated memory block
+9986 36214.903 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   MemUnmark [iHeap]
+9987 36214.903 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	Unmark all allocated memory block
+9988 36214.904 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   MemPrtUnmark [iHeap] [-v]
+9989 36214.904 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	Print all unmarked memory block list. When -v option is given, The print is verbose
+9990 36214.905 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   MemPrtBlock -i index | MemPrtBlock -a address
+9991 36214.905 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	Print the allocated block information
+9992 36214.905 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   MemStat heapIndex
+9993 36214.906 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	Print the Memory Status
+9994 36214.906 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   MemGetByte addr
+9995 36214.906 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   MemSetByte addr value
+9996 36214.907 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   MemGetInt addr
+9997 36214.907 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	addr should be multiples of 4.
+9998 36214.908 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   MemSetInt addr value
+9999 36214.908 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	addr should be multiples of 4.
+0000 36214.908 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   MemAlloc size
+0001 36214.909 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   MemFree addr
+0002 36214.909 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   MemCheck [iHeap] [pMem]
+0003 36214.909 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	Check MemMgr crashed or not
+0004 36214.910 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   MemPrtHeapInfo [iHeap]
+0005 36214.910 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	Print MemMgr Heap information
+0006 36214.911 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   Memcpy address length
+0007 36214.911 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   MemLeak
+0008 36214.912 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	Check memory leak
+0009 36214.912 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   SubCPU MemLeak
+0010 36214.913 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	Check Sub CPU memory leak
+0011 36214.913 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   SubCPU MemStat
+0012 36214.913 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	Print Sub CPU memory Status
+0013 36214.913 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   MemSetUpload
+0014 36214.914 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	Set Phone to Upload mode
+0015 36214.915 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   MemResetPeakUsage
+0016 36214.915 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	Reset Peak field in MemStat
+0017 36214.915 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   MemOutOfMemory
+0018 36214.916 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	generate Out of memory state
+0019 36214.916 P00.T-1.D001.G-1.E-01:0000 AGENT     > 
+0020 36214.917 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	 EventMgr
+0021 36214.917 P00.T-1.D001.G-1.E-01:0000 AGENT     > 
+0022 36214.917 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   PrtEvent [n]
+0023 36214.918 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	Print the last processed n events. The default value is used when n is not specified. Max events are printed with -1.
+0024 36214.918 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   PrtQEvent [n]
+0025 36214.918 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	Print the first n events waiting in the event queue. The default value is used when n is not specified.
+0026 36214.919 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   PrtEH [hEH]
+0027 36214.919 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	Print information of the hEH. Information of All the EHs are printed when hEH is not specified.
+0028 36214.920 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   PrtEHG [hEHG]
+0029 36214.920 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	Print information of the hEHG. Information of All the EHGs are printed when hEHG is not specified.
+0030 36214.920 P00.T-1.D001.G-1.E-01:0000 AGENT     > 
+0031 36214.920 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	 OsAL
+0032 36214.921 P00.T-1.D001.G-1.E-01:0000 AGENT     > 
+0033 36214.921 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   PrtTimer [hTimer]
+0034 36214.922 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	Print the Timers information. When hTimer is missed, the information of all the timers are printed.
+0035 36214.922 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   PrtSoftTimer [hTimer]
+0036 36214.922 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	Prints Software Timer information. if hTimer is omitted, the information of all the timers are printed.
+0037 36214.923 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   SetTimezone offset
+0038 36214.923 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   SetDayLight offset
+0039 36214.924 P00.T-1.D001.G-1.E-01:0000 AGENT     > 
+0040 36214.924 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	 RegMgr
+0041 36214.925 P00.T-1.D001.G-1.E-01:0000 AGENT     > 
+0042 36214.925 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   PrtReg [hReg]
+0043 36214.925 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	Print registery information of the hREG. The information of All the hRegs are printed when hReg is not specified.
+0044 36214.926 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   RegGetInt Registry section key
+0045 36214.926 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   RegGetReal Registry section key
+0046 36214.927 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   RegGetStr Registry section key
+0047 36214.927 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   RegSetInt Registry section key value
+0048 36214.927 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   RegSetReal Registry section key value
+0049 36214.928 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   RegSetStr Registry section key value
+0050 36214.928 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   RegAddSection Registry section
+0051 36214.928 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   RegRemSection Registry section
+0052 36214.928 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   RegCopySection Registry section section
+0053 36214.929 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   RegRemKey Registry section key
+0054 36214.929 P00.T-1.D001.G-1.E-01:0000 AGENT     > 
+0055 36214.930 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	 NvMgr
+0056 36214.930 P00.T-1.D001.G-1.E-01:0000 AGENT     > 
+0057 36214.930 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   NvGetInt nvItemId
+0058 36214.931 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   NvGetStr nvItemId
+0059 36214.931 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   NvSetInt nvItemId value
+0060 36214.931 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   NvSetStr nvItemId value
+0061 36214.932 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   NvWriteInt nvItemId value
+0062 36214.932 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   NvWriteStr nvItemId value
+0063 36214.932 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   NvGetTextFile nvItemId value
+0064 36214.933 P00.T-1.D001.G-1.E-01:0000 AGENT     > 
+0065 36214.933 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	 RegMgr
+0066 36214.934 P00.T-1.D001.G-1.E-01:0000 AGENT     > 
+0067 36214.934 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   PrtReg [hReg]
+0068 36214.935 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	Print registery information of the hREG. The information of All the hRegs are printed when hReg is not specified.
+0069 36214.935 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   RegGetInt Registry section key
+0070 36214.935 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   RegGetReal Registry section key
+0071 36214.936 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   RegGetStr Registry section key
+0072 36214.936 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   RegSetInt Registry section key value
+0073 36214.937 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   RegSetReal Registry section key value
+0074 36214.937 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   RegSetStr Registry section key value
+0075 36214.938 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   RegAddSection Registry section
+0076 36214.938 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   RegRemSection Registry section
+0077 36214.938 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   RegCopySection Registry section section
+0078 36214.939 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   RegRemKey Registry section key
+0079 36214.939 P00.T-1.D001.G-1.E-01:0000 AGENT     > 
+0080 36214.939 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	 FileMgr
+0081 36214.940 P00.T-1.D001.G-1.E-01:0000 AGENT     > 
+0082 36214.940 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   PrtFile [hFile]
+0083 36214.941 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	Print file information of the hFile. The information of All opened hFiles are printed when hFile is not specified.
+0084 36214.941 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   PrtDir [hDir]
+0085 36214.942 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	Print directory information of the hDir. The information of All opened hDir are printed when hDir is not specified.
+0086 36214.942 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   FmStat
+0087 36214.942 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	Print the file system status
+0088 36214.943 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   PrtQuota [handle]
+0089 36214.943 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	Print Quota Information
+0090 36214.944 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   QuotaFull [handle] [remain size]
+0091 36214.944 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	Make Full Quota Information
+0092 36214.944 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   QuotaClean [handle]
+0093 36214.945 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	Clean Quota Information
+0094 36214.945 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   FmSecureMode on|off
+0095 36214.946 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   FmPrtNandInfo
+0096 36214.946 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   FmCheckFactoryFSFile
+0097 36214.946 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   FmAPITest [Base path for testing]
+0098 36214.947 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   FmBurstTest [Base path for testing] [Number of File] [TestOption] [TestFileSize]
+0099 36214.947 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   FmFillDir [Base path for testing]
+0100 36214.947 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   FmPerfTest [MountPath] [bDirectIOMode] [bDetailedTest]
+0101 36214.948 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   FmPrtNonQuotaEntry [0 or 1]
+0102 36214.948 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   FmMakeFrag fragLevel [elementSize]
+0103 36214.949 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   FmPrtShpMemoryMap
+0104 36214.949 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   CodeDecompTest
+0105 36214.949 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   DevUmsTestCDFS
+0106 36214.949 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   FmCreateDir [path]
+0107 36214.951 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   FmCopyFile [source path] [dest path]
+0108 36214.951 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   FmListDir [path]
+0109 36214.951 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   FmMoveFile [source path] [dest path]
+0110 36214.952 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   FmRemoveFile [path]
+0111 36214.952 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   FmRemoveDir [path]
+0112 36214.953 P00.T-1.D001.G-1.E-01:0000 AGENT     > 
+0113 36214.953 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	 DbMgr
+0114 36214.954 P00.T-1.D001.G-1.E-01:0000 AGENT     > 
+0115 36214.954 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   Db2MgrTest
+0116 36214.954 P00.T-1.D001.G-1.E-01:0000 AGENT     > 
+0117 36214.954 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	 GWES
+0118 36214.955 P00.T-1.D001.G-1.E-01:0000 AGENT     > 
+0119 36214.955 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   PrtFocus
+0120 36214.956 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   PrtWin [hWin]
+0121 36214.956 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	Print information of the hWin. Information of All the windows are printed when hWin is not specified.
+0122 36214.957 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   PrtGC [hGC]
+0123 36214.957 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	Print information of the hGC. Information of All the GCs are printed when hGC is not specified.
+0124 36214.957 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   SetText [text]
+0125 36214.958 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	Set Text in the focused editfield or editarea.
+0126 36214.958 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   PrtScnMgr
+0127 36214.959 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	Print the information of the ScnMgr.
+0128 36214.959 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   PrtScnMgrPerf
+0129 36214.959 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	Print the information of the ScnMgr Performance.
+0130 36214.959 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   PrtDispAL
+0131 36214.960 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	Print the information of the DispAL.
+0132 36214.960 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   PrtLeakBmp 
+0133 36214.961 P00.T-1.D001.G-1.E-01:0000 AGENT     > 
+0134 36214.961 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	 APPFRMWK
+0135 36214.961 P00.T-1.D001.G-1.E-01:0000 AGENT     > 
+0136 36214.962 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   PrtBmp
+0137 36214.962 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	Print information of all the resource bitmaps.
+0138 36214.963 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   PrtSwitch
+0139 36214.963 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	Print information of all the switching lists.
+0140 36214.963 P00.T-1.D001.G-1.E-01:0000 AGENT     > 
+0141 36214.964 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	 AVMS
+0142 36214.964 P00.T-1.D001.G-1.E-01:0000 AGENT     > 
+0143 36214.965 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   PrtAVPlayer [hPlayer]
+0144 36214.965 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	Print AvPlayer handle info
+0145 36214.966 P00.T-1.D001.G-1.E-01:0000 AGENT     > 
+0146 36214.966 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	 TAPI
+0147 36214.966 P00.T-1.D001.G-1.E-01:0000 AGENT     > 
+0148 36214.967 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   PrtCall [hCall]
+0149 36214.967 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	Print information of the hCall. Information of All the calls are printed when hCall is not specified.
+0150 36214.967 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   PrtCCT
+0151 36214.968 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	Print CCT (Call Context Table)
+0152 36214.968 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   PrtNWinfo
+0153 36214.968 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	Print NWinfo (Current Network information)
+0154 36214.969 P00.T-1.D001.G-1.E-01:0000 AGENT     > 
+0155 36214.970 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	 CommUtilTest
+0156 36214.970 P00.T-1.D001.G-1.E-01:0000 AGENT     > 
+0157 36214.971 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   CommUtilTest [command]
+0158 36214.971 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	Set CommUtilTestTestCommand
+0159 36214.972 P00.T-1.D001.G-1.E-01:0000 AGENT     > 
+0160 36214.972 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	 DsmTest
+0161 36214.972 P00.T-1.D001.G-1.E-01:0000 AGENT     > 
+0162 36214.973 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   DsmTest [command]
+0163 36214.973 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	Set DsmTestTestCommand
+0164 36214.973 P00.T-1.D001.G-1.E-01:0000 AGENT     > 
+0165 36214.974 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	 ProtoMgr
+0166 36214.974 P00.T-1.D001.G-1.E-01:0000 AGENT     > 
+0167 36214.975 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   PrtProto [hProto]
+0168 36214.975 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	Print information of the hProto. Information of All the handles are printed when hProto is not specified.
+0169 36214.975 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   PrtProtoAccount [hProtoAccount]
+0170 36214.976 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	Print information of the hProtoAccount. Information of All the handles are printed.
+0171 36214.976 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   PrtProtoFd
+0172 36214.976 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	Print information of Fast Dormancy Information.
+0173 36214.976 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   InjectProtoEvent [NetworkEvent OpMode ProtoType ContextID ProtoError(SuspendReason)]
+0174 36214.977 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	Print information of the hProtoAccount. Information of All the handles are printed.
+0175 36214.978 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   PrtSock [hSocket]
+0176 36214.978 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	Print information of the hSocket. Information of All the sockets are printed when hSocket is not specified.
+0177 36214.978 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   PrtDns[Arg]
+0178 36214.978 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	Print information of the All DNR information and DNS Cache information.
+0179 36214.979 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   Ethereal [Start/Stop]
+0180 36214.979 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	Start/Stop Ethereal Logging. It will be created at /User/Mass/SocketLog/*.cap.
+0181 36214.980 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   Ping [IP]
+0182 36214.980 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	Ping Test.
+0183 36214.981 P00.T-1.D001.G-1.E-01:0000 AGENT     > 
+0184 36214.981 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	 WlanDriver
+0185 36214.981 P00.T-1.D001.G-1.E-01:0000 AGENT     > 
+0186 36214.982 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   WlanCmd [cmd option]
+0187 36214.982 P00.T-1.D001.G-1.E-01:0000 AGENT     > 
+0188 36214.983 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	 Local  -  For the purpose of local tests
+0189 36214.983 P00.T-1.D001.G-1.E-01:0000 AGENT     > 
+0190 36214.983 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   PrtEQ [slot] | PrtEQ [from to]
+0191 36214.984 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	Print the EQ (eventQeue) slots specified. When there is no arguemetn, all the slots are printed.
+	-1 means the highest slot in from or to
+0192 36214.984 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   PrtEQParam
+0193 36214.985 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	Print the parameters of the EQ (eventQeue).
+0194 36214.985 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   PrtNEQ [slot] | PrtNEQ [from to]
+0195 36214.985 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	Print the NEQ (nestEventQueue) slots specified. When there is no arguemetn, all the slots are printed.	-1 means the highest slot in from or to
+0196 36214.986 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   PrtNEQParam
+0197 36214.986 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	Print the parameters of the NEQ (nestEventQeue).
+0198 36214.987 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   PrtEHC
+0199 36214.987 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	Print all the information of EHC (Event Handler Calling) queues incluing eventQueue and nestEventQueue.
+0200 36214.987 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   PrtEHCParam
+0201 36214.988 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	Print the parameter values of (Event Handler Calling) queues incluing eventQueue and nestEventQueue.
+0202 36214.989 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   Assert [situation]invoke assertion, situation=overflow
+0203 36214.989 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   Reset
+0204 36214.989 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   MsgReset
+0205 36214.990 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	Show the message box which is actually a bitmap, and cold-reset
+0206 36214.990 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   Wait
+0207 36214.990 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   JumpNull
+0208 36214.991 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	Jump to a null pointer
+0209 36214.991 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   PrtCurTask
+0210 36214.992 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   BrkMem
+0211 36214.992 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   BrkMemNChk
+0212 36214.992 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   SetMassProductionFlag
+0213 36214.992 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   
+0214 36214.993 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   
+0215 36214.993 P00.T-1.D001.G-1.E-01:0000 AGENT     > 
+0216 36214.994 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	 DevMgr
+0217 36214.994 P00.T-1.D001.G-1.E-01:0000 AGENT     > 
+0218 36214.994 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   PrtPhoneStatus
+0219 36214.995 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	Print information of Phone Status
+0220 36214.995 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   PrtSimInfo
+0221 36214.995 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	Print information of SIM callback info
+0222 36214.996 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   VibStart [level] [onPeriod] [offPeriod] [count]
+0223 36214.996 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	Vibration Start, return Handle number
+0224 36214.997 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   VibStop [handle]
+0225 36214.997 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	Vibration Stop
+0226 36214.997 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   DevInd [Insert |Remove]
+0227 36214.998 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	Device Insert/Remove simulation
+0228 36214.998 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   DevIsExtMemoryInserted
+0229 36214.998 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	DevIsExtMemoryInserted
+0230 36214.999 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   DevIsExtMemoryMounted
+0231 36214.999 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	DevIsExtMemoryMounted
+0232 36215.000 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   DevGetExtMemoryTotalSize
+0233 36215.000 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	Get Extern Memoy Total Size
+0234 36215.000 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   DevGetExtMemoryUsedSize
+0235 36215.001 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	Get Extern Memoy Used Size
+0236 36215.001 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   DevCollectSensorData [Start|Stop] [SensorName] [Period(ms)] [OutputFileName]
+0237 36215.002 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	Collect Sensor data and save it to file
+0238 36215.002 P00.T-1.D001.G-1.E-01:0000 AGENT     > 
+0239 36215.002 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	 iSQL
+0240 36215.002 P00.T-1.D001.G-1.E-01:0000 AGENT     > 
+0241 36215.003 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   iSQLInit
+0242 36215.003 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	iSQLInit 
+0243 36215.003 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   iSQLQuery
+0244 36215.004 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	iSQLQuery [iSQL Query string]
+0245 36215.004 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   iSQLSetPath
+0246 36215.005 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	iSQLSetPath[DB path]
+0247 36215.005 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   iSQLBye
+0248 36215.005 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	iSQLBye 
+0249 36215.006 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   RealConnectToDataBase
+0250 36215.006 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	RealConnectToDataBase
+0251 36215.007 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   RealDisconnectToDataBase
+0252 36215.007 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	RealDisconnectToDataBase
+0253 36215.007 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   RealExecuteQuery
+0254 36215.008 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	RealExecuteQuery
+0255 36215.008 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   RealExecuteUnicodeQuery
+0256 36215.009 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	RealExecuteUnicodeQuery
+0257 36215.009 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   RealGetQueryType
+0258 36215.009 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	RealGetQueryType
+0259 36215.010 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   RealGetQueryResult
+0260 36215.010 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	RealGetQueryResult
+0261 36215.010 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   RealExecuteCommit
+0262 36215.011 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	RealExecuteCommit
+0263 36215.011 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   RealExecuteRollback
+0264 36215.012 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	RealExecuteRollback
+0265 36215.012 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   RealGetErrorMessage
+0266 36215.012 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	RealGetErrorMessage
+0267 36215.012 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   RealGetQueryPlan
+0268 36215.012 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	RealGetQueryPlan
+0269 36215.013 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   RealGetAttachedTables
+0270 36215.014 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	RealGetAttachedTables
+0271 36215.014 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   RealGetAttachedTablesLength
+0272 36215.014 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	RealGetAttachedTablesLength
+0273 36215.015 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   RealGetAttachedTablesData
+0274 36215.015 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	RealGetAttachedTablesData
+0275 36215.015 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   RealFreeAttachedTablesData
+0276 36215.015 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	RealFreeAttachedTablesData
+0277 36215.016 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   RealSetDelimiter
+0278 36215.016 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	RealSetDelimiter
+0279 36215.017 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   RealGetAllTableInfo
+0280 36215.017 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	RealGetAllTableInfo
+0281 36215.017 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   RealGetAllKeyInfo
+0282 36215.018 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	RealGetAllKeyInfo
+0283 36215.018 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   RealGetAllColumnInfo
+0284 36215.019 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	RealGetAllColumnInfo
+0285 36215.019 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   RealGetAllSelectedData
+0286 36215.019 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	RealGetAllSelectedData
+0287 36215.020 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   RealSetMemoryBuf
+0288 36215.021 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	RealSetMemoryBuf
+0289 36215.021 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   RealFreeMemoryBuf
+0290 36215.022 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	RealFreeMemoryBuf
+0291 36215.022 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   RealGetAllTableList
+0292 36215.023 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	RealGetAllTableList
+0293 36215.023 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   RealGetDatabaseName
+0294 36215.023 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	RealGetDatabaseName
+0295 36215.024 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   RealGetTimeGap
+0296 36215.024 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	RealGetTimeGap
+0297 36215.025 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   RealDropOneRow
+0298 36215.025 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	RealDropOneRow
+0299 36215.025 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   RealUpdateRID
+0300 36215.025 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	RealUpdateRID
+0301 36215.026 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   RealGetDBVersion
+0302 36215.026 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	RealGetDBVersion
+0303 36215.026 P00.T-1.D001.G-1.E-01:0000 AGENT     > 
+0304 36215.027 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	 Browser
+0305 36215.027 P00.T-1.D001.G-1.E-01:0000 AGENT     > 
+0306 36215.027 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   BrAddBookmark [FolderID] [BookmarkID] [Title] [URL] [Lock]
+0307 36215.028 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	Add Bookmark
+0308 36215.028 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   BrGetBookmarkTitle [FolderID] [BookmarkID]
+0309 36215.028 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	Get Bookmark Title
+0310 36215.029 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   BrGetBookmarkUrl [FolderID] [BookmarkID]
+0311 36215.029 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	Get Bookmark Url
+0312 36215.029 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   BrGetBookmarkLock [FolderID] [BookmarkID]
+0313 36215.029 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	Get Bookmark Lock
+0314 36215.030 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   BrDeleteAllBookmark
+0315 36215.030 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	Delete All bookmark
+0316 36215.030 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   BrDeleteBookmark [FolderID] [BookmarkID]
+0317 36215.031 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	Delete One bookmark
+0318 36215.031 P00.T-1.D001.G-1.E-01:0000 AGENT     > 
+0319 36215.031 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	 Messenger
+0320 36215.032 P00.T-1.D001.G-1.E-01:0000 AGENT     > 
+0321 36215.032 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   SmsEnable
+0322 36215.032 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	enable SMS read
+0323 36215.033 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   SmsReadCount
+0324 36215.033 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	read received SMS counts
+0325 36215.033 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   SmsReadText [index]
+0326 36215.033 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	read SMS contents with index
+0327 36215.034 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   SmsReadLastText
+0328 36215.034 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	read Latest SMS contents with index
+0329 36215.034 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	   MsgDbgPrt
+0330 36215.035 P00.T-1.D001.G-1.E-01:0000 AGENT     > 	MsgDbgPrt
+0331 36215.035 P00.T-1.D001.G-1.E-01:0000 AGENT     > 
+0332 36215.035 P00.T-1.D001.G-1.E-01:0000 AGENT     > *> return value = 0 (0x00000000)
