@@ -8,5 +8,6 @@
 #chmod the su binary
 toolbox chmod 4755 /system/xbin/su
 
-#thats all, reboot
+#thats all, cleanup and reboot
+busybox rm /mnt_ext/badablk2/mkext2images.sh
 toolbox reboot
