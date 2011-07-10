@@ -58,10 +58,10 @@ DEFAULT_VARIABLES
 
 
    ; dump_what           dw 0xD0000000
-    dump_size		dw 0x00001000
+    dump_size		dw 0x00080000
 	
     dump_buf		    dw 0x44000000
-    flash_dump_adr	    dw 0x1EC12000
+    flash_dump_adr	    dw 0x1EC11000
 			;0x00010000 ;64KB
 			;0x00400000 ;4MB
 			;0x01000000 ;16MB
@@ -78,7 +78,7 @@ DEFAULT_STRINGS_ADDR
 
 DEFAULT_STRINGS
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;; ;add custom strings below
-    s_dumppath	     du '/g/dumps/0x1EC12000.0x00001000.bin',0 ;where to save?
+    s_dumppath	     du '/g/dumps/0x1EC11000.0x00080000.bin',0 ;where to save?
 	
     s_dirpath	     du '/g/dumps/',0 ;dir command
 
