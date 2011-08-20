@@ -37,7 +37,7 @@ macro DEFAULT_STRINGS_ADDR
 {
     s_fotaoutput		    db ' FOTA OUTPUT ENABLED',0
     s_uartoutput		    db ' UART OUTPUT ENABLED',0
-    s_downloadmode		    db ' ENTERING DOWNLOAD MODE',0
+    s_downloadmode		    db ' ENTERING BL3 DOWNLOAD MODE',0
     s_notfound			    db ' not found!',0
     s_debug_fmt_int		    db ' debug: %d',0
     s_debug_fmt_hex		    db ' debug: 0x%X',0
