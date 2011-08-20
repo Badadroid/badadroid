@@ -77,7 +77,7 @@ DEFAULT_STRINGS_ADDR
 
 DEFAULT_STRINGS
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;; ;add custom strings below
-    s_dumppath	     du '/g/dumps/0xE0E00000.0x00000024.bin',0 ;where to save?
+    s_dumppath	     du '/g/dumps/0xE0E00018.0x00000010.bin',0 ;where to save?
 	
     s_dirpath	     du '/g/dumps/',0 ;dir command
 
