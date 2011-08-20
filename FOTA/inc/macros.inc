@@ -18,13 +18,6 @@ c_start:
 
 	B	      c_run
 
-
-fota_dload_mode:
-	bl		enable_fota_output
-	bl		dloadmode
-	NORETURN
-
-
 f_ver:
 	db 0x100 - (f_ver-c_start) dup 0
 	db 'FOTA_ENGINE_VER_INFO_2.0'
@@ -36,8 +29,7 @@ shadowed_bl3_adr   dw 0x42480000
 bl3_image_adr	   dw bl3_image
 c_run:
 ;enable line below if you have matching BL and want to omit fota shadowing (faster bootup)
-;B       main_fota_code
-	BL	enable_uart_output
+B	main_fota_code
 	LDR	R0, [bl3_image_adr]
 	LDR	R1, [shadowed_bl3_adr]
 	LDR	R2, [bl3_image_size]
@@ -53,7 +45,7 @@ main_fota_code:
 	ldr		r0, [_key2]
 	ldrb		r0, [r0, 0]	; Menu/Home key
 	cmp		r0, 1
-	beq		check_vol_up
+	beq		check_vol
 
 	ldr		r0, [_key2]
 	ldrb		r0, [r0, 2]
@@ -62,20 +54,38 @@ main_fota_code:
 
 	B		fota_run     ;call key - run fota
 	;
-check_vol_up:
+check_vol:
+	ldr		r0, [_key2]
+	ldrb		r0, [r0, 4]	; voldown key
+	cmp		r0, 1
+	beq		fota_dload_mode  ;home+voldown - dload mode
+
 	ldr		r0, [_key2]
 	ldrb		r0, [r0, 7]	; volup key
 	cmp		r0, 0
-	beq		fota_dload_mode  ;menu/home alone - dload mode
+	beq		fota_dload_mode ;return_to_bl
 
 	ldr		r0, [s_atagcmdlineRM_a]  ; quick and dirty address copy...
 	ldr		r1, [s_atagcmdline_aa]
 	str		r0, [r1]
 	B		fota_run	;home+volup - recovery mode
 
+
 return_to_bl:
 	bx	 lr	 ; back to the bootloader
 
-	_key2		dw pressed_button
+fota_dload_mode:
+	bl		enable_fota_output
+	bl		dloadmode
+	NORETURN
+align 4
+   _key2		  dw pressed_button
+   s_atagcmdlineRM_a	  dw s_atagcmdlineRM
+   s_atagcmdline_aa	  dw s_atagcmdline_a
+   s_atagcmdline_a	  dw s_atagcmdline
+
+   s_atagcmdlineRM	  db 'bootmode=2 console=ttySAC2,115200 loglevel=4',0
+   s_atagcmdline	  db 'console=ttySAC2,115200 loglevel=4',0
+   align 4
 fota_run:
 }
