@@ -11,8 +11,12 @@ START
 
 	LDR	R0, [dump_what]
 	LDR	R1, [dump_buf]
-	LDR	R2, [dump_size]
-	BL	rebell_memcpy
+	LDR	R2, [R0], 4
+	STR	R2, [R1], 4
+	LDR	R2, [R0], 4
+	STR	R2, [R1], 4
+	LDR	R2, [R0], 4
+	STR	R2, [R1], 4
 
 	MOV	r1, #1
 	LDR	r0, [pagetable]
@@ -50,7 +54,7 @@ DEFAULT_VARIABLES
     pagetable		dw gMMUL1PageTable
 
 
-    dump_size		dw 0x00000024
+    dump_size		dw 0x00000010
 			;0x00000100 ;256B
 			;0x00010000 ;64KB
 			;0x00100000 ;1MB
@@ -61,7 +65,7 @@ DEFAULT_VARIABLES
 			;0x08000000 ;128MB
 
 
-    dump_what		 dw 0xE0E00000
+    dump_what		 dw 0xE0E00018
     dump_buf		 dw 0x44000000
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;; strings at the end
