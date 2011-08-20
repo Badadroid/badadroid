@@ -1,4 +1,4 @@
-include 'inc/S8530.inc'	  ;model dependend FOTA header and footer
+include 'inc/S8530.inc'   ;model dependend FOTA header and footer
 
 include 'inc/vars.inc'
 include 'inc/functions.inc'
@@ -7,13 +7,12 @@ include 'inc/functions.inc'
 
 START
 
-
 	bl	enable_fota_output
 
-	;LDR     R0, [dump_what]
-	;LDR     R1, [dump_buf]
-	;LDR     R2, [dump_size]
-       ; BL      rebell_memcpy
+	LDR	R0, [dump_what]
+	LDR	R1, [dump_buf]
+	LDR	R2, [dump_size]
+	BL	rebell_memcpy
 
 	MOV	r1, #1
 	LDR	r0, [pagetable]
@@ -51,16 +50,19 @@ DEFAULT_VARIABLES
     pagetable		dw gMMUL1PageTable
 
 
-   ; dump_what           dw 0xD0000000
-    dump_size		dw 0x00200000
-	
-    dump_buf		    dw 0x44000000
+    dump_size		dw 0x00000024
+			;0x00000100 ;256B
 			;0x00010000 ;64KB
+			;0x00100000 ;1MB
 			;0x00400000 ;4MB
 			;0x01000000 ;16MB
 			;0x01400000 ;20MB
 			;0x02000000 ;32MB
 			;0x08000000 ;128MB
+
+
+    dump_what		 dw 0xE0E00000
+    dump_buf		 dw 0x44000000
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;; strings at the end
 DEFAULT_STRINGS_ADDR
@@ -71,7 +73,7 @@ DEFAULT_STRINGS_ADDR
 
 DEFAULT_STRINGS
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;; ;add custom strings below
-    s_dumppath	     du '/g/dumps/RAM42480000.0x00200000.bin',0 ;where to save?
+    s_dumppath	     du '/g/dumps/0xE0E00000.0x00000024.bin',0 ;where to save?
 	
     s_dirpath	     du '/g/dumps/',0 ;dir command
 
