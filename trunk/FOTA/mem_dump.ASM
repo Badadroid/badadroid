@@ -1,9 +1,9 @@
-include 'inc/S8530.inc'   ;model dependend FOTA header and footer
+include 'inc/S8500.inc'   ;model dependend FOTA header and footer
 
 include 'inc/vars.inc'
 include 'inc/functions.inc'
 
-;example dumping whole iROM area
+;example dumping selected memory area
 
 START
 
@@ -11,12 +11,8 @@ START
 
 	LDR	R0, [dump_what]
 	LDR	R1, [dump_buf]
-	LDR	R2, [R0], 4
-	STR	R2, [R1], 4
-	LDR	R2, [R0], 4
-	STR	R2, [R1], 4
-	LDR	R2, [R0], 4
-	STR	R2, [R1], 4
+	LDR	R2, [dump_size]
+	BL	rebell_memcpy
 
 	MOV	r1, #1
 	LDR	r0, [pagetable]
@@ -54,7 +50,7 @@ DEFAULT_VARIABLES
     pagetable		dw gMMUL1PageTable
 
 
-    dump_size		dw 0x00000010
+    dump_size		dw 0x00010000 ;iROM size
 			;0x00000100 ;256B
 			;0x00010000 ;64KB
 			;0x00100000 ;1MB
@@ -65,7 +61,7 @@ DEFAULT_VARIABLES
 			;0x08000000 ;128MB
 
 
-    dump_what		 dw 0xE0E00018
+    dump_what		 dw 0xD0000000 ;iROM area
     dump_buf		 dw 0x44000000
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;; strings at the end
@@ -77,7 +73,7 @@ DEFAULT_STRINGS_ADDR
 
 DEFAULT_STRINGS
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;; ;add custom strings below
-    s_dumppath	     du '/g/dumps/0xE0E00018.0x00000010.bin',0 ;where to save?
+    s_dumppath	     du '/g/dumps/0xD0000000.0x00010000.bin',0 ;where to save?
 	
     s_dirpath	     du '/g/dumps/',0 ;dir command
 
