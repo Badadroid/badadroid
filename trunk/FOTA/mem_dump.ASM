@@ -26,10 +26,6 @@ START
 	MOV	R0, 12345
 	BL	int_debugprint
 
-	LDR	R0, [dump_buf]
-	MOV	R1, 0x00
-	LDR	R2, [dump_size]
-	BL	rebell_fillmem
 
 
 	LDR	R2, [dump_size]
