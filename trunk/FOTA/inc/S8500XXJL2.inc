@@ -1,3 +1,6 @@
+if ~defined INCLUDED_MODEL
+INCLUDED_MODEL                            equ S8500
+
 ; Functions
 StartUp                                   equ 0x42480000
 ResetHandler                              equ 0x42480020
@@ -176,3 +179,4 @@ sDownloadMode                             equ 0x424A7C34
 ;CoDisableFiq                             equ 0x42546A2C
 ;CoDisableMmu                             equ 0x42546AF8
 
+end if ; INCLUDED_MODEL

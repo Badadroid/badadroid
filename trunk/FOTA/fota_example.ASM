@@ -2,10 +2,7 @@
 
 ; mounting external SD card doesn't seem to be so easy
 
-include 'inc/S8530.inc'	  ;model dependend FOTA header and footer
-
-include 'inc/vars.inc'		  ;this one provides default strings and variables, which are being used by functions
-include 'inc/functions.inc'	  ;this one provides default functions
+include 'inc/settings.inc'              ; user dependend settings
 
 
 START	;don't touch this macro, it contains correct FOTA magic numbers and does auto CALL-KEY check and jumps here if its pressed

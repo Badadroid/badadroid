@@ -1,7 +1,4 @@
-include 'inc/S8500.inc'   ;model dependend FOTA header and footer
-
-include 'inc/vars.inc'
-include 'inc/functions.inc'
+include 'inc/settings.inc'              ; user dependend settings
 
 ;No modem booting yet!
 
