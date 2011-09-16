@@ -1,3 +1,6 @@
+if ~defined INCLUDED_MODEL
+INCLUDED_MODEL                            equ S8530
+
 exlamations	=	0x424A6714
 spaces		=	0x424A66F4
 
@@ -4899,3 +4902,5 @@ Image$$ZI$$ZI$$Length				      equ 0x4FF00104
 Image$$ZI$$Base 				      equ 0x4FF00108
 Image$$ZI$$ZI$$Base				      equ 0x4FF0010C
 Load$$ZI$$Base					      equ 0x4FF00110
+
+end if ; INCLUDED_MODEL

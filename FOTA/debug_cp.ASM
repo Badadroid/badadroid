@@ -1,7 +1,4 @@
-include 'inc/S8530.inc'	  ;model dependend FOTA header and footer
-
-include 'inc/vars.inc'
-include 'inc/functions.inc'
+include 'inc/settings.inc'              ; user dependend settings
 
 ;example dumping whole iROM area
 
