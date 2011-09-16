@@ -1,14 +1,20 @@
+;disable line below if you have matching BL and want to omit fota shadowing (faster bootup)
+;FOTA_SHADOWING  equ 1
+
 ; Macros
 include 'inc/S8500XXJEE.inc'
 include 'inc/macros.inc'
 
 macro END
 {
+if defined FOTA_SHADOWING
 bl3_image_helper:
 	code_len = bl3_image_helper - c_start
 	db	0x10000 - code_len dup 0xFF
 bl3_image:
 	file 'S8500XXJEE_BL3.bin'
+end if
+
 magic_1:
 	code_len = magic_1 - c_start
 	db 0x280000 - code_len dup 0xFF
