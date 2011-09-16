@@ -1,7 +1,7 @@
 macro NORETURN
 {
-___NORETURN:
-	b	___NORETURN
+@@:
+	b	@b
 }
 
 macro START
@@ -23,13 +23,8 @@ f_ver:
 	db 'FOTA_ENGINE_VER_INFO_2.0'
 	db 232 dup 0
 	
-align 4
-bl3_image_size	   dw 0x17FF80
-shadowed_bl3_adr   dw 0x42480000
-bl3_image_adr	   dw bl3_image
 c_run:
-;enable line below if you have matching BL and want to omit fota shadowing (faster bootup)
-B	main_fota_code
+if defined FOTA_SHADOWING
 	LDR	R0, [bl3_image_adr]
 	LDR	R1, [shadowed_bl3_adr]
 	LDR	R2, [bl3_image_size]
@@ -37,10 +32,16 @@ B	main_fota_code
 	LDR	R0, [shadowed_bl3_adr]
 	BX	R0 ;restart BL3
 
+align 4
+bl3_image_size	   dw 0x17FF80
+shadowed_bl3_adr   dw 0x42480000
+bl3_image_adr	   dw bl3_image
 
 main_fota_code_helper:
 	code_len = main_fota_code_helper - c_start
 	db	0x4000 - code_len dup 0xFF
+end if
+
 main_fota_code:
 	ldr		r0, [_key2]
 	ldrb		r0, [r0, 0]	; Menu/Home key

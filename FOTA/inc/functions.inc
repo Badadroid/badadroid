@@ -671,6 +671,16 @@ timer_driver:
 	TCNTB4	dw  0xE250003C
 
 
-
+; ARM32_SetBL
+; void ARM32_SetBL ( unsigned int src, unsigned int dst );
+ARM32_SetBL:
+	add	r2, r0, #8
+	sub	r2, r1, r2
+	mov	r2, r2, lsr 2
+	mov	r1, #0xEB
+	mov	r1, r1, lsl 24
+	orr	r2, r2, r1
+	str	r2, [r0]
+	bx	lr
 
 }
