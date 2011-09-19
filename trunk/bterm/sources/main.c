@@ -13,7 +13,11 @@
 #include "defines.h"
 #include "term.h"
 
+// 0xDE is used as custom packets
+#define CMD_CUMSTOM             0xDE
+#define CMD_CUMSTOM_READ        0x01
 
+/*
 const cmd_t commands[] =
 {
 	{ "CMD_USB_DUMP", 0x23 },
@@ -39,6 +43,8 @@ const cmd_t commands[] =
 	{ "CMD_USB_FORMAT", 0xF0 },
 	{ NULL, 0 }
 };
+*/
+
 
 unsigned short calc_crc16 ( unsigned short crc, const unsigned char *data, unsigned int length )
 {
@@ -301,7 +307,6 @@ int main ( int argc, char **argv )
 			break;
 		else if ( !strncmp ( "dump ", cmd, 5 ) )
 		{
-			unsigned char packet[6];
 			unsigned int address, length, packet_len, total_length;
 
 			sscanf ( cmd + 5, "%X %X", &address, &length );
@@ -323,15 +328,16 @@ int main ( int argc, char **argv )
 						else
 							packet_len = length;
 					
-						SET_WORD ( packet, 0, address );
-						SET_HALF ( packet, 4, packet_len );
+						SET_BYTE ( buf, 0, CMD_CUMSTOM_READ );
+						SET_WORD ( buf, 1, address );
+						SET_HALF ( buf, 5, packet_len );
 
-						send_packet ( 0xDA, packet, 6 );
-						bytesRead = get_packet ( 0xDA, buf );
+						send_packet ( CMD_CUMSTOM, buf, 7 );
+						bytesRead = get_packet ( CMD_CUMSTOM, buf );
 
 						if ( bytesRead < packet_len )
 						{
-							printf ( "\nError receiving packet (%s at 0x%08X). Received %s only.", print_bytes ( packet_len ), address, print_bytes ( bytesRead ) );
+							printf ( "\nError receiving packet (%d bytes at 0x%08X). Received %d bytes only.", packet_len, address, bytesRead );
 							length = 0;
 						}
 						else
