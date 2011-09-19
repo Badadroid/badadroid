@@ -85,6 +85,7 @@ crc_table   dw 0x00000000, 0x77073096, 0xee0e612c, 0x990951ba
 	       dw 0xbad03605, 0xcdd70693, 0x54de5729, 0x23d967bf
 	       dw 0xb3667a2e, 0xc4614ab8, 0x5d681b02, 0x2a6f2b94
 	       dw 0xb40bbe37, 0xc30c8ea1, 0x5a05df1b, 0x2d02ef8d
+
 ;void dloadmode()
 ;prints info message to current debug interface and enters downloading mode
 dloadmode:
@@ -122,6 +123,7 @@ rebell_fillmem_loop:
 	B	rebell_fillmem_loop
 rebell_fillmem_ret:
 	LDMFD	SP!, {R3,PC\}
+
 ;be aware of code below, need someone to check and fix it
 ;it is 100% copy->paste from PBL with commented out 0x40 mapping
 configure_ram:
@@ -371,6 +373,7 @@ hex_debugprint:
 	ldr	r0, [s_debug_fmt_hex_a]
 	bl	debug_print
 	LDMFD	SP!, {R0-R1,PC\}
+
 ;void memdump(wchar* filepath, ulong buf, ulong size)
 memdump:
 	STMFD	SP!, {R1-R10,LR\}
@@ -415,6 +418,7 @@ memdump_error:
 	mov	r0, 0
 memdump_ret:
 	LDMFD	SP!, {R1-R10,PC\}
+
 ;int loadfile(wchar* filepath, ulong target_addr, ulong size)
 ;loads file to RAM under specific address
 ;returns bytes read or 0 if error
@@ -461,7 +465,6 @@ loadfile_notfound:
 	bl	debug_print
 	mov	r0, 0
 	b	loadfile_ret
-
 
 ;int fota_listdir(wchar* path)
 ;auto reset
@@ -674,13 +677,41 @@ timer_driver:
 ; ARM32_SetBL
 ; void ARM32_SetBL ( unsigned int src, unsigned int dst );
 ARM32_SetBL:
-	add	r2, r0, #8
-	sub	r2, r1, r2
-	mov	r2, r2, lsr 2
-	mov	r1, #0xEB
-	mov	r1, r1, lsl 24
-	orr	r2, r2, r1
-	str	r2, [r0]
+	rsb	r3, r0, r1
+	sub	r3, r3, #8
+	ubfx	r3, r3, #2, #24
+	orr	r3, r3, #0xEB000000
+	str	r3, [r0, #0]
 	bx	lr
 
+; internal function - do not use
+; void DloadProcessPacketCustom ( const char *g_Hdlc );
+DloadProcessPacketCustom:
+	stmfd	sp!, {lr\}
+	ldrb	r4, [r0,#12]	; we need to return that value in r4 to DloadProcessPacket()
+	cmp	r4, #0xDE	; unused, for now
+	beq	@f
+	ldmfd	sp!, {pc\}
+
+	@@:
+	add	r0, #13
+_hook_DloadProcessPacketCustom:
+	nop
+	mov	r4, #0		; do not process further
+	ldmfd	sp!, {pc\}
+
+; void DloadPacketHandler ( void (*handler) ( const unsigned char *packet ) );
+DloadPacketHandler:
+	stmfd	sp!, {r4, lr\}
+	mov	r4, r0
+	adr	r1, DloadProcessPacketCustom
+	ldr	r0, [__src]
+	bl	ARM32_SetBL
+	mov     r1, r4
+	adr     r0, _hook_DloadProcessPacketCustom
+	bl      ARM32_SetBL
+	ldmfd	sp!, {r4, pc\}
+
+	align 4
+	__src                   dw DloadProcessPacket + 8
 }

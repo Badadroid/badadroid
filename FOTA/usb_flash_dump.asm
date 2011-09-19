@@ -1,82 +1,79 @@
 include 'inc/settings.inc'		; user dependend settings
 
 START
-
 	bl	enable_fota_output
 
-	ldr	r1, [_dst]
-	ldr	r0, [_src]		; TEXT:4248377C BL DloadCmdUSBDefault
-	bl	ARM32_SetBL
+
+	adr	r0, DloadCmdUSBRead     ; register our handler
+	bl	DloadPacketHandler
+
 
 	mov	r1, #1
 	ldr	r0, [pagetable]
 	bl	MemMMUCacheEnable
-	mov	r8, r0			; store original cp15, c1, c0 register
 
 	bl	__PfsNandInit
 	bl	__PfsMassInit
 
 	bl	dloadmode
 
-	NORETURN			; endless loop
+	NORETURN                        ; endless loop
 
 
-align 16
+; r0 = g_Hdlc + 13
+DloadCmdUSBRead:
+	stmfd	sp!, {lr}
+ 	sub	sp, sp, #8
 
-FUNCTIONS
+	ldrb    r1, [r0]
+	cmp     r1, #1                  ; read command
+	bne     @f
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; variables below
+	; clear variables
+	mov	r1, #0
+	str	r1, [sp]
+	str	r1, [sp, #4]
 
-DEFAULT_VARIABLES
-	pagetable	dw gMMUL1PageTable
-	_src		dw 0x4248377C
-	_dst		dw DloadCmdUSBRead
+	; address
+	ldrb	r1, [r0,#1]
+	strb	r1, [sp, #0]
+	ldrb	r1, [r0,#2]
+	strb	r1, [sp, #1]
+	ldrb	r1, [r0,#3]
+	strb	r1, [sp, #2]
+	ldrb	r1, [r0,#4]
+	strb	r1, [sp, #3]
 
-DEFAULT_STRINGS_ADDR
-DEFAULT_STRINGS
+	; length
+	ldrb	r1, [r0,#5]
+	strb	r1, [sp, #4]
+	ldrb	r1, [r0,#6]
+	strb	r1, [sp, #5]
+
+	ldr	r2, [sp, #4]            ; length
+	ldr	r1, [sp]                ; address
+	ldr	r0, [dump_buf]
+	bl	Flash_Read_Data
+
+	ldr	r1, [sp, #4]            ; length
+	ldr	r0, [dump_buf]
+	bl	DloadTransmite
+
+	@@:
+	add	sp, sp, #8
+	ldmfd	sp!, {pc}
+
+	align 4
+
+	pagetable                       dw gMMUL1PageTable
+	dump_buf                        dw 0x44000000
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-align 0x10000
+FUNCTIONS
 
-DloadCmdUSBRead:
-stmfd		sp!, {lr}
-sub		sp, sp, #8
-
-mov		r0, #0
-str		r0, [sp]
-str		r0, [sp, #4]
-
-ldr		r0, [_g_Hdlc]
-ldrb		r1, [r0,#13]		; address
-strb		r1, [sp, #0]
-ldrb		r1, [r0,#14]
-strb		r1, [sp, #1]
-ldrb		r1, [r0,#15]
-strb		r1, [sp, #2]
-ldrb		r1, [r0,#16]
-strb		r1, [sp, #3]
-
-ldrb		r1, [r0,#17]		; length
-strb		r1, [sp, #4]
-ldrb		r1, [r0,#18]
-strb		r1, [sp, #5]
-
-ldr		r2, [sp, #4]		; length
-ldr		r1, [sp]		; address
-ldr		r0, [dump_buf]
-bl		Flash_Read_Data
-
-ldr		r1, [sp, #4]		; length
-ldr		r0, [dump_buf]
-bl		DloadTransmite
-
-add		sp, sp, #8
-ldmfd		sp!, {pc}
-
-align 4
-
-_g_Hdlc 	dw g_Hdlc
-dump_buf	dw 0x44000000
+DEFAULT_VARIABLES
+DEFAULT_STRINGS_ADDR
+DEFAULT_STRINGS
 
 END
