@@ -13,37 +13,43 @@
 #include "defines.h"
 #include "term.h"
 
-// 0xDE is used as custom packets
-#define CMD_CUMSTOM             0xDE
-#define CMD_CUMSTOM_READ        0x01
 
-/*
-const cmd_t commands[] =
+#define PROGRAM_TITLE           "bTerm"
+#define PROGRAM_VERSION_MAJOR   0
+#define PROGRAM_VERSION_MINOR   10
+
+
+typedef enum DloadCMD
 {
-	{ "CMD_USB_DUMP", 0x23 },
-	{ "CMD_USB_VERIFY", 0x24 },
-	{ "CMD_USB_DEBUG", 0x25 },
-	{ "CMD_USB_FULLDOWNLOAD", 0x50 },
-	{ "CMD_USB_DOWNLOAD_UNLOCK", 0x60 },
-	{ "CMD_USB_INFO", 0x70 },
-	{ "CMD_USB_SET_DBG_LVL", 0x71 },
-	{ "CMD_USB_SECURITY", 0x80 },
-	{ "CMD_USB_RESET", 0x90 },
-	{ "CMD_USB_UNLOCK", 0xA0 },
-	{ "CMD_USB_COPY", 0xB0 },
-	{ "CMD_USB_CSC_WRITE", 0xB2 },
-	{ "CMD_USB_SHPAPP_WRITE", 0xB3 },
-	{ "CMD_USB_PFS_WRITE", 0xB4 },
-	{ "CMD_USB_LOCK", 0xC0 },
-	{ "CMD_USB_VER_CHECK", 0xD0 },
-	{ "CMD_USB_READ", 0xDA },
-	{ "CMD_USB_WRITE", 0xDD },
-	{ "CMD_USB_ERASE", 0xEE },
-	{ "CMD_USB_ERASE_MC", 0xEF },
-	{ "CMD_USB_FORMAT", 0xF0 },
-	{ NULL, 0 }
-};
-*/
+	CMD_USB_DUMP            = 0x23,
+	CMD_USB_VERIFY          = 0x24,
+	CMD_USB_DEBUG           = 0x25,
+	CMD_USB_FULLDOWNLOAD    = 0x50,
+	CMD_USB_DOWNLOAD_UNLOCK = 0x60,
+	CMD_USB_INFO            = 0x70,
+	CMD_USB_SET_DBG_LVL     = 0x71,
+	CMD_USB_SECURITY        = 0x80,
+	CMD_USB_RESET           = 0x90,
+	CMD_USB_UNLOCK          = 0xA0,
+	CMD_USB_COPY            = 0xB0,
+	CMD_USB_CSC_WRITE       = 0xB2,
+	CMD_USB_SHPAPP_WRITE    = 0xB3,
+	CMD_USB_PFS_WRITE       = 0xB4,
+	CMD_USB_LOCK            = 0xC0,
+	CMD_USB_VER_CHECK       = 0xD0,
+	CMD_USB_READ            = 0xDA,
+	CMD_USB_WRITE           = 0xDD,
+	CMD_USB_ERASE           = 0xEE,
+	CMD_USB_ERASE_MC        = 0xEF,
+	CMD_USB_FORMAT          = 0xF0,
+	
+	CMD_CUSTOM              = 0xDE
+} DloadCMD;
+
+typedef enum DloadCMDCustom
+{
+	CMD_CUSTOM_READ         = 0x01
+} DloadCMDCustom;
 
 
 unsigned short calc_crc16 ( unsigned short crc, const unsigned char *data, unsigned int length )
@@ -93,7 +99,7 @@ unsigned short calc_crc16 ( unsigned short crc, const unsigned char *data, unsig
     return crc;
 }
 
-unsigned int send_packet ( unsigned int type, const unsigned char *data, unsigned int length )
+unsigned int send_packet ( DloadCMD type, const unsigned char *data, unsigned int length )
 {
 	unsigned char packet[0x4200];
 
@@ -152,7 +158,7 @@ unsigned int send_packet ( unsigned int type, const unsigned char *data, unsigne
 	return term_send ( packet, pos );
 }
 
-unsigned int get_packet ( const unsigned int type, unsigned char *buffer )
+unsigned int get_packet ( DloadCMD type, unsigned char *buffer )
 {
 	unsigned char packet[0x4200];
 	unsigned short crc = 0xFFFF;
@@ -272,25 +278,45 @@ const char *print_bytes ( unsigned int bytes )
 	return (const char *)print_bytes;
 }
 
+unsigned int COMSearch ( void )
+{
+	HKEY hKey;
+	unsigned char pValue[255];
+	unsigned char pData[255];
+	unsigned int cValues, cValue, cData, retCode;
+	unsigned int port_num = 0;
+
+	RegOpenKeyExA ( HKEY_LOCAL_MACHINE, "HARDWARE\\DEVICEMAP\\SERIALCOMM\\", 0, KEY_READ, &hKey );
+	RegQueryInfoKeyA ( hKey, NULL, NULL, NULL, NULL, NULL, NULL, (LPDWORD)&cValues, NULL, NULL, NULL, NULL );
+
+	while ( !port_num && cValues-- )
+	{
+		cData = cValue = 255;
+		retCode = RegEnumValueA ( hKey, cValues, (LPSTR)pValue, (LPDWORD)&cValue, NULL, NULL, (LPBYTE)pData, (LPDWORD)&cData );
+
+		if ( retCode == ERROR_SUCCESS )
+			if ( !strncmp ( "\\Device\\sscemdm", (const char *)pValue, 15 ) ) // SAMSUNG Mobile Modem V2
+				if ( !strncmp ( "COM", (const char *)pData, 3 ) )
+					port_num = atoi ( (const char *)( pData + 3 ) );
+	}
+
+	RegCloseKey ( hKey );
+
+	return port_num;
+}
+
 int main ( int argc, char **argv )
 {
 	unsigned char buf[0x4200];
 	char cmd[256];
 	char outname[256];
 	FILE *infh, *outfh;
-	unsigned int bytesRead, port = 0;
+	unsigned int bytesRead;
 
-	
-	if ( argc == 2 )
-		port = atoi ( argv[1] );
-	
-	if ( !port )
-	{
-		printf ( "Bad arguments! Usage: bterm <port_num>\n" );
-		return RXE_FAIL;
-	}
 
-	R ( term_open ( port ) );
+	printf ( "\n%s v%d.%02d\n\n", PROGRAM_TITLE, PROGRAM_VERSION_MAJOR, PROGRAM_VERSION_MINOR );
+
+	R ( term_open ( COMSearch ( ) ) );
 	
 	term_set_control ( 1382400, 8, 1, 0, 0 );
 	term_send ( "AT+FUS?\r\n", 9 );
@@ -328,12 +354,12 @@ int main ( int argc, char **argv )
 						else
 							packet_len = length;
 					
-						SET_BYTE ( buf, 0, CMD_CUMSTOM_READ );
+						SET_BYTE ( buf, 0, CMD_CUSTOM_READ );
 						SET_WORD ( buf, 1, address );
 						SET_HALF ( buf, 5, packet_len );
 
-						send_packet ( CMD_CUMSTOM, buf, 7 );
-						bytesRead = get_packet ( CMD_CUMSTOM, buf );
+						send_packet ( CMD_CUSTOM, buf, 7 );
+						bytesRead = get_packet ( CMD_CUSTOM, buf );
 
 						if ( bytesRead < packet_len )
 						{
