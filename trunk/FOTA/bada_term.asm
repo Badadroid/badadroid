@@ -1,12 +1,10 @@
-include 'inc/settings.inc'		; user dependend settings
+include 'inc/settings.inc'              ; user dependend settings
 
 START
 	bl	enable_fota_output
 
-
-	adr	r0, DloadCmdUSBRead     ; register our handler
+	adr	r0, DloadCmdHandler    ; register our handler
 	bl	DloadPacketHandler
-
 
 	mov	r1, #1
 	ldr	r0, [pagetable]
@@ -21,14 +19,18 @@ START
 
 
 ; r0 = g_Hdlc + 13
-DloadCmdUSBRead:
-	stmfd	sp!, {lr}
- 	sub	sp, sp, #8
+DloadCmdHandler:
+	stmfd	sp!, {r4, lr}
+	sub	sp, sp, #8
 
-	ldrb    r1, [r0]
-	cmp     r1, #1                  ; read command
-	bne     @f
+	; commands
+	ldrb	r4, [r0]
+	cmp	r4, #1                  ; read nand
+	beq	@f
+	cmp	r4, #2                  ; read memory
+	bne	.end
 
+	@@:
 	; clear variables
 	mov	r1, #0
 	str	r1, [sp]
@@ -53,15 +55,19 @@ DloadCmdUSBRead:
 	ldr	r2, [sp, #4]            ; length
 	ldr	r1, [sp]                ; address
 	ldr	r0, [dump_buf]
-	bl	Flash_Read_Data
+
+	cmp	r4, #1                  ; nand
+	bleq	Flash_Read_Data
+	cmp	r4, #2                  ; memory
+	bleq	memcpy
 
 	ldr	r1, [sp, #4]            ; length
 	ldr	r0, [dump_buf]
 	bl	DloadTransmite
 
-	@@:
+	.end:
 	add	sp, sp, #8
-	ldmfd	sp!, {pc}
+	ldmfd	sp!, {r4, pc}
 
 	align 4
 
