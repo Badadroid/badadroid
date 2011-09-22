@@ -16,7 +16,7 @@
 
 #define PROGRAM_TITLE           "bTerm"
 #define PROGRAM_VERSION_MAJOR   0
-#define PROGRAM_VERSION_MINOR   10
+#define PROGRAM_VERSION_MINOR   11
 
 
 typedef enum DloadCMD
@@ -48,7 +48,8 @@ typedef enum DloadCMD
 
 typedef enum DloadCMDCustom
 {
-	CMD_CUSTOM_READ         = 0x01
+	CMD_READ_NAND          = 0x01,
+	CMD_READ_RAM           = 0x02
 } DloadCMDCustom;
 
 
@@ -324,7 +325,8 @@ int main ( int argc, char **argv )
 
 	printf ( "Enter command you want to send or press enter to exit\n" );
 	printf ( "Available commands:\n"
-	         " dump DEADBEEF DEAD\n"
+	         " dump [nand] DEADBEEF DEAD\n"
+	         " dump ram DEADBEEF DEAD\n"
 	         " exit\n" );
 
 	while ( printf ( "\n>" ) && gets ( cmd ) && cmd[0] )
@@ -333,15 +335,26 @@ int main ( int argc, char **argv )
 			break;
 		else if ( !strncmp ( "dump ", cmd, 5 ) )
 		{
-			unsigned int address, length, packet_len, total_length;
+			unsigned int address, length, packet_len, total_length, dumpram = 0;
 
-			sscanf ( cmd + 5, "%X %X", &address, &length );
+			if ( !strncmp ( "ram ", cmd + 5, 4 ) ) 
+			{
+				dumpram = 1;
+				sscanf ( cmd + 9, "%X %X", &address, &length );
+			}
+			else if ( !strncmp ( "nand ", cmd + 5, 5 ) ) 
+				sscanf ( cmd + 10, "%X %X", &address, &length );
+			else
+				sscanf ( cmd + 5, "%X %X", &address, &length );
 
 			if ( length > 0 )
 			{
 				total_length = length;
 				
-				sprintf ( outname, "dump_0x%08X.0x%08X.bin", address, length );
+				if ( dumpram )
+					sprintf ( outname, "dump_ram_0x%08X.0x%08X.bin", address, length );
+				else
+					sprintf ( outname, "dump_nand_0x%08X.0x%08X.bin", address, length );
 				
 				if ( outfh = fopen ( outname, "wb" ) )
 				{
@@ -354,7 +367,11 @@ int main ( int argc, char **argv )
 						else
 							packet_len = length;
 					
-						SET_BYTE ( buf, 0, CMD_CUSTOM_READ );
+						if ( dumpram )
+							SET_BYTE ( buf, 0, CMD_READ_RAM );
+						else
+							SET_BYTE ( buf, 0, CMD_READ_NAND );
+
 						SET_WORD ( buf, 1, address );
 						SET_HALF ( buf, 5, packet_len );
 
@@ -368,11 +385,15 @@ int main ( int argc, char **argv )
 						}
 						else
 						{
+							float percent;
+							
 							fwrite ( buf, 1, bytesRead, outfh );
 
 							length -= packet_len;
 							address += packet_len;
-							printf ( "\b\b\b%02d%%", 100 * ( total_length - length ) / total_length );
+							
+							percent = (float)100 * ( total_length - length ) / total_length;
+							printf ( "\b\b\b%02d%%", (unsigned int)percent );
 						}
 					}
 					while ( length > 0 );
