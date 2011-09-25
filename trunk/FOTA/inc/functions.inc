@@ -1,7 +1,7 @@
 ;some functions written by Rebellos, mijoma and b.kubica
 ;if adding new please make them model-independent
-macro FUNCTIONS
-{
+INCLUDE_ONCE FUNCTIONS
+
 ;crc32 by mijoma
 ;int calc_crc32(void* data, int length)
 calc_crc32:
@@ -674,13 +674,19 @@ timer_driver:
 	TCNTB4	dw  0xE250003C
 
 
-; ARM32_SetBL
+; ARM32_SetB, ARM32_SetBL
+; void ARM32_SetB ( unsigned int src, unsigned int dst );
 ; void ARM32_SetBL ( unsigned int src, unsigned int dst );
+ARM32_SetB:
+	mov     r2, #0xEA000000
+	b       @f
 ARM32_SetBL:
+	mov     r2, #0xEB000000
+	@@:
 	rsb	r3, r0, r1
 	sub	r3, r3, #8
 	ubfx	r3, r3, #2, #24
-	orr	r3, r3, #0xEB000000
+	orr	r3, r2
 	str	r3, [r0, #0]
 	bx	lr
 
@@ -690,10 +696,8 @@ DloadProcessPacketCustom:
 	stmfd	sp!, {lr\}
 	ldrb	r4, [r0,#12]	; we need to return that value in r4 to DloadProcessPacket()
 	cmp	r4, #0xDE	; unused, for now
-	beq	@f
-	ldmfd	sp!, {pc\}
+	ldmfdne	sp!, {pc\}
 
-	@@:
 	add	r0, #13
 _hook_DloadProcessPacketCustom:
 	nop
@@ -705,7 +709,7 @@ DloadPacketHandler:
 	stmfd	sp!, {r4, lr\}
 	mov	r4, r0
 	adr	r1, DloadProcessPacketCustom
-	ldr	r0, [__src]
+	ldr	r0, [.src]
 	bl	ARM32_SetBL
 	mov     r1, r4
 	adr     r0, _hook_DloadProcessPacketCustom
@@ -713,5 +717,6 @@ DloadPacketHandler:
 	ldmfd	sp!, {r4, pc\}
 
 	align 4
-	__src                   dw DloadProcessPacket + 8
-}
+	.src                    dw DloadProcessPacket + 8
+
+END_INCLUDE_ONCE

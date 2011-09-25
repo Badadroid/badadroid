@@ -1,7 +1,6 @@
 ;default vars and strings to be used by functions, to avoid mess in main file
 
-macro DEFAULT_VARIABLES
-{
+INCLUDE_ONCE DEFAULT_VARIABLES
     fota_x		dw x_pos@disp_FOTA_Printf_1
 
     output_switch	dw 0 ; 0=none 1=FOTA, 2=UART
@@ -32,18 +31,18 @@ macro DEFAULT_VARIABLES
     s_dumpmem_error_a	dw s_dumpmem_error
 
     align 4
-}
-macro DEFAULT_STRINGS_ADDR
-{
+END_INCLUDE_ONCE
+
+INCLUDE_ONCE DEFAULT_STRINGS_ADDR
     s_fotaoutput		    db ' FOTA OUTPUT ENABLED',0
     s_uartoutput		    db ' UART OUTPUT ENABLED',0
     s_downloadmode		    db ' ENTERING BL3 DOWNLOAD MODE',0
     s_notfound			    db ' not found!',0
     s_debug_fmt_int		    db ' debug: %d',0
     s_debug_fmt_hex		    db ' debug: 0x%X',0
-}
-macro DEFAULT_STRINGS
-{
+END_INCLUDE_ONCE
+
+INCLUDE_ONCE DEFAULT_STRINGS
     s_memdump			    db ' dump 0x%X,s=0x%X',0
     s_written			    db ' dump_return: 0x%X',0
     s_error			    db ' ERROR!',0
@@ -59,4 +58,4 @@ macro DEFAULT_STRINGS
     s_uart_newline		    db 0xD,0xA,0
     s_memcpy			    db ' 0x%X=>0x%X,s=0x%X',0
     align 4
-}
+END_INCLUDE_ONCE

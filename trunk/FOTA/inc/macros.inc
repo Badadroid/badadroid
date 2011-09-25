@@ -3,6 +3,18 @@ KB equ * 1024
 MB equ * 1024 KB
 GB equ * 1024 MB
 
+
+; prevent using macro more than once
+macro include_once name
+{
+macro name {
+	if ~defined name#_INCLUDED
+	name#_INCLUDED equ 1
+}
+INCLUDE_ONCE fix include_once
+END_INCLUDE_ONCE fix end if }
+
+
 ; endless loop
 macro NORETURN
 {
