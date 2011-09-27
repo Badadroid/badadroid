@@ -1,6 +1,10 @@
 if ~defined INCLUDED_MODEL
 INCLUDED_MODEL                            equ S8500
 
+; FOTA execution address
+FOTA_START                                equ 0x43800000
+
+
 ; Functions
 StartUp                                   equ 0x42480000
 ResetHandler                              equ 0x42480020

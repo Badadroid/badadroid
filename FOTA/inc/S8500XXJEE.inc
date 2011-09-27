@@ -1,6 +1,10 @@
 if ~defined INCLUDED_MODEL
 INCLUDED_MODEL                                         equ S8500
 
+; FOTA execution address
+FOTA_START                                             equ 0x43800000
+
+
 StartUp                                                equ 0x42480000
 UndefEntry                                             equ 0x42480004
 SwiEntry                                               equ 0x42480008

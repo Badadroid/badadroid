@@ -92,7 +92,7 @@ dloadmode:
 	ldr	r0, [s_downloadmode_a]
 	bl	debug_print
 
-	mov	r1, 0
+	mov	r1, CHARGING_CONTROL
 	mov	r0, 2
 	bl	maxim_charging_control
 	bl	DloadMain
