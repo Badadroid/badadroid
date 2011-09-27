@@ -5,6 +5,10 @@
 ;disable line below if you have matching BL and want to omit fota shadowing (faster bootup)
 ;FOTA_SHADOWING  equ 1
 
+; 0 - disable charging
+; 1 - enable USB charging
+CHARGING_CONTROL equ 0
+
 ; include matching BL
 include 'inc/S8500XXJEE.inc'
 ;include 'inc/S8500XXJL2'

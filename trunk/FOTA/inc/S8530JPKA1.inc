@@ -1,5 +1,9 @@
 if ~defined INCLUDED_MODEL
-INCLUDED_MODEL                            equ S8530
+INCLUDED_MODEL                                        equ S8530
+
+; FOTA execution address
+FOTA_START                                            equ 0x43800000
+
 
 exlamations	=	0x424A6714
 spaces		=	0x424A66F4

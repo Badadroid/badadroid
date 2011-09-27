@@ -16,7 +16,7 @@
 
 #define PROGRAM_TITLE           "bTerm"
 #define PROGRAM_VERSION_MAJOR   0
-#define PROGRAM_VERSION_MINOR   11
+#define PROGRAM_VERSION_MINOR   12
 
 
 typedef enum DloadCMD
@@ -296,7 +296,8 @@ unsigned int COMSearch ( void )
 		retCode = RegEnumValueA ( hKey, cValues, (LPSTR)pValue, (LPDWORD)&cValue, NULL, NULL, (LPBYTE)pData, (LPDWORD)&cData );
 
 		if ( retCode == ERROR_SUCCESS )
-			if ( !strncmp ( "\\Device\\sscemdm", (const char *)pValue, 15 ) ) // SAMSUNG Mobile Modem V2
+			if ( !strncmp ( "\\Device\\sscemdm", (const char *)pValue, 15 ) ||
+			     !strncmp ( "\\Device\\ssudmdm", (const char *)pValue, 15 ) ) // SAMSUNG Mobile Modem
 				if ( !strncmp ( "COM", (const char *)pData, 3 ) )
 					port_num = atoi ( (const char *)( pData + 3 ) );
 	}

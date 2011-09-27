@@ -10,6 +10,8 @@ macro include_once name
 macro name {
 	if ~defined name#_INCLUDED
 	name#_INCLUDED equ 1
+
+	align 4
 }
 INCLUDE_ONCE fix include_once
 END_INCLUDE_ONCE fix end if }
@@ -29,7 +31,7 @@ macro START
 	processor 0x2FFFFFE
 	coprocessor 0x30F8
 
-	org 0x43800000
+	org FOTA_START
 	align 4
 
 c_start:
@@ -40,7 +42,11 @@ f_ver:
 	db 0x100 - ( f_ver - c_start ) dup 0
 	db 'FOTA_ENGINE_VER_INFO_2.0'
 	db 232 dup 0
-	
+
+	if INCLUDED_MODEL eq S8500v2 | INCLUDED_MODEL eq S8530v2
+		dw FOTA_START
+	end if
+
 c_run:
 
 if defined FOTA_SHADOWING
@@ -50,13 +56,13 @@ if defined FOTA_SHADOWING
 	ldr		r2, [bl3_image_size]
 	bl		rebell_memcpy
 	ldr		r0, [shadowed_bl3_adr]
-	bx		r0			 ; restart BL3
+	bx		r0                      ; restart BL3
 
 	align 4
 
-	bl3_image_size			   dw 0x17FF80
-	shadowed_bl3_adr		   dw 0x42480000
-	bl3_image_adr			   dw bl3_image
+	bl3_image_size                          dw 0x17FF80
+	shadowed_bl3_adr                        dw 0x42480000
+	bl3_image_adr                           dw bl3_image
 
 main_fota_code_helper:
 	code_len = main_fota_code_helper - c_start
@@ -65,7 +71,7 @@ main_fota_code_helper:
 end if ; FOTA_SHADOWING
 
 	ldr		r0, [_key2]
-	ldrb		r0, [r0, 0]		  ; Menu/Home key
+	ldrb		r0, [r0, 0]             ; Menu/Home key
 	cmp		r0, 1
 	beq		check_vol
 
@@ -74,27 +80,27 @@ end if ; FOTA_SHADOWING
 	cmp		r0, 0
 	beq		return_to_bl
 
-	b		fota_run		 ; call key - run fota
+	b		fota_run                ; call key - run fota
 
 check_vol:
 	ldr		r0, [_key2]
-	ldrb		r0, [r0, 4]		 ; voldown key
+	ldrb		r0, [r0, 4]             ; voldown key
 	cmp		r0, 1
-	beq		fota_dload_mode 	 ; home+voldown - dload mode
+	beq		fota_dload_mode         ; home+voldown - dload mode
 
 	ldr		r0, [_key2]
-	ldrb		r0, [r0, 7]		 ; volup key
+	ldrb		r0, [r0, 7]             ; volup key
 	cmp		r0, 0
-	beq		fota_dload_mode 	 ; return_to_bl
+	beq		fota_dload_mode         ; return_to_bl
 
-	ldr		r0, [s_atagcmdlineRM_a]  ; quick and dirty address copy...
+	ldr		r0, [s_atagcmdlineRM_a] ; quick and dirty address copy...
 	ldr		r1, [s_atagcmdline_aa]
 	str		r0, [r1]
-	b		fota_run		 ; home+volup - recovery mode
+	b		fota_run                ; home+volup - recovery mode
 
 
 return_to_bl:
-	bx		lr			 ; back to the bootloader
+	bx		lr                      ; back to the bootloader
 
 fota_dload_mode:
 	bl		enable_fota_output
@@ -104,13 +110,13 @@ fota_dload_mode:
 
 	align 4
 
-	_key2				   dw pressed_button
-	s_atagcmdlineRM_a		   dw s_atagcmdlineRM
-	s_atagcmdline_aa		   dw s_atagcmdline_a
-	s_atagcmdline_a 		   dw s_atagcmdline
+	_key2                                   dw pressed_button
+	s_atagcmdlineRM_a                       dw s_atagcmdlineRM
+	s_atagcmdline_aa                        dw s_atagcmdline_a
+	s_atagcmdline_a                         dw s_atagcmdline
 
-	s_atagcmdlineRM 		   db 'bootmode=2 console=ttySAC2,115200 loglevel=4',0
-	s_atagcmdline			   db 'console=ttySAC2,115200 loglevel=4',0
+	s_atagcmdlineRM                         db 'bootmode=2 console=ttySAC2,115200 loglevel=4',0
+	s_atagcmdline                           db 'console=ttySAC2,115200 loglevel=4',0
 
 	align 4
 
@@ -125,10 +131,14 @@ bl3_image_helper:
 	code_len = bl3_image_helper - c_start
 	db 0x10000 - code_len dup 0xFF
 bl3_image:
-	if INCLUDED_MODEL eq		   S8500
+	if INCLUDED_MODEL eq                    S8500
 		file 'S8500XXJEE_BL3.bin'
-	else if INCLUDED_MODEL eq	   S8530
+	else if INCLUDED_MODEL eq               S8530
 		file 'S8530JPKA1_BL3.bin'
+	else if INCLUDED_MODEL eq               S8500v2
+		err
+	else if INCLUDED_MODEL eq               S8530v2
+		err
 	else
 		err
 	end if
@@ -142,12 +152,20 @@ magic_1:
 	db 12 dup 0
 	dw 0xABCDABCD
 
-if INCLUDED_MODEL eq			S8500
+if INCLUDED_MODEL eq                            S8500
 	dw 0x0C600000
 	dw 0
 	db 'S8500'
-else if INCLUDED_MODEL eq		S8530
+else if INCLUDED_MODEL eq                       S8530
 	dw 0x0A900000
+	dw 0
+	db 'S8530'
+else if INCLUDED_MODEL eq                       S8500v2
+	dw 0x03300000
+	dw 0
+	db 'S8500'
+else if INCLUDED_MODEL eq                       S8530v2
+	dw 0x09500000
 	dw 0
 	db 'S8530'
 else

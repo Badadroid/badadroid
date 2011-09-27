@@ -58,7 +58,7 @@ DloadCmdHandler:
 	cmp	r4, #1                  ; nand
 	bleq	Flash_Read_Data
 	cmp	r4, #2                  ; memory
-	bleq	rebell_memcpy
+	bleq	memcpy
 
 	ldr	r1, [sp, #4]            ; length
 	ldr	r0, [dump_buf]
