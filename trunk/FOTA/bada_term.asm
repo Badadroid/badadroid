@@ -1,5 +1,8 @@
 include 'inc/settings.inc'              ; user dependend settings
 
+CODE_BUFFER equ BUF2_DRAM_START
+DUMP_BUFFER equ CODE_BUFFER + 1 MB
+
 START
 	bl	enable_fota_output
 
@@ -18,59 +21,70 @@ START
 	NORETURN                        ; endless loop
 
 
-
-; r0 = g_Hdlc + 13
-DloadCmdHandler:
+DloadRead:
 	stmfd	sp!, {r4, lr}
-
-	; commands
-	ldrb	r4, [r0]
-	cmp	r4, #1                  ; read nand
-	cmpne	r4, #2                  ; read memory
+	mov	r3, r1
+	ldrb	r1, [r0, #2]
+	cmp	r3, #1
+	ldrb	ip, [r0, #1]
+	ldrb	r2, [r0, #0]
+	mov	r1, r1, lsl #16
+	ldrb	r4, [r0, #5]
+	orr	r1, r1, ip, lsl #8
+	orr	r1, r1, r2
+	ldrb	r2, [r0, #3]
+	orr	r1, r1, r2, lsl #24
+	ldrb	r2, [r0, #4]
+	orr	r4, r2, r4, lsl #8
+	bne	@f
+	mov	r2, r4
+	ldr	r0, [dump_buf]
+	bl	Flash_Read_Data
+	b	.transmite
+@@:
+	cmp	r3, #2
 	ldmfdne	sp!, {r4, pc}
-
-	; clear variables
-	sub	sp, sp, #8
-	mov	r1, #0
-	str	r1, [sp]
-	str	r1, [sp, #4]
-
-	; address
-	ldrb	r1, [r0,#1]
-	strb	r1, [sp, #0]
-	ldrb	r1, [r0,#2]
-	strb	r1, [sp, #1]
-	ldrb	r1, [r0,#3]
-	strb	r1, [sp, #2]
-	ldrb	r1, [r0,#4]
-	strb	r1, [sp, #3]
-
-	; length
-	ldrb	r1, [r0,#5]
-	strb	r1, [sp, #4]
-	ldrb	r1, [r0,#6]
-	strb	r1, [sp, #5]
-
-	ldr	r2, [sp, #4]            ; length
-	ldr	r1, [sp]                ; address
 	ldr	r0, [dump_buf]
+	mov	r2, r4
+	bl	memcpy
 
-	cmp	r4, #1                  ; nand
-	bleq	Flash_Read_Data
-	cmp	r4, #2                  ; memory
-	bleq	memcpy
-
-	ldr	r1, [sp, #4]            ; length
+.transmite:
+	mov	r1, r4
 	ldr	r0, [dump_buf]
-	bl	DloadTransmite
+	ldmfd	sp!, {r4, lr}
+	b	DloadTransmite
 
-	add	sp, sp, #8
-	ldmfd	sp!, {r4, pc}
+
+DloadRunCode:
+	stmfd	sp!, {lr}
+	ldrb	r2, [r0, #0]
+	ldrb	r3, [r0, #1]
+	orr	r2, r2, r3, lsl #8
+	add	r1, r0, #2
+	ldr	r0, [code_buf]
+	bl	memcpy
+	blx	r0
+	ldmfd	sp!, {lr}
+	b	DloadResponseOK
+
+
+DloadCmdHandler:
+	ldrb	r1, [r0]
+	add	r0, #1
+	sub	r3, r1, #1
+	cmp	r3, #1
+	bhi	@f
+	b	DloadRead
+@@:
+	cmp	r1, #3
+	bxne	lr
+	b	DloadRunCode
+
 
 	align 4
-
 	pagetable                       dw gMMUL1PageTable
-	dump_buf                        dw 0x44000000
+	dump_buf                        dw DUMP_BUFFER
+	code_buf                        dw CODE_BUFFER
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 

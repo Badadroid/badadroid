@@ -3,6 +3,8 @@ KB equ * 1024
 MB equ * 1024 KB
 GB equ * 1024 MB
 
+; endless loop
+NORETURN fix b $
 
 ; prevent using macro more than once
 macro include_once name
@@ -17,13 +19,6 @@ INCLUDE_ONCE fix include_once
 END_INCLUDE_ONCE fix end if }
 
 
-; endless loop
-macro NORETURN
-{
-@@:
-	b	@b
-}
-
 macro START
 {
 	format binary as 'fota'
@@ -31,7 +26,7 @@ macro START
 	processor 0x2FFFFFE
 	coprocessor 0x30F8
 
-	org FOTA_START
+	org FOTA_DRAM_START
 	align 4
 
 c_start:
@@ -42,10 +37,7 @@ f_ver:
 	db 0x100 - ( f_ver - c_start ) dup 0
 	db 'FOTA_ENGINE_VER_INFO_2.0'
 	db 232 dup 0
-
-	if INCLUDED_MODEL eq S8500v2 | INCLUDED_MODEL eq S8530v2
-		dw FOTA_START
-	end if
+	dw FOTA_DRAM_START                      ; not required for < 2.0
 
 c_run:
 
@@ -131,14 +123,10 @@ bl3_image_helper:
 	code_len = bl3_image_helper - c_start
 	db 0x10000 - code_len dup 0xFF
 bl3_image:
-	if INCLUDED_MODEL eq                    S8500
+	if PRODUCT_CODE eq 'S8500' & FIRMWARE_VER = 1.2
 		file 'S8500XXJEE_BL3.bin'
-	else if INCLUDED_MODEL eq               S8530
+	else if PRODUCT_CODE eq 'S8530' & FIRMWARE_VER = 1.2
 		file 'S8530JPKA1_BL3.bin'
-	else if INCLUDED_MODEL eq               S8500v2
-		err
-	else if INCLUDED_MODEL eq               S8530v2
-		err
 	else
 		err
 	end if
@@ -151,27 +139,9 @@ magic_1:
 	db 'BPDZ'
 	db 12 dup 0
 	dw 0xABCDABCD
-
-if INCLUDED_MODEL eq                            S8500
-	dw 0x0C600000
+	dw FOTA_NAND_START
 	dw 0
-	db 'S8500'
-else if INCLUDED_MODEL eq                       S8530
-	dw 0x0A900000
-	dw 0
-	db 'S8530'
-else if INCLUDED_MODEL eq                       S8500v2
-	dw 0x03300000
-	dw 0
-	db 'S8500'
-else if INCLUDED_MODEL eq                       S8530v2
-	dw 0x09500000
-	dw 0
-	db 'S8530'
-else
-	err
-end if ; INCLUDED_MODEL
-
+	db PRODUCT_CODE
 	db 27 dup 0
 	db 'fota'
 	dw 0
