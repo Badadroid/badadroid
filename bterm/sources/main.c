@@ -16,7 +16,7 @@
 
 #define PROGRAM_TITLE           "bTerm"
 #define PROGRAM_VERSION_MAJOR   0
-#define PROGRAM_VERSION_MINOR   12
+#define PROGRAM_VERSION_MINOR   13
 
 
 typedef enum DloadCMD
@@ -49,7 +49,8 @@ typedef enum DloadCMD
 typedef enum DloadCMDCustom
 {
 	CMD_READ_NAND          = 0x01,
-	CMD_READ_RAM           = 0x02
+	CMD_READ_RAM           = 0x02,
+	CMD_CODE_RUN           = 0x03
 } DloadCMDCustom;
 
 
@@ -312,39 +313,49 @@ int main ( int argc, char **argv )
 	unsigned char buf[0x4200];
 	char cmd[256];
 	char outname[256];
-	FILE *infh, *outfh;
+	FILE *fh;
 	unsigned int bytesRead;
 
 
 	printf ( "\n%s v%d.%02d\n\n", PROGRAM_TITLE, PROGRAM_VERSION_MAJOR, PROGRAM_VERSION_MINOR );
-
-	R ( term_open ( COMSearch ( ) ) );
-	
-	term_set_control ( 1382400, 8, 1, 0, 0 );
-	term_send ( "AT+FUS?\r\n", 9 );
-	term_receive ( buf, 0x4200, &bytesRead );
-
 	printf ( "Enter command you want to send or press enter to exit\n" );
 	printf ( "Available commands:\n"
-	         " dump [nand] DEADBEEF DEAD\n"
-	         " dump ram DEADBEEF DEAD\n"
-	         " exit\n" );
+	         " open                       - open the COM port\n"
+	         " close                      - close the COM port\n"
+	         " dump    <address> <length> - dump NAND area\n"
+			 " dumpram <address> <length> - dump RAM area\n"
+			 " run  <path_to_file>        - execute the code from file\n"
+	         " exit                       - terminate program\n" );
 
 	while ( printf ( "\n>" ) && gets ( cmd ) && cmd[0] )
 	{
-		if ( !strcmp ( "exit", cmd ) )
+		if ( !strcmp ( "open", cmd ) )
+		{
+			if ( term_open ( COMSearch ( ) ) == RXE_OK )
+			{
+				term_set_control ( 1382400, 8, 1, 0, 0 );
+				term_send ( "AT+FUS?\r\n", 9 );
+				term_receive ( buf, 0x4200, &bytesRead );
+			}
+		}
+		else if ( !strcmp ( "close", cmd ) )
+		{
+			term_close ( );
+		}
+		else if ( !strcmp ( "exit", cmd ) )
+		{
+			term_close ( );
 			break;
-		else if ( !strncmp ( "dump ", cmd, 5 ) )
+		}
+		else if ( !strncmp ( "dump ", cmd, 5 ) || !strncmp ( "dumpram ", cmd, 8 ) )
 		{
 			unsigned int address, length, packet_len, total_length, dumpram = 0;
 
-			if ( !strncmp ( "ram ", cmd + 5, 4 ) ) 
+			if ( !strncmp ( "dumpram ", cmd, 8 ) ) 
 			{
 				dumpram = 1;
-				sscanf ( cmd + 9, "%X %X", &address, &length );
+				sscanf ( cmd + 8, "%X %X", &address, &length );
 			}
-			else if ( !strncmp ( "nand ", cmd + 5, 5 ) ) 
-				sscanf ( cmd + 10, "%X %X", &address, &length );
 			else
 				sscanf ( cmd + 5, "%X %X", &address, &length );
 
@@ -357,7 +368,7 @@ int main ( int argc, char **argv )
 				else
 					sprintf ( outname, "dump_nand_0x%08X.0x%08X.bin", address, length );
 				
-				if ( outfh = fopen ( outname, "wb" ) )
+				if ( fh = fopen ( outname, "wb" ) )
 				{
 					printf ( "dumping %s at 0x%08X: 00%%", print_bytes ( length ), address );
 					
@@ -388,7 +399,7 @@ int main ( int argc, char **argv )
 						{
 							float percent;
 							
-							fwrite ( buf, 1, bytesRead, outfh );
+							fwrite ( buf, 1, bytesRead, fh );
 
 							length -= packet_len;
 							address += packet_len;
@@ -399,17 +410,37 @@ int main ( int argc, char **argv )
 					}
 					while ( length > 0 );
 
-					fclose ( outfh );
+					fclose ( fh );
 				}
 				else
 					printf ( "Can't open output file (%s)!", outname );
 			}
 		}
+		else if ( !strncmp ( "run ", cmd, 4 ) )
+		{
+			if ( fh = fopen ( cmd + 4, "rb" ) )
+			{
+				unsigned int code_length;
+				code_length = fread ( buf + 3, 1, 0x2000, fh );
+				fclose ( fh );
+
+				if ( code_length )
+				{
+					SET_BYTE ( buf, 0, CMD_CODE_RUN );
+					SET_HALF ( buf, 1, code_length );
+
+					send_packet ( CMD_CUSTOM, buf, code_length + 3 );
+					bytesRead = get_packet ( CMD_CUSTOM, buf );
+					printf ( "OK - %d\n", bytesRead );
+				}
+			}
+			else
+				printf ( "Can't open input file (%s)!", outname );
+		}
 		else
 			printf ( "Unknown command!\n" );
 	}
 
-	term_close ( );
 	return RXE_OK;
 }
 

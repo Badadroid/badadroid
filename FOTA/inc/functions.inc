@@ -690,8 +690,28 @@ ARM32_SetBL:
 	str	r3, [r0, #0]
 	bx	lr
 
+
+; void DloadResponseOK ( );
+DloadResponseOK:
+	mov	r0, #0
+	b	DloadResponse
+
+
+; void DloadPacketHandler ( void (*handler) ( const unsigned char *packet ) );
+DloadPacketHandler:
+	stmfd	sp!, {lr\}
+	mov     r1, r0
+	adr     r0, _hook_DloadProcessPacketCustom
+	bl      ARM32_SetBL
+	adr	r1, DloadProcessPacketCustom
+	ldr	r0, [.src]
+	bl	ARM32_SetBL
+	ldmfd	sp!, {pc\}
+
+	align 4
+	.src                    dw DloadProcessPacket + 8
+
 ; internal function - do not use
-; void DloadProcessPacketCustom ( const char *g_Hdlc );
 DloadProcessPacketCustom:
 	stmfd	sp!, {lr\}
 	ldrb	r4, [r0,#12]	; we need to return that value in r4 to DloadProcessPacket()
@@ -701,22 +721,6 @@ DloadProcessPacketCustom:
 	add	r0, #13
 _hook_DloadProcessPacketCustom:
 	nop
-	mov	r4, #0		; do not process further
 	ldmfd	sp!, {pc\}
-
-; void DloadPacketHandler ( void (*handler) ( const unsigned char *packet ) );
-DloadPacketHandler:
-	stmfd	sp!, {r4, lr\}
-	mov	r4, r0
-	adr	r1, DloadProcessPacketCustom
-	ldr	r0, [.src]
-	bl	ARM32_SetBL
-	mov     r1, r4
-	adr     r0, _hook_DloadProcessPacketCustom
-	bl      ARM32_SetBL
-	ldmfd	sp!, {r4, pc\}
-
-	align 4
-	.src                    dw DloadProcessPacket + 8
 
 END_INCLUDE_ONCE
