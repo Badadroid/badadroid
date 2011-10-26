@@ -313,6 +313,9 @@ DEFAULT_STRINGS_ADDR
    s_kernelreloc_a	  dw s_kernelreloc
    s_mmuoff_a		  dw s_mmuoff
    s_kernelreturn_a	  dw s_kernelreturn
+   s_atagcmdline_a	  dw s_atagcmdline
+   s_atagcmdlineRM_a	  dw s_atagcmdlineRM
+   s_atagcmdline_aa	  dw s_atagcmdline_a
    s_sbl_path_a 	  dw s_sbl_path
    s_loadsbl_a		  dw s_loadsbl
 
@@ -320,13 +323,14 @@ DEFAULT_STRINGS
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;; ;add custom strings below
    s_kernel_path	  du '/g/galaxyboot/zImage',0
    s_sbl_path		  du '/g/galaxyboot/sbl.bin',0
+   s_atagcmdlineRM	  db 'bootmode=2 console=ttySAC2,115200 loglevel=4',0
+   s_atagcmdline	  db 'console=ttySAC2,115200 loglevel=4',0
    s_loadkernel 	  db ' Loading kernel image to buf',0
    s_jumpingout 	  db ' Jumpout to 0x%X',0
    s_mmuoff		  db ' Turning off MMU',0
    s_kernelreloc	  db ' Reloc kernel to 0x%X',0
    s_kernelreturn	  db ' WTF KERNEL RETURNED',0
    s_loadsbl		  db ' Loading SBL',0
-   align 4
  
 FUNCTIONS
    
