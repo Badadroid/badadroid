@@ -43,7 +43,7 @@ DEFAULT_VARIABLES
     pagetable		dw gMMUL1PageTable
 
 
-    dump_size		dw 0x00010000 ;iROM size
+    dump_size		dw 0x00000024
 			;0x00000100 ;256B
 			;0x00010000 ;64KB
 			;0x00100000 ;1MB
@@ -54,7 +54,7 @@ DEFAULT_VARIABLES
 			;0x08000000 ;128MB
 
 
-    dump_what		 dw 0xD0000000 ;iROM area
+    dump_what		 dw 0xE0E00000
     dump_buf		 dw 0x44000000
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;; strings at the end
@@ -66,7 +66,7 @@ DEFAULT_STRINGS_ADDR
 
 DEFAULT_STRINGS
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;; ;add custom strings below
-    s_dumppath	     du '/g/dumps/0xD0000000.0x00010000.bin',0 ;where to save?
+    s_dumppath	     du '/g/dumps/SECKEY.bin',0 ;where to save?
 	
     s_dirpath	     du '/g/dumps/',0 ;dir command
 
