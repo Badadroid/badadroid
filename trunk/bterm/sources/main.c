@@ -16,7 +16,7 @@
 
 #define PROGRAM_TITLE           "bTerm"
 #define PROGRAM_VERSION_MAJOR   0
-#define PROGRAM_VERSION_MINOR   13
+#define PROGRAM_VERSION_MINOR   14
 
 
 typedef enum DloadCMD
@@ -349,7 +349,7 @@ int main ( int argc, char **argv )
 		}
 		else if ( !strncmp ( "dump ", cmd, 5 ) || !strncmp ( "dumpram ", cmd, 8 ) )
 		{
-			unsigned int address, length, packet_len, total_length, dumpram = 0;
+			unsigned int address, length, packet_len, total_length, dumpram, retries, rcvd = 0;
 
 			if ( !strncmp ( "dumpram ", cmd, 8 ) ) 
 			{
@@ -378,7 +378,8 @@ int main ( int argc, char **argv )
 							packet_len = 0x2000;
 						else
 							packet_len = length;
-					
+						retries = 0;
+retry:					
 						if ( dumpram )
 							SET_BYTE ( buf, 0, CMD_READ_RAM );
 						else
@@ -393,7 +394,18 @@ int main ( int argc, char **argv )
 						if ( bytesRead < packet_len )
 						{
 							printf ( "\nError receiving packet (%d bytes at 0x%08X). Received %d bytes only.", packet_len, address, bytesRead );
-							length = 0;
+							printf("\nRetrycount: %d/3", retries);
+							if(++retries <= 3)
+							{
+								printf("\nRetrying!");
+								Sleep(300);
+								goto retry;
+							}
+							else
+							{								
+								printf("\nAbandoning dump with total received 0x%08X bytes.", rcvd);
+								length = 0;
+							}
 						}
 						else
 						{
@@ -403,6 +415,7 @@ int main ( int argc, char **argv )
 
 							length -= packet_len;
 							address += packet_len;
+							rcvd += packet_len;
 							
 							percent = (float)100 * ( total_length - length ) / total_length;
 							printf ( "\b\b\b%02d%%", (unsigned int)percent );
