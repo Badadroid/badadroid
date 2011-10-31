@@ -74,12 +74,15 @@ DloadCmdHandler:
 	sub	r3, r1, #1
 	cmp	r3, #1
 	bhi	@f
-	b	DloadRead
+	b	DloadRead               ; CMD_READ_NAND, CMD_READ_RAM
 @@:
 	cmp	r1, #3
+	bne	@f
+	b	DloadRunCode            ; CMD_CODE_RUN
+@@:
+	cmp	r1, #4
 	bxne	lr
-	b	DloadRunCode
-
+	b	DloadResponseOK         ; CMD_CONN_CHECK
 
 	align 4
 	pagetable                       dw gMMUL1PageTable

@@ -703,7 +703,7 @@ DloadPacketHandler:
 	mov     r1, r0
 	adr     r0, _hook_DloadProcessPacketCustom
 	bl      ARM32_SetBL
-	adr	r1, DloadProcessPacketCustom
+	adr	r1, _DloadProcessPacketCustom
 	ldr	r0, [.src]
 	bl	ARM32_SetBL
 	ldmfd	sp!, {pc\}
@@ -712,7 +712,7 @@ DloadPacketHandler:
 	.src                    dw DloadProcessPacket + 8
 
 ; internal function - do not use
-DloadProcessPacketCustom:
+_DloadProcessPacketCustom:
 	stmfd	sp!, {lr\}
 	ldrb	r4, [r0,#12]	; we need to return that value in r4 to DloadProcessPacket()
 	cmp	r4, #0xDE	; unused, for now

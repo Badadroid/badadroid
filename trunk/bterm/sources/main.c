@@ -16,8 +16,29 @@
 
 #define PROGRAM_TITLE           "bTerm"
 #define PROGRAM_VERSION_MAJOR   0
-#define PROGRAM_VERSION_MINOR   14
+#define PROGRAM_VERSION_MINOR   15
 
+const char *DloadResponseType[] =
+{
+	"ACK",
+	"NAK_INVALID_FCS",
+	"NAK_INVALID_DEST",
+	"NAK_INVALID_LEN",
+	"NAK_EARLY_END",
+	"NAK_TOO_LARGE",
+	"NAK_INVALID_CMD",
+	"NAK_FAILED",
+	"NAK_WRONG_IID",
+	"NAK_BAD_VPP",
+	"NAK_OP_NOT_PERMITTED",
+	"NAK_INVALID_ADDR",
+	"NAK_VERIFY_FAILED",
+	"NAK_NO_SEC_CODE",
+	"NAK_BAD_SEC_CODE",
+	"NAK_FLASH_ERROR",
+	"NAK_INVALID_CONTENT",
+	""
+};
 
 typedef enum DloadCMD
 {
@@ -50,7 +71,8 @@ typedef enum DloadCMDCustom
 {
 	CMD_READ_NAND          = 0x01,
 	CMD_READ_RAM           = 0x02,
-	CMD_CODE_RUN           = 0x03
+	CMD_CODE_RUN           = 0x03,
+	CMD_CONN_CHECK         = 0x04
 } DloadCMDCustom;
 
 
@@ -167,6 +189,9 @@ unsigned int get_packet ( DloadCMD type, unsigned char *buffer )
 	unsigned int byte, packet_ok = 0, mode = 0, i = 0, pos = 0, length;
 
 	term_receive ( packet, 0x4200, &length );
+
+	if ( 6 == length && 2 == packet[2] )
+		return 0xFFFFFFFF;
 	
 	while ( i < length )
 	{
@@ -259,6 +284,18 @@ unsigned int get_packet ( DloadCMD type, unsigned char *buffer )
 		return 0;
 }
 
+unsigned int check_connection ( void )
+{
+	unsigned char buf[] = { CMD_CONN_CHECK };
+
+	send_packet ( CMD_CUSTOM, buf, 1 );
+
+	if ( 0xFFFFFFFF == get_packet ( CMD_CUSTOM, buf ) )
+		return RXE_OK;
+
+	return RXE_FAIL;
+}
+
 const char *print_bytes ( unsigned int bytes )
 {
 	static char print_bytes[0x100];
@@ -322,6 +359,7 @@ int main ( int argc, char **argv )
 	printf ( "Available commands:\n"
 	         " open                       - open the COM port\n"
 	         " close                      - close the COM port\n"
+	         " check                      - check the connection\n"
 	         " dump    <address> <length> - dump NAND area\n"
 			 " dumpram <address> <length> - dump RAM area\n"
 			 " run  <path_to_file>        - execute the code from file\n"
@@ -331,25 +369,35 @@ int main ( int argc, char **argv )
 	{
 		if ( !strcmp ( "open", cmd ) )
 		{
-			if ( term_open ( COMSearch ( ) ) == RXE_OK )
+			if ( term_open ( COMSearch ( ) ) == RXE_OK )       //CMD_CONN_OPEN
 			{
 				term_set_control ( 1382400, 8, 1, 0, 0 );
 				term_send ( "AT+FUS?\r\n", 9 );
+				check_connection ( );
 				term_receive ( buf, 0x4200, &bytesRead );
 			}
 		}
 		else if ( !strcmp ( "close", cmd ) )
 		{
 			term_close ( );
+			check_connection ( );
 		}
 		else if ( !strcmp ( "exit", cmd ) )
 		{
 			term_close ( );
+			check_connection ( );
 			break;
+		}
+		else if ( !strcmp ( "check", cmd ) )
+		{
+			if ( RXE_OK == check_connection ( ) )
+				printf ( "Phone response OK\n" );
+			else
+				printf ( "Phone response FAIL\n" );
 		}
 		else if ( !strncmp ( "dump ", cmd, 5 ) || !strncmp ( "dumpram ", cmd, 8 ) )
 		{
-			unsigned int address, length, packet_len, total_length, dumpram, retries, rcvd = 0;
+			unsigned int address, length, packet_len, total_length, dumpram = 0;
 
 			if ( !strncmp ( "dumpram ", cmd, 8 ) ) 
 			{
@@ -374,51 +422,60 @@ int main ( int argc, char **argv )
 					
 					do
 					{
+						unsigned int retries = 3;
+
 						if ( length > 0x2000 )
 							packet_len = 0x2000;
 						else
 							packet_len = length;
-						retries = 0;
-retry:					
-						if ( dumpram )
-							SET_BYTE ( buf, 0, CMD_READ_RAM );
-						else
-							SET_BYTE ( buf, 0, CMD_READ_NAND );
 
-						SET_WORD ( buf, 1, address );
-						SET_HALF ( buf, 5, packet_len );
-
-						send_packet ( CMD_CUSTOM, buf, 7 );
-						bytesRead = get_packet ( CMD_CUSTOM, buf );
-
-						if ( bytesRead < packet_len )
+						while ( retries-- )
 						{
-							printf ( "\nError receiving packet (%d bytes at 0x%08X). Received %d bytes only.", packet_len, address, bytesRead );
-							printf("\nRetrycount: %d/3", retries);
-							if(++retries <= 3)
+							if ( dumpram )
+								SET_BYTE ( buf, 0, CMD_READ_RAM );
+							else
+								SET_BYTE ( buf, 0, CMD_READ_NAND );
+
+							SET_WORD ( buf, 1, address );
+							SET_HALF ( buf, 5, packet_len );
+
+							send_packet ( CMD_CUSTOM, buf, 7 );
+							bytesRead = get_packet ( CMD_CUSTOM, buf );
+
+							if ( bytesRead < packet_len )
 							{
-								printf("\nRetrying!");
-								Sleep(300);
-								goto retry;
+								if ( RXE_OK == check_connection ( ) )
+								{
+									printf ( "\nError receiving packet (%d bytes at 0x%08X). Received %d bytes only.", packet_len, address, bytesRead );
+									printf ( "\nRetrying(%d/3)...\n", 2 - retries );
+									Sleep ( 300 );
+								}
+								else
+								{
+									printf ( "\nConnection failed!\n" );
+									retries = 0;
+								}
+
+								if ( 0 == retries )
+								{
+									printf ( "\nAbandoning dump with total received 0x%08X bytes.", total_length - length );
+									length = 0;
+									break;
+								}
 							}
 							else
-							{								
-								printf("\nAbandoning dump with total received 0x%08X bytes.", rcvd);
-								length = 0;
-							}
-						}
-						else
-						{
-							float percent;
-							
-							fwrite ( buf, 1, bytesRead, fh );
+							{
+								float percent;
 
-							length -= packet_len;
-							address += packet_len;
-							rcvd += packet_len;
-							
-							percent = (float)100 * ( total_length - length ) / total_length;
-							printf ( "\b\b\b%02d%%", (unsigned int)percent );
+								fwrite ( buf, 1, bytesRead, fh );
+
+								length -= packet_len;
+								address += packet_len;
+
+								percent = (float)100 * ( total_length - length ) / total_length;
+								printf ( "\b\b\b%02d%%", (unsigned int)percent );
+								break;
+							}
 						}
 					}
 					while ( length > 0 );
@@ -443,8 +500,11 @@ retry:
 					SET_HALF ( buf, 1, code_length );
 
 					send_packet ( CMD_CUSTOM, buf, code_length + 3 );
-					bytesRead = get_packet ( CMD_CUSTOM, buf );
-					printf ( "OK - %d\n", bytesRead );
+
+					if ( RXE_OK == check_connection ( ) )
+						printf ( "OK\n" );
+					else
+						printf ( "FAIL\n" );
 				}
 			}
 			else
