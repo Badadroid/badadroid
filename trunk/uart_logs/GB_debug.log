@@ -1,4 +1,4 @@
-GB kernel booted on S8530 using bl_univ_boot FOTA, compiled using wave_s8500_debug_defconfig 
+GB kernel booted on S8530 using bl_univ_boot FOTA, compiled using wave_s8500_debug_defconfig WITHOUT initramfs
 
 [PAM:   ] ++FSR_PAM_Init
 [PAM:   ]   OneNAND physical base address       : 0xb0000000
