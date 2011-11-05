@@ -60,8 +60,7 @@ DEFAULT_VARIABLES
 	dump_buf                   dw 0x44000000
 	flash_dump_adr             dw 0x1EC11000
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;; strings at the end
-DEFAULT_STRINGS_ADDR
+
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;; add custom strings addresses below (for using by LDR op)
 	s_dumppath_a               dw s_dumppath

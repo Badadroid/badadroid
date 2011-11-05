@@ -173,8 +173,7 @@ DEFAULT_VARIABLES
     ldmfd_r11_pc	dw 0xE8BD8800
     sbl_lcd_patch	dw 0x40250F94
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;; strings at the end
-DEFAULT_STRINGS_ADDR
+
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;; add custom strings addresses below (for using by LDR op)
     s_kernel_path_a  dw s_kernel_path

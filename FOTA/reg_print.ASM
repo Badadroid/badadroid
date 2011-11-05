@@ -123,8 +123,7 @@ DEFAULT_VARIABLES
     TZIC2FIQEnable	dw 0xF8000130;0xF2200f00
     TZIC3FIQEnable	dw 0xF8000134;0xF2300f00
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;; strings at the end
-DEFAULT_STRINGS_ADDR
+
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;; add custom strings addresses below (for using by LDR op)
 

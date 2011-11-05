@@ -1,4 +1,4 @@
-include 'inc/settings.inc'              ; user dependend settings
+include 'inc/settings.inc'		; user dependend settings
 
 CODE_BUFFER equ BUF2_DRAM_START
 DUMP_BUFFER equ CODE_BUFFER + 1 MB
@@ -6,7 +6,7 @@ DUMP_BUFFER equ CODE_BUFFER + 1 MB
 START
 	bl	enable_fota_output
 
-	adr	r0, DloadCmdHandler     ; register our handler
+	adr	r0, DloadCmdHandler	; register our handler
 	bl	DloadPacketHandler
 
 	mov	r1, #1
@@ -18,7 +18,7 @@ START
 
 	bl	dloadmode
 
-	NORETURN                        ; endless loop
+	NORETURN			; endless loop
 
 
 DloadRead:
@@ -43,7 +43,7 @@ DloadRead:
 	b	.transmite
 @@:
 	cmp	r3, #2
-	ldmfdne	sp!, {r4, pc}
+	ldmfdne sp!, {r4, pc}
 	ldr	r0, [dump_buf]
 	mov	r2, r4
 	bl	memcpy
@@ -74,27 +74,26 @@ DloadCmdHandler:
 	sub	r3, r1, #1
 	cmp	r3, #1
 	bhi	@f
-	b	DloadRead               ; CMD_READ_NAND, CMD_READ_RAM
+	b	DloadRead		; CMD_READ_NAND, CMD_READ_RAM
 @@:
 	cmp	r1, #3
 	bne	@f
-	b	DloadRunCode            ; CMD_CODE_RUN
+	b	DloadRunCode		; CMD_CODE_RUN
 @@:
 	cmp	r1, #4
 	bxne	lr
-	b	DloadResponseOK         ; CMD_CONN_CHECK
+	b	DloadResponseOK 	; CMD_CONN_CHECK
 
 	align 4
-	pagetable                       dw gMMUL1PageTable
-	dump_buf                        dw DUMP_BUFFER
-	code_buf                        dw CODE_BUFFER
+	pagetable			dw gMMUL1PageTable
+	dump_buf			dw DUMP_BUFFER
+	code_buf			dw CODE_BUFFER
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 FUNCTIONS
 
 DEFAULT_VARIABLES
-DEFAULT_STRINGS_ADDR
 DEFAULT_STRINGS
 
 END
