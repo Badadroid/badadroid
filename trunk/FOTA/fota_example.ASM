@@ -24,8 +24,7 @@ FUNCTIONS ;macro from functions.inc
 DEFAULT_VARIABLES	;macro from vars.inc
     pagetable 		 dw gMMUL1PageTable
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;; strings at the end
-DEFAULT_STRINGS_ADDR	;macro from vars.inc
+	;macro from vars.inc
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;; add custom strings addresses below (for using by LDR op)
     s_dir_path_a     dw s_dir_path

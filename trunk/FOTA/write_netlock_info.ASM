@@ -76,8 +76,7 @@ DEFAULT_VARIABLES
 			;0x02000000 ;32MB
 			;0x08000000 ;128MB
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;; strings at the end
-DEFAULT_STRINGS_ADDR
+
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;; add custom strings addresses below (for using by LDR op)
     s_netlock_path_a	 dw s_netlock_path

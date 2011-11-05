@@ -28,8 +28,7 @@ DEFAULT_VARIABLES
    ; dump_what           dw 0xD0000000
 
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;; strings at the end
-DEFAULT_STRINGS_ADDR
+
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;; add custom strings addresses below (for using by LDR op)
 

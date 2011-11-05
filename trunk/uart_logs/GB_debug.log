@@ -1,0 +1,2114 @@
+GB kernel booted on S8530 using bl_univ_boot FOTA, compiled using wave_s8500_debug_defconfig 
+
+[PAM:   ] ++FSR_PAM_Init
+[PAM:   ]   OneNAND physical base address       : 0xb0000000
+[PAM:   ]   OneNAND virtual  base address       : 0xb0000000
+[PAM:   ]   FSR_PAM_InitNANDController Success!!
+[PAM:   ] --FSR_PAM_Init
+bl3_info_block 1 age = 29
+                         bl3_info_block 2 age = 30
+                                                  BL3_2 Loading
+                                                                +-------------------------------+
+| Bootloader Shadowing FINISHED |
++-------------------------------+
+Launch Image at 0x42480000
+
+[BOOT_V1.0  (Jan  4 2011, 09:35:22)]
+                                     SelectBootingMode: H/W...0x3.
+                                                                  [BOOT] ARMCLK: 400000 KHz, MSYSHCLK 200000 KHz,MSYSPCLK: 100000 KHz,                            [BOOT] DSYSHCLK 166750 KHz,DSYSPCLK: 83375 KHz,PSYSHCLK: 133400 KHz, PSYSPCLK: 66700 KHz,SYSCON_A2M: 200000 KHz
+Flash_Unlock failed
+Poweron status - 20
+                   FSA9480 0x03 Register = 1
+FSA9480 0x0A Register = 0
+FSA9480 0x0B Register = 8
+FSA9480 0x07 Register = 1c
+SelectBootingMode: Boot Mode = 1...
+                                   +++FIMD_Drv_INITIALIZE
+                                                         FIMD_Drv_ChangeMode: MDNIE_MODE
+Frame Rate:62   SCLK_FIMD:133400 kHz    ClkDiv:4
+                                                ---FIMD_Drv_INITIALIZE
+                                                                      ---FIMD_Drv_SetWinOnOff(WIN4:1)
+                                                                                                     LCD initialize Finished
+ UART OUTPUT ENABLED
++SDHC_Open(Ch0)
+               univ_SD_MEM_PowerOnDevice() : Power On
+                                                     univ_SD_MEM_PowerOnDevice(ch0) : MASSMEMORY_EN Power On
+                                                                                                            [SDHC] MPLL source clock from SYSCON : 667000000Hz
+[SDHC] SDHC(ch0) source clock from SYSCON : 47642000Hz
+[SDHC] SDHC(ch0) Operating Clock : 372203Hz
+[SDHC][MMC]byte mode
+SD_MEM_Phy_CMD2(ch0) : CID(127~0) : 0x450100, 0x53454d30, 0x32479070, 0xcf4d411e
+                                                                                MMC_Spec = 4
+----------------CSD Version 1.0--------in low level-------------
+channel: [0]
+One Block Size: [512]Byte
+Total card Block Count = [3825664]
+Total card Capacity Size  = [1868]MB
+---------------------------------------------------
+SD_HostCtrl_IssueCommand[ch0] not SDclk off, cmd13, SD_CLK_CTRL:0x400f
+SD_MEM_Phy_TransferState(ch0) :High: Tx : SD_FeedBackClock_BasicDelay
+SD_MEM_Phy_TransferState(ch0) :High: Rx : SD_FeedBackClock_BasicDelay
+[SDHC] MPLL source clock from SYSCON : 667000000Hz
+[SDHC] SDHC(ch0) source clock from SYSCON : 47642000Hz
+[SDHC] SDHC(ch0) Operating Clock : 47642000Hz
+SD_HostCtrl_IssueCommand[ch0] not SDclk off, cmd13, SD_CLK_CTRL:0xf
+SD_HostCtrl_IssueCommand[ch0] not SDclk off, cmd13, SD_CLK_CTRL:0xf
+-SDHC_Open(Ch0)
+                debug: 0x31FC38
+ Loading kernel image to buf
+ loadfile to 0x44000000
+ loadsize is 3275832 bytes
+ debug: 3275832
+ done!
+ Loading SBL
+ loadfile to 0x40244000
+ loadsize is 1310720 bytes
+ debug: 1310720
+ done!
+ Turning off MMU & configuring DMC
+ done!
+ 0x438002A5->0x3000012C,len=0x22
+ done!
+ debug: 0x43800852
+ 0x44000000->0x32000000,len=0x31FC38
+ done!
+ done!
+ done!
+DISPLAY_PATH_SEL[MDNIE 0x1]is on
+MDNIE setting Init start!!
+vsync interrupt is off
+video interrupt is off
+[fb0] turn on
+MDNIE setting Init end!!
+ Jumpout to 0x32000000
+Uncompressing Linux... done, booting the kernel.
+<6>Initializing cgroup subsys cpu
+<5>Linux version 2.6.35.7-g998422f-dirty (rebell@Rebell-PC) (gcc version 4.4.1 (Sourcery G++ Lite 2009q3-68) ) #17 PREEMPT Fri Nov 4 08:05:26 CET 2011
+CPU: ARMv7 Processor [412fc082] revision 2 (ARMv7), cr=10c53c7f
+CPU: VIPT nonaliasing data cache, VIPT nonaliasing instruction cache
+Machine: wave
+Memory policy: ECC disabled, Data cache writeback
+<7>On node 0 totalpages: 20480
+<7>free_area_init_node: node 0, pgdat c0890b90, node_mem_map c0b60000
+<7>  Normal zone: 160 pages used for memmap
+<7>  Normal zone: 0 pages reserved
+<7>  Normal zone: 20320 pages, LIFO batch:3
+<7>On node 1 totalpages: 65536
+<7>free_area_init_node: node 1, pgdat c0891218, node_mem_map d0002000
+<7>  Normal zone: 512 pages used for memmap
+<7>  Normal zone: 0 pages reserved
+<7>  Normal zone: 65024 pages, LIFO batch:15
+<7>On node 2 totalpages: 0
+<7>free_area_init_node: node 2, pgdat c08918a0, node_mem_map c0c08c20
+<4>  Normal zone: 1 pages exceeds realsize 0
+<7>On node 3 totalpages: 0
+<7>free_area_init_node: node 3, pgdat c0891f28, node_mem_map c0c10ce0
+<4>  Normal zone: 1 pages exceeds realsize 0
+CPU S5PV210/S5PC110 (id 0x43110222)
+<7>s5pv210_init_clocks: initializing clocks
+<6>S3C24XX Clocks, Copyright 2004 Simtec Electronics
+<7>s5pv210_setup_clocks: registering clocks
+<7>s5pv210_setup_clocks: clkdiv0 = 14131330, clkdiv1 = 00300400
+<7>s5pv210_setup_clocks: xtal is 24000000
+<6>S5PV210: PLL settings, A=800000000, M=667000000, E=80000000 V=54000000<6>S5PV210: ARMCLK=800000000, HCLKM=200000000, HCLKD=166750000
+HCLKP=133400000, PCLKM=100000000, PCLKD=83375000, PCLKP=66700000
+<6>sclk_dmc: source is mout_mpll (1), rate is 166750000
+<6>sclk_onenand: source is hclk_dsys (1), rate is 83375000
+<6>sclk: source is mout_mpll (6), rate is 133400000
+<6>sclk: source is mout_mpll (6), rate is 66700000
+<6>sclk: source is mout_mpll (6), rate is 66700000
+<6>sclk: source is mout_mpll (6), rate is 66700000
+<6>sclk_mixer: source is sclk_dac (0), rate is 54000000
+<6>sclk_spdif: source is sclk_audio (0), rate is 24000000
+<6>sclk_fimc: source is ext_xtal (0), rate is 24000000
+<6>sclk_fimc: source is ext_xtal (0), rate is 24000000
+<6>sclk_fimc: source is ext_xtal (0), rate is 24000000
+<6>sclk_cam: source is xusbxti (1), rate is 24000000
+<6>sclk_cam: source is ext_xtal (0), rate is 24000000
+<6>sclk_fimd: source is mout_mpll (6), rate is 166750000
+<6>sclk_mmc: source is mout_mpll (6), rate is 51307692
+<6>sclk_mmc: source is mout_mpll (6), rate is 47642857
+<6>sclk_mmc: source is mout_mpll (6), rate is 47642857
+<6>sclk_mmc: source is mout_mpll (6), rate is 47642857
+<6>sclk_mfc: source is sclk_a2m (0), rate is 200000000
+<6>sclk_fimg2d: source is sclk_a2m (0), rate is 200000000
+<6>sclk: source is mout_mpll (1), rate is 66700000
+<6>sclk_csis: source is ext_xtal (0), rate is 24000000
+<6>sclk_spi: source is mout_epll (7), rate is 80000000
+<6>sclk_spi: source is mout_epll (7), rate is 80000000
+<6>sclk_pwi: source is ext_xtal (0), rate is 24000000
+<6>sclk_pwm: source is ext_xtal (0), rate is 24000000
+<6>sclk_mdnie: source is mout_mpll (6), rate is 166750000
+<6>sclk_mdnie_pwm: source is ext_xtal (0), rate is 24000000
+<6>s5pv210: 33554432 bytes system memory reserved for mfc at 0x30c1b000
+<6>s5pv210: 33554432 bytes system memory reserved for mfc at 0x40204000
+<6>s5pv210: 12582912 bytes system memory reserved for fimc0 at 0x42204000
+<6>s5pv210: 10137600 bytes system memory reserved for fimc1 at 0x42e04000
+<6>s5pv210: 12582912 bytes system memory reserved for fimc2 at 0x437af000
+<6>s5pv210: 5132288 bytes system memory reserved for jpeg at 0x32c1b000
+<6>s5pv210: 3072000 bytes system memory reserved for fimd at 0x443af000
+<6>s5pv210: 5683200 bytes system memory reserved for pmem at 0x33100000
+<6>s5pv210: 3379200 bytes system memory reserved for pmem_gpu1 at 0x3366c000
+<6>s5pv210: 1536000 bytes system memory reserved for pmem_adsp at 0x339a5000
+<6>s5pv210: 3072000 bytes system memory reserved for s3c_bc at 0x4469d000
+Built 2 zonelists in Zone order, mobility grouping on.  Total pages: 85344
+<5>Kernel command line: console=ttySAC2,115200 loglevel=4
+<6>PID hash table entries: 2048 (order: 1, 8192 bytes)
+<6>Dentry cache hash table entries: 65536 (order: 6, 262144 bytes)
+<6>Inode-cache hash table entries: 32768 (order: 5, 131072 bytes)
+<6>Memory: 80MB 256MB = 336MB total
+<5>Memory: 207856k/207856k available, 136208k reserved, 0K highmem
+<5>Virtual kernel memory layout:
+    vector  : 0xffff0000 - 0xffff1000   (   4 kB)
+    fixmap  : 0xfff00000 - 0xfffe0000   ( 896 kB)
+    DMA     : 0xff000000 - 0xffe00000   (  14 MB)
+    vmalloc : 0xe0800000 - 0xfc000000   ( 440 MB)
+    lowmem  : 0xc0000000 - 0xe0000000   ( 512 MB)
+    modules : 0xbf000000 - 0xc0000000   (  16 MB)
+      .init : 0xc0008000 - 0xc002e000   ( 152 kB)
+      .text : 0xc002e000 - 0xc088b000   (8564 kB)
+      .data : 0xc088c000 - 0xc09d2100   (1305 kB)
+<6>SLUB: Genslabs=9, HWalign=64, Order=0-3, MinObjects=0, CPUs=1, Nodes=4
+<6>Hierarchical RCU implementation.
+<6>     RCU-based detection of stalled CPUs is disabled.
+<6>     Verbose stalled-CPUs detection is disabled.
+<6>NR_IRQS:393
+<6>VIC @fd000000: id 0x00041192, vendor 0x41
+<6>VIC @fd010000: id 0x00041192, vendor 0x41
+<6>VIC @fd020000: id 0x00041192, vendor 0x41
+<6>VIC @fd030000: id 0x00041192, vendor 0x41
+<6>mult[140737]
+<6>max_delta_ns[2937815369]
+<6>min_delta_ns[30517]
+<6>rate[32768]
+<6>HZ[256]
+Console: colour dummy device 80x30
+<7>Called init of GPS UART port, while it is N/C!
+<6>console [ttySAC2] enabled
+<6>Calibrating delay loop... <c>796.20 BogoMIPS (lpj=1556480)
+<6>pid_max: default: 32768 minimum: 301
+Mount-cache hash table entries: 512
+<6>Initializing cgroup subsys debug
+<6>Initializing cgroup subsys cpuacct
+<6>Initializing cgroup subsys freezer
+<6>CPU: Testing write buffer coherency: ok
+<0>KERNEL:kernel_sec_get_debug_level_from_boot=0x574f4c44
+[    0.121731] KERNEL:kernel_sec_get_debug_level_from_b<ot=0x574f4c44
+0>KERNEL:magic_number=0x0 DEBUG LEVEL low!!
+[    0.131783] KERNEL:magic_number=0x0 DEB<G LEVEL low!!
+0>(kernel_sec_set_upload_cause) : upload_cause set 0
+[    0.141489] (kernel_sec_set_upload_cause) : upload_cause set 0
+<7>device: 'platform': device_add
+<7>PM: Adding info for No Bus:platform
+<7>bus: 'platform': registered
+<7>Registering sysdev class 'cpu'
+<7>Registering sysdev class 's5pv210-core'
+<7>Registering platform device 'power.0'. Parent at platform
+<7>device: 'power.0': device_add
+<7>bus: 'platform': add device power.0
+<7>PM: Adding info for platform:power.0
+<7>bus: 'platform': add driver power
+<7>bus: 'platform': driver_probe_device: matched device power.0 with driver power
+<7>bus: 'platform': really_probe: probing driver power with device power.0
+<7>driver: 'power.0': driver_bound: bound to device 'power'
+<7>bus: 'platform': really_probe: bound device power.0 to driver power
+<6>regulator: core version 0.5
+<7>device class 'regulator': registering
+<6>NET: Registered protocol family 16
+<7>device class 'bdi': registering
+<7>device class 'gpio': registering
+<7>device: 'gpiochip0': device_add
+<7>PM: Adding info for No Bus:gpiochip0
+<7>device: 'gpiochip9': device_add
+<7>PM: Adding info for No Bus:gpiochip9
+<7>device: 'gpiochip14': device_add
+<7>PM: Adding info for No Bus:gpiochip14
+<7>device: 'gpiochip23': device_add
+<7>PM: Adding info for No Bus:gpiochip23
+<7>device: 'gpiochip29': device_add
+<7>PM: Adding info for No Bus:gpiochip29
+<7>device: 'gpiochip35': device_add
+<7>PM: Adding info for No Bus:gpiochip35
+<7>device: 'gpiochip40': device_add
+<7>PM: Adding info for No Bus:gpiochip40
+<7>device: 'gpiochip47': device_add
+<7>PM: Adding info for No Bus:gpiochip47
+<7>device: 'gpiochip56': device_add
+<7>PM: Adding info for No Bus:gpiochip56
+<7>device: 'gpiochip62': device_add
+<7>PM: Adding info for No Bus:gpiochip62
+<7>device: 'gpiochip71': device_add
+<7>PM: Adding info for No Bus:gpiochip71
+<7>device: 'gpiochip80': device_add
+<7>PM: Adding info for No Bus:gpiochip80
+<7>device: 'gpiochip89': device_add
+<7>PM: Adding info for No Bus:gpiochip89
+<7>device: 'gpiochip96': device_add
+<7>PM: Adding info for No Bus:gpiochip96
+<7>device: 'gpiochip104': device_add
+<7>PM: Adding info for No Bus:gpiochip104
+<7>device: 'gpiochip112': device_add
+<7>PM: Adding info for No Bus:gpiochip112
+<7>device: 'gpiochip120': device_add
+<7>PM: Adding info for No Bus:gpiochip120
+<7>device: 'gpiochip128': device_add
+<7>PM: Adding info for No Bus:gpiochip128
+<7>device: 'gpiochip137': device_add
+<7>PM: Adding info for No Bus:gpiochip137
+<7>device: 'gpiochip146': device_add
+<7>PM: Adding info for No Bus:gpiochip146
+<7>device: 'gpiochip155': device_add
+<7>PM: Adding info for No Bus:gpiochip155
+<7>device: 'gpiochip164': device_add
+<7>PM: Adding info for No Bus:gpiochip164
+<7>device: 'gpiochip172': device_add
+<7>PM: Adding info for No Bus:gpiochip172
+<7>device: 'gpiochip181': device_add
+<7>PM: Adding info for No Bus:gpiochip181
+<7>device: 'gpiochip188': device_add
+<7>PM: Adding info for No Bus:gpiochip188
+<7>device: 'gpiochip197': device_add
+<7>PM: Adding info for No Bus:gpiochip197
+<7>device: 'gpiochip206': device_add
+<7>PM: Adding info for No Bus:gpiochip206
+<7>device: 'gpiochip212': device_add
+<7>PM: Adding info for No Bus:gpiochip212
+<7>device: 'gpiochip221': device_add
+<7>PM: Adding info for No Bus:gpiochip221
+<7>device: 'gpiochip226': device_add
+<7>PM: Adding info for No Bus:gpiochip226
+<7>device: 'gpiochip235': device_add
+<7>PM: Adding info for No Bus:gpiochip235
+<7>device: 'gpiochip244': device_add
+<7>PM: Adding info for No Bus:gpiochip244
+<7>device: 'gpiochip253': device_add
+<7>PM: Adding info for No Bus:gpiochip253
+<7>device: 'gpiochip262': device_add
+<7>PM: Adding info for No Bus:gpiochip262
+<7>device: 'gpiochip271': device_add
+<7>PM: Adding info for No Bus:gpiochip271
+<7>device: 'gpiochip280': device_add
+<7>PM: Adding info for No Bus:gpiochip280
+<7>device: 'gpiochip289': device_add
+<7>PM: Adding info for No Bus:gpiochip289
+<7>device: 'gpiochip298': device_add
+<7>PM: Adding info for No Bus:gpiochip298
+<7>device: 'gpiochip307': device_add
+<7>PM: Adding info for No Bus:gpiochip307
+<7>device: 'gpiochip316': device_add
+<7>PM: Adding info for No Bus:gpiochip316
+<7>device: 'gpiochip325': device_add
+<7>PM: Adding info for No Bus:gpiochip325
+<7>device: 'gpiochip334': device_add
+<7>PM: Adding info for No Bus:gpiochip334
+<7>device: 'gpiochip343': device_add
+<7>PM: Adding info for No Bus:gpiochip343
+<7>device: 'gpiochip351': device_add
+<7>PM: Adding info for No Bus:gpiochip351
+<7>device: 'gpiochip360': device_add
+<7>PM: Adding info for No Bus:gpiochip360
+<7>device: 'gpiochip369': device_add
+<7>PM: Adding info for No Bus:gpiochip369
+<7>device: 'gpiochip378': device_add
+<7>PM: Adding info for No Bus:gpiochip378
+<7>device: 'gpiochip387': device_add
+<7>PM: Adding info for No Bus:gpiochip387
+<7>device: 'gpiochip396': device_add
+<7>PM: Adding info for No Bus:gpiochip396
+<7>device: 'gpiochip405': device_add
+<7>PM: Adding info for No Bus:gpiochip405
+<7>device: 'gpiochip414': device_add
+<7>PM: Adding info for No Bus:gpiochip414
+<7>device: 'gpiochip423': device_add
+<7>PM: Adding info for No Bus:gpiochip423
+<7>device: 'gpiochip431': device_add
+<7>PM: Adding info for No Bus:gpiochip431
+<7>device: 'gpiochip438': device_add
+<7>PM: Adding info for No Bus:gpiochip438
+<7>device: 'gpiochip447': device_add
+<7>PM: Adding info for No Bus:gpiochip447
+<7>device: 'gpiochip456': device_add
+<7>PM: Adding info for No Bus:gpiochip456
+<7>device class 'lcd': registering
+<7>device class 'backlight': registering
+<7>bus: 'amba': registered
+<7>device class 'tty': registering
+<7>device class 'vtconsole': registering
+<7>device: 'vtcon0': device_add
+<7>PM: Adding info for No Bus:vtcon0
+<7>bus: 'spi': registered
+<7>device class 'spi_master': registering
+<7>bus: 'i2c': registered
+<7>bus: 'i2c': add driver dummy
+<7>bus: 'platform': add driver ram_console
+<7>Registering platform device 'watchdog'. Parent at platform
+<7>device: 'watchdog': device_add
+<7>bus: 'platform': add device watchdog
+<7>PM: Adding info for platform:watchdog
+<7>Registering platform device 's5pc110-onenand'. Parent at platform
+<7>device: 's5pc110-onenand': device_add
+<7>bus: 'platform': add device s5pc110-onenand
+<7>PM: Adding info for platform:s5pc110-onenand
+<7>Registering platform device 's3c2410-rtc'. Parent at platform
+<7>device: 's3c2410-rtc': device_add
+<7>bus: 'platform': add device s3c2410-rtc
+<7>PM: Adding info for platform:s3c2410-rtc
+<7>Registering platform device 'gpio-event.0'. Parent at platform
+<7>device: 'gpio-event.0': device_add
+<7>bus: 'platform': add device gpio-event.0
+<7>PM: Adding info for platform:gpio-event.0
+<7>Registering platform device 's3c-keypad'. Parent at platform
+<7>device: 's3c-keypad': device_add
+<7>bus: 'platform': add device s3c-keypad
+<7>PM: Adding info for platform:s3c-keypad
+<7>Registering platform device 's5pc1xx-iis.0'. Parent at platform
+<7>device: 's5pc1xx-iis.0': device_add
+<7>bus: 'platform': add device s5pc1xx-iis.0
+<7>PM: Adding info for platform:s5pc1xx-iis.0
+<7>Registering platform device 'samsung-pcm.1'. Parent at platform
+<7>device: 'samsung-pcm.1': device_add
+<7>bus: 'platform': add device samsung-pcm.1
+<7>PM: Adding info for platform:samsung-pcm.1
+<7>Registering platform device 's3c2410-wdt'. Parent at platform
+<7>device: 's3c2410-wdt': device_add
+<7>bus: 'platform': add device s3c2410-wdt
+<7>PM: Adding info for platform:s3c2410-wdt
+<7>Registering platform device 's3cfb'. Parent at platform
+<7>device: 's3cfb': device_add
+<7>bus: 'platform': add device s3cfb
+<7>PM: Adding info for platform:s3cfb
+<7>Registering platform device 's3c-mfc'. Parent at platform
+<7>device: 's3c-mfc': device_add
+<7>bus: 'platform': add device s3c-mfc
+<7>PM: Adding info for platform:s3c-mfc
+<7>Registering platform device 's3c-adc'. Parent at platform
+<7>device: 's3c-adc': device_add
+<7>bus: 'platform': add device s3c-adc
+<7>PM: Adding info for platform:s3c-adc
+<7>Registering platform device 's3c-fimc.0'. Parent at platform
+<7>device: 's3c-fimc.0': device_add
+<7>bus: 'platform': add device s3c-fimc.0
+<7>PM: Adding info for platform:s3c-fimc.0
+<7>Registering platform device 's3c-fimc.1'. Parent at platform
+<7>device: 's3c-fimc.1': device_add
+<7>bus: 'platform': add device s3c-fimc.1
+<7>PM: Adding info for platform:s3c-fimc.1
+<7>Registering platform device 's3c-fimc.2'. Parent at platform
+<7>device: 's3c-fimc.2': device_add
+<7>bus: 'platform': add device s3c-fimc.2
+<7>PM: Adding info for platform:s3c-fimc.2
+<7>Registering platform device 's3c-jpg'. Parent at platform
+<7>device: 's3c-jpg': device_add
+<7>bus: 'platform': add device s3c-jpg
+<7>PM: Adding info for platform:s3c-jpg
+<7>Registering platform device 'pvrsrvkm'. Parent at platform
+<7>device: 'pvrsrvkm': device_add
+<7>bus: 'platform': add device pvrsrvkm
+<7>PM: Adding info for platform:pvrsrvkm
+<7>Registering platform device 's3c_lcd'. Parent at platform
+<7>device: 's3c_lcd': device_add
+<7>bus: 'platform': add device s3c_lcd
+<7>PM: Adding info for platform:s3c_lcd
+<7>Registering platform device 'spi_gpio.3'. Parent at s3cfb
+<7>device: 'spi_gpio.3': device_add
+<7>bus: 'platform': add device spi_gpio.3
+<7>PM: Adding info for platform:spi_gpio.3
+<7>Registering platform device 'sec_jack.1'. Parent at platform
+<7>device: 'sec_jack.1': device_add
+<7>bus: 'platform': add device sec_jack.1
+<7>PM: Adding info for platform:sec_jack.1
+<7>Registering platform device 's3c2440-i2c.0'. Parent at platform
+<7>device: 's3c2440-i2c.0': device_add
+<7>bus: 'platform': add device s3c2440-i2c.0
+<7>PM: Adding info for platform:s3c2440-i2c.0
+<7>Registering platform device 's3c2440-i2c.1'. Parent at platform
+<7>device: 's3c2440-i2c.1': device_add
+<7>bus: 'platform': add device s3c2440-i2c.1
+<7>PM: Adding info for platform:s3c2440-i2c.1
+<7>Registering platform device 's3c2440-i2c.2'. Parent at platform
+<7>device: 's3c2440-i2c.2': device_add
+<7>bus: 'platform': add device s3c2440-i2c.2
+<7>PM: Adding info for platform:s3c2440-i2c.2
+<7>Registering platform device 'i2c-gpio.4'. Parent at platform
+<7>device: 'i2c-gpio.4': device_add
+<7>bus: 'platform': add device i2c-gpio.4
+<7>PM: Adding info for platform:i2c-gpio.4
+<7>Registering platform device 'i2c-gpio.5'. Parent at platform
+<7>device: 'i2c-gpio.5': device_add
+<7>bus: 'platform': add device i2c-gpio.5
+<7>PM: Adding info for platform:i2c-gpio.5
+<7>Registering platform device 'i2c-gpio.6'. Parent at platform
+<7>device: 'i2c-gpio.6': device_add
+<7>bus: 'platform': add device i2c-gpio.6
+<7>PM: Adding info for platform:i2c-gpio.6
+<7>Registering platform device 'i2c-gpio.7'. Parent at platform
+<7>device: 'i2c-gpio.7': device_add
+<7>bus: 'platform': add device i2c-gpio.7
+<7>PM: Adding info for platform:i2c-gpio.7
+<7>Registering platform device 'i2c-gpio.8'. Parent at platform
+<7>device: 'i2c-gpio.8': device_add
+<7>bus: 'platform': add device i2c-gpio.8
+<7>PM: Adding info for platform:i2c-gpio.8
+<7>Registering platform device 'i2c-gpio.11'. Parent at platform
+<7>device: 'i2c-gpio.11': device_add
+<7>bus: 'platform': add device i2c-gpio.11
+<7>PM: Adding info for platform:i2c-gpio.11
+<7>Registering platform device 'i2c-gpio.12'. Parent at platform
+<7>device: 'i2c-gpio.12': device_add
+<7>bus: 'platform': add device i2c-gpio.12
+<7>PM: Adding info for platform:i2c-gpio.12
+<7>Registering platform device 's3c-usbgadget'. Parent at platform
+<7>device: 's3c-usbgadget': device_add
+<7>bus: 'platform': add device s3c-usbgadget
+<7>PM: Adding info for platform:s3c-usbgadget
+<7>Registering platform device 'android_usb'. Parent at platform
+<7>device: 'android_usb': device_add
+<7>bus: 'platform': add device android_usb
+<7>PM: Adding info for platform:android_usb
+<7>Registering platform device 'usb_mass_storage'. Parent at platform
+<7>device: 'usb_mass_storage': device_add
+<7>bus: 'platform': add device usb_mass_storage
+<7>PM: Adding info for platform:usb_mass_storage
+<7>Registering platform device 'rndis'. Parent at platform
+<7>device: 'rndis': device_add
+<7>bus: 'platform': add device rndis
+<7>PM: Adding info for platform:rndis
+<7>Registering platform device 's3c-sdhci.0'. Parent at platform
+<7>device: 's3c-sdhci.0': device_add
+<7>bus: 'platform': add device s3c-sdhci.0
+<7>PM: Adding info for platform:s3c-sdhci.0
+<7>Registering platform device 's3c-sdhci.1'. Parent at platform
+<7>device: 's3c-sdhci.1': device_add
+<7>bus: 'platform': add device s3c-sdhci.1
+<7>PM: Adding info for platform:s3c-sdhci.1
+<7>Registering platform device 's3c-sdhci.2'. Parent at platform
+<7>device: 's3c-sdhci.2': device_add
+<7>bus: 'platform': add device s3c-sdhci.2
+<7>PM: Adding info for platform:s3c-sdhci.2
+<7>Registering platform device 's5p-tvout'. Parent at platform
+<7>device: 's5p-tvout': device_add
+<7>bus: 'platform': add device s5p-tvout
+<7>PM: Adding info for platform:s5p-tvout
+<7>Registering platform device 'sec-battery'. Parent at platform
+<7>device: 'sec-battery': device_add
+<7>bus: 'platform': add device sec-battery
+<7>PM: Adding info for platform:sec-battery
+<7>Registering platform device 'sec_switch.1'. Parent at platform
+<7>device: 'sec_switch.1': device_add
+<7>bus: 'platform': add device sec_switch.1
+<7>PM: Adding info for platform:sec_switch.1
+<7>Registering platform device 'reg-s5pv210-pd.0'. Parent at platform
+<7>device: 'reg-s5pv210-pd.0': device_add
+<7>bus: 'platform': add device reg-s5pv210-pd.0
+<7>PM: Adding info for platform:reg-s5pv210-pd.0
+<7>Registering platform device 'reg-s5pv210-pd.1'. Parent at platform
+<7>device: 'reg-s5pv210-pd.1': device_add
+<7>bus: 'platform': add device reg-s5pv210-pd.1
+<7>PM: Adding info for platform:reg-s5pv210-pd.1
+<7>Registering platform device 'reg-s5pv210-pd.2'. Parent at platform
+<7>device: 'reg-s5pv210-pd.2': device_add
+<7>bus: 'platform': add device reg-s5pv210-pd.2
+<7>PM: Adding info for platform:reg-s5pv210-pd.2
+<7>Registering platform device 'reg-s5pv210-pd.3'. Parent at platform
+<7>device: 'reg-s5pv210-pd.3': device_add
+<7>bus: 'platform': add device reg-s5pv210-pd.3
+<7>PM: Adding info for platform:reg-s5pv210-pd.3
+<7>Registering platform device 'reg-s5pv210-pd.4'. Parent at platform
+<7>device: 'reg-s5pv210-pd.4': device_add
+<7>bus: 'platform': add device reg-s5pv210-pd.4
+<7>PM: Adding info for platform:reg-s5pv210-pd.4
+<7>Registering platform device 'reg-s5pv210-pd.5'. Parent at platform
+<7>device: 'reg-s5pv210-pd.5': device_add
+<7>bus: 'platform': add device reg-s5pv210-pd.5
+<7>PM: Adding info for platform:reg-s5pv210-pd.5
+<7>Registering platform device 'android_pmem.0'. Parent at platform
+<7>device: 'android_pmem.0': device_add
+<7>bus: 'platform': add device android_pmem.0
+<7>PM: Adding info for platform:android_pmem.0
+<7>Registering platform device 'android_pmem.1'. Parent at platform
+<7>device: 'android_pmem.1': device_add
+<7>bus: 'platform': add device android_pmem.1
+<7>PM: Adding info for platform:android_pmem.1
+<7>Registering platform device 'android_pmem.2'. Parent at platform
+<7>device: 'android_pmem.2': device_add
+<7>bus: 'platform': add device android_pmem.2
+<7>PM: Adding info for platform:android_pmem.2
+<7>Registering platform device 's3c24xx-pwm.0'. Parent at platform
+<7>device: 's3c24xx-pwm.0': device_add
+<7>bus: 'platform': add device s3c24xx-pwm.0
+<7>PM: Adding info for platform:s3c24xx-pwm.0
+<7>Registering platform device 's3c24xx-pwm.1'. Parent at platform
+<7>device: 's3c24xx-pwm.1': device_add
+<7>bus: 'platform': add device s3c24xx-pwm.1
+<7>PM: Adding info for platform:s3c24xx-pwm.1
+<7>Registering platform device 's3c24xx-pwm.2'. Parent at platform
+<7>device: 's3c24xx-pwm.2': device_add
+<7>bus: 'platform': add device s3c24xx-pwm.2
+<7>PM: Adding info for platform:s3c24xx-pwm.2
+<7>Registering platform device 's3c24xx-pwm.3'. Parent at platform
+<7>device: 's3c24xx-pwm.3': device_add
+<7>bus: 'platform': add device s3c24xx-pwm.3
+<7>PM: Adding info for platform:s3c24xx-pwm.3
+<7>Registering platform device 'bt_rfkill'. Parent at platform
+<7>device: 'bt_rfkill': device_add
+<7>bus: 'platform': add device bt_rfkill
+<7>PM: Adding info for platform:bt_rfkill
+<7>Registering platform device 'bt_sleep'. Parent at platform
+<7>device: 'bt_sleep': device_add
+<7>bus: 'platform': add device bt_sleep
+<7>PM: Adding info for platform:bt_sleep
+<7>Registering platform device 'ram_console'. Parent at platform
+<7>device: 'ram_console': device_add
+<7>bus: 'platform': add device ram_console
+<7>PM: Adding info for platform:ram_console
+<7>bus: 'platform': driver_probe_device: matched device ram_console with driver ram_console
+<7>bus: 'platform': really_probe: probing driver ram_console with device ram_console
+<6>ram_console: got buffer at 0, size 0
+<3>ram_console: failed to map memory
+[    1.600735] ram_console: failed<to map memory
+4>ram_console: probe of ram_console failed with error -12
+<7>Registering platform device 's5p-ace.0'. Parent at platform
+<7>device: 's5p-ace.0': device_add
+<7>bus: 'platform': add device s5p-ace.0
+<7>PM: Adding info for platform:s5p-ace.0
+<7>Registering platform device 's5p-rp'. Parent at platform
+<7>device: 's5p-rp': device_add
+<7>bus: 'platform': add device s5p-rp
+<7>PM: Adding info for platform:s5p-rp
+<7>Registering platform device 'bcm4329_wlan.1'. Parent at platform
+<7>device: 'bcm4329_wlan.1': device_add
+<7>bus: 'platform': add device bcm4329_wlan.1
+<7>PM: Adding info for platform:bcm4329_wlan.1
+<6>S5PC110 Hardware version : EVT1
+<6>HWREV is 0x5
+S3C Power Management, Copyright 2004 Simtec Electronics
+<6>pmstats at 00000000
+<7>device class 'sec': registering
+<7>device: 'switch': device_add
+<7>PM: Adding info for No Bus:switch
+<7>Registering platform device 's3c-pl330.0'. Parent at platform
+<7>device: 's3c-pl330.0': device_add
+<7>bus: 'platform': add device s3c-pl330.0
+<7>PM: Adding info for platform:s3c-pl330.0
+<7>Registering platform device 's3c-pl330.1'. Parent at platform
+<7>device: 's3c-pl330.1': device_add
+<7>bus: 'platform': add device s3c-pl330.1
+<7>PM: Adding info for platform:s3c-pl330.1
+<7>Registering platform device 's3c-pl330.2'. Parent at platform
+<7>device: 's3c-pl330.2': device_add
+<7>bus: 'platform': add device s3c-pl330.2
+<7>PM: Adding info for platform:s3c-pl330.2
+<6>S5PV210: Initializing architecture
+<7>Registering sys device of class 's5pv210-core'
+<7>Registering sys device 's5pv210-core0'
+<7>Registering platform device 's5pv210-uart.0'. Parent at platform
+<7>device: 's5pv210-uart.0': device_add
+<7>bus: 'platform': add device s5pv210-uart.0
+<7>PM: Adding info for platform:s5pv210-uart.0
+<7>Registering platform device 's5pv210-uart.1'. Parent at platform
+<7>device: 's5pv210-uart.1': device_add
+<7>bus: 'platform': add device s5pv210-uart.1
+<7>PM: Adding info for platform:s5pv210-uart.1
+<7>Registering platform device 's5pv210-uart.2'. Parent at platform
+<7>device: 's5pv210-uart.2': device_add
+<7>bus: 'platform': add device s5pv210-uart.2
+<7>PM: Adding info for platform:s5pv210-uart.2
+<7>Registering platform device 's5pv210-uart.3'. Parent at platform
+<7>device: 's5pv210-uart.3': device_add
+<7>bus: 'platform': add device s5pv210-uart.3
+<7>PM: Adding info for platform:s5pv210-uart.3
+<7>bus: 'platform': add driver s3c24xx-pwm
+<7>bus: 'platform': driver_probe_device: matched device s3c24xx-pwm.0 with driver s3c24xx-pwm
+<7>bus: 'platform': really_probe: probing driver s3c24xx-pwm with device s3c24xx-pwm.0
+<6>s3c24xx-pwm s3c24xx-pwm.0: tin at 66700000, tdiv at 66700000, tin=divclk, base 0
+<7>driver: 's3c24xx-pwm.0': driver_bound: bound to device 's3c24xx-pwm'
+<7>bus: 'platform': really_probe: bound device s3c24xx-pwm.0 to driver s3c24xx-pwm
+<7>bus: 'platform': driver_probe_device: matched device s3c24xx-pwm.1 with driver s3c24xx-pwm
+<7>bus: 'platform': really_probe: probing driver s3c24xx-pwm with device s3c24xx-pwm.1
+<6>s3c24xx-pwm s3c24xx-pwm.1: tin at 66700000, tdiv at 66700000, tin=divclk, base 8
+<7>driver: 's3c24xx-pwm.1': driver_bound: bound to device 's3c24xx-pwm'
+<7>bus: 'platform': really_probe: bound device s3c24xx-pwm.1 to driver s3c24xx-pwm
+<7>bus: 'platform': driver_probe_device: matched device s3c24xx-pwm.2 with driver s3c24xx-pwm
+<7>bus: 'platform': really_probe: probing driver s3c24xx-pwm with device s3c24xx-pwm.2
+<6>s3c24xx-pwm s3c24xx-pwm.2: tin at 66700000, tdiv at 66700000, tin=divclk, base 12
+<7>driver: 's3c24xx-pwm.2': driver_bound: bound to device 's3c24xx-pwm'
+<7>bus: 'platform': really_probe: bound device s3c24xx-pwm.2 to driver s3c24xx-pwm
+<7>bus: 'platform': driver_probe_device: matched device s3c24xx-pwm.3 with driver s3c24xx-pwm
+<7>bus: 'platform': really_probe: probing driver s3c24xx-pwm with device s3c24xx-pwm.3
+<6>s3c24xx-pwm s3c24xx-pwm.3: tin at 66700000, tdiv at 66700000, tin=divclk, base 16
+<7>driver: 's3c24xx-pwm.3': driver_bound: bound to device 's3c24xx-pwm'
+<7>bus: 'platform': really_probe: bound device s3c24xx-pwm.3 to driver s3c24xx-pwm
+<7>Registering sys device of class 'cpu'
+<7>Registering sys device 'cpu0'
+<7>bus: 'platform': add driver reg-s5pv210-pd
+<7>bus: 'platform': driver_probe_device: matched device reg-s5pv210-pd.0 with driver reg-s5pv210-pd
+<7>bus: 'platform': really_probe: probing driver reg-s5pv210-pd with device reg-s5pv210-pd.0
+<7>device: 'regulator.0': device_add
+<7>PM: Adding info for No Bus:regulator.0
+<6>regulator: pd_audio_supply: 5000 mV normal
+<7>driver: 'reg-s5pv210-pd.0': driver_bound: bound to device 'reg-s5pv210-pd'
+<7>bus: 'platform': really_probe: bound device reg-s5pv210-pd.0 to driver reg-s5pv210-pd
+<7>bus: 'platform': driver_probe_device: matched device reg-s5pv210-pd.1 with driver reg-s5pv210-pd
+<7>bus: 'platform': really_probe: probing driver reg-s5pv210-pd with device reg-s5pv210-pd.1
+<7>device: 'regulator.1': device_add
+<7>PM: Adding info for No Bus:regulator.1
+<6>regulator: pd_cam_supply: 5000 mV normal
+<7>driver: 'reg-s5pv210-pd.1': driver_bound: bound to device 'reg-s5pv210-pd'
+<7>bus: 'platform': really_probe: bound device reg-s5pv210-pd.1 to driver reg-s5pv210-pd
+<7>bus: 'platform': driver_probe_device: matched device reg-s5pv210-pd.2 with driver reg-s5pv210-pd
+<7>bus: 'platform': really_probe: probing driver reg-s5pv210-pd with device reg-s5pv210-pd.2
+<7>device: 'regulator.2': device_add
+<7>PM: Adding info for No Bus:regulator.2
+<6>regulator: pd_tv_supply: 5000 mV normal
+<7>driver: 'reg-s5pv210-pd.2': driver_bound: bound to device 'reg-s5pv210-pd'
+<7>bus: 'platform': really_probe: bound device reg-s5pv210-pd.2 to driver reg-s5pv210-pd
+<7>bus: 'platform': driver_probe_device: matched device reg-s5pv210-pd.3 with driver reg-s5pv210-pd
+<7>bus: 'platform': really_probe: probing driver reg-s5pv210-pd with device reg-s5pv210-pd.3
+<7>device: 'regulator.3': device_add
+<7>PM: Adding info for No Bus:regulator.3
+<6>regulator: pd_lcd_supply: 5000 mV normal
+<7>driver: 'reg-s5pv210-pd.3': driver_bound: bound to device 'reg-s5pv210-pd'
+<7>bus: 'platform': really_probe: bound device reg-s5pv210-pd.3 to driver reg-s5pv210-pd
+<7>bus: 'platform': driver_probe_device: matched device reg-s5pv210-pd.4 with driver reg-s5pv210-pd
+<7>bus: 'platform': really_probe: probing driver reg-s5pv210-pd with device reg-s5pv210-pd.4
+<7>device: 'regulator.4': device_add
+<7>PM: Adding info for No Bus:regulator.4
+<6>regulator: pd_g3d_supply: 5000 mV normal
+<7>driver: 'reg-s5pv210-pd.4': driver_bound: bound to device 'reg-s5pv210-pd'
+<7>bus: 'platform': really_probe: bound device reg-s5pv210-pd.4 to driver reg-s5pv210-pd
+<7>bus: 'platform': driver_probe_device: matched device reg-s5pv210-pd.5 with driver reg-s5pv210-pd
+<7>bus: 'platform': really_probe: probing driver reg-s5pv210-pd with device reg-s5pv210-pd.5
+<7>device: 'regulator.5': device_add
+<7>PM: Adding info for No Bus:regulator.5
+<6>regulator: pd_mfc_supply: 5000 mV normal
+<7>driver: 'reg-s5pv210-pd.5': driver_bound: bound to device 'reg-s5pv210-pd'
+<7>bus: 'platform': really_probe: bound device reg-s5pv210-pd.5 to driver reg-s5pv210-pd
+<7>device: 'default': device_add
+<7>PM: Adding info for No Bus:default
+bio: create slab <bio-0> at 0
+<7>device class 'block': registering
+<7>device class 'graphics': registering
+<7>bus: 'platform': add driver max8998-pmic
+<7>device class 'misc': registering
+<7>bus: 'i2c': add driver max8998
+<7>device class 'scsi_host': registering
+<7>bus: 'scsi': registered
+<7>device class 'scsi_device': registering
+<5>SCSI subsystem initialized
+<7>bus: 'serio': registered
+<7>device class 'input': registering
+<7>device class 'rtc': registering
+<7>bus: 'platform': add driver i2c-gpio
+<7>bus: 'platform': driver_probe_device: matched device i2c-gpio.4 with driver i2c-gpio
+<7>bus: 'platform': really_probe: probing driver i2c-gpio with device i2c-gpio.4
+<7>device: 'i2c-4': device_add
+<7>bus: 'i2c': add device i2c-4
+<7>PM: Adding info for i2c:i2c-4
+<7>device: '4-001a': device_add
+<7>bus: 'i2c': add device 4-001a
+<7>PM: Adding info for i2c:4-001a
+<6>i2c-gpio i2c-gpio.4: using pins 247 (SDA) and 246 (SCL)
+<7>driver: 'i2c-gpio.4': driver_bound: bound to device 'i2c-gpio'
+<7>bus: 'platform': really_probe: bound device i2c-gpio.4 to driver i2c-gpio
+<7>bus: 'platform': driver_probe_device: matched device i2c-gpio.5 with driver i2c-gpio
+<7>bus: 'platform': really_probe: probing driver i2c-gpio with device i2c-gpio.5
+<7>device: 'i2c-5': device_add
+<7>bus: 'i2c': add device i2c-5
+<7>PM: Adding info for i2c:i2c-5
+<7>device: '5-0038': device_add
+<7>bus: 'i2c': add device 5-0038
+<7>PM: Adding info for i2c:5-0038
+<6>i2c-gpio i2c-gpio.5: using pins 203 (SDA) and 204 (SCL)
+<7>driver: 'i2c-gpio.5': driver_bound: bound to device 'i2c-gpio'
+<7>bus: 'platform': really_probe: bound device i2c-gpio.5 to driver i2c-gpio
+<7>bus: 'platform': driver_probe_device: matched device i2c-gpio.6 with driver i2c-gpio
+<7>bus: 'platform': really_probe: probing driver i2c-gpio with device i2c-gpio.6
+<7>device: 'i2c-6': device_add
+<7>bus: 'i2c': add device i2c-6
+<7>PM: Adding info for i2c:i2c-6
+<7>device: '6-0066': device_add
+<7>bus: 'i2c': add device 6-0066
+<7>PM: Adding info for i2c:6-0066
+<7>bus: 'i2c': driver_probe_device: matched device 6-0066 with driver max8998
+<7>bus: 'i2c': really_probe: probing driver max8998 with device 6-0066
+<7>Registering platform device 'max8998-pmic'. Parent at 6-0066
+<7>device: 'max8998-pmic': device_add
+<7>bus: 'platform': add device max8998-pmic
+<7>PM: Adding info for platform:max8998-pmic
+<7>bus: 'platform': driver_probe_device: matched device max8998-pmic with driver max8998-pmic
+<7>bus: 'platform': really_probe: probing driver max8998-pmic with device max8998-pmic
+<6>max8998_pmic_probe : buck1 - idx(1) v1(21) v2(18) v3(12) v4(8)
+<6>max8998_pmic_probe : buck2 - idx(0) v1(14) v2(10)
+<7>device: 'regulator.6': device_add
+<7>PM: Adding info for No Bus:regulator.6
+<6>regulator: VALIVE_1.2V: 1200 mV
+<7>device: 'regulator.7': device_add
+<7>PM: Adding info for No Bus:regulator.7
+<6>regulator: VUSB_1.1V: 1100 mV
+<7>device: 'regulator.8': device_add
+<7>PM: Adding info for No Bus:regulator.8
+<6>regulator: VADC_3.3V: 3300 mV
+<7>device: 'regulator.9': device_add
+<7>PM: Adding info for No Bus:regulator.9
+<6>regulator: VTF_2.8V: 2800 mV
+<7>device: 'regulator.10': device_add
+<7>PM: Adding info for No Bus:regulator.10
+<6>regulator: VLCD_1.8V: 1800 mV
+<7>device: 'regulator.11': device_add
+<7>PM: Adding info for No Bus:regulator.11
+<6>regulator: VUSB_3.3V: 3300 mV
+<7>device: 'regulator.12': device_add
+<7>PM: Adding info for No Bus:regulator.12
+<6>regulator: VCC_2.8V_PDA: 2800 mV
+<7>device: 'regulator.13': device_add
+<7>PM: Adding info for No Bus:regulator.13
+<6>regulator: CAM_AF_3.0V: 3000 mV
+<7>device: 'regulator.14': device_add
+<7>PM: Adding info for No Bus:regulator.14
+<6>regulator: CAM_SENSOR_CORE_1.2V: 1200 mV
+<7>device: 'regulator.15': device_add
+<7>PM: Adding info for No Bus:regulator.15
+<6>regulator: VGA_VDDIO_2.8V: 2800 mV
+<7>device: 'regulator.16': device_add
+<7>PM: Adding info for No Bus:regulator.16
+<6>regulator: VGA_DVDD_1.8V: 1800 mV
+<7>device: 'regulator.17': device_add
+<7>PM: Adding info for No Bus:regulator.17
+<6>regulator: CAM_ISP_HOST_2.8V: 2800 mV
+<7>device: 'regulator.18': device_add
+<7>PM: Adding info for No Bus:regulator.18
+<6>regulator: VGA_AVDD_2.8V: 2800 mV
+<7>device: 'regulator.19': device_add
+<7>PM: Adding info for No Bus:regulator.19
+<6>regulator: VCC_3.0V_LCD: 3000 mV
+<7>device: 'regulator.20': device_add
+<7>PM: Adding info for No Bus:regulator.20
+<6>regulator: VDD_ARM: 750 <--> 1500 mV at 1200 mV
+<7>device: 'regulator.21': device_add
+<7>PM: Adding info for No Bus:regulator.21
+<6>regulator: VDD_INT: 750 <--> 1500 mV at 1100 mV
+<7>device: 'regulator.22': device_add
+<7>PM: Adding info for No Bus:regulator.22
+<6>regulator: VCC_1.8V: 1800 mV
+<7>device: 'regulator.23': device_add
+<7>PM: Adding info for No Bus:regulator.23
+<6>regulator: CAM_ISP_CORE_1.2V: 1200 mV
+<7>driver: 'max8998-pmic': driver_bound: bound to device 'max8998-pmic'
+<7>bus: 'platform': really_probe: bound device max8998-pmic to driver max8998-pmic
+<7>Registering platform device 'max8998-charger'. Parent at 6-0066
+<7>device: 'max8998-charger': device_add
+<7>bus: 'platform': add device max8998-charger
+<7>PM: Adding info for platform:max8998-charger
+<7>driver: '6-0066': driver_bound: bound to device 'max8998'
+<7>bus: 'i2c': really_probe: bound device 6-0066 to driver max8998
+<7>device: '6-0006': device_add
+<7>bus: 'i2c': add device 6-0006
+<7>PM: Adding info for i2c:6-0006
+<6>i2c-gpio i2c-gpio.6: using pins 206 (SDA) and 209 (SCL)
+<7>driver: 'i2c-gpio.6': driver_bound: bound to device 'i2c-gpio'
+<7>bus: 'platform': really_probe: bound device i2c-gpio.6 to driver i2c-gpio
+<7>bus: 'platform': driver_probe_device: matched device i2c-gpio.7 with driver i2c-gpio
+<7>bus: 'platform': really_probe: probing driver i2c-gpio with device i2c-gpio.7
+<7>device: 'i2c-7': device_add
+<7>bus: 'i2c': add device i2c-7
+<7>PM: Adding info for i2c:i2c-7
+<7>device: '7-0025': device_add
+<7>bus: 'i2c': add device 7-0025
+<7>PM: Adding info for i2c:7-0025
+<6>i2c-gpio i2c-gpio.7: using pins 201 (SDA) and 202 (SCL)
+<7>driver: 'i2c-gpio.7': driver_bound: bound to device 'i2c-gpio'
+<7>bus: 'platform': really_probe: bound device i2c-gpio.7 to driver i2c-gpio
+<7>bus: 'platform': driver_probe_device: matched device i2c-gpio.8 with driver i2c-gpio
+<7>bus: 'platform': really_probe: probing driver i2c-gpio with device i2c-gpio.8
+<7>device: 'i2c-8': device_add
+<7>bus: 'i2c': add device i2c-8
+<7>PM: Adding info for i2c:i2c-8
+<7>device: '8-0010': device_add
+<7>bus: 'i2c': add device 8-0010
+<7>PM: Adding info for i2c:8-0010
+<6>i2c-gpio i2c-gpio.8: using pins 42 (SDA) and 43 (SCL)
+<7>driver: 'i2c-gpio.8': driver_bound: bound to device 'i2c-gpio'
+<7>bus: 'platform': really_probe: bound device i2c-gpio.8 to driver i2c-gpio
+<7>bus: 'platform': driver_probe_device: matched device i2c-gpio.11 with driver i2c-gpio
+<7>bus: 'platform': really_probe: probing driver i2c-gpio with device i2c-gpio.11
+<7>device: 'i2c-11': device_add
+<7>bus: 'i2c': add device i2c-11
+<7>PM: Adding info for i2c:i2c-11
+<7>device: '11-0044': device_add
+<7>bus: 'i2c': add device 11-0044
+<7>PM: Adding info for i2c:11-0044
+<6>i2c-gpio i2c-gpio.11: using pins 114 (SDA) and 98 (SCL)
+<7>driver: 'i2c-gpio.11': driver_bound: bound to device 'i2c-gpio'
+<7>bus: 'platform': really_probe: bound device i2c-gpio.11 to driver i2c-gpio
+<7>bus: 'platform': driver_probe_device: matched device i2c-gpio.12 with driver i2c-gpio
+<7>bus: 'platform': really_probe: probing driver i2c-gpio with device i2c-gpio.12
+<7>device: 'i2c-12': device_add
+<7>bus: 'i2c': add device i2c-12
+<7>PM: Adding info for i2c:i2c-12
+<7>device: '12-002e': device_add
+<7>bus: 'i2c': add device 12-002e
+<7>PM: Adding info for i2c:12-002e
+<6>i2c-gpio i2c-gpio.12: using pins 199 (SDA) and 200 (SCL)
+<7>driver: 'i2c-gpio.12': driver_bound: bound to device 'i2c-gpio'
+<7>bus: 'platform': really_probe: bound device i2c-gpio.12 to driver i2c-gpio
+<7>bus: 'platform': add driver s3c-i2c
+<7>bus: 'platform': driver_probe_device: matched device s3c2440-i2c.0 with driver s3c-i2c
+<7>bus: 'platform': really_probe: probing driver s3c-i2c with device s3c2440-i2c.0
+<7>device: 'i2c-0': device_add
+<7>bus: 'i2c': add device i2c-0
+<7>PM: Adding info for i2c:i2c-0
+<6>s3c-i2c s3c2440-i2c.0: i2c-0: S3C I2C adapter
+<7>driver: 's3c2440-i2c.0': driver_bound: bound to device 's3c-i2c'
+<7>bus: 'platform': really_probe: bound device s3c2440-i2c.0 to driver s3c-i2c
+<7>bus: 'platform': driver_probe_device: matched device s3c2440-i2c.1 with driver s3c-i2c
+<7>bus: 'platform': really_probe: probing driver s3c-i2c with device s3c2440-i2c.1
+<7>device: 'i2c-1': device_add
+<7>bus: 'i2c': add device i2c-1
+<7>PM: Adding info for i2c:i2c-1
+<6>s3c-i2c s3c2440-i2c.1: i2c-1: S3C I2C adapter
+<7>driver: 's3c2440-i2c.1': driver_bound: bound to device 's3c-i2c'
+<7>bus: 'platform': really_probe: bound device s3c2440-i2c.1 to driver s3c-i2c
+<7>bus: 'platform': driver_probe_device: matched device s3c2440-i2c.2 with driver s3c-i2c
+<7>bus: 'platform': really_probe: probing driver s3c-i2c with device s3c2440-i2c.2
+<7>device: 'i2c-2': device_add
+<7>bus: 'i2c': add device i2c-2
+<7>PM: Adding info for i2c:i2c-2
+<7>device: '2-004a': device_add
+<7>bus: 'i2c': add device 2-004a
+<7>PM: Adding info for i2c:2-004a
+<6>s3c-i2c s3c2440-i2c.2: i2c-2: S3C I2C adapter
+<7>driver: 's3c2440-i2c.2': driver_bound: bound to device 's3c-i2c'
+<7>bus: 'platform': really_probe: bound device s3c2440-i2c.2 to driver s3c-i2c
+<7>device class 'power_supply': registering
+<7>bus: 'mmc': registered
+<7>device class 'mmc_host': registering
+<7>bus: 'sdio': registered
+<7>device class 'sound': registering
+<6>Advanced Linux Sound Architecture Driver Version 1.0.23.
+<7>device class 'net': registering
+<7>device: 'lo': device_add
+<7>PM: Adding info for No Bus:lo
+<6>Bluetooth: Core ver 2.15
+<7>device class 'bluetooth': registering
+<6>NET: Registered protocol family 31
+<6>Bluetooth: HCI device and connection manager initialized
+<6>Bluetooth: HCI socket layer initialized
+<7>device class 'rfkill': registering
+<7>device: 'rfkill': device_add
+<7>PM: Adding info for No Bus:rfkill
+<6>Switching to clocksource clock_source_systimer
+<7>device class 'mem': registering
+<7>device: 'mem': device_add
+<7>PM: Adding info for No Bus:mem
+<7>device: 'kmem': device_add
+<7>PM: Adding info for No Bus:kmem
+<7>device: 'null': device_add
+<7>PM: Adding info for No Bus:null
+<7>device: 'zero': device_add
+<7>PM: Adding info for No Bus:zero
+<7>device: 'full': device_add
+<7>PM: Adding info for No Bus:full
+<7>device: 'random': device_add
+<7>PM: Adding info for No Bus:random
+<7>device: 'urandom': device_add
+<7>PM: Adding info for No Bus:urandom
+<7>device: 'kmsg': device_add
+<7>PM: Adding info for No Bus:kmsg
+<7>device: 's3c-mem': device_add
+<7>PM: Adding info for No Bus:s3c-mem
+<7>device: 'tty': device_add
+<7>PM: Adding info for No Bus:tty
+<7>device: 'console': device_add
+<7>PM: Adding info for No Bus:console
+<7>device: 'tty0': device_add
+<7>PM: Adding info for No Bus:tty0
+<7>device class 'vc': registering
+<7>device: 'vcs': device_add
+<7>PM: Adding info for No Bus:vcs
+<7>device: 'vcsa': device_add
+<7>PM: Adding info for No Bus:vcsa
+<7>device: 'vcs1': device_add
+<7>PM: Adding info for No Bus:vcs1
+<7>device: 'vcsa1': device_add
+<7>PM: Adding info for No Bus:vcsa1
+<7>device: 'tty1': device_add
+<7>PM: Adding info for No Bus:tty1
+<7>device: 'tty2': device_add
+<7>PM: Adding info for No Bus:tty2
+<7>device: 'tty3': device_add
+<7>PM: Adding info for No Bus:tty3
+<7>device: 'tty4': device_add
+<7>PM: Adding info for No Bus:tty4
+<7>device: 'tty5': device_add
+<7>PM: Adding info for No Bus:tty5
+<7>device: 'tty6': device_add
+<7>PM: Adding info for No Bus:tty6
+<7>device: 'tty7': device_add
+<7>PM: Adding info for No Bus:tty7
+<7>device: 'tty8': device_add
+<7>PM: Adding info for No Bus:tty8
+<7>device: 'tty9': device_add
+<7>PM: Adding info for No Bus:tty9
+<7>device: 'tty10': device_add
+<7>PM: Adding info for No Bus:tty10
+<7>device: 'tty11': device_add
+<7>PM: Adding info for No Bus:tty11
+<7>device: 'tty12': device_add
+<7>PM: Adding info for No Bus:tty12
+<7>device: 'tty13': device_add
+<7>PM: Adding info for No Bus:tty13
+<7>device: 'tty14': device_add
+<7>PM: Adding info for No Bus:tty14
+<7>device: 'tty15': device_add
+<7>PM: Adding info for No Bus:tty15
+<7>device: 'tty16': device_add
+<7>PM: Adding info for No Bus:tty16
+<7>device: 'tty17': device_add
+<7>PM: Adding info for No Bus:tty17
+<7>device: 'tty18': device_add
+<7>PM: Adding info for No Bus:tty18
+<7>device: 'tty19': device_add
+<7>PM: Adding info for No Bus:tty19
+<7>device: 'tty20': device_add
+<7>PM: Adding info for No Bus:tty20
+<7>device: 'tty21': device_add
+<7>PM: Adding info for No Bus:tty21
+<7>device: 'tty22': device_add
+<7>PM: Adding info for No Bus:tty22
+<7>device: 'tty23': device_add
+<7>PM: Adding info for No Bus:tty23
+<7>device: 'tty24': device_add
+<7>PM: Adding info for No Bus:tty24
+<7>device: 'tty25': device_add
+<7>PM: Adding info for No Bus:tty25
+<7>device: 'tty26': device_add
+<7>PM: Adding info for No Bus:tty26
+<7>device: 'tty27': device_add
+<7>PM: Adding info for No Bus:tty27
+<7>device: 'tty28': device_add
+<7>PM: Adding info for No Bus:tty28
+<7>device: 'tty29': device_add
+<7>PM: Adding info for No Bus:tty29
+<7>device: 'tty30': device_add
+<7>PM: Adding info for No Bus:tty30
+<7>device: 'tty31': device_add
+<7>PM: Adding info for No Bus:tty31
+<7>device: 'tty32': device_add
+<7>PM: Adding info for No Bus:tty32
+<7>device: 'tty33': device_add
+<7>PM: Adding info for No Bus:tty33
+<7>device: 'tty34': device_add
+<7>PM: Adding info for No Bus:tty34
+<7>device: 'tty35': device_add
+<7>PM: Adding info for No Bus:tty35
+<7>device: 'tty36': device_add
+<7>PM: Adding info for No Bus:tty36
+<7>device: 'tty37': device_add
+<7>PM: Adding info for No Bus:tty37
+<7>device: 'tty38': device_add
+<7>PM: Adding info for No Bus:tty38
+<7>device: 'tty39': device_add
+<7>PM: Adding info for No Bus:tty39
+<7>device: 'tty40': device_add
+<7>PM: Adding info for No Bus:tty40
+<7>device: 'tty41': device_add
+<7>PM: Adding info for No Bus:tty41
+<7>device: 'tty42': device_add
+<7>PM: Adding info for No Bus:tty42
+<7>device: 'tty43': device_add
+<7>PM: Adding info for No Bus:tty43
+<7>device: 'tty44': device_add
+<7>PM: Adding info for No Bus:tty44
+<7>device: 'tty45': device_add
+<7>PM: Adding info for No Bus:tty45
+<7>device: 'tty46': device_add
+<7>PM: Adding info for No Bus:tty46
+<7>device: 'tty47': device_add
+<7>PM: Adding info for No Bus:tty47
+<7>device: 'tty48': device_add
+<7>PM: Adding info for No Bus:tty48
+<7>device: 'tty49': device_add
+<7>PM: Adding info for No Bus:tty49
+<7>device: 'tty50': device_add
+<7>PM: Adding info for No Bus:tty50
+<7>device: 'tty51': device_add
+<7>PM: Adding info for No Bus:tty51
+<7>device: 'tty52': device_add
+<7>PM: Adding info for No Bus:tty52
+<7>device: 'tty53': device_add
+<7>PM: Adding info for No Bus:tty53
+<7>device: 'tty54': device_add
+<7>PM: Adding info for No Bus:tty54
+<7>device: 'tty55': device_add
+<7>PM: Adding info for No Bus:tty55
+<7>device: 'tty56': device_add
+<7>PM: Adding info for No Bus:tty56
+<7>device: 'tty57': device_add
+<7>PM: Adding info for No Bus:tty57
+<7>device: 'tty58': device_add
+<7>PM: Adding info for No Bus:tty58
+<7>device: 'tty59': device_add
+<7>PM: Adding info for No Bus:tty59
+<7>device: 'tty60': device_add
+<7>PM: Adding info for No Bus:tty60
+<7>device: 'tty61': device_add
+<7>PM: Adding info for No Bus:tty61
+<7>device: 'tty62': device_add
+<7>PM: Adding info for No Bus:tty62
+<7>device: 'tty63': device_add
+<7>PM: Adding info for No Bus:tty63
+<7>device class 'firmware': registering
+<6>NET: Registered protocol family 2
+<6>IP route cache hash table entries: 4096 (order: 2, 16384 bytes)
+<6>TCP established hash table entries: 16384 (order: 5, 131072 bytes)
+<6>TCP bind hash table entries: 16384 (order: 6, 327680 bytes)
+<6>TCP: Hash tables configured (established 16384 bind 16384)
+<6>TCP reno registered
+<6>UDP hash table entries: 256 (order: 1, 12288 bytes)
+<6>UDP-Lite hash table entries: 256 (order: 1, 12288 bytes)
+<6>NET: Registered protocol family 1
+<7>Registering sysdev class 'timer'
+<7>Registering sys device of class 'timer'
+<7>Registering sys device 'timer0'
+<7>bus: 'amba': add driver etb
+<7>bus: 'amba': add driver etm
+<7>bus: 'platform': add driver arm-pmu
+<7>bus: 'platform': add driver watchdog
+<7>bus: 'platform': driver_probe_device: matched device watchdog with driver watchdog
+<7>bus: 'platform': really_probe: probing driver watchdog with device watchdog
+<7>driver: 'watchdog': driver_bound: bound to device 'watchdog'
+<7>bus: 'platform': really_probe: bound device watchdog to driver watchdog
+<7>bus: 'platform': add driver sec_switch
+<7>bus: 'platform': driver_probe_device: matched device sec_switch.1 with driver sec_switch
+<7>bus: 'platform': really_probe: probing driver sec_switch with device sec_switch.1
+<7>driver: 'sec_switch.1': driver_bound: bound to device 'sec_switch'
+<7>bus: 'platform': really_probe: bound device sec_switch.1 to driver sec_switch
+<7>Registering platform device 'modemctl'. Parent at platform
+<7>device: 'modemctl': device_add
+<7>bus: 'platform': add device modemctl
+<7>PM: Adding info for platform:modemctl
+<7>Registering platform device 'onedram'. Parent at platform
+<7>device: 'onedram': device_add
+<7>bus: 'platform': add device onedram
+<7>PM: Adding info for platform:onedram
+<6>S5PV210 ADC driver, (c) 2010 Samsung Electronics
+<7>bus: 'platform': add driver s3c-adc
+<7>bus: 'platform': driver_probe_device: matched device s3c-adc with driver s3c-adc
+<7>bus: 'platform': really_probe: probing driver s3c-adc with device s3c-adc
+<7>device: 'adc': device_add
+<7>PM: Adding info for No Bus:adc
+<7>driver: 's3c-adc': driver_bound: bound to device 's3c-adc'
+<7>bus: 'platform': really_probe: bound device s3c-adc to driver s3c-adc
+<6>cpuidle: phy_regs_save:0x34e7e000
+<7>bus: 'platform': add driver s3c-pl330
+<7>bus: 'platform': driver_probe_device: matched device s3c-pl330.0 with driver s3c-pl330
+<7>bus: 'platform': really_probe: probing driver s3c-pl330 with device s3c-pl330.0
+<6>Loaded driver for PL330 DMAC-0 s3c-pl330
+<6>     DBUFF-64x8bytes Num_Chans-8 Num_Peri-2 Num_Events-32
+<7>driver: 's3c-pl330.0': driver_bound: bound to device 's3c-pl330'
+<7>bus: 'platform': really_probe: bound device s3c-pl330.0 to driver s3c-pl330
+<7>bus: 'platform': driver_probe_device: matched device s3c-pl330.1 with driver s3c-pl330
+<7>bus: 'platform': really_probe: probing driver s3c-pl330 with device s3c-pl330.1
+<6>Loaded driver for PL330 DMAC-1 s3c-pl330
+<6>     DBUFF-8x4bytes Num_Chans-8 Num_Peri-32 Num_Events-32
+<7>driver: 's3c-pl330.1': driver_bound: bound to device 's3c-pl330'
+<7>bus: 'platform': really_probe: bound device s3c-pl330.1 to driver s3c-pl330
+<7>bus: 'platform': driver_probe_device: matched device s3c-pl330.2 with driver s3c-pl330
+<7>bus: 'platform': really_probe: probing driver s3c-pl330 with device s3c-pl330.2
+<6>Loaded driver for PL330 DMAC-2 s3c-pl330
+<6>     DBUFF-8x4bytes Num_Chans-8 Num_Peri-32 Num_Events-32
+<7>driver: 's3c-pl330.2': driver_bound: bound to device 's3c-pl330'
+<7>bus: 'platform': really_probe: bound device s3c-pl330.2 to driver s3c-pl330
+<7>Registering sysdev class 'timekeeping'
+<7>Registering sys device of class 'timekeeping'
+<7>Registering sys device 'timekeeping0'
+<7>Registering sysdev class 'clocksource'
+<7>Registering sys device of class 'clocksource'
+<7>Registering sys device 'clocksource0'
+<7>device: 'ashmem': device_add
+<7>PM: Adding info for No Bus:ashmem
+<6>ashmem: initialized
+<6>ROMFS MTD (C) 2007 Red Hat, Inc.
+<6>msgmni has been set to 405
+<4>cryptomgr_test used greatest stack depth: 6084 bytes left
+<4>cryptomgr_test used greatest stack depth: 5876 bytes left
+<6>alg: No test for stdrng (krng)
+<6>S5P ACE Driver, (c) 2010 Samsung Electronics
+<7>bus: 'platform': add driver s5p-ace
+<7>bus: 'platform': driver_probe_device: matched device s5p-ace.0 with driver s5p-ace
+<7>bus: 'platform': really_probe: probing driver s5p-ace with device s5p-ace.0
+<6>ACE: ecb-aes-s5p-ace
+<6>ACE: cbc-aes-s5p-ace
+<6>ACE: ctr-aes-s5p-ace
+<5>ACE driver is initialized
+<7>driver: 's5p-ace.0': driver_bound: bound to device 's5p-ace'
+<7>bus: 'platform': really_probe: bound device s5p-ace.0 to driver s5p-ace
+<6>io scheduler noop registered
+<6>io scheduler deadline registered
+<6>io scheduler cfq registered (default)
+<7>bus: 'platform': add driver s3cfb
+<7>bus: 'platform': driver_probe_device: matched device s3cfb with driver s3cfb
+<7>bus: 'platform': really_probe: probing driver s3cfb with device s3cfb
+MDNIE  INIT ..........
+<6>S3C MDNIE Driver, (c) 2010 Samsung Electronics
+MDNIE  INIT SUCCESS Addr : 0xe088e000
+IELCD  INIT ..........
+<6>S3C IELCD Driver, (c) 2010 Samsung Electronics
+IELCD  INIT SUCCESS Addr : 0xe08a0000
+<6>s3cfb s3cfb: [fb2] dma: 0x443af000, cpu: 0xe0c00000, size: 0x002ee000
+<7>device: 'fb0': device_add
+<7>PM: Adding info for No Bus:fb0
+<7>device: 'fb1': device_add
+<7>PM: Adding info for No Bus:fb1
+<7>device: 'fb2': device_add
+<7>PM: Adding info for No Bus:fb2
+<7>device: 'fb3': device_add
+<7>PM: Adding info for No Bus:fb3
+<7>device: 'fb4': device_add
+<7>PM: Adding info for No Bus:fb4
+<6>FIMD src sclk = 166750000
+<6>s3cfb s3cfb: registered successfully
+<7>driver: 's3cfb': driver_bound: bound to device 's3cfb'
+<7>bus: 'platform': really_probe: bound device s3cfb to driver s3cfb
+<7>bus: 'spi': add driver tl2796
+<7>device: 'ptmx': device_add
+<7>PM: Adding info for No Bus:ptmx
+<7>device: 'apm_bios': device_add
+<7>PM: Adding info for No Bus:apm_bios
+<7>bus: 'platform': add driver pvrsrvkm
+<7>bus: 'platform': driver_probe_device: matched device pvrsrvkm with driver pvrsrvkm
+<7>bus: 'platform': really_probe: probing driver pvrsrvkm with device pvrsrvkm
+<7>driver: 'pvrsrvkm': driver_bound: bound to device 'pvrsrvkm'
+<7>bus: 'platform': really_probe: bound device pvrsrvkm to driver pvrsrvkm
+<7>device class 'pvr': registering
+<7>device: 'pvrsrvkm': device_add
+<7>PM: Adding info for No Bus:pvrsrvkm
+PA FB = 0x443AF000, bits per pixel = 32
+screen width=480 height=800 va=0xd43af000 pa=0x443af000
+xres_virtual = 480, yres_virtual = 1600, xoffset = 0, yoffset = 0
+fb_size=3072000
+Back frameBuffer[0].VAddr=d4526000 PAddr=44526000 size=1536000
+<7>device class 's3c_bc': registering
+<7>device: 's3c_bc': device_add
+<7>PM: Adding info for No Bus:s3c_bc
+<7>bus: 'platform': add driver s5pv210-uart
+<7>bus: 'platform': driver_probe_device: matched device s5pv210-uart.0 with driver s5pv210-uart
+<7>bus: 'platform': really_probe: probing driver s5pv210-uart with device s5pv210-uart.0
+<6>s5pv210-uart.0: s3c2410_serial0 at MMIO 0xe2900000 (irq = 16) is a S3C6400/10
+<7>device: 's3c2410_serial0': device_add
+<7>PM: Adding info for No Bus:s3c2410_serial0
+<7>driver: 's5pv210-uart.0': driver_bound: bound to device 's5pv210-uart'
+<7>bus: 'platform': really_probe: bound device s5pv210-uart.0 to driver s5pv210-uart
+<7>bus: 'platform': driver_probe_device: matched device s5pv210-uart.1 with driver s5pv210-uart
+<7>bus: 'platform': really_probe: probing driver s5pv210-uart with device s5pv210-uart.1
+<6>s5pv210-uart.1: s3c2410_serial1 at MMIO 0xe2900400 (irq = 20) is a S3C6400/10
+<7>device: 's3c2410_serial1': device_add
+<7>PM: Adding info for No Bus:s3c2410_serial1
+<7>driver: 's5pv210-uart.1': driver_bound: bound to device 's5pv210-uart'
+<7>bus: 'platform': really_probe: bound device s5pv210-uart.1 to driver s5pv210-uart
+<7>bus: 'platform': driver_probe_device: matched device s5pv210-uart.2 with driver s5pv210-uart
+<7>bus: 'platform': really_probe: probing driver s5pv210-uart with device s5pv210-uart.2
+<6>s5pv210-uart.2: s3c2410_serial2 at MMIO 0xe2900800 (irq = 24) is a S3C6400/10
+<7>device: 's3c2410_serial2': device_add
+<7>PM: Adding info for No Bus:s3c2410_serial2
+<7>driver: 's5pv210-uart.2': driver_bound: bound to device 's5pv210-uart'
+<7>bus: 'platform': really_probe: bound device s5pv210-uart.2 to driver s5pv210-uart
+<7>bus: 'platform': driver_probe_device: matched device s5pv210-uart.3 with driver s5pv210-uart
+<7>bus: 'platform': really_probe: probing driver s5pv210-uart with device s5pv210-uart.3
+<6>s5pv210-uart.3: s3c2410_serial3 at MMIO 0xe2900c00 (irq = 28) is a S3C6400/10
+<7>device: 's3c2410_serial3': device_add
+<7>PM: Adding info for No Bus:s3c2410_serial3
+<7>driver: 's5pv210-uart.3': driver_bound: bound to device 's5pv210-uart'
+<7>bus: 'platform': really_probe: bound device s5pv210-uart.3 to driver s5pv210-uart
+<7>device: 'ram0': device_add
+<7>PM: Adding info for No Bus:ram0
+<7>device: '1:0': device_add
+<7>PM: Adding info for No Bus:1:0
+<7>device: 'ram1': device_add
+<7>PM: Adding info for No Bus:ram1
+<7>device: '1:1': device_add
+<7>PM: Adding info for No Bus:1:1
+<7>device: 'ram2': device_add
+<7>PM: Adding info for No Bus:ram2
+<7>device: '1:2': device_add
+<7>PM: Adding info for No Bus:1:2
+<7>device: 'ram3': device_add
+<7>PM: Adding info for No Bus:ram3
+<7>device: '1:3': device_add
+<7>PM: Adding info for No Bus:1:3
+<7>device: 'ram4': device_add
+<7>PM: Adding info for No Bus:ram4
+<7>device: '1:4': device_add
+<7>PM: Adding info for No Bus:1:4
+<7>device: 'ram5': device_add
+<7>PM: Adding info for No Bus:ram5
+<7>device: '1:5': device_add
+<7>PM: Adding info for No Bus:1:5
+<7>device: 'ram6': device_add
+<7>PM: Adding info for No Bus:ram6
+<7>device: '1:6': device_add
+<7>PM: Adding info for No Bus:1:6
+<7>device: 'ram7': device_add
+<7>PM: Adding info for No Bus:ram7
+<7>device: '1:7': device_add
+<7>PM: Adding info for No Bus:1:7
+<7>device: 'ram8': device_add
+<7>PM: Adding info for No Bus:ram8
+<7>device: '1:8': device_add
+<7>PM: Adding info for No Bus:1:8
+<7>device: 'ram9': device_add
+<7>PM: Adding info for No Bus:ram9
+<7>device: '1:9': device_add
+<7>PM: Adding info for No Bus:1:9
+<7>device: 'ram10': device_add
+<7>PM: Adding info for No Bus:ram10
+<7>device: '1:10': device_add
+<7>PM: Adding info for No Bus:1:10
+<7>device: 'ram11': device_add
+<7>PM: Adding info for No Bus:ram11
+<7>device: '1:11': device_add
+<7>PM: Adding info for No Bus:1:11
+<7>device: 'ram12': device_add
+<7>PM: Adding info for No Bus:ram12
+<7>device: '1:12': device_add
+<7>PM: Adding info for No Bus:1:12
+<7>device: 'ram13': device_add
+<7>PM: Adding info for No Bus:ram13
+<7>device: '1:13': device_add
+<7>PM: Adding info for No Bus:1:13
+<7>device: 'ram14': device_add
+<7>PM: Adding info for No Bus:ram14
+<7>device: '1:14': device_add
+<7>PM: Adding info for No Bus:1:14
+<7>device: 'ram15': device_add
+<7>PM: Adding info for No Bus:ram15
+<7>device: '1:15': device_add
+<7>PM: Adding info for No Bus:1:15
+<6>brd: module loaded
+<7>device: 'loop0': device_add
+<7>PM: Adding info for No Bus:loop0
+<7>device: '7:0': device_add
+<7>PM: Adding info for No Bus:7:0
+<7>device: 'loop1': device_add
+<7>PM: Adding info for No Bus:loop1
+<7>device: '7:1': device_add
+<7>PM: Adding info for No Bus:7:1
+<7>device: 'loop2': device_add
+<7>PM: Adding info for No Bus:loop2
+<7>device: '7:2': device_add
+<7>PM: Adding info for No Bus:7:2
+<7>device: 'loop3': device_add
+<7>PM: Adding info for No Bus:loop3
+<7>device: '7:3': device_add
+<7>PM: Adding info for No Bus:7:3
+<7>device: 'loop4': device_add
+<7>PM: Adding info for No Bus:loop4
+<7>device: '7:4': device_add
+<7>PM: Adding info for No Bus:7:4
+<7>device: 'loop5': device_add
+<7>PM: Adding info for No Bus:loop5
+<7>device: '7:5': device_add
+<7>PM: Adding info for No Bus:7:5
+<7>device: 'loop6': device_add
+<7>PM: Adding info for No Bus:loop6
+<7>device: '7:6': device_add
+<7>PM: Adding info for No Bus:7:6
+<7>device: 'loop7': device_add
+<7>PM: Adding info for No Bus:loop7
+<7>device: '7:7': device_add
+<7>PM: Adding info for No Bus:7:7
+<6>loop: module loaded
+<7>bus: 'platform': add driver android_pmem
+<7>bus: 'platform': driver_probe_device: matched device android_pmem.0 with driver android_pmem
+<7>bus: 'platform': really_probe: probing driver android_pmem with device android_pmem.0
+<6>pmem: 1 init
+<7>device: 'pmem': device_add
+<7>PM: Adding info for No Bus:pmem
+<7>driver: 'android_pmem.0': driver_bound: bound to device 'android_pmem'
+<7>bus: 'platform': really_probe: bound device android_pmem.0 to driver android_pmem
+<7>bus: 'platform': driver_probe_device: matched device android_pmem.1 with driver android_pmem
+<7>bus: 'platform': really_probe: probing driver android_pmem with device android_pmem.1
+<6>pmem_gpu1: 1 init
+<7>device: 'pmem_gpu1': device_add
+<7>PM: Adding info for No Bus:pmem_gpu1
+<7>driver: 'android_pmem.1': driver_bound: bound to device 'android_pmem'
+<7>bus: 'platform': really_probe: bound device android_pmem.1 to driver android_pmem
+<7>bus: 'platform': driver_probe_device: matched device android_pmem.2 with driver android_pmem
+<7>bus: 'platform': really_probe: probing driver android_pmem with device android_pmem.2
+<6>pmem_adsp: 1 init
+<7>device: 'pmem_adsp': device_add
+<7>PM: Adding info for No Bus:pmem_adsp
+<7>driver: 'android_pmem.2': driver_bound: bound to device 'android_pmem'
+<7>bus: 'platform': really_probe: bound device android_pmem.2 to driver android_pmem
+<6>Android kernel panic handler initialized (bind=kpanic)
+<6>Loading pn544 driver
+<7>bus: 'i2c': add driver pn544
+<7>bus: 'platform': add driver sec_jack
+<7>bus: 'platform': driver_probe_device: matched device sec_jack.1 with driver sec_jack
+<7>bus: 'platform': really_probe: probing driver sec_jack with device sec_jack.1
+<6>sec_jack_probe : Registering jack driver
+<7>device class 'switch': registering
+<7>device: 'h2w': device_add
+<7>PM: Adding info for No Bus:h2w
+<7>device: 'send_end': device_add
+<7>PM: Adding info for No Bus:send_end
+<7>device class 'jack': registering
+<7>device: 'jack_selector': device_add
+<7>PM: Adding info for No Bus:jack_selector
+<6>wake enabled for irq 38
+<7>driver: 'sec_jack.1': driver_bound: bound to device 'sec_jack'
+<7>bus: 'platform': really_probe: bound device sec_jack.1 to driver sec_jack
+<7>bus: 'i2c': add driver fsa9480
+<7>bus: 'i2c': driver_probe_device: matched device 7-0025 with driver fsa9480
+<7>bus: 'i2c': really_probe: probing driver fsa9480 with device 7-0025
+<6>wake enabled for irq 167
+<7>device: 'dock': device_add
+<7>PM: Adding info for No Bus:dock
+<6>fsa9480 7-0025: dev1: 0x0, dev2: 0x8
+<7>driver: '7-0025': driver_bound: bound to device 'fsa9480'
+<7>bus: 'i2c': really_probe: bound device 7-0025 to driver fsa9480
+[modemctl_init]
+<7>bus: 'platform': add driver modemctl
+<7>bus: 'platform': driver_probe_device: matched device modemctl with driver modemctl
+<7>bus: 'platform': really_probe: probing driver modemctl with device modemctl
+[modemctl_probe]
+<7>device class 'modemctl': registering
+<7>device: 'msm': device_add
+<7>PM: Adding info for No Bus:msm
+<6>wake enabled for irq 163
+<6>wake enabled for irq 171
+<7>driver: 'modemctl': driver_bound: bound to device 'modemctl'
+<7>bus: 'platform': really_probe: bound device modemctl to driver modemctl
+[onedram_init]
+<7>bus: 'platform': add driver onedram
+<7>bus: 'platform': driver_probe_device: matched device onedram with driver onedram
+<7>bus: 'platform': really_probe: probing driver onedram with device onedram
+[onedram_probe]
+<6>wake enabled for irq 43
+<7>device class 'onedram': registering
+<7>device: 'onedram': device_add
+<7>PM: Adding info for No Bus:onedram
+<7>driver: 'onedram': driver_bound: bound to device 'onedram'
+<7>bus: 'platform': really_probe: bound device onedram to driver onedram
+[svnet_init]
+<7>device: 'svnet0': device_add
+<7>PM: Adding info for No Bus:svnet0
+<7>device class 'scsi_disk': registering
+<7>bus: 'scsi': add driver sd
+<7>device class 'scsi_generic': registering
+[BIF:IN ] ++FSR_BML_Init(nFlag: 0x0)
+[PAM:   ] ++FSR_PAM_Init
+[PAM:   ]   OneNAND physical base address       : 0xb0000000
+[PAM:   ]   OneNAND virtual  base address       : 0xe08c0000
+[PAM:   ]   OneNAND nMID=0xec : nDID=0x50 Page size=4
+[PAM:   ] --FSR_PAM_Init
+[BIF:   ]   FSR VERSION: FSR_1.2.1p1_b139_RTM
+[OND:INF]   FSR_OND_4K_Open(nDev:0, pParam:0xc4c21e60, nFlag:0x00000000) / 1033 line
+            pstOND4kCxt->nBaseAddr: 0xe08c0000
+            nDev=0, nMID=0x00ec, nDID=0x0050, nVID=0x013e
+[OND:INF]   pstOND4kCxt->nSysConf1:0xf0c6 / 1116 line
+[OND:INF]   pstOND4kCxt->nBlksForSLCArea[0]:2048 / 1133 line
+[OND:INF]   pstOND4kCxt->nIntID   :0x0000 / 1236 line
+[OND:INF]   1X_CACHEPGM CMD : 0x007f
+[OND:INF]   1X_PLOAD    CMD : 0x0003
+[BBM:INF]   Scan from 2004 to 2047 to find BML meta blocks (die: 0)
+[BBM:INF]   ffff ffff ffff ffff ffff ffff ffff ffff ffff ffff
+[BBM:INF]   ffff ffff ffff ffff ffff ffff ffff ffff ffff ffff
+[BBM:INF]   ffff ffff ffff ffff ffff ffff ffff ffff ffff ffff
+[BBM:INF]   ffff ffff ffff ffff ffff ffff ffff ffff ffff ffff
+[BBM:INF]   a5a5 a5a5 ffff
+<7>device: 'tfsr0!c': device_add
+<7>PM: Adding info for No Bus:tfsr0!c
+<7>device: '139:0': device_add
+<7>PM: Adding info for No Bus:139:0
+<7>device: 'tfsr1': device_add
+<7>PM: Adding info for No Bus:tfsr1
+<7>device: '139:1': device_add
+<7>PM: Adding info for No Bus:139:1
+<7>device: 'tfsr2': device_add
+<7>PM: Adding info for No Bus:tfsr2
+<7>device: '139:2': device_add
+<7>PM: Adding info for No Bus:139:2
+<7>device: 'tfsr3': device_add
+<7>PM: Adding info for No Bus:tfsr3
+<7>device: '139:3': device_add
+<7>PM: Adding info for No Bus:139:3
+<7>device: 'tfsr4': device_add
+<7>PM: Adding info for No Bus:tfsr4
+<7>device: '139:4': device_add
+<7>PM: Adding info for No Bus:139:4
+<7>device: 'tfsr5': device_add
+<7>PM: Adding info for No Bus:tfsr5
+<7>device: '139:5': device_add
+<7>PM: Adding info for No Bus:139:5
+<7>device: 'tfsr6': device_add
+<7>PM: Adding info for No Bus:tfsr6
+<7>device: '139:6': device_add
+<7>PM: Adding info for No Bus:139:6
+<7>device: 'tfsr7': device_add
+<7>PM: Adding info for No Bus:tfsr7
+<7>device: '139:7': device_add
+<7>PM: Adding info for No Bus:139:7
+<7>bus: 'platform': add driver tfsr
+<7>Registering platform device 'tfsr.0'. Parent at platform
+<7>device: 'tfsr.0': device_add
+<7>bus: 'platform': add device tfsr.0
+<7>PM: Adding info for platform:tfsr.0
+<7>bus: 'platform': driver_probe_device: matched device tfsr.0 with driver tfsr
+<7>bus: 'platform': really_probe: probing driver tfsr with device tfsr.0
+<7>driver: 'tfsr.0': driver_bound: bound to device 'tfsr'
+<7>bus: 'platform': really_probe: bound device tfsr.0 to driver tfsr
+FSR: Registered TinyFSR Driver.
+<7>bus: 'platform': add driver spi_gpio
+<7>bus: 'platform': driver_probe_device: matched device spi_gpio.3 with driver spi_gpio
+<7>bus: 'platform': really_probe: probing driver spi_gpio with device spi_gpio.3
+<7>device: 'spi3': device_add
+<7>PM: Adding info for No Bus:spi3
+<7>device: 'spi3.0': device_add
+<7>bus: 'spi': add device spi3.0
+<7>PM: Adding info for spi:spi3.0
+<7>bus: 'spi': driver_probe_device: matched device spi3.0 with driver tl2796
+<7>bus: 'spi': really_probe: probing driver tl2796 with device spi3.0
+<7>device: 's5p_bl': device_add
+<7>PM: Adding info for No Bus:s5p_bl
+<7>device: 's5p_lcd': device_add
+<7>PM: Adding info for No Bus:s5p_lcd
+<7>device class 'gammaset': registering
+<7>device: 'switch_gammaset': device_add
+<7>PM: Adding info for No Bus:switch_gammaset
+<7>device class 'aclset': registering
+<7>device: 'switch_aclset': device_add
+<7>PM: Adding info for No Bus:switch_aclset
+<7>device: 'sec_lcd': device_add
+<7>PM: Adding info for No Bus:sec_lcd
+<7>device class 'mdnieset_ui': registering
+<7>device: 'switch_mdnieset_ui': device_add
+<7>PM: Adding info for No Bus:switch_mdnieset_ui
+<7>device class 'mdnieset_outdoor': registering
+<7>device: 'switch_mdnieset_outdoor': device_add
+<7>PM: Adding info for No Bus:switch_mdnieset_outdoor
+<6>tl2796_probe successfully proved
+<7>driver: 'spi3.0': driver_bound: bound to device 'tl2796'
+<7>bus: 'spi': really_probe: bound device spi3.0 to driver tl2796
+<7>driver: 'spi_gpio.3': driver_bound: bound to device 'spi_gpio'
+<7>bus: 'platform': really_probe: bound device spi_gpio.3 to driver spi_gpio
+<6>PPP generic driver version 2.4.2
+<7>device class 'ppp': registering
+<7>device: 'ppp': device_add
+<7>PM: Adding info for No Bus:ppp
+<6>PPP Deflate Compression module registered
+<6>PPP BSD Compression module registered
+<6>PPP MPPE Compression module registered
+<6>NET: Registered protocol family 24
+<7>device: 'ifb0': device_add
+<7>PM: Adding info for No Bus:ifb0
+<7>device: 'ifb1': device_add
+<7>PM: Adding info for No Bus:ifb1
+<6>tun: Universal TUN/TAP device driver, 1.6
+<6>tun: (C) 1999-2004 Max Krasnyansky <maxk@qualcomm.com>
+<7>device: 'tun': device_add
+<7>PM: Adding info for No Bus:tun
+<7>bus: 'platform': add driver s3c-usbgadget
+<7>bus: 'platform': driver_probe_device: matched device s3c-usbgadget with driver s3c-usbgadget
+<7>bus: 'platform': really_probe: probing driver s3c-usbgadget with device s3c-usbgadget
+<7>driver: 's3c-usbgadget': driver_bound: bound to device 's3c-usbgadget'
+<7>bus: 'platform': really_probe: bound device s3c-usbgadget to driver s3c-usbgadget
+<6>s3c-udc : S3C HS USB Device Controller Driver, (c) 2008-2009 Samsung Electronics
+s3c-udc : version 15 March 2009 (DMA Mode)
+<6>android init
+<7>bus: 'platform': add driver android_usb
+<7>bus: 'platform': driver_probe_device: matched device android_usb with driver android_usb
+<7>bus: 'platform': really_probe: probing driver android_usb with device android_usb
+<6>android_probe pdata: c089de20
+<7>device class 'usb_composite': registering
+<7>device: 'gadget': device_add
+<7>PM: Adding info for No Bus:gadget
+<6>android_bind
+<7>android_bind_config
+<7>device: 'usb_configuration': device_add
+<7>PM: Adding info for No Bus:usb_configuration
+<6>android_usb gadget: android_usb ready
+<6>android_usb gadget: USB udc 0,1 lock
+<7>s5pv210_lock_dvfs_high_level : lock with token(7) level(3) current(0)
+[otg_clock_enable] clk_enable(otg_clock) OK.
+composite_disconnect -> switch_work
+<6>android_usb gadget: USB udc 1,0 unlock
+<7>s5pv210_unlock_dvfs_high_level : unlock with token(7) current(0) level(4)
+[otg_clock_enable] clk_disable(otg_clock) OK.
+<7>Registered gadget driver 'android_usb'
+<7>driver: 'android_usb': driver_bound: bound to device 'android_usb'
+<7>bus: 'platform': really_probe: bound device android_usb to driver android_usb
+<6>f_acm init
+<6>android_register_function acm
+<6>f_adb init
+<6>android_register_function adb
+<6>f_mass_storage init
+<7>bus: 'platform': add driver usb_mass_storage
+<7>bus: 'platform': driver_probe_device: matched device usb_mass_storage with driver usb_mass_storage
+<7>bus: 'platform': really_probe: probing driver usb_mass_storage with device usb_mass_storage
+<6>fsg_probe pdev: c089d0b8, pdata: c089de44
+<7>driver: 'usb_mass_storage': driver_bound: bound to device 'usb_mass_storage'
+<7>bus: 'platform': really_probe: bound device usb_mass_storage to driver usb_mass_storage
+<6>android_register_function usb_mass_storage
+<6>f_mtp init
+<6>android_register_function mtp
+<6>f_rndis init
+<7>bus: 'platform': add driver rndis
+<7>bus: 'platform': driver_probe_device: matched device rndis with driver rndis
+<7>bus: 'platform': really_probe: probing driver rndis with device rndis
+<7>driver: 'rndis': driver_bound: bound to device 'rndis'
+<7>bus: 'platform': really_probe: bound device rndis to driver rndis
+<6>android_register_function rndis
+<7>device: 'acm': device_add
+<7>PM: Adding info for No Bus:acm
+<7>device: 'dun': device_add
+<7>PM: Adding info for No Bus:dun
+<6>DUN is registerd
+<7>device: 'ttyGS0': device_add
+<7>PM: Adding info for No Bus:ttyGS0
+<7>device: 'lun0': device_add
+<7>PM: Adding info for No Bus:lun0
+<7>device: 'lun1': device_add
+<7>PM: Adding info for No Bus:lun1
+[composite_switch_work]config=0x(null)
+<6>android_usb gadget: Mass Storage Function, version: 2009/09/11
+<6>android_usb gadget: Number of LUNs=2
+<6> lun0: LUN: removable file: (no medium)
+<6> lun1: LUN: removable file: (no medium)
+<7>device: 'usb_mass_storage': device_add
+<7>PM: Adding info for No Bus:usb_mass_storage
+<6>adb_bind_config
+<7>device: 'android_adb': device_add
+<7>PM: Adding info for No Bus:android_adb
+<7>device: 'android_adb_enable': device_add
+<7>PM: Adding info for No Bus:android_adb_enable
+<7>device: 'adb': device_add
+<7>PM: Adding info for No Bus:adb
+<6>rndis_function_bind_config MAC: 02:00:00:00:00:00
+<4>android_usb gadget: using random self ethernet address
+<4>android_usb gadget: using random host ethernet address
+<7>device: 'usb0': device_add
+<7>PM: Adding info for No Bus:usb0
+<6>usb0: MAC 8a:48:75:7f:3c:1a
+<6>usb0: HOST MAC 4e:fc:11:8e:5c:06
+<7>device: 'rndis': device_add
+<7>PM: Adding info for No Bus:rndis
+<7>device: 'usb_mtp_gadget': device_add
+<7>PM: Adding info for No Bus:usb_mtp_gadget
+<7>device: 'mtp': device_add
+<7>PM: Adding info for No Bus:mtp
+[mtpg_function_bind]    line = [916]
+[mtpg_function_bind]    dual speed line = [983]
+***** [mtpg_function_bind:1000] calling mtp_function_enable with 0
+[mtp_function_enable] mtp_function => (disabled)
+****** mtp_function_enable and line 1306 null_desc
+dev->cdev=0xc4eb1f00, dev->cdev->gadget=0xc08c1a70, dev->cdev->gadget->speed=0x0, mode=0, pid = 0x681d
+<7>device: 'mice': device_add
+<7>PM: Adding info for No Bus:mice
+<4>mice: could not register psaux device, error: -16
+<6>mice: PS/2 mouse device common for all mice
+<7>bus: 'serio': add driver atkbd
+<7>bus: 'platform': add driver s3c-keypad
+<7>bus: 'platform': driver_probe_device: matched device s3c-keypad with driver s3c-keypad
+<7>bus: 'platform': really_probe: probing driver s3c-keypad with device s3c-keypad
+<7>device class 'timed_output': registering
+<7>device: 'flash': device_add
+<7>PM: Adding info for No Bus:flash
+<7>driver: 's3c-keypad': driver_bound: bound to device 's3c-keypad'
+<7>bus: 'platform': really_probe: bound device s3c-keypad to driver s3c-keypad
+<6>S3C Keypad Driver
+<7>bus: 'i2c': add driver bma023
+<7>bus: 'i2c': driver_probe_device: matched device 5-0038 with driver bma023
+<7>bus: 'i2c': really_probe: probing driver bma023 with device 5-0038
+<6>bma023 5-0038: bma023 found
+<6>bma023 5-0038: al_version=2, ml_version=1
+<7>device: 'input0': device_add
+<7>PM: Adding info for No Bus:input0
+<6>input: accelerometer_sensor as /devices/virtual/input/input0
+<7>device: 'event0': device_add
+<7>PM: Adding info for No Bus:event0
+<7>device: 'accelerometer': device_add
+<7>PM: Adding info for No Bus:accelerometer
+<7>driver: '5-0038': driver_bound: bound to device 'bma023'
+<7>bus: 'i2c': really_probe: bound device 5-0038 to driver bma023
+<7>bus: 'i2c': add driver yas529
+<7>bus: 'i2c': driver_probe_device: matched device 12-002e with driver yas529
+<7>bus: 'i2c': really_probe: probing driver yas529 with device 12-002e
+<7>device: 'input1': device_add
+<7>PM: Adding info for No Bus:input1
+<6>input: magnetic_sensor as /devices/platform/i2c-gpio.12/i2c-12/12-002e/input/input1
+<7>device: 'event1': device_add
+<7>PM: Adding info for No Bus:event1
+<7>device: 'input2': device_add
+<7>PM: Adding info for No Bus:input2
+<6>input: raw_magnetic_sensor as /devices/platform/i2c-gpio.12/i2c-12/12-002e/input/input2
+<7>device: 'event2': device_add
+<7>PM: Adding info for No Bus:event2
+<3>yas529_cdrv_init failed[-5]
+[    6.274361] yas529_cdrv_i<it failed[-5]
+3>hwdep_driver.init() failed[-5]
+[    6.281120] hwdep_driver.ini<() failed[-5]
+7>PM: Removing info for No Bus:event2
+<7>device: 'input2': device_unregister
+<7>PM: Removing info for No Bus:input2
+<7>PM: Removing info for No Bus:event1
+<7>device: 'input1': device_unregister
+<7>PM: Removing info for No Bus:input1
+<4>yas529: probe of 12-002e failed with error -5
+<7>Registering platform device 'orientation_sensor.0'. Parent at platform
+<7>device: 'orientation_sensor.0': device_add
+<7>bus: 'platform': add device orientation_sensor.0
+<7>PM: Adding info for platform:orientation_sensor.0
+<7>bus: 'platform': add driver orientation_sensor
+<7>bus: 'platform': driver_probe_device: matched device orientation_sensor.0 with driver orientation_sensor
+<7>bus: 'platform': really_probe: probing driver orientation_sensor with device orientation_sensor.0
+<7>device: 'input3': device_add
+<7>PM: Adding info for No Bus:input3
+<6>input: orientation_sensor as /devices/virtual/input/input3
+<7>device: 'event1': device_add
+<7>PM: Adding info for No Bus:event1
+<7>driver: 'orientation_sensor.0': driver_bound: bound to device 'orientation_sensor'
+<7>bus: 'platform': really_probe: bound device orientation_sensor.0 to driver orientation_sensor
+<7>bus: 'platform': add driver gpio-event
+<7>bus: 'platform': driver_probe_device: matched device gpio-event.0 with driver gpio-event
+<7>bus: 'platform': really_probe: probing driver gpio-event with device gpio-event.0
+<6>wake enabled for irq 166
+<6>wake enabled for irq 169
+<6>wake enabled for irq 170
+<6>wake enabled for irq 173
+<6>GPIO Input Driver: Start gpio inputs for wave-keypad in interrupt mode
+<7>device: 'input4': device_add
+<7>PM: Adding info for No Bus:input4
+<6>input: wave-keypad as /devices/virtual/input/input4
+<7>device: 'event2': device_add
+<7>PM: Adding info for No Bus:event2
+<7>driver: 'gpio-event.0': driver_bound: bound to device 'gpio-event'
+<7>bus: 'platform': really_probe: bound device gpio-event.0 to driver gpio-event
+<7>device: 'keychord': device_add
+<7>PM: Adding info for No Bus:keychord
+<7>device: 'uinput': device_add
+<7>PM: Adding info for No Bus:uinput
+<7>bus: 'i2c': add driver gp2a
+<7>bus: 'i2c': driver_probe_device: matched device 11-0044 with driver gp2a
+<7>bus: 'i2c': really_probe: probing driver gp2a with device 11-0044
+<7>device: 'input5': device_add
+<7>PM: Adding info for No Bus:input5
+<6>input: proximity_sensor as /devices/virtual/input/input5
+<7>device: 'event3': device_add
+<7>PM: Adding info for No Bus:event3
+<7>device: 'input6': device_add
+<7>PM: Adding info for No Bus:input6
+<6>input: light_sensor as /devices/virtual/input/input6
+<7>device: 'event4': device_add
+<7>PM: Adding info for No Bus:event4
+<7>device: 'light': device_add
+<7>PM: Adding info for No Bus:light
+<7>device class 'lightsensor': registering
+<7>device: 'switch_cmd': device_add
+<7>PM: Adding info for No Bus:switch_cmd
+<7>driver: '11-0044': driver_bound: bound to device 'gp2a'
+<7>bus: 'i2c': really_probe: bound device 11-0044 to driver gp2a
+<7>bus: 'platform': add driver alarm
+<7>device: 'alarm': device_add
+<7>PM: Adding info for No Bus:alarm
+<7>bus: 'i2c': add driver rtc_max8998
+<7>bus: 'i2c': driver_probe_device: matched device 6-0006 with driver rtc_max8998
+<7>bus: 'i2c': really_probe: probing driver rtc_max8998 with device 6-0006
+<7>driver: '6-0006': driver_bound: bound to device 'rtc_max8998'
+<7>bus: 'i2c': really_probe: bound device 6-0006 to driver rtc_max8998
+S3C24XX RTC, (c) 2004,2006 Simtec Electronics
+<7>bus: 'platform': add driver s3c-rtc
+<7>bus: 'platform': driver_probe_device: matched device s3c2410-rtc with driver s3c-rtc
+<7>bus: 'platform': really_probe: probing driver s3c-rtc with device s3c2410-rtc
+<6>s3c-rtc s3c2410-rtc: rtc disabled, re-enabling
+<7>device: 'rtc0': device_add
+<7>PM: Adding info for No Bus:rtc0
+<7>Registering platform device 'alarm'. Parent at platform
+<7>device: 'alarm': device_add
+<7>bus: 'platform': add device alarm
+<7>PM: Adding info for platform:alarm
+<7>bus: 'platform': driver_probe_device: matched device alarm with driver alarm
+<7>bus: 'platform': really_probe: probing driver alarm with device alarm
+<7>driver: 'alarm': driver_bound: bound to device 'alarm'
+<7>bus: 'platform': really_probe: bound device alarm to driver alarm
+<6>using rtc device, s3c, for alarms<6>s3c-rtc s3c2410-rtc: rtc core: registered s3c as rtc0
+<7>driver: 's3c2410-rtc': driver_bound: bound to device 's3c-rtc'
+<7>bus: 'platform': really_probe: bound device s3c2410-rtc to driver s3c-rtc
+<6>i2c /dev entries driver
+<7>device class 'i2c-dev': registering
+<7>bus: 'i2c': add driver dev_driver
+<7>device: 'i2c-4': device_add
+<7>PM: Adding info for No Bus:i2c-4
+<7>device: 'i2c-5': device_add
+<7>PM: Adding info for No Bus:i2c-5
+<7>device: 'i2c-6': device_add
+<7>PM: Adding info for No Bus:i2c-6
+<7>device: 'i2c-7': device_add
+<7>PM: Adding info for No Bus:i2c-7
+<7>device: 'i2c-8': device_add
+<7>PM: Adding info for No Bus:i2c-8
+<7>device: 'i2c-11': device_add
+<7>PM: Adding info for No Bus:i2c-11
+<7>device: 'i2c-12': device_add
+<7>PM: Adding info for No Bus:i2c-12
+<7>device: 'i2c-0': device_add
+<7>PM: Adding info for No Bus:i2c-0
+<7>device: 'i2c-1': device_add
+<7>PM: Adding info for No Bus:i2c-1
+<7>device: 'i2c-2': device_add
+<7>PM: Adding info for No Bus:i2c-2
+<6>Linux video capture interface: v2.00
+<7>device class 'video4linux': registering
+<7>bus: 'i2c': add driver CE147
+<7>bus: 'i2c': add driver S5KA3DFX
+<6>mfc_init: <6>S5PC110 MFC Driver, (c) 2009 Samsung Electronics
+
+<7>bus: 'platform': add driver s3c-mfc
+<7>bus: 'platform': driver_probe_device: matched device s3c-mfc with driver s3c-mfc
+<7>bus: 'platform': really_probe: probing driver s3c-mfc with device s3c-mfc
+<7>device: 's3c-mfc': device_add
+<7>PM: Adding info for No Bus:s3c-mfc
+<7>driver: 's3c-mfc': driver_bound: bound to device 's3c-mfc'
+<7>bus: 'platform': really_probe: bound device s3c-mfc to driver s3c-mfc
+<6>S3C JPEG Driver, (c) 2007 Samsung Electronics
+<6>JPEG driver for S5PV210
+<7>bus: 'platform': add driver s3c-jpg
+<7>bus: 'platform': driver_probe_device: matched device s3c-jpg with driver s3c-jpg
+<7>bus: 'platform': really_probe: probing driver s3c-jpg with device s3c-jpg
+<7>device: 's3c-jpg': device_add
+<7>PM: Adding info for No Bus:s3c-jpg
+<7>driver: 's3c-jpg': driver_bound: bound to device 's3c-jpg'
+<7>bus: 'platform': really_probe: bound device s3c-jpg to driver s3c-jpg
+<7>bus: 'i2c': add driver s5p_ddc
+<7>bus: 'i2c': add driver max17040
+<6>device-mapper: uevent: version 1.0.3
+<7>s3c-mfc s3c-mfc: firmware: using built-in firmware samsung_mfc_fw.bin
+<7>device: 'device-mapper': device_add
+<7>PM: Adding info for No Bus:device-mapper
+<6>device-mapper: ioctl: 4.17.0-ioctl (2010-03-05) initialised: dm-devel@redhat.com
+<6>Bluetooth: HCI UART driver ver 2.2
+<6>Bluetooth: HCI H4 protocol initialized
+<6>cpuidle: using governor ladder
+<6>cpuidle: using governor menu
+<7>bus: 'mmc': add driver mmcblk
+<6>sdhci: Secure Digital Host Controller Interface driver
+<6>sdhci: Copyright(c) Pierre Ossman
+<7>bus: 'platform': add driver s3c-sdhci
+<7>bus: 'platform': driver_probe_device: matched device s3c-sdhci.0 with driver s3c-sdhci
+<7>bus: 'platform': really_probe: probing driver s3c-sdhci with device s3c-sdhci.0
+<6>s3c-sdhci s3c-sdhci.0: clock source 0: hsmmc (133400000 Hz)
+<6>s3c-sdhci s3c-sdhci.0: clock source 1: hsmmc (133400000 Hz)
+<6>s3c-sdhci s3c-sdhci.0: clock source 2: sclk_mmc (51307692 Hz)
+<7>device: 'mmc0': device_add
+<7>PM: Adding info for No Bus:mmc0
+<6>mmc0: SDHCI controller on samsung-hsmmc [s3c-sdhci.0] using ADMA
+<7>driver: 's3c-sdhci.0': driver_bound: bound to device 's3c-sdhci'
+<7>bus: 'platform': really_probe: bound device s3c-sdhci.0 to driver s3c-sdhci
+<7>bus: 'platform': driver_probe_device: matched device s3c-sdhci.1 with driver s3c-sdhci
+<7>bus: 'platform': really_probe: probing driver s3c-sdhci with device s3c-sdhci.1
+<6>s3c-sdhci s3c-sdhci.1: clock source 0: hsmmc (133400000 Hz)
+<6>s3c-sdhci s3c-sdhci.1: clock source 1: hsmmc (133400000 Hz)
+<6>s3c-sdhci s3c-sdhci.1: clock source 2: sclk_mmc (47642857 Hz)
+<7>device: 'mmc1': device_add
+<7>PM: Adding info for No Bus:mmc1
+<6>mmc1: SDHCI controller on samsung-hsmmc [s3c-sdhci.1] using ADMA
+<7>driver: 's3c-sdhci.1': driver_bound: bound to device 's3c-sdhci'
+<7>bus: 'platform': really_probe: bound device s3c-sdhci.1 to driver s3c-sdhci
+<7>bus: 'platform': driver_probe_device: matched device s3c-sdhci.2 with driver s3c-sdhci
+<7>bus: 'platform': really_probe: probing driver s3c-sdhci with device s3c-sdhci.2
+<6>s3c-sdhci s3c-sdhci.2: clock source 0: hsmmc (133400000 Hz)
+<6>s3c-sdhci s3c-sdhci.2: clock source 1: hsmmc (133400000 Hz)
+<6>s3c-sdhci s3c-sdhci.2: clock source 2: sclk_mmc (47642857 Hz)
+<7>device: 'mmc2': device_add
+<7>PM: Adding info for No Bus:mmc2
+<6>mmc2: SDHCI controller on samsung-hsmmc [s3c-sdhci.2] using ADMA
+<7>driver: 's3c-sdhci.2': driver_bound: bound to device 's3c-sdhci'
+<7>bus: 'platform': really_probe: bound device s3c-sdhci.2 to driver s3c-sdhci
+<7>bus: 'hid': registered
+<7>device: 'binder': device_add
+<7>PM: Adding info for No Bus:binder
+<7>device: 'log_main': device_add
+<7>PM: Adding info for No Bus:log_main
+<6>logger: created 512K log 'log_main'
+<7>device: 'log_events': device_add
+<7>PM: Adding info for No Bus:log_events
+<6>logger: created 256K log 'log_events'
+<7>device: 'log_radio': device_add
+<7>PM: Adding info for No Bus:log_radio
+<6>logger: created 256K log 'log_radio'
+<7>device: 'log_system': device_add
+<7>PM: Adding info for No Bus:log_system
+<6>logger: created 256K log 'log_system'
+<7>bus: 'platform': add driver timed-gpio
+<6>level device init
+<7>device: 'level': device_add
+<7>PM: Adding info for No Bus:level
+<7>device: 'timer': device_add
+<7>PM: Adding info for No Bus:timer
+<7>bus: 'platform': add driver soc-audio
+<4>No device for DAI WM8994 PAIFRX
+<4>No device for DAI WM8994 PCM
+<7>bus: 'platform': add driver s5pc1xx-iis
+<7>bus: 'platform': driver_probe_device: matched device s5pc1xx-iis.0 with driver s5pc1xx-iis
+<7>bus: 'platform': really_probe: probing driver s5pc1xx-iis with device s5pc1xx-iis.0
+<7>driver: 's5pc1xx-iis.0': driver_bound: bound to device 's5pc1xx-iis'
+<7>bus: 'platform': really_probe: bound device s5pc1xx-iis.0 to driver s5pc1xx-iis
+<4>No device for DAI s3c-pcmdev
+<7>Registering platform device 'soc-audio.0'. Parent at platform
+<7>device: 'soc-audio.0': device_add
+<7>bus: 'platform': add device soc-audio.0
+<7>PM: Adding info for platform:soc-audio.0
+<7>bus: 'platform': driver_probe_device: matched device soc-audio.0 with driver soc-audio
+<7>bus: 'platform': really_probe: probing driver soc-audio with device soc-audio.0
+<6>wm8994_probe: WM8994 Audio Codec 0.1
+<7>bus: 'i2c': add driver WM8994 I2C Codec
+<7>bus: 'i2c': driver_probe_device: matched device 4-001a with driver WM8994 I2C Codec
+<7>bus: 'i2c': really_probe: probing driver WM8994 I2C Codec with device 4-001a
+<6>s3c_idma_preallocate_buffer:  VA-e0900000  PA-C0000000  163840bytes
+<6>asoc: WM8994 PAIFRX <-> s5pc1xx-i2s mapping ok
+<3>wm8994_init: wm8994_pdata = pdata, pdata=c0899c80
+[    7.272342] wm8994_init: wm8994_pdata = pdata, <data=c0899c80
+7>driver: '4-001a': driver_bound: bound to device 'WM8994 I2C Codec'
+<7>bus: 'i2c': really_probe: bound device 4-001a to driver WM8994 I2C Codec
+<7>device: 'card0': device_add
+<7>PM: Adding info for No Bus:card0
+<7>device: 'pcmC0D0p': device_add
+<7>PM: Adding info for No Bus:pcmC0D0p
+<7>device: 'pcmC0D0c': device_add
+<7>PM: Adding info for No Bus:pcmC0D0c
+<7>device: 'controlC0': device_add
+<7>PM: Adding info for No Bus:controlC0
+<7>driver: 'soc-audio.0': driver_bound: bound to device 'soc-audio'
+<7>bus: 'platform': really_probe: bound device soc-audio.0 to driver soc-audio
+<7>Registering platform device 'soc-audio.1'. Parent at platform
+<7>device: 'soc-audio.1': device_add
+<7>bus: 'platform': add device soc-audio.1
+<7>PM: Adding info for platform:soc-audio.1
+<7>bus: 'platform': driver_probe_device: matched device soc-audio.1 with driver soc-audio
+<7>bus: 'platform': really_probe: probing driver soc-audio with device soc-audio.1
+<6>wm8994_pcm_probe: WM8994 Audio Codec 0.1
+<6>asoc: WM8994 PCM <-> s3c-pcmdev mapping ok
+<7>device: 'card1': device_add
+<7>PM: Adding info for No Bus:card1
+<7>device: 'pcmC1D0p': device_add
+<7>PM: Adding info for No Bus:pcmC1D0p
+<7>device: 'pcmC1D0c': device_add
+<7>PM: Adding info for No Bus:pcmC1D0c
+<7>device: 'controlC1': device_add
+<7>PM: Adding info for No Bus:controlC1
+<7>driver: 'soc-audio.1': driver_bound: bound to device 'soc-audio'
+<7>bus: 'platform': really_probe: bound device soc-audio.1 to driver soc-audio
+<6>S5PC11X RP driver, (c) 2010 Samsung Electronics
+<7>bus: 'platform': add driver s5p-rp
+<7>bus: 'platform': driver_probe_device: matched device s5p-rp with driver s5p-rp
+<7>bus: 'platform': really_probe: probing driver s5p-rp with device s5p-rp
+<7>device: 's5p-rp': device_add
+<7>PM: Adding info for No Bus:s5p-rp
+<7>device: 's5p-rp_ctrl': device_add
+<7>PM: Adding info for No Bus:s5p-rp_ctrl
+<6>S5P_RP: Driver successfully probed
+<7>driver: 's5p-rp': driver_bound: bound to device 's5p-rp'
+<7>bus: 'platform': really_probe: bound device s5p-rp to driver s5p-rp
+<6>ALSA device list:
+<6>  #0: smdkc110 (WM8994)
+<6>  #1: smdkc110-pcm (WM8994)
+<6>GACT probability NOT on
+<6>Mirror/redirect action on
+<6>u32 classifier
+<6>    Actions configured
+<6>Netfilter messages via NETLINK v0.30.
+<6>nf_conntrack version 0.5.0 (3247 buckets, 12988 max)
+<4>CONFIG_NF_CT_ACCT is deprecated and will be removed soon. Please use
+<4>nf_conntrack.acct=1 kernel parameter, acct=1 nf_conntrack module option or
+<4>sysctl net.netfilter.nf_conntrack_acct=1 to enable it.
+<6>ctnetlink v0.93: registering with nfnetlink.
+<6>xt_time: kernel timezone is -0000
+<6>ip_tables: (C) 2000-2006 Netfilter Core Team
+<6>arp_tables: (C) 2002 David S. Miller
+<6>TCP cubic registered
+<6>NET: Registered protocol family 10
+<6>lo: Disabled Privacy Extensions
+<6>Mobile IPv6
+<6>IPv6 over IPv4 tunneling driver
+<7>device: 'sit0': device_add
+<7>PM: Adding info for No Bus:sit0
+<6>sit0: Disabled Privacy Extensions
+<7>device: 'ip6tnl0': device_add
+<7>PM: Adding info for No Bus:ip6tnl0
+<6>ip6tnl0: Disabled Privacy Extensions
+<6>NET: Registered protocol family 17
+<6>NET: Registered protocol family 15
+<6>Bluetooth: L2CAP ver 2.14
+<6>Bluetooth: L2CAP socket layer initialized
+<6>Bluetooth: SCO (Voice Link) ver 0.6
+<6>Bluetooth: SCO socket layer initialized
+<6>Bluetooth: RFCOMM TTY layer initialized
+<6>Bluetooth: RFCOMM socket layer initialized
+<6>Bluetooth: RFCOMM ver 1.11
+<6>Bluetooth: HIDP (Human Interface Emulation) ver 1.2
+<7>bus: 'hid': add driver generic-bluetooth
+<6>NET: Registered protocol family 35
+<6>ThumbEE CPU extension supported.
+<7>Registering sysdev class 'vic'
+<7>Registering sys device of class 'vic'
+<7>Registering sys device 'vic0'
+<7>Registering sys device of class 'vic'
+<7>Registering sys device 'vic1'
+<7>Registering sys device of class 'vic'
+<7>Registering sys device 'vic2'
+<7>Registering sys device of class 'vic'
+<7>Registering sys device 'vic3'
+<6>S5PV210 CPUFREQ Initialising...
+<6>VFP support v0.3: implementor 41 architecture 3 part 30 variant c rev 2
+<7>Registering sysdev class 'vfp'
+<7>Registering sys device of class 'vfp'
+<7>Registering sys device 'vfp0'
+<7>device: 'cpu_dma_latency': device_add
+<7>PM: Adding info for No Bus:cpu_dma_latency
+<7>device: 'network_latency': device_add
+<7>PM: Adding info for No Bus:network_latency
+<7>device: 'network_throughput': device_add
+<7>PM: Adding info for No Bus:network_throughput
+<6>regulator_init_complete: disabling pd_mfc_supply
+<6>regulator_init_complete: disabling pd_tv_supply
+<6>regulator_init_complete: disabling pd_cam_supply
+<7>bus: 'i2c': add driver cypress_touchkey_driver
+<7>bus: 'i2c': add driver qt602240_ts
+<7>bus: 'i2c': driver_probe_device: matched device 2-004a with driver qt602240_ts
+<7>bus: 'i2c': really_probe: probing driver qt602240_ts with device 2-004a
+<7>+-----------------------------------------+
+<7>|  Quantum Touch Driver Probe!            |
+<7>+-----------------------------------------+
+<7>device: 'input7': device_add
+<7>PM: Adding info for No Bus:input7
+<6>input: qt602240_ts_input as /devices/virtual/input/input7
+<7>device: 'mouse0': device_add
+<7>PM: Adding info for No Bus:mouse0
+<7>device: 'event5': device_add
+<7>PM: Adding info for No Bus:event5
+<7>driver: '2-004a': driver_bound: bound to device 'qt602240_ts'
+<7>bus: 'i2c': really_probe: bound device 2-004a to driver qt602240_ts
+<7>device: 'ts': device_add
+<7>PM: Adding info for No Bus:ts
+<7>device class 'touch': registering
+<7>device: 'switch': device_add
+<7>PM: Adding info for No Bus:switch
+<7>device: 'qt602240_noise_test': device_add
+<7>PM: Adding info for No Bus:qt602240_noise_test
+<7>device: 'qt602240_atcom_test': device_add
+<7>PM: Adding info for No Bus:qt602240_atcom_test
+<7>device: 'qt_stylus': device_add
+<7>PM: Adding info for No Bus:qt_stylus
+<6>s3c-rtc s3c2410-rtc: rtc disabled, re-enabling
+<6>s3c-rtc s3c2410-rtc: setting system clock to 2011-11-05 03:30:40 UTC (1320463840)
+<7>bus: 'platform': add driver s3c-fimc
+<7>bus: 'platform': driver_probe_device: matched device s3c-fimc.0 with driver s3c-fimc
+<7>bus: 'platform': really_probe: probing driver s3c-fimc with device s3c-fimc.0
+<7>device: 'video0': device_add
+<7>PM: Adding info for No Bus:video0
+<6>FIMC0 registered successfully
+<7>driver: 's3c-fimc.0': driver_bound: bound to device 's3c-fimc'
+<7>bus: 'platform': really_probe: bound device s3c-fimc.0 to driver s3c-fimc
+<7>bus: 'platform': driver_probe_device: matched device s3c-fimc.1 with driver s3c-fimc
+<7>bus: 'platform': really_probe: probing driver s3c-fimc with device s3c-fimc.1
+<7>device: 'video1': device_add
+<7>PM: Adding info for No Bus:video1
+<6>FIMC1 registered successfully
+<7>driver: 's3c-fimc.1': driver_bound: bound to device 's3c-fimc'
+<7>bus: 'platform': really_probe: bound device s3c-fimc.1 to driver s3c-fimc
+<7>bus: 'platform': driver_probe_device: matched device s3c-fimc.2 with driver s3c-fimc
+<7>bus: 'platform': really_probe: probing driver s3c-fimc with device s3c-fimc.2
+<7>device: 'video2': device_add
+<7>PM: Adding info for No Bus:video2
+<6>FIMC2 registered successfully
+<7>driver: 's3c-fimc.2': driver_bound: bound to device 's3c-fimc'
+<7>bus: 'platform': really_probe: bound device s3c-fimc.2 to driver s3c-fimc
+<6>S5P TVOUT Driver, (c) 2010 Samsung Electronics
+<7>bus: 'platform': add driver s5p-tvout
+<7>bus: 'platform': driver_probe_device: matched device s5p-tvout with driver s5p-tvout
+<7>bus: 'platform': really_probe: probing driver s5p-tvout with device s5p-tvout
+<3>failed to find clock "mout_vpll_src"
+[    8.292113] failed to find clock "mout_vpll_src"
+<6>s5p-tvout s5p-tvout: hpd status: cable removed/not connected
+<7>device: 'video14': device_add
+<7>PM: Adding info for No Bus:video14
+<7>device: 'video21': device_add
+<7>PM: Adding info for No Bus:video21
+<7>device: 'video22': device_add
+<7>PM: Adding info for No Bus:video22
+<6>s5p_tv_probe TV Probing is done
+<7>driver: 's5p-tvout': driver_bound: bound to device 's5p-tvout'
+<7>bus: 'platform': really_probe: bound device s5p-tvout to driver s5p-tvout
+<7>bus: 'platform': add driver max8998-charger
+<7>bus: 'platform': driver_probe_device: matched device max8998-charger with driver max8998-charger
+<7>bus: 'platform': really_probe: probing driver max8998-charger with device max8998-charger
+<7>max8998_charger_probe : MAX8998 Charger Driver Loading
+<7>check_lpm_charging_mode : lpm_charging_mode(0)
+<7>device: 'battery': device_add
+<7>PM: Adding info for No Bus:battery
+<7>device: 'usb': device_add
+<7>PM: Adding info for No Bus:usb
+<7>device: 'ac': device_add
+<7>PM: Adding info for No Bus:ac
+<6>wake enabled for irq 39
+<7>driver: 'max8998-charger': driver_bound: bound to device 'max8998-charger'
+<7>bus: 'platform': really_probe: bound device max8998-charger to driver max8998-charger
+VFS: Cannot open root device "(null)" or unknown-block(0,0)
+Please append a correct "root=" boot option; here are the available partitions:
+8b00          513024 tfsr0/c (driver?)
+8b01             256 tfsr1 (driver?)
+8b02            3840 tfsr2 (driver?)
+8b03          172032 tfsr3 (driver?)
+8b04          232448 tfsr4 (driver?)
+8b05           95232 tfsr5 (driver?)
+8b06            4096 tfsr6 (driver?)
+8b07            5120 tfsr7 (driver?)
+<0>Kernel panic - not syncing: VFS: Unable to mount root fs on unknown-block(0,0)
+[    8.464373] Kernel panic - not syncing: VFS: Unable to mount root fs on unknBwn-block(0,0)
+acktrace: [    8.473
+                    72] Backtrace:
+[<c0032fe8>] (dump_backtrace+0x0/0x110) from [<c0405518>] (dump_stack+0x18/0x1c)
+[    8.483091] [<c0032fe8>] (dump_backtrace+0x0/0x110) from [<c0405518>] (dump_st ck+0x18/0x1c)
+r6:00008001[    8.4924 0]  r6:00008001r5:c08a172c r5:c08a172c r4:c080a5f5 r4:c080a5f5 r3:00000002 r3:00000002
+
+[<c0405500>] (dump_stack+0x0/0x1c) from [<c0405598>] (panic+0x7c/0x130)
+[    8.507615] [<c0405500>] (dump_stack+0x0/0x1c) from [<c0405598>] (pan[c+0x7c/0x130)
+<c040551c>] (panic+0x0/0x130) from [<c0009180>] (mount_block_root+0x25c/0x2ac)
+[    8.522173] [<c040551c>] (panic+0x0/0x130) from [<c0009180>] (mount_block_roo +0x25c/0x2ac)
+r3:00000002[    8.5314 5]  r3:00000002r2:00000001 r2:00000001 r1:c4c21f60 r1:c4c21f60 r0:c080a5f5 r0:c080a5f5
+
+[<c0008f24>] (mount_block_root+0x0/0x2ac) from [<c0009224>] (mount_root+0x54/0x68)
+[    8.547563] [<c0008f24>] (mount_block_root+0x0/0x2ac) from [<c0009224>] (mount_r[ot+0x54/0x68)
+<c00091d0>] (mount_root+0x0/0x68) from [<c00093a8>] (prepare_namespace+0x170/0x1c8)
+[    8.563508] [<c00091d0>] (mount_root+0x0/0x68) from [<c00093a8>] (prepare_namespac +0x170/0x1c8)
+r5:c0008554[    8.5732 4]  r5:c0008554r4:c09d2400 r4:c09d2400
+
+[<c0009238>] (prepare_namespace+0x0/0x1c8) from [<c000867c>] (kernel_init+0x128/0x174)
+[    8.585519] [<c0009238>] (prepare_namespace+0x0/0x1c8) from [<c000867c>] (kernel_ini +0x128/0x174)
+r5:c0008554[    8.5953 8]  r5:c0008554r4:c09d21c0 r4:c09d21c0
+
+[<c0008554>] (kernel_init+0x0/0x174) from [<c0059144>] (do_exit+0x0/0x678)
+[    8.606663] [<c0008554>] (kernel_init+0x0/0x174) from [<c0059144>] (do_e it+0x0/0x678)
+r4:00000000[    8.6155 2]  r4:00000000r3:00000000 r3:00000000
+
+<0>Rebooting in 5 seconds..[    8.622521] Rebootin< in 5 seconds..0>[kernel_sec_dump_set_cp_upload] set cp upload mode, MailboxBA 0xabcd00c9
+
+[    8.632487] [kernel_sec_dump_set_cp_upload] set cp upload mode, MailboxBA 0xabcd00c9
+<0>  - Fail to set CP uploadmode.
+[   13.663737]   - Fail to set <P uploadmode.
+0> modem_wait_count : 501
+[   13.670236]  modem_wai<_count : 501
+0>(kernel_sec_save_final_context) Final context was saved before the system reset.
+[   13.681068] (kernel_sec_save_final_context) Final context was saved before the<system reset.
+0>(kernel_sec_set_upload_cause) : upload_cause set c8
+[   13.694240] (kernel_sec_set_upload_cause) : uploa<_cause set c8
+0>KERNEL:magic_number=0 CLEAR_UPLOAD_MAGIC_NUMBER
+[   13.704552] KERNEL:magic_number=0 CLEAR_UPLOA<_MAGIC_NUMBER
+0>(kernel_sec_hw_reset) Upload Magic Code is cleared for silet reset.
+[   13.716251] (kernel_sec_hw_reset) Upload Magic Code is cleared fo< silet reset.
+0>(kernel_sec_hw_reset)
+[   13.725783] (kernel_<ec_hw_reset)
+0>(kernel_sec_hw_reset) The forced reset was called. The system will be reset !!
+[   13.736268] (kernel_sec_hw_reset) The forced reset was called. The system will be reset
+
+<END_OF_LOG>

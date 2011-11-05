@@ -678,10 +678,10 @@ timer_driver:
 ; void ARM32_SetB ( unsigned int src, unsigned int dst );
 ; void ARM32_SetBL ( unsigned int src, unsigned int dst );
 ARM32_SetB:
-	mov     r2, #0xEA000000
-	b       @f
+	mov	r2, #0xEA000000
+	b	@f
 ARM32_SetBL:
-	mov     r2, #0xEB000000
+	mov	r2, #0xEB000000
 	@@:
 	rsb	r3, r0, r1
 	sub	r3, r3, #8
@@ -700,23 +700,23 @@ DloadResponseOK:
 ; void DloadPacketHandler ( void (*handler) ( const unsigned char *packet ) );
 DloadPacketHandler:
 	stmfd	sp!, {lr\}
-	mov     r1, r0
-	adr     r0, _hook_DloadProcessPacketCustom
-	bl      ARM32_SetBL
+	mov	r1, r0
+	adr	r0, _hook_DloadProcessPacketCustom
+	bl	ARM32_SetBL
 	adr	r1, _DloadProcessPacketCustom
 	ldr	r0, [.src]
 	bl	ARM32_SetBL
 	ldmfd	sp!, {pc\}
 
 	align 4
-	.src                    dw DloadProcessPacket + 8
+	.src			dw DloadProcessPacket + 8
 
 ; internal function - do not use
 _DloadProcessPacketCustom:
 	stmfd	sp!, {lr\}
 	ldrb	r4, [r0,#12]	; we need to return that value in r4 to DloadProcessPacket()
 	cmp	r4, #0xDE	; unused, for now
-	ldmfdne	sp!, {pc\}
+	ldmfdne sp!, {pc\}
 
 	add	r0, #13
 _hook_DloadProcessPacketCustom:

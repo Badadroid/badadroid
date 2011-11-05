@@ -33,16 +33,13 @@ INCLUDE_ONCE DEFAULT_VARIABLES
     align 4
 END_INCLUDE_ONCE
 
-INCLUDE_ONCE DEFAULT_STRINGS_ADDR
+INCLUDE_ONCE DEFAULT_STRINGS
     s_fotaoutput		    db ' FOTA OUTPUT ENABLED',0
     s_uartoutput		    db ' UART OUTPUT ENABLED',0
     s_downloadmode		    db ' ENTERING BL3 DOWNLOAD MODE',0
     s_notfound			    db ' not found!',0
     s_debug_fmt_int		    db ' debug: %d',0
     s_debug_fmt_hex		    db ' debug: 0x%X',0
-END_INCLUDE_ONCE
-
-INCLUDE_ONCE DEFAULT_STRINGS
     s_memdump			    db ' dump 0x%X,s=0x%X',0
     s_written			    db ' dump_return: 0x%X',0
     s_error			    db ' ERROR!',0
@@ -56,6 +53,6 @@ INCLUDE_ONCE DEFAULT_STRINGS
     s_loadfile_error		    db ' loadfile error (notfound?)',0
     s_dumpmem_error		    db ' dumpmem error: 0x%X',0
     s_uart_newline		    db 0xD,0xA,0
-    s_memcpy			    db ' 0x%X=>0x%X,s=0x%X',0
+    s_memcpy			    db ' 0x%X->0x%X,len=0x%X',0
     align 4
 END_INCLUDE_ONCE

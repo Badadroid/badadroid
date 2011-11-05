@@ -1,4 +1,4 @@
-include 'inc/settings.inc'              ; user dependend settings
+include 'inc/settings.inc'		; user dependend settings
 
 ;No modem booting yet!
 
@@ -61,8 +61,7 @@ START
 
 
    LDR	 R2, [ATAG_ptr]
-    ; I9000 SBL uses full ATAG_CORE struct (length 5 instead of 2)
-    ; but it isnt needed and tbh I've got no clue how to reproduce it
+    ; I9000 SBL uses full ATAG_CORE struct (length 5 instead of 2) but short ATAG struct works aswell
     ; http://www.simtec.co.uk/products/SWLINUX/files/booting_article.html#ATAG_CORE
    MOV	 R0, 2
    STR	 R0, [R2]
@@ -71,8 +70,7 @@ START
    STR	 R0, [R2]
    ADD	 R2, R2, 4
 
-   ;couldn't get real serial number, I9000 Sbl function called directly doesn't seem to work
-   ;giving some random 0x123 0x456
+   ;giving some random serial number 0x123 0x456, probably doesnt matter at all
    MOV	 R0, 4
    STR	 R0, [R2]
    ADD	 R2, R2, 4
@@ -128,6 +126,13 @@ START
    ADD	 R2, R2, 4
    MOV	 R0, 0	 ;ATAG_NONE
    STR	 R0, [R2] ;thats the whole ATAG struct
+   ldr	 r0, [s_done_a]
+   BL	 debug_print
+
+   ldr	 r1, [kernel_start_a]
+   ldr	 r0, [s_kernelreloc_a]
+   bl	 hex_debugprint
+  ; BL    debug_print
 
    BL	 relockernel
    ldr	 r0, [s_done_a]
@@ -221,14 +226,14 @@ patch_done:
    LDR	 R1, [SBL_lcd_init_ptr]
    BLX	 R1
 
-   LDR	 R1, [kernel_start]
+   LDR	 R1, [kernel_start_a]
    LDR	 R0, [s_jumpingout_a]
    BL	 debug_print
    MOV	 R0, 0	   ;must be 0
-   MOV	 R1, 0x891 ;machine id of I9000 (SMDKC110)
+   MOV	 R1, 5850  ;I've broken compability with I9000 here to avoid running its kernel and possibility of damaging smth, MACH_ID of I900 = 0x891 (SMDKC110)
    LDR	 R2, [ATAG_ptr]
 
-   LDR	 R5, [kernel_start]
+   LDR	 R5, [kernel_start_a]
    BLX	 R5
 
    ldr	 r0, [s_kernelreturn_a]
@@ -242,11 +247,8 @@ loop_forever:
 relockernel:
    STMFD   SP!, {R0-R2,LR}
 
-   LDR	 R1, [kernel_start]
-   ldr	 r0, [s_kernelreloc_a]
-   BL	 debug_print
    LDR	 R0, [kernel_buf]
-   LDR	 R1, [kernel_start]
+   LDR	 R1, [kernel_start_a]
    LDR	 R2, [kernel_size]
    BL	 rebell_memcpy
 
@@ -284,7 +286,7 @@ DEFAULT_VARIABLES
    VIDINTCON0		  dw 0xF8000130
    VIDINTCON1		  dw 0xF8000134
 
-   kernel_start 	  dw 0x32000000
+   kernel_start_a	  dw 0x32000000
    kernel_buf		  dw 0x44000000
    kernel_size_a	  dw kernel_size
    kernel_size		  dw 0 ;overwritten during runtime
@@ -304,8 +306,6 @@ dw 0x0	      ;end
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;; strings at the end
-DEFAULT_STRINGS_ADDR
-
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;; add custom strings addresses below (for using by LDR op)
    s_kernel_path_a	  dw s_kernel_path
    s_loadkernel_a	  dw s_loadkernel
@@ -313,22 +313,18 @@ DEFAULT_STRINGS_ADDR
    s_kernelreloc_a	  dw s_kernelreloc
    s_mmuoff_a		  dw s_mmuoff
    s_kernelreturn_a	  dw s_kernelreturn
-   s_atagcmdline_a	  dw s_atagcmdline
-   s_atagcmdlineRM_a	  dw s_atagcmdlineRM
-   s_atagcmdline_aa	  dw s_atagcmdline_a
    s_sbl_path_a 	  dw s_sbl_path
    s_loadsbl_a		  dw s_loadsbl
+
 
 DEFAULT_STRINGS
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;; ;add custom strings below
    s_kernel_path	  du '/g/galaxyboot/zImage',0
    s_sbl_path		  du '/g/galaxyboot/sbl.bin',0
-   s_atagcmdlineRM	  db 'bootmode=2 console=ttySAC2,115200 loglevel=4',0
-   s_atagcmdline	  db 'console=ttySAC2,115200 loglevel=4',0
+   s_kernelreloc	  db ' Reloc kernel to 0x%X',0
    s_loadkernel 	  db ' Loading kernel image to buf',0
    s_jumpingout 	  db ' Jumpout to 0x%X',0
-   s_mmuoff		  db ' Turning off MMU',0
-   s_kernelreloc	  db ' Reloc kernel to 0x%X',0
+   s_mmuoff		  db ' Turning off MMU & configuring DMC',0
    s_kernelreturn	  db ' WTF KERNEL RETURNED',0
    s_loadsbl		  db ' Loading SBL',0
  

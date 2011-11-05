@@ -1,4 +1,4 @@
-include 'inc/settings.inc'              ; user dependend settings
+include 'inc/settings.inc'		; user dependend settings
 
 ;example dumping whole iROM area
 
@@ -77,8 +77,7 @@ DEFAULT_VARIABLES
 			;0x02000000 ;32MB
 			;0x08000000 ;128MB
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;; strings at the end
-DEFAULT_STRINGS_ADDR
+
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;; add custom strings addresses below (for using by LDR op)
     s_dumppath_a     dw s_dumppath
