@@ -691,6 +691,16 @@ ARM32_SetBL:
 	bx	lr
 
 
+; void ARM32_SetMOVConst ( unsigned int dst, unsigned char const );
+ARM32_SetMOVConst:
+	LDR	R2, [R0]
+	AND	R1, 0xFF
+	ORR	R2, R1
+	STR	R2, [R0]
+	BX	LR
+
+
+
 ; void DloadResponseOK ( );
 DloadResponseOK:
 	mov	r0, #0
