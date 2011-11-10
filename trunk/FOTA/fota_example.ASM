@@ -2,7 +2,7 @@
 
 ; mounting external SD card doesn't seem to be so easy
 
-include 'inc/settings.inc'              ; user dependend settings
+include 'inc/settings.inc'		; user dependend settings
 
 
 START	;don't touch this macro, it contains correct FOTA magic numbers and does auto CALL-KEY check and jumps here if its pressed
@@ -22,7 +22,7 @@ START	;don't touch this macro, it contains correct FOTA magic numbers and does a
 FUNCTIONS ;macro from functions.inc
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;; variables below
 DEFAULT_VARIABLES	;macro from vars.inc
-    pagetable 		 dw gMMUL1PageTable
+    pagetable		 dw gMMUL1PageTable
 
 	;macro from vars.inc
 
