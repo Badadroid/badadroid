@@ -49,7 +49,7 @@ START
    BL	 debug_print
 
    MCR	 p15, 0, R8,c1,c0 ;turn off MMUCache with previous gained MMU control reg
-   BL	 CoDisableMmu
+   BL	 _CoDisableMmu
    ldr	 r0, [s_done_a]
    BL	 debug_print
    BL	 configure_ram
@@ -148,11 +148,11 @@ START
 
    BL	 timer_driver
    BL	 configure_clocks
-   BL	 CoDisableDCache
+   BL	 _CoDisableDCache
 
-   BL	 System_DisableVIC
-   BL	 System_DisableIRQ
-   BL	 System_DisableFIQ
+   BL	 _System_DisableVIC
+   BL	 _System_DisableIRQ
+   BL	 _System_DisableFIQ
 
    LDR	 R0, [EXT_INT_MASKS]   ;zero ext INT masks
    MOV	 R1, 0xFF

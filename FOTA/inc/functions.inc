@@ -374,97 +374,41 @@ hex_debugprint:
 	bl	debug_print
 	LDMFD	SP!, {R0-R1,PC\}
 
-;void memdump(wchar* filepath, ulong buf, ulong size)
-memdump:
-	STMFD	SP!, {R1-R10,LR\}
-	MOV	r4, R0
-	MOV	r5, R1
-	MOV	r6, R2
+if ~defined MINIMAL_CONFIG
 
 
-	mov	r2, r6
-	mov	r1, r5
-	ldr	r0, [s_memdump_a]
-	bl	debug_print
-	mov	r1, 0xC
-	mov	r0, R4
-	bl	tfs4_open
-	mov	r9, r0
-	cmp	r9, 0
-	blt	memdump_error
+; void DloadResponseOK ( );
+DloadResponseOK:
+	mov	r0, #0
+	b	DloadResponse
 
-	mov	r2, r6;r6 ;len
-	mov	r1, r5
-	mov	r0, r9
-	bl	tfs4_write
 
+; void DloadPacketHandler ( void (*handler) ( const unsigned char *packet ) );
+DloadPacketHandler:
+	stmfd	sp!, {lr\}
 	mov	r1, r0
-	ldr	r0, [s_written_a]
-	bl	debug_print
-	cmp	r1, -1
-	beq	memdump_error
+	adr	r0, _hook_DloadProcessPacketCustom
+	bl	ARM32_SetBL
+	adr	r1, _DloadProcessPacketCustom
+	ldr	r0, [.src]
+	bl	ARM32_SetBL
+	ldmfd	sp!, {pc\}
 
-	mov	r0, r9
-	bl	tfs4_close
+	align 4
+	.src			dw DloadProcessPacket + 8
 
-	ldr	r0, [s_done_a]
-	bl	debug_print
-	b	memdump_ret
-memdump_error:
-	BL	tfs4_get_errno
-	mov	r1, r0
-	ldr	r0, [s_dumpmem_error_a]
-	bl	debug_print
-	mov	r0, 0
-memdump_ret:
-	LDMFD	SP!, {R1-R10,PC\}
+; internal function - do not use
+_DloadProcessPacketCustom:
+	stmfd	sp!, {lr\}
+	ldrb	r4, [r0,#12]	; we need to return that value in r4 to DloadProcessPacket()
+	cmp	r4, #0xDE	; unused, for now
+	ldmfdne sp!, {pc\}
 
-;int loadfile(wchar* filepath, ulong target_addr, ulong size)
-;loads file to RAM under specific address
-;returns bytes read or 0 if error
-loadfile:
-	STMFD	SP!,{R3-R6,LR\}
-	mov	r4, r1
-	mov	r5, r2
-	mov	r6, r0
+	add	r0, #13
+_hook_DloadProcessPacketCustom:
+	nop
+	ldmfd	sp!, {pc\}
 
-	mov	r1, r4
-	ldr	r0, [s_fileload_a]
-	bl	debug_print
-
-	mov	r0, r6
-
-	mov	r1, 4 ;flag, probably READ or READWRITE
-	mov	r6, r0	;path
-	bl	tfs4_open
-	mov	r6, r0
-	cmp	r0, 0	;is it FILE index or -1?
-	blt	loadfile_notfound
-
-	mov	r0, 1
-
-	mov	r0, r6
-
-	mov	r2, r5	 ;len
-	mov	r1, r4	 ;buffer
-	mov	r0, r6	 ;FILE index
-	bl	tfs4_read
-	mov	r4, r0
-	
-	mov	r1, r0
-	ldr	r0, [s_filesize_a]
-	bl	debug_print
-	
-	mov	r0, r6
-	bl	tfs4_close
-	mov	r0, r4
-loadfile_ret:
-	LDMFD	SP!, {R3-R6,PC\}
-loadfile_notfound:
-	ldr	r0, [s_loadfile_error_a]
-	bl	debug_print
-	mov	r0, 0
-	b	loadfile_ret
 
 ;int fota_listdir(wchar* path)
 ;auto reset
@@ -524,6 +468,101 @@ listdir_notfound:
 	b	listdir_ret
 listdir_ret:
 	LDMFD	SP!, {R1-R5,PC\}
+
+
+;void memdump(wchar* filepath, ulong buf, ulong size)
+memdump:
+	STMFD	SP!, {R1-R10,LR\}
+	MOV	r4, R0
+	MOV	r5, R1
+	MOV	r6, R2
+
+
+	mov	r2, r6
+	mov	r1, r5
+	ldr	r0, [s_memdump_a]
+	bl	debug_print
+	mov	r1, 0xC
+	mov	r0, R4
+	bl	tfs4_open
+	mov	r9, r0
+	cmp	r9, 0
+	blt	memdump_error
+
+	mov	r2, r6;r6 ;len
+	mov	r1, r5
+	mov	r0, r9
+	bl	tfs4_write
+
+	mov	r1, r0
+	ldr	r0, [s_written_a]
+	bl	debug_print
+	cmp	r1, -1
+	beq	memdump_error
+
+	mov	r0, r9
+	bl	tfs4_close
+
+	ldr	r0, [s_done_a]
+	bl	debug_print
+	b	memdump_ret
+memdump_error:
+	BL	tfs4_get_errno
+	mov	r1, r0
+	ldr	r0, [s_dumpmem_error_a]
+	bl	debug_print
+	mov	r0, 0
+memdump_ret:
+	LDMFD	SP!, {R1-R10,PC\}
+
+end if
+
+;int loadfile(wchar* filepath, ulong target_addr, ulong size)
+;loads file to RAM under specific address
+;returns bytes read or 0 if error
+loadfile:
+	STMFD	SP!,{R3-R6,LR\}
+	mov	r4, r1
+	mov	r5, r2
+	mov	r6, r0
+
+	mov	r1, r4
+	ldr	r0, [s_fileload_a]
+	bl	debug_print
+
+	mov	r0, r6
+
+	mov	r1, 4 ;flag, probably READ or READWRITE
+	mov	r6, r0	;path
+	bl	tfs4_open
+	mov	r6, r0
+	cmp	r0, 0	;is it FILE index or -1?
+	blt	loadfile_notfound
+
+	mov	r0, 1
+
+	mov	r0, r6
+
+	mov	r2, r5	 ;len
+	mov	r1, r4	 ;buffer
+	mov	r0, r6	 ;FILE index
+	bl	tfs4_read
+	mov	r4, r0
+	
+	mov	r1, r0
+	ldr	r0, [s_filesize_a]
+	bl	debug_print
+	
+	mov	r0, r6
+	bl	tfs4_close
+	mov	r0, r4
+loadfile_ret:
+	LDMFD	SP!, {R3-R6,PC\}
+loadfile_notfound:
+	ldr	r0, [s_loadfile_error_a]
+	bl	debug_print
+	mov	r0, 0
+	b	loadfile_ret
 	
 ;;Rewritten SBL functions to configure platform and CPU like SBL does
 configure_uart:
@@ -700,37 +739,32 @@ ARM32_SetMOVConst:
 	BX	LR
 
 
+_CoDisableMmu:
+   MRC	 p15, 0, R0,c1,c0   
+   BIC	 R0, R0, #1
+   MCR	 p15, 0, R0,c1,c0
+   MOV	 PC, LR   
+   
+_CoDisableDCache:
+   MRC	 p15, 0, R0,c1,c0   
+   BIC	 R0, R0, #4   
+   MCR	 p15, 0, R0,c1,c0   
+   MOV	 PC, LR
+_System_DisableVIC:
+   MRC	 p15, 0, R0,c1,c0
+   BIC	 R0, R0, #0x1000000
+   MCR	 p15, 0, R0,c1,c0
+   BX	 LR
 
-; void DloadResponseOK ( );
-DloadResponseOK:
-	mov	r0, #0
-	b	DloadResponse
+_System_DisableIRQ:
+   MRS	 R0, CPSR
+   ORR	 R0, R0, #0x80
+   MSR	 CPSR_cxsf, R0
+   BX	 LR
 
-
-; void DloadPacketHandler ( void (*handler) ( const unsigned char *packet ) );
-DloadPacketHandler:
-	stmfd	sp!, {lr\}
-	mov	r1, r0
-	adr	r0, _hook_DloadProcessPacketCustom
-	bl	ARM32_SetBL
-	adr	r1, _DloadProcessPacketCustom
-	ldr	r0, [.src]
-	bl	ARM32_SetBL
-	ldmfd	sp!, {pc\}
-
-	align 4
-	.src			dw DloadProcessPacket + 8
-
-; internal function - do not use
-_DloadProcessPacketCustom:
-	stmfd	sp!, {lr\}
-	ldrb	r4, [r0,#12]	; we need to return that value in r4 to DloadProcessPacket()
-	cmp	r4, #0xDE	; unused, for now
-	ldmfdne sp!, {pc\}
-
-	add	r0, #13
-_hook_DloadProcessPacketCustom:
-	nop
-	ldmfd	sp!, {pc\}
-
+_System_DisableFIQ:
+   MRS	 R0, CPSR
+   ORR	 R0, R0, #0x40
+   MSR	 CPSR_cxsf, R0
+   BX	 LR
 END_INCLUDE_ONCE

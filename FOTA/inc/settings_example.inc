@@ -9,6 +9,11 @@
 ; 1 - enable USB charging
 CHARGING_CONTROL equ 0
 
+
+;enable line below to turn off few functions which require expanded BL3 address list and are unrequired to boot ARMLinux
+;MINIMAL_CONFIG  equ 1
+
+
 ; include matching BL
 include 'inc/S8500XXJEE.inc'
 ;include 'inc/S8500XXJL2'
