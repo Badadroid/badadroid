@@ -2,18 +2,17 @@ if ~defined PRODUCT_CODE
 PRODUCT_CODE                                                    equ 'S8530'
 FIRMWARE_VER                                                    equ 1.2
 
-BUF1_DRAM_START                                                 equ 0x40000000
 BL2_DRAM_START                                                  equ 0x42400000
 BL3_DRAM_START                                                  equ 0x42480000
 FOTA_DRAM_START                                                 equ 0x43800000
-BUF2_DRAM_START                                                 equ 0x43B00000
-BSHI_DRAM_START                                                 equ 0x4FF00000
+FOTA_BUFFER                                                     equ 0x43B00000
 FOTA_NAND_START                                                 equ 0x0A900000
 
 
 exlamations	=	0x424A6714
 spaces		=	0x424A66F4
 
+; Functions
 StartUp 					                equ 0x42480000
 UndefEntry					                equ 0x42480004
 SwiEntry					                equ 0x42480008

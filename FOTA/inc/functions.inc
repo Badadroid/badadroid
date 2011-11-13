@@ -374,41 +374,8 @@ hex_debugprint:
 	bl	debug_print
 	LDMFD	SP!, {R0-R1,PC\}
 
+
 if ~defined MINIMAL_CONFIG
-
-
-; void DloadResponseOK ( );
-DloadResponseOK:
-	mov	r0, #0
-	b	DloadResponse
-
-
-; void DloadPacketHandler ( void (*handler) ( const unsigned char *packet ) );
-DloadPacketHandler:
-	stmfd	sp!, {lr\}
-	mov	r1, r0
-	adr	r0, _hook_DloadProcessPacketCustom
-	bl	ARM32_SetBL
-	adr	r1, _DloadProcessPacketCustom
-	ldr	r0, [.src]
-	bl	ARM32_SetBL
-	ldmfd	sp!, {pc\}
-
-	align 4
-	.src			dw DloadProcessPacket + 8
-
-; internal function - do not use
-_DloadProcessPacketCustom:
-	stmfd	sp!, {lr\}
-	ldrb	r4, [r0,#12]	; we need to return that value in r4 to DloadProcessPacket()
-	cmp	r4, #0xDE	; unused, for now
-	ldmfdne sp!, {pc\}
-
-	add	r0, #13
-_hook_DloadProcessPacketCustom:
-	nop
-	ldmfd	sp!, {pc\}
-
 
 ;int fota_listdir(wchar* path)
 ;auto reset
@@ -563,7 +530,8 @@ loadfile_notfound:
 	bl	debug_print
 	mov	r0, 0
 	b	loadfile_ret
-	
+
+
 ;;Rewritten SBL functions to configure platform and CPU like SBL does
 configure_uart:
 	LDR	R4, [UART2_PTR]
@@ -590,6 +558,7 @@ configure_uart:
 	ORR	R3, R3, #5
 	STR	R3, [R4, 4]
 	BX	LR
+
 configure_clocks:
 	LDR	R3, [CLK_DIV1]
 	LDR	R3, [R3]
@@ -653,22 +622,22 @@ configure_clocks:
 	STR	R3, [R2]
 	BX	LR
 
-    UART2_PTR		dw 0xE2900800
-    clk_div_mask	dw 0x14131330
-    CLK_DIV0		dw 0xE0100300
-    CLK_DIV1		dw 0xE0100304
-    CLK_DIV2		dw 0xE0100308
-    CLK_DIV3		dw 0xE010030C
-    CLK_DIV4		dw 0xE0100310
-    CLK_DIV5		dw 0xE0100314
-    CLK_DIV6		dw 0xE0100318
-    CLK_DIV7		dw 0xE010031C
-    CLK_GATE_IP0	dw 0xE0100460
-    CLK_GATE_IP1	dw 0xE0100464
-    CLK_GATE_IP2	dw 0xE0100468
-    CLK_GATE_IP3	dw 0xE010046C
-    CLK_GATE_IP4	dw 0xE0100470
-    CLK_DIV_STAT0	dw 0xE0101000
+	UART2_PTR               dw 0xE2900800
+	clk_div_mask            dw 0x14131330
+	CLK_DIV0                dw 0xE0100300
+	CLK_DIV1                dw 0xE0100304
+	CLK_DIV2                dw 0xE0100308
+	CLK_DIV3                dw 0xE010030C
+	CLK_DIV4                dw 0xE0100310
+	CLK_DIV5                dw 0xE0100314
+	CLK_DIV6                dw 0xE0100318
+	CLK_DIV7                dw 0xE010031C
+	CLK_GATE_IP0            dw 0xE0100460
+	CLK_GATE_IP1            dw 0xE0100464
+	CLK_GATE_IP2            dw 0xE0100468
+	CLK_GATE_IP3            dw 0xE010046C
+	CLK_GATE_IP4            dw 0xE0100470
+	CLK_DIV_STAT0           dw 0xE0101000
 
 timer_driver:
 	var_18= -0x18
@@ -717,16 +686,16 @@ timer_driver:
 ; void ARM32_SetB ( unsigned int src, unsigned int dst );
 ; void ARM32_SetBL ( unsigned int src, unsigned int dst );
 ARM32_SetB:
-	mov	r2, #0xEA000000
+	mov	r2, 0xEA000000
 	b	@f
 ARM32_SetBL:
-	mov	r2, #0xEB000000
-	@@:
+	mov	r2, 0xEB000000
+@@:
 	rsb	r3, r0, r1
-	sub	r3, r3, #8
-	ubfx	r3, r3, #2, #24
+	sub	r3, r3, 8
+	ubfx	r3, r3, 2, 24
 	orr	r3, r2
-	str	r3, [r0, #0]
+	str	r3, [r0]
 	bx	lr
 
 
@@ -740,31 +709,33 @@ ARM32_SetMOVConst:
 
 
 _CoDisableMmu:
-   MRC	 p15, 0, R0,c1,c0   
-   BIC	 R0, R0, #1
-   MCR	 p15, 0, R0,c1,c0
-   MOV	 PC, LR   
+	MRC	p15, 0, R0,c1,c0
+	BIC	R0, R0, #1
+	MCR	p15, 0, R0,c1,c0
+	MOV	PC, LR
    
 _CoDisableDCache:
-   MRC	 p15, 0, R0,c1,c0   
-   BIC	 R0, R0, #4   
-   MCR	 p15, 0, R0,c1,c0   
-   MOV	 PC, LR
+	MRC	p15, 0, R0,c1,c0
+	BIC	R0, R0, #4
+	MCR	p15, 0, R0,c1,c0
+	MOV	PC, LR
+
 _System_DisableVIC:
-   MRC	 p15, 0, R0,c1,c0
-   BIC	 R0, R0, #0x1000000
-   MCR	 p15, 0, R0,c1,c0
-   BX	 LR
+	MRC	p15, 0, R0,c1,c0
+	BIC	R0, R0, #0x1000000
+	MCR	p15, 0, R0,c1,c0
+	BX	LR
 
 _System_DisableIRQ:
-   MRS	 R0, CPSR
-   ORR	 R0, R0, #0x80
-   MSR	 CPSR_cxsf, R0
-   BX	 LR
+	MRS	R0, CPSR
+	ORR	R0, R0, #0x80
+	MSR	CPSR_cxsf, R0
+	BX	LR
 
 _System_DisableFIQ:
-   MRS	 R0, CPSR
-   ORR	 R0, R0, #0x40
-   MSR	 CPSR_cxsf, R0
-   BX	 LR
+	MRS	R0, CPSR
+	ORR	R0, R0, #0x40
+	MSR	CPSR_cxsf, R0
+	BX	LR
+
 END_INCLUDE_ONCE

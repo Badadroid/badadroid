@@ -38,6 +38,7 @@ f_ver:
 	db 'FOTA_ENGINE_VER_INFO_2.0'
 	db 232 dup 0
 	dw FOTA_DRAM_START			; not required for < 2.0
+	db 252 dup 0                            ; not required for < 2.0
 
 c_run:
 
@@ -51,9 +52,8 @@ if defined FOTA_SHADOWING
 	bx		r0			; restart BL3
 
 	align 4
-
 	bl3_image_size				dw 0x17FF80
-	shadowed_bl3_adr			dw 0x42480000
+	shadowed_bl3_adr			dw BL3_DRAM_START
 	bl3_image_adr				dw bl3_image
 
 main_fota_code_helper:
@@ -61,6 +61,21 @@ main_fota_code_helper:
 	db 0x4000 - code_len dup 0xFF
 
 end if ; FOTA_SHADOWING
+
+if defined USE_BTERM
+
+	stmfd	sp!, {lr\}
+	ldr	r0, [.cmd]
+	bl	DloadPacketHandler              ; register our handler
+	ldmfd	sp!, {lr\}
+	b       @f
+
+	align 4
+	.cmd                                    dw DloadCmdHandler
+
+@@:
+
+end if ; USE_BTERM
 
 	ldr		r0, [_key2]
 	ldrb		r0, [r0, 0]		; Menu/Home key
@@ -132,6 +147,12 @@ bl3_image:
 	end if
 
 end if ; FOTA_SHADOWING
+
+if defined USE_BTERM
+
+	BADA_TERM                               ; include BADA_TERM stuff
+
+end if ; USE_BTERM
 
 magic_1:
 	code_len = magic_1 - c_start
