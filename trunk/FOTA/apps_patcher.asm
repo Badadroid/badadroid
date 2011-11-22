@@ -15,7 +15,6 @@ START
 
 
 AppsPatcher:
-	stmfd	sp!, {lr}
 
 	; add some code here
        ; ldr     r0, [.src]      ; example
@@ -23,23 +22,23 @@ AppsPatcher:
        ; bl      ARM32_SetBL     ; example
 
 	ldr	r0, [.src]
-	ldr	r1, [MOV_R5_A]
-	str	r1, [r0]
+	ldrh	r1, [MOV_R5_A]
+	strh	r1, [r0]
 
-	ldmfd	sp!, {pc}
+	mov pc, lr
 
 	align 4
 	.src			dw 0x4026DDD4
        ; .dst                    dw _hook1
 
-MOV_R5_A	dw 0xE3A0500A
+
+THUMB
+MOV_R5_A:
+MOVS R5, 0xA
 
 
-_hook1:
-	ldr	pc, [loc_4088A2EC]
-
-	align 4
-	loc_4088A2EC		dw 0x4088A2EC
+CODE32
+ALIGN 4
 
 
 ; ==============================================================================
