@@ -1,4 +1,4 @@
-include 'inc/settings.inc'              ; user dependend settings
+include 'inc/settings.inc'		; user dependend settings
 
 START
 	;MOV             R0, #0xA9
@@ -99,7 +99,7 @@ START
 
        ; ldr     r0, [s_done_a]
        ; bl      debug_print
-	BL	CoDisableMmu
+	BL	_CoDisableMmu
 
 
       ; MOV    R0, #0xA9
