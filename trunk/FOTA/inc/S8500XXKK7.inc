@@ -14,7 +14,7 @@ FOTA_NAND_START 						equ 0x03300000
 EdbgOutputDebugString			 equ 0x420820E8
 EdbgOutputDebugStringA			 equ 0x42081DB4
 LaunchNucleus				 equ 0x42089838
-MemMMUCacheEnable			 equ 0x42089298
+MemMMUCacheEnable			 equ 0x420893D0
 PWM_Drv_Delay				 equ 0x420B9E3C
 __PfsMassInit				 equ 0x420A9978
 __PfsNandInit				 equ 0x420A9AC8
