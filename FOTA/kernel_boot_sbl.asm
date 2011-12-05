@@ -9,12 +9,16 @@ START
 
 	SUB	SP, SP, 128
 
+
+	bl	enable_uart_output ;enable_fota_output
+
+
 	MOV	r1, #1
 	LDR	r0, [pagetable]
 	BL	MemMMUCacheEnable
 	MOV	R8, R0 ;lets store previous MMU control register to turn it off later
 
-	bl	enable_uart_output ;enable_fota_output
+
 	BL	__PfsNandInit
 	BL	__PfsMassInit
 
