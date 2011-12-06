@@ -47,6 +47,10 @@ START
 	ldr	r1, [sbl_kernel_addr2]
 	str	r0, [r1]
 
+	ldr	r0, [loadkernel_cb_adr]
+	ldr	r1, [sbl_cb_patch]
+	str	r0, [r1]
+
 
 	ldr	r0, [jmp_op]
 	ADD	R0, R0, 0xA ;14 ops
@@ -126,6 +130,8 @@ START
 	BIC	R1, R1, 0xBE ;turn off all power-managed S5PC110 blocks, this will reset LCD controller :)
 	STR	R1, [R0]
 
+       ; BL      disable_output
+
 	LDR	R5, [sbl_start]
 	BLX	R5
 
@@ -173,9 +179,12 @@ DEFAULT_VARIABLES
     jmp_op		dw 0xEA000000
 
     sbl_jmp_patch	dw 0x40246D88
+    sbl_cb_patch	dw 0x402E8688
 
     ldmfd_r11_pc	dw 0xE8BD8800
     sbl_lcd_patch	dw 0x40250F94
+
+    loadkernel_cb_adr	dw loadkernel_cb
 
 
 
@@ -205,10 +214,10 @@ DEFAULT_STRINGS
     s_patchsbl	     db ' Patching SBL',0
     s_configram_irq  db ' DMC1 config',0
 
-copykernel_helper:
-	code_len = copykernel_helper - c_start
-	db	0x4000 - code_len dup 0xFF
-copykernel:
+loadkernel_helper:
+	code_len = loadkernel_helper - c_start
+	db	0x4000 - code_len dup 0x00
+loadkernel_cb:
 	STMFD	SP!, {R1-R3,LR}
 	MOV	R0, 9999
 	BL	int_debugprint

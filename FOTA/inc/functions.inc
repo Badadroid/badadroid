@@ -358,6 +358,18 @@ enable_uart_output:
 	bl	debug_print
 	LDMFD	SP!, {R0-R1,PC\}
 
+;void disable_output()
+disable_output:
+	STMFD	SP!, {R0-R1,LR\}
+	ADR	r0, disable_out
+	bl	debug_print
+	LDR	r1, [output_switch_a]
+	MOV	r0, 0
+	STR	R0, [r1]
+	LDMFD	SP!, {R0-R1,PC\}
+
+disable_out db 'Disabling output',0xA,0x0
+ALIGN 4
 ;void int_debugprint(int num)
 int_debugprint:
 	STMFD	SP!, {R0-R1,LR\}
@@ -622,22 +634,22 @@ configure_clocks:
 	STR	R3, [R2]
 	BX	LR
 
-	UART2_PTR               dw 0xE2900800
-	clk_div_mask            dw 0x14131330
-	CLK_DIV0                dw 0xE0100300
-	CLK_DIV1                dw 0xE0100304
-	CLK_DIV2                dw 0xE0100308
-	CLK_DIV3                dw 0xE010030C
-	CLK_DIV4                dw 0xE0100310
-	CLK_DIV5                dw 0xE0100314
-	CLK_DIV6                dw 0xE0100318
-	CLK_DIV7                dw 0xE010031C
-	CLK_GATE_IP0            dw 0xE0100460
-	CLK_GATE_IP1            dw 0xE0100464
-	CLK_GATE_IP2            dw 0xE0100468
-	CLK_GATE_IP3            dw 0xE010046C
-	CLK_GATE_IP4            dw 0xE0100470
-	CLK_DIV_STAT0           dw 0xE0101000
+	UART2_PTR		dw 0xE2900800
+	clk_div_mask		dw 0x14131330
+	CLK_DIV0		dw 0xE0100300
+	CLK_DIV1		dw 0xE0100304
+	CLK_DIV2		dw 0xE0100308
+	CLK_DIV3		dw 0xE010030C
+	CLK_DIV4		dw 0xE0100310
+	CLK_DIV5		dw 0xE0100314
+	CLK_DIV6		dw 0xE0100318
+	CLK_DIV7		dw 0xE010031C
+	CLK_GATE_IP0		dw 0xE0100460
+	CLK_GATE_IP1		dw 0xE0100464
+	CLK_GATE_IP2		dw 0xE0100468
+	CLK_GATE_IP3		dw 0xE010046C
+	CLK_GATE_IP4		dw 0xE0100470
+	CLK_DIV_STAT0		dw 0xE0101000
 
 timer_driver:
 	var_18= -0x18
