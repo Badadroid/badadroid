@@ -27,7 +27,7 @@ START
 
    ldr	 r0, [s_loadkernel_a]
    BL	 debug_print
-   LDR	 R2, [kernel_size_a]
+   LDR	 R2, [kernel_size]
    LDR	 R1, [kernel_buf]
    LDR	 R0, [s_kernel_path_a]
    BL	 loadfile
@@ -230,7 +230,7 @@ patch_done:
    LDR	 R0, [s_jumpingout_a]
    BL	 debug_print
    MOV	 R0, 0	   ;must be 0
-   MOV	 R1, 5850  ;I've broken compability with I9000 here to avoid running its kernel and possibility of damaging smth, MACH_ID of I900 = 0x891 (SMDKC110)
+   MOV	 R1, 0x891 ;5850  ;I've broken compability with I9000 here to avoid running its kernel and possibility of damaging smth, MACH_ID of I9000 = 0x891 (SMDKC110)
    LDR	 R2, [ATAG_ptr]
 
    LDR	 R5, [kernel_start_a]
@@ -302,7 +302,9 @@ DEFAULT_VARIABLES
    SBL_patch_table_adr	  dw SBL_patch_table
    NOP_CODE		  dw 0xE1A00000
    SBL_patch_table	  dw 0x0;0x4025095C
-dw 0x0	      ;end
+			  dw 0x0	;end
+
+
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;; strings at the end
