@@ -25,7 +25,7 @@ maxim_charging_control			 equ 0x420D7F34
 tfs4_close				 equ 0x420CFABC
 tfs4_open				 equ 0x420CF948
 tfs4_read				 equ 0x420CFE78
-tfs4_stat				 equ 0x420CED58
+tfs4_stat				 equ 0x420CF19C
 
 DloadMain				 equ 0x42083C44
 
