@@ -164,8 +164,9 @@ DEFAULT_VARIABLES
     kernel_start	dw 0x32000000
 
     kernel_buf		dw 0x44000000
-    kernel_size_a	dw kernel_size
     kernel_size 	dw 0 ;overwritten during runtime ;0x6664C8  ;6710472
+
+    kernel_size_a	dw kernel_size
 
     sbl_kernel_addr	dw 0x402D4BC0
     sbl_kernel_addr2	dw 0x402D4BBC
