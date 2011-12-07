@@ -4,7 +4,6 @@ include 'inc/settings.inc'		; user dependend settings
 
 START
    SUB	 SP, SP, 128
-
    MOV	 r1, #1
    LDR	   r0, [pagetable]
    BL	   MemMMUCacheEnable
@@ -15,10 +14,11 @@ START
    BL	 __PfsMassInit
 
 
+
    MOV	 R1, SP
    LDR	 R0, [s_kernel_path_a]
    BL	 tfs4_stat
-
+   BL	 hex_debugprint
    LDR	 R2, [SP,0xC] ;get kernel size
    LDR	 R0, [kernel_size_a]
    STR	 R2, [R0]   ;store for later use
@@ -317,10 +317,12 @@ DEFAULT_VARIABLES
    s_kernelreturn_a	  dw s_kernelreturn
    s_sbl_path_a 	  dw s_sbl_path
    s_loadsbl_a		  dw s_loadsbl
+   s_galaxyboot_dir_a	  dw s_galaxyboot_dir
 
 
 DEFAULT_STRINGS
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;; ;add custom strings below
+   s_galaxyboot_dir	  du '/g/galaxyboot',0
    s_kernel_path	  du '/g/galaxyboot/zImage',0
    s_sbl_path		  du '/g/galaxyboot/sbl.bin',0
    s_kernelreloc	  db ' Reloc kernel to 0x%X',0
