@@ -1,1 +1,2 @@
-  *[http://code.google.com/p/badadroid/wiki/Bada_MoviNAND_layout]
+  *[http://code.google.com/p/badadroid/wiki/Bada_MoviNAND_layout
+   MoviNAND Layout
