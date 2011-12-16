@@ -1,4 +1,5 @@
   * [Other]
      * [Developer Developer Links]
        * [Bada_MoviNAND_layout Bada MoviNAND Layout]
-       * [NotepadPlusPlus Notepad Plus]
+       * [NotepadPlusPlus Notepad ++]
+       * [Eclipse]
