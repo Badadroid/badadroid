@@ -1,0 +1,5 @@
+#summary Pages that don't belong elsewhere, including any developer fragments, project notes, etc.
+
+= Info =
+
+Anything else goes in this "Other" section. Most articles do not require formatting here.
