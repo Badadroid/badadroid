@@ -1,5 +1,5 @@
   * [Other]
-     * [Developer Developer Pages]
+     * [DeveloperPages Developer Pages]
        * [Bada_MoviNAND_layout Bada MoviNAND Layout]
        * [NotepadPlusPlus Notepad ++]
        * [Eclipse]
