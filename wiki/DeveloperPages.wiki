@@ -1,4 +1,4 @@
-#summary All random developer snippets here.
+#summary [DEV] All random developer snippets here.
 #labels developer,Featured,snippets,information
 
 = Info =
