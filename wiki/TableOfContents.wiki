@@ -1,2 +1,2 @@
-[Bada MoviNAND layout]
+[Bada_MoviNAND_layout]
    
