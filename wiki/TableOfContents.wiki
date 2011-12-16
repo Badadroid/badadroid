@@ -3,3 +3,4 @@
        * [Bada_MoviNAND_layout Bada MoviNAND Layout]
        * [Eclipse]
        * [NotepadPlusPlus Notepad ++]
+     * [Notes]
