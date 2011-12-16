@@ -1,2 +1,3 @@
-[Bada_MoviNAND_layout Bada MoviNAND]
-   
+[Eclipse]
+  *[Bada_MoviNAND_layout Bada MoviNAND Layout]
+  *[NotepadPlusPlus Notepad Plus]
