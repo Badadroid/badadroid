@@ -1,0 +1,13 @@
+#summary All random developer snippets here.
+#labels developer,Featured,snippets,information
+
+= Introduction =
+
+In this section, you can find or add any snippets of code or information important to the badadroid project. Please feel free to add as you please. Any articles here require no formatting.
+
+= Details =
+
+Add your content here.  Format your content with:
+  * Text in *bold* or _italic_
+  * Headings, paragraphs, and lists
+  * Automatic links to other wiki pages
