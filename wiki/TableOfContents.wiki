@@ -1,4 +1,4 @@
   * [Other]
-     * [Developer Links]
+     * [Developer Developer Links]
        * [Bada_MoviNAND_layout Bada MoviNAND Layout]
        * [NotepadPlusPlus Notepad Plus]
