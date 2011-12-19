@@ -750,4 +750,8 @@ _System_DisableFIQ:
 	MSR	CPSR_cxsf, R0
 	BX	LR
 
+loadBigEndianHalf:
+
+loadBigEndianWord:
+
 END_INCLUDE_ONCE

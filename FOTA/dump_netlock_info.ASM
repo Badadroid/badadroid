@@ -1,4 +1,4 @@
-include 'inc/settings.inc'              ; user dependend settings
+include 'inc/settings.inc'		; user dependend settings
 
 ;example dumping whole iROM area
 

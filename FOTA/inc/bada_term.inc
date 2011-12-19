@@ -42,28 +42,22 @@ _hook_DloadProcessPacketCustom:
 DloadRead:
 	stmfd	sp!, {r4, lr\}
 	mov	r3, r1
-	ldrb	r1, [r0, 2]
+	MOV	R2, R0
+	BL	loadWord
+	MOV	R1, R0
+	MOV	R0, R2, 4
+	BL	loadHalf
 	cmp	r3, 1
-	ldrb	ip, [r0, 1]
-	ldrb	r2, [r0, 0]
-	mov	r1, r1, lsl 16
-	ldrb	r4, [r0, 5]
-	orr	r1, r1, ip, lsl 8
-	orr	r1, r1, r2
-	ldrb	r2, [r0, 3]
-	orr	r1, r1, r2, lsl 24
-	ldrb	r2, [r0, 4]
-	orr	r4, r2, r4, lsl 8
 	bne	@f
-	mov	r2, r4
+	mov	r2, r0		  ;read flash
 	ldr	r0, [dump_buf]
 	bl	Flash_Read_Data
 	b	.transmite
 @@:
-	cmp	r3, 2
+	cmp	r3, 2	 ;read ram
 	ldmfdne sp!, {r4, pc\}
+	mov	r2, r0
 	ldr	r0, [dump_buf]
-	mov	r2, r4
 	bl	memcpy
 
 .transmite:
@@ -75,15 +69,35 @@ DloadRead:
 
 DloadRunCode:
 	stmfd	sp!, {lr\}
-	ldrb	r2, [r0, 0]
-	ldrb	r3, [r0, 1]
-	orr	r2, r2, r3, lsl 8
-	add	r1, r0, 2
+	mov	r1, r0
+	BL	loadHalf
+	mov	r2, r0
+	add	r1, r1, 2
 	ldr	r0, [code_buf]
 	bl	memcpy
 	blx	r0
 	ldmfd	sp!, {lr\}
 	b	DloadResponseOK
+
+
+DloadLoadBinary:
+	stmfd	sp!, {lr\}
+	mov	r1, r0
+	BL	loadHalf
+	mov	r2, r0
+	add	r0, r1, 2
+	BL	loadWord ;target addr
+	add	r1, 6
+	bl	memcpy
+	ldmfd	sp!, {lr\}
+	b	DloadResponseOK
+
+DloadBranch:
+	stmfd	sp!, {lr\}
+	BL	loadWord
+	MOV	R2, R0
+	BX	R2
+	ldmfd	sp!, {lr\}
 
 
 DloadCmdHandler:
@@ -99,12 +113,20 @@ DloadCmdHandler:
 	b	DloadRunCode		; CMD_CODE_RUN
 @@:
 	cmp	r1, 4
-	bxne	lr
+	bne	@f
 	b	DloadResponseOK 	; CMD_CONN_CHECK
+@@:
+	cmp	r1, 5
+	bne	@f
+	b	DloadLoadBinary 	; CMD_LOAD_BIN
+@@:
+	cmp	r1, 6
+	bxne	lr
+	b	DloadBranch		; CMD_BRANCH
 
 	align 4
-	dump_buf                        dw DUMP_BUFFER
-	code_buf                        dw CODE_BUFFER
+	dump_buf			dw DUMP_BUFFER
+	code_buf			dw CODE_BUFFER
 
 ; =============================================================================
 

@@ -14,6 +14,8 @@
 #include "term.h"
 
 
+static char dummy[256];
+
 #define PROGRAM_TITLE           "bTerm"
 #define PROGRAM_VERSION_MAJOR   0
 #define PROGRAM_VERSION_MINOR   15
@@ -72,7 +74,9 @@ typedef enum DloadCMDCustom
 	CMD_READ_NAND          = 0x01,
 	CMD_READ_RAM           = 0x02,
 	CMD_CODE_RUN           = 0x03,
-	CMD_CONN_CHECK         = 0x04
+	CMD_CONN_CHECK         = 0x04,
+	CMD_LOAD_BIN		   = 0x05,
+	CMD_BRANCH				= 0x06
 } DloadCMDCustom;
 
 
@@ -362,7 +366,9 @@ int main ( int argc, char **argv )
 	         " check                      - check the connection\n"
 	         " dump    <address> <length> - dump NAND area\n"
 			 " dumpram <address> <length> - dump RAM area\n"
-			 " run  <path_to_file>        - execute the code from file\n"
+			 " run  <path_to_file>        - execute the code from file\n"			 
+			 " loadbin  <path> <addr>     - load binary into memory under specified address\n"			 
+			 " branch <addr>              - FOTA does branch without link to specific address\n"
 	         " exit                       - terminate program\n" );
 
 	while ( printf ( "\n>" ) && gets ( cmd ) && cmd[0] )
@@ -402,10 +408,9 @@ int main ( int argc, char **argv )
 			if ( !strncmp ( "dumpram ", cmd, 8 ) ) 
 			{
 				dumpram = 1;
-				sscanf ( cmd + 8, "%X %X", &address, &length );
 			}
-			else
-				sscanf ( cmd + 5, "%X %X", &address, &length );
+				sscanf ( cmd, "%s %X %X", &dummy, &address, &length );
+
 
 			if ( length > 0 )
 			{
@@ -488,10 +493,12 @@ int main ( int argc, char **argv )
 		}
 		else if ( !strncmp ( "run ", cmd, 4 ) )
 		{
-			if ( fh = fopen ( cmd + 4, "rb" ) )
+			char fname[48];
+			sscanf(cmd, "%s %s", &dummy, &fname);
+			if ( fh = fopen (fname, "rb" ) )
 			{
 				unsigned int code_length;
-				code_length = fread ( buf + 3, 1, 0x2000, fh );
+				code_length = fread ( buf + 3, 1, (0x2000-3), fh );
 				fclose ( fh );
 
 				if ( code_length )
@@ -508,7 +515,69 @@ int main ( int argc, char **argv )
 				}
 			}
 			else
-				printf ( "Can't open input file (%s)!", outname );
+				printf ( "Can't open input file (%s)!", fname );
+		}
+		else if ( !strncmp ( "branch ", cmd, 7 ) )
+		{
+			unsigned int addr;
+			sscanf(cmd, "%s %X", &dummy, &addr);
+
+			SET_BYTE ( buf, 0, CMD_BRANCH );
+			SET_WORD ( buf, 1, addr );
+
+			send_packet ( CMD_CUSTOM, buf, 5 );
+
+			if ( RXE_OK == check_connection ( ) )
+				printf ( "OK\n" );
+			else
+				printf ( "FAIL (probably it isnt fail at all)\n" );
+		}
+		else if ( !strncmp ( "loadbin ", cmd, 8 ) )
+		{
+			
+			char fname[48];
+			unsigned int target_addr;
+			
+			sscanf(cmd, "%s %s %X", &dummy, &fname, &target_addr);
+			if ( fh = fopen (fname, "rb" ) )
+			{
+				unsigned int code_length, f_size, pack_n;
+				fseek(fh, 0, SEEK_END);
+				f_size = ftell(fh);
+				pack_n = (f_size+0x1EFF)/0x1F00;
+				rewind(fh);
+				
+				printf("loading 0x%X bytes from %s under 0x%08X\n", f_size, &fname, target_addr);
+				printf("splitting into %d packets\n", pack_n);
+
+				while(pack_n--)
+				{
+					code_length = fread ( buf + 5, 1, 0x1F00, fh );
+					if ( code_length )
+					{
+						SET_BYTE ( buf, 0, CMD_LOAD_BIN );
+						SET_HALF ( buf, 1, code_length );
+						SET_WORD ( buf, 3, target_addr);
+
+						send_packet ( CMD_CUSTOM, buf, code_length + 7 );
+
+						if ( RXE_OK == check_connection ( ) )
+							printf ( "OK\n" );
+						else
+							printf ( "FAIL\n" );
+
+						target_addr += 0x1F00;
+					}
+					else
+					{
+						printf ( "fread fail, this should not happen, wtf?!\n" );
+						break;
+					}
+				}				
+				fclose ( fh );
+			}
+			else
+				printf ( "Can't open input file (%s)!", fname );
 		}
 		else
 			printf ( "Unknown command!\n" );
