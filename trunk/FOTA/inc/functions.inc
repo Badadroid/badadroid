@@ -750,8 +750,21 @@ _System_DisableFIQ:
 	MSR	CPSR_cxsf, R0
 	BX	LR
 
-loadBigEndianHalf:
+loadHalf:
+	STMFD	 SP!,{R1,LR\}
+	LDRB	 R1, [R0,1]
+	LDRB	 R0, [R0]
+	ORR	 R0, R0, R1, lsl 8
+	LDMFD	 SP!,{R1,PC\}
 
-loadBigEndianWord:
-
+loadWord:
+	STMFD	 SP!,{R1-R3,LR\}
+	LDRB	 R3, [R0,3]
+	LDRB	 R2, [R0,2]
+	LDRB	 R1, [R0,1]
+	LDRB	 R0, [R0]
+	ORR	 R0, R0, R1, lsl 8
+	ORR	 R0, R0, R2, lsl 16
+	ORR	 R0, R0, R3, lsl 24
+	LDMFD	 SP!,{R1-R3,PC\}
 END_INCLUDE_ONCE
