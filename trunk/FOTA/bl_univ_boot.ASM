@@ -154,51 +154,6 @@ START
    BL	 _System_DisableIRQ
    BL	 _System_DisableFIQ
 
-   LDR	 R0, [EXT_INT_MASKS]   ;zero ext INT masks
-   MOV	 R1, 0xFF
-   STR	 R1, [R0,#0x0]
-   STR	 R1, [R0,#0x4]
-   STR	 R1, [R0,#0x8]
-   STR	 R1, [R0,#0xC]
-   
-   LDR	 R0, [EXT_INT_CTRL]   ;zero ext INT signaling methods
-   MOV	 R1, 0x0
-   STR	 R1, [R0,#0x0]
-   STR	 R1, [R0,#0x4]
-   STR	 R1, [R0,#0x8]
-   STR	 R1, [R0,#0xC]
-   
-   MOV	 R0, #0xF2000000
-   LDR	 R1, [VIC1]
-   LDR	 R2, [VIC2]
-   LDR	 R3, [VIC3]
-   MOV	 R4, 0xFFFFFFFF   ;clear INT
-   STR	 R4, [R0,#0x14]
-   STR	 R4, [R1,#0x14]
-   STR	 R4, [R2,#0x14]
-   STR	 R4, [R3,#0x14]
-   
-   STR	 R4, [R0,#0x1C]   ;clear software INT
-   STR	 R4, [R1,#0x1C]
-   STR	 R4, [R2,#0x1C]
-   STR	 R4, [R3,#0x1C]
-   
-   LDR	 R5, [INTC_DMA_CLR]   ;clear DMA INT
-   STR	 R4, [R5]
-   LDR	 R5, [INTC_ONENAND_CLR] ;clear oneNand INT
-   STR	 R4, [R5]
-
-   MOV	 R4, #0      ;set all interrupts to IRQ mode
-   STR	 R4, [R0,#0xC]
-   STR	 R4, [R1,#0xC]
-   STR	 R4, [R2,#0xC]
-   STR	 R4, [R3,#0xC]
-   MOV	 R4, #0      ;clear ISRs
-   STR	 R4, [R0,#0xF00]
-   STR	 R4, [R1,#0xF00]
-   STR	 R4, [R2,#0xF00]
-   STR	 R4, [R3,#0xF00]
-
 
    LDR	 R5, [NOP_CODE]
    LDR	 R0, [SBL_patch_table_adr]
@@ -217,14 +172,14 @@ patch_done:
    LDR	 R0, [framebuffer_ptr]
    MOV	 R1, 0x1E
    LDR	 R2, [framebuffer_size]
-   BL	 rebell_fillmem
+   ;BL    rebell_fillmem
 
    LDR	 R1, [SBL_sblinit_ptr]
-   BLX	 R1
+   ;BLX   R1
    LDR	 R0, [s_done_a]
    BL	 debug_print
    LDR	 R1, [SBL_lcd_init_ptr]
-   BLX	 R1
+  ; BLX   R1
 
    LDR	 R1, [kernel_start_a]
    LDR	 R0, [s_jumpingout_a]
