@@ -45,7 +45,7 @@ DloadRead:
 	MOV	R2, R0
 	BL	loadWord
 	MOV	R1, R0
-	MOV	R0, R2, 4
+	ADD	R0, R2, 4
 	BL	loadHalf
 	cmp	r3, 1
 	bne	@f
