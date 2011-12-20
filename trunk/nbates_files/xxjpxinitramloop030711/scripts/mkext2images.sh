@@ -14,7 +14,7 @@ echo done
 
 #Create a data image file, configure it's loopback and create the filesystem
 echo creating data image
-busybox dd if=/dev/zero of=/mnt_ext/badablk3/ext2data.img bs=1024 count=600000
+busybox dd if=/dev/zero of=/mnt_ext/badablk3/ext2data.img bs=1024 count=350000
 busybox losetup /dev/block/loop5 /mnt_ext/badablk3/ext2data.img
 busybox mkfs.ext2 /dev/block/loop5 -L data
 echo done
