@@ -18,7 +18,7 @@ static char dummy[256];
 
 #define PROGRAM_TITLE           "bTerm"
 #define PROGRAM_VERSION_MAJOR   0
-#define PROGRAM_VERSION_MINOR   15
+#define PROGRAM_VERSION_MINOR   16
 
 const char *DloadResponseType[] =
 {
@@ -498,7 +498,7 @@ int main ( int argc, char **argv )
 			if ( fh = fopen (fname, "rb" ) )
 			{
 				unsigned int code_length;
-				code_length = fread ( buf + 3, 1, (0x2000-3), fh );
+				code_length = fread ( buf + 3, 1, (0x2000), fh );
 				fclose ( fh );
 
 				if ( code_length )
@@ -539,12 +539,18 @@ int main ( int argc, char **argv )
 			unsigned int target_addr;
 			
 			sscanf(cmd, "%s %s %X", &dummy, &fname, &target_addr);
+			if(target_addr == 0)
+			{
+				printf("Zomg, specify address please!\n");
+				continue;
+			}
 			if ( fh = fopen (fname, "rb" ) )
 			{
-				unsigned int code_length, f_size, pack_n;
+				unsigned int code_length, f_size, pack_n, percent, total;
 				fseek(fh, 0, SEEK_END);
 				f_size = ftell(fh);
 				pack_n = (f_size+0x1EFF)/0x1F00;
+				total = pack_n;
 				rewind(fh);
 				
 				printf("loading 0x%X bytes from %s under 0x%08X\n", f_size, &fname, target_addr);
@@ -552,7 +558,7 @@ int main ( int argc, char **argv )
 
 				while(pack_n--)
 				{
-					code_length = fread ( buf + 5, 1, 0x1F00, fh );
+					code_length = fread ( buf + 7, 1, 0x1F00, fh );
 					if ( code_length )
 					{
 						SET_BYTE ( buf, 0, CMD_LOAD_BIN );
@@ -561,20 +567,25 @@ int main ( int argc, char **argv )
 
 						send_packet ( CMD_CUSTOM, buf, code_length + 7 );
 
-						if ( RXE_OK == check_connection ( ) )
-							printf ( "OK\n" );
-						else
-							printf ( "FAIL\n" );
-
 						target_addr += 0x1F00;
+
+						percent = (float)100 * ( total-pack_n ) / total;
+								printf ( "\b\b\b%02d%%", (unsigned int)percent );
 					}
 					else
 					{
 						printf ( "fread fail, this should not happen, wtf?!\n" );
 						break;
 					}
-				}				
+				}	
+				
 				fclose ( fh );
+
+				//if ( RXE_OK == check_connection ( ) )
+					printf ( "OK\n" );
+				//else
+					printf ( "FAIL\n" );
+
 			}
 			else
 				printf ( "Can't open input file (%s)!", fname );

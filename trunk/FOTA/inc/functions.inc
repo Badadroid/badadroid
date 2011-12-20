@@ -767,4 +767,24 @@ loadWord:
 	ORR	 R0, R0, R2, lsl 16
 	ORR	 R0, R0, R3, lsl 24
 	LDMFD	 SP!,{R1-R3,PC\}
+
+countdown:
+	STMFD	 SP!,{R1-R4,LR\}
+	MOV	 R4, R0
+	MOV	 R1, R0
+	ADR	 R0, countdown_string
+	BL	 debug_print
+@@:
+	MOV	 R0, R4
+	BL	 int_debugprint
+	LDR	 R0, [time_1sec]
+	BL	 PWM_Drv_Delay
+	SUB	 R4, R4, 1
+	CMP	 R4, 0
+	BGE	 @b
+	LDMFD	 SP!,{R1-R4,PC\}
+
+countdown_string       db " Counting down %ds\n",0
+ALIGN 4
+time_1sec	       dw 1000000
 END_INCLUDE_ONCE
