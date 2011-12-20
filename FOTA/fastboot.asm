@@ -15,7 +15,7 @@ bootkernel:	       ;0x43801000 on 8530JPKA1
    BL	 countdown
    B	 @f
 
-   output_msg db " Toogling UART out in %ds",0
+   output_msg db " Toogling UART output in %ds",0
 ALIGN 4
 @@:
    BL	 enable_uart_output
