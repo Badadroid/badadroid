@@ -95,8 +95,9 @@ DloadLoadBinary:
 DloadBranch:
 	stmfd	sp!, {lr\}
 	BL	loadWord
-	MOV	R2, R0
-	BX	R2
+	MOV	R9, R0
+	bl	DloadResponseOK
+	BX	R9
 	ldmfd	sp!, {lr\}
 
 

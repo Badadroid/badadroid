@@ -95,7 +95,7 @@ unsigned int term_set_control ( unsigned int baud, unsigned char databits, unsig
     timeouts.ReadTotalTimeoutMultiplier = 0; 
     timeouts.ReadTotalTimeoutConstant = 3;
     timeouts.WriteTotalTimeoutMultiplier = 0;
-    timeouts.WriteTotalTimeoutConstant = 0;
+    timeouts.WriteTotalTimeoutConstant = 3;
 
 	if ( !SetCommTimeouts ( hCom, &timeouts ) )
     {

@@ -38,7 +38,7 @@ f_ver:
 	db 'FOTA_ENGINE_VER_INFO_2.0'
 	db 232 dup 0
 	dw FOTA_DRAM_START			; not required for < 2.0
-	db 252 dup 0                            ; not required for < 2.0
+	db 252 dup 0				; not required for < 2.0
 
 c_run:
 
@@ -66,12 +66,12 @@ if defined USE_BTERM
 
 	stmfd	sp!, {lr\}
 	ldr	r0, [.cmd]
-	bl	DloadPacketHandler              ; register our handler
+	bl	DloadPacketHandler		; register our handler
 	ldmfd	sp!, {lr\}
-	b       @f
+	b	@f
 
 	align 4
-	.cmd                                    dw DloadCmdHandler
+	.cmd					dw DloadCmdHandler
 
 @@:
 
@@ -98,7 +98,7 @@ check_vol:
 	ldr		r0, [_key2]
 	ldrb		r0, [r0, 7]		; volup key
 	cmp		r0, 0
-	beq		fota_dload_mode 	; return_to_bl
+	beq		fota_dload_mode 	; home alone (Kevin?!)
 
 	ldr		r0, [s_atagcmdlineRM_a] ; quick and dirty address copy...
 	ldr		r1, [s_atagcmdline_aa]
@@ -150,7 +150,7 @@ end if ; FOTA_SHADOWING
 
 if defined USE_BTERM
 
-	BADA_TERM                               ; include BADA_TERM stuff
+	BADA_TERM				; include BADA_TERM stuff
 
 end if ; USE_BTERM
 

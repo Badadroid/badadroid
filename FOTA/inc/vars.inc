@@ -36,7 +36,12 @@ END_INCLUDE_ONCE
 INCLUDE_ONCE DEFAULT_STRINGS
     s_fotaoutput		    db ' FOTA OUTPUT ENABLED',0
     s_uartoutput		    db ' UART OUTPUT ENABLED',0
-    s_downloadmode		    db ' ENTERING BL3 DOWNLOAD MODE',0
+if defined USE_BTERM
+
+    s_downloadmode		    db ' -- BL3 Dload Mode & bTerm --',0
+else
+    s_downloadmode		    db ' --     BL3 Dload Mode     --',0
+end if
     s_notfound			    db ' not found!',0
     s_debug_fmt_int		    db ' debug: %d',0
     s_debug_fmt_hex		    db ' debug: 0x%X',0
