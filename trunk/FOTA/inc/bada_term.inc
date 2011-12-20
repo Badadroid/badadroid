@@ -47,6 +47,7 @@ DloadRead:
 	MOV	R1, R0
 	ADD	R0, R2, 4
 	BL	loadHalf
+	mov	r4, r0
 	cmp	r3, 1
 	bne	@f
 	mov	r2, r0		  ;read flash

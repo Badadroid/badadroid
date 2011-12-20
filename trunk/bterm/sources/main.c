@@ -448,11 +448,12 @@ int main ( int argc, char **argv )
 							bytesRead = get_packet ( CMD_CUSTOM, buf );
 
 							if ( bytesRead < packet_len )
-							{
-								if ( RXE_OK == check_connection ( ) )
+							{																
+								Sleep ( 300 );
+								if ( RXE_OK == check_connection ( ) ||  RXE_OK == check_connection ( ) ||  RXE_OK == check_connection ( ) ) //ugly hax to improve dump stability
 								{
 									printf ( "\nError receiving packet (%d bytes at 0x%08X). Received %d bytes only.", packet_len, address, bytesRead );
-									printf ( "\nRetrying(%d/3)...\n", 2 - retries );
+									printf ( "\nRetrying(%d/3)...\n", 2 - retries );									
 									Sleep ( 300 );
 								}
 								else
