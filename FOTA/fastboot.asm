@@ -1,7 +1,7 @@
 include 'inc/settings.inc'		; user dependend settings
 
 START
-   BL	 enable_fota_output
+   BL	 enable_fota_output ;I recommend to change it to uart output - saves battery ALOT ~Rebellos
 
    MOV	 r1, #0
    LDR	   r0, [pagetable]
