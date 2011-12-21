@@ -1,0 +1,3 @@
+open
+loadbin zImage 0x44000000 0x43804000
+exit

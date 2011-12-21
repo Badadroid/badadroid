@@ -18,7 +18,7 @@ static char dummy[256];
 
 #define PROGRAM_TITLE           "bTerm"
 #define PROGRAM_VERSION_MAJOR   0
-#define PROGRAM_VERSION_MINOR   16
+#define PROGRAM_VERSION_MINOR   17
 
 const char *DloadResponseType[] =
 {
@@ -361,15 +361,24 @@ int main ( int argc, char **argv )
 	printf ( "\n%s v%d.%02d\n\n", PROGRAM_TITLE, PROGRAM_VERSION_MAJOR, PROGRAM_VERSION_MINOR );
 	printf ( "Enter command you want to send or press enter to exit\n" );
 	printf ( "Available commands:\n"
-	         " open                       - open the COM port\n"
-	         " close                      - close the COM port\n"
-	         " check                      - check the connection\n"
-	         " dump    <address> <length> - dump NAND area\n"
-			 " dumpram <address> <length> - dump RAM area\n"
-			 " run  <path_to_file>        - execute the code from file\n"			 
-			 " loadbin  <path> <addr>     - load binary into memory under specified address\n"			 
-			 " branch <addr>              - FOTA does branch without link to specific address\n"
-	         " exit                       - terminate program\n" );
+		     " open the COM port\n"
+	         " open\n\n"
+			 " close the COM port\n"
+	         " close\n\n"
+			 " check the connection\n"
+	         " check\n\n"
+			 " dump NAND area\n"
+	         " dump    <address> <length>\n\n"
+			 " dump RAM area\n"
+			 " dumpram <address> <length>\n\n"
+			 " execute the code from file\n"
+			 " run  <path_to_file>\n\n"			 
+			 " load binary into memory under specified address and store its size\n"
+			 " loadbin  <path> <addr> <optional|sizeaddr>\n\n"				 
+			 " branch target without link to specific address\n"
+			 " branch <addr>\n\n"
+			 " terminate program\n"
+	         " exit\n\n" );
 
 	while ( printf ( "\n>" ) && gets ( cmd ) && cmd[0] )
 	{
@@ -537,9 +546,9 @@ int main ( int argc, char **argv )
 		{
 			
 			char fname[48];
-			unsigned int target_addr;
+			unsigned int target_addr, size_addr;
 			
-			sscanf(cmd, "%s %s %X", &dummy, &fname, &target_addr);
+			sscanf(cmd, "%s %s %X %X", &dummy, &fname, &target_addr, &size_addr);
 			if(target_addr == 0)
 			{
 				printf("Zomg, specify address please!\n");
@@ -579,6 +588,18 @@ int main ( int argc, char **argv )
 						break;
 					}
 				}	
+
+				if(size_addr)
+				{					
+				
+					printf("storing 0x%X under 0x%08X\n", f_size, size_addr);
+					SET_BYTE ( buf, 0, CMD_LOAD_BIN );
+					SET_HALF ( buf, 1, 4 );
+					SET_WORD ( buf, 3, size_addr);
+					SET_WORD ( buf, 7, f_size);
+
+					send_packet ( CMD_CUSTOM, buf, 4 + 7 );
+				}
 				
 				fclose ( fh );
 
