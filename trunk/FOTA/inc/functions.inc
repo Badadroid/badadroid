@@ -784,7 +784,7 @@ countdown:
 	BGE	 @b
 	LDMFD	 SP!,{R1-R4,PC\}
 
-countdown_string       db " Counting down %ds\n",0
+countdown_string       db " Counting down %ds",0
 ALIGN 4
 time_1sec	       dw 1000000
 END_INCLUDE_ONCE

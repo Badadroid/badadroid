@@ -2,6 +2,12 @@ include 'inc/settings.inc'		; user dependend settings
 
 START
    BL	 enable_fota_output
+
+   MOV	 r1, #0
+   LDR	   r0, [pagetable]
+   BL	   MemMMUCacheEnable
+   STR	 R0, [mmu_register] ;lets store previous MMU control register to turn it off later
+
    BL	 dloadmode
 bootkernel_helper:
 	code_len = bootkernel_helper - c_start
@@ -16,12 +22,19 @@ bootkernel:	       ;0x43801000 on 8530JPKA1
    B	 @f
 
    output_msg db " Toogling UART output in %ds",0
+   kernel_crc db " Kernel CRC32 = 0x%X",0
+
 ALIGN 4
+   kernel_crc_a dw kernel_crc
 @@:
    BL	 enable_uart_output
+
+
+
    ldr	 r0, [s_mmuoff_a]
    BL	 debug_print
 
+   LDR	R8, [mmu_register]
    MCR	 p15, 0, R8,c1,c0 ;turn off MMUCache with previous gained MMU control reg
    BL	 _CoDisableMmu
    ldr	 r0, [s_done_a]
@@ -105,8 +118,7 @@ ALIGN 4
 
    ldr	 r1, [kernel_start_a]
    ldr	 r0, [s_kernelreloc_a]
-   bl	 hex_debugprint
-  ; BL    debug_print
+   BL	 debug_print
 
    BL	 relockernel
    ldr	 r0, [s_done_a]
@@ -120,8 +132,6 @@ ALIGN 4
    STR	 R1, [R0]    ;POWAH ON EVRYTHINKS (clock registers in all modules must be available for kernel)
 
 
-   BL	 timer_driver
-   BL	 configure_clocks
    BL	 _CoDisableDCache
 
    BL	 _System_DisableVIC
@@ -129,37 +139,22 @@ ALIGN 4
    BL	 _System_DisableFIQ
 
 
-   LDR	 R5, [NOP_CODE]
-   LDR	 R0, [SBL_patch_table_adr]
-
-do_patch:
-   LDR	 R1, [R0], 4 ;post increment R0 by 4
-   CMP	 R1, 0
-   BEQ	 patch_done
-   STR	 R5, [R1]
-   B   do_patch
-
-patch_done:
    LDR	 R0, [s_done_a]
    BL	 debug_print
 
-   LDR	 R0, [framebuffer_ptr]
-   MOV	 R1, 0x1E
-   LDR	 R2, [framebuffer_size]
-   ;BL    rebell_fillmem
-
-   LDR	 R1, [SBL_sblinit_ptr]
-   ;BLX   R1
-   LDR	 R0, [s_done_a]
+   LDR	 R0, [kernel_start_a]
+   LDR	 R1, [kernel_size_a]
+   LDR	 R1, [R1]
+   BL	 calc_crc32
+   MOV	 R1, R0
+   LDR	 R0, [kernel_crc_a]
    BL	 debug_print
-   LDR	 R1, [SBL_lcd_init_ptr]
-  ; BLX   R1
 
    LDR	 R1, [kernel_start_a]
    LDR	 R0, [s_jumpingout_a]
    BL	 debug_print
    MOV	 R0, 0	   ;must be 0
-   MOV	 R1, 0x89
+   MOV	 R1, 0x891
    LDR	 R2, [ATAG_ptr]
 
 
@@ -179,11 +174,11 @@ relockernel:
 
    LDR	 R0, [kernel_buf]
    LDR	 R1, [kernel_start_a]
-   LDR	 R2, [kernel_size]
+   LDR	 R2, [kernel_size_a]
+   LDR	 R2, [R2]
    BL	 rebell_memcpy
 
    LDMFD   SP!, {R0-R2,PC}
-
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;; variables below
@@ -191,6 +186,7 @@ DEFAULT_VARIABLES
 
 
    pagetable	       dw gMMUL1PageTable
+   mmu_register 	  dw 0 ;runtime overwritten
    INTC_DMA_CLR 	  dw 0xB0601004
    INTC_ONENAND_CLR	  dw 0xB0601008
 
@@ -218,20 +214,7 @@ DEFAULT_VARIABLES
    kernel_start_a	  dw 0x32000000
    kernel_buf		  dw 0x44000000
    kernel_size_a	  dw kernel_size
-   kernel_size		  dw 0x01000000;0 ;should be overwritten during runtime
 
-   SBL_sblinit_ptr	  dw 0x4024F550
-   SBL_lcd_init_ptr	  dw 0x40250F90; 0x40250598 ;0x40250A40;0x40250F90
-   sbl_start		  dw 0x40244000
-   sbl_size		  dw 0x140000
-   framebuffer_ptr	  dw 0x403EC00C ;0x4EC00000
-   framebuffer_size	  dw 0x5DBFF
-
-
-   SBL_patch_table_adr	  dw SBL_patch_table
-   NOP_CODE		  dw 0xE1A00000
-   SBL_patch_table	  dw 0x0;0x4025095C
-			  dw 0x0	;end
 
 
 
@@ -252,5 +235,9 @@ DEFAULT_STRINGS
    s_kernelreturn	  db ' WTF KERNEL RETURNED',0
  
 FUNCTIONS
-   
+
+kernel_size_helper:
+   code_len = kernel_size_helper - c_start
+   db	   0x4000 - code_len dup 0x00
+kernel_size	       dw 0 ;should be overwritten during runtime   ;0x43804000 on 8530JPKA1
 END
