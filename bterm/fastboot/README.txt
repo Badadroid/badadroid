@@ -1,0 +1,1 @@
+put zImage and bTerm.exe in this folder and execute fastboot.bat
