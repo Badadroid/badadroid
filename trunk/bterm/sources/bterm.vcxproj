@@ -92,7 +92,7 @@
     <ClCompile Include="main.c" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="term.c" />
+    <ClCompile Include="term_windows.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="defines.h" />

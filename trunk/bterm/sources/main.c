@@ -9,6 +9,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <stdarg.h>
+#include <string.h>
 
 #include "defines.h"
 #include "term.h"
@@ -18,7 +19,7 @@ static char dummy[256];
 
 #define PROGRAM_TITLE           "bTerm"
 #define PROGRAM_VERSION_MAJOR   0
-#define PROGRAM_VERSION_MINOR   17
+#define PROGRAM_VERSION_MINOR   18
 
 const char *DloadResponseType[] =
 {
@@ -75,8 +76,8 @@ typedef enum DloadCMDCustom
 	CMD_READ_RAM           = 0x02,
 	CMD_CODE_RUN           = 0x03,
 	CMD_CONN_CHECK         = 0x04,
-	CMD_LOAD_BIN		   = 0x05,
-	CMD_BRANCH				= 0x06
+	CMD_LOAD_BIN           = 0x05,
+	CMD_BRANCH             = 0x06
 } DloadCMDCustom;
 
 
@@ -195,8 +196,8 @@ unsigned int get_packet ( DloadCMD type, unsigned char *buffer )
 	term_receive ( packet, 0x4200, &length );
 
 	if ( 6 == length && 2 == packet[2] )
-		return 0xFFFFFFFF;
-	
+		return 0xFFFFFFFF;	
+
 	while ( i < length )
 	{
 		byte = packet[i++];
@@ -321,18 +322,22 @@ const char *print_bytes ( unsigned int bytes )
 	return (const char *)print_bytes;
 }
 
-unsigned int COMSearch ( void )
+unsigned char* devSearch ( void )
 {
+
+	char* ret = malloc(32);
+	memset(ret, 0, 32);
+	int found = 0;
+#if defined(WIN32)|| defined(WIN64)
 	HKEY hKey;
 	unsigned char pValue[255];
 	unsigned char pData[255];
 	unsigned int cValues, cValue, cData, retCode;
-	unsigned int port_num = 0;
 
 	RegOpenKeyExA ( HKEY_LOCAL_MACHINE, "HARDWARE\\DEVICEMAP\\SERIALCOMM\\", 0, KEY_READ, &hKey );
 	RegQueryInfoKeyA ( hKey, NULL, NULL, NULL, NULL, NULL, NULL, (LPDWORD)&cValues, NULL, NULL, NULL, NULL );
 
-	while ( !port_num && cValues-- )
+	while ( !found && cValues-- )
 	{
 		cData = cValue = 255;
 		retCode = RegEnumValueA ( hKey, cValues, (LPSTR)pValue, (LPDWORD)&cValue, NULL, NULL, (LPBYTE)pData, (LPDWORD)&cData );
@@ -341,12 +346,20 @@ unsigned int COMSearch ( void )
 			if ( !strncmp ( "\\Device\\sscemdm", (const char *)pValue, 15 ) ||
 			     !strncmp ( "\\Device\\ssudmdm", (const char *)pValue, 15 ) ) // SAMSUNG Mobile Modem
 				if ( !strncmp ( "COM", (const char *)pData, 3 ) )
-					port_num = atoi ( (const char *)( pData + 3 ) );
+				{
+					found = 1;
+					strcpy(ret, pData);
+					//port_num = atoi ( (const char *)( pData + 3 ) )
+				}
 	}
 
-	RegCloseKey ( hKey );
 
-	return port_num;
+	RegCloseKey ( hKey );
+#endif
+#ifdef __linux__
+	sprintf(ret,"ttyACM1");
+#endif
+	return ret;
 }
 
 int main ( int argc, char **argv )
@@ -384,10 +397,10 @@ int main ( int argc, char **argv )
 	{
 		if ( !strcmp ( "open", cmd ) )
 		{
-			if ( term_open ( COMSearch ( ) ) == RXE_OK )       //CMD_CONN_OPEN
+			if ( RXE_OK  == term_open ( devSearch ( ) ))       //CMD_CONN_OPEN
 			{
 				term_set_control ( 1382400, 8, 1, 0, 0 );
-				term_send ( "AT+FUS?\r\n", 9 );
+				term_send ( "AT+FUS?\r\n", 9 );	
 				check_connection ( );
 				term_receive ( buf, 0x4200, &bytesRead );
 			}

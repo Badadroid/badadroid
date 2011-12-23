@@ -1,10 +1,10 @@
+#if defined (WIN32) || defined(WIN64) || defined(_WIN32)|| defined(_WIN64)
+
 #ifndef __TRIX_TERM_C__
 #define __TRIX_TERM_C__
 
-#ifdef WIN32
 #include <windows.h>
 HANDLE hCom;
-#endif
 
 #include <stdio.h>
 #include <stdarg.h>
@@ -12,11 +12,9 @@ HANDLE hCom;
 #include "defines.h"
 #include "term.h"
 
+static char portName[8];
 
-static unsigned int portnum = 0;
-
-
-unsigned int term_open ( unsigned int port )
+unsigned int term_open ( char* devName )
 {
 	char portstr[32];
 
@@ -26,7 +24,7 @@ unsigned int term_open ( unsigned int port )
 		return RXE_FAIL;
 	}
 
-	sprintf ( portstr, "\\\\.\\COM%d", port );
+	sprintf ( portstr, "\\\\.\\%s", devName );
 	hCom = CreateFile ( (LPCSTR)portstr,
 	                    GENERIC_READ | GENERIC_WRITE,
 	                    0,
@@ -37,14 +35,14 @@ unsigned int term_open ( unsigned int port )
 
     if ( hCom == INVALID_HANDLE_VALUE )
     {
-		printf ( "%s: could not open COM%d port\n", __FUNCTION__, port );
+		printf ( "%s: could not open %s \n", __FUNCTION__, devName );
 		hCom = NULL;
-		portnum = 0;
+		portName = "";
 		return RXE_FAIL;
     }
 
-	printf ( "COM%d port opened with success\n", port );
-	portnum = port;
+	printf ( "%s port opened with success\n", devName );
+	portName = devName;
 
 	return RXE_OK;
 }
@@ -59,9 +57,9 @@ unsigned int term_close ( )
 
 	CloseHandle ( hCom );
 
-	printf ( "COM%d port closed with success\n", portnum );
+	printf ( "%s port closed with success\n", portName );
 
-	portnum = 0;
+	portName = "";
 	hCom = NULL;
 
 	return RXE_OK;
@@ -161,3 +159,5 @@ unsigned int term_receive ( unsigned char *dest, unsigned int dest_length, unsig
 }
 
 #endif /* __TERM_C__ */
+
+#endif /* WIN32 */
