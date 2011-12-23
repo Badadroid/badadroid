@@ -1,0 +1,12 @@
+#Sat Dec 24 00:16:36 CET 2011
+eclipse.preferences.version=1
+environment/buildEnvironmentInclude/cdt.managedbuild.config.gnu.exe.debug.1073103921/CPATH/delimiter=\:
+environment/buildEnvironmentInclude/cdt.managedbuild.config.gnu.exe.debug.1073103921/CPATH/operation=remove
+environment/buildEnvironmentInclude/cdt.managedbuild.config.gnu.exe.debug.1073103921/C_INCLUDE_PATH/delimiter=\:
+environment/buildEnvironmentInclude/cdt.managedbuild.config.gnu.exe.debug.1073103921/C_INCLUDE_PATH/operation=remove
+environment/buildEnvironmentInclude/cdt.managedbuild.config.gnu.exe.debug.1073103921/append=true
+environment/buildEnvironmentInclude/cdt.managedbuild.config.gnu.exe.debug.1073103921/appendContributed=true
+environment/buildEnvironmentLibrary/cdt.managedbuild.config.gnu.exe.debug.1073103921/LIBRARY_PATH/delimiter=\:
+environment/buildEnvironmentLibrary/cdt.managedbuild.config.gnu.exe.debug.1073103921/LIBRARY_PATH/operation=remove
+environment/buildEnvironmentLibrary/cdt.managedbuild.config.gnu.exe.debug.1073103921/append=true
+environment/buildEnvironmentLibrary/cdt.managedbuild.config.gnu.exe.debug.1073103921/appendContributed=true

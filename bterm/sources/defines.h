@@ -5,6 +5,11 @@
 extern "C" {
 #endif
 
+
+#ifdef __linux__
+#define Sleep(x) usleep(x*1000)
+#endif
+
 #define RXE_OK                          0x00000000
 #define RXE_FAIL                        0xFFFFFFFF
 
