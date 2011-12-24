@@ -37,12 +37,12 @@ unsigned int term_open ( char* devName )
     {
 		printf ( "%s: could not open %s \n", __FUNCTION__, devName );
 		hCom = NULL;
-		portName = "";
+		memset(portName, 0, 8);
 		return RXE_FAIL;
     }
 
 	printf ( "%s port opened with success\n", devName );
-	portName = devName;
+	strcpy(portName, devName);
 
 	return RXE_OK;
 }
@@ -59,7 +59,7 @@ unsigned int term_close ( )
 
 	printf ( "%s port closed with success\n", portName );
 
-	portName = "";
+	memset(portName, 0, 8);
 	hCom = NULL;
 
 	return RXE_OK;
@@ -91,9 +91,9 @@ unsigned int term_set_control ( unsigned int baud, unsigned char databits, unsig
 	// TODO
 	timeouts.ReadIntervalTimeout = 1;
     timeouts.ReadTotalTimeoutMultiplier = 0; 
-    timeouts.ReadTotalTimeoutConstant = 3;
+    timeouts.ReadTotalTimeoutConstant = 10;
     timeouts.WriteTotalTimeoutMultiplier = 0;
-    timeouts.WriteTotalTimeoutConstant = 3;
+    timeouts.WriteTotalTimeoutConstant = 10;
 
 	if ( !SetCommTimeouts ( hCom, &timeouts ) )
     {
@@ -138,9 +138,10 @@ unsigned int term_send ( const unsigned char *data, const unsigned int bytes )
 	return RXE_OK;
 }
 
-unsigned int term_receive ( unsigned char *dest, unsigned int dest_length, unsigned int *bytesRead )
+unsigned int term_receive_byte ( unsigned char *dest)
 {
-	*bytesRead = 0;
+
+	unsigned int rcv = 0;
 
     if ( !hCom )
     {
@@ -148,14 +149,64 @@ unsigned int term_receive ( unsigned char *dest, unsigned int dest_length, unsig
         return RXE_FAIL;
     }
 
-	// Read data from the COM-port
+	if (!ReadFile ( hCom, dest, 1, &rcv, 0 )  )
+	{
+		printf ( "%s: ReadFile returned error!\n", __FUNCTION__ );
+		return RXE_FAIL;
+	}
+
+	if(rcv == 0)
+		return RXE_FAIL; //timeout
+		
+	return RXE_OK;
+}
+
+unsigned int term_receive ( unsigned char *dest, unsigned int dest_length, unsigned int *bytesRead )
+{
+	unsigned char byte;
+	BOOL escape = TRUE;
+	unsigned int rcv;
+	
+	*bytesRead = 0;
+    if ( !hCom )
+    {
+        printf ( "%s: COM port was not open!\n", __FUNCTION__ );
+        return RXE_FAIL;
+    }
+
+		// Read data from the COM-port
 	if ( !ReadFile ( hCom, dest, dest_length, (LPDWORD)bytesRead, 0 ) )
 	{
 		printf ( "%s: ReadFile returned error!\n", __FUNCTION__ );
 		return RXE_FAIL;
 	}
-		
+
 	return RXE_OK;
+
+	//this below is slow as hell on windows :<
+	/*while (ReadFile ( hCom, &dest[(*bytesRead)], 1, &rcv, 0 ))
+	{
+		if(rcv == 0)
+			return RXE_FAIL; //1byte read timeout
+
+		if(!escape)
+		{
+			if(dest[(*bytesRead)] == 0x7D)
+			{
+				escape = TRUE;				
+				(*bytesRead)++;
+				continue;
+			}
+			if(dest[(*bytesRead)] == 0x7E)
+			{							
+				(*bytesRead)++;
+				return RXE_OK;
+			}
+		}		
+		(*bytesRead)++;
+		escape = FALSE;
+	}
+	return RXE_FAIL;*/
 }
 
 #endif /* __TERM_C__ */

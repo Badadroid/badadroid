@@ -1,7 +1,7 @@
 include 'inc/settings.inc'		; user dependend settings
 
 START
-   BL	 enable_fota_output ;I recommend to change it to uart output - saves battery ALOT ~Rebellos
+   BL	 enable_uart_output ;I recommend to change it to uart output - saves battery ALOT ~Rebellos
 
    MOV	 r1, #0
    LDR	   r0, [pagetable]
@@ -14,7 +14,7 @@ bootkernel_helper:
 	db	0x1000 - code_len dup 0x00
 bootkernel:	       ;0x43801000 on 8530JPKA1
 
-   MOV	 R1, 10
+   MOV	 R1, 1
    ADR	 R0, output_msg
    BL	 debug_print
    MOV	 R0, R1

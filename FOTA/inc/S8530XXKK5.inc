@@ -26,7 +26,17 @@ tfs4_close				 equ 0x420CF504
 tfs4_open				 equ 0x420CF390
 tfs4_read				 equ 0x420CF8C0
 tfs4_stat				 equ 0x420D0498
+tfs4_opendir				 equ 0x420CE4A4
+tfs4_closedir				 equ 0x420CE7A0
+tfs4_readdir				 equ 0x420CECEC
+tfs4_write				 equ 0x420CFA78
+tfs4_get_errno				 equ 0x420D19E0
+DloadResponse				 equ 0x42082978
+DloadProcessPacket			 equ 0x420837A0
 DloadMain				 equ 0x42083B84
+DloadTransmite				 equ 0x4208265C
+memcpy					 equ 0x42151664
+Flash_Read_Data 			 equ 0x4208A528
 
 ; Variables
 pressed_button				equ 0x421F53FC

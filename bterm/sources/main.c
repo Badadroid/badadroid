@@ -192,8 +192,13 @@ unsigned int get_packet ( DloadCMD type, unsigned char *buffer )
 	unsigned char packet[0x4200];
 	unsigned short crc = 0xFFFF;
 	unsigned int byte, packet_ok = 0, mode = 0, i = 0, pos = 0, length;
+	long start, end;
+//	start = GetTickCount();
+	term_receive ( packet, 0x4200, &length );	
+//	end = GetTickCount();
+	
+//	printf("term_receive time: %dms\n", (end-start));
 
-	term_receive ( packet, 0x4200, &length );
 
 	if ( 6 == length && 2 == packet[2] )
 		return 0xFFFFFFFF;	
@@ -325,10 +330,9 @@ const char *print_bytes ( unsigned int bytes )
 unsigned char* devSearch ( void )
 {
 
-	char* ret = malloc(32);
-	memset(ret, 0, 32);
+	char* ret = (char*)malloc(32);
 	int found = 0;
-#if defined(WIN32)|| defined(WIN64)
+#if defined(WIN32) || defined(WIN64)
 	HKEY hKey;
 	unsigned char pValue[255];
 	unsigned char pData[255];
@@ -588,7 +592,7 @@ int main ( int argc, char **argv )
 						SET_HALF ( buf, 1, code_length );
 						SET_WORD ( buf, 3, target_addr);
 
-						send_packet ( CMD_CUSTOM, buf, code_length + 7 );
+						send_packet ( CMD_CUSTOM, buf, code_length + 7 );	
 
 						target_addr += 0x1F00;
 
@@ -616,9 +620,9 @@ int main ( int argc, char **argv )
 				
 				fclose ( fh );
 
-				//if ( RXE_OK == check_connection ( ) )
+				if ( RXE_OK == check_connection ( ) )
 					printf ( "OK\n" );
-				//else
+				else
 					printf ( "FAIL\n" );
 
 			}
