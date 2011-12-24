@@ -91,7 +91,7 @@ DloadLoadBinary:
 	add	r1, 6
 	bl	memcpy
 	ldmfd	sp!, {lr\}
-	b	DloadResponseOK
+	bx	lr
 
 DloadBranch:
 	stmfd	sp!, {lr\}
