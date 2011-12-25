@@ -361,7 +361,7 @@ unsigned char* devSearch ( void )
 	RegCloseKey ( hKey );
 #endif
 #ifdef __linux__
-	sprintf(ret,"ttyACM1");
+	sprintf(ret,"ttyACM0"); //hardcoded for now
 #endif
 	return ret;
 }
@@ -399,7 +399,7 @@ int main ( int argc, char **argv )
 
 	while ( printf ( "\n>" ) && gets ( cmd ) && cmd[0] )
 	{
-		if ( !strcmp ( "open", cmd ) )
+		if ( !strncmp ( "open", cmd , 4) )
 		{
 			if ( RXE_OK  == term_open ( devSearch ( ) ))       //CMD_CONN_OPEN
 			{
@@ -409,18 +409,19 @@ int main ( int argc, char **argv )
 				term_receive ( buf, 0x4200, &bytesRead );
 			}
 		}
-		else if ( !strcmp ( "close", cmd ) )
+		else if ( !strncmp ( "close", cmd , 5) )
 		{
 			term_close ( );
 			check_connection ( );
 		}
-		else if ( !strcmp ( "exit", cmd ) )
+		else if ( !strncmp ( "exit", cmd, 4) )
 		{
 			term_close ( );
-			check_connection ( );
+			term_receive ( buf, 0x4200, &bytesRead );
+			Sleep(1000);
 			break;
 		}
-		else if ( !strcmp ( "check", cmd ) )
+		else if ( !strncmp ( "check", cmd , 5) )
 		{
 			if ( RXE_OK == check_connection ( ) )
 				printf ( "Phone response OK\n" );
@@ -573,6 +574,9 @@ int main ( int argc, char **argv )
 			}
 			if ( fh = fopen (fname, "rb" ) )
 			{
+
+				check_connection ( );
+
 				unsigned int code_length, f_size, pack_n, percent, total;
 				fseek(fh, 0, SEEK_END);
 				f_size = ftell(fh);
@@ -595,9 +599,12 @@ int main ( int argc, char **argv )
 						send_packet ( CMD_CUSTOM, buf, code_length + 7 );	
 
 						target_addr += 0x1F00;
-
 						percent = (float)100 * ( total-pack_n ) / total;
-								printf ( "\b\b\b%02d%%", (unsigned int)percent );
+						printf ( "\b\b\b%02d%%", (unsigned int)percent );
+#ifdef __linux__
+//on windows it slows down transfer, on linux it makes connection stable - otherwise data flows too fast
+						check_connection ( );
+#endif
 					}
 					else
 					{
