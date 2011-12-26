@@ -175,11 +175,11 @@ patch_done:
    ;BL    rebell_fillmem
 
    LDR	 R1, [SBL_sblinit_ptr]
-   ;BLX   R1
+   BLX	 R1
    LDR	 R0, [s_done_a]
    BL	 debug_print
    LDR	 R1, [SBL_lcd_init_ptr]
-  ; BLX   R1
+   BLX	 R1
 
    LDR	 R1, [kernel_start_a]
    LDR	 R0, [s_jumpingout_a]
