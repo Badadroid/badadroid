@@ -132,6 +132,8 @@ ALIGN 4
    STR	 R1, [R0]    ;POWAH ON EVRYTHINKS (clock registers in all modules must be available for kernel)
 
 
+   BL	 timer_driver
+   BL	 configure_clocks
    BL	 _CoDisableDCache
 
    BL	 _System_DisableVIC
