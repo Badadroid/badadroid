@@ -338,6 +338,7 @@ unsigned char* devSearch ( void )
 	unsigned char pData[255];
 	unsigned int cValues, cValue, cData, retCode;
 
+	ret[0]=0;
 	RegOpenKeyExA ( HKEY_LOCAL_MACHINE, "HARDWARE\\DEVICEMAP\\SERIALCOMM\\", 0, KEY_READ, &hKey );
 	RegQueryInfoKeyA ( hKey, NULL, NULL, NULL, NULL, NULL, NULL, (LPDWORD)&cValues, NULL, NULL, NULL, NULL );
 
@@ -395,7 +396,13 @@ int main ( int argc, char **argv )
 			 " branch target without link to specific address\n"
 			 " branch <addr>\n\n"
 			 " terminate program\n"
-	         " exit\n\n" );
+	         " exit\n\n" 
+			 " open the COM port for upload\n"
+	         " uopen\n\n" 
+			 " upload mode operation\n"
+	         " upload    <address_from> <address_to>\n\n"
+            
+            );
 
 	while ( printf ( "\n>" ) && gets ( cmd ) && cmd[0] )
 	{
@@ -406,6 +413,14 @@ int main ( int argc, char **argv )
 				term_set_control ( 1382400, 8, 1, 0, 0 );
 				term_send ( "AT+FUS?\r\n", 9 );	
 				check_connection ( );
+				term_receive ( buf, 0x4200, &bytesRead );
+			}
+		}
+		if ( !strncmp ( "uopen", cmd , 5) )
+		{
+			if ( RXE_OK  == term_open ( devSearch ( ) ))       //CMD_CONN_OPEN
+			{
+				term_set_control ( 1382400, 8, 1, 0, 0 );
 				term_receive ( buf, 0x4200, &bytesRead );
 			}
 		}
@@ -519,6 +534,41 @@ int main ( int argc, char **argv )
 					printf ( "Can't open output file (%s)!", outname );
 			}
 		}
+		else if ( !strncmp ( "upload ", cmd, 7 )  )
+		{
+			unsigned int address1, address2, packet_len, total_length;
+
+			sscanf ( cmd, "%s %X %X", &dummy, &address1, &address2 );
+
+
+			if ( address2 - address1 > 0 )
+			{
+				total_length = address2 - address1;
+				
+				sprintf ( outname, "upload_0x%08X.0x%08X.bin", address1, address2 );
+				
+				if ( fh = fopen ( outname, "wb" ) )
+				{
+//					printf ( "dumping %s at 0x%08X: 00%%", print_bytes ( length ), address );
+					term_send ( "PrEaMbLe", 9 );
+					term_receive ( buf, 0x4200, &bytesRead );
+					sprintf ( outname, "%08X", address1 );
+					term_send ( (const unsigned char*)outname, 9 );
+					term_receive ( buf, 0x4200, &bytesRead );
+					sprintf ( outname, "%08X", address2 );
+					term_send ( (const unsigned char*)outname, 9 );
+					term_receive ( buf, 0x4200, &bytesRead );
+					term_send ( "DaTaXfEr", 9 );
+					term_receive ( buf, 0x4200, &bytesRead );
+										
+					fwrite ( buf, 1, bytesRead, fh );
+
+					fclose ( fh );
+				}
+				else
+					printf ( "Can't open output file (%s)!", outname );
+			}
+		}
 		else if ( !strncmp ( "run ", cmd, 4 ) )
 		{
 			char fname[48];
@@ -575,9 +625,8 @@ int main ( int argc, char **argv )
 			if ( fh = fopen (fname, "rb" ) )
 			{
 
-				check_connection ( );
-
 				unsigned int code_length, f_size, pack_n, percent, total;
+				check_connection ( );
 				fseek(fh, 0, SEEK_END);
 				f_size = ftell(fh);
 				pack_n = (f_size+0x1EFF)/0x1F00;
