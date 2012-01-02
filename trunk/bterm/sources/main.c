@@ -611,7 +611,9 @@ int main ( int argc, char **argv )
 						printf ( "fread fail, this should not happen, wtf?!\n" );
 						break;
 					}
-				}	
+				}
+
+				printf("\nDONE!\n");
 
 				if(size_addr)
 				{					
