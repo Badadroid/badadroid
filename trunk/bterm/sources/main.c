@@ -327,7 +327,7 @@ const char *print_bytes ( unsigned int bytes )
 	return (const char *)print_bytes;
 }
 
-unsigned char* devSearch ( void )
+char* devSearch ( void )
 {
 
 	char* ret = (char*)malloc(32);
@@ -381,24 +381,34 @@ int main ( int argc, char **argv )
 	printf ( "Available commands:\n"
 		     " open the COM port\n"
 	         " open\n\n"
+
 			 " close the COM port\n"
 	         " close\n\n"
+
 			 " check the connection\n"
 	         " check\n\n"
+
 			 " dump NAND area\n"
 	         " dump    <address> <length>\n\n"
+
 			 " dump RAM area\n"
 			 " dumpram <address> <length>\n\n"
+
 			 " execute the code from file\n"
-			 " run  <path_to_file>\n\n"			 
+			 " run  <path_to_file>\n\n"			
+
 			 " load binary into memory under specified address and store its size\n"
-			 " loadbin  <path> <addr> <optional|sizeaddr>\n\n"				 
+			 " loadbin  <path> <addr> <optional|sizeaddr>\n\n"		
+
 			 " branch target without link to specific address\n"
 			 " branch <addr>\n\n"
+
 			 " terminate program\n"
 	         " exit\n\n" 
+
 			 " open the COM port for upload\n"
 	         " uopen\n\n" 
+
 			 " upload mode operation\n"
 	         " upload    <address_from> <address_to>\n\n"
             
@@ -559,10 +569,11 @@ int main ( int argc, char **argv )
 					term_send ( (const unsigned char*)outname, 9 );
 					term_receive ( buf, 0x4200, &bytesRead );
 					term_send ( "DaTaXfEr", 9 );
-					term_receive ( buf, 0x4200, &bytesRead );
-										
-					fwrite ( buf, 1, bytesRead, fh );
 
+					do{
+						term_receive ( buf, 0x40000, &bytesRead );
+						fwrite ( buf, 1, bytesRead, fh );
+					}while(bytesRead > 0);
 					fclose ( fh );
 				}
 				else
