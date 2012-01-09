@@ -66,16 +66,41 @@ if defined USE_BTERM
 
 	stmfd	sp!, {lr\}
 	ldr	r0, [.cmd]
-	bl	DloadPacketHandler		; register our handler
+	bl	DloadPacketHandler              ; register our handler
 	ldmfd	sp!, {lr\}
 	b	@f
 
 	align 4
-	.cmd					dw DloadCmdHandler
+	.cmd                                    dw DloadCmdHandler
 
 @@:
 
 end if ; USE_BTERM
+
+if defined FOTA_INVERT_BACKGROUND
+
+	ldr	r0, [.r0]
+	ldr     r1, [.p0]
+	str     r0, [r1]
+	ldr	r0, [.r2]
+	ldr     r1, [.p2]
+	str     r0, [r1]
+	ldr	r0, [.r3]
+	ldr     r1, [.p3]
+	str     r0, [r1]
+	b	@f
+
+	align 4
+	.r0:	mov	r0, #0
+	.r2:	mov	r2, #0
+	.r3:	mov	r3, #0
+	.p0:    dw disp_FOTA_Init + 0x0C        ; mov r0, #0xFFFF
+	.p2:    dw disp_FOTA_Init + 0x14        ; mov r2, #0xFFFF
+	.p3:    dw disp_FOTA_Printf + 0x40      ; mov r3, #0xFFFF
+
+@@:
+
+end if ; FOTA_INVERT_BACKGROUND
 
 	ldr		r0, [_key2]
 	ldrb		r0, [r0, 0]		; Menu/Home key

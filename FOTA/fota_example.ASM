@@ -10,7 +10,7 @@ START	;don't touch this macro, it contains correct FOTA magic numbers and does a
 	MOV		r1, #1
 	LDR		r0, [pagetable]
 	BL		MemMMUCacheEnable
-	bl		enable_fota_output
+	bl	enable_output
 	MOV		R0, 1234
 	BL		int_debugprint	    ;prints "debug: 1234" to the FOTA or UART
 	BL		__PfsNandInit	    ;oneNAND FS

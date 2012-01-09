@@ -3260,7 +3260,6 @@ __0sprintf                                                      equ 0x4214F461
 __1sprintf                                                      equ 0x4214F461
 __c89sprintf                                                    equ 0x4214F48D
 __c89vsprintf                                                   equ 0x4214F4B9
-Inline ARM to Thumb Veneer to memcmp                            equ 0x4214F4E0
 memcmp                                                          equ 0x4214F4E9
 memcpy                                                          equ 0x4214F53C
 memset                                                          equ 0x4214F54C
@@ -3882,7 +3881,7 @@ disp_lcdType                                                    equ 0x421DF970
 bCheckLcdSetArea                                                equ 0x421DF974
 main_display_in_sleep                                           equ 0x421DF978
 current_dimming_status                                          equ 0x421DF97C
-x_pos_disp_FOTA_Printf_1                                        equ 0x421DF980
+x_pos@disp_FOTA_Printf_1                                        equ 0x421DF980
 lcdFrameWin0                                                    equ 0x421DF984
 font_color                                                      equ 0x421DF988
 bg_color                                                        equ 0x421DF98A

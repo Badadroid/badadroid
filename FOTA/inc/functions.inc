@@ -358,6 +358,15 @@ enable_uart_output:
 	bl	debug_print
 	LDMFD	SP!, {R0-R1,PC\}
 
+; void enable_output ( )
+; for DEFAULT_OUTPUT_UART see settings.inc
+enable_output:
+if defined DEFAULT_OUTPUT_UART
+	b	enable_uart_output
+else
+	b       enable_fota_output
+end if ; DEFAULT_OUTPUT_UART
+
 ;void disable_output()
 disable_output:
 	STMFD	SP!, {R0-R1,LR\}
