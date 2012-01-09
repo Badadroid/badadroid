@@ -5,6 +5,12 @@
 ;disable line below if you have matching BL and want to omit fota shadowing (faster bootup)
 ;FOTA_SHADOWING  equ 1
 
+; enable line below to invert FOTA lcd background (unset pixel consume no energy )
+;FOTA_INVERT_BACKGROUND equ 1
+
+; enable line below to redirect output to UART (default to FOTA printf)
+;DEFAULT_OUTPUT_UART equ 1
+
 ; 0 - disable charging
 ; 1 - enable USB charging
 CHARGING_CONTROL equ 0

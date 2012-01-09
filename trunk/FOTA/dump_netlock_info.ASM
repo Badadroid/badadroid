@@ -5,7 +5,7 @@ include 'inc/settings.inc'		; user dependend settings
 START
 
 
-	bl	enable_fota_output
+	bl	enable_output
 
 	;LDR     R0, [dump_what]
 	;LDR     R1, [dump_buf]

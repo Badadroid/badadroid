@@ -6,7 +6,7 @@ START
 	MOV	R8, LR
 
 
-	bl	enable_uart_output
+	bl	enable_output
 	LDR	R1, [boot_mode_a]
 	LDRB	R0, [R1]
 	BL	int_debugprint

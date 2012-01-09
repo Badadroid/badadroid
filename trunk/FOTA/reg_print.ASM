@@ -4,7 +4,7 @@ include 'inc/settings.inc'              ; user dependend settings
 START
 	SUB	SP, SP, #16
 
-	bl	enable_fota_output
+	bl	enable_output
 
 	MOV	R0, 12345
 	BL	int_debugprint

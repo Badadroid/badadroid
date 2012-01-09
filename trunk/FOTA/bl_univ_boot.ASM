@@ -9,7 +9,7 @@ START
    BL	   MemMMUCacheEnable
    MOV	 R8, R0 ;lets store previous MMU control register to turn it off later
 
-   BL	 enable_uart_output
+   bl	enable_output
    BL	 __PfsNandInit
    BL	 __PfsMassInit
 

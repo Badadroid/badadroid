@@ -10,7 +10,7 @@ START
 	SUB	SP, SP, 128
 
 
-	bl	enable_uart_output ;enable_fota_output
+	bl	enable_output
 
 
 	MOV	r1, #1
