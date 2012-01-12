@@ -75,14 +75,15 @@ if defined USE_BTERM
 @@:
 
 end if ; USE_BTERM
+
 if defined g_bUartConnected
 	ldr	r0, [.uart_enable]
 	mov	r1, 1
-	str	r1, [r0]
+	strb	 r1, [r0]
 	b	@f
 	.uart_enable dw g_bUartConnected
 	@@:
-end if
+end if ;g_bUartConnected
 if defined FOTA_INVERT_BACKGROUND
 
 	ldr	r0, [.r0]
