@@ -43,4 +43,7 @@ pressed_button				equ 0x421F53FC
 gMMUL1PageTable 			equ 0x4229C000
 x_pos@disp_FOTA_Printf_1		equ 0x421E1820
 
+
+g_bUartConnected equ 0x4219CD07
+
 end if ; PRODUCT_CODE
