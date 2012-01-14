@@ -546,7 +546,8 @@ int main ( int argc, char **argv )
 		}
 		else if ( !strncmp ( "upload ", cmd, 7 )  )
 		{
-			unsigned int address1, address2, packet_len, total_length;
+			unsigned int address1, address2, packet_len, total_length, i;
+			int first = 1;
 
 			sscanf ( cmd, "%s %X %X", &dummy, &address1, &address2 );
 
@@ -570,9 +571,18 @@ int main ( int argc, char **argv )
 					term_receive ( buf, 0x4200, &bytesRead );
 					term_send ( "DaTaXfEr", 9 );
 
+					
 					do{
-						term_receive ( buf, 0x40000, &bytesRead );
+						term_receive ( buf, 0x4200, &bytesRead );
+						if(first && (bytesRead == 12 || bytesRead == 4))
+						{
+							printf("info packet, dump:\n");
+							for(i = 0; i < bytesRead; i += 4)
+								printf("0x%08X ", GET_WORD(buf, i));
+							
+						}
 						fwrite ( buf, 1, bytesRead, fh );
+						first = 0;
 					}while(bytesRead > 0);
 					fclose ( fh );
 				}
