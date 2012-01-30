@@ -77,7 +77,10 @@ typedef enum DloadCMDCustom
 	CMD_CODE_RUN           = 0x03,
 	CMD_CONN_CHECK         = 0x04,
 	CMD_LOAD_BIN           = 0x05,
-	CMD_BRANCH             = 0x06
+	CMD_BRANCH             = 0x06,
+	CMD_DEBUG_PRINT		   = 0x07,	
+	CMD_GET_SYS_INFO	   = 0x08,	
+	CMD_SET_SYS_INFO	   = 0x09,
 } DloadCMDCustom;
 
 
@@ -299,6 +302,9 @@ unsigned int check_connection ( void )
 	unsigned char buf[] = { CMD_CONN_CHECK };
 
 	send_packet ( CMD_CUSTOM, buf, 1 );
+#if defined(WIN32) || defined(WIN64)
+	Sleep(500);
+#endif
 
 	if ( 0xFFFFFFFF == get_packet ( CMD_CUSTOM, buf ) )
 		return RXE_OK;
@@ -403,14 +409,24 @@ int main ( int argc, char **argv )
 			 " branch target without link to specific address\n"
 			 " branch <addr>\n\n"
 
-			 " terminate program\n"
-	         " exit\n\n" 
+			 " debug print to current debug output\n"
+			 " print <message>\n\n" 
+			 
+			 " read sys info to specified RAM address\n"
+			 " readsysinfo <addr>\n\n" 
+			 
+			 " write sys info from specified RAM address to flash\n"			 
+			 " CAUTION: THIS CAN BRICK PHONE, HANDLE WITH CARE!\n"
+			 " writesysinfo <addr>\n\n" 
 
 			 " open the COM port for upload\n"
 	         " uopen\n\n" 
 
 			 " upload mode operation\n"
 	         " upload    <address_from> <address_to>\n\n"
+			 
+			 " terminate program\n"
+	         " exit\n\n" 
             
             );
 
@@ -615,6 +631,25 @@ int main ( int argc, char **argv )
 			}
 			else
 				printf ( "Can't open input file (%s)!", fname );
+		}		
+
+		else if ( !strncmp ( "print ", cmd, 6 ) )
+		{
+			char msg[128];
+			sscanf(cmd, "%s %s", &dummy, &msg);
+
+			SET_BYTE ( buf, 0, CMD_DEBUG_PRINT );
+			SET_WORD ( buf, 1, strlen(msg)+1 );
+			memcpy(buf+5, msg, strlen(msg)+1); 
+
+			send_packet ( CMD_CUSTOM, buf, strlen(msg)+6 );			
+			term_receive ( buf, 0x4200, &bytesRead );
+
+			if ( RXE_OK == check_connection ( ) )
+				printf ( "OK\n" );
+			else
+				printf ( "FAIL\n" );
+			
 		}
 		else if ( !strncmp ( "branch ", cmd, 7 ) )
 		{
@@ -630,6 +665,40 @@ int main ( int argc, char **argv )
 				printf ( "OK\n" );
 			else
 				printf ( "FAIL (probably it isnt fail at all)\n" );
+		}
+		
+		else if ( !strncmp ( "readsysinfo ", cmd, 12 ) )
+		{
+			unsigned int addr;
+			sscanf(cmd, "%s %X", &dummy, &addr);
+
+			SET_BYTE ( buf, 0, CMD_GET_SYS_INFO );
+			SET_WORD ( buf, 1, addr );
+
+			send_packet ( CMD_CUSTOM, buf, 5 );			
+
+			//term_receive ( buf, 0x4200, &bytesRead );
+
+			if ( RXE_OK == check_connection ( ) )
+				printf ( "OK\n" );
+			else
+				printf ( "FAIL\n" );
+		}
+		else if ( !strncmp ( "writesysinfo ", cmd, 13 ) )
+		{
+			unsigned int addr;
+			sscanf(cmd, "%s %X", &dummy, &addr);
+
+			SET_BYTE ( buf, 0, CMD_SET_SYS_INFO );
+			SET_WORD ( buf, 1, addr );
+
+			send_packet ( CMD_CUSTOM, buf, 5 );					
+			//term_receive ( buf, 0x4200, &bytesRead );
+
+			if ( RXE_OK == check_connection ( ) )
+				printf ( "OK\n" );
+			else
+				printf ( "FAIL\n" );
 		}
 		else if ( !strncmp ( "loadbin ", cmd, 8 ) )
 		{

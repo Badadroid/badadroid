@@ -31,6 +31,10 @@ AppsPatcher:
 	LDRH	 R1, [MOV_R0_1]
 	STRH	 R1, [R0]
 
+	LDR	R0, [.mkeypatch]
+	LDR	R1, [.mkeyloc]
+	STR	R1, [R0]
+
 	LDR	 R0, [hook_loc_a]
 	ADR	 R1, hook
 	LDR	 R2, [hook_size]
@@ -51,6 +55,8 @@ AppsPatcher:
 	align 4
 	.patch1 		   dw 0x402702B8
 	.patch2 		   dw 0x4026FC1C; 0x4026FBD8
+	.mkeypatch		   dw 0x414292D4
+	.mkeyloc		   dw fakemkeycheck
        ; .dst                    dw _hook1
 
 
@@ -223,6 +229,17 @@ ltx_head db "ltx_frame: ",0
 lrx_head db "lrx_frame: ",0
 
 ALIGN 4
+
+fakemkeycheck:
+MOV	R0, 1
+MOV	PC, LR
+
+THUMB
+THUMB_NOP:
+NOP
+CODE32
+
+ALIGN 4
 getCurrentFramePtr   equ 0x403994AC
 tx_hook:
 STMFD		SP!, {R1-R10,LR}
@@ -231,9 +248,13 @@ LDR		R1, [R0, 0x8]
 ADD		R1, 0xC
 MOV		R2, 1
 BL		dumper_loc
+LDRH		R0, [THUMB_NOP]
+LDR		R1, [.lockpatch]
+;STRH            R0, [R1]
 MOV		R0, 0x1000 ;replaced opcode
 LDMFD		SP!, {R1-R10,PC}
 
+.lockpatch		   dw 0x1D2A5406
 dumper_end:
 org ((dumper_end-dumper_begin)+dumper)
 

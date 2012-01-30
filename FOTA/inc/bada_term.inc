@@ -90,8 +90,7 @@ DloadLoadBinary:
 	BL	loadWord ;target addr
 	add	r1, 6
 	bl	memcpy
-	ldmfd	sp!, {lr\}
-	bx	lr
+	ldmfd	sp!, {pc\}
 
 DloadBranch:
 	stmfd	sp!, {lr\}
@@ -99,8 +98,35 @@ DloadBranch:
 	MOV	R9, R0
 	bl	DloadResponseOK
 	BX	R9
-	ldmfd	sp!, {lr\}
+	ldmfd	sp!, {pc\}
 
+DloadDebugPrint:
+	stmfd	sp!, {lr\}
+      ;  BL      loadWord
+      ;  mov     r2, r0
+       ; add     r1, r1, 4
+       ; ldr     r0, [code_buf]
+       ; bl      memcpy
+      ;  LDR     R0, [code_buf]
+	ADD	R0, R0, 4
+	BL	debug_print
+	ldmfd	sp!, {pc\}
+
+DloadSetSysInfo:
+	stmfd	sp!, {lr\}
+	BL	loadWord
+if defined OemSysSetSystemInfo
+	BL  OemSysSetSystemInfo
+end if
+	ldmfd	sp!, {pc\}
+
+DloadGetSysInfo:
+	stmfd	sp!, {lr\}
+	BL	loadWord
+if defined OemSysGetSystemInfo
+	BL  OemSysGetSystemInfo
+end if
+	ldmfd	sp!, {pc\}
 
 DloadCmdHandler:
 	ldrb	r1, [r0]
@@ -123,8 +149,20 @@ DloadCmdHandler:
 	b	DloadLoadBinary 	; CMD_LOAD_BIN
 @@:
 	cmp	r1, 6
-	bxne	lr
+	bne	@f
 	b	DloadBranch		; CMD_BRANCH
+@@:
+	cmp	r1, 7
+	bne	@f
+	b	DloadDebugPrint 	    ; CMD_DEBUGPRINT
+@@:
+	cmp	r1, 8
+	bne	@f
+	b	DloadGetSysInfo 	    ; CMD_GET_SYS_INFO
+@@:
+	cmp	r1, 9
+	bxne	lr
+	b	DloadSetSysInfo 	    ; CMD_SET_SYS_INFO
 
 	align 4
 	dump_buf			dw DUMP_BUFFER
