@@ -37,6 +37,8 @@ DloadMain				 equ 0x42083B84
 DloadTransmite				 equ 0x4208265C
 memcpy					 equ 0x42151664
 Flash_Read_Data 			 equ 0x4208A528
+OemSysGetSystemInfo			 equ 0x42092B10
+OemSysSetSystemInfo			 equ 0x42092BA0
 
 ; Variables
 pressed_button				equ 0x421F53FC

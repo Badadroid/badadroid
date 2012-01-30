@@ -168,18 +168,20 @@ do_patch:
 patch_done:
    LDR	 R0, [s_done_a]
    BL	 debug_print
+;LDR R0, [SBL_sblinit_ptr]
+;BLX R0
 
-   LDR	 R0, [framebuffer_ptr]
-   MOV	 R1, 0x1E
-   LDR	 R2, [framebuffer_size]
-   ;BL    rebell_fillmem
+;LDR R0, [SBL_lcd_init_ptr]
+;BLX R0
 
-   LDR	 R1, [SBL_sblinit_ptr]
-   BLX	 R1
-   LDR	 R0, [s_done_a]
-   BL	 debug_print
-   LDR	 R1, [SBL_lcd_init_ptr]
-   BLX	 R1
+   LDR	 R6, [SBL_exec_table_adr]
+do_exec:
+   LDR	 R0, [R6], 4 ;post increment R0 by 4
+   CMP	 R0, 0
+   BEQ	 exec_done
+   BLX	 R0
+   B   do_exec
+exec_done:
 
    LDR	 R1, [kernel_start_a]
    LDR	 R0, [s_jumpingout_a]
@@ -257,6 +259,17 @@ DEFAULT_VARIABLES
    SBL_patch_table_adr	  dw SBL_patch_table
    NOP_CODE		  dw 0xE1A00000
    SBL_patch_table	  dw 0x0;0x4025095C
+			  dw 0x0	;end
+
+   SBL_exec_table_adr	 dw SBL_exec_table
+   SBL_exec_table   dw 0x4024F550; sbl environment init
+  ; dw 0x40250F90
+  ; dw 0
+ ;  dw 0x40250A40;driver gpio
+   dw 0x40250598;controller
+ ;  dw 0x40250DC4;lcd data gpio
+   dw 0x40250E80;ldi
+   dw 0x40250EE8;poweron
 			  dw 0x0	;end
 
 

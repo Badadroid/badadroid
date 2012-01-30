@@ -364,7 +364,7 @@ enable_output:
 if defined DEFAULT_OUTPUT_UART
 	b	enable_uart_output
 else
-	b       enable_fota_output
+	b	enable_fota_output
 end if ; DEFAULT_OUTPUT_UART
 
 ;void disable_output()

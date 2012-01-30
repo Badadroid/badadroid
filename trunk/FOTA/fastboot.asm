@@ -29,8 +29,6 @@ ALIGN 4
 @@:
    BL	 enable_uart_output
 
-
-
    ldr	 r0, [s_mmuoff_a]
    BL	 debug_print
 
@@ -126,7 +124,7 @@ ALIGN 4
 
    LDR	 R0, [SYSCON_NORMAL_CFG]
    LDR	 R1, [R0]
-   BIC	 R1, R1, 0xBE ;turn off all power-managed S5PC110 blocks, this will reset LCD controller :)
+  ; BIC   R1, R1, 0xBE ;turn off all power-managed S5PC110 blocks, this will reset LCD controller :)
    STR	 R1, [R0]
    MOV	 R1, 0xFFFFFFFF
    STR	 R1, [R0]    ;POWAH ON EVRYTHINKS (clock registers in all modules must be available for kernel)
@@ -241,5 +239,5 @@ FUNCTIONS
 kernel_size_helper:
    code_len = kernel_size_helper - c_start
    db	   0x4000 - code_len dup 0x00
-kernel_size	       dw 0 ;should be overwritten during runtime   ;0x43804000 on 8530JPKA1
+kernel_size	       dw 0 ;should be overwritten during runtime 0x43204000 on 8530XXKK5 0x43804000 on 8530JPKA1
 END
