@@ -777,6 +777,45 @@ loadWord:
 	ORR	 R0, R0, R3, lsl 24
 	LDMFD	 SP!,{R1-R3,PC\}
 
+;hexdump (char* buf, int len)
+hexdump:
+STMFD SP!, {R3-R5, LR\}
+SUB   SP, 128
+	MOV	R2, R0
+	MOV	R3, SP
+
+	MOV	R0, ' '
+	STRB	R0, [R3], 1
+
+	MOV	R5, 0
+@@:
+	CMP	R5, R1
+	BGE	@f
+	LDRB	R4, [R2, R5]
+	UBFX	R0, R4, 4, 4
+	CMP	R0, 10
+	ADDCC	R0, R0, 48
+	ADDCS	R0, R0, (65-10)
+	STRB	R0, [R3], 1
+
+	UBFX	R0, R4, 0, 4
+	CMP	R0, 10
+	ADDCC	R0, R0, 48
+	ADDCS	R0, R0, (65-10)
+	STRB	R0, [R3], 1
+	MOV	R0, ' '
+	STRB	R0, [R3], 1
+	ADD	R5, 1
+	B	@b
+@@:
+	MOV	R0, 0
+	STRB	R0, [R3]
+	MOV	R0, SP
+	BL	debug_print
+
+ADD   SP, 128
+LDMFD SP!, {R3-R5, PC\}
+
 countdown:
 	STMFD	 SP!,{R1-R4,LR\}
 	MOV	 R4, R0

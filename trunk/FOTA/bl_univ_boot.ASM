@@ -35,15 +35,6 @@ START
    ldr	 r0, [s_done_a]
    BL	 debug_print
 
-   ldr	 r0, [s_loadsbl_a]
-   BL	 debug_print
-   LDR	 R2, [sbl_size]
-   LDR	 R1, [sbl_start]
-   LDR	 R0, [s_sbl_path_a]
-   BL	 loadfile
-   BL	 int_debugprint
-   ldr	 r0, [s_done_a]
-   BL	 debug_print
 
    ldr	 r0, [s_mmuoff_a]
    BL	 debug_print
@@ -52,7 +43,9 @@ START
    BL	 _CoDisableMmu
    ldr	 r0, [s_done_a]
    BL	 debug_print
-   BL	 configure_ram
+ ;  BL    configure_ram
+
+  BL		  DRV_Modem_BootingStart ;boot modem
 
    LDR	 R0, [ATAG_ptr]
    MOV	 R1, 0x00
@@ -154,35 +147,6 @@ START
    BL	 _System_DisableIRQ
    BL	 _System_DisableFIQ
 
-
-   LDR	 R5, [NOP_CODE]
-   LDR	 R0, [SBL_patch_table_adr]
-
-do_patch:
-   LDR	 R1, [R0], 4 ;post increment R0 by 4
-   CMP	 R1, 0
-   BEQ	 patch_done
-   STR	 R5, [R1]
-   B   do_patch
-
-patch_done:
-   LDR	 R0, [s_done_a]
-   BL	 debug_print
-;LDR R0, [SBL_sblinit_ptr]
-;BLX R0
-
-;LDR R0, [SBL_lcd_init_ptr]
-;BLX R0
-
-   LDR	 R6, [SBL_exec_table_adr]
-do_exec:
-   LDR	 R0, [R6], 4 ;post increment R0 by 4
-   CMP	 R0, 0
-   BEQ	 exec_done
-   BLX	 R0
-   B   do_exec
-exec_done:
-
    LDR	 R1, [kernel_start_a]
    LDR	 R0, [s_jumpingout_a]
    BL	 debug_print
@@ -225,7 +189,7 @@ DEFAULT_VARIABLES
 
 
 
-   ATAG_ptr		  dw 0x30000100 ;
+   ATAG_ptr		  dw 0x20000100 ;
    ATAG_CORE		  dw 0x54410001
    ATAG_SERIAL		  dw 0x54410006
    ATAG_REVISION	  dw 0x54410007
@@ -243,8 +207,8 @@ DEFAULT_VARIABLES
    VIDINTCON0		  dw 0xF8000130
    VIDINTCON1		  dw 0xF8000134
 
-   kernel_start_a	  dw 0x32000000
-   kernel_buf		  dw 0x44000000
+   kernel_start_a	  dw 0x22000000
+   kernel_buf		  dw 0x43000000
    kernel_size_a	  dw kernel_size
    kernel_size		  dw 0 ;overwritten during runtime
 
@@ -269,7 +233,7 @@ DEFAULT_VARIABLES
    dw 0x40250598;controller
  ;  dw 0x40250DC4;lcd data gpio
    dw 0x40250E80;ldi
-   dw 0x40250EE8;poweron
+  ; dw 0x40250EE8;poweron
 			  dw 0x0	;end
 
 

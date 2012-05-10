@@ -116,9 +116,16 @@ DloadSetSysInfo:
 	stmfd	sp!, {lr\}
 	BL	loadWord
 if defined OemSysSetSystemInfo
+	LDR R4, [OemSysSetSystemInfo_a]
+	LDR R5, [mov_r0_0]
+	STR R5, [R4, 0xC]
 	BL  OemSysSetSystemInfo
 end if
 	ldmfd	sp!, {pc\}
+
+mov_r0_0:
+MOV R0, 0
+OemSysSetSystemInfo_a dw OemSysSetSystemInfo
 
 DloadGetSysInfo:
 	stmfd	sp!, {lr\}

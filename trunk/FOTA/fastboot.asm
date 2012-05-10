@@ -3,6 +3,10 @@ include 'inc/settings.inc'		; user dependend settings
 START
    BL	 enable_uart_output ;I recommend to change it to uart output - saves battery ALOT ~Rebellos
 
+   LDR	 R4, [reinit_bool]
+   MOV	 R5, 0
+   STR	 R5, [R4]
+
    MOV	 r1, #0
    LDR	   r0, [pagetable]
    BL	   MemMMUCacheEnable
@@ -12,9 +16,9 @@ START
 bootkernel_helper:
 	code_len = bootkernel_helper - c_start
 	db	0x1000 - code_len dup 0x00
-bootkernel:	       ;0x43801000 on 8530JPKA1
+bootkernel:	      ;0x43201000 on 2.0 new release ;0x43801000 on 8530JPKA1
 
-   MOV	 R1, 1
+   MOV	 R1, 4
    ADR	 R0, output_msg
    BL	 debug_print
    MOV	 R0, R1
@@ -37,7 +41,8 @@ ALIGN 4
    BL	 _CoDisableMmu
    ldr	 r0, [s_done_a]
    BL	 debug_print
-   BL	 configure_ram
+  ; BL    configure_ram
+  BL		  DRV_Modem_BootingStart ;boot modem
 
    LDR	 R0, [ATAG_ptr]
    MOV	 R1, 0x00
@@ -62,10 +67,10 @@ ALIGN 4
    LDR	 R0, [ATAG_SERIAL]
    STR	 R0, [R2]
    ADD	 R2, R2, 4
-   MOV	 R0, 0x00000123
+   MOV	 R0, 0x00008500
    STR	 R0, [R2]
    ADD	 R2, R2, 4
-   MOV	 R0, 0x00000456
+   MOV	 R0, 0x00008530
    STR	 R0, [R2]
    ADD	 R2, R2, 4
 
@@ -124,7 +129,10 @@ ALIGN 4
 
    LDR	 R0, [SYSCON_NORMAL_CFG]
    LDR	 R1, [R0]
-  ; BIC   R1, R1, 0xBE ;turn off all power-managed S5PC110 blocks, this will reset LCD controller :)
+   LDR	 R4, [reinit_bool]
+   LDR	 R4, [R4]
+   CMP	 R4, 0
+   BICNE   R1, R1, 0xBE ;turn off all power-managed S5PC110 blocks, this will reset LCD controller :)
    STR	 R1, [R0]
    MOV	 R1, 0xFFFFFFFF
    STR	 R1, [R0]    ;POWAH ON EVRYTHINKS (clock registers in all modules must be available for kernel)
@@ -193,7 +201,7 @@ DEFAULT_VARIABLES
    SYSCON_NORMAL_CFG	  dw 0xE010C010
 
 
-   ATAG_ptr		  dw 0x30000100 ;
+   ATAG_ptr		  dw 0x20000100 ;
    ATAG_CORE		  dw 0x54410001
    ATAG_SERIAL		  dw 0x54410006
    ATAG_REVISION	  dw 0x54410007
@@ -211,8 +219,9 @@ DEFAULT_VARIABLES
    VIDINTCON0		  dw 0xF8000130
    VIDINTCON1		  dw 0xF8000134
 
-   kernel_start_a	  dw 0x32000000
+   kernel_start_a	  dw 0x22000000
    kernel_buf		  dw 0x44000000
+   reinit_bool		  dw 0x43FFFFFC
    kernel_size_a	  dw kernel_size
 
 
@@ -240,4 +249,5 @@ kernel_size_helper:
    code_len = kernel_size_helper - c_start
    db	   0x4000 - code_len dup 0x00
 kernel_size	       dw 0 ;should be overwritten during runtime 0x43204000 on 8530XXKK5 0x43804000 on 8530JPKA1
+
 END
