@@ -39,11 +39,17 @@ memcpy					 equ 0x42151664
 Flash_Read_Data 			 equ 0x4208A528
 OemSysGetSystemInfo			 equ 0x42092B10
 OemSysSetSystemInfo			 equ 0x42092BA0
+__SysSecBootReadNetLockInfoFromFlash	 equ 0x42091380
+LCDTypeCheck				 equ 0x42080AE8
+GPIO_Set_Config 			 equ 0x420B992C
+GPIO_Get_Data				 equ 0x420B9A4C
+
 
 ; Variables
 pressed_button				equ 0x421F53FC
 gMMUL1PageTable 			equ 0x4229C000
 x_pos@disp_FOTA_Printf_1		equ 0x421E1820
+gLCDType				equ 0x4FF00064
 
 
 g_bUartConnected equ 0x4219CD07
