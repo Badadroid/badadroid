@@ -142,6 +142,9 @@ return_to_bl:
 	bx		lr			; back to the bootloader
 
 fota_dload_mode:
+	MOV	R0, 1
+	ADR	R1, used_download
+	STR	R0, [R1]
 	bl		enable_fota_output
 	bl		dloadmode
 
@@ -153,6 +156,8 @@ fota_dload_mode:
 	s_atagcmdlineRM_a			dw s_atagcmdlineRM
 	s_atagcmdline_aa			dw s_atagcmdline_a
 	s_atagcmdline_a 			dw s_atagcmdline
+
+	used_download				dw 0x0
 
 	s_atagcmdlineRM 			db 'bootmode=2 console=ttySAC2,115200 loglevel=4',0
 	s_atagcmdline				db 'console=ttySAC2,115200 loglevel=4',0
