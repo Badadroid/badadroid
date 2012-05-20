@@ -1,8 +1,16 @@
 include 'inc/settings.inc'		; user dependend settings
 
-;No modem booting yet!
 
 START
+
+
+  B	bootkernel
+
+bootkernel_helper:
+	code_len = bootkernel_helper - c_start
+	db	0x1000 - code_len dup 0x00
+bootkernel:	      ;0x43201000 on 2.0 new release ;0x43801000 on 8530JPKA1
+
    SUB	 SP, SP, 128
    MOV	 r1, #1
    LDR	   r0, [pagetable]
@@ -10,6 +18,11 @@ START
    MOV	 R8, R0 ;lets store previous MMU control register to turn it off later
 
    bl	enable_output
+
+   LDR	R0, [used_download]
+   CMP	R0, 0
+   BNE	code_loaded
+
    BL	 __PfsNandInit
    BL	 __PfsMassInit
 
@@ -27,7 +40,8 @@ START
 
    ldr	 r0, [s_loadkernel_a]
    BL	 debug_print
-   LDR	 R2, [kernel_size]
+   LDR	 R2, [kernel_size_a]
+   LDR	 R2, [R2]
    LDR	 R1, [kernel_buf]
    LDR	 R0, [s_kernel_path_a]
    BL	 loadfile
@@ -36,6 +50,8 @@ START
    BL	 debug_print
 
 
+
+code_loaded:
    ldr	 r0, [s_mmuoff_a]
    BL	 debug_print
 
@@ -170,7 +186,8 @@ relockernel:
 
    LDR	 R0, [kernel_buf]
    LDR	 R1, [kernel_start_a]
-   LDR	 R2, [kernel_size]
+   LDR	 R2, [kernel_size_a]
+   LDR	 R2, [R2]
    BL	 rebell_memcpy
 
    LDMFD   SP!, {R0-R2,PC}
@@ -208,9 +225,9 @@ DEFAULT_VARIABLES
    VIDINTCON1		  dw 0xF8000134
 
    kernel_start_a	  dw 0x22000000
-   kernel_buf		  dw 0x43000000
+   kernel_buf		  dw 0x44000000
    kernel_size_a	  dw kernel_size
-   kernel_size		  dw 0 ;overwritten during runtime
+  ; kernel_size            dw 0 ;overwritten during runtime
 
    SBL_sblinit_ptr	  dw 0x4024F550
    SBL_lcd_init_ptr	  dw 0x40250F90; 0x40250598 ;0x40250A40;0x40250F90
@@ -247,8 +264,6 @@ DEFAULT_VARIABLES
    s_kernelreloc_a	  dw s_kernelreloc
    s_mmuoff_a		  dw s_mmuoff
    s_kernelreturn_a	  dw s_kernelreturn
-   s_sbl_path_a 	  dw s_sbl_path
-   s_loadsbl_a		  dw s_loadsbl
    s_galaxyboot_dir_a	  dw s_galaxyboot_dir
 
 
@@ -256,14 +271,17 @@ DEFAULT_STRINGS
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;; ;add custom strings below
    s_galaxyboot_dir	  du '/g/galaxyboot',0
    s_kernel_path	  du '/g/galaxyboot/zImage',0
-   s_sbl_path		  du '/g/galaxyboot/sbl.bin',0
    s_kernelreloc	  db ' Reloc kernel to 0x%X',0
    s_loadkernel 	  db ' Loading kernel image to buf',0
    s_jumpingout 	  db ' Jumpout to 0x%X',0
    s_mmuoff		  db ' Turning off MMU & configuring DMC',0
    s_kernelreturn	  db ' WTF KERNEL RETURNED',0
-   s_loadsbl		  db ' Loading SBL',0
  
 FUNCTIONS
-   
+
+kernel_size_helper:
+   code_len = kernel_size_helper - c_start
+   db	   0x4000 - code_len dup 0x00
+kernel_size	       dw 0 ;should be overwritten during runtime 0x43204000 on 8530XXKK5 0x43804000 on 8530JPKA1
+
 END
