@@ -149,14 +149,14 @@ code_loaded:
 
    LDR	 R0, [SYSCON_NORMAL_CFG]
    LDR	 R1, [R0]
-   BIC	 R1, R1, 0xBE ;turn off all power-managed S5PC110 blocks, this will reset LCD controller :)
+;   BIC   R1, R1, 0xBE ;turn off all power-managed S5PC110 blocks, this will reset LCD controller :)
    STR	 R1, [R0]
    MOV	 R1, 0xFFFFFFFF
    STR	 R1, [R0]    ;POWAH ON EVRYTHINKS (clock registers in all modules must be available for kernel)
 
 
-   BL	 timer_driver
-   BL	 configure_clocks
+;   BL    timer_driver
+;   BL    configure_clocks
    BL	 _CoDisableDCache
 
    BL	 _System_DisableVIC
@@ -229,29 +229,10 @@ DEFAULT_VARIABLES
    kernel_size_a	  dw kernel_size
   ; kernel_size            dw 0 ;overwritten during runtime
 
-   SBL_sblinit_ptr	  dw 0x4024F550
-   SBL_lcd_init_ptr	  dw 0x40250F90; 0x40250598 ;0x40250A40;0x40250F90
-   sbl_start		  dw 0x40244000
-   sbl_size		  dw 0x140000
    framebuffer_ptr	  dw 0x403EC00C ;0x4EC00000
    framebuffer_size	  dw 0x5DBFF
 
 
-   SBL_patch_table_adr	  dw SBL_patch_table
-   NOP_CODE		  dw 0xE1A00000
-   SBL_patch_table	  dw 0x0;0x4025095C
-			  dw 0x0	;end
-
-   SBL_exec_table_adr	 dw SBL_exec_table
-   SBL_exec_table   dw 0x4024F550; sbl environment init
-  ; dw 0x40250F90
-  ; dw 0
- ;  dw 0x40250A40;driver gpio
-   dw 0x40250598;controller
- ;  dw 0x40250DC4;lcd data gpio
-   dw 0x40250E80;ldi
-  ; dw 0x40250EE8;poweron
-			  dw 0x0	;end
 
 
 
@@ -264,13 +245,11 @@ DEFAULT_VARIABLES
    s_kernelreloc_a	  dw s_kernelreloc
    s_mmuoff_a		  dw s_mmuoff
    s_kernelreturn_a	  dw s_kernelreturn
-   s_galaxyboot_dir_a	  dw s_galaxyboot_dir
 
 
 DEFAULT_STRINGS
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;; ;add custom strings below
-   s_galaxyboot_dir	  du '/g/galaxyboot',0
-   s_kernel_path	  du '/g/galaxyboot/zImage',0
+   s_kernel_path	  du '/g/zImage',0
    s_kernelreloc	  db ' Reloc kernel to 0x%X',0
    s_loadkernel 	  db ' Loading kernel image to buf',0
    s_jumpingout 	  db ' Jumpout to 0x%X',0
