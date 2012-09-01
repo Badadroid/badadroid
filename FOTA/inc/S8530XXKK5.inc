@@ -43,7 +43,7 @@ __SysSecBootReadNetLockInfoFromFlash	 equ 0x42091380
 LCDTypeCheck				 equ 0x42080AE8
 GPIO_Set_Config 			 equ 0x420B992C
 GPIO_Get_Data				 equ 0x420B9A4C
-
+DRV_Modem_BootingStart			 equ 0x420D4E1C
 
 ; Variables
 pressed_button				equ 0x421F53FC
