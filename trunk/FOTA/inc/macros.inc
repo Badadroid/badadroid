@@ -125,12 +125,15 @@ check_vol:
 	ldr		r0, [_key2]
 	ldrb		r0, [r0, 4]		; voldown key
 	cmp		r0, 1
-	beq		fota_dload_mode 	; home+voldown - dload mode
+	ldreq		r0, [s_atagcmdlineRM_a] ; quick and dirty address copy...
+	ldreq		r1, [s_atagcmdline_aa]
+	streq		r0, [r1]
+	beq		fota_dload_mode 	; home+voldown - dload mode with RM
 
 	ldr		r0, [_key2]
 	ldrb		r0, [r0, 7]		; volup key
 	cmp		r0, 0
-	beq		fota_dload_mode 	; home alone (Kevin?!)
+	beq		fota_dload_mode 	; home alone - dload mode
 
 	ldr		r0, [s_atagcmdlineRM_a] ; quick and dirty address copy...
 	ldr		r1, [s_atagcmdline_aa]
@@ -159,8 +162,8 @@ fota_dload_mode:
 
 	used_download				dw 0x0
 
-	s_atagcmdlineRM 			db 'bootmode=2 console=ttySAC2,115200 loglevel=4',0
-	s_atagcmdline				db 'console=ttySAC2,115200 loglevel=4',0
+	s_atagcmdlineRM 			db 'bootmode=2 loglevel=4',0
+	s_atagcmdline				db 'loglevel=4',0
 
 	align 4
 
