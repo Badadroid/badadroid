@@ -79,7 +79,7 @@ code_loaded:
    STR	 R0, [R2]
    ADD	 R2, R2, 4
 
-   ;giving some random serial number 0x123 0x456, probably doesnt matter at all
+   ;giving some random serial number 0x123 0x456
    MOV	 R0, 4
    STR	 R0, [R2]
    ADD	 R2, R2, 4
