@@ -41,7 +41,7 @@ f_ver:
 	db 252 dup 0				; not required for < 2.0
 
 c_run:
-
+	str		lr, [bl_return_addr]	; preserve return address
 if defined FOTA_SHADOWING
 
 	ldr		r0, [bl3_image_adr]
@@ -142,7 +142,7 @@ check_vol:
 
 
 return_to_bl:
-	bx		lr			; back to the bootloader
+	ldr	pc, [bl_return_addr]		 ; back to the bootloader
 
 fota_dload_mode:
 	MOV	R0, 1
@@ -154,7 +154,7 @@ fota_dload_mode:
 	NORETURN
 
 	align 4
-
+	bl_return_addr				dw 0x0 ; filled in runtime
 	_key2					dw pressed_button
 	s_atagcmdlineRM_a			dw s_atagcmdlineRM
 	s_atagcmdline_aa			dw s_atagcmdline_a
