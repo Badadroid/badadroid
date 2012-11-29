@@ -27,13 +27,13 @@ AppsPatcher:
 	;strh    r1, [r0]
 
 	stmfd	 sp!, {lr}
-	LDR	 R0, [.patch2]
-	LDRH	 R1, [MOV_R0_1]
-	STRH	 R1, [R0]
+      ;  LDR      R0, [.patch2]
+      ;  LDRH     R1, [MOV_R0_1]
+      ;  STRH     R1, [R0]
 
-	LDR	R0, [.mkeypatch]
-	LDR	R1, [.mkeyloc]
-	STR	R1, [R0]
+      ;  LDR     R0, [.mkeypatch]
+      ;  LDR     R1, [.mkeyloc]
+      ;  STR     R1, [R0]
 
 	LDR	 R0, [hook_loc_a]
 	ADR	 R1, hook

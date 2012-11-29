@@ -45,7 +45,6 @@ bootkernel:	      ;0x43201000 on 2.0 new release ;0x43801000 on 8530JPKA1
    LDR	 R1, [kernel_buf]
    LDR	 R0, [s_kernel_path_a]
    BL	 loadfile
-   BL	 int_debugprint
    ldr	 r0, [s_done_a]
    BL	 debug_print
 
@@ -61,7 +60,11 @@ code_loaded:
    BL	 debug_print
  ;  BL    configure_ram
 
-  BL		  DRV_Modem_BootingStart ;boot modem
+   ldr	 r0, [s_modemboot_a]
+   BL	 debug_print
+   BL	 DRV_Modem_BootingStart
+   ldr	 r0, [s_done_a]
+   BL	 debug_print
 
    LDR	 R0, [ATAG_ptr]
    MOV	 R1, 0x00
@@ -140,8 +143,7 @@ code_loaded:
 
    ldr	 r1, [kernel_start_a]
    ldr	 r0, [s_kernelreloc_a]
-   bl	 hex_debugprint
-  ; BL    debug_print
+   BL	 debug_print
 
    BL	 relockernel
    ldr	 r0, [s_done_a]
@@ -163,6 +165,9 @@ code_loaded:
    BL	 _System_DisableIRQ
    BL	 _System_DisableFIQ
 
+   LDR	 R0, [s_bootingkernel_a]
+   BL	 debug_print
+
    LDR	 R1, [kernel_start_a]
    LDR	 R0, [s_jumpingout_a]
    BL	 debug_print
@@ -170,6 +175,7 @@ code_loaded:
    MOV	 R1, 0x891 ;5850  ;I've broken compability with I9000 here to avoid running its kernel and possibility of damaging smth, MACH_ID of I9000 = 0x891 (SMDKC110)
    LDR	 R2, [ATAG_ptr]
 
+MOV R1, 1
    LDR	 R5, [kernel_start_a]
    BLX	 R5
 
@@ -241,9 +247,11 @@ DEFAULT_VARIABLES
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;; add custom strings addresses below (for using by LDR op)
    s_kernel_path_a	  dw s_kernel_path
    s_loadkernel_a	  dw s_loadkernel
+   s_bootingkernel_a	  dw s_bootingkernel
    s_jumpingout_a	  dw s_jumpingout
    s_kernelreloc_a	  dw s_kernelreloc
    s_mmuoff_a		  dw s_mmuoff
+   s_modemboot_a	  dw s_modemboot
    s_kernelreturn_a	  dw s_kernelreturn
 
 
@@ -252,8 +260,10 @@ DEFAULT_STRINGS
    s_kernel_path	  du '/g/zImage',0
    s_kernelreloc	  db ' Reloc kernel to 0x%X',0
    s_loadkernel 	  db ' Loading kernel image to buf',0
+   s_bootingkernel	  db ' Booting kernel...',0
    s_jumpingout 	  db ' Jumpout to 0x%X',0
-   s_mmuoff		  db ' Turning off MMU & configuring DMC',0
+   s_mmuoff		  db ' Turning off MMU...',0
+   s_modemboot		  db ' Booting up modem...',0
    s_kernelreturn	  db ' WTF KERNEL RETURNED',0
  
 FUNCTIONS

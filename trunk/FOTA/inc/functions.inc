@@ -283,10 +283,15 @@ rebell_memcpy:
 	MOV	R3, R2
 	MOV	R2, R1
 	MOV	R1, R0
-	LDR	R0, [s_memcpy_a]
+	LDR	R0, [s_memcpy1_a]
 	BL	debug_print
 
-	MOV	R0, R1
+	MOV	R4, R1
+	MOV	R1, R3
+	LDR	R0, [s_memcpy2_a]
+	BL	debug_print
+
+	MOV	R0, R4
 	MOV	R1, R2
 	MOV	R2, R3
 
