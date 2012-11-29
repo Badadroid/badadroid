@@ -27,7 +27,8 @@ INCLUDE_ONCE DEFAULT_VARIABLES
     s_uartoutput_a	dw s_uartoutput
     s_uart_newline_a	dw s_uart_newline
     s_loadfile_error_a	dw s_loadfile_error
-    s_memcpy_a		dw s_memcpy
+    s_memcpy1_a 	dw s_memcpy1
+    s_memcpy2_a 	dw s_memcpy2
     s_dumpmem_error_a	dw s_dumpmem_error
 
     align 4
@@ -55,9 +56,10 @@ end if
     s_done			    db ' done!',0
     s_fmt			    db ' %s',0
     s_dir			    db ' Dir: %s',0
-    s_loadfile_error		    db ' loadfile error (notfound?)',0
+    s_loadfile_error		    db ' loadfile ERR (notfound?)',0
     s_dumpmem_error		    db ' dumpmem error: 0x%X',0
     s_uart_newline		    db 0xD,0xA,0
-    s_memcpy			    db ' 0x%X->0x%X,len=0x%X',0
+    s_memcpy1			    db ' copy 0x%X->0x%X',0
+    s_memcpy2			    db ' copy len=0x%X',0
     align 4
 END_INCLUDE_ONCE
