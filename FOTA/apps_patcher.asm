@@ -56,6 +56,11 @@ AppsPatcher:
       ;  LDR     R1, [.mkeyloc]
       ;  STR     R1, [R0]
 
+	LDR	 R0, [drv_add_hook_loc_a]
+	ADR	 R1, drv_add_hook
+	LDR	 R2, [drv_hook_size]
+      ;  BL       memcpy
+
 	LDR	 R0, [hook_loc_a]
 	ADR	 R1, hook
 	LDR	 R2, [hook_size]
@@ -81,6 +86,9 @@ AppsPatcher:
        ; .dst                    dw _hook1
 
 
+dumper_loc equ 0x40880000;0x408FD000
+
+
 THUMB
 MOV_R5_A:
 MOVS R5, 0xBA
@@ -89,7 +97,6 @@ MOVS R0, 1
 
 
 ALIGN 4
-dumper_loc equ 0x40880000;0x408FD000
 dumper_loc_a dw dumper_loc
 hook_loc equ 0x40304D54 ;0x400F64A8
 hook_loc_a dw hook_loc
@@ -118,14 +125,21 @@ ALIGN 4
 hook_size dw (hook_end-hook_begin)
 
 
-
-
-MemAllocTraceEx equ 0x401F5476
-MemFreeTraceEx equ 0x401F599E
-
 CODE32
 
 ALIGN 4
+
+drv_add_hook_loc equ 0x40381E20
+drv_add_hook_loc_a dw drv_add_hook_loc
+drv_add_hook:
+org drv_add_hook_loc
+drv_hook_begin:
+BL drv_dumper
+drv_hook_end:
+org ((drv_hook_end-drv_hook_begin)+drv_add_hook)
+ALIGN 4
+drv_hook_size dw (drv_hook_end-drv_hook_begin)
+
 hook2_loc equ 0x4039A798
 hook2_loc_a dw hook2_loc
 hook2:
@@ -150,37 +164,34 @@ dumper_begin:
 	LDR	R3, [R0, 4]
 	CMP	R3, 6
 	BNE	do_dump
-	LDMFD	sp!, {r0-r10, pc}
+	B	dumper_ret
 do_dump:
-	MOV	 R3, 0
-	MOV	 R2, 0
-	MOV	 R1, 0x4000
-	MOV	 R0, 0
-	BLX	MemAllocTraceEx
-	MOV	R5, R0
-
 	MOV	R1, 0
 	MOV	R2, 0
-	MOV	R3, R5
 	CMP	R8, 0
 	ADREQ	R4, rx_head
-	BEQ	headerloop
+	BEQ	prefix_print
 	CMPNE	R8, 1
 	ADREQ	R4, tx_head
-	BEQ	headerloop
+	BEQ	prefix_print
 	CMPNE	R8, 2
 	ADREQ	R4, lrx_head
-	ADRNE	R4, ltx_head
-headerloop:
-ldrb R0, [R4, R1]
-add  r1, r1, 1
-cmp r0, 0
-strbne r0, [r3], 1
-bne    headerloop
+	CMPNE	R8, 3
+	ADREQ	R4, drv_event
+	ADRNE	R4, drv_event
+	B	prefix_print
+rx_head db "rx_frame: ",0
+tx_head db "tx_frame: ",0
+ltx_head db "ltx_frame: ",0
+lrx_head db "lrx_frame: ",0
+drv_event db "drv_event: ",0
+ALIGN 4
+prefix_print:
+	MOV	R0, R4
+	BL	uart_print_string
 
 	MOV	R1, 0
 	MOV	R2, 0
-       ; MOV     R3, R5
 dumploop:
 	LDRB	R4, [R6, R1]
 
@@ -188,35 +199,24 @@ dumploop:
 	CMP	R0, 10
 	ADDCC	R0, R0, 48
 	ADDCS	R0, R0, (65-10)
-	STRB	R0, [R3], 1
+	BL	uart_print_byte
 
 	UBFX	R0, R4, 0, 4
 	CMP	R0, 10
 	ADDCC	R0, R0, 48
 	ADDCS	R0, R0, (65-10)
-	STRB	R0, [R3], 1
+	BL	uart_print_byte
 	MOV	R0, ' '
-	STRB	R0, [R3], 1
+	BL	uart_print_byte
 
 	ADD	R1, R1, 1
 	CMP	R1, R7
 	BLT	dumploop
 	MOV	R0, 0xA
-	STRB	R0, [R3], 1
+	BL	uart_print_byte
 
 	MOV	R0, 0
-	STRB	R0, [R3], 1
-	mov	R0, R5
-
-	BL	uart_print_string
-
-
-	MOV	 R3, 0
-	MOV	 R2, 0
-	MOV	 R1, R5
-	MOV	 R0, 0
-	BLX	MemFreeTraceEx
-
+dumper_ret:
 	LDMFD	sp!, {r0-r10, pc}
 
 uart_print_string:
@@ -244,10 +244,6 @@ STR		R4, [R0,#0x20]
 LDMFD		SP!, {R4,PC}
 
 uart_sfr dw 0xE2900800
-rx_head db "rx_frame: ",0
-tx_head db "tx_frame: ",0
-ltx_head db "ltx_frame: ",0
-lrx_head db "lrx_frame: ",0
 
 ALIGN 4
 
@@ -269,13 +265,22 @@ LDR		R1, [R0, 0x8]
 ADD		R1, 0xC
 MOV		R2, 1
 BL		dumper_loc
-LDRH		R0, [THUMB_NOP]
-LDR		R1, [.lockpatch]
-;STRH            R0, [R1]
 MOV		R0, 0x1000 ;replaced opcode
 LDMFD		SP!, {R1-R10,PC}
 
-.lockpatch		   dw 0x1D2A5406
+drv_dumper:
+MOV		R3, SP
+STMFD		SP!, {R4, LR}
+ADD		R0, R3, 4
+MOV		R1, 1
+MOV		R2, 3
+LDR		R4, [R0]
+CMP		R4, 0x26
+BLNE		dumper_loc
+MOV		R3, 0
+LDMFD		SP!, {R4, PC}
+
+
 dumper_end:
 org ((dumper_end-dumper_begin)+dumper)
 
