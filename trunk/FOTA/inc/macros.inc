@@ -135,10 +135,21 @@ end if ; FOTA_INVERT_BACKGROUND
 	cmp		r0, 1
 	beq		check_vol
 
+
+	ldrb		r0, [r0, 7]		; volup key
+	cmp		r0, 0
+	ldrne		r0, [s_atagcmdlineRM_a] ; quick and dirty address copy...
+	ldrne		r1, [s_atagcmdline_aa]
+	strne		r0, [r1]
+	bne		fota_run		; volup - recovery mode
+
+
 	ldr		r0, [_key2]
 	ldrb		r0, [r0, 2]
 	cmp		r0, 0
-	beq		return_to_bl
+	beq		return_to_bl		; not menu/home, not vol-up, and not call-key
+
+
 
 	b		fota_run		; call key - run fota
 
