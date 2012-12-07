@@ -20,8 +20,9 @@
  ;
  
 if ~defined PRODUCT_CODE
-PRODUCT_CODE                                                    equ 'S8500'
-FIRMWARE_VER                                                    equ 2.0
+PRODUCT_CODE                            equ 'S8500'
+MACH_ID									equ 8500
+FIRMWARE_VER                            equ 2.0
 
 BL2_DRAM_START							equ 0x42000000
 BL3_DRAM_START							equ 0x42080000

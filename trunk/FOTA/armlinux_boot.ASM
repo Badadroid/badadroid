@@ -193,10 +193,9 @@ code_loaded:
    LDR	 R0, [s_jumpingout_a]
    BL	 debug_print
    MOV	 R0, 0	   ;must be 0
-   MOV	 R1, 0x891 ;5850  ;I've broken compability with I9000 here to avoid running its kernel and possibility of damaging smth, MACH_ID of I9000 = 0x891 (SMDKC110)
+   LDR	 R1, [mach_id] ;load 8500 or 8530, depending on the model which for FOTA is compiled
    LDR	 R2, [ATAG_ptr]
 
-MOV R1, 1
    LDR	 R5, [kernel_start_a]
    BLX	 R5
 

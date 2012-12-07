@@ -21,6 +21,7 @@
  
 if ~defined PRODUCT_CODE
 PRODUCT_CODE                                                    equ 'S8500'
+MACH_ID															equ 8500
 FIRMWARE_VER                                                    equ 1.2
 
 BL2_DRAM_START                                                  equ 0x42400000
