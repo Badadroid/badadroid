@@ -26,6 +26,8 @@ INCLUDE_ONCE DEFAULT_VARIABLES
 
     output_switch	dw 0 ; 0=none 1=FOTA, 2=UART
 
+    mach_id		dw MACH_ID
+	
     ;delays are given in nanoseconds
     v_delay_100ms	dw 100000
     v_delay_800ms	dw 800000
