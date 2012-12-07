@@ -135,7 +135,7 @@ end if ; FOTA_INVERT_BACKGROUND
 	cmp		r0, 1
 	beq		check_vol
 
-
+	ldr		r0, [_key2]
 	ldrb		r0, [r0, 7]		; volup key
 	cmp		r0, 0
 	ldrne		r0, [s_atagcmdlineRM_a] ; quick and dirty address copy...
