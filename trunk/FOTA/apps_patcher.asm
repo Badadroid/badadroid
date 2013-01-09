@@ -159,10 +159,16 @@ org dumper_loc
 dumper_begin:
 	stmfd	sp!, {r0-r10, lr}
 	MOV	R8, R2
-	MOV	R7, R1
+
+	CMP	R8, 3 ;is it DRV packet?
+	MOVEQ	R7, R1 ;get size from second param
+	BEQ	do_dump  ;dump
+
+	LDR	R7, [R0, 8] ; load buffer size
+	ADD	R7, R7, 0xC ; add header size
 	MOV	R6, R0
 	LDR	R3, [R0, 4]
-	CMP	R3, 6
+	CMP	R3, 6	 ;skip FM_PACKETs
 	BNE	do_dump
 	B	dumper_ret
 do_dump:
