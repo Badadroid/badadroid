@@ -4,7 +4,7 @@
 
 This page should contain answer for most questions asked by non developers, subjects too many times asked in XDA thread.
 
-== Which wave models are supported? Is model xxxx supported?
+== Which wave models are supported? Is model xxxx supported? ==
 May 2013: just S8500 (Wave I) and S8530 (Wave II). 
 Others wave models have very different hardware and it is almost a new whole port.   
 
