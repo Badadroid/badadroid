@@ -1,0 +1,23 @@
+#summary FAQ
+
+= Frequently Asked Questions =
+
+This page should contain answer for most questions asked by non developers, subjects too many times asked in XDA thread.
+
+== Which wave models are supported? Is model xxxx supported?
+May 2013: just S8500 (Wave I) and S8530 (Wave II). 
+Others wave models have very different hardware and it is almost a new whole port.   
+
+== How do I install badadroid? ==
+Look for "FIRST INSTALLATION" in http://forum.xda-developers.com/showthread.php?t=1851818
+
+== How do I report a bug, take logs? ==
+Look for "BUG REPORTS" in http://forum.xda-developers.com/showthread.php?t=1851818
+
+There is another similar way, using adb shell
+Run from command line (windows, linux) "adb logcat -b system -b radio -b events -b main  > logcat.log", and you will have logcat.log file in your local file system in your computer.
+
+Tips to run "adb":
+  * you have to install android SDK, which includes adb utility.
+  * you have to enabe in your wave checkbox at Settings > Developer options > Android debugging
+  * of course, you have to have your wave plugged to your PC , if not, you receive message "error: device not found"
