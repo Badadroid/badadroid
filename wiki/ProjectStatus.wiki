@@ -1,0 +1,28 @@
+#summary Badadroid Project Status
+
+= Project Status: WIP Work In progress - Alpha =
+
+The project is doing progress day by day, but because of lack of developers and the amount of work todo, it has still a long way ahead.
+You can see a list of features of what is working and what is not in [http://forum.xda-developers.com/showthread.php?t=1851818 XDA developers ROM WIP CM10 "Jelly Bean" thread], list which is sumarized here, associated with CM 10 Rebellos ROM.
+
+== WHAT DOES (SHOULD) WORK ==
+  * Screen
+  * Sound playback
+  * Camera
+  * Camera LED
+  * Battery charge/gauge
+  * SD card read/write
+  * Recovery mode: CWM allows GAPPS install (android market allows app installation) 
+  * Connectivity
+    * Wifi (including DHCP)
+    * Bluetooth
+    * Basic radio functions: Netwok Registration, SIMcard communication, SMS, USSD, Call notifications 
+  * Sensors: 
+    * Accelerometer
+    *  Magnetometer (Compass)
+    *  Proximity sensor 
+
+== WHAT DOESN’T WORK (BUGS/TODO) ==
+  * Radio/modem (GSM/GPRS) functionallity: audio calls, data connection....more Badadroid RIL implementation is needed.
+  * Microphone - most likely related to modem - appears to be controlled by AMSS at some part
+  * GPS - related with modem, as GPS chip is wired to Call Processor
