@@ -35,5 +35,8 @@ Enter Bada Settings->General->Memory and make sure you have at least:
   * 150MB of free "User" memory
   * 400MB of free "Applications" memor
 
-== How do I make badadroid use SD as main storage / install apps in SD Card? ==
-Install swap_SD.zip ...
+== Badadroid is going to work with xxx custom Bada firmware ? ==
+Yes, you just have to flash the right bootfiles and FOTA, and comply with Bada Badadroid requirements (see above)
+
+== How do I make badadroid use external SD as main storage / install apps in external SD Card? ==
+Install swap_SD.zip (search for it ...
