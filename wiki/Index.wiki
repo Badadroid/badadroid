@@ -4,36 +4,13 @@
 
 Welcome to the badadroid wiki. Here you can find all related to the badadroid project from developer info to tutorials and Q+A's. This is currently a work in progress, so please don't fret if something isn't here and don't hesitate to ask for a page addition.
 
+== [ProjectHistory Project History] ==
+
+== [ProjectStatus Project Status] ==
+
 == Updates ==
 
 Updates will be posted [Updates here] when possible. Developers don't have a lot of time on their hands, so there is no guarantee that the project will be updated as a constant, if even often.
 
-== Project Status: Pre-Alpha ==
+Check the [http://forum.xda-developers.com/forumdisplay.php?f=1203 XDA developers Badadroid forum] and specially [http://forum.xda-developers.com/showthread.php?t=1459391 XDA developers NEWS & UPDATES Badadroid thread] 
 
-Android 2.2 Froyo has been successfully been ported to the Samsung Wave (S8500) with limited functionality. The project is still live, but progress has been slowed by the lack of driver developers. Below is a list of features of what is working and what is not.
-
-===Working===
-- WiFi (+dhcp)
-<br>
-- Video
-<br>
-- Audio
-<br>
-- Apps/Games (Not every app working)
-<br>
-- Android Market
-<br>
-- SD (Limited success, some cards work, some don't)
-<br>
-- Launchers
-
-===Not Working===
-- Modem (3G, Calling etc.)
-<br>
-- Idle (Phone will shutdown after a short time in lock mode. -See workarounds-)
-<br>
-- Sensors (Battery, Accelerometer etc.)
-<br>
-- Camera (You'll get a lovely green screen in camera)
-
-Read more [Status here].
