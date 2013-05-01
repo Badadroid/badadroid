@@ -8,9 +8,14 @@ Welcome to the badadroid wiki. Here you can find all related to the badadroid pr
 
 == [ProjectStatus Project Status] ==
 
+== [ProjectRepositories Project Repositories] ==
+
+== [FrequentlyAskedQuestions FAQ Frequently Asked Questions] ==
+
+== [DevelopersInfo Developers info] ==
+
 == Updates ==
 
 Updates will be posted [Updates here] when possible. Developers don't have a lot of time on their hands, so there is no guarantee that the project will be updated as a constant, if even often.
 
 Check the [http://forum.xda-developers.com/forumdisplay.php?f=1203 XDA developers Badadroid forum] and specially [http://forum.xda-developers.com/showthread.php?t=1459391 XDA developers NEWS & UPDATES Badadroid thread] 
-
