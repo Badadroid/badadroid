@@ -6,9 +6,20 @@ This page purpose is to contain info mainly for *developers*
 
 == Hardware documentation ==
 
+... a lot of links should be added here ...
+
 For example [http://forum.xda-developers.com/showthread.php?t=1245998 documentation about S8530 lcd panel]
 
-... a lot of links should be added here ...
+=== Processor ===
+ARM v7 Processor rev 2 (v7)
+
+=== Proximity sensor ===
+GP2A Proximity Sensor, Sharp
+
+=== Magnetic field sensor ===
+AK8973 3-axis Magnetic field sensor, Asahi Kasei Microdevices
+http://www.droid-developers.org/images/b/b2/AK8973.pdf
+
 
 == RIL implementation TODO Guide ==
 
