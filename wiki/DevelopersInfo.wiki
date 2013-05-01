@@ -12,10 +12,9 @@ For example [http://forum.xda-developers.com/showthread.php?t=1245998 documentat
 
 == RIL implementation TODO Guide ==
 
-May 2013: this is an attempt to sumarize the RIL development status, as I understand it, to show the work done and the work TODO
-This is just an attempt/idea to explain/sumarize RIL implementation status and future, showing the work done and the work TODO. 
+May 2013: This is just an attempt/idea to explain/sumarize RIL implementation status and future, showing the work done and the work TODO. 
 This page has to be maintained, if useful, by developers who are the only ones who really know implementation status and details. It might be useful to new developers and testers.
 
 This first draft version created as google docs spreadsheet, one day before I discovered this wiki. I keep it as spreadsheet; the most important thing is information contained, location and format could change (and bring it to this wiki, for example)
 
-[https://docs.google.com/spreadsheet/ccc?key=0Aut5SY0w2S8idGtyR0lXOTlVWGRTRTJiT1hpTE1UVnc&usp=sharing RIL implementation in Badadroid "ToDo" Guide] 
+[https://docs.google.com/spreadsheet/ccc?key=0Aut5SY0w2S8idGtyR0lXOTlVWGRTRTJiT1hpTE1UVnc&usp=sharing RIL implementation in Badadroid "ToDo" Guide (Google Docs Spreadsheet)] 
