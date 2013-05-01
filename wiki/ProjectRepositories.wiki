@@ -1,0 +1,6 @@
+#summary Repositories
+
+== Where to find sources ? ==
+In april 2012 Kernel Repo moved from googlecode https://code.google.com/p/badadroid-kernel/ to GitHub https://github.com/Rebell/bdroid
+
+Threa is some stuff in other places, as FOTA, Bootloader and ROMs: http://goo.im/devs/Rebellos/wave/ 
