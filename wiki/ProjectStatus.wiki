@@ -22,7 +22,7 @@ You can see a list of features of what is working and what is not in [http://for
     *  Magnetometer (Compass)
     *  Proximity sensor
 
-Internal FM Radio works with [http://forum.xda-developers.com/showthread.php?t=1059296 APP Sprint FM from Mike Reid], with Setting> Audio> Method> Galaxy SL/i9003. It is an app unrelated with badadroid, and Wave phones are not in Supported Device List, with free version with some limitations (Sprint Free) and paid version (Spirit FM Unlocked)
+Internal FM Radio works using [http://forum.xda-developers.com/showthread.php?t=1059296 APP Sprint FM from Mike Reid], with Settings> Audio> Method> Galaxy SL/i9003. It is an app unrelated with badadroid, and Wave phones are not in Supported Device List, so it has no support. This app has free version with some limitations (Sprint Free) and paid version (Spirit FM Unlocked)
 
 == WHAT DOESN’T WORK (BUGS/TODO) ==
   * Radio/modem (GSM/GPRS) functionallity: audio calls, data connection....more Badadroid RIL implementation is needed.
