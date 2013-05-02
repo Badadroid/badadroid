@@ -2,17 +2,41 @@
 <wiki:toc max_depth="2" />
 = Wave Hardware Documentation = 
 ... a lot of links should be added here ... some info extracted from some XDA threads...
+The idea is to achieve [http://code.google.com/p/mondroid/wiki/Hardware something like this page which is for GT-S5620]
+
+Related XDA threads:
+
+[http://forum.xda-developers.com/showthread.php?t=1245874 DEV S8530 open]
+
+==Power Management ==
+S8500: Maxim MAX8998
+
+S8530: Maxim MAX8997
+
+== Touchscreen Sensor ==
+ATMEL MXT224
+
+http://www.alldatasheet.es/datasheet-pdf/pdf/313246/ATMEL/MXT224.html
 
 == Display Driver ==
 S8500: TL2796 
 
 S8530: LG4573
+
+Related XDA threads:
 [http://forum.xda-developers.com/showthread.php?t=1245998 documentation about S8530 lcd panel]
 
 == Processor ==
+
+Samsung S5PC110A01 
+
 ARM v7 Processor rev 2 (v7)
 
 == Memory ==
+S8500:
+
+S8530: Sandisk SDIN5D2-2G
+
 S8500 and S8530 are similar to I9000, but they have less physical RAM
 
 S8500 have ONLY 128+256=384MB RAM memory (Galaxy S have 512MB).
@@ -20,12 +44,42 @@ S8500 have ONLY 128+256=384MB RAM memory (Galaxy S have 512MB).
 Wave has KLM2G1DEDD 2GB MLC NAND, partitioned
 
 Info: 
-http://forum.xda-developers.com/showthread.php?t=899661
+[http://forum.xda-developers.com/showthread.php?t=899661 
+KLM2G1DEDD-A101... and the other Memory Chips]
+
 http://forum.xda-developers.com/showthread.php?t=1012856&page=4
 
-== Proximity sensor ==
+== Sound ==
+WM8994 Wolfson microelectronics Multi-Channel Audio Hub CODEC for Smartphones
+
+http://www.wolfsonmicro.com/products/audio_hubs/WM8994/
+
+http://mr2857gb.googlecode.com/svn/trunk/data%20sheet/codec/WM8994_Rev3.0.pdf
+
+==Connectivity ==
+=== Wifi and bluetooth ===
+Broadcom BCM4329: Low-Power 802.11n with Bluetooth 2.1 + EDR and FM (Tx and Rx)
+
+http://www.broadcom.com/products/Bluetooth/Bluetooth-RF-Silicon-and-Software-Solutions/BCM4329
+
+===  HSDPA / WCDMA ===
+Qualcomm QSC6270 :Single-chip solution for HSDPA and WCDMA (UMTS) networks
+
+http://www.ic-on-line.cn/view_download.php?id=1169415&file=0098\qsc6270_1011529.pdf
+
+== Radio power amplifiers ==
+TriQuint Semi TQM7M5012H : 3V Quad-Band GSM850/GSM900/DCS/PCS Power Amplifier Module
+
+http://www.triquint.com/products/p/TQM7M5012
+
+Skyworks SKY77195 : Dual-Band PA Module for WCDMA / HSDPA Band I (1920-1980 MHz) and Band VIII (880-915 MHz) 
+
+http://www.skyworksinc.com/Product.aspx?ProductID=598
+
+== Sensors ==
+=== Proximity sensor ===
 GP2A Proximity Sensor, Sharp
 
-== Magnetic field sensor ==
-AK8973 3-axis Magnetic field sensor, Asahi Kasei Microdevices
+=== Magnetic field sensor ===
+Asahi Kasei Microdevices AK8973:3-axis Magnetic field sensor 
 http://www.droid-developers.org/images/b/b2/AK8973.pdf
