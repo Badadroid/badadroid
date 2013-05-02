@@ -29,6 +29,9 @@ Tips to run "adb":
 Start CWM Recovery and install http://goo.im/gapps/gapps-jb-20121011-signed.zip 
 (It has to be this version for CyanogenMod 10.1, check "Use this table to figure out which package you need!" table in http://goo.im/gapps)
 
+== Why message "Unfortunately, Android keyboard (AOSP) has stopped" ? ==
+Wrong gapss version.
+
 == Badadroid is stuck in animation with rotating circle where Cyanogenmod is written in ==
 It happens if you don't comply with installation requirements. Enter Bada Settings->General->Memory and make sure you have at least:
   * 370MB of free "System" memory
