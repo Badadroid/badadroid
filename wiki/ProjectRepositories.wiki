@@ -1,5 +1,6 @@
-<wiki:toc max_depth="2" />
 #summary Repositories
+
+<wiki:toc max_depth="2" />
 
 = Where to find sources and binaries? =
 
