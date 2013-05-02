@@ -7,6 +7,7 @@ This page should contain answer for most questions asked by non developers, subj
 
 == In which wave models badadroids work? Is xxx model supported / going to be supported? ==
 May 2013: just S8500 (Wave I) and S8530 (Wave II), similar hardware/software (Qualcomm) 
+
 Others wave models (
 S5250 Wave 525, 
 S5330 Wave 533, 
@@ -15,7 +16,10 @@ S5750 Wave 575
 S7230 Wave 723,  
 S7250 Wave M,
 S8600 Wave III
-) have very different hardware (Broadcomm), different bootloader ... maybe they need a whole new port project. Some related XDA threads  [http://forum.xda-developers.com/showthread.php?t=1144809 723], [http://forum.xda-developers.com/showthread.php?t=1253913 525], [http://forum.xda-developers.com/showthread.php?t=2240466 525 FOTA bootloader ] 
+) have very different hardware (Broadcomm), different bootloader ... maybe they need a whole new port project. 
+
+Some related XDA threads  [http://forum.xda-developers.com/showthread.php?t=1144809 723], [http://forum.xda-developers.com/showthread.php?t=1253913 525], [http://forum.xda-developers.com/showthread.php?t=2240466 525 FOTA bootloader ]. The most serious attempt for other wave models is done (january 2013) for S8600 by oleg_k, first developer of badadroid: [http://forum.xda-developers.com/showthread.php?t=2116846 
+Android port for S8600 XDA thread]
 
 == Are voice calls / data (GPRS, 3G...) connection   working? Why not?==
 No at the moment (may 2013). More Badadroid RIL implementation is necessary, and it is not a simple task. There are also issues related with mic and PCM packets. 
