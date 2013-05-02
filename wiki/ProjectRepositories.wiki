@@ -14,7 +14,7 @@ https://github.com/KB-JetDroid/bada-modemril (May 2013: main RIL developer is Vo
 https://github.com/Rebell/android_device_samsung_wave (May 2013: CM 10)
 
 ==Bootloader repo ==
-https://github.com/Rebell/android_bootable_wave-fboot 
+https://github.com/Rebell/android_bootable_wave-fboot WIP
 
 ==Tools, SVN repository==
 http://code.google.com/p/badadroid/ (FOTA exploit and various debug and config stuff, it was also kernel repo before april 2012)
