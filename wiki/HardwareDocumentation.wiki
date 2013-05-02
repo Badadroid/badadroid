@@ -11,6 +11,11 @@ DEV The project to port Android(froyo) on S8500 (8530)]
 
 [http://forum.xda-developers.com/showthread.php?t=1245874 DEV S8530 open]
 
+== Service Manuals ==
+They are in several threads ...
+
+
+
 ==Power Management ==
 S8500: Maxim MAX8998
 
