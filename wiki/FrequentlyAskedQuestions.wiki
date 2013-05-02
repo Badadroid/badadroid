@@ -8,7 +8,7 @@ This page should contain answer for most questions asked by non developers, subj
 May 2013: just S8500 (Wave I) and S8530 (Wave II). 
 Others wave models have very different hardware and it is almost a new whole port.   
 
-== Are calls / data connection working? ==
+== Are calls / data connection working? Why not?==
 No at the moment (may 2013). More Badadroid RIL implementation is necessary, and it is not a simple task. There are also issues related with mic and PCM packets. 
 
 == How do I install badadroid? ==
