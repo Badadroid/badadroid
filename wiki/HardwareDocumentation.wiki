@@ -62,12 +62,11 @@ Broadcom BCM4329: Low-Power 802.11n with Bluetooth 2.1 + EDR and FM (Tx and Rx)
 
 http://www.broadcom.com/products/Bluetooth/Bluetooth-RF-Silicon-and-Software-Solutions/BCM4329
 
-===  HSDPA / WCDMA ===
+===  Radio GSM, UMTS ... ===
 Qualcomm QSC6270 :Single-chip solution for HSDPA and WCDMA (UMTS) networks
 
 http://www.ic-on-line.cn/view_download.php?id=1169415&file=0098\qsc6270_1011529.pdf
 
-== Radio power amplifiers ==
 TriQuint Semi TQM7M5012H : 3V Quad-Band GSM850/GSM900/DCS/PCS Power Amplifier Module
 
 http://www.triquint.com/products/p/TQM7M5012
