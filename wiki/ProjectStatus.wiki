@@ -15,16 +15,18 @@ You can see a list of features of what is working and what is not in [http://for
   * Recovery mode: CWM allows GAPPS install (android market allows app installation) 
   * Connectivity
     * Wifi (including DHCP)
-    * Bluetooth
+    * Bluetooth (S8500)
     * Basic radio functions: Netwok Registration, SIMcard communication, SMS, USSD, Call notifications 
   * Sensors: 
     * Accelerometer
     *  Magnetometer (Compass)
     *  Proximity sensor
+  * Vibrator
 
 Internal FM Radio works using [http://forum.xda-developers.com/showthread.php?t=1059296 APP Sprint FM from Mike Reid], with Settings> Audio> Method> Galaxy SL/i9003. It is an app unrelated with badadroid, and Wave phones are not in Supported Device List, so it has no support. This app has free version with some limitations (Sprint Free) and paid version (Spirit FM Unlocked)
 
 == WHAT DOESN’T WORK (BUGS/TODO) ==
+  * Bluetooth (S8530)
   * Radio/modem (GSM/GPRS) functionallity: audio calls, data connection....more Badadroid RIL implementation is needed.
   * Microphone - most likely related to modem - appears to be controlled by AMSS at some part
   * GPS - related with modem, as GPS chip is wired to Call Processor
