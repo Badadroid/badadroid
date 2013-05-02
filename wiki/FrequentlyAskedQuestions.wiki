@@ -51,11 +51,15 @@ It happens if you don't comply with installation requirements. Enter Bada Settin
   * 400MB of free "Applications" memory
 Solution: make a clean installation of bada: full flash
 
+Related XDA posts: http://forum.xda-developers.com/showthread.php?p=39859136#post39859136
+
 == Badadroid is going to work with xxx custom Bada firmware ? ==
 Yes, you just have to flash the right bootfiles and FOTA, and comply with Bada Badadroid requirements (see above)
 
 == How do I make badadroid use external SD as main storage / install apps in external SD Card? ==
-Install swap_SD.zip (search for it in threads, for example http://forum.xda-developers.com/showthread.php?t=1851818&page=125)
+Install swap_SD.zip or look for persist.sys.vold.switchexternal flag setting solution. 
+
+Related XDA posts: http://forum.xda-developers.com/showthread.php?t=1851818&page=107
 
 == How do I change phone ID ? ==
 Some apps like Whatsapp do not work if model is GT-S8500 or GT-S8530; look for GT-I9000.zip file in threads
