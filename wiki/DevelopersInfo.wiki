@@ -6,7 +6,7 @@ This page purpose is to contain info mainly for *developers*
 
 == Hardware documentation ==
 
-... a lot of links should be added here ...
+... a lot of links should be added here ... some info extracted from some XDA threads...
 
 
 === Display Driver ===
@@ -17,6 +17,17 @@ S8530: LG4573
 
 === Processor ===
 ARM v7 Processor rev 2 (v7)
+
+=== Memory ===
+S8500 and S8530 are similar to I9000, but they have less physical RAM
+
+S8500 have ONLY 128+256=384MB RAM memory (Galaxy S have 512MB).
+
+Wave has KLM2G1DEDD 2GB MLC NAND, partitioned
+
+Info: 
+http://forum.xda-developers.com/showthread.php?t=899661
+http://forum.xda-developers.com/showthread.php?t=1012856&page=4
 
 === Proximity sensor ===
 GP2A Proximity Sensor, Sharp
