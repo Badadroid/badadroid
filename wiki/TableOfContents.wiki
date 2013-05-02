@@ -2,7 +2,7 @@
     * [ProjectHistory Project History]
     * [ProjectStatus Project Status]
     * [ProjectRepositories Project Repositories]
-    * [FrequentlyAskedQuestions Frequently Asked Questions]
+    * [FrequentlyAskedQuestions FAQ]
     * [DevelopersInfo Developers info]
   * [Updates]
     * [UpdateArchive Archive]
