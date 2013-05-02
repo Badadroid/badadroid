@@ -1,5 +1,5 @@
 #summary Waves hardware documentation
-<wiki:toc max_depth="2" />
+<wiki:toc max_depth="3" />
 = Wave Hardware Documentation = 
 ... a lot of links should be added here ... some info extracted from some XDA threads...
 The idea is to achieve [http://code.google.com/p/mondroid/wiki/Hardware something like this page which is for GT-S5620]
