@@ -36,15 +36,18 @@ Samsung S5PC110A01
 ARM v7 Processor rev 2 (v7)
 
 == Memory ==
-S8500:
 
-S8530: Sandisk SDIN5D2-2G
+s8500 have 2GB moviNAND and 512MB oneNAND
 
 S8500 and S8530 are similar to I9000, but they have less physical RAM
 
 S8500 have ONLY 128+256=384MB RAM memory (Galaxy S have 512MB).
 
-Wave has KLM2G1DEDD 2GB MLC NAND, partitioned
+=== moviNAND ==
+
+S8500: has KLM2G1DEDD 2GB MLC NAND, partitioned
+
+S8530: Sandisk SDIN5D2-2G
 
 Info: 
 [http://forum.xda-developers.com/showthread.php?t=899661 
