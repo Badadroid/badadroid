@@ -8,7 +8,12 @@ This page purpose is to contain info mainly for *developers*
 
 ... a lot of links should be added here ...
 
-For example [http://forum.xda-developers.com/showthread.php?t=1245998 documentation about S8530 lcd panel]
+
+=== Display Driver ===
+S8500: TL2796 
+
+S8530: LG4573
+[http://forum.xda-developers.com/showthread.php?t=1245998 documentation about S8530 lcd panel]
 
 === Processor ===
 ARM v7 Processor rev 2 (v7)
