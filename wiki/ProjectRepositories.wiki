@@ -1,13 +1,16 @@
 #summary Repositories
 
-== Where to find sources ? ==
+= Where to find sources ? =
 
-Kernel GIT repository: https://github.com/Rebell/android_kernel_samsung_wave/ (current kernel, initramfs , CM10 platform parts are available on Rebell's github account)
+==Kernel GIT repository==
+https://github.com/Rebell/android_kernel_samsung_wave/ (current kernel, initramfs , CM10 platform parts are available on Rebell's github account)
 
-RIL implementation repo: https://github.com/KB-JetDroid/bada-modemril (May 2013: main RIL developer is Volk204)
+==RIL implementation repo==
+ https://github.com/KB-JetDroid/bada-modemril (May 2013: main RIL developer is Volk204)
 
 https://github.com/Rebell/android_bootable_wave-fboot 
 
-Tools SVN repository: http://code.google.com/p/badadroid/ (FOTA exploit and various debug and config stuff, it was also kernel repo before april 2012)
+==Tools SVN repository==
+http://code.google.com/p/badadroid/ (FOTA exploit and various debug and config stuff, it was also kernel repo before april 2012)
 
 There is some stuff in other places, as FOTA, Bootloader and ROMs: http://goo.im/devs/Rebellos/wave/ 
