@@ -29,11 +29,13 @@ Tips to run "adb":
 Start CWM Recovery and install http://goo.im/gapps/gapps-jb-20121011-signed.zip 
 (It has to be this version for CyanogenMod 10.1, check "Use this table to figure out which package you need!" table in http://goo.im/gapps)
 
-== Badadroid is stuck in Cyanogenmod logo / animation ==
-Enter Bada Settings->General->Memory and make sure you have at least:
+== Badadroid is stuck in animation with rotating circle where Cyanogenmod is written in ==
+It happens if you don't comply with installation requirements. Enter Bada Settings->General->Memory and make sure you have at least:
   * 370MB of free "System" memory
   * 150MB of free "User" memory
-  * 400MB of free "Applications" memor
+  * 400MB of free "Applications" memory
+Solution: make a clean installation of bada: full flash
+
 
 == Badadroid is going to work with xxx custom Bada firmware ? ==
 Yes, you just have to flash the right bootfiles and FOTA, and comply with Bada Badadroid requirements (see above)
