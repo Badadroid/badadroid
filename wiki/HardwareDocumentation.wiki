@@ -1,0 +1,31 @@
+#summary Waves hardware documentation
+<wiki:toc max_depth="2" />
+= Wave Hardware Documentation = 
+... a lot of links should be added here ... some info extracted from some XDA threads...
+
+== Display Driver ==
+S8500: TL2796 
+
+S8530: LG4573
+[http://forum.xda-developers.com/showthread.php?t=1245998 documentation about S8530 lcd panel]
+
+== Processor ==
+ARM v7 Processor rev 2 (v7)
+
+== Memory ==
+S8500 and S8530 are similar to I9000, but they have less physical RAM
+
+S8500 have ONLY 128+256=384MB RAM memory (Galaxy S have 512MB).
+
+Wave has KLM2G1DEDD 2GB MLC NAND, partitioned
+
+Info: 
+http://forum.xda-developers.com/showthread.php?t=899661
+http://forum.xda-developers.com/showthread.php?t=1012856&page=4
+
+== Proximity sensor ==
+GP2A Proximity Sensor, Sharp
+
+== Magnetic field sensor ==
+AK8973 3-axis Magnetic field sensor, Asahi Kasei Microdevices
+http://www.droid-developers.org/images/b/b2/AK8973.pdf
