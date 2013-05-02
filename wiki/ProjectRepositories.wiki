@@ -6,7 +6,7 @@
 https://github.com/Rebell/android_kernel_samsung_wave/ 
 
 ==RIL implementation repo==
- https://github.com/KB-JetDroid/bada-modemril (May 2013: main RIL developer is Volk204)
+https://github.com/KB-JetDroid/bada-modemril (May 2013: main RIL developer is Volk204)
 
 ==Platform repo==
 https://github.com/Rebell/android_device_samsung_wave (May 2013: CM 10)
