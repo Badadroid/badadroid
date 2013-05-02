@@ -5,7 +5,7 @@
 = Where to find sources and binaries? =
 
 ==Kernel GIT repository==
-https://github.com/Rebell/android_kernel_samsung_wave/ 
+https://github.com/Rebell/android_kernel_samsung_wave/ (main kernel developer is Rebellos)
 
 ==RIL implementation repo==
 https://github.com/KB-JetDroid/bada-modemril (May 2013: main RIL developer is Volk204)
