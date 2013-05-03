@@ -86,7 +86,7 @@ Qualcomm QSC6270 :Single-chip solution for HSDPA and WCDMA (UMTS) networks
 
 http://www.ic-on-line.cn/view_download.php?id=1169415&file=0098\qsc6270_1011529.pdf
 
-TriQuint Semi TQM7M5012H : 3V Quad-Band GSM850/GSM900/DCS/PCS Power Amplifier Module
+Triquint Semi TQM7M5012H : 3V Quad-Band GSM850/GSM900/DCS/PCS Power Amplifier Module
 
 http://www.triquint.com/products/p/TQM7M5012
 
