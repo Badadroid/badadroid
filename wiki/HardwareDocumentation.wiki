@@ -73,6 +73,14 @@ Broadcom BCM4329: Low-Power 802.11n with Bluetooth 2.1 + EDR and FM (Tx and Rx)
 
 http://www.broadcom.com/products/Bluetooth/Bluetooth-RF-Silicon-and-Software-Solutions/BCM4329
 
+Samsung SWB-B23 Broadcom BCM4329 WLAN+BT Solution
+
+http://mr2857gb.googlecode.com/svn/trunk/data%20sheet/wifi/SWB-B23_DS_Datasheet_rev7.pdf
+
+Broadcom uses configuration files:
+   * Bada: Stune /SystemFS/Drivers, Wlan_bcm4329_rte.txt / Wlan_bcm4329_mfg.txt / Wlan_SWB-B23_mfg.txt / Wlan_SWB-B23_mfg.txt
+   * Badadroid: /system/vendor/firmware nvram_net.txt, https://github.com/Rebell/android_device_samsung_wave/tree/jellybean/prebuilt nvram_net_s8500.txt , nvram_net_s8530.txt
+
 ===  Radio GSM, UMTS ... ===
 Qualcomm QSC6270 :Single-chip solution for HSDPA and WCDMA (UMTS) networks
 
