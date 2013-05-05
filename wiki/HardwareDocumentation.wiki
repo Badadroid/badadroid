@@ -6,6 +6,9 @@ The idea is to achieve [http://code.google.com/p/mondroid/wiki/Hardware somethin
 
 Related XDA threads:
 
+[http://forum.xda-developers.com/showthread.php?t=901416 
+internal Documents, Videos etc. around S8500/S8530 and little bada]
+
 [http://forum.xda-developers.com/showthread.php?t=1012856 
 DEV The project to port Android(froyo) on S8500 (8530)]
 
