@@ -20,8 +20,19 @@ S8600 Wave III
 
 Some related XDA threads  [http://forum.xda-developers.com/showthread.php?t=1144809 723], [http://forum.xda-developers.com/showthread.php?t=1253913 525], [http://forum.xda-developers.com/showthread.php?t=2240466 525 FOTA bootloader ]. The most serious attempt for other wave models is done (january 2013) for S8600 by oleg_k, first developer of badadroid: [http://forum.xda-developers.com/showthread.php?t=2116846 Android port for S8600 XDA thread]
 
-== Are voice calls / data (GPRS, 3G...) connection   working? Why not?==
+== Does xxx work or not ?==
+Hardware: look at ProjectStatus. 
+Google play: look in this FAQ
+
+===Do Microphone and audio work in calls? ===
+Not at the moment (may 2013)
+
+XDA related post:
+http://forum.xda-developers.com/showpost.php?p=41175931&postcount=114
+
+=== Are voice calls / data (GPRS, 3G...) connection   working? Why not?===
 No at the moment (may 2013). More Badadroid RIL implementation is necessary, and it is not a simple task. There are also issues related with mic and PCM packets. 
+
 
 == How do I install badadroid? ==
 Look for "FIRST INSTALLATION" in http://forum.xda-developers.com/showthread.php?t=1851818
