@@ -1,5 +1,5 @@
 #summary FAQ
-<wiki:toc max_depth="2" />
+<wiki:toc max_depth="3" />
 
 = Frequently Asked Questions =
 
@@ -31,8 +31,7 @@ XDA related post:
 http://forum.xda-developers.com/showpost.php?p=41175931&postcount=114
 
 === Are voice calls / data (GPRS, 3G...) connection   working? Why not?===
-No at the moment (may 2013). More Badadroid RIL implementation is necessary, and it is not a simple task. There are also issues related with mic and PCM packets. 
-
+No at the moment (may 2013). More Badadroid RIL implementation is necessary, and it is not a simple task. There are also issues related with mic and audio.
 
 == How do I install badadroid? ==
 Look for "FIRST INSTALLATION" in http://forum.xda-developers.com/showthread.php?t=1851818
