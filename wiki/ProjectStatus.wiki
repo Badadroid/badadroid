@@ -30,3 +30,4 @@ Internal FM Radio works using [http://forum.xda-developers.com/showthread.php?t=
   * Radio/modem (GSM/GPRS) functionallity: audio calls, data connection....more Badadroid RIL implementation is needed.
   * Microphone - most likely related to modem - appears to be controlled by AMSS at some part
   * GPS - related with modem, as GPS chip is wired to Call Processor
+  * Video recording: related with mic/audio issue. The most likely reason of non working recording is Audio HAL going mad when it cannot catch proper PCM stream from hardware.
