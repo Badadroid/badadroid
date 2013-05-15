@@ -10,7 +10,7 @@ You can see a list of features of what is working and what is not in [http://for
   * Sound playback
   * Camera
   * Camera LED
-  * Battery charge/gauge
+  * Battery charge/gauge (*Warning: Don't leave it charging without supervising - if it gets enormously hot, disconnect it - this can literally blow up battery as there is no overheating protection yet. Do not leave it connected on 100% - it'll discharge by 1% all the time, and then recharge, what's very unhealthy for batter*)
   * SD card read/write
   * Recovery mode: CWM allows GAPPS install (android market allows app installation) 
   * Connectivity
