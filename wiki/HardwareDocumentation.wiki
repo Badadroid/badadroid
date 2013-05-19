@@ -58,10 +58,12 @@ S8500: has KLM2G1DEDD 2GB MLC NAND, partitioned
 S8530: Sandisk SDIN5D2-2G
 
 Info: 
-[http://forum.xda-developers.com/showthread.php?t=899661 
-KLM2G1DEDD-A101... and the other Memory Chips]
+
+[http://forum.xda-developers.com/showthread.php?t=899661 KLM2G1DEDD-A101... and the other Memory Chips]
 
 http://forum.xda-developers.com/showthread.php?t=1012856&page=4
+
+[http://forum.xda-developers.com/showthread.php?t=996350  S8530, Wave II internal Pictures]
 
 == Sound ==
 WM8994 Wolfson microelectronics Multi-Channel Audio Hub CODEC for Smartphones
