@@ -3,7 +3,7 @@
 = Project Status: WIP Work In progress - Alpha =
 
 The project is doing progress day by day, but because of lack of developers and the amount of work todo, it has still a long way ahead.
-You can see a list of features of what is working and what is not in [http://forum.xda-developers.com/showthread.php?t=1851818 XDA developers ROM WIP CM10 "Jelly Bean" thread], list which is sumarized here, associated with CM 10 Rebellos ROM.
+You can see a list of features of what is working and what is not in [http://forum.xda-developers.com/showthread.php?t=2400126 ROM WIP CM10.1] (previously in [http://forum.xda-developers.com/showthread.php?t=1851818 XDA developers ROM WIP CM10 "Jelly Bean" thread]), list which is sumarized here, associated with CM 10.1 ROM.
 
 == WHAT DOES (SHOULD) WORK ==
   * Screen
@@ -24,12 +24,19 @@ You can see a list of features of what is working and what is not in [http://for
   * Vibrator
   * TV Out
   * Headphones 
+  * Microphone
+  * Audio recording
+  * Video recording
+
 
 Internal FM Radio works using [http://forum.xda-developers.com/showthread.php?t=1059296 APP Sprint FM from Mike Reid], with Settings> Audio> Method> Galaxy SL/i9003. It is an app unrelated with badadroid, and Wave phones are not in Supported Device List, so it has no support. This app has free version with some limitations (Sprint Free) and paid version (Spirit FM Unlocked)
 
 == WHAT DOESN’T WORK (BUGS/TODO) ==
-  * Bluetooth (S8530)
-  * Radio/modem (GSM/GPRS) functionallity: audio calls, data connection....more Badadroid RIL implementation is needed.
-  * Microphone - most likely related to modem - appears to be controlled by AMSS at some part
+  * Mobile data through modem (3G/2G), more Badadroid RIL implementation is needed.
+  * SMS bug on some phones
+  * Network indicator is full all time
+  * Network registration don't work with some SIM cards
   * GPS - related with modem, as GPS chip is wired to Call Processor
-  * Video recording: related with mic/audio issue. The most likely reason of non working recording is Audio HAL going mad when it cannot catch proper PCM stream from hardware.
+  * Bluetooth on Wave 2 (S8530)
+  * Bluetooth headset in calls
+  * Some problems with screen calibration on Wave 2
