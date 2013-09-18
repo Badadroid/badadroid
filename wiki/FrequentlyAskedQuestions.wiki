@@ -24,13 +24,16 @@ Hardware: look at ProjectStatus.
 Google play: look in this FAQ
 
 ===Do Microphone and audio work in calls? ===
-Not at the moment (may 2013)
+Yes! (september 2013)
 
-XDA related post:
-http://forum.xda-developers.com/showpost.php?p=41175931&postcount=114
+XDA related posts:
 
-=== Are voice calls / data (GPRS, 3G...) connection   working? Why not?===
-No at the moment (may 2013). More Badadroid RIL implementation is necessary, and it is not a simple task. There are also issues related with mic and audio.
+http://forum.xda-developers.com/showthread.php?p=44886529
+
+http://forum.xda-developers.com/showthread.php?p=45682082
+
+=== Are data (GPRS, 3G...) connection  working? Why not?===
+No at the moment (september 2013). More Badadroid RIL implementation is necessary, and it is not a simple task. 
 
 == How do I install badadroid? ==
 Look for "FIRST INSTALLATION" in http://forum.xda-developers.com/showthread.php?t=1851818
@@ -71,6 +74,13 @@ Yes, you just have to flash the right bootfiles and FOTA, and comply with Bada B
 Install swap_SD.zip or look for persist.sys.vold.switchexternal flag setting solution. 
 
 Related XDA posts: http://forum.xda-developers.com/showthread.php?t=1851818&page=107
+
+Note: CM 10.1 
+
+Partitions are already swapped in this ROM.
+No need to flash Swap SD.zip anymore 
+
+http://forum.xda-developers.com/showpost.php?p=44881813&postcount=171
 
 == How do I change phone ID ? ==
 Some apps like Whatsapp do not work if model is GT-S8500 or GT-S8530; look for GT-I9000.zip file in threads http://forum.xda-developers.com/showthread.php?t=1851818&highlight=nvram&page=58 
