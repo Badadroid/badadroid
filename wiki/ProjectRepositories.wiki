@@ -4,6 +4,12 @@
 
 = Where to find sources and binaries? =
 
+==Main project repository ==
+
+September 2013, new project account for all previous repositories
+
+https://github.com/Badadroid/
+
 ==Kernel GIT repository==
 https://github.com/Rebell/android_kernel_samsung_wave/ (main kernel developer is Rebellos)
 
