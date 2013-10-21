@@ -10,6 +10,7 @@ Badadroid project was started in 2011, with the idea to bring a functional andro
 More details about participating developers and development history [http://forum.xda-developers.com/showthread.php?t=1459391 here], by Rebellos. 
 In august 2013, Volk204 [http://forum.xda-developers.com/showthread.php?p=44801842 continues] Rebellos' work with `CyanogenMod` 10.1 Android 4.2.2, and in the same month [http://forum.xda-developers.com/showthread.php?p=44886529 audio recording and video recording (microphone) is fixed] by Volk204 and Rebellos. 
 In september 2013, [http://forum.xda-developers.com/showthread.php?p=45682082 audio in calls is fixed] by Volk204 and Tigrouzen.
+In october 2013, [http://forum.xda-developers.com/showpost.php?p=46684373&postcount=947 Mobile internet (data through modem) is fixed] by Volk204 and Rebellos.
 
 At this moment there are several Badadroid ROMs with several changes, for example some of them oriented to game players.
 Most ROMs use Rebellos kernel where all new functionality is implemented by him and other developers: Volk204 is the main developer of RIL funcionality. Rebellos provides a CM 10 ROM using his kernel: [http://forum.xda-developers.com/showthread.php?t=1851818 ROM WIP CM10 "Jelly Bean"], which is continued by Volk204 in [http://forum.xda-developers.com/showthread.php?t=2400126 ROM WIP CM10.1] 
