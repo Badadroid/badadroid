@@ -30,6 +30,7 @@ You can see a list of features of what is working and what is not in [http://for
     * Basic radio functions: Netwok Registration, SIMcard communication, SMS, USSD, Call notifications 
     * Audio in calls
     * Mobile data through modem (3G/2G)
+    * DTMF Support
     * Network indicator
     * Search available networks and select networks
     * PIN and PUK entering
@@ -46,3 +47,4 @@ Internal FM Radio works using [http://forum.xda-developers.com/showthread.php?t=
   * Bluetooth on Wave 2 (S8530)
   * Bluetooth headset in calls
   * Some problems with screen calibration on Wave 2
+  * Conference call
