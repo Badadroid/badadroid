@@ -33,7 +33,10 @@ http://forum.xda-developers.com/showthread.php?p=44886529
 http://forum.xda-developers.com/showthread.php?p=45682082
 
 === Are data (GPRS, 3G...) connection  working? Why not?===
-No at the moment (september 2013). More Badadroid RIL implementation is necessary, and it is not a simple task. 
+Yes! (october 2013)
+XDA related post:
+
+http://forum.xda-developers.com/showpost.php?p=46684373&postcount=947
 
 == How do I install badadroid? ==
 Look for "FIRST INSTALLATION" in http://forum.xda-developers.com/showthread.php?t=1851818
