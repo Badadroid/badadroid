@@ -32,7 +32,7 @@ http://forum.xda-developers.com/showthread.php?p=44886529
 
 http://forum.xda-developers.com/showthread.php?p=45682082
 
-=== Are data (GPRS, 3G...) connection  working? Why not?===
+=== Are data (GPRS, 3G...) connection  working? ===
 Yes! (october 2013)
 XDA related post:
 
