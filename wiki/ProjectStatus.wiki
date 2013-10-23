@@ -46,5 +46,4 @@ Internal FM Radio works using [http://forum.xda-developers.com/showthread.php?t=
   * GPS - related with modem, as GPS chip is wired to Call Processor
   * Bluetooth on Wave 2 (S8530)
   * Bluetooth headset in calls
-  * Some problems with screen calibration on Wave 2
   * Conference call
