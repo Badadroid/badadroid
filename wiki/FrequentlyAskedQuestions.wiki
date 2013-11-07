@@ -38,6 +38,13 @@ XDA related post:
 
 http://forum.xda-developers.com/showpost.php?p=46684373&postcount=947
 
+=== Does GPS work? ===
+No 
+XDA related post:
+
+http://forum.xda-developers.com/showpost.php?p=46684373&postcount=947
+
+
 == How do I install badadroid? ==
 Look for "FIRST INSTALLATION" in http://forum.xda-developers.com/showthread.php?t=1851818
 
@@ -73,6 +80,14 @@ Related XDA posts: http://forum.xda-developers.com/showthread.php?p=39859136#pos
 == Badadroid is going to work with xxx custom Bada firmware ? ==
 Yes, you just have to flash the right bootfiles and FOTA, and comply with Bada Badadroid requirements (see above)
 
+== Do Volk204's official kernel and ROM support other custom ROMs and kernels? ==
+No.
+
+Related XDA posts:
+
+http://forum.xda-developers.com/showpost.php?p=47208240&postcount=1369
+
+
 == How do I make badadroid use external SD as main storage / install apps in external SD Card? ==
 Install swap_SD.zip or look for persist.sys.vold.switchexternal flag setting solution. 
 
@@ -86,4 +101,4 @@ No need to flash Swap SD.zip anymore
 http://forum.xda-developers.com/showpost.php?p=44881813&postcount=171
 
 == How do I change phone ID ? ==
-Some apps like Whatsapp do not work if model is GT-S8500 or GT-S8530; look for GT-I9000.zip file in threads http://forum.xda-developers.com/showthread.php?t=1851818&highlight=nvram&page=58 
+Some apps do not work if model is GT-S8500 or GT-S8530; look for GT-I9000.zip file in threads http://forum.xda-developers.com/showthread.php?t=1851818&highlight=nvram&page=58 
