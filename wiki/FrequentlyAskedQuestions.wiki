@@ -39,7 +39,8 @@ XDA related post:
 http://forum.xda-developers.com/showpost.php?p=46684373&postcount=947
 
 === Does GPS work? ===
-No 
+No
+ 
 XDA related post:
 
 http://forum.xda-developers.com/showpost.php?p=46684373&postcount=947
