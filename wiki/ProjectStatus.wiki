@@ -48,3 +48,4 @@ Internal FM Radio works using [http://forum.xda-developers.com/showthread.php?t=
   * Some problems with audio codec settings, but generally it should work
   * Impossible to shut down phone in android, only restart
   * Battery charge: *Warning: Don't leave it charging without supervising - if it gets enormously hot, disconnect it - this can literally blow up battery as there is no overheating protection yet. Do not leave it connected on 100% - it'll discharge by 1% all the time, and then recharge, what's very unhealthy for battery*
+  * Delete SMS on SIM [http://forum.xda-developers.com/showpost.php?p=47892275&postcount=1731 XDA post related with delete SMS on SIM implementation]
