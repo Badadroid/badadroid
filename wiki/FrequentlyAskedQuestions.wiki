@@ -8,7 +8,7 @@ This page should contain answer for most questions asked by non developers, subj
 == In which wave models badadroids work? Is xxx model supported / going to be supported? ==
 May 2013: just S8500 (Wave I) and S8530 (Wave II), similar hardware/software (Qualcomm) 
 
-Others wave models (
+Others wave models ( 
 S5250 Wave 525, 
 S5330 Wave 533, 
 S5380 Wave Y, 
@@ -21,6 +21,7 @@ Some related XDA threads  [http://forum.xda-developers.com/showthread.php?t=1144
 
 == Does xxx work or not ?==
 Hardware: look at ProjectStatus. 
+
 Google play: look in this FAQ
 
 ===Do Microphone and audio work in calls? ===
@@ -34,12 +35,13 @@ http://forum.xda-developers.com/showthread.php?p=45682082
 
 === Are data (GPRS, 3G...) connection  working? ===
 Yes! (october 2013)
+
 XDA related post:
 
 http://forum.xda-developers.com/showpost.php?p=46684373&postcount=947
 
 === Does GPS work? ===
-No
+No.
  
 XDA related post:
 
