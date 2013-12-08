@@ -93,6 +93,8 @@ http://forum.xda-developers.com/showpost.php?p=47208240&postcount=1369
 == Do Volk204's official kernel and ROM support "bigmem / 320 MB " kernel? ==
 No.
 
+First, total RAM ammount in Wave I and II is 384 MB. 
+
 Bigmem / 320 MB kernel needs a modified kernel without some features (camera, tv out, video playback...), somehow optimized for high resource demanding games.
 Some developpers have done such kernel / ROM, but not commpliant with GPL license, and threads are closed in XDA.
 
