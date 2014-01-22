@@ -3,7 +3,7 @@
 = Project Status: WIP Work In progress - Alpha =
 
 The project is doing progress day by day, but because of lack of developers and the amount of work todo, it has still a long way ahead.
-You can see a list of features of what is working and what is not in [http://forum.xda-developers.com/showthread.php?t=2609560 ROM WIP CM11] (previously in others threads, check Badadroid Project History), list which is sumarized here, associated with last ROM.
+You can see a list of features of what is working and what is not in [http://forum.xda-developers.com/showthread.php?t=2609560 ROM WIP CM11] (previously in others threads, check Badadroid [ProjectHistory Project History]), list which is sumarized here, associated with last ROM.
 
 
 == WHAT DOES (SHOULD) WORK ==
