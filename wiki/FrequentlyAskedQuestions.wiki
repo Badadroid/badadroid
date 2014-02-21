@@ -76,9 +76,15 @@ It happens if you don't comply with installation requirements. Enter Bada Settin
   * 370MB of free "System" memory
   * 150MB of free "User" memory
   * 400MB of free "Applications" memory
+
+Sometimes it seems installation requierements are ok, but the system partition is corrupted somehow
 Solution: make a clean installation of bada: full flash
 
-Related XDA posts: http://forum.xda-developers.com/showthread.php?p=39859136#post39859136
+Related XDA posts: 
+
+http://forum.xda-developers.com/showthread.php?p=39859136#post39859136
+
+http://forum.xda-developers.com/showpost.php?p=49510498&postcount=71
 
 == Badadroid is going to work with xxx custom Bada firmware ? ==
 Yes, you just have to flash the right bootfiles and FOTA, and comply with Bada Badadroid requirements (see above)
