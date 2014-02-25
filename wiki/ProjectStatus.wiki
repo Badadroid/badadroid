@@ -39,14 +39,15 @@ You can see a list of features of what is working and what is not in [http://for
     * MMS sending/receiving
     * Basic SIM_IO implementation: reading Contacts, Messages, Voicemail number, SPN, ICCID from SIM card
     * Bluetooth headset in calls
+  * GPS (*Basic, see TODO*)
 
 Internal FM Radio works using [http://forum.xda-developers.com/showthread.php?t=1059296 APP Sprint FM from Mike Reid], with Settings> Audio> Method> Galaxy SL/i9003. It is an app unrelated with badadroid, and Wave phones are not in Supported Device List, so it has no support [http://forum.xda-developers.com/showpost.php?p=47614534&postcount=1667 see also this warning]. This app has free version with some limitations (Sprint Free) and paid version (Spirit FM Unlocked)
 
 == WHAT DOESN’T WORK (BUGS/TODO) ==
   * Network registration don't work with some SIM cards
-  * GPS - related with modem, as GPS chip is wired to Call Processor  [http://forum.xda-developers.com/showpost.php?p=47209249&postcount=1371 XDA post related with GPS implementation]
   * Conference call
   * Some problems with audio codec settings, but generally it should work
   * Impossible to shut down phone in android, only restart
   * Battery charge: *Warning: Don't leave it charging without supervising - if it gets enormously hot, disconnect it - this can literally blow up battery as there is no overheating protection yet. Do not leave it connected on 100% - it'll discharge by 1% all the time, and then recharge, what's very unhealthy for battery*
   * Delete SMS on SIM [http://forum.xda-developers.com/showpost.php?p=47892275&postcount=1731 XDA post related with delete SMS on SIM implementation]
+  * GPS [http://forum.xda-developers.com/showthread.php?p=50548697 XDA post related "GPS is still WIP, but it is really working already"]
